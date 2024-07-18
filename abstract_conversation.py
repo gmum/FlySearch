@@ -5,6 +5,13 @@ class Message:
     def payload(self) -> dict:
         pass
 
+    def __str__(self) -> str:
+        """
+        This class should return a plaintext version of the message, without any "technical" details (such as [ or ] signs).
+        It may lose some information.
+        """
+        return ""
+
 
 class Conversation:
     """

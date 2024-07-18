@@ -55,7 +55,7 @@ class OpenAIConversation(Conversation):
             }
 
         def __str__(self):
-            return f"Role: {self.role}, Messages: {[str(message) for message in self.messages]}"
+            return "\n".join([str(message) for message in self.messages])
 
     def __init__(self, client: OpenAI):
         self.client = client
@@ -64,11 +64,13 @@ class OpenAIConversation(Conversation):
     def send_messages(self, *messages: Message) -> None:
         aggregate = OpenAIConversation.OpenAIMessageAggregation("user", list(messages))
 
-        self.conversation.append(aggregate.payload())
+        self.conversation.append(aggregate)
+
+        payloads = [message.payload() for message in self.conversation]
 
         response = self.client.chat.completions.create(
             model="gpt-4o",
-            messages=self.conversation,
+            messages=payloads,
             max_tokens=300,
         )
 
@@ -80,7 +82,7 @@ class OpenAIConversation(Conversation):
             [OpenAITextMessage(response_content)]
         )
 
-        self.conversation.append(reply.payload())
+        self.conversation.append(reply)
 
     def get_latest_message(self) -> Message:
         return self.conversation[-1]
