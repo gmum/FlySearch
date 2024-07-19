@@ -15,35 +15,42 @@ class OpenAIVisualExplorer:
     glimpse_size = (32, 32)
     image_size = (224, 224)
     number_glimpses = 5
-    prompt = f"""
-        I need you to classify this image by using an imagenet class. However, it's been resized to {glimpse_size} pixels.
+
+    def get_prompt(self):
+        return f"""
+        I need you to classify this image by using an imagenet class {"NUMBER" if self.set_label else "STRING"}. However, it's been resized to {self.glimpse_size} pixels.
         You can ask for specific parts of the image in larger resolution by specifying (x, y) coordinates of the top-left 
-        and bottom-right corners of the rectangle you want to see. Said rectangle will also be resized to {glimpse_size} pixels
+        and bottom-right corners of the rectangle you want to see. Said rectangle will also be resized to {self.glimpse_size} pixels
         so the larger it is, the less detailed it will be. 
         
         For example, if you want to see the top-left corner of the image, you can specify (0, 0) and (0.25, 0.25) as the corners.
         Consequently, currently you are provided with the glimpse with coordinates (0, 0) and (1, 1).
         
         Of course, you can go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
-        Just do your best, it's a very important competition. Winner is determined by the most accurate classification AND the least 
-        number of glimpses requested. If you win, you'll get a cake. I'll too. Otherwise I'll be fired. 
-        
+                        
         Using the same format, please specify the coordinates of the next rectangle you want to see or choose to classify the image.
         DO NOT WRITE ANYTHING ELSE THAN THE COORDINATES OR YOUR CLASSIFICATION GUESS. I WILL BE FIRED IF YOU DO.
         
-        WE WILL BOTH BE FIRED IF YOU REQUEST MORE THAN {number_glimpses} GLIMPSES.
+        DO NOT CLASSIFY UNLESS YOU ARE MORE THAN 95% SURE OR THE LIMIT OF GLIMPSES HAS BEEN REACHED. FAILURE IS NOT AN OPTION.
+        YOU WILL BE FIRED IF YOU MISS THE CORRECT CLASSIFICATION. I WILL BE FIRED, TOO. 
+        
+        Management has been very clear about this, but they've promised us a cake if we succeed. Please, don't let me down.
+        
+        WE WILL BOTH BE FIRED IF YOU REQUEST MORE THAN {self.number_glimpses} GLIMPSES.
         
         OUTPUT FORMAT: (x1, y1) and (x2, y2) OR CLASSIFICATION: <your guess>
         
-        IF YOU DON'T USE IMAGENET CLASS, THE ENTIRE TEAM WILL BE FIRED.
+        IF YOU DON'T USE IMAGENET CLASS, THE ENTIRE TEAM WILL BE FIRED. {"THIS CLASS IS A NUMBER, NOT A STRING." if self.set_label else ""}
     """
 
-    def __init__(self, client: OpenAI, conversation: Conversation, image: np.ndarray) -> None:
-        self.client = client
+    def __init__(self, conversation: Conversation, image: np.ndarray, set_label=False) -> None:
         self.conversation = conversation
         self.image = cv2.resize(image, self.image_size)
         self.glimpses = []
         self.glimpse_requests = []
+        self.response = -1
+        self.set_label = set_label
+        self.prompt = self.get_prompt()
 
     def step(self, x1=0.0, y1=0.0, x2=1.0, y2=1.0) -> str:
         x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(x1, y1, x2, y2)
@@ -90,10 +97,16 @@ class OpenAIVisualExplorer:
         response = self.step()
 
         for _ in range(self.number_glimpses - 1):
-            print("Response:", response)
-
             if "CLASSIFICATION" in response:
-                return response
+                response = response.split(":")[1].strip()
+                if self.set_label:
+                    try:
+                        self.response = int(response)
+                    except:
+                        print("Invalid response")
+                else:
+                    self.response = response
+                return
 
             coords = self.convert_str_coords_to_coords(response)
 
@@ -125,19 +138,21 @@ class OpenAIVisualExplorer:
     def save_glimpse_list(self, filename: str) -> None:
         _, axes = plt.subplots(1, len(self.glimpses))
 
-        for glimpse, axe in zip(self.glimpses, axes):
-            # Deal with matplotlib being funny
-            glimpse = glimpse[:, :, ::-1]
+        try:
+            for glimpse, axe in zip(self.glimpses, axes):
+                # Deal with matplotlib being funny
+                glimpse = glimpse[:, :, ::-1]
 
-            axe.imshow(glimpse)
-            axe.axis("off")
+                axe.imshow(glimpse)
+                axe.axis("off")
+        except TypeError:
+            cv2.imwrite(filename, self.glimpses[0])
+            return
 
         plt.savefig(filename)
 
     def save_unified_image(self, filename: str) -> None:
         image = np.zeros_like(self.image)
-
-        print(image.shape)
 
         glimpse_coords = [(0.0, 0.0, 1.0, 1.0)] + self.glimpse_requests
 
@@ -152,6 +167,9 @@ class OpenAIVisualExplorer:
 
         cv2.imwrite(filename, image)
 
+    def get_response(self) -> int | str:
+        return self.response
+
 
 def main():
     client = OpenAI(api_key=OPEN_AI_KEY)
@@ -162,12 +180,13 @@ def main():
     image = cv2.imread("imagenet-sample-images/n01632777_axolotl.JPEG")
     # image = cv2.imread("sample_images/burger.jpeg")
 
-    explorer = OpenAIVisualExplorer(client, conversation, image)
+    explorer = OpenAIVisualExplorer(conversation, image)
     explorer.classify()
 
     explorer.save_glimpse_boxes("glimpses.jpeg")
     explorer.save_glimpse_list("glimpse_list.jpeg")
     explorer.save_unified_image("unified_image.jpeg")
+    print(explorer.get_response())
 
 
 if __name__ == "__main__":
