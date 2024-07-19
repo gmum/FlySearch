@@ -1,6 +1,9 @@
 import numpy as np
 import cv2
+import torchvision
+import torch
 
+from matplotlib import pyplot as plt
 from openai import OpenAI
 
 from abstract_conversation import Message, Conversation
@@ -10,6 +13,7 @@ from config import OPEN_AI_KEY
 
 class OpenAIVisualExplorer:
     glimpse_size = (32, 32)
+    image_size = (224, 224)
     number_glimpses = 5
     prompt = f"""
         I need you to classify this image by using an imagenet class. However, it's been resized to {glimpse_size} pixels.
@@ -37,19 +41,14 @@ class OpenAIVisualExplorer:
     def __init__(self, client: OpenAI, conversation: Conversation, image: np.ndarray) -> None:
         self.client = client
         self.conversation = conversation
-        self.image = image
+        self.image = cv2.resize(image, self.image_size)
         self.glimpses = []
+        self.glimpse_requests = []
 
     def step(self, x1=0.0, y1=0.0, x2=1.0, y2=1.0) -> str:
-        height = self.image.shape[0]
-        width = self.image.shape[1]
+        x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(x1, y1, x2, y2)
 
-        x1 = int(x1 * width)
-        y1 = int(y1 * height)
-        x2 = int(x2 * width)
-        y2 = int(y2 * height)
-
-        glimpse = self.image[y1:y2, x1:x2]
+        glimpse = self.image[y1:y2, x1:x2, :]
         glimpse = cv2.resize(glimpse, self.glimpse_size)
 
         self.glimpses.append(glimpse)
@@ -61,6 +60,17 @@ class OpenAIVisualExplorer:
         )
 
         return str(self.conversation.get_latest_message())
+
+    def convert_proportional_coords_to_pixel(self, x1, y1, x2, y2):
+        height = self.image_size[0]
+        width = self.image_size[1]
+
+        x1 = int(x1 * width)
+        y1 = int(y1 * height)
+        x2 = int(x2 * width)
+        y2 = int(y2 * height)
+
+        return x1, y1, x2, y2
 
     def convert_str_coords_to_coords(self, coords: str) -> tuple:
         coords = coords.split("and")
@@ -79,24 +89,85 @@ class OpenAIVisualExplorer:
     def classify(self):
         response = self.step()
 
-        for i in range(self.number_glimpses - 1):
+        for _ in range(self.number_glimpses - 1):
             print("Response:", response)
 
             if "CLASSIFICATION" in response:
                 return response
 
             coords = self.convert_str_coords_to_coords(response)
+
+            self.glimpse_requests.append(coords)
+
             response = self.step(*coords)
+
+    def save_glimpse_boxes(self, filename: str) -> None:
+        image_with_glimpses = self.image
+
+        # Convert image to torch tensor
+        image_with_glimpses = torch.tensor(image_with_glimpses).permute(2, 0, 1)
+
+        for coords in self.glimpse_requests:
+            x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(*coords)
+
+            image_with_glimpses = torchvision.utils.draw_bounding_boxes(
+                image_with_glimpses,
+                torch.tensor([[x1, y1, x2, y2]]),
+                width=5
+            )
+
+        # Convert image back to numpy array
+        image_with_glimpses = image_with_glimpses.permute(1, 2, 0).numpy()
+
+        # Save image
+        cv2.imwrite(filename, image_with_glimpses)
+
+    def save_glimpse_list(self, filename: str) -> None:
+        _, axes = plt.subplots(1, len(self.glimpses))
+
+        for glimpse, axe in zip(self.glimpses, axes):
+            # Deal with matplotlib being funny
+            glimpse = glimpse[:, :, ::-1]
+
+            axe.imshow(glimpse)
+            axe.axis("off")
+
+        plt.savefig(filename)
+
+    def save_unified_image(self, filename: str) -> None:
+        image = np.zeros_like(self.image)
+
+        print(image.shape)
+
+        glimpse_coords = [(0.0, 0.0, 1.0, 1.0)] + self.glimpse_requests
+
+        for glimpse, coords in zip(self.glimpses, glimpse_coords):
+            x_1, y_1, x_2, y_2 = self.convert_proportional_coords_to_pixel(*coords)
+            diff_x = int(x_2 - x_1)
+            diff_y = int(y_2 - y_1)
+
+            glimpse = cv2.resize(glimpse, (diff_x, diff_y))
+
+            image[y_1:y_2, x_1:x_2, :] = glimpse
+
+        cv2.imwrite(filename, image)
 
 
 def main():
     client = OpenAI(api_key=OPEN_AI_KEY)
     conversation = OpenAIConversation(client)
 
-    image = cv2.imread("sample_images/burger.jpeg")
+    # image = cv2.imread("imagenet-sample-images/n01616318_vulture.JPEG")
+    # image = cv2.imread("imagenet-sample-images/n09835506_ballplayer.JPEG")
+    image = cv2.imread("imagenet-sample-images/n01632777_axolotl.JPEG")
+    # image = cv2.imread("sample_images/burger.jpeg")
 
     explorer = OpenAIVisualExplorer(client, conversation, image)
     explorer.classify()
+
+    explorer.save_glimpse_boxes("glimpses.jpeg")
+    explorer.save_glimpse_list("glimpse_list.jpeg")
+    explorer.save_unified_image("unified_image.jpeg")
 
 
 if __name__ == "__main__":
