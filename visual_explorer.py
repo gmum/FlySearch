@@ -96,7 +96,9 @@ class OpenAIVisualExplorer:
     def classify(self):
         response = self.step()
 
-        for _ in range(self.number_glimpses - 1):
+        # We are not subtracting one from self.number_glimpses because one step can be used for classification
+        # If no classification is given, the model will respond "-1" and that won't be treated as a correct answer
+        for _ in range(self.number_glimpses):
             if "CLASSIFICATION" in response:
                 response = response.split(":")[1].strip()
                 if self.set_label:
