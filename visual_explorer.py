@@ -23,24 +23,17 @@ class OpenAIVisualExplorer:
         and bottom-right corners of the rectangle you want to see. Said rectangle will also be resized to {self.glimpse_size} pixels
         so the larger it is, the less detailed it will be. 
         
-        For example, if you want to see the top-left corner of the image, you can specify (0, 0) and (0.25, 0.25) as the corners.
-        Consequently, currently you are provided with the glimpse with coordinates (0, 0) and (1, 1).
-        
-        Of course, you can go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
+        For example, if you want to see the top-left corner of the image, you can specify (0, 0) and (0.25, 0.25) as the corners.        
+        Of course, you can also go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
                         
         Using the same format, please specify the coordinates of the next rectangle you want to see or choose to classify the image.
-        DO NOT WRITE ANYTHING ELSE THAN THE COORDINATES OR YOUR CLASSIFICATION GUESS. I WILL BE FIRED IF YOU DO.
+        DO NOT WRITE ANYTHING ELSE THAN THE COORDINATES OR YOUR CLASSIFICATION GUESS. 
         
-        DO NOT CLASSIFY UNLESS YOU ARE MORE THAN 95% SURE OR THE LIMIT OF GLIMPSES HAS BEEN REACHED. FAILURE IS NOT AN OPTION.
-        YOU WILL BE FIRED IF YOU MISS THE CORRECT CLASSIFICATION. I WILL BE FIRED, TOO. 
-        
-        Management has been very clear about this, but they've promised us a cake if we succeed. Please, don't let me down.
-        
-        WE WILL BOTH BE FIRED IF YOU REQUEST MORE THAN {self.number_glimpses} GLIMPSES.
+        Classify when you're reasonably certain about the specific Imagenet class. Note that there are many classes that mamy seem similar, so you need to be very precise.
+                        
+        You can request at most {self.number_glimpses} glimpses.
         
         OUTPUT FORMAT: (x1, y1) and (x2, y2) OR CLASSIFICATION: <your guess>
-        
-        IF YOU DON'T USE IMAGENET CLASS, THE ENTIRE TEAM WILL BE FIRED. {"THIS CLASS IS A NUMBER, NOT A STRING." if self.set_label else ""}
     """
 
     def __init__(self, conversation: Conversation, image: np.ndarray, set_label=False) -> None:
