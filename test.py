@@ -72,8 +72,6 @@ def main():
         explorer.save_glimpse_list(f"test_logs/{i}/glimpses_list_{i}.png")
         explorer.save_unified_image(f"test_logs/{i}/unified_{i}.png")
 
-        sleep(30)  # This has to be done to avoid rate limiting
-
     print("Correct answers:", correct_answers)
     print("Total answers:", total_answers)
     print("Accuracy:", correct_answers / total_answers)

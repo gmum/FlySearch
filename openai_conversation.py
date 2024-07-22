@@ -4,6 +4,8 @@ from enum import Enum
 from typing_extensions import Buffer
 
 from openai import OpenAI
+from openai import RateLimitError
+from time import sleep
 
 from abstract_conversation import Message, Conversation
 
@@ -62,6 +64,26 @@ class OpenAIConversation(Conversation):
         self.client = client
         self.conversation = []
 
+    def get_answer_from_openai(self, model, messages, max_tokens):
+        fail = True
+        response = None
+
+        while fail:
+            try:
+                response = self.client.chat.completions.create(
+                    model="gpt-4o",
+                    messages=messages,
+                    max_tokens=max_tokens,
+                )
+                fail = False
+            except RateLimitError as e:
+                print("Rate limit error")
+                print(e)
+                sleep(120)
+                fail = True
+
+        return response
+
     def send_messages(self, *messages: Message) -> None:
         aggregate = OpenAIConversation.OpenAIMessageAggregation("user", list(messages))
 
@@ -69,10 +91,10 @@ class OpenAIConversation(Conversation):
 
         payloads = [message.payload() for message in self.conversation]
 
-        response = self.client.chat.completions.create(
+        response = self.get_answer_from_openai(
             model="gpt-4o",
             messages=payloads,
-            max_tokens=300,
+            max_tokens=300
         )
 
         response_content = str(response.choices[0].message.content)

@@ -99,7 +99,7 @@ class OpenAIVisualExplorer:
         # We are not subtracting one from self.number_glimpses because one step can be used for classification
         # If no classification is given, the model will respond "-1" and that won't be treated as a correct answer
         for _ in range(self.number_glimpses):
-            if "CLASSIFICATION" in response:
+            if "classification" in response.lower():
                 response = response.split(":")[1].strip()
                 if self.set_label:
                     try:
@@ -109,8 +109,11 @@ class OpenAIVisualExplorer:
                 else:
                     self.response = response
                 return
-
-            coords = self.convert_str_coords_to_coords(response)
+            try:
+                coords = self.convert_str_coords_to_coords(response)
+            except:
+                print("Invalid coordinates", response)
+                return
 
             self.glimpse_requests.append(coords)
 
