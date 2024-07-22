@@ -71,7 +71,7 @@ class OpenAIConversation(Conversation):
         while fail:
             try:
                 response = self.client.chat.completions.create(
-                    model="gpt-4o",
+                    model=model,
                     messages=messages,
                     max_tokens=max_tokens,
                 )
@@ -92,7 +92,7 @@ class OpenAIConversation(Conversation):
         payloads = [message.payload() for message in self.conversation]
 
         response = self.get_answer_from_openai(
-            model="gpt-4o",
+            model="gpt-4o-mini",
             messages=payloads,
             max_tokens=300
         )
