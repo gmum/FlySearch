@@ -81,6 +81,10 @@ class OpenAIConversation(Conversation):
                 print(e)
                 sleep(120)
                 fail = True
+                try:
+                    print(self)
+                except Exception as e:
+                    print(e)
 
         return response
 
@@ -92,7 +96,7 @@ class OpenAIConversation(Conversation):
         payloads = [message.payload() for message in self.conversation]
 
         response = self.get_answer_from_openai(
-            model="gpt-4o-mini",
+            model="gpt-4o",
             messages=payloads,
             max_tokens=300
         )
@@ -112,6 +116,9 @@ class OpenAIConversation(Conversation):
 
     def get_entire_conversation(self) -> list[Message]:
         return self.conversation
+
+    def __repr__(self):
+        return "\n".join([str(message) for message in self.conversation])
 
 
 def main():

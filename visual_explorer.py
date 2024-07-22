@@ -45,7 +45,7 @@ class OpenAIVisualExplorer:
         self.set_label = set_label
         self.prompt = self.get_prompt()
 
-    def step(self, x1=0.0, y1=0.0, x2=1.0, y2=1.0) -> str:
+    def step(self, x1=0.0, y1=0.0, x2=1.0, y2=1.0, first=False) -> str:
         x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(x1, y1, x2, y2)
 
         glimpse = self.image[y1:y2, x1:x2, :]
@@ -53,10 +53,14 @@ class OpenAIVisualExplorer:
 
         self.glimpses.append(glimpse)
 
+        messages = [OpenAIBase64ImageMessage(cv2.imencode('.jpeg', glimpse)[1].tobytes(), 'jpeg') for glimpse in
+                    self.glimpses]
+
+        if first:
+            messages = [OpenAITextMessage(self.prompt)] + messages
+
         self.conversation.send_messages(
-            OpenAITextMessage(self.prompt),
-            *[OpenAIBase64ImageMessage(cv2.imencode('.jpeg', glimpse)[1].tobytes(), 'jpeg') for glimpse in
-              self.glimpses]
+            *messages
         )
 
         return str(self.conversation.get_latest_message())
@@ -87,7 +91,7 @@ class OpenAIVisualExplorer:
         return x1, y1, x2, y2
 
     def classify(self):
-        response = self.step()
+        response = self.step(first=True)
 
         # We are not subtracting one from self.number_glimpses because one step can be used for classification
         # If no classification is given, the model will respond "-1" and that won't be treated as a correct answer

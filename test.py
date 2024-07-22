@@ -35,7 +35,6 @@ def main():
     start = 0
 
     subset = torch.utils.data.Subset(imagenet, range(start, dataset_size, step))
-    conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
 
     correct_answers = 0
     total_answers = 0
@@ -43,6 +42,8 @@ def main():
     bar = tqdm(enumerate(subset), total=len(subset))
 
     for i, (image, label) in bar:
+        conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
+
         pathlib.Path(f"test_logs/{i}").mkdir(exist_ok=True)
 
         explorer = OpenAIVisualExplorer(conversation, image)
@@ -62,7 +63,8 @@ def main():
             "model_response": model_response,
             "expected_label": label,
             "expected_response": id_to_name[label],
-            "correct": correct
+            "correct": correct,
+            "conversation": str(conversation)
         }
 
         with open(f"test_logs/{i}/responses.json", "w") as f:
