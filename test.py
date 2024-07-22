@@ -29,10 +29,10 @@ def main():
         transform=from_pil_to_opencv
     )
 
-    approx_test_cases = 50
+    approx_test_cases = 200
     dataset_size = len(imagenet)
     step = dataset_size // approx_test_cases
-    start = 0
+    start = 7 + 32 * step
 
     subset = torch.utils.data.Subset(imagenet, range(start, dataset_size, step))
 
@@ -71,8 +71,8 @@ def main():
             json.dump(responses, f, indent=4)
 
         explorer.save_glimpse_boxes(f"test_logs/{i}/glimpses.png")
-        explorer.save_glimpse_list(f"test_logs/{i}/glimpses_list_{i}.png")
-        explorer.save_unified_image(f"test_logs/{i}/unified_{i}.png")
+        explorer.save_glimpse_list(f"test_logs/{i}/glimpses_list.png")
+        explorer.save_unified_image(f"test_logs/{i}/unified.png")
 
     print("Correct answers:", correct_answers)
     print("Total answers:", total_answers)

@@ -149,9 +149,11 @@ class OpenAIVisualExplorer:
                 axe.axis("off")
         except TypeError:
             cv2.imwrite(filename, self.glimpses[0])
+            plt.close()
             return
 
         plt.savefig(filename)
+        plt.close()
 
     def save_unified_image(self, filename: str) -> None:
         image = np.zeros_like(self.image)
