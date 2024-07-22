@@ -2,7 +2,10 @@ import torch
 import torchvision
 import cv2
 import numpy as np
+import os
+import pathlib
 
+from tqdm import tqdm
 from openai import OpenAI
 
 from visual_explorer import OpenAIVisualExplorer
@@ -23,23 +26,45 @@ def main():
         transform=from_pil_to_opencv
     )
 
-    conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
-    subset = torch.utils.data.Subset(imagenet, range(1, 5000, 1000))
+    approx_test_cases = 10
+    dataset_size = len(imagenet)
+    step = dataset_size // approx_test_cases
+    start = 0
 
-    for i, (image, label) in enumerate(subset):
+    subset = torch.utils.data.Subset(imagenet, range(start, dataset_size, step))
+    conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
+
+    correct_answers = 0
+    total_answers = 0
+
+    bar = tqdm(enumerate(subset), total=len(subset))
+
+    for i, (image, label) in bar:
+        pathlib.Path(f"test_logs/{i}").mkdir(exist_ok=True)
+
         explorer = OpenAIVisualExplorer(conversation, image)
         explorer.classify()
 
-        explorer.save_glimpse_boxes(f"test_logs/glimpses_{i}.png")
-        explorer.save_glimpse_list(f"test_logs/glimpses_list_{i}.png")
-        explorer.save_unified_image(f"test_logs/unified_{i}.png")
+        explorer.save_glimpse_boxes(f"test_logs/{i}/glimpses.png")
+        explorer.save_glimpse_list(f"test_logs/{i}/glimpses_list_{i}.png")
+        explorer.save_unified_image(f"test_logs/{i}/unified_{i}.png")
 
         model_response = explorer.get_response()
 
         print("Model response:", model_response)
         print("Expected label:", label)
 
-        print("Correctness:", check_validity_of_answer(model_response, label))
+        valid = check_validity_of_answer(model_response, label)
+        total_answers += 1
+
+        if valid:
+            correct_answers += 1
+
+        bar.set_postfix(accuracy=correct_answers / total_answers)
+
+    print("Correct answers:", correct_answers)
+    print("Total answers:", total_answers)
+    print("Accuracy:", correct_answers / total_answers)
 
 
 if __name__ == "__main__":
