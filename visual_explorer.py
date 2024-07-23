@@ -2,6 +2,7 @@ import numpy as np
 import cv2
 import torchvision
 import torch
+import re
 
 from matplotlib import pyplot as plt
 from openai import OpenAI
@@ -27,13 +28,15 @@ class OpenAIVisualExplorer:
         Of course, you can also go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
                         
         Using the same format, please specify the coordinates of the next rectangle you want to see or choose to classify the image.
-        DO NOT WRITE ANYTHING ELSE THAN THE COORDINATES OR YOUR CLASSIFICATION GUESS. 
+        You also MUST specify your reasoning after each decision, as this is beneficial for LLMs, such as you. Put your reasoning in < and >.
+        YOUR COMMENTS MUST BE PUT IN < AND >. NOTHING ELSE SHOULD BE IN THESE BRACKETS.
         
         Classify when you're reasonably certain about the specific Imagenet class. Note that there are many classes that mamy seem similar, so you need to be very precise.
                         
         You can request at most {self.number_glimpses} glimpses.
         
-        OUTPUT FORMAT: (x1, y1) and (x2, y2) OR CLASSIFICATION: <your guess>
+        OUTPUT FORMAT: (x1, y1) and (x2, y2) OR CLASSIFICATION: (your guess).
+        
     """
 
     def __init__(self, conversation: Conversation, image: np.ndarray, set_label=False) -> None:
@@ -63,7 +66,8 @@ class OpenAIVisualExplorer:
             *messages
         )
 
-        return str(self.conversation.get_latest_message())
+        unfiltered = str(self.conversation.get_latest_message())
+        return re.sub(r"<.*>", "", unfiltered)
 
     def convert_proportional_coords_to_pixel(self, x1, y1, x2, y2):
         height = self.image_size[0]

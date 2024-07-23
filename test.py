@@ -29,10 +29,10 @@ def main():
         transform=from_pil_to_opencv
     )
 
-    approx_test_cases = 200
+    approx_test_cases = 1
     dataset_size = len(imagenet)
     step = dataset_size // approx_test_cases
-    start = 7 + 32 * step
+    start = 0
 
     subset = torch.utils.data.Subset(imagenet, range(start, dataset_size, step))
 
