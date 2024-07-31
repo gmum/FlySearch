@@ -13,7 +13,12 @@ def get_prompt(predicted_class: str, expected_label: int) -> str:
     return f"""
     The model was asked to assign an ImageNet label for a picture. It's answer was {predicted_class}
     The correct label is: {id_to_name[expected_label]}. Did the model answer correctly? Answer ONLY using "YES" or 
-    "NO" in capital letters. DO NOT WRITE ANYTHING ELSE."""
+    "NO" in capital letters. DO NOT WRITE ANYTHING ELSE.
+    
+    Note that correct label may contain synonymic names divided by comma. For example, is the model's answer was "tench",
+    but the correct answer was "tench, Tinca tinca", the answer should be "YES".
+
+    """
 
 
 def check_validity_of_answer(predicted_class: str, expected_label: int) -> bool:
@@ -33,8 +38,9 @@ def check_validity_of_answer(predicted_class: str, expected_label: int) -> bool:
 
 
 def main():
-    check_validity_of_answer("goldfish", 1)
-    check_validity_of_answer("chair", 0)
+    print(check_validity_of_answer("goldfish", 1))
+    print(check_validity_of_answer("chair", 0))
+    print(check_validity_of_answer("fish", 0))
 
 
 if __name__ == "__main__":

@@ -33,7 +33,7 @@ class OpenAIVisualExplorer:
         
         Classify when you're reasonably certain about the specific Imagenet class. Note that there are many classes that mamy seem similar, so you need to be very precise.
                         
-        You can request at most {self.number_glimpses} glimpses.
+        You can request at most {self.number_glimpses - 1} glimpses.
         
         OUTPUT FORMAT: (x1, y1) and (x2, y2) OR CLASSIFICATION: (your guess).
         
@@ -76,7 +76,8 @@ class OpenAIVisualExplorer:
         )
 
         unfiltered = str(self.conversation.get_latest_message())
-        return re.sub(r"<.*>", "", unfiltered)
+        unfiltered = unfiltered.replace("Model:", "").replace("model:", "").strip() # to avoid any funny business with the model's response
+        return re.sub(r"<.*>", "", unfiltered, flags=re.S).replace("\n", "").strip()
 
     def convert_proportional_coords_to_pixel(self, x1, y1, x2, y2):
         height = self.image_size[0]
@@ -167,6 +168,13 @@ class OpenAIVisualExplorer:
 
         plt.savefig(filename)
         plt.close()
+    
+    def save_glimpses_individually(self, filename_pref: str) -> None: 
+        try: 
+            for i, glimpse in enumerate(self.glimpses): 
+                cv2.imwrite(f"{filename_pref}_{i}.jpeg", glimpse)
+        except:
+            pass 
 
     def save_unified_image(self, filename: str) -> None:
         image = np.zeros_like(self.image)

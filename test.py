@@ -24,7 +24,7 @@ def from_pil_to_opencv(image):
 
 def main():
     imagenet = torchvision.datasets.ImageNet(
-        root="/home/dominik/imagenet",
+        root="/home/dominik/ImageNet",
         split="val",
         transform=from_pil_to_opencv
     )
@@ -40,6 +40,8 @@ def main():
     total_answers = 0
 
     bar = tqdm(enumerate(subset), total=len(subset))
+
+    pathlib.Path("test_logs").mkdir(exist_ok=True)
 
     for i, (image, label) in bar:
         conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
@@ -73,6 +75,7 @@ def main():
         explorer.save_glimpse_boxes(f"test_logs/{i}/glimpses.png")
         explorer.save_glimpse_list(f"test_logs/{i}/glimpses_list.png")
         explorer.save_unified_image(f"test_logs/{i}/unified.png")
+        explorer.save_glimpses_individually(f"test_logs/{i}/glimpse")
 
     print("Correct answers:", correct_answers)
     print("Total answers:", total_answers)

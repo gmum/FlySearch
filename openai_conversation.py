@@ -74,6 +74,7 @@ class OpenAIConversation(Conversation):
                     model=model,
                     messages=messages,
                     max_tokens=max_tokens,
+                    seed=42
                 )
                 fail = False
             except RateLimitError as e:
