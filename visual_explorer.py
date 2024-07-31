@@ -40,7 +40,7 @@ class OpenAIVisualExplorer:
         Example: 
         
         (Image of a cat)
-        Model: <This seems like a manmal, but I can't tell for sure which one. I'll zoom on its head> (0.1, 0.1) and (0.35, 0.2)
+        Model: <This seems like a mammal, but I can't tell for sure which one. I'll zoom on its head> (0.1, 0.1) and (0.35, 0.2)
         (Glimpse of the cat's head)
         Model: <This is a cat, but I need to specify the breed for ImageNet. I will take a look at its tail with a great zoom.> (0.5, 0.5) and (0.55, 0.55)
         (Glimpse of the cat's tail)
