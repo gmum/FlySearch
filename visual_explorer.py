@@ -13,7 +13,7 @@ from config import OPEN_AI_KEY
 
 
 class OpenAIVisualExplorer:
-    glimpse_size = (32, 32)
+    glimpse_size = (224, 224)
     image_size = (224, 224)
     number_glimpses = 5
 
@@ -26,10 +26,13 @@ class OpenAIVisualExplorer:
         
         For example, if you want to see the top-left corner of the image, you can specify (0, 0) and (0.25, 0.25) as the corners.        
         Of course, you can also go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
+        
+        The first coordinate is vertical, the second one is horizontal. For example, to get the bottom-left corner of the image, you can specify (0.75, 0) and (1, 0.25).
+        To help you out with coordinates, a white grid has been added to the image. Each line is roughly at 20% mark of the image's height or width (starting from 0, then through 0.2 and so on).
                         
         Using the same format, please specify the coordinates of the next rectangle you want to see or choose to classify the image.
         You also MUST specify your reasoning after each decision, as this is beneficial for LLMs, such as you. Put your reasoning in < and >.
-        YOUR COMMENTS MUST BE PUT IN < AND >. NOTHING ELSE SHOULD BE IN THESE BRACKETS.
+        YOUR COMMENTS MUST BE PUT IN < AND >. NOTHING ELSE SHOULD BE IN THESE BRACKETS. DO NOT PUT COORDINATES IN THESE BRACKETS.
         
         Classify when you're reasonably certain about the specific Imagenet class. Note that there are many classes that mamy seem similar, so you need to be very precise.
                         
@@ -50,12 +53,26 @@ class OpenAIVisualExplorer:
 
     def __init__(self, conversation: Conversation, image: np.ndarray, set_label=False) -> None:
         self.conversation = conversation
-        self.image = cv2.resize(image, self.image_size)
+        self.image = self.add_grids_to_image(cv2.resize(image, self.image_size), splits=5, split_width=5)
         self.glimpses = []
         self.glimpse_requests = []
         self.response = -1
         self.set_label = set_label
         self.prompt = self.get_prompt()
+
+    def add_grids_to_image(self, image: np.ndarray, splits: int, split_width: int) -> np.ndarray:
+        print(image.shape)
+
+        height, width = image.shape[:2]
+
+        x_diff = width // splits
+        y_diff = height // splits
+
+        for i in range(split_width):
+            image[:, i::x_diff, :] = 255
+            image[i::y_diff, :, :] = 255
+
+        return image
 
     def step(self, x1=0.0, y1=0.0, x2=1.0, y2=1.0, first=False) -> str:
         x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(x1, y1, x2, y2)
@@ -206,6 +223,9 @@ def main():
     # image = cv2.imread("sample_images/burger.jpeg")
 
     explorer = OpenAIVisualExplorer(conversation, image)
+
+    exit()
+
     explorer.classify()
 
     explorer.save_glimpse_boxes("glimpses.jpeg")
