@@ -35,7 +35,7 @@ class OpenAIBase64ImageMessage(Message):
             "type": "image_url",
             "image_url": {
                 "url": f"data:image/{self.image_type};base64,{self.base64}",
-                "detail": "low"
+                "detail": "high"  # FIXME
             }
         }
 
