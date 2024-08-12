@@ -68,8 +68,6 @@ Options:
 
         cv2.imwrite(f"test_logs/{i}/image.jpeg", image)
 
-        break
-
 
 if __name__ == "__main__":
     main()
