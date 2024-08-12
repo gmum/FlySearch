@@ -27,7 +27,7 @@ class OpenAIVisualExplorer:
         For example, if you want to see the top-left corner of the image, you can specify (0, 0) and (0.25, 0.25) as the corners.        
         Of course, you can also go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
         
-        The first coordinate is vertical, the second one is horizontal. For example, to get the bottom-left corner of the image, you can specify (0.75, 0) and (1, 0.25).
+        The first coordinate is horizontal, the second one is vertical. For example, to get the bottom-left corner of the image, you can specify (0.0, 0.75) and (0.25, 0.75).
         To help you out with coordinates, a white grid has been added to the image. Each line is roughly at 20% mark of the image's height or width (starting from 0, then through 0.2 and so on).
                         
         Using the same format, please specify the coordinates of the next rectangle you want to see or choose to classify the image.

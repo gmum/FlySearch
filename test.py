@@ -21,6 +21,25 @@ from imagenet_classes import id_to_name
 def from_pil_to_opencv(image):
     return np.array(image)[:, :, ::-1].copy()
 
+def get_imagenet_length():
+    imagenet = torchvision.datasets.ImageNet(
+        root="/home/dominik/ImageNet",
+        split="val",
+        transform=from_pil_to_opencv
+    )
+
+    return len(imagenet)
+
+def get_subset_ids():
+    #approx_test_cases = 1
+    #dataset_size = get_imagenet_length()
+    #step = dataset_size // approx_test_cases
+    #start = 0
+
+    #return range(start, dataset_size, step)
+
+    with open("subset_indexes.json", "r") as f:
+        return json.load(f)
 
 def main():
     imagenet = torchvision.datasets.ImageNet(
@@ -29,12 +48,7 @@ def main():
         transform=from_pil_to_opencv
     )
 
-    approx_test_cases = 1
-    dataset_size = len(imagenet)
-    step = dataset_size // approx_test_cases
-    start = 0
-
-    subset = torch.utils.data.Subset(imagenet, range(start, dataset_size, step))
+    subset = torch.utils.data.Subset(imagenet, get_subset_ids())
 
     correct_answers = 0
     total_answers = 0
