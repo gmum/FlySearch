@@ -19,8 +19,8 @@ def from_pil_to_opencv(image):
 
 
 def main():
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=from_pil_to_opencv)
-    # ds = torch.utils.data.Subset(ds, range(10))
+    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=from_pil_to_opencv)
+    # ds = torch.utils.data.Subset(ds, [20])
 
     prompt_prefix = "You will be given a question and several answer options. You should choose the correct option based on the image provided to you. You just need to answer the question and do not need any information about individuals. When you are not sure about the answer, just guess the most likely one. To answer, simply copy entire text of one of the options. Do not copy the letter meant to represent option's position."
 
@@ -38,12 +38,17 @@ Options:
 
 """
 
-        conversation.send_messages(
-            OpenAITextMessage(text),
-            OpenAIBase64ImageMessage(cv2.imencode('.jpeg', image)[1].tobytes(), "jpeg")
-        )
+        model_response = ""
 
-        model_response = str(conversation.get_latest_message()).lower().strip()
+        try:
+            conversation.send_messages(
+                OpenAITextMessage(text),
+                OpenAIBase64ImageMessage(cv2.imencode('.jpeg', image)[1].tobytes(), "jpeg")
+            )
+            model_response = str(conversation.get_latest_message()).lower().strip()
+        except Exception as e:
+            model_response = "ERROR DURING TESTING! " + str(e)
+
         answer = answer.lower().strip()
 
         correct = model_response == answer
