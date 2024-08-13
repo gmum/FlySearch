@@ -12,6 +12,7 @@ from tqdm import tqdm
 from config import OPEN_AI_KEY
 from vstar_bench_dataset import VstarSubBenchDataset
 from openai_conversation import OpenAIConversation, OpenAITextMessage, OpenAIBase64ImageMessage
+from visual_explorer_vstar import OpenAIVisualVStarExplorer
 
 
 def from_pil_to_opencv(image):
@@ -20,7 +21,7 @@ def from_pil_to_opencv(image):
 
 def main():
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=from_pil_to_opencv)
-    # ds = torch.utils.data.Subset(ds, [20])
+    # ds = torch.utils.data.Subset(ds, range(10))
 
     prompt_prefix = "You will be given a question and several answer options. You should choose the correct option based on the image provided to you. You just need to answer the question and do not need any information about individuals. When you are not sure about the answer, just guess the most likely one. To answer, simply copy entire text of one of the options. Do not copy the letter meant to represent option's position."
 
@@ -31,21 +32,12 @@ def main():
 
     for i, (image, question, options, answer) in bar:
         conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
-        text = f"""{prompt_prefix}
-Question: {question}
-Options:
-{"\n".join(letter + ". " + option for letter, option in zip(string.ascii_uppercase, options))}
-
-"""
-
+        explorer = OpenAIVisualVStarExplorer(conversation, image, question, options)
         model_response = ""
 
         try:
-            conversation.send_messages(
-                OpenAITextMessage(text),
-                OpenAIBase64ImageMessage(cv2.imencode('.jpeg', image)[1].tobytes(), "jpeg")
-            )
-            model_response = str(conversation.get_latest_message()).lower().strip()
+            explorer.classify()
+            model_response = explorer.get_response().lower().strip()
         except Exception as e:
             model_response = "ERROR DURING TESTING! " + str(e)
 
@@ -59,12 +51,13 @@ Options:
         bar.set_postfix(accuracy=total_ok / (i + 1))
 
         report = {
-            "prompt": text,
+            "conversation": str(conversation),
             "question": question,
             "options": options,
             "model_response": model_response,
             "expected_response": answer,
-            "correct": correct
+            "correct": correct,
+            "conversation_list": [msg.payload() for msg in conversation.get_entire_conversation()]
         }
 
         pathlib.Path(f"test_logs/{i}").mkdir(exist_ok=True)
@@ -72,6 +65,10 @@ Options:
             json.dump(report, f, indent=4)
 
         cv2.imwrite(f"test_logs/{i}/image.jpeg", image)
+        explorer.save_glimpses_individually(f"test_logs/{i}/glimpse")
+        explorer.save_unified_image(f"test_logs/{i}/unified_image.jpeg")
+        explorer.save_glimpse_list(f"test_logs/{i}/glimpse_list.jpeg")
+        explorer.save_glimpse_boxes(f"test_logs/{i}/glimpse_boxes.jpeg")
 
 
 if __name__ == "__main__":

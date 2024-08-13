@@ -78,6 +78,10 @@ B. The red suitcase is on the right side of the man.
 
 === Model speaks ===
 <I have found a man with a logo of the Jagiellonian University on his T-shirt. The red suitcase is on his left side.> ANSWER: The red suitcase is on the left side of the man.
+
+<End of example>
+
+Now, you will be presented with the image and the question that you need to answer. Good luck!
 """
 
     def get_classification_prompt(self, question: str, options: list[str]) -> str:
