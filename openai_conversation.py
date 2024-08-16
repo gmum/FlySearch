@@ -102,7 +102,6 @@ class OpenAIConversation(Conversation):
         self.transaction_role = None
 
         if not send_to_vlm:
-            print("Not sending to VLM")
             return
 
         response = self.get_answer_from_openai(
@@ -144,6 +143,9 @@ class OpenAIConversation(Conversation):
 
     def get_latest_message(self):
         return self.get_conversation()[-1]
+
+    def get_entire_conversation(self):
+        return self.conversation
 
 
 def main():
