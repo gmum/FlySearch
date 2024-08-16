@@ -1,4 +1,6 @@
 import base64
+import cv2
+import numpy as np
 
 from enum import Enum
 from typing_extensions import Buffer
@@ -6,65 +8,77 @@ from typing_extensions import Buffer
 from openai import OpenAI
 from openai import RateLimitError
 from time import sleep
+from PIL import Image
 
-from abstract_conversation import Message, Conversation
-
-
-class OpenAITextMessage(Message):
-    def __init__(self, text: str):
-        self.text = text
-
-    def payload(self) -> dict:
-        return {
-            "type": "text",
-            "text": self.text
-        }
-
-    def __str__(self):
-        return self.text
+from abstract_conversation import Conversation, Role
 
 
-class OpenAIBase64ImageMessage(Message):
+def pil_to_opencv(image: Image.Image) -> np.ndarray:
+    return np.array(image)[:, :, ::-1].copy()
 
-    def __init__(self, image: Buffer, image_type: str):
-        self.base64 = base64.b64encode(image).decode('utf-8')
-        self.image_type = image_type
 
-    def payload(self) -> dict:
-        return {
-            "type": "image_url",
-            "image_url": {
-                "url": f"data:image/{self.image_type};base64,{self.base64}",
-                "detail": "high"  # FIXME
-            }
-        }
+def opencv_to_pil(image: np.ndarray) -> Image.Image:
+    return Image.fromarray(image[:, :, ::-1].copy())
 
 
 class OpenAIConversation(Conversation):
-    class OpenAIMessageAggregation(Message):
-        """
-        This class is meant to aggregate multiple messages and add info
-        Whether it's a user or an assistant message.
-        """
-
-        def __init__(self, role: str, messages: list[Message]):
-            self.messages = messages
-            self.role = role
-
-        def payload(self) -> dict:
-            return {
-                "role": self.role,
-                "content": [message.payload() for message in self.messages]
-            }
-
-        def __str__(self):
-            return "\n".join([str(message) for message in self.messages])
-
-    def __init__(self, client: OpenAI):
+    def __init__(self, client: OpenAI, model_name: str, seed=42, max_tokens=300):
         self.client = client
         self.conversation = []
+        self.model_name = model_name
+        self.seed = seed
+        self.max_tokens = max_tokens
 
-    def get_answer_from_openai(self, model, messages, max_tokens):
+        self.transaction_started = False
+        self.transaction_role = None
+        self.transaction_conversation = {}
+
+    def begin_transaction(self, role: Role):
+        if self.transaction_started:
+            raise Exception("Transaction already started")
+
+        self.transaction_started = True
+        self.transaction_role = role
+
+        role = "user" if role == Role.USER else "assistant"
+
+        self.transaction_conversation = {
+            "role": role,
+            "content": []
+        }
+
+    def add_text_message(self, text: str):
+        if not self.transaction_started:
+            raise Exception("Transaction not started")
+
+        content = self.transaction_conversation["content"]
+        content.append({
+            "type": "text",
+            "text": text
+        })
+
+    def add_image_message(self, image: Image.Image):
+        if not self.transaction_started:
+            raise Exception("Transaction not started")
+
+        image = image.convert("RGB")
+        image = pil_to_opencv(image)
+        base64_image = cv2.imencode('.jpeg', image)[1].tobytes()
+        base64_image = base64.b64encode(base64_image).decode('utf-8')
+
+        content = self.transaction_conversation["content"]
+
+        content.append(
+            {
+                "type": "image_url",
+                "image_url": {
+                    "url": f"data:image/jpeg;base64,{base64_image}",
+                    "detail": "high"  # FIXME
+                }
+            }
+        )
+
+    def get_answer_from_openai(self, model, messages, max_tokens, seed):
         fail = True
         response = None
 
@@ -74,7 +88,7 @@ class OpenAIConversation(Conversation):
                     model=model,
                     messages=messages,
                     max_tokens=max_tokens,
-                    seed=42
+                    seed=seed
                 )
                 fail = False
             except RateLimitError as e:
@@ -82,65 +96,81 @@ class OpenAIConversation(Conversation):
                 print(e)
                 sleep(120)
                 fail = True
-                try:
-                    print(self)
-                except Exception as e:
-                    print(e)
-
         return response
 
-    def send_messages(self, *messages: Message) -> None:
-        aggregate = OpenAIConversation.OpenAIMessageAggregation("user", list(messages))
+    def commit_transaction(self, send_to_vlm=False):
+        if not self.transaction_started:
+            raise Exception("Transaction not started")
 
-        self.conversation.append(aggregate)
+        self.conversation.append(self.transaction_conversation)
+        self.transaction_conversation = {}
 
-        payloads = [message.payload() for message in self.conversation]
+        self.transaction_started = False
+        self.transaction_role = None
+
+        if not send_to_vlm:
+            print("Not sending to VLM")
+            return
 
         response = self.get_answer_from_openai(
-            model="gpt-4o",
-            messages=payloads,
-            max_tokens=300
+            model=self.model_name,
+            messages=self.conversation,
+            max_tokens=self.max_tokens,
+            seed=self.seed
         )
 
         response_content = str(response.choices[0].message.content)
-        response_role = "assistant"
+        response_role = Role.ASSISTANT
 
-        reply = OpenAIConversation.OpenAIMessageAggregation(
-            response_role,
-            [OpenAITextMessage(response_content)]
-        )
+        self.begin_transaction(response_role)
+        self.add_text_message(response_content)
+        self.commit_transaction(send_to_vlm=False)
 
-        self.conversation.append(reply)
+    def rollback_transaction(self):
+        if not self.transaction_started:
+            raise Exception("Transaction not started")
 
-    def get_latest_message(self) -> Message:
-        return self.conversation[-1]
+        self.transaction_conversation = {}
 
-    def get_entire_conversation(self) -> list[Message]:
+        self.transaction_started = False
+        self.transaction_role = None
+
+    def get_entire_conversation(self):
         return self.conversation
 
-    def __repr__(self):
-        return "\n".join([str(message) for message in self.conversation])
+    def get_latest_message(self):
+        return self.conversation[-1]
 
 
 def main():
     from config import OPEN_AI_KEY
+    from vstar_bench_dataset import VstarSubBenchDataset
+
     client = OpenAI(api_key=OPEN_AI_KEY)
-    conversation = OpenAIConversation(client)
-
-    image = open("sample_images/burger.jpeg", "rb").read()
-
-    conversation.send_messages(
-        OpenAITextMessage("Hi, could you describe this image for me?"),
-        OpenAIBase64ImageMessage(image, "jpeg")
+    conversation = OpenAIConversation(
+        client,
+        model_name="gpt-4o",
+        seed=42,
+        max_tokens=300
     )
 
-    print(conversation.get_latest_message())
+    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
+    image, question, options, answer = ds[0]
 
-    conversation.send_messages(
-        OpenAITextMessage("What do you think of this image?")
-    )
+    conversation.begin_transaction(Role.USER)
+    conversation.add_image_message(opencv_to_pil(image))
+    conversation.add_text_message("Hi, could you describe this image for me?")
+    conversation.commit_transaction(send_to_vlm=False)
 
-    print(conversation.get_latest_message())
+    conversation.begin_transaction(Role.ASSISTANT)
+    conversation.add_text_message("This image depicts a goose.")
+    conversation.commit_transaction(send_to_vlm=False)
+
+    conversation.begin_transaction(Role.USER)
+    conversation.add_text_message("Are you sure?")
+    conversation.commit_transaction(send_to_vlm=True)
+
+    print(conversation.get_entire_conversation())
 
 
 if __name__ == "__main__":
