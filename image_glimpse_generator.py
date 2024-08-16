@@ -43,13 +43,17 @@ class BasicImageGlimpseGenerator(ImageGlimpseGenerator):
 
 
 class GridImageGlimpseGenerator(BasicImageGlimpseGenerator):
-    def __init__(self, image: np.ndarray, splits: int, split_width: int):
+    def __init__(self, image: np.ndarray, splits: int):
         super().__init__(image)
         self.splits = splits
 
+    def get_raw_glimpse(self, x1: float, y1: float, x2: float, y2: float) -> np.ndarray:
+        x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(x1, y1, x2, y2)
+
+        return dot_matrix_two_dimensional(self.image, self.splits, self.splits)[y1:y2, x1:x2, :]
+
     def get_glimpse(self, x1: float, y1: float, x2: float, y2: float) -> list[np.ndarray]:
         glimpse = self.get_raw_glimpse(x1, y1, x2, y2)
-        glimpse = dot_matrix_two_dimensional(glimpse, self.splits, self.splits)
 
         return [glimpse]
 

@@ -23,14 +23,13 @@ def add_grids_to_image(image: np.ndarray, splits: int, split_width: int) -> np.n
 
 
 class VisualVStarExplorer:
-    number_glimpses = 7
-
     def __init__(self,
                  conversation: Conversation,
                  image: np.ndarray,
                  question: str,
                  options: list[str],
-                 glimpse_generator: ImageGlimpseGenerator
+                 glimpse_generator: ImageGlimpseGenerator,
+                 number_glimpses: int = 5
                  ) -> None:
         self.conversation = conversation
         self.image = add_grids_to_image(image, splits=5, split_width=5)
@@ -39,7 +38,8 @@ class VisualVStarExplorer:
         self.question = question
         self.options = options
         self.glimpse_generator = glimpse_generator
-        self.glimpse_requests = []
+        self.glimpse_requests = [(0.0, 0.0, 1.0, 1.0)]
+        self.number_glimpses = number_glimpses
 
     def filter_vlm_response(self, unfiltered: str) -> str:
         unfiltered = unfiltered.replace("Model:", "").replace("model:",
@@ -81,7 +81,7 @@ class VisualVStarExplorer:
 
         return x1, y1, x2, y2
 
-    def classify(self):
+    def answer(self):
         response = self.step(first=True)
 
         # We are not subtracting one from self.number_glimpses because one step can be used for classification
@@ -110,6 +110,7 @@ class VisualVStarExplorer:
 
 def main():
     from openai_conversation import OpenAIConversation
+    from image_glimpse_generator import GridImageGlimpseGenerator
 
     client = OpenAI(api_key=OPEN_AI_KEY)
     conversation = OpenAIConversation(
@@ -118,20 +119,29 @@ def main():
     )
 
     image = cv2.imread("sample_images/burger.jpeg")
+    glimpse_generator = GridImageGlimpseGenerator(image, 5)
 
     explorer = VisualVStarExplorer(
         conversation,
         image,
         "What is written above 'McNuggets' on the box?",
-        ["Kurczak", "Kaczka", "Kamyk", "Krowodrza Górka", "Krokodyl"]
+        ["Kurczak", "Kaczka", "Kamyk", "Krowodrza Górka", "Krokodyl"],
+        glimpse_generator
     )
 
-    explorer.classify()
+    explorer.answer()
 
     # explorer.save_glimpse_boxes("glimpses.jpeg")
     # explorer.save_glimpse_list("glimpse_list.jpeg")
     # explorer.save_unified_image("unified_image.jpeg")
     print(explorer.get_response())
+
+    from visualization import ExplorationVisualizer
+    visualizer = ExplorationVisualizer(explorer.get_glimpse_requests(), explorer.glimpse_generator)
+
+    visualizer.save_glimpse_list_figure("debug/glimpse_list.jpeg")
+    visualizer.save_glimpses_individually("debug/glimpse")
+    visualizer.save_glimpse_boxes("debug/glimpse_boxes.jpeg")
 
 
 if __name__ == "__main__":

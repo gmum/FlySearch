@@ -11,7 +11,7 @@ from tqdm import tqdm
 
 from config import OPEN_AI_KEY
 from vstar_bench_dataset import VstarSubBenchDataset
-from visual_explorer_vstar import OpenAIVisualVStarExplorer
+from visual_explorer_vstar import VisualVStarExplorer
 from openai_conversation import OpenAIConversation
 from cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
@@ -20,8 +20,6 @@ def main():
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
     # ds = torch.utils.data.Subset(ds, range(60, len(ds)))
 
-    prompt_prefix = "You will be given a question and several answer options. You should choose the correct option based on the image provided to you. You just need to answer the question and do not need any information about individuals. When you are not sure about the answer, just guess the most likely one. To answer, simply copy entire text of one of the options. Do not copy the letter meant to represent option's position."
-
     pathlib.Path("test_logs").mkdir(exist_ok=True)
     bar = tqdm(enumerate(ds), total=len(ds))
 
@@ -29,11 +27,11 @@ def main():
 
     for i, (image, question, options, answer) in bar:
         conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY))
-        explorer = OpenAIVisualVStarExplorer(conversation, image, question, options)
+        explorer = VisualVStarExplorer(conversation, image, question, options)
         model_response = ""
 
         try:
-            explorer.classify()
+            explorer.answer()
             model_response = str(explorer.get_response()).lower().strip()
         except Exception as e:
             model_response = "ERROR DURING TESTING! " + str(e)

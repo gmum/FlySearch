@@ -35,17 +35,22 @@ class ExplorationVisualizer:
 
         return image_with_glimpses
 
-    def save_glimpse_list(self) -> np.ndarray:
-        _, axes = plt.subplots(len(self.glimpse_requests), len(self.glimpse_generator.get_glimpse(0, 0, 1, 1)))
+    def save_glimpse_boxes(self, file_dir: str) -> None:
+        glimpse_boxes = self.get_glimpse_boxes()
+        cv2.imwrite(file_dir, glimpse_boxes)
+
+    def save_glimpse_list_figure(self, file_dir) -> None:
+        fig, axes = plt.subplots(len(self.glimpse_requests), len(self.glimpse_generator.get_glimpse(0, 0, 1, 1)))
 
         # To avoid dealing with dimensionality, we will iterate over 1 dimension
         glimpse_list = self.get_glimpse_list()
 
         for glimpse, ax in zip(glimpse_list, axes.flatten()):
+            glimpse = glimpse[:, :, ::-1]
             ax.imshow(glimpse)
             ax.axis("off")
 
-        plt.show()
+        plt.savefig(file_dir)
 
     def get_glimpse_list(self) -> list[np.ndarray]:
         glimpses = []
@@ -55,6 +60,12 @@ class ExplorationVisualizer:
             glimpses.extend(glimpse)
 
         return glimpses
+
+    def save_glimpses_individually(self, file_dir: str) -> None:
+        for i, request in enumerate(self.glimpse_requests):
+            glimpse = self.glimpse_generator.get_glimpse(*request)
+            for j, subglimpse in enumerate(glimpse):
+                cv2.imwrite(f"{file_dir}_{i}_{j}.jpeg", subglimpse)
 
 
 def main():
@@ -67,12 +78,9 @@ def main():
 
     glimpse_generator = BasicImageGlimpseGenerator(img)
     visualizer = ExplorationVisualizer([(0.0, 0.0, 0.5, 0.5), (0.5, 0.5, 1.0, 1.0)], glimpse_generator)
-
-    glimpse_boxes = visualizer.get_glimpse_boxes()
-    cv2.imshow("Glimpse boxes", glimpse_boxes)
+    boxes = visualizer.get_glimpse_boxes()
+    cv2.imshow("Boxes", boxes)
     cv2.waitKey(0)
-
-    visualizer.save_glimpse_list()
 
 
 if __name__ == "__main__":
