@@ -7,14 +7,15 @@ from add_guardrails import dot_matrix_two_dimensional
 
 
 class ImageGlimpseGenerator:
+    def __init__(self, image: np.ndarray):
+        self.image = image
+        self.image_size = image.shape[:2]
+
     def get_glimpse(self, x1: float, y1: float, x2: float, y2: float) -> list[np.ndarray]:
         pass
 
-
-class BasicImageGlimpseGenerator(ImageGlimpseGenerator):
-    def __init__(self, image: np.ndarray, ):
-        self.image = image
-        self.image_size = image.shape[:2]
+    def get_entire_image(self) -> np.ndarray:
+        return self.image
 
     def convert_proportional_coords_to_pixel(self, x1, y1, x2, y2):
         height = self.image_size[0]
@@ -27,6 +28,8 @@ class BasicImageGlimpseGenerator(ImageGlimpseGenerator):
 
         return x1, y1, x2, y2
 
+
+class BasicImageGlimpseGenerator(ImageGlimpseGenerator):
     def get_raw_glimpse(self, x1: float, y1: float, x2: float, y2: float) -> np.ndarray:
         x1, y1, x2, y2 = self.convert_proportional_coords_to_pixel(x1, y1, x2, y2)
 
