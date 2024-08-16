@@ -8,10 +8,10 @@ import string
 from matplotlib import pyplot as plt
 from openai import OpenAI
 
-from abstract_conversation import Message, Conversation
-from openai_conversation import OpenAITextMessage, OpenAIBase64ImageMessage, OpenAIConversation
+from abstract_conversation import Conversation, Role
 from config import OPEN_AI_KEY
 from add_guardrails import dot_matrix_two_dimensional
+from cv2_and_numpy import opencv_to_pil, pil_to_opencv
 
 
 def add_grids_to_image(image: np.ndarray, splits: int, split_width: int) -> np.ndarray:
@@ -101,18 +101,18 @@ Options:
 
         self.glimpses.append(glimpse)
 
-        messages = [OpenAIBase64ImageMessage(cv2.imencode('.jpeg', glimpse)[1].tobytes(), 'jpeg') for glimpse in
-                    self.glimpses]
+        self.conversation.begin_transaction(Role.USER)
 
         if first:
-            messages = [OpenAITextMessage(self.get_starting_prompt()),
-                        OpenAITextMessage(self.get_classification_prompt(self.question, self.options))] + messages
+            self.conversation.add_text_message(self.get_starting_prompt())
+            self.conversation.add_text_message(self.get_classification_prompt(self.question, self.options))
 
-        self.conversation.send_messages(
-            *messages
-        )
+        pil_glimpse = opencv_to_pil(glimpse)
+        self.conversation.add_image_message(pil_glimpse)
 
-        unfiltered = str(self.conversation.get_latest_message())
+        self.conversation.commit_transaction(send_to_vlm=True)
+
+        unfiltered = str(self.conversation.get_latest_message()[1])
         unfiltered = unfiltered.replace("Model:", "").replace("model:",
                                                               "").strip()  # to avoid any funny business with the model's response
         return re.sub(r"<.*>", "", unfiltered, flags=re.S).replace("\n", "").strip()
@@ -229,12 +229,14 @@ Options:
 
 
 def main():
-    client = OpenAI(api_key=OPEN_AI_KEY)
-    conversation = OpenAIConversation(client)
+    from openai_conversation import OpenAIConversation
 
-    # image = cv2.imread("imagenet-sample-images/n01616318_vulture.JPEG")
-    # image = cv2.imread("imagenet-sample-images/n09835506_ballplayer.JPEG")
-    # image = cv2.imread("imagenet-sample-images/n01632777_axolotl.JPEG")
+    client = OpenAI(api_key=OPEN_AI_KEY)
+    conversation = OpenAIConversation(
+        client,
+        model_name="gpt-4o",
+    )
+
     image = cv2.imread("sample_images/burger.jpeg")
 
     explorer = OpenAIVisualVStarExplorer(

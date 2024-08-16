@@ -11,14 +11,7 @@ from time import sleep
 from PIL import Image
 
 from abstract_conversation import Conversation, Role
-
-
-def pil_to_opencv(image: Image.Image) -> np.ndarray:
-    return np.array(image)[:, :, ::-1].copy()
-
-
-def opencv_to_pil(image: np.ndarray) -> Image.Image:
-    return Image.fromarray(image[:, :, ::-1].copy())
+from cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class OpenAIConversation(Conversation):
@@ -135,11 +128,22 @@ class OpenAIConversation(Conversation):
         self.transaction_started = False
         self.transaction_role = None
 
-    def get_entire_conversation(self):
-        return self.conversation
+    def get_conversation(self):
+        def conversation_iterator():
+            for message in self.conversation:
+                role = Role.USER if message["role"] == "user" else Role.ASSISTANT
+                content = message["content"]
+
+                for submessage in content:
+                    if submessage["type"] == "text":
+                        yield role, submessage["text"]
+                    elif submessage["type"] == "image_url":
+                        yield role, submessage["image_url"]
+
+        return list(conversation_iterator())
 
     def get_latest_message(self):
-        return self.conversation[-1]
+        return self.get_conversation()[-1]
 
 
 def main():
@@ -170,7 +174,7 @@ def main():
     conversation.add_text_message("Are you sure?")
     conversation.commit_transaction(send_to_vlm=True)
 
-    print(conversation.get_entire_conversation())
+    print(conversation.get_conversation())
 
 
 if __name__ == "__main__":
