@@ -1,33 +1,27 @@
 import typing
 
-
-class Message:
-    def payload(self) -> dict:
-        pass
-
-    def __str__(self) -> str:
-        """
-        This class should return a plaintext version of the message, without any "technical" details (such as [ or ] signs).
-        It may lose some information.
-        """
-        return ""
+from PIL import Image
 
 
 class Conversation:
-    """
-    Abstract class meant to represent a conversation between a user and LLM.
-    Had to be implemented because the OpenAI vision API is not stateful according to its documentation.
-    """
 
-    def send_messages(self, *message: Message) -> None:
-        """
-        Sends an arbitrary number of messages to the LLM.
-        Doesn't return anything, but should mutate the state of the object by adding sent message and model's response.
-        """
+    # Upon calling the method, user signals that he wants to send a message (containing text and images)
+    # Cannot be called before commit_transaction() or after rollback_transaction() after begin_transaction() is called
+    def begin_transaction(self):
         pass
 
-    def get_latest_message(self) -> Message:
+    # Adds text message to be sent (later)
+    def add_text_message(self, text: str):
         pass
 
-    def get_entire_conversation(self) -> typing.List[Message]:
+    # Adds image message to be sent (later)
+    def add_image_message(self, image: Image.Image):
+        pass
+
+    # Sends all messages added since begin_transaction() was called to the VLM
+    def commit_transaction(self):
+        pass
+
+    # Messages added since begin_transaction() was called are discarded
+    def rollback_transaction(self):
         pass
