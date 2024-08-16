@@ -1,40 +1,25 @@
-import typing
-
-import numpy as np
 import cv2
-import torchvision
-import torch
 import re
-import string
 
-from matplotlib import pyplot as plt
 from openai import OpenAI
 
 from abstract_conversation import Conversation, Role
 from config import OPEN_AI_KEY
-from add_guardrails import dot_matrix_two_dimensional
 from cv2_and_numpy import opencv_to_pil, pil_to_opencv
 from prompt_generation import get_starting_prompt_for_vstar_explorer, get_classification_prompt_for_vstar_explorer
 from image_glimpse_generator import ImageGlimpseGenerator
 
 
-def add_grids_to_image(image: np.ndarray, splits: int, split_width: int) -> np.ndarray:
-    return dot_matrix_two_dimensional(image, splits, splits)
-
-
 class VisualVStarExplorer:
     def __init__(self,
                  conversation: Conversation,
-                 image: np.ndarray,
                  question: str,
                  options: list[str],
                  glimpse_generator: ImageGlimpseGenerator,
                  number_glimpses: int = 5
                  ) -> None:
         self.conversation = conversation
-        self.image = add_grids_to_image(image, splits=5, split_width=5)
         self.response = -1
-        self.image_size = image.shape[:2]
         self.question = question
         self.options = options
         self.glimpse_generator = glimpse_generator
@@ -67,7 +52,7 @@ class VisualVStarExplorer:
         return self.filter_vlm_response(unfiltered)
 
     @staticmethod
-    def convert_str_coords_to_coords(coords: str) -> tuple:
+    def convert_str_coords_to_coords(coords: str) -> tuple[float, float, float, float]:
         coords = coords.split("and")
         coords = [coord.strip() for coord in coords]
 
@@ -123,7 +108,6 @@ def main():
 
     explorer = VisualVStarExplorer(
         conversation,
-        image,
         "What is written above 'McNuggets' on the box?",
         ["Kurczak", "Kaczka", "Kamyk", "Krowodrza Górka", "Krokodyl"],
         glimpse_generator
@@ -131,9 +115,6 @@ def main():
 
     explorer.answer()
 
-    # explorer.save_glimpse_boxes("glimpses.jpeg")
-    # explorer.save_glimpse_list("glimpse_list.jpeg")
-    # explorer.save_unified_image("unified_image.jpeg")
     print(explorer.get_response())
 
     from visualization import ExplorationVisualizer
