@@ -11,25 +11,15 @@ from openai import OpenAI
 from abstract_conversation import Message, Conversation
 from openai_conversation import OpenAITextMessage, OpenAIBase64ImageMessage, OpenAIConversation
 from config import OPEN_AI_KEY
+from add_guardrails import dot_matrix_two_dimensional
 
 
 def add_grids_to_image(image: np.ndarray, splits: int, split_width: int) -> np.ndarray:
-    print(image.shape)
-
-    height, width = image.shape[:2]
-
-    x_diff = width // splits
-    y_diff = height // splits
-
-    for i in range(split_width):
-        image[:, i::x_diff, :] = 255
-        image[i::y_diff, :, :] = 255
-
-    return image
+    return dot_matrix_two_dimensional(image, splits, splits)
 
 
 class OpenAIVisualVStarExplorer:
-    number_glimpses = 5
+    number_glimpses = 7
 
     def get_starting_prompt(self):
         return f"""
@@ -41,7 +31,7 @@ To make it easier for you, you can ask for specific parts (called glimpses) of t
 
 For example, if you want to see the top-left corner of the image, you can specify (0, 0) and (0.25, 0.25) as the corners. Of course, you can also go wild and specify coordinates like (0.13, 0.72) and (0.45, 0.89) to see a different part of the image.
 
-The first coordinate is horizontal, the second one is vertical. For example, to get the bottom-left corner of the image, you can specify (0.0, 0.75) and (0.25, 1). To help you out with coordinates, a white grid has been added to the image. Each line is roughly at 20% mark of the image's height or width (starting from 0, then through 0.2 and so on).
+The first coordinate is horizontal, the second one is vertical. For example, to get the bottom-left corner of the image, you can specify (0.0, 0.75) and (0.25, 1). To help you out with coordinates, a grid with coordinates is added to the image. It contains dots annotated with their (x, y) coordinates. Use it to your advantage. REMEMBER THAT COORDINATES ARE PROPORTIONAL TO THE IMAGE WIDTH AND HEIGHT. 
 
 Using the same format, please specify the coordinates of the next rectangle you want to see or choose to answer the question. You also MUST specify your reasoning after each decision, as this is beneficial for LLMs, such as you. Put your reasoning in < and >.
 
@@ -80,6 +70,8 @@ B. The red suitcase is on the right side of the man.
 <I have found a man with a logo of the Jagiellonian University on his T-shirt. The red suitcase is on his left side.> ANSWER: The red suitcase is on the left side of the man.
 
 <End of example>
+
+DO NOT EXCEED THE NUMBER OF GLIMPSES WHICH IS EQUAL TO {self.number_glimpses - 1}. YOU CANNOT REQUEST MORE THAN THAT.
 
 Now, you will be presented with the image and the question that you need to answer. Good luck!
 """

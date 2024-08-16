@@ -20,8 +20,8 @@ def from_pil_to_opencv(image):
 
 
 def main():
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=from_pil_to_opencv)
-    # ds = torch.utils.data.Subset(ds, range(10))
+    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=from_pil_to_opencv)
+    # ds = torch.utils.data.Subset(ds, range(60, len(ds)))
 
     prompt_prefix = "You will be given a question and several answer options. You should choose the correct option based on the image provided to you. You just need to answer the question and do not need any information about individuals. When you are not sure about the answer, just guess the most likely one. To answer, simply copy entire text of one of the options. Do not copy the letter meant to represent option's position."
 
@@ -37,7 +37,7 @@ def main():
 
         try:
             explorer.classify()
-            model_response = explorer.get_response().lower().strip()
+            model_response = str(explorer.get_response()).lower().strip()
         except Exception as e:
             model_response = "ERROR DURING TESTING! " + str(e)
 
@@ -66,8 +66,12 @@ def main():
 
         cv2.imwrite(f"test_logs/{i}/image.jpeg", image)
         explorer.save_glimpses_individually(f"test_logs/{i}/glimpse")
-        explorer.save_unified_image(f"test_logs/{i}/unified_image.jpeg")
-        explorer.save_glimpse_list(f"test_logs/{i}/glimpse_list.jpeg")
+        # explorer.save_unified_image(f"test_logs/{i}/unified_image.jpeg")
+
+        try:
+            explorer.save_glimpse_list(f"test_logs/{i}/glimpse_list.jpeg")
+        except:
+            pass
         explorer.save_glimpse_boxes(f"test_logs/{i}/glimpse_boxes.jpeg")
 
 
