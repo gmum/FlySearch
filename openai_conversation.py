@@ -98,6 +98,9 @@ class OpenAIConversation(Conversation):
         self.conversation.append(self.transaction_conversation)
         self.transaction_conversation = {}
 
+        if self.transaction_role == Role.ASSISTANT and send_to_vlm:
+            raise Exception("Assistant cannot send messages to VLM")
+
         self.transaction_started = False
         self.transaction_role = None
 
@@ -142,6 +145,9 @@ class OpenAIConversation(Conversation):
         return list(conversation_iterator())
 
     def get_latest_message(self):
+        if len(self.conversation) == 0:
+            raise Exception("No messages in conversation")
+
         return self.get_conversation()[-1]
 
     def get_entire_conversation(self):
