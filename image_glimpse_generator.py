@@ -6,6 +6,7 @@ import numpy as np
 from add_guardrails import dot_matrix_two_dimensional
 
 
+# It's an abstract class.
 class ImageGlimpseGenerator:
     def __init__(self, image: np.ndarray):
         self.image = image
