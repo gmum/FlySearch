@@ -25,6 +25,7 @@ class VisualVStarExplorer:
         self.glimpse_generator = glimpse_generator
         self.glimpse_requests = [(0.0, 0.0, 1.0, 1.0)]
         self.number_glimpses = number_glimpses
+        self.failed_coord_request: str | None = None
 
     @staticmethod
     def filter_vlm_response(unfiltered: str) -> str:
@@ -54,6 +55,7 @@ class VisualVStarExplorer:
 
     @staticmethod
     def convert_str_coords_to_coords(coords: str) -> tuple[float, float, float, float]:
+        coords = coords.lower()
         coords = coords.split("and")
         coords = [coord.strip() for coord in coords]
 
@@ -79,19 +81,21 @@ class VisualVStarExplorer:
                 return
             try:
                 coords = self.convert_str_coords_to_coords(response)
+                self.glimpse_requests.append(coords)
+                response = self.step(*coords)
             except:
                 print("Invalid coordinates", response)
-                return
-
-            self.glimpse_requests.append(coords)
-
-            response = self.step(*coords)
+                self.failed_coord_request = response
+                break
 
     def get_glimpse_requests(self) -> list[tuple[float, float, float, float]]:
         return self.glimpse_requests
 
     def get_response(self) -> int | str:
         return self.response
+
+    def get_failed_coord_request(self) -> str | None:
+        return self.failed_coord_request
 
 
 def main():

@@ -1,9 +1,8 @@
-from http.client import responses
-
 import numpy as np
 import cv2
 
 from enum import Enum
+from PIL import Image
 
 from image_glimpse_generator import ImageGlimpseGenerator, BasicImageGlimpseGenerator
 from visual_vstar_explorer import VisualVStarExplorer
@@ -50,12 +49,16 @@ class MockConversation(Conversation):
 class MockGlimpseGenerator(BasicImageGlimpseGenerator):
     def __init__(self, image: np.ndarray):
         self.raw_glimpse_requests: list[tuple[float, float, float, float]] = []
+        self.raw_glimpse_returns: list[np.ndarray] = []
         super().__init__(image)
 
     def get_raw_glimpse(self, x1: float, y1: float, x2: float, y2: float) -> np.ndarray:
         self.raw_glimpse_requests.append((x1, y1, x2, y2))
 
-        return super().get_raw_glimpse(x1, y1, x2, y2)
+        result = super().get_raw_glimpse(x1, y1, x2, y2)
+        self.raw_glimpse_returns.append(result)
+
+        return result
 
 
 class TestVisualVStarExplorer:
@@ -97,6 +100,65 @@ class TestVisualVStarExplorer:
         assert transaction_commit[0] == mock_conversation.commit_transaction
         assert transaction_commit[1]["send_to_vlm"] == True
 
+    def test_explorer_terminates_ave_process_on_incorrect_message(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation(
+            ["<Haha, I will put my coordinates in the comment block. This will be invalid. (0.3, 0.3) and (0.5, 0.5)>"])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=5
+        )
+
+        explorer.answer()
+
+        assert explorer.get_response() == -1
+
+    def test_explorer_terminates_ave_process_on_invalid_coordinates(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation(
+            ["<Haha!> (3.0, 7.0) and (0.5, 0.5)"])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=5
+        )
+
+        explorer.answer()
+
+        assert explorer.get_response() == -1
+        assert explorer.get_failed_coord_request() == "(3.0, 7.0) and (0.5, 0.5)"
+
+    def test_explorer_terminates_ave_process_on_invalid_coordinates_2(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation(
+            ["<Haha!> (0.3, 0.4) and (0.1, 0.5)"])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=5
+        )
+
+        explorer.answer()
+
+        assert explorer.get_response() == -1
+        assert explorer.get_failed_coord_request() == "(0.3, 0.4) and (0.1, 0.5)"
+
     def test_explorer_properly_parses_answers_without_comments(self):
         mock_glimpse_generator = MockGlimpseGenerator(np.zeros((100, 100, 3), dtype=np.uint8))
 
@@ -113,3 +175,241 @@ class TestVisualVStarExplorer:
         explorer.answer()
 
         assert explorer.get_response() == "cat"
+
+    def test_if_ave_succeeded_failed_coord_request_is_none(self):
+        mock_glimpse_generator = MockGlimpseGenerator(np.zeros((100, 100, 3), dtype=np.uint8))
+
+        explorer = VisualVStarExplorer(
+            conversation=MockConversation([
+                "(0.5, 0.5) and (1.0, 1.0)",
+                "ANSWER: cat"
+            ]),
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator
+        )
+
+        explorer.answer()
+
+        assert explorer.get_failed_coord_request() is None
+
+    def test_comments_are_ignored(self):
+        mock_glimpse_generator = MockGlimpseGenerator(np.zeros((100, 100, 3), dtype=np.uint8))
+
+        very_long_text_with_comment = """
+            <Litwo! Ojczyzno moja!
+            
+            Ty jesteś jak zdrowie.
+            
+            Zdrowe jest również wstawianie newline'ów w komentarzach.
+            
+            Haha, look, newline! 
+            
+            ąęć 
+            
+            
+            
+            
+            
+            
+            miłego dnia
+            
+            
+            
+            >
+            
+            
+            
+            (0.32, 0.18) and (0.76, 0.1)
+        """
+
+        explorer = VisualVStarExplorer(
+            conversation=MockConversation([
+                very_long_text_with_comment,
+                "ANSWER: cat"
+            ]),
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator
+        )
+
+        explorer.answer()
+
+        assert explorer.get_failed_coord_request() is None
+        assert explorer.get_response() == "cat"
+
+    def test_correct_glimpses_are_requested(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation([
+            "(0.12, 0.23) and (0.45, 0.67)",
+            "(0.44, 0.17) AnD (0.89, 0.29)",
+            "(0.3, 0.5) AND (0.7, 0.7)",
+            "ANSWER: dog"
+        ])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=5
+        )
+
+        explorer.answer()
+
+        assert mock_glimpse_generator.raw_glimpse_requests == [(0.0, 0.0, 1.0, 1.0), (0.12, 0.23, 0.45, 0.67),
+                                                               (0.44, 0.17, 0.89, 0.29),
+                                                               (0.3, 0.5, 0.7, 0.7)]
+
+        assert len([func_call for func_call in mock_conversation.get_function_calls() if
+                    func_call[0] == mock_conversation.add_image_message]) == 4
+
+        assert explorer.get_failed_coord_request() is None
+        assert explorer.get_response() == "dog"
+
+    def test_ave_process_fails_if_glimpse_limit_is_exceeded(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation([
+            "(0.1, 0.2) and (0.4, 0.6)",
+            "ANSWER: dog"
+        ])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=1
+        )
+
+        explorer.answer()
+
+        assert explorer.get_response() == -1
+        assert explorer.get_failed_coord_request() is None
+
+    def test_ave_process_fails_if_glimpse_limit_is_exceeded_2(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation([
+            "(0.1, 0.2) and (0.4, 0.6)",
+            "(0.3, 0.5) and (0.7, 0.7)",
+            "(0.1, 0.2) and (0.4, 0.6)",
+            "ANSWER: dog"
+        ])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=3
+        )
+
+        explorer.answer()
+
+        assert explorer.get_response() == -1
+        assert explorer.get_failed_coord_request() is None
+
+    def test_ave_process_doesnt_fail_if_glimpse_limit_is_not_exceeded(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation([
+            "(0.1, 0.2) and (0.4, 0.6)",
+            "(0.3, 0.5) and (0.7, 0.7)",
+            "(0.1, 0.2) and (0.4, 0.6)",
+            "ANSWER: dog"
+        ])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=4
+        )
+
+        explorer.answer()
+
+        assert explorer.get_response() == "dog"
+        assert explorer.get_failed_coord_request() is None
+
+    def test_visual_explorer_properly_returns_glimpse_coordinate_requests(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation([
+            "(0.12, 0.23) and (0.45, 0.67)",
+            "(0.44, 0.17) AnD (0.89, 0.29)",
+            "(0.3, 0.5) AND (0.7, 0.7)",
+            "(0.111, 0.222) aNd (0.333, 0.444)",
+            "ANSWER: dog"
+        ])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=5
+        )
+
+        explorer.answer()
+
+        assert explorer.get_glimpse_requests() == [(0.0, 0.0, 1.0, 1.0), (0.12, 0.23, 0.45, 0.67),
+                                                   (0.44, 0.17, 0.89, 0.29), (0.3, 0.5, 0.7, 0.7),
+                                                   (0.111, 0.222, 0.333, 0.444)]
+
+        assert explorer.get_failed_coord_request() is None
+        assert explorer.get_response() == "dog"
+
+    def test_converting_str_to_coords_is_case_insensitive(self):
+        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) and (0.4, 0.6)")
+        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) AND (0.4, 0.6)")
+        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) AnD (0.4, 0.6)")
+        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) aNd (0.4, 0.6)")
+
+    def test_converting_str_to_coords_is_space_insensitive(self):
+        assert (0.11, 0.2, 0.44, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.11, 0.2) and (0.44, 0.6)")
+        assert (0.123, 0.2, 0.44, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords(
+            "(0.123, 0.2) ANd(0.44, 0.6)")
+        assert (0.1, 0.2, 0.45, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2)aND (0.45, 0.6)")
+        assert (0.1, 0.2, 0.4, 0.65) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2)and(0.4, 0.65)")
+
+    def test_glimpses_passed_to_conversation_are_the_ones_returned_by_glimpse_generator(self):
+        image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
+
+        mock_glimpse_generator = MockGlimpseGenerator(image)
+        mock_conversation = MockConversation([
+            "(0.12, 0.23) and (0.45, 0.67)",
+            "(0.44, 0.17) AnD (0.89, 0.29)",
+            "(0.3, 0.5) AND (0.7, 0.7)",
+            "(0.111, 0.222) aNd (0.333, 0.444)",
+            "ANSWER: dog"
+        ])
+
+        explorer = VisualVStarExplorer(
+            conversation=mock_conversation,
+            question="What animal do you see?",
+            options=["cat", "dog"],
+            glimpse_generator=mock_glimpse_generator,
+            number_glimpses=5
+        )
+
+        explorer.answer()
+
+        glimpses_from_generator = mock_glimpse_generator.raw_glimpse_returns  # type: list[np.ndarray]
+        glimpses_passed_to_conversation = [call[1]["image"] for call in mock_conversation.get_function_calls() if
+                                           call[0] == mock_conversation.add_image_message]  # type: list[Image]
+
+        assert len(glimpses_from_generator) == len(glimpses_passed_to_conversation)
+
+        for from_generator, passed_to_conv in zip(glimpses_from_generator, glimpses_passed_to_conversation):
+            passed_to_conv_cv = pil_to_opencv(passed_to_conv)
+
+            assert np.array_equal(from_generator, passed_to_conv_cv)
