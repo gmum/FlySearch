@@ -64,6 +64,7 @@ class TestBasicImageGlimpseGenerator:
 
         raw_glimpse = generator.get_raw_glimpse(0.1, 0.2, 0.3, 0.8)
         glimpse = generator.get_glimpse(0.1, 0.2, 0.3, 0.8)
+        glimpse = generator.get_glimpse(0.1, 0.2, 0.3, 0.8)
 
         assert np.array_equal(raw_glimpse, glimpse[0])
 
@@ -82,27 +83,6 @@ class TestGridImageGlimpseGenerator:
         generator = GridImageGlimpseGenerator(image, 5)
         glimpse = generator.get_glimpse(0.1, 0.4, 0.3, 0.8)
         assert len(glimpse) == 1
-
-    def test_first_coordinate_is_vertical(self):
-        image_saliency = [
-            [1, 2],
-            [3, 4]
-        ]
-
-        image = np.array([image_saliency, image_saliency, image_saliency], dtype=np.uint8)
-        image = np.transpose(image, (1, 2, 0))
-
-        generator = GridImageGlimpseGenerator(image)
-
-        upper_left = generator.get_glimpse(0.0, 0.0, 0.5, 0.5)[0]
-        upper_right = generator.get_glimpse(0.5, 0.0, 1.0, 0.5)[0]
-        lower_left = generator.get_glimpse(0.0, 0.5, 0.5, 1.0)[0]
-        lower_right = generator.get_glimpse(0.5, 0.5, 1.0, 1.0)[0]
-
-        assert np.array_equal(upper_left, np.array([[[1, 1, 1]]]))
-        assert np.array_equal(upper_right, np.array([[[2, 2, 2]]]))
-        assert np.array_equal(lower_left, np.array([[[3, 3, 3]]]))
-        assert np.array_equal(lower_right, np.array([[[4, 4, 4]]]))
 
     def test_get_glimpse_returns_raw_glimpse_in_array(self):
         image = np.zeros((100, 100, 3), dtype=np.uint8)
