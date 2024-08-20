@@ -26,7 +26,8 @@ class VisualVStarExplorer:
         self.glimpse_requests = [(0.0, 0.0, 1.0, 1.0)]
         self.number_glimpses = number_glimpses
 
-    def filter_vlm_response(self, unfiltered: str) -> str:
+    @staticmethod
+    def filter_vlm_response(unfiltered: str) -> str:
         unfiltered = unfiltered.replace("Model:", "").replace("model:",
                                                               "").strip()  # to avoid any funny business with the model's response
         return re.sub(r"<.*>", "", unfiltered, flags=re.S).replace("\n", "").strip()
