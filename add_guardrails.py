@@ -64,8 +64,6 @@ def from_opencv_to_pil(image):
 
 def main():
     from vstar_bench_dataset import VstarSubBenchDataset
-    from visual_explorer_vstar import add_grids_to_image
-    import torchvision
 
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=from_pil_to_opencv)
     image, _, _, _ = ds[3]
