@@ -17,7 +17,7 @@ from cv2_and_numpy import pil_to_opencv, opencv_to_pil
 from image_glimpse_generator import GridImageGlimpseGenerator
 from visualization import ExplorationVisualizer
 
-RUN_NAME = "run_1"
+RUN_NAME = "relative_position_gridline_5_glimpses_7"
 
 
 def main():
@@ -43,7 +43,7 @@ def main():
             question=question,
             options=options,
             glimpse_generator=glimpse_generator,
-            number_glimpses=5
+            number_glimpses=7
         )
 
         model_response = ""
@@ -92,8 +92,6 @@ def main():
             visualizer.save_glimpses_individually(str(example_dir / "glimpse"))
         except:
             pass
-
-        break
 
 
 if __name__ == "__main__":

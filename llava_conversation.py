@@ -95,10 +95,10 @@ class LlavaConversation(Conversation):
 
         response = self.client(self.images, prompt)
 
-        print(response)
-
-        response_content = response.split("ASSISTANT:")[-1].strip()
+        response_content = response.split("ASSISTANT:")[-1].strip().split("USER:")[0].strip()
         response_role = Role.ASSISTANT
+
+        print("Adding: ", response_content)
 
         self.begin_transaction(response_role)
         self.add_text_message(response_content)
@@ -137,6 +137,9 @@ class LlavaConversation(Conversation):
                 yield self._get_latest_message(conversation)
 
         return list(conversation_iterator())
+
+    def __str__(self):
+        return self.convert_conversation_to_llava_format(self.conversation)
 
 
 class SimplePipeline:
@@ -182,6 +185,21 @@ def main():
 
     print("Latest")
     print(conversation.get_latest_message())
+
+    conversation.begin_transaction(Role.USER)
+    conversation.add_text_message("If that's not in UK, where is it?")
+    conversation.commit_transaction(send_to_vlm=True)
+
+    print("Latest")
+    print(conversation.get_latest_message())
+
+    conversation.begin_transaction(Role.USER)
+    conversation.add_text_message("SAY SOMETHING SILLY, MAN!")
+    conversation.commit_transaction(send_to_vlm=True)
+
+    conversation.begin_transaction(Role.USER)
+    conversation.add_text_message("Say a joke")
+    conversation.commit_transaction(send_to_vlm=True)
 
     print("Entire conversation")
     print(conversation.get_conversation())

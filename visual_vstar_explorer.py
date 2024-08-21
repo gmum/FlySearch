@@ -8,6 +8,7 @@ from config import OPEN_AI_KEY
 from cv2_and_numpy import opencv_to_pil, pil_to_opencv
 from prompt_generation import get_starting_prompt_for_vstar_explorer, get_classification_prompt_for_vstar_explorer
 from image_glimpse_generator import ImageGlimpseGenerator
+from llava_conversation import LlavaConversation, SimplePipeline
 
 
 class VisualVStarExplorer:
@@ -102,11 +103,14 @@ def main():
     from openai_conversation import OpenAIConversation
     from image_glimpse_generator import GridImageGlimpseGenerator
 
-    client = OpenAI(api_key=OPEN_AI_KEY)
-    conversation = OpenAIConversation(
-        client,
-        model_name="gpt-4o",
-    )
+    # client = OpenAI(api_key=OPEN_AI_KEY)
+    # conversation = OpenAIConversation(
+    #     client,
+    #    model_name="gpt-4o",
+    # )
+
+    client = SimplePipeline(device="cuda", max_tokens=300)
+    conversation = LlavaConversation(client=client)
 
     image = cv2.imread("sample_images/burger.jpeg")
     glimpse_generator = GridImageGlimpseGenerator(image, 5)
@@ -128,6 +132,9 @@ def main():
     visualizer.save_glimpse_list_figure("debug/glimpse_list.jpeg")
     visualizer.save_glimpses_individually("debug/glimpse")
     visualizer.save_glimpse_boxes("debug/glimpse_boxes.jpeg")
+
+    print(conversation.get_conversation())
+    print(conversation)
 
 
 if __name__ == "__main__":
