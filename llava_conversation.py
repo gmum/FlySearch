@@ -1,3 +1,5 @@
+import typing
+
 import torch
 
 from transformers import pipeline
@@ -36,7 +38,8 @@ class LlavaConversation(Conversation):
         self.transaction_role: Role | None = None
         self.transaction_conversation: list[tuple[MessageType, str | Image.Image]] = []
 
-    def convert_conversation_to_llava_format(self):
+    @staticmethod
+    def convert_conversation_to_llava_format(conversation):
         def convert_message(message: tuple[MessageType, str | Image.Image]):
             message_type, content = message
 
@@ -46,7 +49,7 @@ class LlavaConversation(Conversation):
                 return "<image>"
 
         def iterate_over_messages():
-            for role, messages in self.conversation:
+            for role, messages in conversation:
                 role_name = "USER" if role == Role.USER else "ASSISTANT"
 
                 yield f"{role_name}: {'\n'.join([convert_message(message) for message in messages])}"
@@ -88,7 +91,7 @@ class LlavaConversation(Conversation):
         if not send_to_vlm:
             return
 
-        prompt = f'{self.convert_conversation_to_llava_format()}\nASSISTANT:'
+        prompt = f'{self.convert_conversation_to_llava_format(self.conversation)}\nASSISTANT:'
 
         response = self.client(self.images, prompt)
 
@@ -110,8 +113,30 @@ class LlavaConversation(Conversation):
         self.transaction_started = False
         self.transaction_role = None
 
+    def _get_latest_message(self, conversation):
+        latest = conversation[-1]
+
+        speaker = latest[0]
+        message = self.convert_conversation_to_llava_format([latest])
+        delimiter = "USER:" if speaker == Role.USER else "ASSISTANT:"
+
+        message = message.split(delimiter)[-1].strip()
+
+        return speaker, message
+
     def get_latest_message(self):
-        return self.conversation[-1]
+        return self._get_latest_message(self.conversation)
+
+    def get_conversation(self) -> typing.List[typing.Tuple[Role, str]]:
+
+        def conversation_iterator():
+            conversation = []
+
+            for msg in self.conversation:
+                conversation.append(msg)
+                yield self._get_latest_message(conversation)
+
+        return list(conversation_iterator())
 
 
 class SimplePipeline:
@@ -129,9 +154,6 @@ class SimplePipeline:
         self.max_tokens = max_tokens
 
     def __call__(self, images, prompt):
-        print(images)
-        print(prompt)
-
         inputs = self.processor(prompt, images, return_tensors='pt').to(self.device)
 
         outputs = self.model.generate(**inputs, max_new_tokens=self.max_tokens).to("cpu")
@@ -158,7 +180,11 @@ def main():
     conversation.add_text_message("Are the places in UK?")
     conversation.commit_transaction(send_to_vlm=True)
 
+    print("Latest")
     print(conversation.get_latest_message())
+
+    print("Entire conversation")
+    print(conversation.get_conversation())
 
 
 if __name__ == "__main__":
