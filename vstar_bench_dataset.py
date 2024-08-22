@@ -1,6 +1,7 @@
 import torch
 import json
 import os
+import random
 
 import torchvision.transforms
 from PIL import Image
@@ -75,6 +76,8 @@ class VstarSubBenchDataset(torch.utils.data.Dataset):
             question = metadata["question"]
             options = metadata["options"]
             answer = options[0]
+
+            random.shuffle(options)
 
             return image, question, options, answer
 
