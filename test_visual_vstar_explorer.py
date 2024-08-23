@@ -75,7 +75,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.step(first=True)
@@ -115,7 +117,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -135,7 +139,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -156,7 +162,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -175,7 +183,9 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -193,7 +203,9 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -238,7 +250,9 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -263,7 +277,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -293,7 +309,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=1,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -318,7 +336,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=3,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -343,7 +363,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=4,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -369,7 +391,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()
@@ -399,7 +423,9 @@ class TestVisualVStarExplorer:
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
             number_glimpses=5,
-            response_parser=SimpleResponseParser()
+            response_parser=SimpleResponseParser(),
+            starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+            classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
         )
 
         explorer.answer()

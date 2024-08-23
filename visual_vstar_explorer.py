@@ -22,6 +22,8 @@ class VisualVStarExplorer:
                  options: list[str],
                  glimpse_generator: ImageGlimpseGenerator,
                  response_parser: AbstractResponseParser,
+                 starting_prompt_generator: callable,
+                 classification_prompt_generator: callable,
                  number_glimpses: int = 5,
                  ) -> None:
         self.conversation = conversation
@@ -33,6 +35,8 @@ class VisualVStarExplorer:
         self.number_glimpses = number_glimpses
         self.response_parser = response_parser
         self.failed_coord_request: str | None = None
+        self.staring_prompt_generator = starting_prompt_generator
+        self.classification_prompt_generator = classification_prompt_generator
 
     def step(self, x1=0.0, y1=0.0, x2=1.0, y2=1.0, first=False) -> str:
         glimpse = self.glimpse_generator.get_glimpse(x1, y1, x2, y2)
@@ -40,9 +44,9 @@ class VisualVStarExplorer:
         self.conversation.begin_transaction(Role.USER)
 
         if first:
-            self.conversation.add_text_message(get_starting_prompt_for_vstar_explorer(self.number_glimpses))
+            self.conversation.add_text_message(self.staring_prompt_generator(self.number_glimpses))
             self.conversation.add_text_message(
-                get_classification_prompt_for_vstar_explorer(self.question, self.options))
+                self.classification_prompt_generator(self.question, self.options))
 
         for subglimpse in glimpse:
             pil_subglimpse = opencv_to_pil(subglimpse)
@@ -106,7 +110,9 @@ def main():
         "What is written above 'McNuggets' on the box?",
         ["Kurczak", "Kaczka", "Kamyk", "Krowodrza Górka", "Krokodyl"],
         glimpse_generator,
-        response_parser=response_parser
+        response_parser=response_parser,
+        starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
+        classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
     )
 
     explorer.answer()
