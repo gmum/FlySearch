@@ -9,6 +9,7 @@ from visual_vstar_explorer import VisualVStarExplorer
 from cv2_and_numpy import opencv_to_pil, pil_to_opencv
 from prompt_generation import get_starting_prompt_for_vstar_explorer, get_classification_prompt_for_vstar_explorer
 from abstract_conversation import Conversation, Role
+from abstract_response_parser import AbstractResponseParser, SimpleResponseParser
 
 
 class MockConversation(Conversation):
@@ -73,7 +74,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.step(first=True)
@@ -112,7 +114,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -131,13 +134,14 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
 
         assert explorer.get_response() == -1
-        assert explorer.get_failed_coord_request() == "(3.0, 7.0) and (0.5, 0.5)"
+        assert explorer.get_failed_coord_request() == "<Haha!> (3.0, 7.0) and (0.5, 0.5)"
 
     def test_explorer_terminates_ave_process_on_invalid_coordinates_2(self):
         image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
@@ -151,13 +155,14 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
 
         assert explorer.get_response() == -1
-        assert explorer.get_failed_coord_request() == "(0.3, 0.4) and (0.1, 0.5)"
+        assert explorer.get_failed_coord_request() == "<Haha!> (0.3, 0.4) and (0.1, 0.5)"
 
     def test_explorer_properly_parses_answers_without_comments(self):
         mock_glimpse_generator = MockGlimpseGenerator(np.zeros((100, 100, 3), dtype=np.uint8))
@@ -169,7 +174,8 @@ class TestVisualVStarExplorer:
             ]),
             question="What animal do you see?",
             options=["cat", "dog"],
-            glimpse_generator=mock_glimpse_generator
+            glimpse_generator=mock_glimpse_generator,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -186,7 +192,8 @@ class TestVisualVStarExplorer:
             ]),
             question="What animal do you see?",
             options=["cat", "dog"],
-            glimpse_generator=mock_glimpse_generator
+            glimpse_generator=mock_glimpse_generator,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -230,7 +237,8 @@ class TestVisualVStarExplorer:
             ]),
             question="What animal do you see?",
             options=["cat", "dog"],
-            glimpse_generator=mock_glimpse_generator
+            glimpse_generator=mock_glimpse_generator,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -254,7 +262,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -283,7 +292,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=1
+            number_glimpses=1,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -307,7 +317,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=3
+            number_glimpses=3,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -331,7 +342,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=4
+            number_glimpses=4,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -356,7 +368,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()
@@ -367,19 +380,6 @@ class TestVisualVStarExplorer:
 
         assert explorer.get_failed_coord_request() is None
         assert explorer.get_response() == "dog"
-
-    def test_converting_str_to_coords_is_case_insensitive(self):
-        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) and (0.4, 0.6)")
-        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) AND (0.4, 0.6)")
-        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) AnD (0.4, 0.6)")
-        assert (0.1, 0.2, 0.4, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2) aNd (0.4, 0.6)")
-
-    def test_converting_str_to_coords_is_space_insensitive(self):
-        assert (0.11, 0.2, 0.44, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.11, 0.2) and (0.44, 0.6)")
-        assert (0.123, 0.2, 0.44, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords(
-            "(0.123, 0.2) ANd(0.44, 0.6)")
-        assert (0.1, 0.2, 0.45, 0.6) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2)aND (0.45, 0.6)")
-        assert (0.1, 0.2, 0.4, 0.65) == VisualVStarExplorer.convert_str_coords_to_coords("(0.1, 0.2)and(0.4, 0.65)")
 
     def test_glimpses_passed_to_conversation_are_the_ones_returned_by_glimpse_generator(self):
         image = np.random.randint(0, 255, (100, 100, 3), dtype=np.uint8)
@@ -398,7 +398,8 @@ class TestVisualVStarExplorer:
             question="What animal do you see?",
             options=["cat", "dog"],
             glimpse_generator=mock_glimpse_generator,
-            number_glimpses=5
+            number_glimpses=5,
+            response_parser=SimpleResponseParser()
         )
 
         explorer.answer()

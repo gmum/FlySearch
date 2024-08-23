@@ -65,7 +65,10 @@ class ExplorationVisualizer:
         for i, request in enumerate(self.glimpse_requests):
             glimpse = self.glimpse_generator.get_glimpse(*request)
             for j, subglimpse in enumerate(glimpse):
-                cv2.imwrite(f"{file_dir}_{i}_{j}.jpeg", subglimpse)
+                try:
+                    cv2.imwrite(f"{file_dir}_{i}_{j}.jpeg", subglimpse)
+                except Exception as e:
+                    print("Failed to save glimpse", e)
 
 
 def main():

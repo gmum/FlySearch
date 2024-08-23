@@ -3,7 +3,7 @@ import typing
 import torch
 
 from transformers import pipeline
-from transformers import AutoProcessor, LlavaForConditionalGeneration, AutoModelForPreTraining
+from transformers import AutoProcessor, LlavaForConditionalGeneration, AutoModel
 from transformers import BitsAndBytesConfig
 from enum import Enum
 from PIL import Image
@@ -28,8 +28,8 @@ class MessageType(Enum):
 
 
 class LlavaConversation(Conversation):
-    def __init__(self, client: pipeline, seed=42):
-        self.client: pipeline = client
+    def __init__(self, client, seed=42):
+        self.client = client
         self.conversation: list[tuple[Role, list[tuple[MessageType, str | Image.Image]]]] = []
         self.images: list[Image.Image] = []
         self.seed: int = seed
@@ -142,7 +142,7 @@ class LlavaConversation(Conversation):
         return self.convert_conversation_to_llava_format(self.conversation)
 
 
-class SimplePipeline:
+class SimpleLlavaPipeline:
     def __init__(self, device="cpu", max_tokens=300):
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
@@ -169,7 +169,7 @@ def main():
     import requests
     image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
-    client = SimplePipeline(device="cuda")
+    client = SimpleLlavaPipeline(device="cuda")
 
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
     image, question, options, answer = ds[0]
