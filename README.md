@@ -38,3 +38,9 @@ python benchmark_simple.py
 ```
 
 To modify model being benchmarked, you need to change code in the `benchmark_simple.py` file.
+
+## Adding new models
+
+To add support for new model, you need to create a new class that inherits from the `Conversation` class from
+`abstract_conversation.py` file and implement
+its interface.
