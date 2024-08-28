@@ -55,7 +55,7 @@ class SimpleResponseParser(AbstractResponseParser):
 
             return x1, y1, x2, y2
         except Exception as e:
-            print("Failed to parse coordinates", e, response)
+            # print("Failed to parse coordinates", e, response)
             return None
 
     def get_answer(self, response: str) -> str | None:
@@ -65,5 +65,5 @@ class SimpleResponseParser(AbstractResponseParser):
             if "answer:" in response.lower():
                 return response.split(":")[1].strip()
         except Exception as e:
-            print("Failed to get answer", e, response)
+            # print("Failed to get answer", e, response)
             return None

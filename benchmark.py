@@ -1,3 +1,5 @@
+from lib2to3.pytree import convert
+
 import numpy as np
 import cv2
 import os
@@ -16,8 +18,12 @@ from openai_conversation import OpenAIConversation
 from cv2_and_numpy import pil_to_opencv, opencv_to_pil
 from image_glimpse_generator import GridImageGlimpseGenerator
 from visualization import ExplorationVisualizer
+from xml_response_parser import XMLResponseParser
+from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
+    get_classification_prompt_for_vstar_explorer_xml
+from intern_conversation import get_model_and_stuff, get_conversation, InternConversation
 
-RUN_NAME = "relative_position_gridline_5_glimpses_7"
+RUN_NAME = "relative_position_gridline_5_glimpses_7_detail_3_retries"
 
 
 def main():
@@ -28,35 +34,54 @@ def main():
     run_dir = all_logs_dir / RUN_NAME
 
     all_logs_dir.mkdir(exist_ok=True)
-    run_dir.mkdir(exist_ok=True)
+    run_dir.mkdir(exist_ok=False)
 
     bar = tqdm(enumerate(ds), total=len(ds))  # type: ignore
 
     total_ok = 0
 
+    model_and_stuff = get_model_and_stuff()
+
     for i, (image, question, options, answer) in bar:
-        conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY), model_name="gpt-4o")
+        # conversation = OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY), model_name="gpt-4o")
+
         glimpse_generator = GridImageGlimpseGenerator(image, 5)
 
-        explorer = VisualVStarExplorer(
-            conversation=conversation,
-            question=question,
-            options=options,
-            glimpse_generator=glimpse_generator,
-            number_glimpses=7
-        )
+        fail = True
 
-        model_response = ""
+        conversation = None
+        explorer = None
 
-        try:
+        while fail:
+            conversation = InternConversation(**model_and_stuff)
+
+            explorer = VisualVStarExplorer(
+                conversation=conversation,
+                question=question,
+                options=options,
+                glimpse_generator=glimpse_generator,
+                number_glimpses=7,
+                response_parser=XMLResponseParser(),
+                starting_prompt_generator=get_starting_prompt_for_vstar_explorer_xml,
+                classification_prompt_generator=get_classification_prompt_for_vstar_explorer_xml,
+            )
+
             explorer.answer()
-            model_response = str(explorer.get_response()).lower().strip()
-        except Exception as e:
-            model_response = "ERROR DURING TESTING! " + str(e)
 
-        answer = answer.lower().strip()
+            if explorer.get_response() == -1 or explorer.get_response == "-1":
+                continue
 
-        correct = model_response == answer
+            try:
+                explorer.get_response()
+                fail = False
+            except:
+                fail = True
+
+        model_response = str(explorer.get_response()).lower().strip()
+
+        answer: str = answer.lower().strip()
+
+        correct = model_response.endswith(answer)
 
         if correct:
             total_ok += 1
@@ -70,7 +95,7 @@ def main():
             "expected_response": answer,
             "correct": correct,
             "simplified_conversation": conversation.get_conversation(),
-            "conversation": conversation.get_entire_conversation(),
+            # "conversation": conversation.get_entire_conversation(),
             "failed_coord_request": explorer.get_failed_coord_request(),
         }
 

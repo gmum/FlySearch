@@ -5,6 +5,7 @@ from openai import OpenAI
 
 from abstract_conversation import Conversation, Role
 from abstract_response_parser import SimpleResponseParser, AbstractResponseParser
+from xml_response_parser import XMLResponseParser
 from config import OPEN_AI_KEY
 from cv2_and_numpy import opencv_to_pil, pil_to_opencv
 from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
@@ -13,6 +14,7 @@ from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
 from image_glimpse_generator import ImageGlimpseGenerator
 from llava_conversation import LlavaConversation, SimpleLlavaPipeline
 from intern_conversation import get_conversation
+from vstar_bench_dataset import VstarSubBenchDataset
 
 
 class VisualVStarExplorer:
@@ -73,6 +75,7 @@ class VisualVStarExplorer:
                 try:
                     response = self.step(*coords)
                 except Exception as e:
+                    print("Invalid coordinates", e, response)
                     self.failed_coord_request = response
                     break
             else:
@@ -101,18 +104,26 @@ def main():
 
     conversation = get_conversation()
 
-    image = cv2.imread("sample_images/burger.jpeg")
+    # image = cv2.imread("sample_images/burger.jpeg")
+
+    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=pil_to_opencv)
+    image, question, options, answer = ds[1]
+
+    print("Q:", question)
+    print("O:", options)
+    print("A:", answer)
+
     glimpse_generator = GridImageGlimpseGenerator(image, 5)
-    response_parser = SimpleResponseParser()
+    response_parser = XMLResponseParser()
 
     explorer = VisualVStarExplorer(
         conversation,
-        "What is written above 'McNuggets' on the box?",
-        ["Kurczak", "Kaczka", "Kamyk", "Krowodrza Górka", "Krokodyl"],
+        question,
+        options,
         glimpse_generator,
         response_parser=response_parser,
-        starting_prompt_generator=get_starting_prompt_for_vstar_explorer,
-        classification_prompt_generator=get_classification_prompt_for_vstar_explorer,
+        starting_prompt_generator=get_starting_prompt_for_vstar_explorer_xml,
+        classification_prompt_generator=get_classification_prompt_for_vstar_explorer_xml,
     )
 
     explorer.answer()
@@ -126,9 +137,9 @@ def main():
     visualizer.save_glimpses_individually("debug/glimpse")
     visualizer.save_glimpse_boxes("debug/glimpse_boxes.jpeg")
 
-    print(conversation.get_conversation())
+    # print(conversation.get_conversation())
     print(explorer.get_glimpse_requests())
-    print(conversation)
+    # print(conversation)
 
 
 if __name__ == "__main__":

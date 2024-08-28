@@ -158,7 +158,9 @@ class InternConversation(Conversation):
             return_history=True
         )
 
-        print("GOT RESPONSE:", response)
+        # print("=== GOT RESPONSE ===")
+        # print(response)
+        # print("=== END RESPONSE ===")
 
         self.transaction_started = False
         self.transaction_role = None
@@ -235,7 +237,16 @@ def main2():
 
 
 def get_conversation():
+    stuff = get_model_and_stuff()
+
+    conversation = InternConversation(**stuff)
+
+    return conversation
+
+
+def get_model_and_stuff():
     path = 'OpenGVLab/InternVL2-8B'
+
     model = AutoModel.from_pretrained(
         path,
         torch_dtype=torch.bfloat16,
@@ -243,12 +254,23 @@ def get_conversation():
         low_cpu_mem_usage=True,
         trust_remote_code=True).eval()
 
+    # model = AutoModel.from_pretrained(
+    #    path,
+    #    torch_dtype=torch.bfloat16,
+    #    low_cpu_mem_usage=True,
+    #    use_flash_attn=False,
+    #    trust_remote_code=True).eval().cuda()
+
     tokenizer = AutoTokenizer.from_pretrained(path, trust_remote_code=True, use_fast=False)
     generation_config = dict(max_new_tokens=512, do_sample=True)
 
-    conversation = InternConversation(model, tokenizer, generation_config, image_detail_level=3, device="cuda")
-
-    return conversation
+    return {
+        "client": model,
+        "tokenizer": tokenizer,
+        "generation_config": generation_config,
+        "image_detail_level": 3,
+        "device": "cuda"
+    }
 
 
 if __name__ == "__main__":
