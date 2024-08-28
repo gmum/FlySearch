@@ -29,3 +29,12 @@ available to be used:
 Due to the fact that these classes wrap around entirely different models, initializing them requires different
 approaches. To see how to instantiate them properly, you can check main() functions in their respective files.
 
+## Naive benchmark
+
+To run the naive benchmark, run the following command:
+
+```bash
+python benchmark_simple.py
+```
+
+To modify model being benchmarked, you need to change code in the `benchmark_simple.py` file.
