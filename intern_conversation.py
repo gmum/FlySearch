@@ -201,6 +201,15 @@ class InternConversation(Conversation):
 
         return total
 
+    def rollback_transaction(self):
+        if not self.transaction_started:
+            raise Exception("Transaction not started")
+
+        self.transaction_started = False
+        self.transaction_role = None
+        self.transaction_conversation = []
+        self.transaction_images = []
+
     def get_latest_message(self) -> typing.Tuple[Role, str]:
         return self.get_conversation()[-1]
 
