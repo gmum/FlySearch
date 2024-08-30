@@ -13,15 +13,6 @@ from abstract_conversation import Conversation, Role
 from cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
-def get_pipeline():
-    model_name = "llava-hf/llava-1.5-7b-hf"
-    quantization_config = BitsAndBytesConfig(
-        load_in_4bit=True,
-        bnb_4bit_compute_dtype=torch.float16
-    )
-    return pipeline("image-to-text", model=model_name, model_kwargs={"quantization_config": quantization_config})
-
-
 class MessageType(Enum):
     TEXT = "text"
     IMAGE = "image"

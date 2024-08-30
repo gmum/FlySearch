@@ -268,7 +268,7 @@ def get_model_and_stuff():
         "client": model,
         "tokenizer": tokenizer,
         "generation_config": generation_config,
-        "image_detail_level": 3,
+        "image_detail_level": 10,
         "device": "cuda"
     }
 
