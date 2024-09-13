@@ -15,12 +15,14 @@ from cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class OpenAIConversation(Conversation):
-    def __init__(self, client: OpenAI, model_name: str, seed=42, max_tokens=300):
+    def __init__(self, client: OpenAI, model_name: str, seed=42, max_tokens=300, temperature=0.8, top_p=1.0):
         self.client = client
         self.conversation = []
         self.model_name = model_name
         self.seed = seed
         self.max_tokens = max_tokens
+        self.temperature = temperature
+        self.top_p = top_p
 
         self.transaction_started = False
         self.transaction_role = None
@@ -71,7 +73,7 @@ class OpenAIConversation(Conversation):
             }
         )
 
-    def get_answer_from_openai(self, model, messages, max_tokens, seed):
+    def get_answer_from_openai(self, model, messages, max_tokens, seed, temperature, top_p):
         fail = True
         response = None
 
@@ -81,7 +83,9 @@ class OpenAIConversation(Conversation):
                     model=model,
                     messages=messages,
                     max_tokens=max_tokens,
-                    seed=seed
+                    seed=seed,
+                    temperature=temperature,
+                    top_p=top_p
                 )
                 fail = False
             except RateLimitError as e:
@@ -111,7 +115,9 @@ class OpenAIConversation(Conversation):
             model=self.model_name,
             messages=self.conversation,
             max_tokens=self.max_tokens,
-            seed=self.seed
+            seed=self.seed,
+            temperature=self.temperature,
+            top_p=self.top_p
         )
 
         response_content = str(response.choices[0].message.content)
@@ -163,7 +169,9 @@ def main():
         client,
         model_name="gpt-4o",
         seed=42,
-        max_tokens=300
+        max_tokens=300,
+        temperature=0.0000000000000000000001,
+        top_p=0.0000000000000000000001
     )
 
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
