@@ -10,8 +10,9 @@ ds = load_dataset("DreamMr/HR-Bench")
 
 
 class HRBench(torch.utils.data.Dataset):
-    def __init__(self):
+    def __init__(self, transform=None):
         self.data = ds["train"]
+        self.transform = transform
 
     def __len__(self):
         return len(self.data)
@@ -20,15 +21,20 @@ class HRBench(torch.utils.data.Dataset):
         item = self.data[idx]
 
         raw_image = item["image"]
-        pil_image = Image.open(BytesIO(base64.b64decode(raw_image)))
+        image = Image.open(BytesIO(base64.b64decode(raw_image)))
+
+        if self.transform:
+            image = self.transform(image)
 
         answer = item["answer"]
+        answer = item[answer]  # Yes.
+
         question = item["question"]
 
         options = [item["A"], item["B"], item["C"], item["D"]]
         random.shuffle(options)
 
-        return pil_image, question, options, answer
+        return image, question, options, answer
 
 
 def main():

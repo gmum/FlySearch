@@ -23,11 +23,11 @@ from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
     get_classification_prompt_for_vstar_explorer_xml
 from intern_conversation import get_model_and_stuff, get_conversation, InternConversation
 
-RUN_NAME = "relative_position_gridline_5_glimpses_7_detail_3_retries"
+RUN_NAME = "direct_attributes_gridline_5_glimpses_7_detail_5_retries_stresstest"
 
 
 def main():
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
+    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=pil_to_opencv)
     # ds = torch.utils.data.Subset(ds, range(60, len(ds)))
 
     all_logs_dir = pathlib.Path("all_logs")
@@ -51,8 +51,10 @@ def main():
 
         conversation = None
         explorer = None
+        attempts = 0
 
         while fail:
+            attempts += 1
             conversation = InternConversation(**model_and_stuff)
 
             explorer = VisualVStarExplorer(
@@ -97,6 +99,7 @@ def main():
             "simplified_conversation": conversation.get_conversation(),
             # "conversation": conversation.get_entire_conversation(),
             "failed_coord_request": explorer.get_failed_coord_request(),
+            "attempts": attempts,
         }
 
         example_dir = run_dir / str(i)
