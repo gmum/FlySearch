@@ -28,9 +28,10 @@ from permutation_shift_generator import PermutationShiftGenerator
 from hr_bench import HRBench
 
 subset = "hr_bench"
+should_not_use_permutation_shift = subset == "hr_bench"
 # subset = "relative_position"
 
-RUN_NAME = f"{subset}_test_permutation_shift_INTRO_4"
+RUN_NAME = f"{subset}_test_permutation_shift_FULL_1"
 
 
 def main():
@@ -39,7 +40,7 @@ def main():
     else:
         ds = VstarSubBenchDataset(f"/home/dominik/vstar_bench/{subset}", transform=pil_to_opencv)
 
-    ds = torch.utils.data.Subset(ds, [1])
+    # ds = torch.utils.data.Subset(ds, [1])
 
     all_logs_dir = pathlib.Path("all_logs")
     run_dir = all_logs_dir / RUN_NAME
@@ -53,7 +54,7 @@ def main():
     total_examples = 0
 
     for i, (image, question, options, answer) in bar:
-        psg = PermutationShiftGenerator(options)
+        psg = PermutationShiftGenerator(options, dummy=should_not_use_permutation_shift)
 
         all_perms_dir = run_dir / str(i)
         all_perms_dir.mkdir(exist_ok=True)

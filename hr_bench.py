@@ -32,13 +32,14 @@ class HRBench(torch.utils.data.Dataset):
         question = item["question"]
 
         options = [item["A"], item["B"], item["C"], item["D"]]
-        random.shuffle(options)
 
         return image, question, options, answer
 
 
 def main():
     ds = HRBench()
+
+    print(len(ds))
 
     for i in range(10):
         image, question, options, answer = ds[i]
