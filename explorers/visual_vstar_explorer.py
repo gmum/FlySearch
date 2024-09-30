@@ -1,19 +1,12 @@
-import cv2
-import re
-
-from openai import OpenAI
-
-from abstract_conversation import Conversation, Role
+from conversation.abstract_conversation import Conversation, Role
 from abstract_response_parser import SimpleResponseParser, AbstractResponseParser
 from xml_response_parser import XMLResponseParser
-from config import OPEN_AI_KEY
 from cv2_and_numpy import opencv_to_pil, pil_to_opencv
 from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
     get_classification_prompt_for_vstar_explorer_xml, get_classification_prompt_for_vstar_explorer, \
     get_starting_prompt_for_vstar_explorer
 from image_glimpse_generator import ImageGlimpseGenerator
-from llava_conversation import LlavaConversation, SimpleLlavaPipeline
-from intern_conversation import get_conversation
+from conversation.intern_conversation import get_conversation
 from vstar_bench_dataset import VstarSubBenchDataset
 
 

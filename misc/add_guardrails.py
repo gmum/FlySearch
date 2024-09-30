@@ -2,7 +2,6 @@ import torchvision
 import numpy as np
 
 from PIL import Image, ImageDraw, ImageFont
-from sympy.physics.quantum.matrixutils import numpy_ndarray
 
 
 # Taken and repurposed from https://github.com/leixy20/Scaffold/blob/main/image_processor.py
