@@ -1,4 +1,4 @@
-from xml_response_parser import XMLResponseParser
+from response_parsers.xml_response_parser import XMLResponseParser
 
 
 class TestXmlResponseParser:

@@ -1,6 +1,6 @@
 import re
 
-from abstract_response_parser import AbstractResponseParser
+from response_parsers.abstract_response_parser import AbstractResponseParser
 from typing import Tuple
 
 
