@@ -6,6 +6,9 @@ from unrealcv import Client
 from time import sleep
 from PIL import Image
 
+from misc.add_guardrails import dot_matrix_two_dimensional
+from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
+
 
 class UnrealGlimpseGenerator:
     def __init__(self, host='localhost', port=9000, start_position=(3300.289, -26305.121, 0)):
@@ -43,11 +46,28 @@ class UnrealGlimpseGenerator:
         sleep(0.5)
         self.client.request('vget /camera/1/lit /tmp/camera.png')
         image = Image.open('/tmp/camera.png')
-        return image.resize((224, 224), Image.Resampling.BILINEAR)
+        return image.resize((500, 500), Image.Resampling.BILINEAR)
+
+
+class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
+    def __init__(self, splits_w: int, splits_h: int, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.splits_w = splits_w
+        self.splits_h = splits_h
+
+    def get_camera_image(self,
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
+        img = super().get_camera_image(rel_position_m)
+        img = pil_to_opencv(img)
+        img = dot_matrix_two_dimensional(img, self.splits_w, self.splits_h)
+        img = opencv_to_pil(img)
+
+        return img
 
 
 def main():
-    generator = UnrealGlimpseGenerator()
+    generator = UnrealGridGlimpseGenerator(splits_w=5, splits_h=5)
     image = generator.get_camera_image((-50, -55, 100))
     image.show()
 
