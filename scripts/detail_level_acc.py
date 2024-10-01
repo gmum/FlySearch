@@ -6,15 +6,14 @@ import json
 import torch
 import string
 
-from openai import OpenAI
 from tqdm import tqdm
 
-from vstar_bench_dataset import VstarSubBenchDataset
-from cv2_and_numpy import pil_to_opencv, opencv_to_pil
-from llava_conversation import LlavaConversation, SimpleLlavaPipeline
-from abstract_conversation import Role
-from intern_conversation import get_conversation, InternConversation, get_model_and_stuff
-from xml_response_parser import XMLResponseParser
+from datasets.vstar_bench_dataset import VstarSubBenchDataset
+from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
+from conversation.llava_conversation import LlavaConversation, SimpleLlavaPipeline
+from conversation.abstract_conversation import Role
+from conversation.intern_conversation import get_conversation, InternConversation, get_model_and_stuff
+from response_parsers.xml_response_parser import XMLResponseParser
 
 
 def eval_one_run(ds, model_params):

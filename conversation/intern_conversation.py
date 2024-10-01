@@ -8,8 +8,7 @@ from PIL import Image
 from torchvision.transforms.functional import InterpolationMode
 from transformers import AutoModel, AutoTokenizer
 
-from abstract_conversation import Conversation, Role
-from llava_conversation import LlavaConversation
+from conversation.abstract_conversation import Conversation, Role
 
 # Code from https://huggingface.co/OpenGVLab/InternVL2-8B
 

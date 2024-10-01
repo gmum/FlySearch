@@ -10,8 +10,8 @@ from openai import RateLimitError
 from time import sleep
 from PIL import Image
 
-from abstract_conversation import Conversation, Role
-from cv2_and_numpy import pil_to_opencv, opencv_to_pil
+from conversation.abstract_conversation import Conversation, Role
+from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class OpenAIConversation(Conversation):
@@ -161,8 +161,8 @@ class OpenAIConversation(Conversation):
 
 
 def main():
-    from config import OPEN_AI_KEY
-    from vstar_bench_dataset import VstarSubBenchDataset
+    from misc.config import OPEN_AI_KEY
+    from datasets.vstar_bench_dataset import VstarSubBenchDataset
 
     client = OpenAI(api_key=OPEN_AI_KEY)
     conversation = OpenAIConversation(

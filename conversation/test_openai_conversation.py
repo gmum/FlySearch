@@ -1,16 +1,11 @@
 import pytest
 import cv2
-import base64
-import io
-import numpy as np
 
-from openai import OpenAI
 from PIL import Image
 
-from add_guardrails import from_opencv_to_pil
-from openai_conversation import OpenAIConversation
-from abstract_conversation import Conversation, Role
-from cv2_and_numpy import pil_to_opencv, opencv_to_pil
+from misc.add_guardrails import from_opencv_to_pil
+from conversation.openai_conversation import OpenAIConversation
+from conversation.abstract_conversation import Conversation, Role
 
 
 class SimpleObject:
@@ -414,7 +409,7 @@ class TestOpenAIConversation:
             max_tokens=15
         )
 
-        image = cv2.imread("sample_images/burger.jpeg")
+        image = cv2.imread("../data/sample_images/burger.jpeg")
         image = cv2.resize(image, (20, 20))
         image_pil = from_opencv_to_pil(image)
 

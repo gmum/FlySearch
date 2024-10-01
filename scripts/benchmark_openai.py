@@ -1,5 +1,3 @@
-from lib2to3.pytree import convert
-
 import numpy as np
 import cv2
 import os
@@ -11,21 +9,18 @@ import string
 from openai import OpenAI
 from tqdm import tqdm
 
-from config import OPEN_AI_KEY
-from vstar_bench_dataset import VstarSubBenchDataset
-from visual_vstar_explorer import VisualVStarExplorer
+from misc.config import OPEN_AI_KEY
+from datasets.vstar_bench_dataset import VstarSubBenchDataset
+from explorers.visual_vstar_explorer import VisualVStarExplorer
 from conversation.openai_conversation import OpenAIConversation
-from cv2_and_numpy import pil_to_opencv, opencv_to_pil
-from image_glimpse_generator import GridImageGlimpseGenerator
-from visualization import ExplorationVisualizer
-from abstract_response_parser import SimpleResponseParser
-from xml_response_parser import XMLResponseParser
-from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
-    get_classification_prompt_for_vstar_explorer_xml, get_starting_prompt_for_vstar_explorer, \
-    get_classification_prompt_for_vstar_explorer
+from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
+from glimpse_generators.image_glimpse_generator import GridImageGlimpseGenerator
+from visualization.visualization import ExplorationVisualizer
+from response_parsers.xml_response_parser import XMLResponseParser
+from prompts.prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
+    get_classification_prompt_for_vstar_explorer_xml
 from conversation.intern_conversation import get_model_and_stuff, get_conversation, InternConversation
-from permutation_shift_generator import PermutationShiftGenerator
-from hr_bench import HRBench
+from datasets.hr_bench import HRBench
 
 subset = "hr_bench"
 should_not_use_permutation_shift = subset == "hr_bench"

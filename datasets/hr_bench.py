@@ -9,7 +9,7 @@ from io import BytesIO
 
 class HRBench(torch.utils.data.Dataset):
     def __init__(self, transform=None):
-        self.data = pd.read_parquet("data/hr_bench_8k.parquet")
+        self.data = pd.read_parquet("../data/hr_bench_8k.parquet")
         self.transform = transform
 
     def __len__(self):

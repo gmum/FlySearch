@@ -1,7 +1,8 @@
 import numpy as np
 
-from image_glimpse_generator import ImageGlimpseGenerator, BasicImageGlimpseGenerator, GridImageGlimpseGenerator
-from add_guardrails import dot_matrix_two_dimensional
+from glimpse_generators.image_glimpse_generator import ImageGlimpseGenerator, BasicImageGlimpseGenerator, \
+    GridImageGlimpseGenerator
+from misc.add_guardrails import dot_matrix_two_dimensional
 
 
 class TestImageGlimpseGenerator:

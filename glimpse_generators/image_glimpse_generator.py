@@ -3,7 +3,7 @@ from tkinter import Image
 import cv2
 import numpy as np
 
-from add_guardrails import dot_matrix_two_dimensional
+from misc.add_guardrails import dot_matrix_two_dimensional
 
 
 # It's an abstract class.
@@ -60,8 +60,8 @@ class GridImageGlimpseGenerator(BasicImageGlimpseGenerator):
 
 
 def main():
-    from vstar_bench_dataset import VstarSubBenchDataset
-    from cv2_and_numpy import pil_to_opencv
+    from datasets.vstar_bench_dataset import VstarSubBenchDataset
+    from misc.cv2_and_numpy import pil_to_opencv
 
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
     img, _, _, _ = ds[0]

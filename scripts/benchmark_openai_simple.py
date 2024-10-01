@@ -12,21 +12,13 @@ from openai import OpenAI
 from tqdm import tqdm
 
 from conversation.abstract_conversation import Role
-from config import OPEN_AI_KEY
-from vstar_bench_dataset import VstarSubBenchDataset
-from visual_vstar_explorer import VisualVStarExplorer
+from misc.config import OPEN_AI_KEY
+from datasets.vstar_bench_dataset import VstarSubBenchDataset
 from conversation.openai_conversation import OpenAIConversation
-from cv2_and_numpy import pil_to_opencv, opencv_to_pil
-from image_glimpse_generator import GridImageGlimpseGenerator
-from visualization import ExplorationVisualizer
-from abstract_response_parser import SimpleResponseParser
-from xml_response_parser import XMLResponseParser
-from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
-    get_classification_prompt_for_vstar_explorer_xml, get_starting_prompt_for_vstar_explorer, \
-    get_classification_prompt_for_vstar_explorer
-from conversation.intern_conversation import get_model_and_stuff, get_conversation, InternConversation
-from permutation_shift_generator import PermutationShiftGenerator
-from hr_bench import HRBench
+from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
+from response_parsers.xml_response_parser import XMLResponseParser
+from misc.permutation_shift_generator import PermutationShiftGenerator
+from datasets.hr_bench import HRBench
 
 # subset = "direct_attributes"
 subset = "hr_bench"
