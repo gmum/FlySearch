@@ -1,13 +1,13 @@
 from conversation.abstract_conversation import Conversation, Role
-from abstract_response_parser import SimpleResponseParser, AbstractResponseParser
-from xml_response_parser import XMLResponseParser
-from cv2_and_numpy import opencv_to_pil, pil_to_opencv
-from prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
+from response_parsers.abstract_response_parser import SimpleResponseParser, AbstractResponseParser
+from response_parsers.xml_response_parser import XMLResponseParser
+from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
+from prompts.prompt_generation import get_starting_prompt_for_vstar_explorer_xml, \
     get_classification_prompt_for_vstar_explorer_xml, get_classification_prompt_for_vstar_explorer, \
     get_starting_prompt_for_vstar_explorer
-from image_glimpse_generator import ImageGlimpseGenerator
+from glimpse_generators.image_glimpse_generator import ImageGlimpseGenerator
 from conversation.intern_conversation import get_conversation
-from vstar_bench_dataset import VstarSubBenchDataset
+from datasets.vstar_bench_dataset import VstarSubBenchDataset
 
 
 class VisualVStarExplorer:
@@ -86,8 +86,8 @@ class VisualVStarExplorer:
 
 
 def main():
-    from openai_conversation import OpenAIConversation
-    from image_glimpse_generator import GridImageGlimpseGenerator
+    from conversation.openai_conversation import OpenAIConversation
+    from glimpse_generators.image_glimpse_generator import GridImageGlimpseGenerator
 
     # client = OpenAI(api_key=OPEN_AI_KEY)
     # conversation = OpenAIConversation(

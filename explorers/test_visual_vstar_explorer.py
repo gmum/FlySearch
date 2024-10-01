@@ -4,12 +4,13 @@ import cv2
 from enum import Enum
 from PIL import Image
 
-from image_glimpse_generator import ImageGlimpseGenerator, BasicImageGlimpseGenerator
-from visual_vstar_explorer import VisualVStarExplorer
-from cv2_and_numpy import opencv_to_pil, pil_to_opencv
-from prompt_generation import get_starting_prompt_for_vstar_explorer, get_classification_prompt_for_vstar_explorer
-from abstract_conversation import Conversation, Role
-from abstract_response_parser import AbstractResponseParser, SimpleResponseParser
+from glimpse_generators.image_glimpse_generator import ImageGlimpseGenerator, BasicImageGlimpseGenerator
+from explorers.visual_vstar_explorer import VisualVStarExplorer
+from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
+from prompts.prompt_generation import get_starting_prompt_for_vstar_explorer, \
+    get_classification_prompt_for_vstar_explorer
+from conversation.abstract_conversation import Conversation, Role
+from response_parsers.abstract_response_parser import AbstractResponseParser, SimpleResponseParser
 
 
 class MockConversation(Conversation):

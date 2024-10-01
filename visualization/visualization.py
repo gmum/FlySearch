@@ -4,9 +4,8 @@ import torchvision
 import cv2
 
 from matplotlib import pyplot as plt
-from typing import List, Tuple
 
-from image_glimpse_generator import ImageGlimpseGenerator
+from glimpse_generators.image_glimpse_generator import ImageGlimpseGenerator
 
 
 class ExplorationVisualizer:
