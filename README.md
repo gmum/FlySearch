@@ -4,7 +4,8 @@ This repository contains code for performing Active Visual Exploration Process o
 
 ## AVE benchmark
 
-File `benchmark.py` contains example code for running an AVE process on a VLLM. To run it, install all dependencies and
+File `benchmark.py` contains example code for running an AVE process on a VLLM. To run it install all dependencies, `cd`
+into `scripts` directory and
 simply run the following command:
 
 ```bash
