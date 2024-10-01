@@ -1,0 +1,1 @@
+python3 drone.py --prompt basic --glimpses 2 --glimpse_generator grid --model gpt-4o --run_name drone_1 --repeats 3
