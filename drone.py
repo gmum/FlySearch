@@ -4,10 +4,14 @@ import pathlib
 from openai import OpenAI
 
 from conversation.openai_conversation import OpenAIConversation
+from conversation.intern_conversation import InternConversation, get_model_and_stuff
 from misc.config import OPEN_AI_KEY
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
-from prompts.drone_prompt_generation import generate_basic_drone_prompt
+from prompts import generate_brute_force_drone_prompt
+from prompts.drone_prompt_generation import generate_basic_drone_prompt, generate_xml_drone_prompt
 from explorers.drone_explorer import DroneExplorer
+from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
+from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
 
 
 def create_test_run_directory(args):
@@ -27,18 +31,40 @@ def get_glimpse_generator(args):
         return UnrealGridGlimpseGenerator(splits_w=5, splits_h=5)
 
 
+intern_model_and_stuff = None
+
+
 def get_conversation(args):
     if args.model == "gpt-4o":
         return OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY), model_name="gpt-4o")
+    elif args.model == "intern":
+        global intern_model_and_stuff
+        if intern_model_and_stuff is None:
+            model_and_stuff = get_model_and_stuff()
+        else:
+            model_and_stuff = intern_model_and_stuff
+
+        return InternConversation(**model_and_stuff)
 
 
 def get_prompt(args):
     if args.prompt == "basic":
         return generate_basic_drone_prompt
+    elif args.prompt == "brute_force":
+        return generate_brute_force_drone_prompt
+    elif args.prompt == "xml":
+        return generate_xml_drone_prompt
 
 
-def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation, test_number):
-    explorer = DroneExplorer(conversation, glimpse_generator, prompt, glimpses, (-50, -55, 100))
+def get_response_parser(args):
+    if args.response_parser == "basic":
+        return BasicDroneResponseParser()
+    elif args.response_parser == "xml":
+        return XMLDroneResponseParser()
+
+
+def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation, response_parser, test_number):
+    explorer = DroneExplorer(conversation, glimpse_generator, prompt, glimpses, (-50, -55, 100), response_parser)
     explorer.simulate()
 
     images = explorer.get_images()
@@ -56,11 +82,14 @@ def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation,
 def repeat_test(args, run_dir):
     generator = get_glimpse_generator(args)
     prompt = get_prompt(args)
+    response_parser = get_response_parser(args)
 
     for i in range(args.repeats):
-        conversation = get_conversation(args)
-        perform_one_test(run_dir, prompt, args.glimpses, generator, conversation, i)
-
+        try:
+            conversation = get_conversation(args)
+            perform_one_test(run_dir, prompt, args.glimpses, generator, conversation, response_parser, i)
+        except:
+            print(f"Failed on test {i}")
     generator.disconnect()
 
 
@@ -69,7 +98,7 @@ def main():
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
-                        choices=["basic"]
+                        choices=["basic", "brute_force", "xml"],
                         )
 
     parser.add_argument("--glimpses",
@@ -88,7 +117,7 @@ def main():
     parser.add_argument("--model",
                         type=str,
                         required=True,
-                        choices=["gpt-4o"]
+                        choices=["gpt-4o", "intern"]
                         )
 
     parser.add_argument("--run_name",
@@ -100,6 +129,12 @@ def main():
                         type=int,
                         required=True,
                         help="Number of times to repeat the test."
+                        )
+
+    parser.add_argument("--response_parser",
+                        type=str,
+                        required=True,
+                        choices=["basic", "xml"]
                         )
 
     args = parser.parse_args()

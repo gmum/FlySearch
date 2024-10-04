@@ -2,6 +2,8 @@ import subprocess
 import os
 
 from typing import Tuple
+
+import cv2
 from unrealcv import Client
 from time import sleep
 from PIL import Image
@@ -46,7 +48,12 @@ class UnrealGlimpseGenerator:
         sleep(0.5)
         self.client.request('vget /camera/1/lit /tmp/camera.png')
         image = Image.open('/tmp/camera.png')
-        return image.resize((500, 500), Image.Resampling.BILINEAR)
+        image = image.resize((500, 500), Image.Resampling.BILINEAR)
+
+        image = pil_to_opencv(image)
+        image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
+
+        return opencv_to_pil(image)
 
 
 class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):

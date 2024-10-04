@@ -1,14 +1,16 @@
 from conversation.abstract_conversation import Conversation, Role
+from response_parsers import Direction
 
 
 class DroneExplorer:
     def __init__(self, conversation: Conversation, glimpse_generator, prompt_generator, glimpses,
-                 start_rel_position) -> None:
+                 start_rel_position, response_parser) -> None:
         self.conversation = conversation
         self.glimpse_generator = glimpse_generator
         self.prompt_generator = prompt_generator
         self.glimpses = glimpses
         self.start_rel_position = start_rel_position
+        self.response_parser = response_parser
 
         self.images = []
         self.outputs = []
@@ -25,21 +27,25 @@ class DroneExplorer:
         self.conversation.commit_transaction(send_to_vlm=True)
 
         output = self.conversation.get_latest_message()[1]
-        self.outputs.append(output)
-        direction = output.split(' ')[1]
-        distance = int(output.split(' ')[2].split(';')[0])
 
-        if direction == 'NORTH':
+        print("MODEL OUTPUT: ", output)
+
+        self.outputs.append(output)
+
+        direction = self.response_parser.get_direction_from_response(output)
+        distance = self.response_parser.get_distance_from_response(output)
+
+        if direction == Direction.NORTH:
             return rel_position[0], rel_position[1] + distance, rel_position[2]
-        elif direction == 'SOUTH':
+        elif direction == Direction.SOUTH:
             return rel_position[0], rel_position[1] - distance, rel_position[2]
-        elif direction == 'EAST':
+        elif direction == Direction.EAST:
             return rel_position[0] + distance, rel_position[1], rel_position[2]
-        elif direction == 'WEST':
+        elif direction == Direction.WEST:
             return rel_position[0] - distance, rel_position[1], rel_position[2]
-        elif direction == 'UP':
+        elif direction == Direction.UP:
             return rel_position[0], rel_position[1], rel_position[2] + distance
-        elif direction == 'DOWN':
+        elif direction == Direction.DOWN:
             return rel_position[0], rel_position[1], rel_position[2] - distance
         else:
             raise ValueError(f'Unknown direction: {direction}')
@@ -50,10 +56,13 @@ class DroneExplorer:
         return self._step(self.start_rel_position, start_transaction=False)
 
     def simulate(self):
-        position = self._start()
+        try:
+            position = self._start()
 
-        for _ in range(self.glimpses - 1):
-            position = self._step(position)
+            for _ in range(self.glimpses - 1):
+                position = self._step(position)
+        except Exception as e:
+            print("Drone explorer failed", e)
 
     def get_images(self):
         return self.images
