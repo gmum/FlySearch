@@ -11,15 +11,26 @@ from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
-    def __init__(self, threshold: float, image: np.ndarray, base_detector: AbstractOpenDetector):
+    def __init__(self, threshold: float, base_detector: AbstractOpenDetector):
         self.threshold = threshold
-        self.image = image
         self.base_detector = base_detector
 
-    def detect(self, object_name: str) -> Image:
+    def _cut_out_objects(self, padded_image: np.ndarray, boxes) -> list[Image]:
+        subimages = []
+
+        for box in boxes:
+            x1, y1, x2, y2 = box
+            x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
+            subimage = padded_image[y1:y2, x1:x2]
+            subimages.append(subimage)
+
+        return subimages
+
+    def detect(self, object_name: str) -> tuple[Image, list[Image]]:
         padded_image, boxes, _ = self.base_detector.detect(object_name)
 
         padded_image = pil_to_opencv(padded_image)
+        cut_outs = self._cut_out_objects(padded_image, boxes)
         padded_image = torch.tensor(padded_image).permute(2, 0, 1)
 
         boxes = torch.tensor(boxes)
@@ -33,17 +44,26 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
         image = image.permute(1, 2, 0).numpy()
         image = opencv_to_pil(image)
 
-        return image
+        cut_outs = [opencv_to_pil(cut_out) for cut_out in cut_outs]
+
+        return image, cut_outs
 
 
 def main():
     from open_detection.owl_2_detector import Owl2Detector
     image = cv2.imread("../data/sample_images/burger.jpeg")
 
-    detector = GeneralOpenVisualDetector(0.2, image, Owl2Detector(0.2, image))
-    image = detector.detect("burger")
+    detector = GeneralOpenVisualDetector(0.2, Owl2Detector(0.2, image))
+    image, cut_outs = detector.detect("burger")
+    image = pil_to_opencv(image)
 
-    image.show()
+    cv2.imshow("Image", image)
+    cv2.waitKey(0)
+
+    for cut_out in cut_outs:
+        cut_out = pil_to_opencv(cut_out)
+        cv2.imshow("Cut out", cut_out)
+        cv2.waitKey(0)
 
 if __name__ == "__main__":
     main()

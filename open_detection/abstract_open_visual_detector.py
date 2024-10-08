@@ -4,5 +4,5 @@ from PIL import Image
 
 
 class AbstractOpenVisualDetector:
-    def detect(self, object_name: str) -> Image:
+    def detect(self, object_name: str) -> tuple[Image, list[Image]]:
         pass
