@@ -17,6 +17,7 @@ class Owl2Detector(AbstractOpenDetector):
     model = Owlv2ForObjectDetection.from_pretrained("google/owlv2-base-patch16-ensemble")
 
     def __init__(self, threshold: float, image: np.ndarray):
+        image = np.array(image)
         super().__init__(threshold, image)
 
     def _get_preprocessed_image(self, pixel_values):
@@ -27,12 +28,12 @@ class Owl2Detector(AbstractOpenDetector):
         unnormalized_image = Image.fromarray(unnormalized_image)
         return unnormalized_image
 
-    def _detection_result_iterator(self, boxes, scores) -> Iterable[tuple[tuple[float, float, float, float], float]]:
-        for box, score in zip(boxes, scores):
+    def _detection_result_iterator_coordinates(self, boxes) -> Iterable[tuple[float, float, float, float]]:
+        for box in boxes:
             box = [round(i, 2) for i in box.tolist()]
-            yield tuple(box), score.item()
+            yield tuple(box)
 
-    def detect(self, object_name: str) -> list[tuple[tuple[float, float, float, float], float]]:
+    def detect(self, object_name: str) -> tuple[Image, list[tuple[float, float, float, float]], list[float]]:
         object_list_of_lists = [[object_name]]
 
         image = opencv_to_pil(self.image)
@@ -52,16 +53,29 @@ class Owl2Detector(AbstractOpenDetector):
 
         i = 0  # Retrieve predictions for the first image for the corresponding text queries
         boxes, scores, _ = results[i]["boxes"], results[i]["scores"], results[i]["labels"]
+        scores : list[float] = scores.tolist()
 
-        return list(self._detection_result_iterator(boxes, scores))
+        return unnormalized_image, list(self._detection_result_iterator_coordinates(boxes)), scores
 
     def get_image(self) -> np.ndarray:
         return self.image
 
+
 def main():
     image = cv2.imread("../data/sample_images/burger.jpeg")
+
+    print(image.shape)
+
     detector = Owl2Detector(0.2, image)
-    print(detector.detect("burger"))
+
+    unnormalized_image, boxes, _ = detector.detect("a burger")
+    unnormalized_image = pil_to_opencv(unnormalized_image)
+    image = torch.tensor(unnormalized_image).permute(2, 0, 1)
+    image = torchvision.utils.draw_bounding_boxes(image, torch.tensor(boxes))
+    image = image.permute(1, 2, 0).numpy()
+
+    cv2.imshow("Image", image)
+    cv2.waitKey(0)
 
 if __name__ == "__main__":
     main()

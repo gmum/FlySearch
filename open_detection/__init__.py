@@ -1,2 +1,5 @@
 from .abstract_open_detector import AbstractOpenDetector
 from .owl_2_detector import Owl2Detector
+
+from .abstract_open_visual_detector import AbstractOpenVisualDetector
+from .general_open_visual_detector import GeneralOpenVisualDetector
