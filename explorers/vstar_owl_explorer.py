@@ -14,6 +14,12 @@ from open_detection.owl_2_detector import Owl2Detector
 from open_detection.general_open_visual_detector import GeneralOpenVisualDetector
 
 class VstarOwlExplorer:
+    def get_prompt(self, question): return f"""
+        You will have to answer a question about the image. The object in question may be very small or almost impossible to see. To counter this, you will be given a version of the image with (potential) objects of interest highlighted, as well as cropped versions of them. Note that this technique is imperfect and there may be false positives or negatives. Your task is to answer the question based on the information provided. Don't write anything else.
+        
+        Question: {question}
+    """
+    
     def __init__(self, image, conversation: Conversation, question: str):
         self.image = image
         self.conversation = conversation
@@ -46,7 +52,7 @@ class VstarOwlExplorer:
         return object_identifier.identify_key_objects(self.question)
 
 
-    def detect_objects(self, objects: list[str]) -> tuple[np.ndarray, list[np.ndarray]]:
+    def detect_objects(self, objects: list[str]) -> tuple[Image, list[Image]]:
         image = self.image
 
         all_cut_outs = []
@@ -61,31 +67,48 @@ class VstarOwlExplorer:
 
             all_cut_outs.extend(cut_outs)
 
-            image = pil_to_opencv(image)
-
-
-        all_cut_outs = [pil_to_opencv(cut_out) for cut_out in all_cut_outs]
         return image, all_cut_outs
 
     def answer(self):
         objects = self.identify_objects()
         image, cut_outs = self.detect_objects(objects)
+        prompt = self.get_prompt(self.question)
 
-        cv2.imshow("Image", image)
-        cv2.waitKey(0)
+        self.conversation.begin_transaction(Role.USER)
+        self.conversation.add_text_message(prompt)
+        self.conversation.add_image_message(image)
 
         for cut_out in cut_outs:
-            cv2.imshow("Cut out", cut_out)
-            cv2.waitKey(0)
+            self.conversation.add_image_message(cut_out)
+
+        self.conversation.commit_transaction(send_to_vlm=True)
+
+        response = self.conversation.get_latest_message()[1]
+
+        print("GPT-4o response:")
+        print(response)
 
 def main():
     from datasets.vstar_bench_dataset import VstarSubBenchDataset
+    from conversation.openai_conversation import OpenAIConversation
+    from openai import OpenAI
+    from misc.config import OPEN_AI_KEY
+
+    client = OpenAI(api_key=OPEN_AI_KEY)
+    conversation = OpenAIConversation(
+        client,
+        model_name="gpt-4o",
+    )
 
     ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=pil_to_opencv)
 
     image, question, options, answer = ds[1]
 
-    explorer = VstarOwlExplorer(image, None, question)
+    print(question)
+    print(options)
+    print(answer)
+
+    explorer = VstarOwlExplorer(image, conversation, question)
     explorer.answer()
 
 if __name__ == "__main__":
