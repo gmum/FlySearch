@@ -1,0 +1,15 @@
+{
+    "correct": 36,
+    "response": "the color of the bench is green.",
+    "expected": "the color of the bench is green.",
+    "question": "What is the color of the bench?",
+    "options": [
+        "The color of the bench is green.",
+        "The color of the bench is yellow.",
+        "The color of the bench is gray.",
+        "The color of the bench is red."
+    ],
+    "objects": [
+        "bench"
+    ]
+}

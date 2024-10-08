@@ -1,0 +1,15 @@
+{
+    "correct": 56,
+    "response": "the color of the watch is silver.",
+    "expected": "the color of the watch is white.",
+    "question": "What is the color of the watch?",
+    "options": [
+        "The color of the watch is silver.",
+        "The color of the watch is blue.",
+        "The color of the watch is black.",
+        "The color of the watch is white."
+    ],
+    "objects": [
+        "watch"
+    ]
+}

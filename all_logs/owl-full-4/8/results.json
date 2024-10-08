@@ -1,0 +1,15 @@
+{
+    "correct": 7,
+    "response": "the color of the car is silver.",
+    "expected": "the color of the car is silver.",
+    "question": "What is the color of the car?",
+    "options": [
+        "The color of the car is silver.",
+        "The color of the car is red.",
+        "The color of the car is black.",
+        "The color of the car is blue."
+    ],
+    "objects": [
+        "car"
+    ]
+}

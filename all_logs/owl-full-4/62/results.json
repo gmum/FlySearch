@@ -1,0 +1,13 @@
+{
+    "correct": 34,
+    "response": "the flag has three colors.",
+    "expected": "the flag has three colors.",
+    "question": "Does the flag have two or three colors?",
+    "options": [
+        "The flag has two colors.",
+        "The flag has three colors."
+    ],
+    "objects": [
+        "flag"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "correct": 26,
+    "response": "the color of the trash can is green.",
+    "expected": "the color of the trash can is black.",
+    "question": "What is the color of the trash can?",
+    "options": [
+        "The color of the trash can is black.",
+        "The color of the trash can is green.",
+        "The color of the trash can is silver.",
+        "The color of the trash can is yellow."
+    ],
+    "objects": [
+        "trash can"
+    ]
+}

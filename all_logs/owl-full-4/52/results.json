@@ -1,0 +1,16 @@
+{
+    "correct": 28,
+    "response": "the color of the cyclist's bag is white and red.",
+    "expected": "the color of the cyclist's bag is orange and black.",
+    "question": "What is the color of the cyclist's bag?",
+    "options": [
+        "The color of the cyclist's bag is white and red.",
+        "The color of the cyclist's bag is orange and black.",
+        "The color of the cyclist's bag is red and blue.",
+        "The color of the cyclist's bag is blue and gray."
+    ],
+    "objects": [
+        "cyclist",
+        "bag"
+    ]
+}

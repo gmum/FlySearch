@@ -1,0 +1,15 @@
+{
+    "correct": 2,
+    "response": "the color of the umbrella is blue.",
+    "expected": "the color of the umbrella is blue.",
+    "question": "What is the color of the umbrella?",
+    "options": [
+        "The color of the umbrella is red.",
+        "The color of the umbrella is black.",
+        "The color of the umbrella is blue.",
+        "The color of the umbrella is white."
+    ],
+    "objects": [
+        "umbrella"
+    ]
+}

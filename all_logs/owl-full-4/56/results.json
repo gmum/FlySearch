@@ -1,0 +1,15 @@
+{
+    "correct": 30,
+    "response": "i'm sorry, i can't provide assistance without the highlighted and cropped versions of the image that show the object of interest as described.",
+    "expected": "the color of the soda can is green.",
+    "question": "What is the color of the soda can?",
+    "options": [
+        "The color of the soda can is silver.",
+        "The color of the soda can is green.",
+        "The color of the soda can is white.",
+        "The color of the soda can is red."
+    ],
+    "objects": [
+        "soda can"
+    ]
+}

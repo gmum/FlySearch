@@ -1,0 +1,16 @@
+{
+    "correct": 26,
+    "response": "options: ['the animal on the blue sail is a spider.', 'the animal on the blue sail is a fish.', 'the animal on the blue sail is a bird.', 'the animal on the blue sail is a dog.']\n\nanswer: 'the animal on the blue sail is a bird.'",
+    "expected": "the animal on the blue sail is a spider.",
+    "question": "What kind of animal is on the blue sail?",
+    "options": [
+        "The animal on the blue sail is a spider.",
+        "The animal on the blue sail is a fish.",
+        "The animal on the blue sail is a bird.",
+        "The animal on the blue sail is a dog."
+    ],
+    "objects": [
+        "animal",
+        "blue sail"
+    ]
+}

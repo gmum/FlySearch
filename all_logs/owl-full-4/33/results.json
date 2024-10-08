@@ -1,0 +1,15 @@
+{
+    "correct": 21,
+    "response": "i'm sorry, i can't determine the color of the backpack from this image.",
+    "expected": "the color of the backpack is gray.",
+    "question": "What is the color of the backpack?",
+    "options": [
+        "The color of the backpack is yellow.",
+        "The color of the backpack is gray.",
+        "The color of the backpack is red.",
+        "The color of the backpack is white."
+    ],
+    "objects": [
+        "backpack"
+    ]
+}

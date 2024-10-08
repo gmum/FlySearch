@@ -1,0 +1,15 @@
+{
+    "correct": 16,
+    "response": "i'm sorry, i'm not able to provide an answer based on the image alone. could you provide more information or context?",
+    "expected": "the color of the apple logo is polychromatic.",
+    "question": "What is the color of the Apple logo?",
+    "options": [
+        "The color of the Apple logo is red.",
+        "The color of the Apple logo is polychromatic.",
+        "The color of the Apple logo is white.",
+        "The color of the Apple logo is silver."
+    ],
+    "objects": [
+        "Apple logo"
+    ]
+}

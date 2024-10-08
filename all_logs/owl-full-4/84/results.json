@@ -1,0 +1,15 @@
+{
+    "correct": 44,
+    "response": "i'm sorry, i can't determine the color of the clock from this image.",
+    "expected": "the color of the clock is green.",
+    "question": "What is the color of the clock?",
+    "options": [
+        "The color of the clock is green.",
+        "The color of the clock is red.",
+        "The color of the clock is yellow.",
+        "The color of the clock is black."
+    ],
+    "objects": [
+        "clock"
+    ]
+}

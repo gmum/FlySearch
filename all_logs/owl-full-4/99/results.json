@@ -1,0 +1,15 @@
+{
+    "correct": 52,
+    "response": "the kid has curly hair.",
+    "expected": "the kid has curly hair.",
+    "question": "Does the kid have curly hair or straight hair?",
+    "options": [
+        "The kid has straight hair.",
+        "The kid has curly hair."
+    ],
+    "objects": [
+        "kid",
+        "curly hair",
+        "straight hair"
+    ]
+}

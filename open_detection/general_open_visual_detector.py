@@ -55,7 +55,7 @@ def main():
     from open_detection.owl_2_detector import Owl2Detector
     image = cv2.imread("../data/sample_images/burger.jpeg")
 
-    detector = GeneralOpenVisualDetector(Owl2Detector(0.6, image))
+    detector = GeneralOpenVisualDetector(Owl2Detector(0.2, image))
     image, cut_outs = detector.detect("burger")
     image = pil_to_opencv(image)
 

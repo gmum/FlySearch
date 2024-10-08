@@ -1,0 +1,15 @@
+{
+    "correct": 17,
+    "response": "the color of the water bottle is red.",
+    "expected": "the color of the water bottle is red.",
+    "question": "What is the color of the water bottle?",
+    "options": [
+        "The color of the water bottle is blue.",
+        "The color of the water bottle is white.",
+        "The color of the water bottle is black.",
+        "The color of the water bottle is red."
+    ],
+    "objects": [
+        "water bottle"
+    ]
+}

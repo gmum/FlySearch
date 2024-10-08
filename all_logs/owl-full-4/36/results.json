@@ -1,0 +1,15 @@
+{
+    "correct": 22,
+    "response": "options: ['the breed of the dog is dalmatian.', 'the breed of the dog is golden retriever.', 'the breed of the dog is corgi.', 'the breed of the dog is husky.']\n\nanswer: the breed of the dog is golden retriever.",
+    "expected": "the breed of the dog is golden retriever.",
+    "question": "What is the breed of the dog?",
+    "options": [
+        "The breed of the dog is Dalmatian.",
+        "The breed of the dog is golden retriever.",
+        "The breed of the dog is corgi.",
+        "The breed of the dog is Husky."
+    ],
+    "objects": [
+        "dog"
+    ]
+}

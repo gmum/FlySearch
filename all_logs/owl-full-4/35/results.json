@@ -1,0 +1,15 @@
+{
+    "correct": 22,
+    "response": "i'm sorry, but i can't provide assistance without the necessary highlighted and cropped versions of the image.",
+    "expected": "the color of the woman's scarf is red.",
+    "question": "What is the color of the woman's scarf?",
+    "options": [
+        "The color of the woman's scarf is yellow.",
+        "The color of the woman's scarf is red.",
+        "The color of the woman's scarf is white.",
+        "The color of the woman's scarf is green."
+    ],
+    "objects": [
+        "woman's scarf"
+    ]
+}

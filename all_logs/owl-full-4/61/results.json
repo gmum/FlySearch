@@ -1,0 +1,15 @@
+{
+    "correct": 33,
+    "response": "options: ['the color of the apples is red.', 'the color of the apples is yellow.', 'the color of the apples is green.', 'the color of the apples is dark red.']\n\nanswer: the color of the apples is green.",
+    "expected": "the color of the apples is green.",
+    "question": "What is the color of the apples?",
+    "options": [
+        "The color of the apples is red.",
+        "The color of the apples is yellow.",
+        "The color of the apples is green.",
+        "The color of the apples is dark red."
+    ],
+    "objects": [
+        "apples"
+    ]
+}

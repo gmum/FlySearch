@@ -1,0 +1,15 @@
+{
+    "correct": 16,
+    "response": "i'm sorry, but i can't determine the color of the cyclist's box based on this image alone.",
+    "expected": "the color of the cyclist's box is green.",
+    "question": "What is the color of the cyclist's box?",
+    "options": [
+        "The color of the cyclist's box is yellow.",
+        "The color of the cyclist's box is green.",
+        "The color of the cyclist's box is red.",
+        "The color of the cyclist's box is black."
+    ],
+    "objects": [
+        "cyclist's box"
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "correct": 26,
+    "response": "the color of the paraglider is blue.",
+    "expected": "the color of the paraglider is blue.",
+    "question": "What is the color of the paraglider?",
+    "options": [
+        "The color of the paraglider is pink.",
+        "The color of the paraglider is red.",
+        "The color of the paraglider is blue.",
+        "The color of the paraglider is white."
+    ],
+    "objects": [
+        "paraglider"
+    ]
+}

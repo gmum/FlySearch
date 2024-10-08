@@ -1,0 +1,15 @@
+{
+    "correct": 26,
+    "response": "the color of the bucket is black.",
+    "expected": "the color of the bucket is white.",
+    "question": "What is the color of the bucket?",
+    "options": [
+        "The color of the bucket is white.",
+        "The color of the bucket is black.",
+        "The color of the bucket is green.",
+        "The color of the bucket is red."
+    ],
+    "objects": [
+        "bucket"
+    ]
+}

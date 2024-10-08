@@ -1,0 +1,15 @@
+{
+    "correct": 46,
+    "response": "the color of the dog is black.",
+    "expected": "the color of the dog is black.",
+    "question": "What is the color of the dog?",
+    "options": [
+        "The color of the dog is gray.",
+        "The color of the dog is brown.",
+        "The color of the dog is white.",
+        "The color of the dog is black."
+    ],
+    "objects": [
+        "dog"
+    ]
+}

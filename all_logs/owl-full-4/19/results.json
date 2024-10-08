@@ -1,0 +1,15 @@
+{
+    "correct": 13,
+    "response": "i'm sorry, i can't determine the color of the helmet from this image.",
+    "expected": "the color of the helmet is green.",
+    "question": "What is the color of the helmet?",
+    "options": [
+        "The color of the helmet is red.",
+        "The color of the helmet is green.",
+        "The color of the helmet is blue.",
+        "The color of the helmet is white."
+    ],
+    "objects": [
+        "helmet"
+    ]
+}

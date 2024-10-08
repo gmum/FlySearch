@@ -72,7 +72,13 @@ def perform_run(args, run_path):
 
         conversation = get_conversation(args)
         explorer = get_explorer(args, image, conversation, question, options)
-        response, box_image, cutouts, objects = explorer.get_answer()
+
+        try:
+            response, box_image, cutouts, objects = explorer.get_answer()
+        except Exception as e:
+            with open(run_path / "errors.txt", "a") as f:
+                f.write(f"Error in example {i}: {e}\n")
+            continue
 
         response = response.lower()
         answer = answer.lower()

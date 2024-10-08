@@ -1,0 +1,15 @@
+{
+    "correct": 21,
+    "response": "the color of the broom is yellow.",
+    "expected": "the color of the broom is black.",
+    "question": "What is the color of the broom?",
+    "options": [
+        "The color of the broom is yellow.",
+        "The color of the broom is black.",
+        "The color of the broom is red.",
+        "The color of the broom is gray."
+    ],
+    "objects": [
+        "broom"
+    ]
+}

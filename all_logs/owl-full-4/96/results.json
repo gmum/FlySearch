@@ -1,0 +1,15 @@
+{
+    "correct": 49,
+    "response": "the color of the fire hydrant is yellow.",
+    "expected": "the color of the fire hydrant is yellow.",
+    "question": "What is the color of the fire hydrant?",
+    "options": [
+        "The color of the fire hydrant is red.",
+        "The color of the fire hydrant is black.",
+        "The color of the fire hydrant is white.",
+        "The color of the fire hydrant is yellow."
+    ],
+    "objects": [
+        "fire hydrant"
+    ]
+}

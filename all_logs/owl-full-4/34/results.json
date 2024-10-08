@@ -1,0 +1,15 @@
+{
+    "correct": 22,
+    "response": "the color of the mailbox is black.",
+    "expected": "the color of the mailbox is black.",
+    "question": "What is the color of the mailbox?",
+    "options": [
+        "The color of the mailbox is black.",
+        "The color of the mailbox is red.",
+        "The color of the mailbox is white.",
+        "The color of the mailbox is yellow."
+    ],
+    "objects": [
+        "mailbox"
+    ]
+}

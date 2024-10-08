@@ -1,0 +1,16 @@
+{
+    "correct": 56,
+    "response": "the cartoon character on the clock is mickey mouse.",
+    "expected": "the cartoon character on the clock is mickey mouse.",
+    "question": "What is the cartoon character on the clock.",
+    "options": [
+        "The cartoon character on the clock is Donald Duck.",
+        "The cartoon character on the clock is Bugs Bunny.",
+        "The cartoon character on the clock is Mickey Mouse.",
+        "The cartoon character on the clock is SpongeBob."
+    ],
+    "objects": [
+        "cartoon character",
+        "clock"
+    ]
+}

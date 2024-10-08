@@ -1,0 +1,15 @@
+{
+    "correct": 46,
+    "response": "options: ['the material of the glove is cotton.', 'the material of the glove is kevlar.', 'the material of the glove is rubber.', 'the material of the glove is leather.']\n\nanswer: the material of the glove is rubber.",
+    "expected": "the material of the glove is rubber.",
+    "question": "What is the material of the glove?",
+    "options": [
+        "The material of the glove is cotton.",
+        "The material of the glove is kevlar.",
+        "The material of the glove is rubber.",
+        "The material of the glove is leather."
+    ],
+    "objects": [
+        "glove"
+    ]
+}

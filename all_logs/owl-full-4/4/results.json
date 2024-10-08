@@ -1,0 +1,16 @@
+{
+    "correct": 4,
+    "response": "the color of the pink-haired woman's handbag is white.",
+    "expected": "the color of the pink-haired woman's handbag is white.",
+    "question": "What is the color of the pink-haired woman's handbag?",
+    "options": [
+        "The color of the pink-haired woman's handbag is brown.",
+        "The color of the pink-haired woman's handbag is red.",
+        "The color of the pink-haired woman's handbag is white.",
+        "The color of the pink-haired woman's handbag is pink."
+    ],
+    "objects": [
+        "pink-haired woman",
+        "handbag"
+    ]
+}

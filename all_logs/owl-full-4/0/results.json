@@ -1,0 +1,15 @@
+{
+    "correct": 0,
+    "response": "the pose of the woman with yellow backpack is walking.",
+    "expected": "the pose of the woman with yellow backpack is squatting.",
+    "question": "What is the pose of the woman with yellow backpack?",
+    "options": [
+        "The pose of the woman with yellow backpack is walking.",
+        "The pose of the woman with yellow backpack is running.",
+        "The pose of the woman with yellow backpack is standing.",
+        "The pose of the woman with yellow backpack is squatting."
+    ],
+    "objects": [
+        "woman with yellow backpack"
+    ]
+}

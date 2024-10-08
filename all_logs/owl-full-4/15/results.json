@@ -1,0 +1,15 @@
+{
+    "correct": 10,
+    "response": "i'm sorry, but i can't determine the color of the baby carriage based on the image provided.",
+    "expected": "the color of the baby carriage is black.",
+    "question": "What is the color of the baby carriage?",
+    "options": [
+        "The color of the baby carriage is green.",
+        "The color of the baby carriage is blue.",
+        "The color of the baby carriage is black.",
+        "The color of the baby carriage is red."
+    ],
+    "objects": [
+        "baby carriage"
+    ]
+}

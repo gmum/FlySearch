@@ -1,0 +1,15 @@
+{
+    "correct": 15,
+    "response": "options: ['the color of the flag is red and yellow.', 'the color of the flag is blue and red.', 'the color of the flag is green and white.', 'the color of the flag is blue and yellow.']\n\nanswer: 'the color of the flag is blue and yellow.'",
+    "expected": "the color of the flag is blue and yellow.",
+    "question": "What is the color of the flag?",
+    "options": [
+        "The color of the flag is red and yellow.",
+        "The color of the flag is blue and red.",
+        "The color of the flag is green and white.",
+        "The color of the flag is blue and yellow."
+    ],
+    "objects": [
+        "flag"
+    ]
+}

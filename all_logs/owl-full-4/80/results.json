@@ -1,0 +1,15 @@
+{
+    "correct": 43,
+    "response": "i'm sorry, i can't determine the answer based on the provided images.",
+    "expected": "the color of the handbag is white.",
+    "question": "What is the color of the handbag?",
+    "options": [
+        "The color of the handbag is brown.",
+        "The color of the handbag is black.",
+        "The color of the handbag is red.",
+        "The color of the handbag is white."
+    ],
+    "objects": [
+        "handbag"
+    ]
+}

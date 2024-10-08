@@ -1,0 +1,15 @@
+{
+    "correct": 46,
+    "response": "i'm sorry, i can't determine the color of the umbrella from this image.",
+    "expected": "the color of the umbrella is purple.",
+    "question": "What is the color of the umbrella?",
+    "options": [
+        "The color of the umbrella is purple.",
+        "The color of the umbrella is blue.",
+        "The color of the umbrella is black.",
+        "The color of the umbrella is red."
+    ],
+    "objects": [
+        "umbrella"
+    ]
+}

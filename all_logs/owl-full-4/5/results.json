@@ -1,0 +1,15 @@
+{
+    "correct": 4,
+    "response": "i'm sorry, i can't determine the color of the toothbrush from this image.",
+    "expected": "the color of the toothbrush is red.",
+    "question": "What is the color of the toothbrush?",
+    "options": [
+        "The color of the toothbrush is blue.",
+        "The color of the toothbrush is red.",
+        "The color of the toothbrush is green.",
+        "The color of the toothbrush is yellow."
+    ],
+    "objects": [
+        "toothbrush"
+    ]
+}

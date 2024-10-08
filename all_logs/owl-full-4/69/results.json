@@ -1,0 +1,15 @@
+{
+    "correct": 38,
+    "response": "the color of the woman's bikini is red.",
+    "expected": "the color of the woman's bikini is black.",
+    "question": "What is the color of the woman's bikini?",
+    "options": [
+        "The color of the woman's bikini is white.",
+        "The color of the woman's bikini is black.",
+        "The color of the woman's bikini is yellow.",
+        "The color of the woman's bikini is red."
+    ],
+    "objects": [
+        "woman's bikini"
+    ]
+}

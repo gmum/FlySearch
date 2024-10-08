@@ -50,7 +50,6 @@ class VstarOwlExplorer:
 
     def _get_new_visual_detector(self, image: np.ndarray):
         return GeneralOpenVisualDetector(
-            threshold=0.2,
             base_detector=Owl2Detector(0.2, image)
         )
 

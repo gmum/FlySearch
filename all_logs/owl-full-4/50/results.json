@@ -1,0 +1,15 @@
+{
+    "correct": 27,
+    "response": "i'm sorry, but i can't determine the color of the watchband based on the information provided.",
+    "expected": "the color of the watchband is purple.",
+    "question": "What is the color of the watchband?",
+    "options": [
+        "The color of the watchband is red.",
+        "The color of the watchband is purple.",
+        "The color of the watchband is black.",
+        "The color of the watchband is blue."
+    ],
+    "objects": [
+        "watchband"
+    ]
+}

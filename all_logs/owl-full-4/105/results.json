@@ -1,0 +1,15 @@
+{
+    "correct": 55,
+    "response": "the color of the comb is purple.",
+    "expected": "the color of the comb is purple.",
+    "question": "What is the color of the comb?",
+    "options": [
+        "The color of the comb is red.",
+        "The color of the comb is brown.",
+        "The color of the comb is black.",
+        "The color of the comb is purple."
+    ],
+    "objects": [
+        "comb"
+    ]
+}

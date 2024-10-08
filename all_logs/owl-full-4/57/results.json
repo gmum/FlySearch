@@ -1,0 +1,15 @@
+{
+    "correct": 30,
+    "response": "i'm sorry, i can't provide assistance without the highlighted and cropped versions of the image that show the object of interest as described.",
+    "expected": "the color of the plastic stool is white.",
+    "question": "What is the color of the plastic stool?",
+    "options": [
+        "The color of the plastic stool is black.",
+        "The color of the plastic stool is white.",
+        "The color of the plastic stool is blue.",
+        "The color of the plastic stool is red."
+    ],
+    "objects": [
+        "plastic stool"
+    ]
+}

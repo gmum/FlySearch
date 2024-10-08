@@ -1,0 +1,15 @@
+{
+    "correct": 42,
+    "response": "the color of the seesaw is red.",
+    "expected": "the color of the seesaw is red.",
+    "question": "What is the color of the seesaw?",
+    "options": [
+        "The color of the seesaw is yellow.",
+        "The color of the seesaw is red.",
+        "The color of the seesaw is white.",
+        "The color of the seesaw is black."
+    ],
+    "objects": [
+        "seesaw"
+    ]
+}

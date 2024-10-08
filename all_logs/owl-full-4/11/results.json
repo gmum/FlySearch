@@ -1,0 +1,15 @@
+{
+    "correct": 9,
+    "response": "i'm sorry, but i can't determine the color of the guard's glove based on this image as currently presented.",
+    "expected": "the color of the guard's glove is white.",
+    "question": "What is the color of the guard's glove?",
+    "options": [
+        "The color of the guard's glove is black.",
+        "The color of the guard's glove is blue.",
+        "The color of the guard's glove is brown.",
+        "The color of the guard's glove is white."
+    ],
+    "objects": [
+        "guard's glove"
+    ]
+}
