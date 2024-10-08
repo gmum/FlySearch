@@ -1,0 +1,1 @@
+python3 vstar.py --explorer owl --model gpt-4o --experiment_name owl-full-1 --subset attribute

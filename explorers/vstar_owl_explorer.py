@@ -14,16 +14,25 @@ from open_detection.owl_2_detector import Owl2Detector
 from open_detection.general_open_visual_detector import GeneralOpenVisualDetector
 
 class VstarOwlExplorer:
-    def get_prompt(self, question): return f"""
-        You will have to answer a question about the image. The object in question may be very small or almost impossible to see. To counter this, you will be given a version of the image with (potential) objects of interest highlighted, as well as cropped versions of them. Note that this technique is imperfect and there may be false positives or negatives. Your task is to answer the question based on the information provided. Don't write anything else.
+    def get_prompt(self, question, options): return f"""
+        You will have to answer a question about the image. The object in question may be very small or almost impossible to see. To counter this, you will be given a version of the image with (potential) objects of interest highlighted, as well as cropped versions of them. Note that this technique is imperfect and there may be false positives or negatives. Your task is to answer the question based on the information provided. Choose on of the options specified; to choose it, just copy its contents. Don't write anything else. ALWAYS PICK AN OPTION, EVEN IF YOU'RE NOT FULLY CERTAIN.
+        
+        Example:
+        Question: Is the dog on the left side of the red car?
+        Options: ["Yes", "No"]
+        Answer: Yes
+        
+        Now, it's your turn.
         
         Question: {question}
+        Options: {options}
     """
     
-    def __init__(self, image, conversation: Conversation, question: str):
+    def __init__(self, image, conversation: Conversation, question: str, options: list[str]):
         self.image = image
         self.conversation = conversation
         self.question = question
+        self.options = options
 
     def _get_new_conversation(self):
         oai_client = OpenAI(api_key=OPEN_AI_KEY)
@@ -69,10 +78,10 @@ class VstarOwlExplorer:
 
         return image, all_cut_outs
 
-    def answer(self):
+    def get_answer(self) -> tuple[str, Image, list[Image], list[str]]:
         objects = self.identify_objects()
         image, cut_outs = self.detect_objects(objects)
-        prompt = self.get_prompt(self.question)
+        prompt = self.get_prompt(self.question, self.options)
 
         self.conversation.begin_transaction(Role.USER)
         self.conversation.add_text_message(prompt)
@@ -85,8 +94,7 @@ class VstarOwlExplorer:
 
         response = self.conversation.get_latest_message()[1]
 
-        print("GPT-4o response:")
-        print(response)
+        return response, image, cut_outs, objects
 
 def main():
     from datasets.vstar_bench_dataset import VstarSubBenchDataset
@@ -108,8 +116,10 @@ def main():
     print(options)
     print(answer)
 
-    explorer = VstarOwlExplorer(image, conversation, question)
-    explorer.answer()
+    explorer = VstarOwlExplorer(image, conversation, question, options)
+    response, _, _, _ = explorer.get_answer()
+
+    print("Response:", response)
 
 if __name__ == "__main__":
     main()
