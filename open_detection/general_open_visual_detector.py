@@ -11,8 +11,7 @@ from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
-    def __init__(self, threshold: float, base_detector: AbstractOpenDetector):
-        self.threshold = threshold
+    def __init__(self, base_detector: AbstractOpenDetector):
         self.base_detector = base_detector
 
     def _cut_out_objects(self, padded_image: np.ndarray, boxes) -> list[Image]:
@@ -28,6 +27,9 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
 
     def detect(self, object_name: str) -> tuple[Image, list[Image]]:
         padded_image, boxes, _ = self.base_detector.detect(object_name)
+
+        if len(boxes) == 0:
+            return padded_image, []
 
         padded_image = pil_to_opencv(padded_image)
         cut_outs = self._cut_out_objects(padded_image, boxes)
@@ -53,7 +55,7 @@ def main():
     from open_detection.owl_2_detector import Owl2Detector
     image = cv2.imread("../data/sample_images/burger.jpeg")
 
-    detector = GeneralOpenVisualDetector(0.2, Owl2Detector(0.2, image))
+    detector = GeneralOpenVisualDetector(Owl2Detector(0.6, image))
     image, cut_outs = detector.detect("burger")
     image = pil_to_opencv(image)
 
