@@ -25,6 +25,28 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
 
         return subimages
 
+    def widen_boxes(self, boxes, padding: int, image_size) -> list[tuple[float, float, float, float]]:
+        widened_boxes = []
+
+        for box in boxes:
+            x1, y1, x2, y2 = box
+            x1, y1, x2, y2 = int(x1), int(y1), int(x2), int(y2)
+
+            x1 -= padding
+            y1 -= padding
+            x2 += padding
+            y2 += padding
+
+            x1 = max(0, x1)
+            y1 = max(0, y1)
+
+            x2 = min(image_size[1], x2)
+            y2 = min(image_size[0], y2)
+
+            widened_boxes.append((x1, y1, x2, y2))
+
+        return widened_boxes
+
     def detect(self, object_name: str) -> tuple[Image, list[Image]]:
         padded_image, boxes, _ = self.base_detector.detect(object_name)
 
@@ -32,6 +54,8 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
             return padded_image, []
 
         padded_image = pil_to_opencv(padded_image)
+        boxes = self.widen_boxes(boxes, 20, padded_image.shape[:2])
+
         cut_outs = self._cut_out_objects(padded_image, boxes)
         padded_image = torch.tensor(padded_image).permute(2, 0, 1)
 
