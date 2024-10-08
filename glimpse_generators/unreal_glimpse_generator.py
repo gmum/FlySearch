@@ -8,7 +8,7 @@ from unrealcv import Client
 from time import sleep
 from PIL import Image
 
-from misc.add_guardrails import dot_matrix_two_dimensional
+from misc.add_guardrails import dot_matrix_two_dimensional_unreal
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
 
 
@@ -67,7 +67,7 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
         img = super().get_camera_image(rel_position_m)
         img = pil_to_opencv(img)
-        img = dot_matrix_two_dimensional(img, self.splits_w, self.splits_h)
+        img = dot_matrix_two_dimensional_unreal(img, self.splits_w, self.splits_h)
         img = opencv_to_pil(img)
 
         return img

@@ -1,5 +1,6 @@
 import torchvision
 import numpy as np
+import cv2
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -52,6 +53,72 @@ def dot_matrix_two_dimensional(img: np.ndarray, dots_size_w, dots_size_h):
 
     return from_pil_to_opencv(img)
 
+def carthesian(x, y):
+    for el_x in x:
+        for el_y in y:
+            yield el_x, el_y
+
+# It doesn't render dots on the edges of the image.
+def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per_unit = 0.42):
+    def get_opposite_color(pixel_color):
+        if pixel_color[0] + pixel_color[1] + pixel_color[2] >= 255 * 3 / 2:
+            opposite_color = (0, 0, 0)
+        else:
+            opposite_color = (255, 255, 255)
+
+        return opposite_color
+
+
+    # Unit -> unit used inside of Unreal Engine
+    # Pixel -> pixel used in the image
+    # Cell -> cell in the grid
+
+    img = from_opencv_to_pil(img)
+
+    if img.mode != 'RGB':
+        img = img.convert('RGB')
+    draw = ImageDraw.Draw(img, 'RGB')
+
+    width, height = img.size
+
+    font = ImageFont.truetype("/usr/share/fonts/truetype/hack/Hack-Bold.ttf",
+                              width // 40)  # Adjust font size if needed; default == width // 40
+
+    pixels_per_cell_w = width / w_dots
+    pixels_per_cell_h = height / h_dots
+
+    w_center = w_dots / 2
+    h_center = h_dots / 2
+
+    for x, y in carthesian(range(1, w_dots), range(1, h_dots)):
+        x_diff = x - w_center
+        y_diff = h_center - y
+
+        x_diff_px = x_diff * pixels_per_cell_h
+        y_diff_px = y_diff * pixels_per_cell_w
+
+        x_diff_unit = x_diff_px * pixel_per_unit
+        y_diff_unit = y_diff_px * pixel_per_unit
+
+        x_diff_unit = int(round(x_diff_unit))
+        y_diff_unit = int(round(y_diff_unit))
+
+        x_px = x * pixels_per_cell_h
+        y_px = y * pixels_per_cell_w
+
+        pixel_color = img.getpixel((x_px, y_px))
+        opposite_color = get_opposite_color(pixel_color)
+
+        circle_radius = width // 240
+        draw.ellipse([(x_px - circle_radius, y_px - circle_radius), (x_px + circle_radius, y_px + circle_radius)],
+                     fill=opposite_color)
+
+        text_x_px, text_y_px = x_px + 3, y_px
+
+
+        draw.text((text_x_px, text_y_px), f"({x_diff_unit}, {y_diff_unit})", fill=opposite_color, font=font)
+
+    return from_pil_to_opencv(img)
 
 def from_pil_to_opencv(image):
     return np.array(image)[:, :, ::-1].copy()
@@ -62,15 +129,13 @@ def from_opencv_to_pil(image):
 
 
 def main():
-    from vstar_bench_dataset import VstarSubBenchDataset
 
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=from_pil_to_opencv)
-    image, _, _, _ = ds[3]
+    image = cv2.imread("../data/sample_images/city2.png")
 
-    image = dot_matrix_two_dimensional(image, 5, 5)
-    image = from_opencv_to_pil(image)
-    image.show()
+    image = dot_matrix_two_dimensional_unreal(image, 6, 6)
 
+    cv2.imshow("Image", image)
+    cv2.waitKey(0)
 
 if __name__ == "__main__":
     main()
