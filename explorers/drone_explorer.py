@@ -14,8 +14,11 @@ class DroneExplorer:
 
         self.images = []
         self.outputs = []
+        self.coordinates = [start_rel_position]
 
     def _step(self, rel_position, start_transaction=True) -> tuple[int, int, int]:
+        self.coordinates.append(rel_position)
+
         image = self.glimpse_generator.get_camera_image(rel_position)
         self.images.append(image)
 
@@ -69,6 +72,9 @@ class DroneExplorer:
 
     def get_outputs(self):
         return self.outputs
+
+    def get_coords(self):
+        return self.coordinates
 
 
 def main():
