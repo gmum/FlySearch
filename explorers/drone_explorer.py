@@ -14,7 +14,7 @@ class DroneExplorer:
 
         self.images = []
         self.outputs = []
-        self.coordinates = [start_rel_position]
+        self.coordinates = []
 
     def _step(self, rel_position, start_transaction=True) -> tuple[int, int, int]:
         self.coordinates.append(rel_position)
@@ -39,9 +39,9 @@ class DroneExplorer:
         distance = self.response_parser.get_distance_from_response(output)
 
         if direction == Direction.NORTH:
-            return rel_position[0], rel_position[1] + distance, rel_position[2]
-        elif direction == Direction.SOUTH:
             return rel_position[0], rel_position[1] - distance, rel_position[2]
+        elif direction == Direction.SOUTH:
+            return rel_position[0], rel_position[1] + distance, rel_position[2]
         elif direction == Direction.EAST:
             return rel_position[0] + distance, rel_position[1], rel_position[2]
         elif direction == Direction.WEST:
