@@ -54,7 +54,7 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
             return padded_image, []
 
         padded_image = pil_to_opencv(padded_image)
-        boxes = self.widen_boxes(boxes, 20, padded_image.shape[:2])
+        boxes = self.widen_boxes(boxes, 100, padded_image.shape[:2])
 
         cut_outs = self._cut_out_objects(padded_image, boxes)
         padded_image = torch.tensor(padded_image).permute(2, 0, 1)
@@ -64,7 +64,8 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
         image = torchvision.utils.draw_bounding_boxes(
             image=padded_image,
             boxes=boxes,
-            width=6
+            width=6,
+            colors=[(0, 0, 255)] * boxes.shape[0]
         )
 
         image = image.permute(1, 2, 0).numpy()
@@ -74,13 +75,49 @@ class GeneralOpenVisualDetector(AbstractOpenVisualDetector):
 
         return image, cut_outs
 
+    # FIXME: Improve performance by adapting visual detector's interface to support multiple object names
+    def detect_many_objects(self, object_names: list[str]) -> tuple[Image, list[Image]]:
+
+        all_boxes = []
+        padded_image = None
+
+        for object_name in object_names:
+            padded_image, boxes, _ = self.base_detector.detect(object_name)
+            all_boxes.extend(boxes)
+
+        boxes = all_boxes
+
+        if len(boxes) == 0:
+            return opencv_to_pil(self.base_detector.get_image()), []
+
+        padded_image = pil_to_opencv(padded_image)
+        boxes = self.widen_boxes(boxes, 100, padded_image.shape[:2])
+
+        cut_outs = self._cut_out_objects(padded_image, boxes)
+        padded_image = torch.tensor(padded_image).permute(2, 0, 1)
+
+        boxes = torch.tensor(boxes)
+
+        image = torchvision.utils.draw_bounding_boxes(
+            image=padded_image,
+            boxes=boxes,
+            width=6,
+            colors=[(0, 0, 255)] * boxes.shape[0]
+        )
+
+        image = image.permute(1, 2, 0).numpy()
+        image = opencv_to_pil(image)
+
+        cut_outs = [opencv_to_pil(cut_out) for cut_out in cut_outs]
+
+        return image, cut_outs
 
 def main():
     from open_detection.owl_2_detector import Owl2Detector
     image = cv2.imread("../data/sample_images/burger.jpeg")
 
     detector = GeneralOpenVisualDetector(Owl2Detector(0.2, image))
-    image, cut_outs = detector.detect("burger")
+    image, cut_outs = detector.detect_many_objects(["burger", "person"])
     image = pil_to_opencv(image)
 
     cv2.imshow("Image", image)

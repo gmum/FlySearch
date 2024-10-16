@@ -92,7 +92,8 @@ def perform_run(args, run_path):
             "expected": answer,
             "question": question,
             "options": options,
-            "objects": objects
+            "objects": objects,
+            "conversation": conversation.get_conversation()
         }
 
         save_results(result_dict, box_image, cutouts, example_path)

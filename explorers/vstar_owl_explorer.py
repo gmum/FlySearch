@@ -14,8 +14,8 @@ from open_detection.owl_2_detector import Owl2Detector
 from open_detection.general_open_visual_detector import GeneralOpenVisualDetector
 
 class VstarOwlExplorer:
-    def get_prompt(self, question, options): return f"""
-        You will have to answer a question about the image. The object in question may be very small or almost impossible to see. To counter this, you will be given a version of the image with (potential) objects of interest highlighted, as well as cropped versions of them. Note that this technique is imperfect and there may be false positives or negatives. Your task is to answer the question based on the information provided. Choose on of the options specified; to choose it, just copy its contents. Don't write anything else. ALWAYS PICK AN OPTION, EVEN IF YOU'RE NOT FULLY CERTAIN.
+    def get_prompt(self, question, options, detector_worked = True): return f"""
+        You will have to answer a question about the image. The object in question may be very small or almost impossible to see. {'To counter this, you will be given a version of the image with (potential) objects of interest highlighted in red, as well as cropped versions of them. Note that this technique is imperfect and there may be false positives or negatives.' if detector_worked else ''} Your task is to answer the question based on the information provided. Choose on of the options specified; to choose it, just copy its contents. Don't write anything else. ALWAYS PICK AN OPTION, EVEN IF YOU'RE NOT FULLY CERTAIN. THERE IS ALWAYS A GOOD OPTION. IF YOU REALLY DON'T KNOW, JUST PICK THE MOST LIKELY OPTION.
         
         Example:
         Question: Is the dog on the left side of the red car?
@@ -61,26 +61,19 @@ class VstarOwlExplorer:
 
 
     def detect_objects(self, objects: list[str]) -> tuple[Image, list[Image]]:
-        image = self.image
-
-        all_cut_outs = []
-
-        # FIXME: This is very bad. Detector should support detection of multiple objects at once. Otherwise, it's not even funny.
-        for object in objects:
-            visual_detector = self._get_new_visual_detector(image)
-            image, cut_outs = visual_detector.detect(object)
-
-            image: Image
-            cut_outs: list[Image]
-
-            all_cut_outs.extend(cut_outs)
-
-        return image, all_cut_outs
+        return self._get_new_visual_detector(self.image).detect_many_objects(objects)
 
     def get_answer(self) -> tuple[str, Image, list[Image], list[str]]:
         objects = self.identify_objects()
         image, cut_outs = self.detect_objects(objects)
-        prompt = self.get_prompt(self.question, self.options)
+
+        detector_worked = (len(cut_outs) != 0)
+
+        prompt = self.get_prompt(self.question, self.options, detector_worked=detector_worked)
+
+        if not detector_worked:
+            # Better quality from the unnormalised one
+            image = opencv_to_pil(self.image)
 
         self.conversation.begin_transaction(Role.USER)
         self.conversation.add_text_message(prompt)

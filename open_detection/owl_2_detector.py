@@ -12,6 +12,8 @@ from typing import Iterable
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
 from open_detection.abstract_open_detector import AbstractOpenDetector
 
+# alternative: google/owlv2-large-patch14-ensemble
+
 class Owl2Detector(AbstractOpenDetector):
     processor = AutoProcessor.from_pretrained("google/owlv2-base-patch16-ensemble")
     model = Owlv2ForObjectDetection.from_pretrained("google/owlv2-base-patch16-ensemble")
