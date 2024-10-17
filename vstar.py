@@ -5,6 +5,7 @@ import torch
 import cv2
 
 from datasets.vstar_bench_dataset import VstarSubBenchDataset
+from explorers import NaiveVstarExplorer
 from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 from conversation.openai_conversation import OpenAIConversation
 from openai import OpenAI
@@ -24,6 +25,13 @@ def get_ds(args):
         ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=pil_to_opencv)
     elif args.subset == "spatial":
         ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
+    elif args.subset == "owl_easy":
+        with open("analysis/out/owl-full-norm-fix/owl-easy.json") as f:
+            owl_easy_list = json.load(f)
+        ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=pil_to_opencv)
+
+        owl_easy_list = [int(idx) for idx in owl_easy_list]
+        ds = torch.utils.data.Subset(ds, owl_easy_list)
     else:
         raise NotImplementedError
     return ds
@@ -42,6 +50,13 @@ def get_conversation(args):
 def get_explorer(args, image, conversation, question, options):
     if args.explorer == "owl":
         explorer = VstarOwlExplorer(
+            image=image,
+            conversation=conversation,
+            question=question,
+            options=options
+        )
+    elif args.explorer == "naive":
+        explorer = NaiveVstarExplorer(
             image=image,
             conversation=conversation,
             question=question,
@@ -106,7 +121,7 @@ def main():
     parser.add_argument("--explorer",
                         type=str,
                         required=True,
-                        choices=["owl"],
+                        choices=["owl", "naive"],
                         )
 
     parser.add_argument("--model",
@@ -123,7 +138,7 @@ def main():
     parser.add_argument("--subset",
                         type=str,
                         required=True,
-                        choices=["debug", "attribute", "spatial"]
+                        choices=["debug", "attribute", "spatial", "owl_easy"]
                         )
 
     args = parser.parse_args()

@@ -1,1 +1,3 @@
 from .visual_vstar_explorer import VisualVStarExplorer
+from .naive_vstar_explorer import NaiveVstarExplorer
+from .vstar_owl_explorer import VstarOwlExplorer
