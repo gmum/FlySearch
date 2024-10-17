@@ -59,7 +59,7 @@ def carthesian(x, y):
             yield el_x, el_y
 
 # It doesn't render dots on the edges of the image.
-def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per_unit = 0.42):
+def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per_unit = 0.42, drone_height = 100):
     def get_opposite_color(pixel_color):
         if pixel_color[0] + pixel_color[1] + pixel_color[2] >= 255 * 3 / 2:
             opposite_color = (0, 0, 0)
@@ -68,6 +68,7 @@ def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per
 
         return opposite_color
 
+    pixel_per_unit = (drone_height / 100) * pixel_per_unit
 
     # Unit -> unit used inside of Unreal Engine
     # Pixel -> pixel used in the image
@@ -132,9 +133,14 @@ def main():
 
     image = cv2.imread("../data/sample_images/city2.png")
 
-    image = dot_matrix_two_dimensional_unreal(image, 6, 6)
+    image1 = dot_matrix_two_dimensional_unreal(image, 6, 6)
 
-    cv2.imshow("Image", image)
+    cv2.imshow("Image1", image1)
+    cv2.waitKey(0)
+
+    image2 = dot_matrix_two_dimensional_unreal(image, 6, 6, drone_height=50)
+
+    cv2.imshow("Image2", image2)
     cv2.waitKey(0)
 
 if __name__ == "__main__":
