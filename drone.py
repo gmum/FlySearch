@@ -12,6 +12,7 @@ from prompts.drone_prompt_generation import generate_basic_drone_prompt, generat
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
+from scenarios.drone_scenario_mapper import DroneScenarioMapper
 
 
 def create_test_run_directory(args):
@@ -84,7 +85,7 @@ def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation,
             f.write(str(location))
 
 
-def repeat_test(args, run_dir):
+def round_robin(args, run_dir):
     generator = get_glimpse_generator(args)
     prompt = get_prompt(args)
     response_parser = get_response_parser(args)
@@ -95,6 +96,55 @@ def repeat_test(args, run_dir):
             perform_one_test(run_dir, prompt, args.glimpses, generator, conversation, response_parser, i)
         except:
             print(f"Failed on test {i}")
+    generator.disconnect()
+
+
+def get_scenario_mapper(args):
+    if args.scenario_type == "level_1":
+        return DroneScenarioMapper()
+
+
+def scenario_level_test(args, run_dir):
+    generator = get_glimpse_generator(args)
+    prompt = get_prompt(args)
+    response_parser = get_response_parser(args)
+    scenario_mapper = get_scenario_mapper(args)
+
+    for i, (start_coords, object_name) in enumerate(scenario_mapper.iterate_scenarios()):
+        try:
+            generator.change_start_position(start_coords)
+            conversation = get_conversation(args)
+            explorer = DroneExplorer(
+                conversation=conversation,
+                glimpse_generator=generator,
+                prompt_generator=prompt,
+                glimpses=args.glimpses,
+                start_rel_position=(0, 0, 120),
+                response_parser=response_parser,
+                object_name=object_name
+            )
+            final_position = explorer.simulate()
+
+            images = explorer.get_images()
+            outputs = explorer.get_outputs()
+            coordinates = explorer.get_coords()
+
+            test_dir = run_dir / str(i)
+            test_dir.mkdir(exist_ok=True)
+
+            for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
+                image.save(test_dir / f"{j}.png")
+                with open(test_dir / f"{j}.txt", "w") as f:
+                    f.write(output)
+                with open(test_dir / f"{j}_coords.txt", "w") as f:
+                    f.write(str(location))
+
+            with open(test_dir / "final_coords.txt", "w") as f:
+                f.write(str(final_position))
+
+        except Exception as e:
+            print(f"Failed on test {i}", e)
+
     generator.disconnect()
 
 
@@ -130,10 +180,16 @@ def main():
                         required=True,
                         help="Name of the run. This will be used to create a directory in the all_logs directory. If the directory already exists, the script will fail.")
 
+    parser.add_argument("--scenario_type",
+                        type=str,
+                        required=True,
+                        choices=["round_robin", "level_1"]
+                        )
+
     parser.add_argument("--repeats",
                         type=int,
-                        required=True,
-                        help="Number of times to repeat the test."
+                        required=False,
+                        help="Number of times to repeat the test. Only for round robin."
                         )
 
     parser.add_argument("--response_parser",
@@ -144,8 +200,18 @@ def main():
 
     args = parser.parse_args()
 
+    if args.scenario_type == "round_robin" and args.repeats is None:
+        raise ValueError("Repeats must be specified for round robin scenario type.")
+
+    if args.scenario_type != "round_robin" and args.repeats is not None:
+        raise ValueError("Repeats should not be specified for scenario different than round robin.")
+
     run_dir = create_test_run_directory(args)
-    repeat_test(args, run_dir)
+
+    if args.scenario_type == "round_robin":
+        round_robin(args, run_dir)
+    elif args.scenario_type == "level_1":
+        scenario_level_test(args, run_dir)
 
 
 if __name__ == "__main__":

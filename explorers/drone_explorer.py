@@ -4,13 +4,14 @@ from response_parsers import Direction
 
 class DroneExplorer:
     def __init__(self, conversation: Conversation, glimpse_generator, prompt_generator, glimpses,
-                 start_rel_position, response_parser) -> None:
+                 start_rel_position, response_parser, object_name="yellow pickup truck") -> None:
         self.conversation = conversation
         self.glimpse_generator = glimpse_generator
         self.prompt_generator = prompt_generator
         self.glimpses = glimpses
         self.start_rel_position = start_rel_position
         self.response_parser = response_parser
+        self.object_name = object_name
 
         self.images = []
         self.outputs = []
@@ -55,10 +56,12 @@ class DroneExplorer:
 
     def _start(self) -> tuple[int, int, int]:
         self.conversation.begin_transaction(Role.USER)
-        self.conversation.add_text_message(self.prompt_generator(self.glimpses))
+        self.conversation.add_text_message(
+            self.prompt_generator(self.glimpses).replace("yellow pickup truck", self.object_name))
         return self._step(self.start_rel_position, start_transaction=False)
 
-    def simulate(self):
+    def simulate(self) -> tuple[int, int, int]:
+        position = None
         try:
             position = self._start()
 
@@ -66,6 +69,8 @@ class DroneExplorer:
                 position = self._step(position)
         except Exception as e:
             print("Drone explorer failed", e)
+
+        return position
 
     def get_images(self):
         return self.images

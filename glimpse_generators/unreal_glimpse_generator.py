@@ -19,6 +19,9 @@ class UnrealGlimpseGenerator:
 
         self._initialize_client()
 
+    def change_start_position(self, new_start_position: Tuple[int, int, int]):
+        self.start_position = new_start_position
+
     def _initialize_client(self):
         connection_result = self.client.connect()
 
