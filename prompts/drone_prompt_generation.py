@@ -43,3 +43,43 @@ def generate_xml_drone_prompt(glimpses: int) -> str:
 </Controls>
 
 '''
+
+
+def generate_xml_drone_grid_prompt(glimpses: int) -> str:
+    return f'''
+<Context>
+    You are in command of a UAV flying over city.  
+</Context>    
+<Objective>
+    You have been tasked with identifying a suspect vehicle. The vehicle is a yellow pickup truck. It is parked somewhere within 500x500m area you are in the center of. You cannot leave the search area. If you do, you will be notified. 
+</Objective>
+<Controls>
+
+    <Action space>
+        You can move the UAV in any direction (NORTH, SOUTH, EAST, WEST, UP, DOWN).
+    </Action space>
+
+    <Formatting>
+
+        Your each response should contain XML <Reasoning> tag and <Action> tag.
+        <Reasoning> tag should contain your reasoning for the move you are making.
+        <Action> tag should contain the move you are making.
+
+        If you find the vehicle, reply with "FOUND".
+
+        For example:
+
+        <Reasoning>This yellow point might be a vehicle. I need to go lower to check for that. If it's not the vehicle in question, I will continue the search.</Reasoning>
+        <Action>MOVE DOWN 10</Action>
+
+    </Formatting>
+
+    <Limitations>
+        You can move at most 50m at a time.
+        You can make at most {glimpses - 1} moves.
+        To help you with the coordinate system, each image has a gridline overlay with annotated dots. These roughly represent where would you move if you were to move this amount of meters in the given direction. Note that there are negative coordinates as well -- they are meant to illustrate the movement in the opposite direction. You should move by positive values only and specify the direction. 
+    </Limitations>
+
+</Controls>
+
+'''
