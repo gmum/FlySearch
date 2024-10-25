@@ -1,1 +1,1 @@
-python3 drone.py --prompt xml --glimpses 50 --glimpse_generator standard --model gpt-4o --run_name xml-2-large --repeats 5 --response_parser xml
+python3 drone.py --prompt xml_grid --glimpses 50 --glimpse_generator grid --model gpt-4o --run_name newlogs4-big3 --repeats 5 --response_parser xml

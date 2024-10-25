@@ -7,7 +7,7 @@ from conversation.openai_conversation import OpenAIConversation
 from conversation.intern_conversation import InternConversation, get_model_and_stuff
 from misc.config import OPEN_AI_KEY
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
-from prompts import generate_brute_force_drone_prompt
+from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt
 from prompts.drone_prompt_generation import generate_basic_drone_prompt, generate_xml_drone_prompt
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
@@ -54,6 +54,8 @@ def get_prompt(args):
         return generate_brute_force_drone_prompt
     elif args.prompt == "xml":
         return generate_xml_drone_prompt
+    elif args.prompt == "xml_grid":
+        return generate_xml_drone_grid_prompt
 
 
 def get_response_parser(args):
@@ -69,14 +71,17 @@ def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation,
 
     images = explorer.get_images()
     outputs = explorer.get_outputs()
+    coordinates = explorer.get_coords()
 
     test_dir = run_dir / str(test_number)
     test_dir.mkdir(exist_ok=True)
 
-    for i, (image, output) in enumerate(zip(images, outputs)):
+    for i, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
         image.save(test_dir / f"{i}.png")
         with open(test_dir / f"{i}.txt", "w") as f:
             f.write(output)
+        with open(test_dir / f"{i}_coords.txt", "w") as f:
+            f.write(str(location))
 
 
 def repeat_test(args, run_dir):
@@ -98,7 +103,7 @@ def main():
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
-                        choices=["basic", "brute_force", "xml"],
+                        choices=["basic", "brute_force", "xml", "xml_grid"],
                         )
 
     parser.add_argument("--glimpses",
