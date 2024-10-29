@@ -17,7 +17,10 @@ from scenarios.drone_scenario_mapper import DroneScenarioMapper, YellowTruckScen
 
 
 def create_test_run_directory(args):
-    all_logs_dir = pathlib.Path("all_logs")
+    if args.logdir:
+        all_logs_dir = pathlib.Path(args.logdir)
+    else:
+        all_logs_dir = pathlib.Path("all_logs")
     run_dir = all_logs_dir / args.run_name
 
     all_logs_dir.mkdir(exist_ok=True)
@@ -270,6 +273,11 @@ def main():
                         type=int,
                         required=False,
                         help="Only for use in scenarios.")
+
+    parser.add_argument("--logdir",
+                        type=str,
+                        required=False,
+                        help="Override for logs directory.")
 
     args = parser.parse_args()
 
