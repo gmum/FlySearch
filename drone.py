@@ -12,7 +12,8 @@ from prompts.drone_prompt_generation import generate_basic_drone_prompt, generat
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
-from scenarios.drone_scenario_mapper import DroneScenarioMapper
+from scenarios import DroneScenarioMapperWithOffsets
+from scenarios.drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper
 
 
 def create_test_run_directory(args):
@@ -101,7 +102,31 @@ def round_robin(args, run_dir):
 
 def get_scenario_mapper(args):
     if args.scenario_type == "level_1":
-        return DroneScenarioMapper()
+        return DroneScenarioMapperWithOffsets(
+            min_x=args.x_offset_min,
+            max_x=args.x_offset_max,
+            step_x=args.x_offset_step,
+            min_h=args.height_min,
+            max_h=args.height_max,
+            step_h=args.height_step,
+            min_y=args.y_offset_min,
+            max_y=args.y_offset_max,
+            step_y=args.y_offset_step,
+            scenario_mapper=DroneScenarioMapper()
+        )
+    elif args.scenario_type == "level_1_yellow_truck":
+        return DroneScenarioMapperWithOffsets(
+            min_x=args.x_offset_min,
+            max_x=args.x_offset_max,
+            step_x=args.x_offset_step,
+            min_h=args.height_min,
+            max_h=args.height_max,
+            step_h=args.height_step,
+            min_y=args.y_offset_min,
+            max_y=args.y_offset_max,
+            step_y=args.y_offset_step,
+            scenario_mapper=YellowTruckScenarioMapper()
+        )
 
 
 def scenario_level_test(args, run_dir):
@@ -110,7 +135,7 @@ def scenario_level_test(args, run_dir):
     response_parser = get_response_parser(args)
     scenario_mapper = get_scenario_mapper(args)
 
-    for i, (start_coords, object_name) in enumerate(scenario_mapper.iterate_scenarios()):
+    for i, (start_rel_position, start_coords, object_name) in enumerate(scenario_mapper.iterate_scenarios()):
         try:
             generator.change_start_position(start_coords)
             conversation = get_conversation(args)
@@ -119,7 +144,7 @@ def scenario_level_test(args, run_dir):
                 glimpse_generator=generator,
                 prompt_generator=prompt,
                 glimpses=args.glimpses,
-                start_rel_position=(0, 0, 120),
+                start_rel_position=start_rel_position,
                 response_parser=response_parser,
                 object_name=object_name
             )
@@ -141,6 +166,9 @@ def scenario_level_test(args, run_dir):
 
             with open(test_dir / "final_coords.txt", "w") as f:
                 f.write(str(final_position))
+
+            with open(test_dir / "start_rel_coords.txt", "w") as f:
+                f.write(str(start_rel_position))
 
         except Exception as e:
             print(f"Failed on test {i}", e)
@@ -183,7 +211,7 @@ def main():
     parser.add_argument("--scenario_type",
                         type=str,
                         required=True,
-                        choices=["round_robin", "level_1"]
+                        choices=["round_robin", "level_1", "level_1_yellow_truck"],
                         )
 
     parser.add_argument("--repeats",
@@ -197,6 +225,51 @@ def main():
                         required=True,
                         choices=["basic", "xml"]
                         )
+
+    parser.add_argument("--height_min",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--height_max",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--height_step",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--x_offset_min",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--x_offset_max",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--x_offset_step",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--y_offset_min",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--y_offset_max",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
+
+    parser.add_argument("--y_offset_step",
+                        type=int,
+                        required=False,
+                        help="Only for use in scenarios.")
 
     args = parser.parse_args()
 
