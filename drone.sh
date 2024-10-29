@@ -16,5 +16,6 @@ python3 drone.py \
 --y_offset_min -20 \
 --y_offset_max 20 \
 --y_offset_step 10 \
+-- logdir ../plgwtln/results
 
 
