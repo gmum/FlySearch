@@ -135,7 +135,7 @@ def scenario_level_test(args, run_dir):
     response_parser = get_response_parser(args)
     scenario_mapper = get_scenario_mapper(args)
 
-    for i, (start_rel_position, start_coords, object_name) in enumerate(scenario_mapper.iterate_scenarios()):
+    for i, (start_rel_position, (start_coords, object_name)) in enumerate(scenario_mapper.iterate_scenarios()):
         try:
             generator.change_start_position(start_coords)
             conversation = get_conversation(args)
