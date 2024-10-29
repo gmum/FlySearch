@@ -7,7 +7,8 @@ from conversation.openai_conversation import OpenAIConversation
 from conversation.intern_conversation import InternConversation, get_model_and_stuff
 from misc.config import OPEN_AI_KEY
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
-from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt
+from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt, \
+    generate_proximity_xml_drone_grid_prompt
 from prompts.drone_prompt_generation import generate_basic_drone_prompt, generate_xml_drone_prompt
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
@@ -61,6 +62,8 @@ def get_prompt(args):
         return generate_xml_drone_prompt
     elif args.prompt == "xml_grid":
         return generate_xml_drone_grid_prompt
+    elif args.prompt == "proximity":
+        return generate_proximity_xml_drone_grid_prompt
 
 
 def get_response_parser(args):
@@ -184,7 +187,7 @@ def main():
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
-                        choices=["basic", "brute_force", "xml", "xml_grid"],
+                        choices=["basic", "brute_force", "xml", "xml_grid", "proximity"],
                         )
 
     parser.add_argument("--glimpses",
