@@ -283,7 +283,7 @@ def main():
 
     if args.scenario_type == "round_robin":
         round_robin(args, run_dir)
-    elif args.scenario_type == "level_1":
+    elif args.scenario_type == "level_1" or args.scenario_type == "level_1_yellow_truck":
         scenario_level_test(args, run_dir)
 
 
