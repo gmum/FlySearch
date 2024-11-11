@@ -1,0 +1,24 @@
+Alright, let's start the mission.
+
+<Reasoning>This point might be a vehicle. I need to check for that. I will slightly go to the north-east to verify that.</Reasoning>
+<Action>-5, 10, 0</Action>
+
+I will adjust the move for better clarity with the coordinates and the point I want to verify:
+
+<Reasoning>I want to check if this point is a vehicle that the drone needs to find. I will slightly go to the north.</Reasoning>
+<Action>-5, 10, 0</Action>
+
+Continue moving accordingly.
+
+<Reasoning>The yellow point in the center might be what I am looking for. I need to adjust the UAV to check for that.</Reasoning>
+<Action>-5, -10, 0</Action>
+
+Continue moving accordingly in order to verify.
+
+<Reasoning>I have found a yellow point like a vehicle in the center of the area. I will hover to check the vehicle.</Reasoning>
+<Action>-20, 0, -30</Action>
+
+Perform the final adjustments.
+
+<Reasoning>Vehicle has been found on the center, I will hover to finish the task, making sure to minimize the distance.</Reasoning>
+<Action>FOUND</Action>

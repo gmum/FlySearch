@@ -1,0 +1,2 @@
+<Reasoning>Using the grid coordinates, the center of the current view is at (0, 0). There is no indication that the yellow truck is closer than the center location, so I should continue looking. Since I do not have visual confirmation, I'm assuming that the truck is below at the lowest point, within the central 500x500m area. I need to fly towards the point (0, 0) to find out and confirm it.</Reasoning>
+<Action>(0, 0, 0)</Action>
