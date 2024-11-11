@@ -37,7 +37,7 @@ def get_glimpse_generator(args):
     if args.glimpse_generator == "standard":
         return UnrealGlimpseGenerator()
     elif args.glimpse_generator == "grid":
-        return UnrealGridGlimpseGenerator(splits_w=5, splits_h=5)
+        return UnrealGridGlimpseGenerator(splits_w=6, splits_h=6)
 
 
 def get_conversation_factory(args):
