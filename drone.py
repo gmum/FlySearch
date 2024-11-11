@@ -3,12 +3,15 @@ import pathlib
 
 from openai import OpenAI
 
+from conversation import InternFactory
+from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
 from conversation.intern_conversation import InternConversation, get_model_and_stuff
 from misc.config import OPEN_AI_KEY
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
+from navigators import TrivialDroneNavigator, GridDroneNavigator
 from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt, \
-    generate_proximity_xml_drone_grid_prompt
+    generate_xml_drone_grid_prompt_with_grid_controls
 from prompts.drone_prompt_generation import generate_basic_drone_prompt, generate_xml_drone_prompt
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
@@ -37,20 +40,11 @@ def get_glimpse_generator(args):
         return UnrealGridGlimpseGenerator(splits_w=5, splits_h=5)
 
 
-intern_model_and_stuff = None
-
-
-def get_conversation(args):
+def get_conversation_factory(args):
     if args.model == "gpt-4o":
-        return OpenAIConversation(OpenAI(api_key=OPEN_AI_KEY), model_name="gpt-4o")
+        return GPTFactory()
     elif args.model == "intern":
-        global intern_model_and_stuff
-        if intern_model_and_stuff is None:
-            model_and_stuff = get_model_and_stuff()
-        else:
-            model_and_stuff = intern_model_and_stuff
-
-        return InternConversation(**model_and_stuff)
+        return InternFactory()
 
 
 def get_prompt(args):
@@ -62,15 +56,17 @@ def get_prompt(args):
         return generate_xml_drone_prompt
     elif args.prompt == "xml_grid":
         return generate_xml_drone_grid_prompt
-    elif args.prompt == "proximity":
-        return generate_proximity_xml_drone_grid_prompt
+    elif args.prompt == "xml_grid_grid":
+        return generate_xml_drone_grid_prompt_with_grid_controls
 
 
-def get_response_parser(args):
-    if args.response_parser == "basic":
-        return BasicDroneResponseParser()
-    elif args.response_parser == "xml":
-        return XMLDroneResponseParser()
+def get_navigator(args):
+    if args.response_parser == "basic-bad":
+        return TrivialDroneNavigator(BasicDroneResponseParser())
+    elif args.response_parser == "basic-xml":
+        return TrivialDroneNavigator(XMLDroneResponseParser())
+    elif args.response_parser == "grid":
+        return GridDroneNavigator()
 
 
 def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation, response_parser, test_number):
@@ -95,12 +91,13 @@ def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation,
 def round_robin(args, run_dir):
     generator = get_glimpse_generator(args)
     prompt = get_prompt(args)
-    response_parser = get_response_parser(args)
+    navigator = get_navigator(args)
+    conversation_factory = get_conversation_factory(args)
 
     for i in range(args.repeats):
         try:
-            conversation = get_conversation(args)
-            perform_one_test(run_dir, prompt, args.glimpses, generator, conversation, response_parser, i)
+            conversation = conversation_factory.get_conversation()
+            perform_one_test(run_dir, prompt, args.glimpses, generator, conversation, navigator, i)
         except:
             print(f"Failed on test {i}")
     generator.disconnect()
@@ -138,20 +135,21 @@ def get_scenario_mapper(args):
 def scenario_level_test(args, run_dir):
     generator = get_glimpse_generator(args)
     prompt = get_prompt(args)
-    response_parser = get_response_parser(args)
+    navigator = get_navigator(args)
     scenario_mapper = get_scenario_mapper(args)
+    conversation_factory = get_conversation_factory(args)
 
     for i, (start_rel_position, (start_coords, object_name)) in enumerate(scenario_mapper.iterate_scenarios()):
         try:
             generator.change_start_position(start_coords)
-            conversation = get_conversation(args)
+            conversation = conversation_factory.get_conversation()
             explorer = DroneExplorer(
                 conversation=conversation,
                 glimpse_generator=generator,
                 prompt_generator=prompt,
                 glimpses=args.glimpses,
                 start_rel_position=start_rel_position,
-                response_parser=response_parser,
+                navigator=navigator,
                 object_name=object_name
             )
             final_position = explorer.simulate()
@@ -187,7 +185,7 @@ def main():
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
-                        choices=["basic", "brute_force", "xml", "xml_grid", "proximity"],
+                        choices=["basic", "brute_force", "xml", "xml_grid", "xml_grid_grid"],
                         )
 
     parser.add_argument("--glimpses",
@@ -226,10 +224,10 @@ def main():
                         help="Number of times to repeat the test. Only for round robin."
                         )
 
-    parser.add_argument("--response_parser",
+    parser.add_argument("--navigator",
                         type=str,
                         required=True,
-                        choices=["basic", "xml"]
+                        choices=["basic-bad", "basic-xml", "grid"]
                         )
 
     parser.add_argument("--height_min",
