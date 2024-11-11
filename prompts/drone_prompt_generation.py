@@ -90,18 +90,20 @@ def generate_xml_drone_grid_prompt_with_grid_controls(glimpses: int) -> str:
 <Context>
     You are in command of a UAV flying over city.
 </Context>
+
 <Objective>
     Fly as close as possible to the yellow pickup truck. It is stationary and located somewhere withing the 500x500m area in the center of which you are currently flying. 
 
     You may not be able to see the vehicle in the first image, so you need to perform a careful search. Fly as close as possible. There is no penalty for moving too close to the vehicle or even crashing into it. Your performance will ONLY be evaluated based on the distance between the vehicle and the UAV.
 </Objective>
+
 <Coordinates>
     There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.
 </Coordinates>
+
 <Controls>
     <Action space>
         To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.
-    </Action space>
 
     <Formatting>
 
