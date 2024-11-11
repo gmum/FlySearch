@@ -61,11 +61,11 @@ def get_prompt(args):
 
 
 def get_navigator(args):
-    if args.response_parser == "basic-bad":
+    if args.navigator == "basic-bad":
         return TrivialDroneNavigator(BasicDroneResponseParser())
-    elif args.response_parser == "basic-xml":
+    elif args.navigator == "basic-xml":
         return TrivialDroneNavigator(XMLDroneResponseParser())
-    elif args.response_parser == "grid":
+    elif args.navigator == "grid":
         return GridDroneNavigator()
 
 
