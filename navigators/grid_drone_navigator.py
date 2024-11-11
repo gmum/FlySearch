@@ -10,7 +10,7 @@ class GridDroneNavigator(AbstractDroneNavigator):
         action_string = self.response_parser.get_basic_string(response)
         action_string = tuple(action_string.replace("(", "").replace(")", "").split(","))
 
-        north_diff, east_diff, up_diff = int(action_string[0]), int(action_string[1]), int(action_string[2])
+        east_diff, north_diff, up_diff = int(action_string[0]), int(action_string[1]), int(action_string[2])
 
         current_west_east_axis, current_north_south_axis, current_up_down_axis = current_position
 
