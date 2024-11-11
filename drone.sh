@@ -4,17 +4,17 @@ python3 drone.py \
 --glimpses 5 \
 --glimpse_generator grid \
 --model intern \
---run_name scenarios_nice_1 \
+--run_name g1t \
 --scenario_type level_1_yellow_truck \
 --response_parser xml \
 --height_min 20 \
 --height_max 50 \
---height_step 10 \
+--height_step 1 \
 --x_offset_min -20 \
---x_offset_max 20 \
+--x_offset_max -19 \
 --x_offset_step 10 \
 --y_offset_min -20 \
---y_offset_max 20 \
+--y_offset_max -19 \
 --y_offset_step 10 \
 --logdir ../plgwtln/results
 
