@@ -7,8 +7,8 @@ class GPTFactory:
     def __init__(self):
         self.client = OpenAI(api_key=OPEN_AI_KEY)
 
-    def get_conversation(self, model_name):
+    def get_conversation(self):
         return OpenAIConversation(
             self.client,
-            model_name=model_name,
+            model_name="gpt-4o",
         )
