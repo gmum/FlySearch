@@ -1,6 +1,7 @@
 class DroneScenarioMapper:
     scenario_map = {
-        1: ((-3382.1, -26423.66, 967.16), "yellow pickup truck"),
+        1: ((-3382.1, -26423.66, 67.16), "yellow pickup truck"),
+        # The pickup truck is 900 units above that point (i. e. 9 meters)
         2: ((-44380.0, -24990.0, 60.0), "yellow pickup truck"),
         3: ((-65000.0, -17930.0, 60.0), "white truck"),
         4: ((-89276.98, 19562.09, 63.6), "white trailer"),
@@ -22,6 +23,7 @@ class DroneScenarioMapper:
         for key, value in DroneScenarioMapper.scenario_map.items():
             yield value
 
+
 class YellowTruckScenarioMapper(DroneScenarioMapper):
     def __init__(self):
         super().__init__()
@@ -34,6 +36,7 @@ class YellowTruckScenarioMapper(DroneScenarioMapper):
 
     def iterate_scenarios(self):
         yield DroneScenarioMapper.scenario_map[1]
+
 
 class DroneScenarioMapperWithOffsets:
     def __init__(self,
