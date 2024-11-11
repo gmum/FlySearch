@@ -6,7 +6,7 @@ python3 drone.py \
 --model intern \
 --run_name g1t \
 --scenario_type level_1_yellow_truck \
---navigator xml \
+--navigator grid \
 --height_min 20 \
 --height_max 50 \
 --height_step 1 \
