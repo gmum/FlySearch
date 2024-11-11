@@ -65,7 +65,7 @@ def generate_xml_drone_grid_prompt(glimpses: int) -> str:
         <Reasoning> tag should contain your reasoning for the move you are making.
         <Action> tag should contain the move you are making.
 
-        If you find the vehicle, reply with "FOUND".
+        If you find the vehicle, fly as close as possible to it. After doing that, reply with "FOUND".
 
         For example:
 
@@ -82,4 +82,45 @@ def generate_xml_drone_grid_prompt(glimpses: int) -> str:
 
 </Controls>
 
+'''
+
+
+def generate_xml_drone_grid_prompt_with_grid_controls(glimpses: int) -> str:
+    return f'''
+<Context>
+    You are in command of a UAV flying over city.
+</Context>
+<Objective>
+    Fly as close as possible to the yellow pickup truck. It is stationary and located somewhere withing the 500x500m area in the center of which you are currently flying. 
+
+    You may not be able to see the vehicle in the first image, so you need to perform a careful search. Fly as close as possible. There is no penalty for moving too close to the vehicle or even crashing into it. Your performance will ONLY be evaluated based on the distance between the vehicle and the UAV.
+</Objective>
+<Coordinates>
+    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.
+</Coordinates>
+<Controls>
+    <Action space>
+        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.
+    </Action space>
+
+    <Formatting>
+
+        Your each response should contain XML <Reasoning> tag and <Action> tag.
+        <Reasoning> tag should contain your reasoning for the move you are making.
+        <Action> tag should contain the move you are making.
+
+        If you find the vehicle, fly as close as possible to it. After doing that, reply with "FOUND". You are evaluated based on the distance between the vehicle and the UAV. Minimise it at all costs. It is not a problem if you crash into the vehicle, as it is a simulation.
+
+        For example:
+
+        <Reasoning>This yellow point might be a vehicle. I need to go lower to check for that. If it's not the vehicle in question, I will continue the search. I will also slightly go to the north.</Reasoning>
+        <Action>(5, 0, -30)</Action>
+
+    </Formatting>
+    
+    <Limitations>
+        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit a building which is not ideal.
+        You can make at most {glimpses - 1} moves.
+    </Limitations>
+</Controls>
 '''
