@@ -26,7 +26,7 @@ def dot_matrix_two_dimensional(img: np.ndarray, dots_size_w, dots_size_h):
     cell_width = width / grid_size_w
     cell_height = height / grid_size_h
 
-    font = ImageFont.truetype("/usr/share/fonts/truetype/hack/Hack-Bold.ttf",
+    font = ImageFont.truetype("/usr/share/fonts/google-noto/NotoSerif-Bold.ttf",
                               width // 40)  # Adjust font size if needed; default == width // 40
 
     count = 0
@@ -53,13 +53,15 @@ def dot_matrix_two_dimensional(img: np.ndarray, dots_size_w, dots_size_h):
 
     return from_pil_to_opencv(img)
 
+
 def carthesian(x, y):
     for el_x in x:
         for el_y in y:
             yield el_x, el_y
 
+
 # It doesn't render dots on the edges of the image.
-def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per_unit = 0.42, drone_height = 100):
+def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per_unit=0.42, drone_height=100):
     def get_opposite_color(pixel_color):
         if pixel_color[0] + pixel_color[1] + pixel_color[2] >= 255 * 3 / 2:
             opposite_color = (0, 0, 0)
@@ -82,7 +84,7 @@ def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per
 
     width, height = img.size
 
-    font = ImageFont.truetype("/usr/share/fonts/truetype/hack/Hack-Bold.ttf",
+    font = ImageFont.truetype("/usr/share/fonts/google-noto/NotoSerif-Bold.ttf",
                               width // 40)  # Adjust font size if needed; default == width // 40
 
     pixels_per_cell_w = width / w_dots
@@ -116,10 +118,10 @@ def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per
 
         text_x_px, text_y_px = x_px + 3, y_px
 
-
         draw.text((text_x_px, text_y_px), f"({x_diff_unit}, {y_diff_unit})", fill=opposite_color, font=font)
 
     return from_pil_to_opencv(img)
+
 
 def from_pil_to_opencv(image):
     return np.array(image)[:, :, ::-1].copy()
@@ -130,7 +132,6 @@ def from_opencv_to_pil(image):
 
 
 def main():
-
     image = cv2.imread("../data/sample_images/city2.png")
 
     image1 = dot_matrix_two_dimensional_unreal(image, 6, 6)
@@ -142,6 +143,7 @@ def main():
 
     cv2.imshow("Image2", image2)
     cv2.waitKey(0)
+
 
 if __name__ == "__main__":
     main()
