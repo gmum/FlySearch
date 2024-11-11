@@ -111,7 +111,7 @@ def generate_xml_drone_grid_prompt_with_grid_controls(glimpses: int) -> str:
         <Reasoning> tag should contain your reasoning for the move you are making.
         <Action> tag should contain the move you are making.
 
-        If you find the vehicle, fly as close as possible to it. After doing that, reply with "FOUND". You are evaluated based on the distance between the vehicle and the UAV. Minimise it at all costs. It is not a problem if you crash into the vehicle, as it is a simulation.
+        If you find the vehicle, fly as close as possible to it. You are evaluated based on the distance between the vehicle and the UAV. Minimise it at all costs. It is not a problem if you crash into the vehicle, as it is a simulation.
 
         For example:
 
