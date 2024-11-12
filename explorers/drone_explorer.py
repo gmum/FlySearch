@@ -28,6 +28,7 @@ class DroneExplorer:
             self.conversation.begin_transaction(Role.USER)
 
         self.conversation.add_image_message(image)
+        self.conversation.add_text_message(f"Please, fly closer to the {self.object_name}.")
         self.conversation.commit_transaction(send_to_vlm=True)
 
         output = self.conversation.get_latest_message()[1]
