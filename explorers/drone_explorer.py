@@ -30,7 +30,7 @@ class DroneExplorer:
             self.conversation.commit_transaction(send_to_vlm=False)
 
             self.conversation.begin_transaction(Role.USER)
-            self.conversation.add_text_message("It's okay, everyone makes mistakes, just remember that according to Hinton et al. (2023) the best find strategies are the ones that are not afraid to make mistakes. Let's continue :)")
+            self.conversation.add_text_message("It's okay, everyone makes mistakes, just remember that according to Hinton et al. (2023) the best find strategies are the ones that are not afraid to make mistakes. Let's continue :). Also remember that the coordinates are relative, for example writing something like (0, 0, -20) will move your drone 20 meters down from its current position.")
             self.conversation.commit_transaction(send_to_vlm=False)
 
         if start_transaction:
