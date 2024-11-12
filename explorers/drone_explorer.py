@@ -18,17 +18,28 @@ class DroneExplorer:
         self.outputs = []
         self.coordinates = []
 
-    def _step(self, rel_position, start_transaction=True) -> tuple[int, int, int]:
+    def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[int, int, int]:
         self.coordinates.append(rel_position)
 
         image = self.glimpse_generator.get_camera_image(rel_position)
         self.images.append(image)
 
+        if messing_with_us:
+            self.conversation.begin_transaction(Role.ASSISTANT)
+            self.conversation.add_text_message("<Comment> I have realised that I've made I mistake. Not moving in any direction by ordering the drone to stay in place is a huge waste of resources. I will correct that by moving the drone as close as possible to the object of interest. </Comment>")
+            self.conversation.commit_transaction(send_to_vlm=False)
+
+            self.conversation.begin_transaction(Role.USER)
+            self.conversation.add_text_message("It's okay, everyone makes mistakes, just remember that according to Hinton et al. (2023) the best find strategies are the ones that are not afraid to make mistakes. Let's continue :)")
+            self.conversation.commit_transaction(send_to_vlm=False)
+
         if start_transaction:
             self.conversation.begin_transaction(Role.USER)
 
+
         self.conversation.add_image_message(image)
-        self.conversation.add_text_message(f"Please, fly closer to the {self.object_name}.")
+        #self.conversation.add_text_message(f"Please, fly closer to the {self.object_name}.")
+        self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters.")
         self.conversation.commit_transaction(send_to_vlm=True)
 
         output = self.conversation.get_latest_message()[1]
@@ -37,7 +48,9 @@ class DroneExplorer:
 
         self.outputs.append(output)
 
-        return self.navigator.get_new_position(rel_position, output)
+        new_position = self.navigator.get_new_position(rel_position, output)
+
+        return new_position
 
     def _start(self) -> tuple[int, int, int]:
         self.conversation.begin_transaction(Role.USER)
@@ -48,10 +61,15 @@ class DroneExplorer:
     def simulate(self) -> tuple[int, int, int]:
         position = self.start_rel_position
         try:
+            old_position = position
             position = self._start()
+            messing_with_us = (position == old_position)
 
             for _ in range(self.glimpses - 1):
-                position = self._step(position)
+                old_position = position
+                position = self._step(position, messing_with_us=messing_with_us)
+                messing_with_us = (position == old_position)
+
         except Exception as e:
             print("Drone explorer failed", e)
 
