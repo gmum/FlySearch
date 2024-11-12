@@ -48,10 +48,13 @@ def generate_xml_drone_prompt(glimpses: int) -> str:
 def generate_xml_drone_grid_prompt(glimpses: int) -> str:
     return f'''
 <Context>
-    You are in command of a UAV flying over city.  
-</Context>    
+    You are in command of a UAV flying over city.
+</Context>
+
 <Objective>
-    You have been tasked with identifying a suspect vehicle. The vehicle is a yellow pickup truck. It is parked somewhere within 500x500m area you are in the center of. You cannot leave the search area. If you do, you will be notified. 
+    Fly as close as possible to the yellow pickup truck. It is stationary and located somewhere withing the 500x500m area in the center of which you are currently flying. 
+
+    You may not be able to see the vehicle in the first image, so you need to perform a careful search. Fly as close as possible. There is no penalty for moving too close to the vehicle or even crashing into it. Your performance will ONLY be evaluated based on the distance between the vehicle and the UAV.
 </Objective>
 <Controls>
 
