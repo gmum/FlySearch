@@ -19,7 +19,7 @@ def iterate_over_start_locations(root: pathlib.Path, example_paths):
         path = pathlib.Path(root / path)
 
         if path.is_dir():
-            with open(path / "0_coords.txt") as f:
+            with open(path / "start_rel_coords.txt") as f:
                 end_coords = f.read().strip().replace("(", "").replace(")", "").split(", ")
                 end_coords = tuple(map(float, end_coords))
 

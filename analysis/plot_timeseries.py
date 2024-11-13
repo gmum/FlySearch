@@ -5,17 +5,25 @@ from matplotlib import pyplot as plt
 from utils import get_l2_time_series
 
 def main():
-    plt.subplot(1, 2, 1)
+    fig, axs = plt.subplots(1, 3, sharex=True, sharey=True)
 
-    for time_serie in get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-2")):
-        print("Time serie length:", len(time_serie))
-        plt.plot(range(len(time_serie)), time_serie)
+    s1 = get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-3"))
+    s2 = get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-7-closer"))
+    s3 = get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-11-closer-incontext"))
 
-    plt.subplot(1, 2, 2)
+    # Set titles
+    axs[0].set_title("GPT-4o, directly above")
+    axs[1].set_title("GPT-4o, directly above, prompting to get closer")
+    axs[2].set_title("GPT-4o, directly above, forcefully winning the argument")
 
-    for time_serie in get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-3")):
-        print("Time serie length:", len(time_serie))
-        plt.plot(range(len(time_serie)), time_serie)
+    for time_serie in s1:
+        axs[0].plot(range(len(time_serie)), time_serie)
+
+    for time_serie in s2:
+        axs[1].plot(range(len(time_serie)), time_serie)
+
+    for time_serie in s3:
+        axs[2].plot(range(len(time_serie)), time_serie)
 
     plt.show()
 
