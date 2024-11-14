@@ -4,27 +4,46 @@ from matplotlib import pyplot as plt
 
 from utils import get_l2_time_series
 
+def plot_time_series(path, ax, title):
+    s = get_l2_time_series(pathlib.Path(path))
+
+    for time_serie in s:
+        ax.plot(range(len(time_serie)), time_serie)
+
+    ax.set_title(title)
+    ax.set_xlabel("Step")
+    ax.set_ylabel("Distance to target")
+
+def plot_closer_prompting_strategies(ax):
+    plot_time_series("../all_logs/newgrid-gpt-3", ax[0], "GPT-4o, directly above")
+    plot_time_series("../all_logs/newgrid-gpt-7-closer", ax[1], "GPT-4o, directly above, prompting to get closer")
+    plot_time_series("../all_logs/newgrid-gpt-11-closer-incontext", ax[2], "GPT-4o, directly above, forcefully winning the argument")
+
+def plot_corner_vs_center(ax):
+    plot_time_series("../all_logs/newgrid-gpt-2", ax[0], "GPT-4o, corner")
+    plot_time_series("../all_logs/newgrid-gpt-3", ax[1], "GPT-4o, center")
+
+
+def plot_badgrid_vs_newgrid(ax):
+    plot_time_series("../all_logs/newgrid-gpt-4-badgrid", ax[0], "GPT-4o, directly above, badgrid")
+    plot_time_series("../all_logs/newgrid-gpt-3", ax[1], "GPT-4o, directly above, newgrid")
+    plot_time_series("../all_logs/newgrid-gpt-11-closer-incontext", ax[2], "GPT-4o, directly above, newgrid, forcefully winning the argument")
+
+
 def main():
     fig, axs = plt.subplots(1, 3, sharex=True, sharey=True)
 
-    s1 = get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-3"))
-    s2 = get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-7-closer"))
-    s3 = get_l2_time_series(pathlib.Path("../all_logs/newgrid-gpt-11-closer-incontext"))
+    plot_closer_prompting_strategies(axs)
+    plt.show()
 
-    # Set titles
-    axs[0].set_title("GPT-4o, directly above")
-    axs[1].set_title("GPT-4o, directly above, prompting to get closer")
-    axs[2].set_title("GPT-4o, directly above, forcefully winning the argument")
+    figs, axs = plt.subplots(1, 2, sharex=True, sharey=True)
 
-    for time_serie in s1:
-        axs[0].plot(range(len(time_serie)), time_serie)
+    plot_corner_vs_center(axs)
+    plt.show()
 
-    for time_serie in s2:
-        axs[1].plot(range(len(time_serie)), time_serie)
+    figs, axs = plt.subplots(1, 3, sharex=True, sharey=True)
 
-    for time_serie in s3:
-        axs[2].plot(range(len(time_serie)), time_serie)
-
+    plot_badgrid_vs_newgrid(axs)
     plt.show()
 
 if __name__ == "__main__":

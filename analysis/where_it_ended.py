@@ -65,6 +65,27 @@ def plot_corner_vs_center(ax):
 
     ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center"])
 
+def plot_corner_forceful_vs_center_forceful(ax):
+    correct_end_place = (0, 0, 9)
+
+    corner = get_start_end_locations("../all_logs/newgrid-gpt-12-corner-incontext")
+    center = get_start_end_locations("../all_logs/newgrid-gpt-11-closer-incontext")
+
+    ax = plot_multiple_runs(
+        [corner, center],
+        correct_end_place, ax)
+
+    plot_baseline_for_run(corner, correct_end_place, ax)
+    plot_baseline_for_run(center, correct_end_place, ax, style="g--")
+
+    ax.set_title("GPT-4o, directly above, corner vs center, forceful")
+    ax.set_xlabel("Starting height")
+    ax.set_ylabel("Distance to target")
+
+    ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center"])
+
+    return ax
+
 def plot_baseline_vs_closer_vs_forceful(ax):
     correct_end_place = (0, 0, 9)
 
@@ -85,12 +106,12 @@ def plot_baseline_vs_closer_vs_forceful(ax):
     ax.legend(["End of run distance, baseline", "End of run distance, polite", "End of run distance, forceful + info", "Distance to target at start"])
 def main():
 
-    fig, ax = plt.subplots(3, 1, sharex=True, sharey=True)
+    fig, ax = plt.subplots(1, 2, sharex=True, sharey=True)
 
-    plot_badgrid_vs_newgrid(ax[0])
-    plot_corner_vs_center(ax[1])
-    plot_baseline_vs_closer_vs_forceful(ax[2])
-
+    # plot_badgrid_vs_newgrid(ax[0])
+    plot_corner_vs_center(ax[0])
+    #plot_baseline_vs_closer_vs_forceful(ax[0])
+    plot_corner_forceful_vs_center_forceful(ax[1])
     plt.show()
 
 if __name__ == "__main__":
