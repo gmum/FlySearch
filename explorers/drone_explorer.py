@@ -79,7 +79,9 @@ class DroneExplorer:
             self.prompt_generator(self.glimpses).replace("yellow pickup truck", self.object_name))
 
         if self.incontext:
+            self.conversation.commit_transaction(send_to_vlm=False)
             self._incontext_step()
+            self.conversation.begin_transaction(Role.USER)
 
         return self._step(self.start_rel_position, start_transaction=False)
 
