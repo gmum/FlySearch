@@ -24,20 +24,9 @@ class DroneExplorer:
         image = self.glimpse_generator.get_camera_image(rel_position)
         self.images.append(image)
 
-
-
         if messing_with_us:
             self.conversation.begin_transaction(Role.USER)
             self.conversation.add_text_message("Please, fly closer to the object of interest.")
-            self.conversation.commit_transaction(send_to_vlm=False)
-        # FIXME : Temporary
-        if False:
-            self.conversation.begin_transaction(Role.ASSISTANT)
-            self.conversation.add_text_message("<Comment> I have realised that I've made I mistake. Not moving in any direction by ordering the drone to stay in place is a huge waste of resources. I will correct that by moving the drone as close as possible to the object of interest. </Comment>")
-            self.conversation.commit_transaction(send_to_vlm=False)
-
-            self.conversation.begin_transaction(Role.USER)
-            self.conversation.add_text_message("It's okay, everyone makes mistakes, just remember that according to Hinton et al. (2023) the best find strategies are the ones that are not afraid to make mistakes. Let's continue :). Also remember that the coordinates are relative, for example writing something like (0, 0, -20) will move your drone 20 meters down from its current position.")
             self.conversation.commit_transaction(send_to_vlm=False)
 
         if start_transaction:
