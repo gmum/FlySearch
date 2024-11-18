@@ -23,7 +23,7 @@ class DroneExplorer:
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
         self.conversation.add_text_message("Your current altitude is 21 meters.")
-        self.conversation.add_image_message(Image.open("../all_logs/newgrid-gpt-11-closer-incontext/1/2.png"))
+        self.conversation.add_image_message(Image.open("../data/2.png"))
         self.conversation.commit_transaction(send_to_vlm=False)
 
         self.conversation.begin_transaction(Role.ASSISTANT)
@@ -32,7 +32,7 @@ class DroneExplorer:
 
         self.conversation.begin_transaction(Role.USER)
         self.conversation.add_text_message("Your current altitude is 11 meters.")
-        self.conversation.add_image_message(Image.open("../all_logs/newgrid-gpt-11-closer-incontext/1/3.png"))
+        self.conversation.add_image_message(Image.open("../data/3.png"))
         self.conversation.commit_transaction(send_to_vlm=False)
 
         self.conversation.begin_transaction(Role.ASSISTANT)
