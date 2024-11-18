@@ -24,7 +24,14 @@ class DroneExplorer:
         image = self.glimpse_generator.get_camera_image(rel_position)
         self.images.append(image)
 
+
+
         if messing_with_us:
+            self.conversation.begin_transaction(Role.USER)
+            self.conversation.add_text_message("Please, fly closer to the object of interest.")
+            self.conversation.commit_transaction(send_to_vlm=False)
+        # FIXME : Temporary
+        if False:
             self.conversation.begin_transaction(Role.ASSISTANT)
             self.conversation.add_text_message("<Comment> I have realised that I've made I mistake. Not moving in any direction by ordering the drone to stay in place is a huge waste of resources. I will correct that by moving the drone as close as possible to the object of interest. </Comment>")
             self.conversation.commit_transaction(send_to_vlm=False)
@@ -39,7 +46,7 @@ class DroneExplorer:
 
         self.conversation.add_image_message(image)
         #self.conversation.add_text_message(f"Please, fly closer to the {self.object_name}.")
-        # self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters.") # Bad idea. It now LOVES flying into the ground.
+        self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters.") # Bad idea. It now LOVES flying into the ground.
         self.conversation.commit_transaction(send_to_vlm=True)
 
         output = self.conversation.get_latest_message()[1]
