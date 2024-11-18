@@ -1,11 +1,12 @@
 from conversation.abstract_conversation import Conversation, Role
 from navigators import AbstractDroneNavigator
 from response_parsers import Direction
+from PIL import Image
 
 
 class DroneExplorer:
     def __init__(self, conversation: Conversation, glimpse_generator, prompt_generator, glimpses,
-                 start_rel_position, navigator: AbstractDroneNavigator, object_name="yellow pickup truck") -> None:
+                 start_rel_position, navigator: AbstractDroneNavigator, object_name="yellow pickup truck", incontext=False) -> None:
         self.conversation = conversation
         self.glimpse_generator = glimpse_generator
         self.prompt_generator = prompt_generator
@@ -13,10 +14,34 @@ class DroneExplorer:
         self.start_rel_position = start_rel_position
         self.navigator = navigator
         self.object_name = object_name
+        self.incontext = incontext
 
         self.images = []
         self.outputs = []
         self.coordinates = []
+
+    def _incontext_step(self):
+        self.conversation.begin_transaction(Role.USER)
+        self.conversation.add_text_message("Your current altitude is 21 meters.")
+        self.conversation.add_image_message(Image.open("../all_logs/newgrid-gpt-11-closer-incontext/1/2.png"))
+        self.conversation.commit_transaction(send_to_vlm=False)
+
+        self.conversation.begin_transaction(Role.ASSISTANT)
+        self.conversation.add_text_message("<Comment> I clearly see a yellow pickup truck that I am centered on in both of my axes. I can however adjust my altitude to get even closer to it. Since my altitude is 21 meters, I will adjust it by 10 meters in a calm and professional manner. </Comment> <Action> (0, 0, -10) </Action>")
+        self.conversation.commit_transaction(send_to_vlm=False)
+
+        self.conversation.begin_transaction(Role.USER)
+        self.conversation.add_text_message("Your current altitude is 11 meters.")
+        self.conversation.add_image_message(Image.open("../all_logs/newgrid-gpt-11-closer-incontext/1/3.png"))
+        self.conversation.commit_transaction(send_to_vlm=False)
+
+        self.conversation.begin_transaction(Role.ASSISTANT)
+        self.conversation.add_text_message("<Comment> I am now at 11 meters and all I can see is the yellow pickup truck due to my proximity. I have achieved the goal. </Comment> <Action> FOUND </Action>")
+        self.conversation.commit_transaction(send_to_vlm=False)
+
+        self.conversation.begin_transaction(Role.USER)
+        self.conversation.add_text_message("Very vell, let's move on to another example.")
+        self.conversation.commit_transaction(send_to_vlm=False)
 
     def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[int, int, int]:
         self.coordinates.append(rel_position)
@@ -52,6 +77,10 @@ class DroneExplorer:
         self.conversation.begin_transaction(Role.USER)
         self.conversation.add_text_message(
             self.prompt_generator(self.glimpses).replace("yellow pickup truck", self.object_name))
+
+        if self.incontext:
+            self._incontext_step()
+
         return self._step(self.start_rel_position, start_transaction=False)
 
     def simulate(self) -> tuple[int, int, int]:

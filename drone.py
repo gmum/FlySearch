@@ -150,7 +150,8 @@ def scenario_level_test(args, run_dir):
                 glimpses=args.glimpses,
                 start_rel_position=start_rel_position,
                 navigator=navigator,
-                object_name=object_name
+                object_name=object_name,
+                incontext=(args.incontext == "True")
             )
             final_position = explorer.simulate()
 
@@ -182,6 +183,13 @@ def scenario_level_test(args, run_dir):
 
 def main():
     parser = argparse.ArgumentParser()
+
+    parser.add_argument("--incontext",
+                        type=str,
+                        required=True,
+                        choices=["True", "False"],
+                        )
+
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
