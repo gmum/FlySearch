@@ -2,15 +2,11 @@ import typing
 
 import torch
 
-from transformers import pipeline
-from transformers import AutoProcessor, LlavaForConditionalGeneration, AutoModel
+from transformers import AutoProcessor, LlavaForConditionalGeneration
 from transformers import BitsAndBytesConfig
 from enum import Enum
 from PIL import Image
-
-from datasets.vstar_bench_dataset import VstarSubBenchDataset
 from conversation.abstract_conversation import Conversation, Role
-from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class MessageType(Enum):
