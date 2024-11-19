@@ -157,14 +157,13 @@ class SimpleLlavaPipeline:
 
 
 def main():
+    from PIL import Image
     import requests
     image2 = Image.open(requests.get("http://images.cocodataset.org/val2017/000000039769.jpg", stream=True).raw)
 
     client = SimpleLlavaPipeline(device="cuda")
 
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
-    image, question, options, answer = ds[0]
-    image = opencv_to_pil(image)
+    image = Image.open("../data/sample_images/burger.jpeg")
 
     conversation = LlavaConversation(client)
 
