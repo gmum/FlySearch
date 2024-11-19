@@ -86,6 +86,29 @@ def plot_corner_forceful_vs_center_forceful(ax):
 
     return ax
 
+def plot_center_oneshot_vs_corner_oneshot(ax):
+    correct_end_place = (0, 0, 9)
+
+    center = get_start_end_locations("../all_logs/newgrid-gpt-19-center-politealt-incontext")
+    corner = get_start_end_locations("../all_logs/newgrid-gpt-20-corner-politealt-incontext")
+
+    ax = plot_multiple_runs(
+        [corner, center],
+        correct_end_place, ax)
+
+    plot_baseline_for_run(corner, correct_end_place, ax)
+    plot_baseline_for_run(center, correct_end_place, ax, style="g--")
+
+    ax.set_title("GPT-4o, directly above, oneshot")
+    ax.set_xlabel("Starting height")
+    ax.set_ylabel("Distance to target")
+
+    ax.axhline(y=9, color='r', linestyle=':')
+
+    ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center", "Distance to target from ground below it"])
+
+    return ax
+
 def plot_corner_polite_vs_center_polite(ax):
     correct_end_place = (0, 0, 9)
 
@@ -135,8 +158,9 @@ def main():
     # plot_badgrid_vs_newgrid(ax[0])
     plot_corner_vs_center(ax[0])
     #plot_baseline_vs_closer_vs_forceful(ax[0])
-    plot_corner_forceful_vs_center_forceful(ax[1])
-    plot_corner_polite_vs_center_polite(ax[2])
+    #plot_corner_forceful_vs_center_forceful(ax[1])
+    plot_corner_polite_vs_center_polite(ax[1])
+    plot_center_oneshot_vs_corner_oneshot(ax[2])
     plt.show()
 
 if __name__ == "__main__":
