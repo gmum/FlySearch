@@ -33,11 +33,17 @@ def plot_politeness(ax):
     plot_time_series("../all_logs/newgrid-gpt-14-corner-politealt", ax[0], "GPT-4o, corner, polite + altitude")
     plot_time_series("../all_logs/newgrid-gpt-15-center-politealt", ax[1], "GPT-4o, center, polite + altitude")
 
+def plot_fewshot(ax):
+    plot_time_series("../all_logs/newgrid-gpt-20-corner-politealt-incontext", ax[0], "GPT-4o, corner, polite + altitude, fewshot")
+    plot_time_series("../all_logs/newgrid-gpt-19-center-politealt-incontext", ax[1], "GPT-4o, center, polite + altitude, fewshot")
+
+
 
 def main():
-    fig, axs = plt.subplots(1, 2, sharex=True, sharey=True)
+    fig, axs = plt.subplots(2, 2, sharex=True, sharey=True)
 
-    plot_politeness(axs)
+    plot_politeness(axs[0])
+    plot_fewshot(axs[1])
     plt.show()
 
     exit()
