@@ -129,3 +129,50 @@ def generate_xml_drone_grid_prompt_with_grid_controls(glimpses: int) -> str:
     </Limitations>
 </Controls>
 '''
+
+
+def xml_found_prompt(glimpses: int) -> str:
+    return f'''
+<Context>
+    You are in command of a UAV flying over city, tasked with finding a yellow pickup truck.
+</Context>
+
+<Objective>
+    You should fly AT LEAST 10 meters above the vehicle and then reply with "FOUND".
+
+    You may not be able to see the vehicle in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the vehicle was at most 10 meters below the drone when you replied with "FOUND". The vehicle MUST be in your field of view when you reply with "FOUND".
+</Objective>
+
+<Coordinates>
+    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.
+</Coordinates>
+
+<Controls>
+    <Action space>
+        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.
+
+        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.
+
+    </Action space>
+
+    <Formatting>
+
+        Your each response should contain XML <Reasoning> tag and <Action> tag.
+        <Reasoning> tag should contain your reasoning for the move you are making.
+        <Action> tag should contain the move you are making.
+
+        If you find the vehicle, fly as close as you can to it and reply with "FOUND". Remember, it must be in your field of view when you reply with "FOUND" and you must be 10 meters above it or closer. Being too far away is not acceptable.
+
+        For example:
+
+        <Reasoning>This yellow point might be a vehicle. I need to go lower to check for that. If it's not the vehicle in question, I will continue the search. I will also slightly go to the north.</Reasoning>
+        <Action>(5, 0, -30)</Action>
+
+    </Formatting>
+
+    <Limitations>
+        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit a building which is not ideal.
+        You can make at most {glimpses - 1} moves.
+    </Limitations>
+</Controls>
+'''
