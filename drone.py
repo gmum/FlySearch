@@ -11,7 +11,7 @@ from misc.config import OPEN_AI_KEY
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
 from navigators import TrivialDroneNavigator, GridDroneNavigator
 from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt, \
-    generate_xml_drone_grid_prompt_with_grid_controls
+    generate_xml_drone_grid_prompt_with_grid_controls, xml_found_prompt
 from prompts.drone_prompt_generation import generate_basic_drone_prompt, generate_xml_drone_prompt
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
@@ -58,6 +58,8 @@ def get_prompt(args):
         return generate_xml_drone_grid_prompt
     elif args.prompt == "xml_grid_grid":
         return generate_xml_drone_grid_prompt_with_grid_controls
+    elif args.prompt == "xml_grid_grid_found":
+        return xml_found_prompt
 
 
 def get_navigator(args):
@@ -193,7 +195,7 @@ def main():
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
-                        choices=["basic", "brute_force", "xml", "xml_grid", "xml_grid_grid"],
+                        choices=["basic", "brute_force", "xml", "xml_grid", "xml_grid_grid", "xml_grid_grid_found"],
                         )
 
     parser.add_argument("--glimpses",
