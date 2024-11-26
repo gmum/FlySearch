@@ -115,7 +115,7 @@ class OpenAIConversation(Conversation):
             model=self.model_name,
             messages=self.conversation,
             max_tokens=self.max_tokens,
-            seed=self.seed,
+            #seed=self.seed,
             temperature=self.temperature,
             top_p=self.top_p
         )
