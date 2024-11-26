@@ -6,7 +6,7 @@ from PIL import Image
 
 class DroneExplorer:
     def __init__(self, conversation: Conversation, glimpse_generator, prompt_generator, glimpses,
-                 start_rel_position, navigator: AbstractDroneNavigator, object_name="yellow pickup truck", incontext=False) -> None:
+                 start_rel_position, navigator: AbstractDroneNavigator, object_name="yellow pickup truck", incontext=False, abandon_image_on_cue=True) -> None:
         self.conversation = conversation
         self.glimpse_generator = glimpse_generator
         self.prompt_generator = prompt_generator
@@ -15,6 +15,7 @@ class DroneExplorer:
         self.navigator = navigator
         self.object_name = object_name
         self.incontext = incontext
+        self.abandon_image_on_cue = abandon_image_on_cue
 
         self.images = []
         self.outputs = []
@@ -46,8 +47,24 @@ class DroneExplorer:
     def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[int, int, int]:
         self.coordinates.append(rel_position)
 
-        image = self.glimpse_generator.get_camera_image(rel_position)
+        image, *rest = self.glimpse_generator.get_camera_image(rel_position)
         self.images.append(image)
+
+        abandon_sending_image = False
+        cue = None
+
+        if len(rest) != 0:
+            # Glimpse generator has returned some additional information
+            if len(rest) != 1:
+                raise NotImplementedError("Glimpse generator returned too much information")
+
+            item = rest[0]
+
+            if type(item) is not str:
+                raise NotImplementedError("Non-string additional cues are not supported")
+
+            cue = item
+            abandon_sending_image = self.abandon_image_on_cue
 
         if messing_with_us:
             self.conversation.begin_transaction(Role.USER)
@@ -58,9 +75,13 @@ class DroneExplorer:
             self.conversation.begin_transaction(Role.USER)
 
 
-        self.conversation.add_image_message(image)
-        #self.conversation.add_text_message(f"Please, fly closer to the {self.object_name}.")
-        self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters.") # Bad idea. It now LOVES flying into the ground.
+        if cue is not None:
+            self.conversation.add_text_message(cue)
+
+        if not abandon_sending_image:
+            self.conversation.add_image_message(image)
+
+        self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters.")
         self.conversation.commit_transaction(send_to_vlm=True)
 
         output = self.conversation.get_latest_message()[1]

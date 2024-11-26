@@ -8,6 +8,7 @@ from unrealcv import Client
 from time import sleep
 from PIL import Image
 
+from conversation import Role
 from misc.add_guardrails import dot_matrix_two_dimensional_unreal
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
 
@@ -74,6 +75,26 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
         img = opencv_to_pil(img)
 
         return img
+
+class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
+    def __init__(self, conversation_factory, searched_obj, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.conversation_factory = conversation_factory
+        self.searched_obj = searched_obj
+
+    def get_camera_image(self,
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
+        img = super().get_camera_image(rel_position_m)
+
+        conversation = self.conversation_factory.get_conversation()
+        conversation.begin_transaction(Role.USER)
+        conversation.add_text_message(f"Describe the image from the drone at position {rel_position_m}. Your description should be extremely detailed, and should include any objects, people, or other features that you see. If you see something of resemblance to {self.searched_obj}, mention it, specifying its approximate coordinates in the grid.")
+        conversation.add_image_message(img)
+        conversation.commit_transaction(send_to_vlm=True)
+
+        response = conversation.get_latest_message()[1]
+
+        return img, response
 
 
 def main():
