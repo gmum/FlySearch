@@ -42,7 +42,9 @@ def get_glimpse_generator(args):
     elif args.glimpse_generator == "description":
         return UnrealDescriptionGlimpseGenerator(
             conversation_factory=get_conversation_factory(args),
-            searched_obj="yellow pickup truck" # FIXME !!!
+            searched_obj="yellow pickup truck", # FIXME !!!
+            splits_w=6,
+            splits_h=6
         )
 
 
@@ -152,6 +154,7 @@ def scenario_level_test(args, run_dir):
     for i, (start_rel_position, (start_coords, object_name)) in enumerate(scenario_mapper.iterate_scenarios()):
         try:
             generator.change_start_position(start_coords)
+            generator.reset_camera()
             conversation = conversation_factory.get_conversation()
             explorer = DroneExplorer(
                 conversation=conversation,
