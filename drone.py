@@ -177,6 +177,12 @@ def scenario_level_test(args, run_dir):
             with open(test_dir / "start_rel_coords.txt", "w") as f:
                 f.write(str(start_rel_position))
 
+            with open(test_dir / "conversation.txt", "w") as f:
+                if isinstance(conversation, OpenAIConversation):
+                    f.write(str(conversation.get_conversation(save_urls=False)))
+                else:
+                    f.write(str(conversation.get_conversation()))
+
         except Exception as e:
             print(f"Failed on test {i}", e)
 

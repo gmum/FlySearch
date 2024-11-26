@@ -136,7 +136,7 @@ class OpenAIConversation(Conversation):
         self.transaction_started = False
         self.transaction_role = None
 
-    def get_conversation(self):
+    def get_conversation(self, save_urls=True):
         def conversation_iterator():
             for message in self.conversation:
                 role = Role.USER if message["role"] == "user" else Role.ASSISTANT
@@ -146,7 +146,10 @@ class OpenAIConversation(Conversation):
                     if submessage["type"] == "text":
                         yield role, submessage["text"]
                     elif submessage["type"] == "image_url":
-                        yield role, submessage["image_url"]
+                        if save_urls:
+                            yield role, submessage["image_url"]
+                        else:
+                            yield role, "image"
 
         return list(conversation_iterator())
 
