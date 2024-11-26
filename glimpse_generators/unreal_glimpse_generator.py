@@ -91,7 +91,7 @@ class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
 
         conversation = self.conversation_factory.get_conversation()
         conversation.begin_transaction(Role.USER)
-        conversation.add_text_message(f"Describe the image from the drone at position {rel_position_m}. Your description should be extremely detailed, and should include any objects, people, or other features that you see. If you see something of resemblance to {self.searched_obj}, mention it, specifying its approximate coordinates in the grid.")
+        conversation.add_text_message(f"Describe the image from the drone at an absolute altitude of {rel_position_m[2]}. Your description should be extremely detailed, and should include any objects, people, or other features that you see. If you see something of resemblance to {self.searched_obj}, mention it, specifying its approximate coordinates in the grid.")
         conversation.add_image_message(img)
         conversation.commit_transaction(send_to_vlm=True)
 
