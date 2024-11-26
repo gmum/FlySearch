@@ -47,24 +47,18 @@ class DroneExplorer:
     def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[int, int, int]:
         self.coordinates.append(rel_position)
 
-        image, *rest = self.glimpse_generator.get_camera_image(rel_position)
-        self.images.append(image)
+        glimpse = self.glimpse_generator.get_camera_image(rel_position)
 
         abandon_sending_image = False
         cue = None
 
-        if len(rest) != 0:
-            # Glimpse generator has returned some additional information
-            if len(rest) != 1:
-                raise NotImplementedError("Glimpse generator returned too much information")
-
-            item = rest[0]
-
-            if type(item) is not str:
-                raise NotImplementedError("Non-string additional cues are not supported")
-
-            cue = item
+        if isinstance(glimpse, tuple):
+            image, cue = glimpse
             abandon_sending_image = self.abandon_image_on_cue
+        else:
+            image = glimpse
+
+        self.images.append(image)
 
         if messing_with_us:
             self.conversation.begin_transaction(Role.USER)
