@@ -51,7 +51,7 @@ class UnrealGlimpseGenerator:
 
         location = (start_position[0] + rel_position_m[0] * 100, start_position[1] + rel_position_m[1] * 100,
                     start_position[2] + rel_position_m[2] * 100)
-        self.client.request(f'vset /camera/1/moveto {location[0]} {location[1]} {location[2]}')
+        self.client.request(f'vset /camera/1/location {location[0]} {location[1]} {location[2]}')
         sleep(0.5)
         self.client.request('vget /camera/1/lit /tmp/camera.png')
         image = Image.open('/tmp/camera.png')
