@@ -152,50 +152,51 @@ def scenario_level_test(args, run_dir):
     conversation_factory = get_conversation_factory(args)
 
     for i, (start_rel_position, (start_coords, object_name)) in enumerate(scenario_mapper.iterate_scenarios()):
-        try:
-            generator.change_start_position(start_coords)
-            generator.reset_camera()
-            conversation = conversation_factory.get_conversation()
-            explorer = DroneExplorer(
-                conversation=conversation,
-                glimpse_generator=generator,
-                prompt_generator=prompt,
-                glimpses=args.glimpses,
-                start_rel_position=start_rel_position,
-                navigator=navigator,
-                object_name=object_name,
-                incontext=(args.incontext == "True")
-            )
-            final_position = explorer.simulate()
+        for repeat in range(args.repeats):
+            try:
+                generator.change_start_position(start_coords)
+                generator.reset_camera()
+                conversation = conversation_factory.get_conversation()
+                explorer = DroneExplorer(
+                    conversation=conversation,
+                    glimpse_generator=generator,
+                    prompt_generator=prompt,
+                    glimpses=args.glimpses,
+                    start_rel_position=start_rel_position,
+                    navigator=navigator,
+                    object_name=object_name,
+                    incontext=(args.incontext == "True")
+                )
+                final_position = explorer.simulate()
 
-            images = explorer.get_images()
-            outputs = explorer.get_outputs()
-            coordinates = explorer.get_coords()
+                images = explorer.get_images()
+                outputs = explorer.get_outputs()
+                coordinates = explorer.get_coords()
 
-            test_dir = run_dir / str(i)
-            test_dir.mkdir(exist_ok=True)
+                test_dir = run_dir / f"{str(i)}_r{str(repeat)} "
+                test_dir.mkdir(exist_ok=True)
 
-            for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
-                image.save(test_dir / f"{j}.png")
-                with open(test_dir / f"{j}.txt", "w") as f:
-                    f.write(output)
-                with open(test_dir / f"{j}_coords.txt", "w") as f:
-                    f.write(str(location))
+                for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
+                    image.save(test_dir / f"{j}.png")
+                    with open(test_dir / f"{j}.txt", "w") as f:
+                        f.write(output)
+                    with open(test_dir / f"{j}_coords.txt", "w") as f:
+                        f.write(str(location))
 
-            with open(test_dir / "final_coords.txt", "w") as f:
-                f.write(str(final_position))
+                with open(test_dir / "final_coords.txt", "w") as f:
+                    f.write(str(final_position))
 
-            with open(test_dir / "start_rel_coords.txt", "w") as f:
-                f.write(str(start_rel_position))
+                with open(test_dir / "start_rel_coords.txt", "w") as f:
+                    f.write(str(start_rel_position))
 
-            with open(test_dir / "conversation.txt", "w") as f:
-                if isinstance(conversation, OpenAIConversation):
-                    f.write(str(conversation.get_conversation(save_urls=False)))
-                else:
-                    f.write(str(conversation.get_conversation()))
+                with open(test_dir / "conversation.txt", "w") as f:
+                    if isinstance(conversation, OpenAIConversation):
+                        f.write(str(conversation.get_conversation(save_urls=False)))
+                    else:
+                        f.write(str(conversation.get_conversation()))
 
-        except Exception as e:
-            print(f"Failed on test {i}", e)
+            except Exception as e:
+                print(f"Failed on test {i}, repeat {repeat}", e)
 
     generator.disconnect()
 
@@ -247,8 +248,9 @@ def main():
 
     parser.add_argument("--repeats",
                         type=int,
-                        required=False,
-                        help="Number of times to repeat the test. Only for round robin."
+                        required=True,
+                        help="Number of times to repeat the test.",
+                        default=1
                         )
 
     parser.add_argument("--navigator",
@@ -308,12 +310,6 @@ def main():
                         help="Override for logs directory.")
 
     args = parser.parse_args()
-
-    if args.scenario_type == "round_robin" and args.repeats is None:
-        raise ValueError("Repeats must be specified for round robin scenario type.")
-
-    if args.scenario_type != "round_robin" and args.repeats is not None:
-        raise ValueError("Repeats should not be specified for scenario different than round robin.")
 
     run_dir = create_test_run_directory(args)
 
