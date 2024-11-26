@@ -93,8 +93,6 @@ def iterate_over_experiment_time_serie_messages(root: pathlib.Path, example_path
 def iterate_over_experiment_coords_and_messages_time_series(root: pathlib.Path, example_paths):
     for msg_time_serie, coord_time_serie in zip(iterate_over_experiment_time_serie_messages(root, example_paths),
                                                 iterate_over_experiment_time_series(root, example_paths)):
-        print("LEN, MSGS", len(msg_time_serie))
-        print("LEN, COORDS", len(coord_time_serie))
 
         yield msg_time_serie, coord_time_serie
 

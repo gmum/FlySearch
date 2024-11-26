@@ -1,16 +1,49 @@
 import pathlib
+import statistics
 
 from matplotlib import pyplot as plt
+from matplotlib.pyplot import axvline
 
 from utils import l2_distance, iterate_over_start_and_end_locations
 
-def plot_multiple_runs(start_end_loc_list, correct_end_place, ax):
+def l2_distance_with_confidence(stard_end_locations, correct_end_place):
+    from_start_to_end = {}
+
+    for start, end in stard_end_locations:
+        if start not in from_start_to_end:
+            from_start_to_end[start] = [l2_distance(end, correct_end_place)]
+        else:
+            from_start_to_end[start].append(l2_distance(end, correct_end_place))
+
+    medians = {start: statistics.median(distances) for start, distances in from_start_to_end.items()}
+    maxes = {start: max(distances) for start, distances in from_start_to_end.items()}
+    mins = {start: min(distances) for start, distances in from_start_to_end.items()}
+
+    medians = sorted(list(medians.items()), key=lambda x: x[0][2])
+    maxes = sorted(list(maxes.items()), key=lambda x: x[0][2])
+    mins = sorted(list(mins.items()), key=lambda x: x[0][2])
+
+    medians = [median for start, median in medians]
+    maxes = [maximum for start, maximum in maxes]
+    mins = [minimum for start, minimum in mins]
+
+
+    return medians, maxes, mins
+
+def plot_multiple_runs(start_end_loc_list, correct_end_place, ax, ):
     for start_end_locations in start_end_loc_list:
         start_heights = [start[2] for start, end in start_end_locations]
+        start_heights = set(start_heights)
+        start_heights = sorted(list(start_heights))
+
+        medians, maxes, mins = l2_distance_with_confidence(start_end_locations, correct_end_place)
 
         ax.plot(start_heights,
-                 [l2_distance(end, correct_end_place) for start, end in start_end_locations],
+                 medians,
+                 marker="o"
                  )
+
+        ax.fill_between(start_heights, mins, maxes, alpha=0.2)
 
     return ax
 
@@ -27,6 +60,31 @@ def plot_baseline_for_run(start_end_locations, correct_end_place, ax, style="r--
 
 def get_start_end_locations(root):
     return sorted(list(iterate_over_start_and_end_locations(pathlib.Path(root))), key=lambda x: x[0][2])
+
+def plot_adg(ax):
+    correct_end_place = (0, 0, 9)
+
+    center_path = "../all_logs/ADG-MC-0S-CT"
+    corner_path = "../all_logs/ADG-MC-0S-CR"
+
+    center = get_start_end_locations(center_path)
+    corner = get_start_end_locations(corner_path)
+
+    ax = plot_multiple_runs(
+        [center, corner],
+        correct_end_place, ax)
+
+    plot_baseline_for_run(center, correct_end_place, ax)
+    plot_baseline_for_run(corner, correct_end_place, ax, style="g--")
+
+    ax.axhline(y=9, color='r', linestyle=':')
+
+    ax.set_title("GPT-4o, ADG-MC-0S")
+    ax.set_xlabel("Starting height")
+    ax.set_ylabel("Distance to target")
+
+    ax.legend(["End of run distance, center", "Uncertainty for center", "End of run distance, corner", "Uncertainty for corner", "Distance to target at start, center", "Distance to target at start, corner", "Distance to target from ground below it"])
+
 
 def plot_badgrid_vs_newgrid(ax):
     correct_end_place = (0, 0, 9)
@@ -82,7 +140,9 @@ def plot_corner_forceful_vs_center_forceful(ax):
     ax.set_xlabel("Starting height")
     ax.set_ylabel("Distance to target")
 
-    ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center"])
+    ax.axhline(y=9, color='r', linestyle=':')
+
+    ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center", "Distance to target from ground below it"])
 
     return ax
 
@@ -129,7 +189,7 @@ def plot_corner_polite_vs_center_polite(ax):
     # Set a horizontal line at 9
     ax.axhline(y=9, color='r', linestyle=':')
 
-    ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center", "Distance to target from ground below it"])
+    ax.legend(["End of run distance, corner", "End of run distance, center", "Distance to target at start, corner", "Distance to target at start, center", "Distance to target from ground below it"], loc="upper left")
 
     return ax
 
@@ -153,14 +213,15 @@ def plot_baseline_vs_closer_vs_forceful(ax):
     ax.legend(["End of run distance, baseline", "End of run distance, polite", "End of run distance, forceful + info", "Distance to target at start"])
 def main():
 
-    fig, ax = plt.subplots(1, 3, sharex=True, sharey=True)
+    fig, ax = plt.subplots(1, 1, sharex=True, sharey=True)
 
     # plot_badgrid_vs_newgrid(ax[0])
-    plot_corner_vs_center(ax[0])
+    #plot_corner_vs_center(ax[0])
     #plot_baseline_vs_closer_vs_forceful(ax[0])
-    #plot_corner_forceful_vs_center_forceful(ax[1])
-    plot_corner_polite_vs_center_polite(ax[1])
-    plot_center_oneshot_vs_corner_oneshot(ax[2])
+    #plot_corner_forceful_vs_center_forceful(ax[0])
+    #plot_corner_polite_vs_center_polite(ax[1])
+    #plot_center_oneshot_vs_corner_oneshot(ax[2])
+    plot_adg(ax)
     plt.show()
 
 if __name__ == "__main__":
