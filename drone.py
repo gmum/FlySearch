@@ -8,7 +8,8 @@ from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
 from conversation.intern_conversation import InternConversation, get_model_and_stuff
 from misc.config import OPEN_AI_KEY
-from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
+from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator, \
+    UnrealDescriptionGlimpseGenerator
 from navigators import TrivialDroneNavigator, GridDroneNavigator
 from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt, \
     generate_xml_drone_grid_prompt_with_grid_controls, xml_found_prompt
@@ -38,6 +39,11 @@ def get_glimpse_generator(args):
         return UnrealGlimpseGenerator()
     elif args.glimpse_generator == "grid":
         return UnrealGridGlimpseGenerator(splits_w=6, splits_h=6)
+    elif args.glimpse_generator == "description":
+        return UnrealDescriptionGlimpseGenerator(
+            conversation_factory=get_conversation_factory(args),
+            searched_obj="yellow pickup truck" # FIXME !!!
+        )
 
 
 def get_conversation_factory(args):
@@ -213,7 +219,7 @@ def main():
     parser.add_argument("--glimpse_generator",
                         type=str,
                         required=True,
-                        choices=["standard", "grid"],
+                        choices=["standard", "grid", "description"],
                         help="Type of glimpse generator to use."
                         )
 
