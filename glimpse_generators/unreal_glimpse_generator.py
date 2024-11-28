@@ -29,7 +29,7 @@ class UnrealGlimpseGenerator:
     def _initialize_client(self):
         connection_result = False
 
-        for i in range(10):
+        for i in range(11):
             print(f"Trying to connect to UnrealCV server on port {self.port + i}")
             self.client = Client((self.host, self.port + i))
             connection_result = self.client.connect()
