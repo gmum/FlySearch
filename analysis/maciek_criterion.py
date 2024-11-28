@@ -9,8 +9,8 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
     ok_alt_diff = alt_diff <= max_alt_diff
 
     # Hello there, triangle similarity
-    x_view_length = object_position[2] * (105 / 100)
-    y_view_length = object_position[2] * (105 / 100)
+    x_view_length = (position[2] - object_position[2]) * (105 / 100)
+    y_view_length = (position[2] - object_position[2]) * (105 / 100)
 
     x_min_range = position[0] - x_view_length
     x_max_range = position[0] + x_view_length

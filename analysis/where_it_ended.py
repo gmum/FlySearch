@@ -1,5 +1,8 @@
 import pathlib
 import statistics
+import math
+
+from statistics import stdev
 
 from matplotlib import pyplot as plt
 from matplotlib.pyplot import axvline
@@ -18,17 +21,26 @@ def l2_distance_with_confidence(stard_end_locations, correct_end_place):
     medians = {start: statistics.median(distances) for start, distances in from_start_to_end.items()}
     maxes = {start: max(distances) for start, distances in from_start_to_end.items()}
     mins = {start: min(distances) for start, distances in from_start_to_end.items()}
+    stdevs = {start: statistics.stdev(distances) for start, distances in from_start_to_end.items()}
+    stderrs = {start: stdev(distances) / math.sqrt(len(distances)) for start, distances in from_start_to_end.items()}
+    means = {start: statistics.mean(distances) for start, distances in from_start_to_end.items()}
 
     medians = sorted(list(medians.items()), key=lambda x: x[0][2])
     maxes = sorted(list(maxes.items()), key=lambda x: x[0][2])
     mins = sorted(list(mins.items()), key=lambda x: x[0][2])
+    stdevs = sorted(list(stdevs.items()), key=lambda x: x[0][2])
+    stderrs = sorted(list(stderrs.items()), key=lambda x: x[0][2])
+    means = sorted(list(means.items()), key=lambda x: x[0][2])
 
     medians = [median for start, median in medians]
     maxes = [maximum for start, maximum in maxes]
     mins = [minimum for start, minimum in mins]
+    stdevs = [stdeviation for start, stdeviation in stdevs]
+    stderrs = [stderr for start, stderr in stderrs]
+    means = [mean for start, mean in means]
 
 
-    return medians, maxes, mins
+    return medians, maxes, mins, stdevs, stderrs, means
 
 def plot_multiple_runs(start_end_loc_list, correct_end_place, ax, ):
     for start_end_locations in start_end_loc_list:
@@ -36,13 +48,13 @@ def plot_multiple_runs(start_end_loc_list, correct_end_place, ax, ):
         start_heights = set(start_heights)
         start_heights = sorted(list(start_heights))
 
-        medians, maxes, mins = l2_distance_with_confidence(start_end_locations, correct_end_place)
+        medians, maxes, mins, stdevs, stderrs, means = l2_distance_with_confidence(start_end_locations, correct_end_place)
 
-        ax.plot(start_heights,
-                 medians,
-                 marker="o"
-                 )
-
+        #ax.plot(start_heights,
+        #          medians,
+        #         marker="o"
+        #         )
+        ax.errorbar(start_heights, means, yerr=stderrs, marker="o", alpha=1, capsize=5)
         ax.fill_between(start_heights, mins, maxes, alpha=0.2)
 
     return ax
@@ -83,7 +95,31 @@ def plot_adg(ax):
     ax.set_xlabel("Starting height")
     ax.set_ylabel("Distance to target")
 
-    ax.legend(["End of run distance, center", "Uncertainty for center", "End of run distance, corner", "Uncertainty for corner", "Distance to target at start, center", "Distance to target at start, corner", "Distance to target from ground below it"])
+    ax.legend(["Uncertainty for center", "Uncertainty for corner", "Distance to target at start, center", "Distance to target at start, corner", "Distance to target from ground below it", "End of run distance, center", "End of run distance, corner"], loc="upper right")
+
+def plot_mc(ax):
+    correct_end_place = (0, 0, 9)
+
+    center_path = "../all_logs/MC-0S-CT"
+    corner_path = "../all_logs/MC-0S-CR-2"
+
+    center = get_start_end_locations(center_path)
+    corner = get_start_end_locations(corner_path)
+
+    ax = plot_multiple_runs(
+        [center, corner],
+        correct_end_place, ax)
+
+    plot_baseline_for_run(center, correct_end_place, ax)
+    plot_baseline_for_run(corner, correct_end_place, ax, style="g--")
+
+    ax.axhline(y=9, color='r', linestyle=':')
+
+    ax.set_title("GPT-4o, MC-0S")
+    ax.set_xlabel("Starting height")
+    ax.set_ylabel("Distance to target")
+
+    ax.legend(["Uncertainty for center", "Uncertainty for corner", "Distance to target at start, center", "Distance to target at start, corner", "Distance to target from ground below it", "End of run distance, center", "End of run distance, corner"], loc="upper right")
 
 
 def plot_badgrid_vs_newgrid(ax):
@@ -213,7 +249,7 @@ def plot_baseline_vs_closer_vs_forceful(ax):
     ax.legend(["End of run distance, baseline", "End of run distance, polite", "End of run distance, forceful + info", "Distance to target at start"])
 def main():
 
-    fig, ax = plt.subplots(1, 1, sharex=True, sharey=True)
+    fig, ax = plt.subplots(2, 1, sharex=True, sharey=True)
 
     # plot_badgrid_vs_newgrid(ax[0])
     #plot_corner_vs_center(ax[0])
@@ -221,7 +257,8 @@ def main():
     #plot_corner_forceful_vs_center_forceful(ax[0])
     #plot_corner_polite_vs_center_polite(ax[1])
     #plot_center_oneshot_vs_corner_oneshot(ax[2])
-    plot_adg(ax)
+    plot_mc(ax[0])
+    plot_adg(ax[1])
     plt.show()
 
 if __name__ == "__main__":
