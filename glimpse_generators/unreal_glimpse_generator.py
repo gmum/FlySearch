@@ -4,6 +4,7 @@ import os
 from typing import Tuple
 
 import cv2
+from matplotlib.pyplot import connect
 from unrealcv import Client
 from time import sleep
 from PIL import Image
@@ -15,7 +16,9 @@ from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
 
 class UnrealGlimpseGenerator:
     def __init__(self, host='localhost', port=9000, start_position=(3300.289, -26305.121, 0)):
-        self.client = Client((host, port))
+        self.host = host
+        self.port = port
+        self.client = None
         self.start_position = start_position
 
         self._initialize_client()
@@ -24,7 +27,15 @@ class UnrealGlimpseGenerator:
         self.start_position = new_start_position
 
     def _initialize_client(self):
-        connection_result = self.client.connect()
+        connection_result = False
+
+        for i in range(10):
+            print(f"Trying to connect to UnrealCV server on port {self.port + i}")
+            self.client = Client((self.host, self.port + i))
+            connection_result = self.client.connect()
+
+            if connection_result:
+                break
 
         if not connection_result:
             raise ConnectionError("Failed to connect to UnrealCV server; is it running?")
