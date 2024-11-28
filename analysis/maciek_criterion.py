@@ -1,6 +1,9 @@
 import os
 import pathlib
+import statistics
+
 from utils import iterate_over_experiment_coords_and_messages_time_series
+from matplotlib import pyplot as plt
 
 def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float], max_alt_diff=10) -> bool:
     higher_than_object = position[2] > object_position[2]
@@ -78,30 +81,90 @@ def get_stats_for_time_series(time_series):
         "claims": len(claims),
         "maciek_criterion_claim": maciek_criterion_for_claims,
         "non_claims": len(non_claims),
-        "maciek_criterion_non_claim": maciek_criterion_for_non_claims
+        "maciek_criterion_non_claim": maciek_criterion_for_non_claims,
+        "claim_and_found_acc": maciek_criterion_for_claims / total,
+        "accidental_finds": maciek_criterion_for_non_claims / total
+
     }
 
+def aggregate_stats_for_time_series_per_start_position(time_series):
+    start_positions = {}
+
+    for time_serie in time_series:
+        _, coords = time_serie
+
+        start_position = coords[0]
+
+        if start_position not in start_positions:
+            start_positions[start_position] = []
+
+        start_positions[start_position].append(time_serie)
+
+    start_positions = {k: get_stats_for_time_series(v) for k, v in start_positions.items()}
+
+    return start_positions
+
+def get_stderr_from_binomial(acc, n):
+    ok_examples = int(acc * n)
+    not_ok_examples = n - ok_examples
+
+    # The most gloriously inefficient way that could've been done analytically
+    # At the same time, n = 5 (currently)
+    arr = [1] * ok_examples + [0] * not_ok_examples
+
+    return statistics.stdev(arr) / (n ** 0.5)
+
+def plot_aggregated_time_series(aggregated_time_series: dict, ax, label):
+    dict_list = sorted(list(aggregated_time_series.items()))
+
+    accuracies = [v["claim_and_found_acc"] for k, v in dict_list]
+    stderrs = [get_stderr_from_binomial(v["claim_and_found_acc"], v["total"]) for k, v in dict_list]
+
+    starts = [z for (x, y, z), v in dict_list]
+
+    bar = ax.errorbar(starts, accuracies, yerr=stderrs, marker="o", alpha=1, capsize=5, label=label)
+
+    # add legend entry for bar
+
+    ax.legend()
+
+    return ax
+
+def plot_time_series(time_series, ax, label):
+    aggregated = aggregate_stats_for_time_series_per_start_position(time_series)
+
+    return plot_aggregated_time_series(aggregated, ax, label)
+
+def plot_basic_vs_adg():
+    mc_0s_ct = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/MC-0S-CT")))
+    mc_0s_cr = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/MC-0S-CR-2")))
+
+    adg_0s_ct = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/ADG-MC-0S-CT")))
+    adg_0s_cr = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/ADG-MC-0S-CR")))
+
+    fig, ax = plt.subplots(nrows=2, ncols=1, sharex=True, sharey=True)
+
+    ax[0].set_title("MC 0s")
+
+    plot_time_series(mc_0s_ct, ax[0], label="MC 0s CT")
+    plot_time_series(mc_0s_cr, ax[0], label="MC 0s CR")
+
+    ax[1].set_title("ADG MC 0s")
+
+    plot_time_series(adg_0s_ct, ax[1], label="ADG MC 0s CT")
+    plot_time_series(adg_0s_cr, ax[1], label="ADG MC 0s CR")
+
+    ax[0].set_xlabel("Start height")
+    ax[1].set_xlabel("Start height")
+
+    ax[0].set_ylabel("Accuracy")
+    ax[1].set_ylabel("Accuracy")
+
+    plt.show()
+
 def main():
-    mc_1s_ct = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/maciek-criterion-incontext-center")))
-    mc_0s_ct = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/maciek-criterion-nocontext-center")))
-    mc_1s_cr = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/maciek-criterion-incontext-corner-2")))
-    mc_0s_cr = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/maciek-criterion-nocontext-corner")))
+    plot_basic_vs_adg()
 
-    for time_series in get_only_found_time_series(mc_1s_ct):
-        print(time_series[0][-1])
-        print("MACIEK CRITERION:", maciek_criterion_for_timeserie(time_series))
-
-    print("MC 1s CT")
-    print(get_stats_for_time_series(mc_1s_ct))
-
-    print("MC 0s CT")
-    print(get_stats_for_time_series(mc_0s_ct))
-
-    print("MC 1s CR")
-    print(get_stats_for_time_series(mc_1s_cr))
-
-    print("MC 0s CR")
-    print(get_stats_for_time_series(mc_0s_cr))
 
 if __name__ == "__main__":
     main()

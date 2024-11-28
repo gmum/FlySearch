@@ -72,7 +72,7 @@ def iterate_over_experiment_time_serie_messages(root: pathlib.Path, example_path
 
         if path.is_dir():
             filenames = os.listdir(path)
-            messages = [filename for filename in filenames if not filename.endswith("coords.txt") and filename.endswith(".txt")]
+            messages = [filename for filename in filenames if not filename.endswith("coords.txt") and filename.endswith(".txt") and "conversation" not in filename]
 
             def msg_key(msg):
                 split = msg.split(".")
