@@ -50,7 +50,7 @@ class UnrealGlimpseGenerator:
         start_position = self.start_position
 
         self.client.request(
-            f'vset /camera/0/location {start_position[0]} {start_position[1]} {start_position[2] + 10000}'
+            f'vset /camera/1/location {start_position[0]} {start_position[1]} {start_position[2] + 10000}'
         )
 
     def disconnect(self):
