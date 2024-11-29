@@ -78,7 +78,7 @@ class UnrealGlimpseGenerator:
         z = z - self.start_position[2]
         z = z / 100
 
-        return x, y, z
+        return int(x), int(y), int(z)
 
     def get_camera_image(self,
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
