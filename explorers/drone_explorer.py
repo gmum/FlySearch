@@ -6,7 +6,8 @@ from PIL import Image
 
 class DroneExplorer:
     def __init__(self, conversation: Conversation, glimpse_generator, prompt_generator, glimpses,
-                 start_rel_position, navigator: AbstractDroneNavigator, object_name="yellow pickup truck", incontext=False, abandon_image_on_cue=True) -> None:
+                 start_rel_position, navigator: AbstractDroneNavigator, object_name="yellow pickup truck",
+                 incontext=False, abandon_image_on_cue=True) -> None:
         self.conversation = conversation
         self.glimpse_generator = glimpse_generator
         self.prompt_generator = prompt_generator
@@ -28,7 +29,8 @@ class DroneExplorer:
         self.conversation.commit_transaction(send_to_vlm=False)
 
         self.conversation.begin_transaction(Role.ASSISTANT)
-        self.conversation.add_text_message("<Comment> I clearly see a yellow pickup truck that I am centered on in both of my axes. I can however adjust my altitude to get even closer to it. Since my altitude is 21 meters, I will adjust it by 10 meters in a calm and professional manner. </Comment> <Action> (0, 0, -10) </Action>")
+        self.conversation.add_text_message(
+            "<Comment> I clearly see a yellow pickup truck that I am centered on in both of my axes. I can however adjust my altitude to get even closer to it. Since my altitude is 21 meters, I will adjust it by 10 meters in a calm and professional manner. </Comment> <Action> (0, 0, -10) </Action>")
         self.conversation.commit_transaction(send_to_vlm=False)
 
         self.conversation.begin_transaction(Role.USER)
@@ -37,7 +39,8 @@ class DroneExplorer:
         self.conversation.commit_transaction(send_to_vlm=False)
 
         self.conversation.begin_transaction(Role.ASSISTANT)
-        self.conversation.add_text_message("<Comment> I am now at 11 meters and all I can see is the yellow pickup truck due to my proximity. I have achieved the goal. </Comment> <Action> FOUND </Action>")
+        self.conversation.add_text_message(
+            "<Comment> I am now at 11 meters and all I can see is the yellow pickup truck due to my proximity. I have achieved the goal. </Comment> <Action> FOUND </Action>")
         self.conversation.commit_transaction(send_to_vlm=False)
 
         self.conversation.begin_transaction(Role.USER)
@@ -45,9 +48,15 @@ class DroneExplorer:
         self.conversation.commit_transaction(send_to_vlm=False)
 
     def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[int, int, int]:
-        self.coordinates.append(rel_position)
+
+        print("Rel position assuming no crashes: ", rel_position)
 
         glimpse = self.glimpse_generator.get_camera_image(rel_position)
+        rel_position = self.glimpse_generator.get_relative_from_start()
+
+        print("Real rel position: ", rel_position)
+
+        self.coordinates.append(rel_position)
 
         abandon_sending_image = False
         cue = None
@@ -67,7 +76,6 @@ class DroneExplorer:
 
         if start_transaction:
             self.conversation.begin_transaction(Role.USER)
-
 
         if cue is not None:
             self.conversation.add_text_message(cue)

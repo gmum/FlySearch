@@ -59,7 +59,26 @@ class UnrealGlimpseGenerator:
     def get_relative_from_start(self):
         current = self.client.request('vget /camera/1/location')
 
+        if type(current) == str:
+            current = current.split(" ")
+            assert len(current) == 3
+            current = tuple(map(float, current))
+        elif type(current) != tuple:
+            raise ValueError("Unexpected type for current position received from UnrealCV. Got: ", type(current),
+                             current)
 
+        x, y, z = current
+
+        x = x - self.start_position[0]
+        x = x / 100
+
+        y = y - self.start_position[1]
+        y = y / 100
+
+        z = z - self.start_position[2]
+        z = z / 100
+
+        return x, y, z
 
     def get_camera_image(self,
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
@@ -95,6 +114,7 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
 
         return img
 
+
 class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
     def __init__(self, conversation_factory, searched_obj, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -107,7 +127,8 @@ class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
 
         conversation = self.conversation_factory.get_conversation()
         conversation.begin_transaction(Role.USER)
-        conversation.add_text_message(f"Describe the image from the drone at an absolute altitude of {rel_position_m[2]}. Your description should be extremely detailed, and should include any objects, people, or other features that you see. If you see something of resemblance to {self.searched_obj}, mention it, specifying its approximate coordinates in the grid.")
+        conversation.add_text_message(
+            f"Describe the image from the drone at an absolute altitude of {rel_position_m[2]}. Your description should be extremely detailed, and should include any objects, people, or other features that you see. If you see something of resemblance to {self.searched_obj}, mention it, specifying its approximate coordinates in the grid.")
         conversation.add_image_message(img)
         conversation.commit_transaction(send_to_vlm=True)
 
