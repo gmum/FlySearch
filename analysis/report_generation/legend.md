@@ -11,4 +11,10 @@ with "FOUND".
 
 **CT** means starting above the object.
 
-**CR** means starting "from a corner" (i. e. not being directly above the object).
+**CR** means starting "from a corner" (i.e. not being directly above the object).
+
+**HM** means that an artificial message from the model is appended to the conversation history that is meant to
+encourage it to fly closer to the object. Furthermore, a message reminding the model how to lower the altitude is sent
+in that scenario.
+
+**INT** means InternVL-8B quantised model.
