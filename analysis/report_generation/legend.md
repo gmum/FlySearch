@@ -18,3 +18,6 @@ encourage it to fly closer to the object. Furthermore, a message reminding the m
 in that scenario.
 
 **INT** means InternVL-8B quantised model.
+
+**OC** means the old navigation system where drone is (for example) asking us to fly 10 units to the north by typing
+`MOVE NORTH 10`.
