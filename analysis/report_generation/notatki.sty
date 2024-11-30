@@ -1,0 +1,83 @@
+% General packages used throughout the book
+\ProvidesPackage{notatki}
+
+% Layout
+\usepackage[margin=0.8in]{geometry}
+\usepackage{parskip}
+
+% Language
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+
+% Math
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+\usepackage[outputdir=build, cache=false]{minted}
+
+% Better links
+\usepackage{hyperref}
+
+% Figures
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage[justification=centering]{caption}
+\usepackage[skip=0.33\baselineskip]{subcaption}
+
+\usepackage{titlesec}
+
+% Prettier tables
+\usepackage{booktabs}
+
+% Quotations
+\usepackage{epigraph}
+\usepackage{csquotes}
+
+\usepackage[normalem]{ulem}
+
+% Fancy enumerations
+\usepackage{enumitem}
+
+% Multirow
+\usepackage{multirow}
+\usepackage{rotating}
+\usepackage{longtable}
+
+% Sanity
+\usepackage[subsection]{placeins}
+
+% Conversations
+\usepackage{dramatist}
+\def\Dparsep{10pt}
+% Header styles
+\usepackage{fancyhdr}
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\newcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\textbf{\textit{\nouppercase{\leftmark}}}}
+\fancyhead[LO]{\textbf{\textit{\nouppercase{\rightmark}}}}
+\fancypagestyle{plain}{ %
+\fancyhf{} % remove everything
+\renewcommand{\headrulewidth}{0pt} % remove lines as well
+\renewcommand{\footrulewidth}{0pt}}
+\setcounter{secnumdepth}{4}
+
+\pagestyle{fancy}
+\fancyhead[L,C]{}
+\fancyfoot[R]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{2pt}
+
+
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+%\titlespacing*{\paragraph}
+
+% Import custom commands
+\usepackage{tcs}
