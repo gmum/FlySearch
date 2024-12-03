@@ -12,6 +12,7 @@ from PIL import Image
 from conversation import Role
 from misc.add_guardrails import dot_matrix_two_dimensional_unreal
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
+from scenarios import ScenarioConfigurator
 
 
 class UnrealGlimpseGenerator:
@@ -96,6 +97,9 @@ class UnrealGlimpseGenerator:
         image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
 
         return opencv_to_pil(image)
+
+    def get_configurator(self):
+        return ScenarioConfigurator(self.client)
 
 
 class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
