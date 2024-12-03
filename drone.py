@@ -19,6 +19,7 @@ from response_parsers.basic_drone_response_parser import BasicDroneResponseParse
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
 from scenarios import DroneScenarioMapperWithOffsets, ScenarioConfigurator
 from scenarios.drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper
+from scenarios.forest_scenario_mapper import ForestScenarioMapper
 
 
 def create_test_run_directory(args):
@@ -142,6 +143,29 @@ def get_scenario_mapper(args):
             step_y=args.y_offset_step,
             scenario_mapper=YellowTruckScenarioMapper()
         )
+    elif args.scenario_type == "forest":
+        return ForestScenarioMapper(
+            x_min=-25600,
+            x_max=102400,
+            y_min=-25600,
+            y_max=102400,
+            z_min=0,
+            z_max=1,
+            drone_z_rel_min = 3000,
+            drone_z_rel_max = 10000,
+            seed_min=1,
+            seed_max=1000,
+            scenarios_number=10,
+            object_probs={
+                ForestScenarioMapper.ObjectType.PLANE: 0.1,
+                ForestScenarioMapper.ObjectType.UFO: 0.2,
+                ForestScenarioMapper.ObjectType.BUILDING: 0.2,
+                ForestScenarioMapper.ObjectType.PERSON: 0.2,
+                ForestScenarioMapper.ObjectType.TENT: 0.1,
+                ForestScenarioMapper.ObjectType.TRASH: 0.1,
+                ForestScenarioMapper.ObjectType.FIRE: 0.1
+            }
+        )
 
 
 def scenario_level_test(args, run_dir):
@@ -246,7 +270,7 @@ def main():
     parser.add_argument("--scenario_type",
                         type=str,
                         required=True,
-                        choices=["round_robin", "level_1", "level_1_yellow_truck"],
+                        choices=["round_robin", "level_1", "level_1_yellow_truck", "forest"],
                         )
 
     parser.add_argument("--repeats",
