@@ -7,9 +7,11 @@ class ForestScenarioMapper:
         FIRE = 0
         TENT = 1
         TRASH = 2
-        BUILDINGS = 3
-        PEOPLE = 4
-        ANOMALY = 5
+        BUILDING = 3
+        PERSON = 4
+        UFO = 5
+        PLANE = 6
+        HELICOPTER = 7
 
     @staticmethod
     def sample_value_between(val_min, val_max):
@@ -43,7 +45,7 @@ class ForestScenarioMapper:
 
         return drone_x, drone_y
 
-    def __init__(self, object_probs: dict[ObjectType, float], x_min: float, x_max: float, y_min: float, y_max: float, z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float, seed_min: int, seed_max: int):
+    def __init__(self, object_probs: dict[ObjectType, float], x_min: float, x_max: float, y_min: float, y_max: float, z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float, seed_min: int, seed_max: int, scenarios_number: int):
         self.object_probs = object_probs
 
         self.x_min = x_min
@@ -56,6 +58,7 @@ class ForestScenarioMapper:
         self.drone_z_rel_max = drone_z_rel_max
         self.seed_min = seed_min
         self.seed_max = seed_max
+        self.scenarios_number = scenarios_number
 
         self._validate_object_probs()
 
@@ -80,13 +83,24 @@ class ForestScenarioMapper:
         drone_z = self.sample_value_between(object_z + self.drone_z_rel_min, object_z + self.drone_z_rel_max)
 
         drone_x, drone_y = ForestScenarioMapper.sample_drone_position(object_x, object_y, drone_z)
-        
+
+        sun_y = self.sample_value_between(-90, -15)
+        sun_z = self.sample_value_between(0, 360)
+
         return {
             "object_coords": (object_x, object_y, object_z),
             "object_type": object_type,
             "drone_coords":(drone_x, drone_y, drone_z),
             "seed": seed,
-            "forest_density": 0.1,
+            "forest_live_trees_density": 0.09,
+            "forest_dead_trees_density": 0.01,
             "forest_stones": 0.1,
-            "forest_cliffs": 0.0
+            "forest_cliffs": 0.0,
+            "sun_y": sun_y,
+            "sun_z": sun_z,
+            "regenerate_forest": True,
         }
+
+    def iterate_scenarios(self):
+        for _ in range(self.scenarios_number):
+            yield self.create_random_scenario()
