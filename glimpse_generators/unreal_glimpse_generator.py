@@ -1,10 +1,6 @@
-import subprocess
-import os
-
 from typing import Tuple
 
 import cv2
-from matplotlib.pyplot import connect
 from unrealcv import Client
 from time import sleep
 from PIL import Image
@@ -12,8 +8,6 @@ from PIL import Image
 from conversation import Role
 from misc.add_guardrails import dot_matrix_two_dimensional_unreal
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
-from scenarios import ScenarioConfigurator
-
 
 class UnrealGlimpseGenerator:
     def __init__(self, host='localhost', port=9000, start_position=(3300.289, -26305.121, 0)):
@@ -97,9 +91,6 @@ class UnrealGlimpseGenerator:
         image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
 
         return opencv_to_pil(image)
-
-    def get_configurator(self):
-        return ScenarioConfigurator(self)
 
 
 class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):

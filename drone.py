@@ -17,7 +17,7 @@ from prompts.drone_prompt_generation import generate_basic_drone_prompt, generat
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
-from scenarios import DroneScenarioMapperWithOffsets
+from scenarios import DroneScenarioMapperWithOffsets, ScenarioConfigurator
 from scenarios.drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper
 
 
@@ -146,7 +146,7 @@ def get_scenario_mapper(args):
 
 def scenario_level_test(args, run_dir):
     generator = get_glimpse_generator(args)
-    gen_config = generator.get_configurator()
+    gen_config = ScenarioConfigurator(generator)
     prompt = get_prompt(args)
     navigator = get_navigator(args)
     scenario_mapper = get_scenario_mapper(args)
