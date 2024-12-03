@@ -1,41 +1,55 @@
+from enum import Enum
+
 class DroneScenarioMapper:
+    class ObjectType(Enum):
+        YELLOW_PICKUP_TRUCK = 0
+        WHITE_TRUCK = 1
+        WHITE_TRAILER = 2
+        GREEN_GARBAGE_COLLECTOR = 3
+        SILVER_BUS = 4
+
     scenario_map = {
-        1: ((-3382.1, -26423.66, 67.16), "yellow pickup truck"),
+        1: ((-3382.1, -26423.66, 67.16), ObjectType.YELLOW_PICKUP_TRUCK),
         # The pickup truck is 900 units above that point (i. e. 9 meters)
-        2: ((-44380.0, -24990.0, 60.0), "yellow pickup truck"),
-        3: ((-65000.0, -17930.0, 60.0), "white truck"),
-        4: ((-89276.98, 19562.09, 63.6), "white trailer"),
-        5: ((-21930.0, 49750.0, 60.0), "yellow pickup truck"),
-        6: ((23000.7, 21566.65, 60.0), "yellow pickup truck"),
-        7: ((-43910.0, 18710.0, 60.0), "yellow pickup truck"),
-        8: ((32740.0, 65780.0, 70.0), "green garbage collector"),
-        9: ((66650.0, 41520.0, 130.0), "yellow pickup truck"),
-        10: ((78870.0, 930.0, 60.0), "silver bus")
+        2: ((-44380.0, -24990.0, 60.0), ObjectType.YELLOW_PICKUP_TRUCK),
+        3: ((-65000.0, -17930.0, 60.0), ObjectType.WHITE_TRUCK),
+        4: ((-89276.98, 19562.09, 63.6), ObjectType.WHITE_TRAILER),
+        5: ((-21930.0, 49750.0, 60.0), ObjectType.YELLOW_PICKUP_TRUCK),
+        6: ((23000.7, 21566.65, 60.0), ObjectType.YELLOW_PICKUP_TRUCK),
+        7: ((-43910.0, 18710.0, 60.0), ObjectType.YELLOW_PICKUP_TRUCK),
+        8: ((32740.0, 65780.0, 70.0), ObjectType.GREEN_GARBAGE_COLLECTOR),
+        9: ((66650.0, 41520.0, 130.0), ObjectType.YELLOW_PICKUP_TRUCK),
+        10: ((78870.0, 930.0, 60.0), ObjectType.SILVER_BUS)
     }
 
     def __init__(self):
         pass
 
-    def get_scenario_by_number(self, scenario_number: int) -> tuple[tuple[float, float, float], str]:
-        return DroneScenarioMapper.scenario_map[scenario_number]
+    def get_scenario_by_number(self, scenario_number: int) -> dict:
+        return {
+            "object_type": DroneScenarioMapper.scenario_map[scenario_number][1],
+            "object_coords": DroneScenarioMapper.scenario_map[scenario_number][0],
+            "drone_rel_coords": (0, 0, 50)
+        }
 
     def iterate_scenarios(self):
-        for key, value in DroneScenarioMapper.scenario_map.items():
-            yield value
+        for i in range(1, len(DroneScenarioMapper.scenario_map) + 1):
+            yield DroneScenarioMapper.scenario_map[i]
+
 
 
 class YellowTruckScenarioMapper(DroneScenarioMapper):
     def __init__(self):
         super().__init__()
 
-    def get_scenario_by_number(self, scenario_number: int) -> tuple[tuple[float, float, float], str]:
+    def get_scenario_by_number(self, scenario_number: int) -> dict:
         if scenario_number == 1:
-            return DroneScenarioMapper.scenario_map[1]
+            return super().get_scenario_by_number(1)
         else:
             raise ValueError("This class only supports scenario 1")
 
     def iterate_scenarios(self):
-        yield DroneScenarioMapper.scenario_map[1]
+        yield self.get_scenario_by_number(1)
 
 
 class DroneScenarioMapperWithOffsets:
@@ -90,4 +104,5 @@ class DroneScenarioMapperWithOffsets:
             for x in range(self.min_x, self.max_x, self.step_x):
                 for y in range(self.min_y, self.max_y, self.step_y):
                     for h in range(self.min_h, self.max_h, self.step_h):
-                        yield (x, y, h), scenario
+                        scenario["drone_rel_coords"] = (x, y, h)
+                        yield scenario

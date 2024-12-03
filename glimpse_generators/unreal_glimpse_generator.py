@@ -99,7 +99,7 @@ class UnrealGlimpseGenerator:
         return opencv_to_pil(image)
 
     def get_configurator(self):
-        return ScenarioConfigurator(self.client)
+        return ScenarioConfigurator(self)
 
 
 class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):

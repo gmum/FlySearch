@@ -84,13 +84,17 @@ class ForestScenarioMapper:
 
         drone_x, drone_y = ForestScenarioMapper.sample_drone_position(object_x, object_y, drone_z)
 
+        drone_x = int(drone_x / 100)
+        drone_y = int(drone_y / 100)
+        drone_z = int(drone_z / 100)
+
         sun_y = self.sample_value_between(-90, -15)
         sun_z = self.sample_value_between(0, 360)
 
         return {
             "object_coords": (object_x, object_y, object_z),
             "object_type": object_type,
-            "drone_coords":(drone_x, drone_y, drone_z),
+            "drone_rel_coords": (drone_x, drone_y, drone_z),
             "seed": seed,
             "forest_live_trees_density": 0.09,
             "forest_dead_trees_density": 0.01,

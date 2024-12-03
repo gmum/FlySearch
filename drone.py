@@ -146,25 +146,28 @@ def get_scenario_mapper(args):
 
 def scenario_level_test(args, run_dir):
     generator = get_glimpse_generator(args)
+    gen_config = generator.get_configurator()
     prompt = get_prompt(args)
     navigator = get_navigator(args)
     scenario_mapper = get_scenario_mapper(args)
     conversation_factory = get_conversation_factory(args)
 
-    for i, (start_rel_position, (start_coords, object_name)) in enumerate(scenario_mapper.iterate_scenarios()):
+    for i, scenario_dict in enumerate(scenario_mapper.iterate_scenarios()):
         for repeat in range(args.repeats):
             try:
-                generator.change_start_position(start_coords)
-                generator.reset_camera()
+                drone_rel_coords = scenario_dict["drone_rel_coords"]
+                object_type = scenario_dict["object_type"]
+                gen_config.configure_scenario(scenario_dict)
+
                 conversation = conversation_factory.get_conversation()
                 explorer = DroneExplorer(
                     conversation=conversation,
                     glimpse_generator=generator,
                     prompt_generator=prompt,
                     glimpses=args.glimpses,
-                    start_rel_position=start_rel_position,
+                    start_rel_position=drone_rel_coords,
                     navigator=navigator,
-                    object_name=object_name,
+                    object_name=object_type.name,
                     incontext=(args.incontext == "True")
                 )
                 final_position = explorer.simulate()
@@ -187,7 +190,7 @@ def scenario_level_test(args, run_dir):
                     f.write(str(final_position))
 
                 with open(test_dir / "start_rel_coords.txt", "w") as f:
-                    f.write(str(start_rel_position))
+                    f.write(str(drone_rel_coords))
 
                 with open(test_dir / "conversation.txt", "w") as f:
                     if isinstance(conversation, OpenAIConversation):
