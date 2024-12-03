@@ -207,11 +207,11 @@ def xml_found_prompt_cue(glimpses: int) -> str:
         <Reasoning> tag should contain your reasoning for the move you are making.
         <Action> tag should contain the move you are making.
 
-        If you find the vehicle, fly as close as you can to it and reply with "FOUND". Remember, it must be in your field of view when you reply with "FOUND" and you must be 10 meters above it or closer. Being too far away is not acceptable.
+        If you find the object, fly below 10 meters relative to it and reply with "FOUND". Remember, it must be in your field of view when you reply with "FOUND" and you must be 10 meters above it or closer. Being too far away is not acceptable.
 
         For example:
 
-        <Reasoning>The aforementioned yellow point at (15, 0) may very well be vehicle in question. I need to go lower to check for that. If it's not the vehicle in question, I will continue the search. I will also slightly go to the north. My first coordinate change is to fly to that point, while the third coordinate communicates altitude decrease.</Reasoning>
+        <Reasoning>The aforementioned yellow point at (15, 0) may very well be the object in question. I need to go lower to check for that. If it's not the vehicle in question, I will continue the search. I will also slightly go to the north. My first coordinate change is to fly to that point, while the third coordinate communicates altitude decrease.</Reasoning>
         <Action>(15, 0, -30)</Action>
 
     </Formatting>
