@@ -8,6 +8,8 @@ classes_to_ids = {
     ForestScenarioMapper.ObjectType.PERSON: "SkeletalMeshActor_UAID_08BFB8191750A22F02_1368103644",
     ForestScenarioMapper.ObjectType.UFO: "StaticMeshActor_UAID_08BFB8191750683002_1841587498",
     ForestScenarioMapper.ObjectType.PLANE: "StaticMeshActor_UAID_08BFB8191750963002_1512367583",
-    ForestScenarioMapper.ObjectType.HELICOPTER: "StaticMeshActor_UAID_08BFB8191750683002_1545951497"
+    ForestScenarioMapper.ObjectType.HELICOPTER: "StaticMeshActor_UAID_08BFB8191750683002_1545951497",
+    "SUN": "DirectionalLight_UAID_E04F43E67EF6227D01_1896464149",
+    "FOREST": "PCGDemo_ForestBP_C_UAID_E04F43E67EF62B7D01_2006191743"
 }
 
