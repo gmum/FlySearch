@@ -1,1 +1,4 @@
 from .drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper, DroneScenarioMapperWithOffsets
+
+from .forest_scenario_mapper import ForestScenarioMapper
+from .scenario_configurator import ScenarioConfigurator
