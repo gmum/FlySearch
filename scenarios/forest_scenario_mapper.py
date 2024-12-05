@@ -33,12 +33,11 @@ class ForestScenarioMapper:
         if drone_z < 0:
             raise ValueError("Drone height must be positive")
 
-        # Triangle similarity for fov = 90 degrees
-        drone_x_min = object_x - drone_z
-        drone_x_max = object_x + drone_z
+        drone_x_min = object_x - 0.5 * drone_z
+        drone_x_max = object_x + 0.5 * drone_z
 
-        drone_y_min = object_y - drone_z
-        drone_y_max = object_y + drone_z
+        drone_y_min = object_y - 0.5 * drone_z
+        drone_y_max = object_y + 0.5 * drone_z
 
         drone_x = ForestScenarioMapper.sample_value_between(drone_x_min, drone_x_max)
         drone_y = ForestScenarioMapper.sample_value_between(drone_y_min, drone_y_max)
