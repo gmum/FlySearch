@@ -18,7 +18,8 @@ class UnrealGlimpseGenerator:
 
         self._initialize_client()
 
-    def change_start_position(self, new_start_position: Tuple[int, int, int]):
+    # Sets the (0, 0, 0) point in our coordinate system
+    def change_start_position(self, new_start_position: Tuple[float, float, float]):
         self.start_position = new_start_position
 
     def _initialize_client(self):
