@@ -84,6 +84,9 @@ class ForestScenarioMapper:
 
         drone_x, drone_y = ForestScenarioMapper.sample_drone_position(object_x, object_y, drone_z)
 
+        drone_x = drone_x - object_x
+        drone_y = drone_y - object_y
+
         drone_x = int(drone_x / 100)
         drone_y = int(drone_y / 100)
         drone_z = int(drone_z / 100)
@@ -109,3 +112,34 @@ class ForestScenarioMapper:
     def iterate_scenarios(self):
         for _ in range(self.scenarios_number):
             yield self.create_random_scenario()
+
+def main():
+    fsm = ForestScenarioMapper(
+        x_min=-25600,
+        x_max=102400,
+        y_min=-25600,
+        y_max=102400,
+        z_min=0,
+        z_max=1,
+        drone_z_rel_min=3000,
+        drone_z_rel_max=10000,
+        seed_min=1,
+        seed_max=1000,
+        scenarios_number=10,
+        object_probs={
+            ForestScenarioMapper.ObjectType.PLANE: 0.1,
+            ForestScenarioMapper.ObjectType.UFO: 0.2,
+            ForestScenarioMapper.ObjectType.BUILDING: 0.2,
+            ForestScenarioMapper.ObjectType.PERSON: 0.2,
+            ForestScenarioMapper.ObjectType.TENT: 0.1,
+            ForestScenarioMapper.ObjectType.TRASH: 0.1,
+            ForestScenarioMapper.ObjectType.FIRE: 0.1
+        }
+    )
+
+    for params in fsm.iterate_scenarios():
+        print(params)
+        break
+
+if __name__ == "__main__":
+    main()
