@@ -1,4 +1,5 @@
 import argparse
+import json
 import pathlib
 
 from openai import OpenAI
@@ -155,7 +156,7 @@ def get_scenario_mapper(args):
             drone_z_rel_max = 8000,
             seed_min=1,
             seed_max=1000,
-            scenarios_number=10,
+            scenarios_number=1,
             object_probs={
                 ForestScenarioMapper.ObjectType.PLANE: 0.1,
                 ForestScenarioMapper.ObjectType.UFO: 0.2,
@@ -202,6 +203,9 @@ def scenario_level_test(args, run_dir):
 
                 test_dir = run_dir / f"{str(i)}_r{str(repeat)} "
                 test_dir.mkdir(exist_ok=True)
+
+                with open(test_dir / "scenario_params.json", "w") as f:
+                    json.dump(f, scenario_dict, indent=4)
 
                 for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
                     image.save(test_dir / f"{j}.png")
