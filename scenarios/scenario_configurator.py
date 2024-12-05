@@ -20,12 +20,11 @@ class ScenarioConfigurator:
         self.glimpse_generator.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
     def configure_scenario(self, scenario_dict):
-        if "drone_rel_coords" in scenario_dict:
-            drone_rel_coords = scenario_dict["drone_rel_coords"]
-            self.glimpse_generator.change_start_position(drone_rel_coords)
+        if "object_coords" in scenario_dict:
+            self.glimpse_generator.change_start_position(scenario_dict["object_coords"])
             self.glimpse_generator.reset_camera()
 
-        if "object_coords" in scenario_dict:
+        if "set_object" in scenario_dict and scenario_dict["set_object"]:
             object_name = scenario_dict["object_type"]
             object_coords = scenario_dict["object_coords"]
 

@@ -29,7 +29,8 @@ class DroneScenarioMapper:
         return {
             "object_type": DroneScenarioMapper.scenario_map[scenario_number][1],
             "object_coords": DroneScenarioMapper.scenario_map[scenario_number][0],
-            "drone_rel_coords": (0, 0, 50)
+            "drone_rel_coords": (0, 0, 50),
+            "set_object": False
         }
 
     def iterate_scenarios(self):

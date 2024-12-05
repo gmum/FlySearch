@@ -103,6 +103,7 @@ class ForestScenarioMapper:
             "sun_y": sun_y,
             "sun_z": sun_z,
             "regenerate_forest": True,
+            "set_object": True
         }
 
     def iterate_scenarios(self):
