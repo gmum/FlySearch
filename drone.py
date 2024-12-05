@@ -205,7 +205,8 @@ def scenario_level_test(args, run_dir):
                 test_dir.mkdir(exist_ok=True)
 
                 with open(test_dir / "scenario_params.json", "w") as f:
-                    json.dump(f, scenario_dict, indent=4)
+                    scenario_str_dict = {k: str(v) for k, v in scenario_dict.items()}
+                    json.dump(scenario_str_dict, f, indent=4)
 
                 for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
                     image.save(test_dir / f"{j}.png")
