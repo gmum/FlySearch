@@ -44,7 +44,7 @@ def get_glimpse_generator(args):
     elif args.glimpse_generator == "description":
         return UnrealDescriptionGlimpseGenerator(
             conversation_factory=get_conversation_factory(args),
-            searched_obj="yellow pickup truck", # FIXME !!!
+            searched_obj="yellow pickup truck",  # FIXME !!!
             splits_w=6,
             splits_h=6
         )
@@ -152,11 +152,11 @@ def get_scenario_mapper(args):
             y_max=80000,
             z_min=0,
             z_max=1,
-            drone_z_rel_min = 2000,
-            drone_z_rel_max = 8000,
+            drone_z_rel_min=2000,
+            drone_z_rel_max=8000,
             seed_min=1,
             seed_max=1000,
-            scenarios_number=10,
+            scenarios_number=50,
             object_probs={
                 ForestScenarioMapper.ObjectType.PLANE: 0.1,
                 ForestScenarioMapper.ObjectType.UFO: 0.2,
@@ -245,7 +245,8 @@ def main():
     parser.add_argument("--prompt",
                         type=str,
                         required=True,
-                        choices=["basic", "brute_force", "xml", "xml_grid", "xml_grid_grid", "xml_grid_grid_found", "xml_found_prompt_cue"],
+                        choices=["basic", "brute_force", "xml", "xml_grid", "xml_grid_grid", "xml_grid_grid_found",
+                                 "xml_found_prompt_cue"],
                         )
 
     parser.add_argument("--glimpses",
