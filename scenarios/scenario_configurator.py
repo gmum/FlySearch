@@ -62,4 +62,4 @@ class ScenarioConfigurator:
             #    sleep(0.5)
 
             # FIXME
-            sleep(1.5)
+            sleep(5)
