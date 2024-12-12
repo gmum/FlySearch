@@ -52,9 +52,8 @@ class ScenarioConfigurator:
 
             self.glimpse_generator.client.request(f'vbp {forest_generator_name} RunPCG {forest_live_trees_density} {forest_dead_trees_density} {forest_stones} {forest_cliffs} {seed}')
 
-            ready = self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady')
+            ready = self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady')["ready"]
 
-            while "true" not in ready :
+            while ready == "false":
                 print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
-                exit()
                 sleep(0.5)
