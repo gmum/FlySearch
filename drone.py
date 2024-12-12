@@ -156,7 +156,7 @@ def get_scenario_mapper(args):
             drone_z_rel_max=1000,
             seed_min=1,
             seed_max=1000,
-            scenarios_number=5,
+            scenarios_number=50,
             object_probs={
                 #ForestScenarioMapper.ObjectType.PLANE: 0.1,
                 #ForestScenarioMapper.ObjectType.UFO: 0.2,
