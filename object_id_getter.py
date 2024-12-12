@@ -6,7 +6,17 @@ def main():
 
     if not result:
         print("UnrealCV server is not running. Something's wrong.")
-        return
+        for i in range(1, 11):
+            print(f"Trying to connect to UnrealCV server on port {9000 + i}")
+            client = Client("localhost", 9000 + i)
+            result = client.connect()
+
+            if result:
+                break
+
+        if not result:
+            print("Failed to connect to UnrealCV server. Exiting.")
+            return
 
     client.request("vget /unrealcv/status")
     objects = client.request("vget /objects")
