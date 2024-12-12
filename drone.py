@@ -146,10 +146,10 @@ def get_scenario_mapper(args):
         )
     elif args.scenario_type == "forest":
         return ForestScenarioMapper(
-            x_min=0,
-            x_max=80000,
-            y_min=0,
-            y_max=80000,
+            x_min=-150000,
+            x_max=600000,
+            y_min=-150000,
+            y_max=600000,
             z_min=0,
             z_max=1,
             drone_z_rel_min=2000,
