@@ -1,14 +1,14 @@
 from unrealcv import Client
 
 def main():
-    client = Client("localhost", 9000)
+    client = Client(("localhost", 9000))
     result = client.connect()
 
     if not result:
         print("UnrealCV server is not running. Something's wrong.")
         for i in range(1, 11):
             print(f"Trying to connect to UnrealCV server on port {9000 + i}")
-            client = Client("localhost", 9000 + i)
+            client = Client(("localhost", 9000 + i))
             result = client.connect()
 
             if result:
