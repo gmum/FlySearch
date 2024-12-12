@@ -1,3 +1,5 @@
+from time import sleep
+
 from scenarios.classes_to_ids import classes_to_ids
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator
 
@@ -49,3 +51,7 @@ class ScenarioConfigurator:
             forest_generator_name = classes_to_ids["FOREST"]
 
             self.glimpse_generator.client.request(f'vbp {forest_generator_name} RunPCG {forest_live_trees_density} {forest_dead_trees_density} {forest_stones} {forest_cliffs} {seed}')
+
+            while "true" not in self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady'):
+                print("PCG is not ready, sleeping for 0.5 seconds")
+                sleep(0.5)
