@@ -1,3 +1,5 @@
+import json
+
 from time import sleep
 
 from scenarios.classes_to_ids import classes_to_ids
@@ -52,7 +54,7 @@ class ScenarioConfigurator:
 
             self.glimpse_generator.client.request(f'vbp {forest_generator_name} RunPCG {forest_live_trees_density} {forest_dead_trees_density} {forest_stones} {forest_cliffs} {seed}')
 
-            ready = self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady')["ready"]
+            ready = json.loads(self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady'))["ready"]
 
             while ready == "false":
                 print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
