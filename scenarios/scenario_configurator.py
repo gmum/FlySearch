@@ -57,5 +57,7 @@ class ScenarioConfigurator:
             ready = json.loads(self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady'))["ready"]
 
             while ready == "false":
+                ready = json.loads(self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady'))[
+                    "ready"]
                 print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
                 sleep(0.5)
