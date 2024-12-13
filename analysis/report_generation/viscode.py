@@ -104,7 +104,7 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
 
 
 def generate_metadata(starting_position, final_position, object_type="UNKNOWN"):
-    higher_than_object, object_can_be_seen, maciek_criterion = is_maciek_criterion_satisfied(final_position, (0, 0, 9))
+    higher_than_object, object_can_be_seen, maciek_criterion = is_maciek_criterion_satisfied(final_position, (0, 0, 0))
 
     return f"""
     \\begin{'{itemize}'}[h]
