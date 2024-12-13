@@ -158,15 +158,14 @@ def get_scenario_mapper(args):
             seed_max=1000,
             scenarios_number=50,
             object_probs={
-                #ForestScenarioMapper.ObjectType.PLANE: 0.1,
-                #ForestScenarioMapper.ObjectType.UFO: 0.2,
-                #ForestScenarioMapper.ObjectType.BUILDING: 0.2,
-                #ForestScenarioMapper.ObjectType.PERSON: 0.2,
-                #ForestScenarioMapper.ObjectType.TENT: 0.1,
-                ForestScenarioMapper.ObjectType.TRASH: 0.5,
-                ForestScenarioMapper.ObjectType.TENT: 0.3,
-                ForestScenarioMapper.ObjectType.PERSON: 0.2,
-                #ForestScenarioMapper.ObjectType.FIRE: 0.1
+                (ForestScenarioMapper.ObjectType.HELICOPTER,
+                 ForestScenarioMapper.ObjectType.PLANE,
+                 ForestScenarioMapper.ObjectType.UFO): 0.1,
+                (ForestScenarioMapper.ObjectType.PERSON,
+                 ForestScenarioMapper.ObjectType.FIRE,
+                 ForestScenarioMapper.ObjectType.TRASH,
+                 ForestScenarioMapper.ObjectType.TENT,
+                 ForestScenarioMapper.ObjectType.BUILDING): 0.9
             }
         )
 

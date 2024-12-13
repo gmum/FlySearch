@@ -1,6 +1,8 @@
 import random
 
 from enum import Enum
+from typing import Tuple
+
 
 class ForestScenarioMapper:
     class ObjectType(Enum):
@@ -18,7 +20,7 @@ class ForestScenarioMapper:
         return random.uniform(val_min, val_max)
 
     @staticmethod
-    def sample_object_from_object_probs(object_probs: dict[ObjectType, float]):
+    def sample_object_from_object_probs(object_probs: dict[ObjectType | Tuple, float]):
         random_value = random.random()
         cumulative_probability = 0
 
@@ -26,6 +28,9 @@ class ForestScenarioMapper:
             cumulative_probability += probability
 
             if random_value <= cumulative_probability:
+                if type(obj_type) is tuple:
+                    return random.choice(obj_type)
+
                 return obj_type
 
     @staticmethod
@@ -44,7 +49,10 @@ class ForestScenarioMapper:
 
         return drone_x, drone_y
 
-    def __init__(self, object_probs: dict[ObjectType, float], x_min: float, x_max: float, y_min: float, y_max: float, z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float, seed_min: int, seed_max: int, scenarios_number: int):
+    def __init__(self, object_probs: dict[ObjectType | Tuple, float], x_min: float, x_max: float, y_min: float,
+                 y_max: float,
+                 z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float, seed_min: int,
+                 seed_max: int, scenarios_number: int):
         self.object_probs = object_probs
 
         self.x_min = x_min
@@ -64,12 +72,18 @@ class ForestScenarioMapper:
     def _validate_object_probs(self):
         total = sum(self.object_probs.values())
 
+        # FIXME
         if total != 1:
             raise ValueError(f"Total probability must be 1, but got {total}")
 
         for obj_type in self.object_probs:
-            if obj_type not in ForestScenarioMapper.ObjectType:
+            if obj_type not in ForestScenarioMapper.ObjectType and type(obj_type) is not tuple:
                 raise ValueError(f"Invalid object type: {obj_type}")
+
+            if type(obj_type) is tuple:
+                for subclass in obj_type:
+                    if subclass not in ForestScenarioMapper.ObjectType:
+                        raise ValueError(f"Invalid object type: {subclass}")
 
     def create_random_scenario(self):
         seed = int(self.sample_value_between(self.seed_min, self.seed_max))
@@ -112,6 +126,7 @@ class ForestScenarioMapper:
         for _ in range(self.scenarios_number):
             yield self.create_random_scenario()
 
+
 def main():
     fsm = ForestScenarioMapper(
         x_min=-25600,
@@ -124,21 +139,22 @@ def main():
         drone_z_rel_max=10000,
         seed_min=1,
         seed_max=1000,
-        scenarios_number=10,
+        scenarios_number=50,
         object_probs={
-            ForestScenarioMapper.ObjectType.PLANE: 0.1,
-            ForestScenarioMapper.ObjectType.UFO: 0.2,
-            ForestScenarioMapper.ObjectType.BUILDING: 0.2,
-            ForestScenarioMapper.ObjectType.PERSON: 0.2,
-            ForestScenarioMapper.ObjectType.TENT: 0.1,
-            ForestScenarioMapper.ObjectType.TRASH: 0.1,
-            ForestScenarioMapper.ObjectType.FIRE: 0.1
+            (ForestScenarioMapper.ObjectType.HELICOPTER,
+             ForestScenarioMapper.ObjectType.PLANE,
+             ForestScenarioMapper.ObjectType.UFO): 0.1,
+            (ForestScenarioMapper.ObjectType.PERSON,
+             ForestScenarioMapper.ObjectType.FIRE,
+             ForestScenarioMapper.ObjectType.TRASH,
+             ForestScenarioMapper.ObjectType.TENT,
+             ForestScenarioMapper.ObjectType.BUILDING): 0.9
         }
     )
 
     for params in fsm.iterate_scenarios():
         print(params)
-        break
+
 
 if __name__ == "__main__":
     main()
