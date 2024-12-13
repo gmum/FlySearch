@@ -103,7 +103,7 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
     return higher_than_object, higher_than_object and object_within_view, higher_than_object and ok_alt_diff and object_within_view
 
 
-def generate_metadata(starting_position, final_position):
+def generate_metadata(starting_position, final_position, object_type="UNKNOWN"):
     higher_than_object, object_can_be_seen, maciek_criterion = is_maciek_criterion_satisfied(final_position, (0, 0, 9))
 
     return f"""
@@ -111,10 +111,10 @@ def generate_metadata(starting_position, final_position):
       \item Staring position: {starting_position}
       \item End position: {final_position} 
       \item Euclidean distance from (0, 0, 0): {(final_position[0] ** 2 + final_position[1] ** 2 + final_position[2] ** 2) ** 0.5}
-      \item Euclidean distance from (0, 0, 9): {(final_position[0] ** 2 + final_position[1] ** 2 + (final_position[2] - 9) ** 2) ** 0.5}
       \item Higher than object: {higher_than_object}
       \item Object can be seen: {object_can_be_seen}
       \item Maciek criterion (with or without claim): {maciek_criterion}
+      \item Object type: {object_type}
     \end{'{itemize}'}
     """
 
@@ -138,13 +138,23 @@ def main():
         print(generate_section(f"Example"))
         # print(generate_subsection("Basic information"))
 
+        object_type = "UNKNOWN"
+
+        try:
+            with open(one_run_dir / "scenario_params.json") as f:
+                json_obj = json.load(f)
+                object_type = json_obj["object_type"]
+        except OSError:
+            pass
+
         try:
             with open(one_run_dir / "final_coords.txt") as f:
                 final_coords = str_to_tuple(f.read())
 
             with open(one_run_dir / "start_rel_coords.txt") as f:
                 start_coords = str_to_tuple(f.read())
-            print(generate_metadata(start_coords, final_coords))
+
+            print(generate_metadata(start_coords, final_coords, object_type))
         except:
             pass
 
