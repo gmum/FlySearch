@@ -156,7 +156,7 @@ def get_scenario_mapper(args):
             drone_z_rel_max=1000,
             seed_min=1,
             seed_max=1000,
-            scenarios_number=50,
+            scenarios_number=100,
             object_probs={
                 (ForestScenarioMapper.ObjectType.HELICOPTER,
                  ForestScenarioMapper.ObjectType.PLANE,
