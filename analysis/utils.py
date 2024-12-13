@@ -1,5 +1,18 @@
 import os
 import pathlib
+import json
+
+
+def iterate_over_classes(root: pathlib.Path, example_paths):
+    for path in example_paths:
+        path = pathlib.Path(root / path)
+
+        if path.is_dir():
+            with open(path / "scenario_params.json") as f:
+                json_obj = json.load(f)
+                object_type = json_obj["object_type"]
+
+                yield object_type
 
 
 def iterate_over_end_locations(root: pathlib.Path, example_paths):
@@ -33,8 +46,16 @@ def iterate_over_start_and_end_locations(root: pathlib.Path):
                           iterate_over_end_locations(root, example_paths)):
         yield start, end
 
+
+def iterate_over_end_locations_and_classes(root: pathlib.Path, example_paths):
+    for end, object_type in zip(iterate_over_end_locations(root, example_paths),
+                                iterate_over_classes(root, example_paths)):
+        yield end, object_type
+
+
 def l2_distance(start, end):
     return ((end[0] - start[0]) ** 2 + (end[1] - start[1]) ** 2 + (end[2] - start[2]) ** 2) ** 0.5
+
 
 def iterate_over_experiment_time_series(root: pathlib.Path, example_paths):
     for path in example_paths:
@@ -42,7 +63,8 @@ def iterate_over_experiment_time_series(root: pathlib.Path, example_paths):
 
         if path.is_dir():
             filenames = os.listdir(path)
-            coords_f = [filename for filename in filenames if filename.endswith("coords.txt") and filename != "start_rel_coords.txt"]
+            coords_f = [filename for filename in filenames if
+                        filename.endswith("coords.txt") and filename != "start_rel_coords.txt"]
 
             def coord_key(coord):
                 split = coord.split("_")
@@ -53,7 +75,6 @@ def iterate_over_experiment_time_series(root: pathlib.Path, example_paths):
                     return int(split[0])
 
             coords_f = sorted(coords_f, key=coord_key)
-
 
             time_serie = []
 
@@ -66,13 +87,15 @@ def iterate_over_experiment_time_series(root: pathlib.Path, example_paths):
 
             yield time_serie
 
+
 def iterate_over_experiment_time_serie_messages(root: pathlib.Path, example_paths):
     for path in example_paths:
         path = pathlib.Path(root / path)
 
         if path.is_dir():
             filenames = os.listdir(path)
-            messages = [filename for filename in filenames if not filename.endswith("coords.txt") and filename.endswith(".txt") and "conversation" not in filename]
+            messages = [filename for filename in filenames if not filename.endswith("coords.txt") and filename.endswith(
+                ".txt") and "conversation" not in filename]
 
             def msg_key(msg):
                 split = msg.split(".")
@@ -80,7 +103,6 @@ def iterate_over_experiment_time_serie_messages(root: pathlib.Path, example_path
                 return int(split[0])
 
             messages = sorted(messages, key=msg_key)
-
 
             time_serie = []
 
@@ -90,15 +112,17 @@ def iterate_over_experiment_time_serie_messages(root: pathlib.Path, example_path
 
             yield time_serie
 
+
 def iterate_over_experiment_coords_and_messages_time_series(root: pathlib.Path, example_paths):
     for msg_time_serie, coord_time_serie in zip(iterate_over_experiment_time_serie_messages(root, example_paths),
                                                 iterate_over_experiment_time_series(root, example_paths)):
-
         yield msg_time_serie, coord_time_serie
+
 
 def time_series_l2_distance_iterator(time_serie, correct_end_place):
     for subserie in time_serie:
         yield [l2_distance(state, correct_end_place) for state in subserie]
+
 
 def get_l2_time_series(root: pathlib.Path, correct_end_place=(0, 0, 9)):
     example_paths = os.listdir(root)
@@ -107,14 +131,18 @@ def get_l2_time_series(root: pathlib.Path, correct_end_place=(0, 0, 9)):
 
     return l2s
 
+
 def main():
     print(list(iterate_over_start_and_end_locations(pathlib.Path("../all_logs/g7tB"))))
 
-    timeseries = list(iterate_over_experiment_time_series(pathlib.Path("../all_logs/g7tB"), os.listdir("../all_logs/g7tB")))
+    timeseries = list(
+        iterate_over_experiment_time_series(pathlib.Path("../all_logs/g7tB"), os.listdir("../all_logs/g7tB")))
 
     print(list(time_series_l2_distance_iterator(timeseries, (0, 0, 9))))
 
-    print(list(iterate_over_experiment_coords_and_messages_time_series(pathlib.Path("../all_logs/g7tB"), os.listdir("../all_logs/g7tB"))))
+    print(list(iterate_over_experiment_coords_and_messages_time_series(pathlib.Path("../all_logs/g7tB"),
+                                                                       os.listdir("../all_logs/g7tB"))))
+
 
 if __name__ == "__main__":
     main()

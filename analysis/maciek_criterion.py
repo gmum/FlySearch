@@ -2,10 +2,13 @@ import os
 import pathlib
 import statistics
 
+from analysis.utils import iterate_over_end_locations_and_classes
 from utils import iterate_over_experiment_coords_and_messages_time_series
 from matplotlib import pyplot as plt
 
-def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float], max_alt_diff=10) -> bool:
+
+def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float],
+                                  max_alt_diff=10) -> bool:
     higher_than_object = position[2] > object_position[2]
 
     alt_diff = position[2] - object_position[2]
@@ -28,6 +31,7 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
 
     return higher_than_object and ok_alt_diff and object_within_view
 
+
 def maciek_criterion_for_timeserie(timeserie, max_alt_diff=10, object_position=(0, 0, 9)):
     messages, coords = timeserie
 
@@ -35,14 +39,16 @@ def maciek_criterion_for_timeserie(timeserie, max_alt_diff=10, object_position=(
 
     return is_maciek_criterion_satisfied(coord, object_position, max_alt_diff=max_alt_diff)
 
+
 def trim_time_serie(time_serie, trim_str="FOUND"):
     messages, coords = time_serie
 
     for i, msg in enumerate(messages):
         if trim_str in msg:
-            return messages[:i+1], coords[:i+1]
+            return messages[:i + 1], coords[:i + 1]
 
     return messages, coords
+
 
 def trim_str_in_time_serie(time_serie, trim_str="FOUND"):
     messages, coords = time_serie
@@ -53,9 +59,11 @@ def trim_str_in_time_serie(time_serie, trim_str="FOUND"):
 
     return False
 
+
 def iterate_over_trimmed_time_series(root: pathlib.Path, trim_str="FOUND"):
     for time_serie in iterate_over_experiment_coords_and_messages_time_series(root, os.listdir(root)):
         yield trim_time_serie(time_serie, trim_str)
+
 
 def get_only_found_time_series(time_series, trim_str="FOUND"):
     total = []
@@ -65,6 +73,7 @@ def get_only_found_time_series(time_series, trim_str="FOUND"):
             total.append(time_serie)
 
     return total
+
 
 def get_stats_for_time_series(time_series):
     claims = get_only_found_time_series(time_series, trim_str="FOUND")
@@ -87,6 +96,7 @@ def get_stats_for_time_series(time_series):
 
     }
 
+
 def aggregate_stats_for_time_series_per_start_position(time_series):
     start_positions = {}
 
@@ -104,6 +114,7 @@ def aggregate_stats_for_time_series_per_start_position(time_series):
 
     return start_positions
 
+
 def get_stderr_from_binomial(acc, n):
     ok_examples = int(acc * n)
     not_ok_examples = n - ok_examples
@@ -113,6 +124,7 @@ def get_stderr_from_binomial(acc, n):
     arr = [1] * ok_examples + [0] * not_ok_examples
 
     return statistics.stdev(arr) / (n ** 0.5)
+
 
 def plot_aggregated_time_series(aggregated_time_series: dict, ax, label):
     dict_list = sorted(list(aggregated_time_series.items()))
@@ -130,10 +142,12 @@ def plot_aggregated_time_series(aggregated_time_series: dict, ax, label):
 
     return ax
 
+
 def plot_time_series(time_series, ax, label):
     aggregated = aggregate_stats_for_time_series_per_start_position(time_series)
 
     return plot_aggregated_time_series(aggregated, ax, label)
+
 
 def plot_basic_vs_adg():
     mc_0s_ct = list(iterate_over_trimmed_time_series(pathlib.Path("../all_logs/MC-0S-CT")))
@@ -162,8 +176,35 @@ def plot_basic_vs_adg():
 
     plt.show()
 
+
+def plot_maciek_criterion_per_class(ends_and_labels, ax):
+    per_class_ends = {}
+
+    for end, cls in ends_and_labels:
+        maciek_criterion = is_maciek_criterion_satisfied(end, (0, 0, 0))
+
+        if cls not in per_class_ends:
+            per_class_ends[cls] = []
+
+        per_class_ends[cls].append(maciek_criterion)
+
+    averages = {k: sum(v) / len(v) for k, v in per_class_ends.items()}
+    counts = {k: len(v) for k, v in per_class_ends.items()}
+    stderrs = {k: get_stderr_from_binomial(averages[k], counts[k]) for k in per_class_ends}
+
+    ax.bar(averages.keys(), averages.values(), yerr=stderrs.values(), capsize=5)
+
+
 def main():
-    plot_basic_vs_adg()
+    # plot_basic_vs_adg()
+
+    ends_and_labels = list(iterate_over_end_locations_and_classes(pathlib.Path("../all_logs/MC-0S-F"),
+                                                                  os.listdir("../all_logs/MC-0S-F")))
+
+    fig, ax = plt.subplots()
+
+    plot_maciek_criterion_per_class(ends_and_labels, ax)
+    plt.show()
 
 
 if __name__ == "__main__":
