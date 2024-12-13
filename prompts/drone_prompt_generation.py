@@ -140,7 +140,7 @@ def xml_found_prompt(glimpses: int) -> str:
 <Objective>
     You should fly AT LEAST 10 meters above the object and then reply with "FOUND".
 
-    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with "FOUND". The object MUST be in your field of view when you reply with "FOUND".
+    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with "FOUND". The object MUST be in your field of view when you reply with "FOUND". You must be centered on the object. 
 </Objective>
 
 <Coordinates>
