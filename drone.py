@@ -152,7 +152,7 @@ def get_scenario_mapper(args):
             y_max=65000,
             z_min=0,
             z_max=1,
-            drone_z_rel_min=args.heigth_min * 100,
+            drone_z_rel_min=args.height_min * 100,
             drone_z_rel_max=args.height_max * 100,
             seed_min=1,
             seed_max=1000,
