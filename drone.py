@@ -184,6 +184,7 @@ def scenario_level_test(args, run_dir):
                 drone_rel_coords = scenario_dict["drone_rel_coords"]
                 object_type = scenario_dict["object_type"]
                 gen_config.configure_scenario(scenario_dict)
+                object_bbox = gen_config.get_bbox(object_type)
 
                 conversation = conversation_factory.get_conversation()
                 explorer = DroneExplorer(
@@ -204,6 +205,9 @@ def scenario_level_test(args, run_dir):
 
                 test_dir = run_dir / f"{str(i)}_r{str(repeat)} "
                 test_dir.mkdir(exist_ok=True)
+
+                with open(test_dir / "object_bbox.txt", "w") as f:
+                    f.write(object_bbox)
 
                 with open(test_dir / "scenario_params.json", "w") as f:
                     scenario_str_dict = {k: str(v) for k, v in scenario_dict.items()}

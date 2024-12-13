@@ -19,6 +19,11 @@ class ScenarioConfigurator:
         object_id = classes_to_ids[object_name]
         self.glimpse_generator.client.request(f"vset /object/{object_id}/show")
 
+    def get_bbox(self, object_name) -> str:
+        object_id = classes_to_ids[object_name]
+        bbox = self.glimpse_generator.client.request(f"vget /object/{object_id}/bounds")
+        return bbox
+
     def move_object(self, object_name, x, y, z):
         object_id = classes_to_ids[object_name]
         self.glimpse_generator.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
