@@ -1,1 +1,4 @@
 from .run import Run
+from .utils import load_all_runs_from_a_dir
+from .run_analyser import RunAnalyser
+from .criterion_plotter import CriterionPlotter
