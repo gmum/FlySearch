@@ -121,3 +121,7 @@ class Run:
     @property
     def model_claimed(self):
         return "FOUND" in self.comments[-1]
+
+    @property
+    def real_object_coords(self):
+        return Run._convert_tuple_str(self.params["object_coords"])
