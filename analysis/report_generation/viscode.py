@@ -4,6 +4,8 @@ import json
 import re
 import pathlib
 
+from typing import Tuple
+
 if len(sys.argv) < 2:
     RUN_NAME = "MC-0S-CR"
     MODEL_NAME = "GPT-4o"
@@ -79,10 +81,10 @@ def generate_subsection(name):
 
 
 def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float],
-                                  max_alt_diff=10) -> bool:
+                                  max_alt_diff=10, object_highest_point=0) -> Tuple[bool, bool, bool]:
     higher_than_object = position[2] > object_position[2]
 
-    alt_diff = position[2] - object_position[2]
+    alt_diff = position[2] - object_highest_point
     ok_alt_diff = alt_diff <= max_alt_diff
 
     # Hello there, triangle similarity
@@ -103,8 +105,9 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
     return higher_than_object, higher_than_object and object_within_view, higher_than_object and ok_alt_diff and object_within_view
 
 
-def generate_metadata(starting_position, final_position, object_type="UNKNOWN"):
-    higher_than_object, object_can_be_seen, maciek_criterion = is_maciek_criterion_satisfied(final_position, (0, 0, 0))
+def generate_metadata(starting_position, final_position, object_type="UNKNOWN", object_highest_point=0):
+    higher_than_object, object_can_be_seen, maciek_criterion = is_maciek_criterion_satisfied(final_position, (
+        0, 0, 0), object_highest_point=object_highest_point)
 
     return f"""
     \\begin{'{itemize}'}[h]
@@ -154,7 +157,15 @@ def main():
             with open(one_run_dir / "start_rel_coords.txt") as f:
                 start_coords = str_to_tuple(f.read())
 
-            print(generate_metadata(start_coords, final_coords, object_type))
+            object_highest_point = 0
+
+            try:
+                with open(one_run_dir / "object_bbox.txt") as f:
+                    object_highest_point = float(f.read().split()[5]) // 100
+            except:
+                pass
+
+            print(generate_metadata(start_coords, final_coords, object_type, object_highest_point))
         except:
             pass
 
