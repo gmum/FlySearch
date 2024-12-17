@@ -56,6 +56,7 @@ The plane is visible in the center of the image at coordinates (0, 0). I need to
             run.get_coords()
             run.get_params()
             run.get_comments()
+            run.get_images()
 
     def test_model_claimed(self):
         base_path = pathlib.Path("../all_logs/MC-0S-F")
@@ -64,3 +65,13 @@ The plane is visible in the center of the image at coordinates (0, 0). I need to
         run = Run(base_path / runs[4])
 
         assert run.model_claimed
+
+    def test_images_are_loaded(self):
+        base_path = pathlib.Path("../all_logs/MC-0S-F")
+        runs = sorted(os.listdir(base_path), key=lambda x: int(x.split("_")[0]))
+
+        run = Run(base_path / runs[0])
+
+        images = run.get_images()
+
+        assert len(images) == 2

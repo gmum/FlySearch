@@ -2,6 +2,7 @@ import pathlib
 import os
 import json
 
+from PIL import Image
 from typing import Dict, List, Tuple
 
 
@@ -82,6 +83,10 @@ class Run:
 
     def get_comments(self):
         return self.comments
+
+    def get_images(self) -> List[Image]:
+        names = [name for name in os.listdir(self.path) if name.endswith(".png")]
+        return [Image.open(self.path / name) for name in names]
 
     @property
     def forest_level(self):
