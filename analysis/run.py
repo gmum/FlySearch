@@ -69,11 +69,18 @@ class Run:
 
         return comments_list
 
+    @staticmethod
+    def _load_object_bbox(path: pathlib.Path) -> Tuple:
+        with open(path / 'object_bbox.txt') as f:
+            tuple_str = f.read()
+            return tuple([float(coord) for coord in tuple_str.split()])
+
     def __init__(self, path: pathlib.Path):
         self.path = path
         self.params = self._load_params(path)
         self.coords = self._load_coords(path)
         self.comments = self._load_comments(path)
+        self.object_bbox = self._load_object_bbox(path)
 
     def get_params(self):
         return self.params
@@ -83,6 +90,9 @@ class Run:
 
     def get_comments(self):
         return self.comments
+
+    def get_object_bbox(self):
+        return self.object_bbox
 
     def get_images(self) -> List[Image]:
         names = [name for name in os.listdir(self.path) if name.endswith(".png")]

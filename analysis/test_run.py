@@ -75,3 +75,13 @@ The plane is visible in the center of the image at coordinates (0, 0). I need to
         images = run.get_images()
 
         assert len(images) == 2
+
+    def test_object_bbox_is_loaded(self):
+        base_path = pathlib.Path("../all_logs/MC-0S-F")
+        runs = sorted(os.listdir(base_path), key=lambda x: int(x.split("_")[0]))
+
+        run = Run(base_path / runs[0])
+
+        object_bbox = run.get_object_bbox()
+
+        assert object_bbox == (54814.18, 9584.93, -6558.42, 73850.24, 33485.94, 10591.88)
