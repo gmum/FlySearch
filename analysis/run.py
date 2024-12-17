@@ -4,17 +4,12 @@ import json
 
 from typing import Dict, List, Tuple
 
-from requests.cookies import get_cookie_header
-from sympy.codegen.cnodes import static
-
 
 class Run:
     @staticmethod
     def _convert_tuple_str(tuple_str: str) -> Tuple:
         tuple_str = tuple_str.replace("(", "").replace(")", "").strip().split(",")
         return tuple([float(coord) for coord in tuple_str])
-
-
 
     @staticmethod
     def _load_params(path: pathlib.Path) -> Dict:
@@ -48,16 +43,45 @@ class Run:
 
         return coord_list
 
+    @staticmethod
+    def _load_comments(path: pathlib.Path) -> List[str]:
+        comments_list = []
+        comments_files = [name for name in os.listdir(path) if name.endswith(".txt")]
+
+        def number_before_dot(name):
+            try:
+                int(name.split('.')[0])
+                return True
+            except ValueError:
+                return False
+
+        comments_files = [name for name in comments_files if number_before_dot(name)]
+
+        def cmp(name):
+            return int(name.split('.')[0])
+
+        comments_files.sort(key=cmp)
+
+        for name in comments_files:
+            with open(path / name) as f:
+                comments_list.append(f.read())
+
+        return comments_list
+
     def __init__(self, path: pathlib.Path):
         self.path = path
         self.params = self._load_params(path)
         self.coords = self._load_coords(path)
+        self.comments = self._load_comments(path)
 
     def get_params(self):
         return self.params
 
     def get_coords(self):
         return self.coords
+
+    def get_comments(self):
+        return self.comments
 
     @property
     def forest_level(self):
@@ -78,3 +102,7 @@ class Run:
     @property
     def end_position(self):
         return self.get_coords()[-1]
+
+    @property
+    def model_claimed(self):
+        return "FOUND" in self.comments[-1]
