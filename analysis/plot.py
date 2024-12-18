@@ -30,6 +30,15 @@ def main():
 
     plt.show()
 
+    fig, ax = plt.subplots()
+    ax.set_title("MC + Claim")
+    ax.set_ylabel("Accuracy")
+
+    per_height = plotter.get_runs_aggregated_per_height_bin()
+    plotter.plot_accuracy_in_aggregated_runs(per_height, ax, threshold=10)
+
+    plt.show()
+
 
 if __name__ == "__main__":
     main()

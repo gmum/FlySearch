@@ -9,16 +9,24 @@ class CriterionPlotter:
     def __init__(self, runs: List[Run]):
         self.runs = runs
 
-    def get_runs_aggregated_per_type(self) -> Dict:
+    def aggregate_runs_per_function(self, fun: Callable):
         class_to_run = {}
 
         for run in self.runs:
-            if run.object_type not in class_to_run:
-                class_to_run[run.object_type] = []
+            cls = fun(run)
 
-            class_to_run[run.object_type].append(run)
+            if cls not in class_to_run:
+                class_to_run[cls] = []
+
+            class_to_run[cls].append(run)
 
         return class_to_run
+
+    def get_runs_aggregated_per_type(self) -> Dict:
+        return self.aggregate_runs_per_function(lambda run: run.object_type)
+
+    def get_runs_aggregated_per_height_bin(self) -> Dict:
+        return self.aggregate_runs_per_function(lambda run: run.start_position[2] // 10)
 
     def plot_accuracy_in_aggregated_runs(self, variable_to_runs: Dict, ax, success_criterion: Callable | None = None,
                                          threshold=10):
