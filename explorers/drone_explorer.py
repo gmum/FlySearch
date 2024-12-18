@@ -1,3 +1,5 @@
+from typing import Tuple
+
 from conversation.abstract_conversation import Conversation, Role
 from navigators import AbstractDroneNavigator
 from response_parsers import Direction
@@ -47,14 +49,27 @@ class DroneExplorer:
         self.conversation.add_text_message("Very vell, let's move on to another example.")
         self.conversation.commit_transaction(send_to_vlm=False)
 
-    def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[int, int, int]:
+    def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[float, float, float]:
 
         print("Rel position assuming no crashes: ", rel_position)
+
+        ideal_rel_position = rel_position
 
         glimpse = self.glimpse_generator.get_camera_image(rel_position)
         rel_position = self.glimpse_generator.get_relative_from_start()
 
         print("Real rel position: ", rel_position)
+
+        max_allowed_diff = 1
+
+        diffX = abs(ideal_rel_position[0] - rel_position[0])
+        diffY = abs(ideal_rel_position[1] - rel_position[1])
+        diffZ = abs(ideal_rel_position[2] - rel_position[2])
+
+        crash_detected = False
+
+        if diffX > max_allowed_diff or diffY > max_allowed_diff or diffZ > max_allowed_diff:
+            crash_detected = True
 
         self.coordinates.append(rel_position)
 
@@ -77,6 +92,10 @@ class DroneExplorer:
         if start_transaction:
             self.conversation.begin_transaction(Role.USER)
 
+        if crash_detected:
+            self.conversation.add_text_message(
+                "Emergency stop; you've flown too close to something and would have hit it.")
+
         if cue is not None:
             self.conversation.add_text_message(cue)
 
@@ -96,7 +115,7 @@ class DroneExplorer:
 
         return new_position
 
-    def _start(self) -> tuple[int, int, int]:
+    def _start(self) -> tuple[float, float, float]:
         self.conversation.begin_transaction(Role.USER)
         self.conversation.add_text_message(
             self.prompt_generator(self.glimpses).replace("yellow pickup truck", self.object_name))
@@ -133,28 +152,3 @@ class DroneExplorer:
 
     def get_coords(self):
         return self.coordinates
-
-
-def main():
-    from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator
-    from conversation.openai_conversation import OpenAIConversation
-    from misc.config import OPEN_AI_KEY
-    from prompts.drone_prompt_generation import generate_basic_drone_prompt
-    from openai import OpenAI
-
-    generator = UnrealGlimpseGenerator()
-    client = OpenAI(api_key=OPEN_AI_KEY)
-    conversation = OpenAIConversation(client, model_name="gpt-4o")
-    explorer = DroneExplorer(conversation, generator, generate_basic_drone_prompt, 2, (-50, -55, 100))
-    explorer.simulate()
-
-    for i, (image, output) in enumerate(zip(explorer.get_images(), explorer.get_outputs())):
-        image.save(f"drone_image_{i}.png")
-        with open(f"drone_output_{i}.txt", "w") as f:
-            f.write(output)
-
-    generator.disconnect()
-
-
-if __name__ == "__main__":
-    main()

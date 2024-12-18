@@ -9,6 +9,11 @@ from conversation import Role
 from misc.add_guardrails import dot_matrix_two_dimensional_unreal
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
 
+
+class OutOfBoundsException(Exception):
+    pass
+
+
 class UnrealGlimpseGenerator:
     def __init__(self, host='localhost', port=9000, start_position=(3300.289, -26305.121, 0)):
         self.host = host
@@ -109,6 +114,39 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
         img = opencv_to_pil(img)
 
         return img
+
+
+class BoundedUnrealGridGlimpseGenerator(UnrealGridGlimpseGenerator):
+
+    def __init__(self, x_min, x_max, y_min, y_max, splits_w: int, splits_h: int, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        self.x_min = x_min
+        self.x_max = x_max
+
+        self.y_min = y_min
+        self.y_max = y_max
+
+    def get_camera_image(self,
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
+        real_requested_x = self.start_position[0] + rel_position_m[0] * 100
+        real_requested_y = self.start_position[1] + rel_position_m[1] * 100
+        real_requested_z = rel_position_m[2] * 100
+
+        # FOV = 90 degrees
+        seen_x_max = real_requested_x + real_requested_z
+        seen_x_min = real_requested_x - real_requested_z
+
+        seen_y_max = real_requested_y + real_requested_z
+        seen_y_min = real_requested_y - real_requested_z
+
+        if seen_x_max > self.x_max or seen_x_min < self.x_min:
+            raise OutOfBoundsException()
+
+        if seen_y_max > self.y_max or seen_y_min < self.y_min:
+            raise OutOfBoundsException()
+
+        return super().get_camera_image(rel_position_m)
 
 
 class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
