@@ -33,9 +33,25 @@ def main():
     fig, ax = plt.subplots()
     ax.set_title("MC + Claim")
     ax.set_ylabel("Accuracy")
+    ax.set_xlabel("Starting height")
 
     per_height = plotter.get_runs_aggregated_per_height_bin()
     plotter.plot_accuracy_in_aggregated_runs(per_height, ax, threshold=10)
+
+    plt.show()
+
+    fig, ax = plt.subplots()
+    ax.set_title("MC + Claim / Fire")
+    ax.set_ylabel("Accuracy")
+    ax.set_xlabel("Starting euclidean distance")
+
+    per_mse_dist = plotter.aggregate_runs_per_function(
+        lambda
+            run: (run.start_position[0] ** 2 + run.start_position[1] ** 2 + run.start_position[2] ** 2) ** 0.5 // 10,
+        lambda run: run.object_type == "FIRE"
+    )
+
+    plotter.plot_accuracy_in_aggregated_runs(per_mse_dist, ax, threshold=10)
 
     plt.show()
 
