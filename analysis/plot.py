@@ -55,6 +55,18 @@ def main():
 
     plt.show()
 
+    fig, ax = plt.subplots()
+    ax.set_title("MC success")
+    ax.set_ylabel("Accuracy")
+
+    per_mse_dist = plotter.aggregate_runs_per_function(
+        lambda run: 1,
+    )
+
+    plotter.plot_accuracy_in_aggregated_runs(per_mse_dist, ax, threshold=10)
+
+    plt.show()
+
 
 if __name__ == "__main__":
     main()
