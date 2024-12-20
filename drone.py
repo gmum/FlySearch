@@ -4,7 +4,7 @@ import pathlib
 
 from openai import OpenAI
 
-from conversation import InternFactory
+from conversation import InternFactory, VLLMFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
 from conversation.intern_conversation import InternConversation, get_model_and_stuff
@@ -55,6 +55,8 @@ def get_conversation_factory(args):
         return GPTFactory()
     elif args.model == "intern":
         return InternFactory()
+    else:
+        return VLLMFactory(args.model)
 
 
 def get_prompt(args):
@@ -270,7 +272,7 @@ def main():
     parser.add_argument("--model",
                         type=str,
                         required=True,
-                        choices=["gpt-4o", "intern"]
+                        # choices=["gpt-4o", "intern"] # Now we have VLLM, so the name can be arbitrary
                         )
 
     parser.add_argument("--run_name",
