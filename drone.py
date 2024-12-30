@@ -162,12 +162,12 @@ def get_scenario_mapper(args):
             object_probs={
                 (ForestScenarioMapper.ObjectType.HELICOPTER,
                  ForestScenarioMapper.ObjectType.PLANE,
-                 ForestScenarioMapper.ObjectType.UFO): 0.1,
+                 ForestScenarioMapper.ObjectType.UFO): 0.0,
                 (ForestScenarioMapper.ObjectType.PERSON,
                  ForestScenarioMapper.ObjectType.FIRE,
                  ForestScenarioMapper.ObjectType.TRASH,
                  ForestScenarioMapper.ObjectType.CAMPING,
-                 ForestScenarioMapper.ObjectType.BUILDING): 0.9
+                 ForestScenarioMapper.ObjectType.BUILDING): 1.0
             }
         )
 
