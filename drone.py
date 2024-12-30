@@ -158,7 +158,7 @@ def get_scenario_mapper(args):
             drone_z_rel_max=args.height_max * 100,
             seed_min=1,
             seed_max=1000,
-            scenarios_number=100,
+            scenarios_number=args.n,
             object_probs={
                 (ForestScenarioMapper.ObjectType.HELICOPTER,
                  ForestScenarioMapper.ObjectType.PLANE,
@@ -348,6 +348,12 @@ def main():
                         type=str,
                         required=False,
                         help="Override for logs directory.")
+
+    parser.add_argument("--n",
+                        type=int,
+                        required=False,
+                        default=100,
+                        help="Number of scenarios to generate. Doesn't do anything in round_robin mode.")
 
     args = parser.parse_args()
 
