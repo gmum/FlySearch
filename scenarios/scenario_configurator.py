@@ -47,6 +47,15 @@ class ScenarioConfigurator:
                 seed = scenario_dict["seed"]
                 self.glimpse_generator.client.request(f"vbp {object_name} RunPCG {seed}")
 
+                ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_name} IsPCGReady'))[
+                    "ready"]
+
+                while ready == "false":
+                    ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_name} IsPCGReady'))[
+                        "ready"]
+                    print("PCG for camping is not ready, sleeping for 0.5 seconds, got:", ready)
+                    sleep(0.5)
+
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]
             sun_z = scenario_dict["sun_z"]
