@@ -3,7 +3,7 @@ import random
 
 from time import sleep
 
-from scenarios import ForestScenarioMapper
+from scenarios import ForestScenarioMapper, CityScenarioMapper
 from scenarios.classes_to_ids import classes_to_ids
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator
 
@@ -52,6 +52,11 @@ class ScenarioConfigurator:
             sleep(0.5)
 
     def configure_scenario(self, scenario_dict):
+        if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
+            city_generator_name = self.get_object_id("CITY")
+            self.glimpse_generator.client.request(f"vbp {city_generator_name} clean")
+            sleep(1)
+
         if "object_coords" in scenario_dict:
             self.glimpse_generator.change_start_position(scenario_dict["object_coords"])
             self.glimpse_generator.reset_camera()
@@ -75,6 +80,18 @@ class ScenarioConfigurator:
                 # self.wait_for_pcg(object_id)
                 sleep(1)
 
+            if object_type == CityScenarioMapper.ObjectType.CROWD:
+                seed = scenario_dict["seed"]
+                self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
+
+                self.wait_for_pcg(object_id)
+
+            if object_type == CityScenarioMapper.ObjectType.TRASH:
+                seed = scenario_dict["seed"]
+                self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
+
+                self.wait_for_pcg(object_id)
+
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]
             sun_z = scenario_dict["sun_z"]
@@ -97,12 +114,6 @@ class ScenarioConfigurator:
             self.wait_for_pcg(forest_generator_name)
 
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
-            seed = scenario_dict["seed"]
             city_generator_name = self.get_object_id("CITY")
-
-            self.glimpse_generator.client.request(f"vbp {city_generator_name} clean")
             self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn")
-
-            # TODO: Is vbp ready?
-
-            self.wait_for_pcg(city_generator_name)
+            sleep(1)  # Don't wait for PCG here as in the city scenario you can't do that
