@@ -190,8 +190,8 @@ def get_scenario_mapper(args):
                     CityScenarioMapper.ObjectType.TRASH
                 ): 1.0
             },
-            drone_z_rel_min=0,
-            drone_z_rel_max=10000,
+            drone_z_rel_min=args.height_min * 100,
+            drone_z_rel_max=args.height_max * 100,
             scenarios_number=args.n,
             seed_max=1000,
             seed_min=0,

@@ -87,6 +87,8 @@ class UnrealGlimpseGenerator:
                   self.client.request("vget /action/game/is_loaded"))
             sleep(0.5)
 
+        print("Unreal Glimpse Generator: Unreal finished loading", self.client.request("vget /action/game/is_loaded"))
+
     def get_camera_image(self,
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
         start_position = self.start_position
