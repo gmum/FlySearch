@@ -82,7 +82,7 @@ class UnrealGlimpseGenerator:
         return int(x), int(y), int(z)
 
     def wait_for_unreal_to_finish(self):
-        while self.client.request("vget /action/game/is_loaded") == "false":
+        while "false" in self.client.request("vget /action/game/is_loaded"):
             print("Unreal Glimpse Generator: Waiting for Unreal to finish loading, current status:",
                   self.client.request("vget /action/game/is_loaded"))
             sleep(0.5)
