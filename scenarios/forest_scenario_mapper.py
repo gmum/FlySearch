@@ -7,7 +7,7 @@ from typing import Tuple
 class ForestScenarioMapper:
     class ObjectType(Enum):
         FIRE = 0
-        TENT = 1
+        CAMPING = 1
         TRASH = 2
         BUILDING = 3
         PERSON = 4
@@ -147,7 +147,7 @@ def main():
             (ForestScenarioMapper.ObjectType.PERSON,
              ForestScenarioMapper.ObjectType.FIRE,
              ForestScenarioMapper.ObjectType.TRASH,
-             ForestScenarioMapper.ObjectType.TENT,
+             ForestScenarioMapper.ObjectType.CAMPING,
              ForestScenarioMapper.ObjectType.BUILDING): 0.9
         }
     )

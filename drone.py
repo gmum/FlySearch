@@ -166,7 +166,7 @@ def get_scenario_mapper(args):
                 (ForestScenarioMapper.ObjectType.PERSON,
                  ForestScenarioMapper.ObjectType.FIRE,
                  ForestScenarioMapper.ObjectType.TRASH,
-                 ForestScenarioMapper.ObjectType.TENT,
+                 ForestScenarioMapper.ObjectType.CAMPING,
                  ForestScenarioMapper.ObjectType.BUILDING): 0.9
             }
         )
