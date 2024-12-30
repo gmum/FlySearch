@@ -1,5 +1,5 @@
 from typing import Tuple
-
+import json
 import cv2
 from unrealcv import Client
 from time import sleep
@@ -81,6 +81,12 @@ class UnrealGlimpseGenerator:
 
         return int(x), int(y), int(z)
 
+    def wait_for_unreal_to_finish(self):
+        while self.client.request("vget /action/game/is_loaded") == "false":
+            print("Unreal Glimpse Generator: Waiting for Unreal to finish loading, current status:",
+                  self.client.request("vget /action/game/is_loaded"))
+            sleep(0.5)
+
     def get_camera_image(self,
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
         start_position = self.start_position
@@ -88,7 +94,7 @@ class UnrealGlimpseGenerator:
         location = (start_position[0] + rel_position_m[0] * 100, start_position[1] + rel_position_m[1] * 100,
                     start_position[2] + rel_position_m[2] * 100)
         self.client.request(f'vset /camera/1/moveto {location[0]} {location[1]} {location[2]}')
-        sleep(0.5)
+        self.wait_for_unreal_to_finish()
         self.client.request('vget /camera/1/lit /tmp/camera.png')
         image = Image.open('/tmp/camera.png')
         image = image.resize((500, 500), Image.Resampling.BILINEAR)
