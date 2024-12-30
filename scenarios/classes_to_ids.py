@@ -6,7 +6,7 @@ Actor_UAID_08BFB8191750043702_1942904279 Actor_UAID_08BFB8191750043702_214043728
 classes_to_ids = {
     ForestScenarioMapper.ObjectType.FIRE: "NiagaraActor_UAID_08BFB8191750822F02_1834612234",
     ForestScenarioMapper.ObjectType.TRASH: "Actor_UAID_08BFB8191750053702_1677020459",
-    ForestScenarioMapper.ObjectType.TENT: "StaticMeshActor_UAID_08BFB8191750812F02_1554258022",
+    ForestScenarioMapper.ObjectType.CAMPING: "BP_RandomSpawner_C_UAID_08BFB8191750113C02_1871747848",
     ForestScenarioMapper.ObjectType.BUILDING: "StaticMeshActor_UAID_08BFB8191750802F02_1934372840",
     ForestScenarioMapper.ObjectType.PERSON: "SkeletalMeshActor_UAID_08BFB8191750A22F02_1368103644",
     ForestScenarioMapper.ObjectType.UFO: "Actor_UAID_08BFB8191750053702_1321019457",
@@ -15,4 +15,3 @@ classes_to_ids = {
     "SUN": "DirectionalLight_UAID_E04F43E67EF6227D01_1896464149",
     "FOREST": "PCGDemo_ForestBP_C_UAID_E04F43E67EF62B7D01_2006191743"
 }
-

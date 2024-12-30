@@ -2,6 +2,7 @@ import json
 
 from time import sleep
 
+from scenarios import ForestScenarioMapper
 from scenarios.classes_to_ids import classes_to_ids
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator
 
@@ -34,12 +35,17 @@ class ScenarioConfigurator:
             self.glimpse_generator.reset_camera()
 
         if "set_object" in scenario_dict and scenario_dict["set_object"]:
-            object_name = scenario_dict["object_type"]
+            object_type = scenario_dict["object_type"]
             object_coords = scenario_dict["object_coords"]
+            object_name = classes_to_ids[object_type]
 
             self.hide_all_movable_objects()
-            self.show_object(object_name)
-            self.move_object(object_name, *object_coords)
+            self.show_object(object_type)
+            self.move_object(object_type, *object_coords)
+
+            if object_type == ForestScenarioMapper.ObjectType.CAMPING:
+                seed = scenario_dict["seed"]
+                self.glimpse_generator.client.request(f"vbp {object_name} RunPCG {seed}")
 
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]
