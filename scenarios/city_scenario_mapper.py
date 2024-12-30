@@ -69,7 +69,7 @@ class CityScenarioMapper:
         self.drone_z_rel_max = drone_z_rel_max
         self.scenarios_number = scenarios_number
 
-        self.possible_locations = pd.read_csv("/net/people/plgrid/plgdmatuszek/active-visual-gpt")
+        self.possible_locations = pd.read_csv("/net/people/plgrid/plgdmatuszek/active-visual-gpt/locations_city.csv")
 
         # Drop locations that are not in the specified range
         self.possible_locations = self.possible_locations[self.possible_locations["X"] >= x_min]
