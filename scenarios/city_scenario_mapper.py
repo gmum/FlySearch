@@ -125,7 +125,8 @@ class CityScenarioMapper:
             "object_rot": (object_rot_p, object_rot_y, object_rot_r),
             "object_type": object_type,
             "drone_rel_coords": (drone_x, drone_y, drone_z),
-            "set_object": True
+            "set_object": True,
+            "regenerate_city": True,
         }
 
     def iterate_scenarios(self):

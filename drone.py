@@ -18,7 +18,7 @@ from prompts.drone_prompt_generation import generate_basic_drone_prompt, generat
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
-from scenarios import DroneScenarioMapperWithOffsets, ScenarioConfigurator
+from scenarios import DroneScenarioMapperWithOffsets, ScenarioConfigurator, CityScenarioMapper
 from scenarios.drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper
 from scenarios.forest_scenario_mapper import ForestScenarioMapper
 
@@ -170,6 +170,32 @@ def get_scenario_mapper(args):
                  ForestScenarioMapper.ObjectType.BUILDING): 1.0
             }
         )
+    elif args.scenario_type == "city":
+        return CityScenarioMapper(
+            object_probs={
+                (
+                    CityScenarioMapper.ObjectType.POLICE_CAR,
+                    CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR,
+                    CityScenarioMapper.ObjectType.BLUE_SPORT_CAR,
+                    CityScenarioMapper.ObjectType.RED_SPORT_CAR,
+                    CityScenarioMapper.ObjectType.WHITE_SPORT_CAR,
+                    CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS,
+                    CityScenarioMapper.ObjectType.FIRE_CAR,
+                    CityScenarioMapper.ObjectType.FIRE,
+                    CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK,
+                    CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK,
+                    CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK,
+                    CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK,
+                    CityScenarioMapper.ObjectType.CROWD,
+                    CityScenarioMapper.ObjectType.TRASH
+                ): 1.0
+            },
+            drone_z_rel_min=0,
+            drone_z_rel_max=10000,
+            scenarios_number=args.n,
+            seed_max=1000,
+            seed_min=0,
+        )
 
 
 def scenario_level_test(args, run_dir):
@@ -283,7 +309,7 @@ def main():
     parser.add_argument("--scenario_type",
                         type=str,
                         required=True,
-                        choices=["round_robin", "level_1", "level_1_yellow_truck", "forest"],
+                        choices=["round_robin", "level_1", "level_1_yellow_truck", "forest", "city"],
                         )
 
     parser.add_argument("--repeats",
