@@ -33,4 +33,12 @@ classes_to_ids = {
                                                        "BP_vehVan_vehicle09_C_UAID_08BFB8191750913902_2076347509"],
     CityScenarioMapper.ObjectType.CROWD: "BP_RandomCrowd_C_UAID_08BFB81917507B3902_1554570401",
     CityScenarioMapper.ObjectType.TRASH: "BP_RandomSpawner_C_UAID_08BFB81917507F3902_1265735256",
+    CityScenarioMapper.ObjectType.ANOMALY: [
+        "Actor_UAID_08BFB8191750653A02_1780219521",  # Animal
+        "SkeletalMeshActor_UAID_08BFB8191750B53A02_1807591675",  # Dino
+        "Actor_UAID_08BFB8191750653A02_1976051522",  # Helicopter
+        "Actor_UAID_08BFB8191750653A02_1345980520",  # Plane
+        "SkeletalMeshActor_UAID_08BFB8191750B63A02_1935932861",  # Tank
+        "Actor_UAID_08BFB8191750653A02_1095763519",  # Ufo
+    ]
 }
