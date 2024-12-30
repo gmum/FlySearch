@@ -62,11 +62,11 @@ class ScenarioConfigurator:
             object_id = self.get_object_id(object_type)
 
             self.hide_all_movable_objects()
-            self.show_object(object_type)
-            self.move_object(object_type, *object_coords)
+            self.show_object(object_id)
+            self.move_object(object_id, *object_coords)
 
             if "object_rot" in scenario_dict:
-                self.rotate_object(object_type, *scenario_dict["object_rot"])
+                self.rotate_object(object_id, *scenario_dict["object_rot"])
 
             if object_type == ForestScenarioMapper.ObjectType.CAMPING:
                 seed = scenario_dict["seed"]
@@ -95,3 +95,14 @@ class ScenarioConfigurator:
                 f'vbp {forest_generator_name} RunPCG {forest_live_trees_density} {forest_dead_trees_density} {forest_stones} {forest_cliffs} {seed}')
 
             self.wait_for_pcg(forest_generator_name)
+
+        if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
+            seed = scenario_dict["seed"]
+            city_generator_name = self.get_object_id("CITY")
+
+            self.glimpse_generator.client.request(f"vbp {city_generator_name} clean")
+            self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn")
+
+            # TODO: Is vbp ready?
+
+            self.wait_for_pcg(city_generator_name)
