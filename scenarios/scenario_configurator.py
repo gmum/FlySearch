@@ -29,6 +29,18 @@ class ScenarioConfigurator:
         object_id = classes_to_ids[object_name]
         self.glimpse_generator.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
+    def rotate_object(self, object_name, p, y, r):
+        object_id = classes_to_ids[object_name]
+        self.glimpse_generator.client.request(f"vset /object/{object_id}/rotation {p} {y} {r}")
+
+    def wait_for_pcg(self, object_name):
+        ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_name} IsPCGReady'))["ready"]
+
+        while ready == "false":
+            ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_name} IsPCGReady'))["ready"]
+            print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
+            sleep(0.5)
+
     def configure_scenario(self, scenario_dict):
         if "object_coords" in scenario_dict:
             self.glimpse_generator.change_start_position(scenario_dict["object_coords"])
@@ -43,18 +55,14 @@ class ScenarioConfigurator:
             self.show_object(object_type)
             self.move_object(object_type, *object_coords)
 
+            if "object_rot" in scenario_dict:
+                self.rotate_object(object_type, *scenario_dict["object_rot"])
+
             if object_type == ForestScenarioMapper.ObjectType.CAMPING:
                 seed = scenario_dict["seed"]
                 self.glimpse_generator.client.request(f"vbp {object_name} RunPCG {seed}")
 
-                ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_name} IsPCGReady'))[
-                    "ready"]
-
-                while ready == "false":
-                    ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_name} IsPCGReady'))[
-                        "ready"]
-                    print("PCG for camping is not ready, sleeping for 0.5 seconds, got:", ready)
-                    sleep(0.5)
+                self.wait_for_pcg(object_name)
 
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]
@@ -75,11 +83,4 @@ class ScenarioConfigurator:
             self.glimpse_generator.client.request(
                 f'vbp {forest_generator_name} RunPCG {forest_live_trees_density} {forest_dead_trees_density} {forest_stones} {forest_cliffs} {seed}')
 
-            ready = json.loads(self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady'))[
-                "ready"]
-
-            while ready == "false":
-                ready = json.loads(self.glimpse_generator.client.request(f'vbp {forest_generator_name} IsPCGReady'))[
-                    "ready"]
-                print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
-                sleep(0.5)
+            self.wait_for_pcg(forest_generator_name)
