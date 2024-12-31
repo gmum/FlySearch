@@ -60,7 +60,7 @@ class ScenarioConfigurator:
     def configure_scenario(self, scenario_dict):
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
             city_generator_name = self.get_object_id("CITY")
-            self.glimpse_generator.client.request(f"vbp {city_generator_name} clean")
+            self.glimpse_generator.client.request(f"vbp {city_generator_name} clear")
             sleep(1)
 
         if "object_coords" in scenario_dict:
