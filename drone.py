@@ -213,7 +213,9 @@ def scenario_level_test(args, run_dir):
                 drone_rel_coords = scenario_dict["drone_rel_coords"]
                 object_type = scenario_dict["object_type"]
                 gen_config.configure_scenario(scenario_dict)
-                object_bbox = gen_config.get_bbox(object_type)
+                object_id = scenario_dict[
+                    "object_id"]  # Note: do not query this before configure scenario. It should set the object_id.
+                object_bbox = gen_config.get_bbox(object_id)
 
                 conversation = conversation_factory.get_conversation()
                 explorer = DroneExplorer(

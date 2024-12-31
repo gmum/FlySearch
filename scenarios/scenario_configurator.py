@@ -29,20 +29,20 @@ class ScenarioConfigurator:
             elif key != "SUN" and key != "FOREST" and key != "CITY":
                 self.glimpse_generator.client.request(f"vset /object/{value}/hide")
 
-    def show_object(self, object_id):
+    def show_object(self, object_id: str):
         self.glimpse_generator.client.request(f"vset /object/{object_id}/show")
 
-    def get_bbox(self, object_id) -> str:
+    def get_bbox(self, object_id: str) -> str:
         bbox = self.glimpse_generator.client.request(f"vget /object/{object_id}/bounds")
         return bbox
 
-    def move_object(self, object_id, x, y, z):
+    def move_object(self, object_id: str, x, y, z):
         self.glimpse_generator.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
-    def rotate_object(self, object_id, p, y, r):
+    def rotate_object(self, object_id: str, p, y, r):
         self.glimpse_generator.client.request(f"vset /object/{object_id}/rotation {p} {y} {r}")
 
-    def wait_for_pcg(self, object_id):
+    def wait_for_pcg(self, object_id: str):
         ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_id} IsPCGReady'))["ready"]
 
         while ready == "false":
@@ -57,6 +57,8 @@ class ScenarioConfigurator:
         self.glimpse_generator.reset_camera()
         self.glimpse_generator.get_camera_image((drone_rel_x_semi, drone_rel_y_semi, drone_rel_z_semi), force_move=True)
 
+    # If during configuration the scenario configurator made another assumption about the scenario, it should be noted
+    # in the scenario_dict. E.g. the object id should be noted in the scenario_dict, as its value is randomly sampled from a given class.
     def configure_scenario(self, scenario_dict):
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
             city_generator_name = self.get_object_id("CITY")
@@ -70,6 +72,8 @@ class ScenarioConfigurator:
             object_type = scenario_dict["object_type"]
             object_coords = scenario_dict["object_coords"]
             object_id = self.get_object_id(object_type)
+
+            scenario_dict["object_id"] = object_id
 
             self.hide_all_movable_objects()
             self.show_object(object_id)
