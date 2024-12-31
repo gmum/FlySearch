@@ -26,8 +26,7 @@ class ScenarioConfigurator:
             if isinstance(value, list):
                 for v in value:
                     self.glimpse_generator.client.request(f"vset /object/{v}/hide")
-
-            if key != "SUN" and key != "FOREST" and key != "CITY":
+            elif key != "SUN" and key != "FOREST" and key != "CITY":
                 self.glimpse_generator.client.request(f"vset /object/{value}/hide")
 
     def show_object(self, object_id):
