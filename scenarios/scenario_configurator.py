@@ -51,6 +51,13 @@ class ScenarioConfigurator:
             print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
             sleep(0.5)
 
+    # Sets the camera in a given location and asks for camera image, ensuring that the map is loaded
+    def load_map(self, x, y, z) -> None:
+        # Asking glimpse generator for a glimpse will effectively load the map in a given location
+        self.glimpse_generator.change_start_position((x, y, z))
+        self.glimpse_generator.reset_camera()
+        self.glimpse_generator.get_camera_image((x, y, z))
+
     def configure_scenario(self, scenario_dict):
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
             city_generator_name = self.get_object_id("CITY")
@@ -58,8 +65,7 @@ class ScenarioConfigurator:
             sleep(1)
 
         if "object_coords" in scenario_dict:
-            self.glimpse_generator.change_start_position(scenario_dict["object_coords"])
-            self.glimpse_generator.reset_camera()
+            self.load_map(*scenario_dict["object_coords"])
 
         if "set_object" in scenario_dict and scenario_dict["set_object"]:
             object_type = scenario_dict["object_type"]

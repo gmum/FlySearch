@@ -89,6 +89,14 @@ class UnrealGlimpseGenerator:
 
         print("Unreal Glimpse Generator: Unreal finished loading", self.client.request("vget /action/game/is_loaded"))
 
+        while "false" in self.client.request("vget /camera/1/partition_loaded").lower():
+            print("Unreal Glimpse Generator: Waiting for Unreal to finish loading the PARTITION, current status:",
+                  self.client.request("vget /camera/1/partition_loaded"))
+            sleep(0.5)
+
+        print("Unreal Glimpse Generator: Unreal finished loading the PARTITION",
+              self.client.request("vget /camera/1/partition_loaded"))
+
     def get_camera_image(self,
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
         start_position = self.start_position
