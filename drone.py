@@ -263,7 +263,7 @@ def scenario_level_test(args, run_dir):
 
             except Exception as e:
                 print(f"Failed on test {i}, repeat {repeat}", e)
-                traceback.format_exc()
+                traceback.print_exc()
 
     generator.disconnect()
 
