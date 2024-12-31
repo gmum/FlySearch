@@ -64,7 +64,7 @@ class ScenarioConfigurator:
             sleep(1)
 
         if "object_coords" in scenario_dict:
-            self.load_map(*scenario_dict["object_coords"])
+            self.load_map(*scenario_dict["object_coords"], *scenario_dict["drone_rel_coords"])
 
         if "set_object" in scenario_dict and scenario_dict["set_object"]:
             object_type = scenario_dict["object_type"]
