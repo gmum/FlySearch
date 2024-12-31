@@ -69,6 +69,9 @@ class CityScenarioMapper:
         self.drone_z_rel_max = drone_z_rel_max
         self.scenarios_number = scenarios_number
 
+        self.seed_min = seed_min
+        self.seed_max = seed_max
+
         self.possible_locations = pd.read_csv("/net/people/plgrid/plgdmatuszek/active-visual-gpt/locations_city.csv")
 
         # Drop locations that are not in the specified range
@@ -120,6 +123,8 @@ class CityScenarioMapper:
         drone_y = int(drone_y / 100)
         drone_z = int(drone_z / 100)
 
+        seed = int(self.sample_value_between(self.seed_min, self.seed_max))
+
         return {
             "object_coords": (object_x, object_y, object_z),
             "object_rot": (object_rot_p, object_rot_y, object_rot_r),
@@ -127,6 +132,7 @@ class CityScenarioMapper:
             "drone_rel_coords": (drone_x, drone_y, drone_z),
             "set_object": True,
             "regenerate_city": True,
+            "seed": seed
         }
 
     def iterate_scenarios(self):
