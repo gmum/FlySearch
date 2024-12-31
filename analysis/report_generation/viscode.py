@@ -61,7 +61,7 @@ def one_glimpse_latex(glimpse_path):
 
 
 def gpt_speaks(speech):
-    return f"\\gptspeaks: {speech}"
+    return f"\\gptspeaks: {speech}".replace("_", "\\_")
 
 
 def stage_direction():
@@ -119,7 +119,7 @@ def generate_metadata(starting_position, final_position, object_type="UNKNOWN", 
       \item Maciek criterion (with or without claim): {maciek_criterion}
       \item Object type: {object_type}
     \end{'{itemize}'}
-    """
+    """.replace("_", "\\_")
 
 
 def str_to_tuple(tuple_str: str) -> tuple:
