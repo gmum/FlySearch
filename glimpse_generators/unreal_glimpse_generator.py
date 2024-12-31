@@ -98,12 +98,15 @@ class UnrealGlimpseGenerator:
               self.client.request("vget /camera/1/partition_loaded"))
 
     def get_camera_image(self,
-                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
         start_position = self.start_position
 
         location = (start_position[0] + rel_position_m[0] * 100, start_position[1] + rel_position_m[1] * 100,
                     start_position[2] + rel_position_m[2] * 100)
-        self.client.request(f'vset /camera/1/moveto {location[0]} {location[1]} {location[2]}')
+
+        move_type = "location" if force_move else "moveto"
+
+        self.client.request(f'vset /camera/1/{move_type} {location[0]} {location[1]} {location[2]}')
         self.wait_for_unreal_to_finish()
         self.client.request('vget /camera/1/lit /tmp/camera.png')
         image = Image.open('/tmp/camera.png')
@@ -123,8 +126,8 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
         self.splits_h = splits_h
 
     def get_camera_image(self,
-                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
-        img = super().get_camera_image(rel_position_m)
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
+        img = super().get_camera_image(rel_position_m, force_move=force_move)
         img = pil_to_opencv(img)
         img = dot_matrix_two_dimensional_unreal(img, self.splits_w, self.splits_h, drone_height=rel_position_m[2])
         img = opencv_to_pil(img)
@@ -144,7 +147,7 @@ class BoundedUnrealGridGlimpseGenerator(UnrealGridGlimpseGenerator):
         self.y_max = y_max
 
     def get_camera_image(self,
-                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
         real_requested_x = self.start_position[0] + rel_position_m[0] * 100
         real_requested_y = self.start_position[1] + rel_position_m[1] * 100
         real_requested_z = rel_position_m[2] * 100
@@ -162,7 +165,7 @@ class BoundedUnrealGridGlimpseGenerator(UnrealGridGlimpseGenerator):
         if seen_y_max > self.y_max or seen_y_min < self.y_min:
             raise OutOfBoundsException()
 
-        return super().get_camera_image(rel_position_m)
+        return super().get_camera_image(rel_position_m, force_move=force_move)
 
 
 class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
@@ -172,8 +175,8 @@ class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):
         self.searched_obj = searched_obj
 
     def get_camera_image(self,
-                         rel_position_m: Tuple[int, int, int] = (0, 0, 0)) -> Image:
-        img = super().get_camera_image(rel_position_m)
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
+        img = super().get_camera_image(rel_position_m, force_move=force_move)
 
         conversation = self.conversation_factory.get_conversation()
         conversation.begin_transaction(Role.USER)

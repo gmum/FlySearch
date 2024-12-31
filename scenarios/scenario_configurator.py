@@ -51,11 +51,11 @@ class ScenarioConfigurator:
             sleep(0.5)
 
     # Sets the camera in a given location and asks for camera image, ensuring that the map is loaded
-    def load_map(self, x, y, z) -> None:
+    def load_map(self, x, y, z, drone_rel_x_semi, drone_rel_y_semi, drone_rel_z_semi) -> None:
         # Asking glimpse generator for a glimpse will effectively load the map in a given location
         self.glimpse_generator.change_start_position((x, y, z))
         self.glimpse_generator.reset_camera()
-        self.glimpse_generator.get_camera_image((x, y, z))
+        self.glimpse_generator.get_camera_image((drone_rel_x_semi, drone_rel_y_semi, drone_rel_z_semi), force_move=True)
 
     def configure_scenario(self, scenario_dict):
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
@@ -122,5 +122,5 @@ class ScenarioConfigurator:
 
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
             city_generator_name = self.get_object_id("CITY")
-            # self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn") # FIXME: Not spawning cars, for now.
+            self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn")
             sleep(1)  # Don't wait for PCG here as in the city scenario you can't do that
