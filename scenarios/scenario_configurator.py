@@ -123,5 +123,5 @@ class ScenarioConfigurator:
 
         if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
             city_generator_name = self.get_object_id("CITY")
-            self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn")
+            # self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn") # FIXME: Not spawning cars, for now.
             sleep(1)  # Don't wait for PCG here as in the city scenario you can't do that
