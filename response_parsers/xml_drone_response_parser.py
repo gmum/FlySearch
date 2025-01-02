@@ -8,11 +8,11 @@ class XMLDroneResponseParser(AbstractDroneResponseParser):
     def get_basic_string(self, response: str) -> str:
         response = response.lower()
 
-        response = re.findall(r"<action>.*</action>", response, flags=re.S)[0]
+        response = re.findall(r"<action>.*?</action>", response, flags=re.S)[0]
         response = response.removeprefix("<action>")
         response = response.removesuffix("</action>")
 
-        return response
+        return response.strip()
 
     def get_direction_from_response(self, response: str) -> Direction:
         basic_string = self.get_basic_string(response)
