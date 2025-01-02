@@ -217,6 +217,11 @@ def scenario_level_test(args, run_dir):
                     "object_id"]  # Note: do not query this before configure scenario. It should set the object_id.
                 object_bbox = gen_config.get_bbox(object_id)
 
+                object_name = str(object_type.name)
+                object_name = object_name.lower()
+                object_name = object_name.replace("_", " ")
+                scenario_dict["passed_object_name"] = object_name
+
                 conversation = conversation_factory.get_conversation()
                 explorer = DroneExplorer(
                     conversation=conversation,
@@ -225,7 +230,7 @@ def scenario_level_test(args, run_dir):
                     glimpses=args.glimpses,
                     start_rel_position=drone_rel_coords,
                     navigator=navigator,
-                    object_name=object_type.name,
+                    object_name=object_name,
                     incontext=(args.incontext == "True")
                 )
                 final_position = explorer.simulate()
