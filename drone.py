@@ -181,7 +181,6 @@ def get_scenario_mapper(args):
                     CityScenarioMapper.ObjectType.RED_SPORT_CAR,
                     CityScenarioMapper.ObjectType.WHITE_SPORT_CAR,
                     CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS,
-                    CityScenarioMapper.ObjectType.FIRE_CAR,
                     CityScenarioMapper.ObjectType.FIRE,
                     CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK,
                     CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK,

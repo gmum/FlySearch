@@ -16,14 +16,13 @@ class CityScenarioMapper:
         RED_SPORT_CAR = 4
         WHITE_SPORT_CAR = 5
         CONSTRUCTION_WORKS = 6
-        FIRE_CAR = 7
-        FIRE = 8
-        BLACK_PICKUP_TRUCK = 9
-        GREEN_PICKUP_TRUCK = 10
-        RED_PICKUP_TRUCK = 11
-        WHITE_PICKUP_TRUCK = 12
-        CROWD = 13
-        TRASH = 14
+        FIRE = 7
+        BLACK_PICKUP_TRUCK = 8
+        GREEN_PICKUP_TRUCK = 9
+        RED_PICKUP_TRUCK = 10
+        WHITE_PICKUP_TRUCK = 11
+        CROWD = 12
+        TRASH = 13
 
     @staticmethod
     def sample_value_between(val_min, val_max):
