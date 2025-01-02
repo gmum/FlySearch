@@ -39,8 +39,8 @@ class ScenarioConfigurator:
     def move_object(self, object_id: str, x, y, z):
         self.glimpse_generator.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
-    def rotate_object(self, object_id: str, p, y, r):
-        self.glimpse_generator.client.request(f"vset /object/{object_id}/rotation {p} {y} {r}")
+    def rotate_object(self, object_id: str, p, q, r):
+        self.glimpse_generator.client.request(f"vset /object/{object_id}/rotation {p} {q} {r}")
 
     def wait_for_pcg(self, object_id: str):
         ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_id} IsPCGReady'))["ready"]

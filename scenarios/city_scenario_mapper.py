@@ -109,7 +109,7 @@ class CityScenarioMapper:
 
         # Rotations
         object_rot_p = row["P"]
-        object_rot_y = row["Y"]
+        object_rot_q = row["Q"]
         object_rot_r = row["R"]
 
         drone_z = self.sample_value_between(object_z + self.drone_z_rel_min, object_z + self.drone_z_rel_max)
@@ -127,7 +127,7 @@ class CityScenarioMapper:
 
         return {
             "object_coords": (object_x, object_y, object_z),
-            "object_rot": (object_rot_p, object_rot_y, object_rot_r),
+            "object_rot": (object_rot_p, object_rot_q, object_rot_r),
             "object_type": object_type,
             "drone_rel_coords": (drone_x, drone_y, drone_z),
             "set_object": True,
