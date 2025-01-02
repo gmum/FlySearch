@@ -84,7 +84,9 @@ class ScenarioConfigurator:
 
             if object_type == ForestScenarioMapper.ObjectType.CAMPING:
                 seed = scenario_dict["seed"]
-                self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
+                response = self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
+
+                print("Recorded response from CAMPING PCG:", response)
 
                 self.wait_for_pcg(object_id)
                 # sleep(1)
