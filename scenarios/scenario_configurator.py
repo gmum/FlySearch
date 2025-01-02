@@ -47,7 +47,7 @@ class ScenarioConfigurator:
 
         while ready == "false":
             ready = json.loads(self.glimpse_generator.client.request(f'vbp {object_id} IsPCGReady'))["ready"]
-            print("PCG is not ready, sleeping for 0.5 seconds, got:", ready)
+            print(f"PCG is not ready while waiting for {object_id}, sleeping for 0.5 seconds, got:", ready)
             sleep(0.5)
 
     # Sets the camera in a given location and asks for camera image, ensuring that the map is loaded
@@ -60,11 +60,6 @@ class ScenarioConfigurator:
     # If during configuration the scenario configurator made another assumption about the scenario, it should be noted
     # in the scenario_dict. E.g. the object id should be noted in the scenario_dict, as its value is randomly sampled from a given class.
     def configure_scenario(self, scenario_dict):
-        if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
-            city_generator_name = self.get_object_id("CITY")
-            self.glimpse_generator.client.request(f"vbp {city_generator_name} clear")
-            sleep(1)
-
         if "object_coords" in scenario_dict:
             self.load_map(*scenario_dict["object_coords"], *scenario_dict["drone_rel_coords"])
 
@@ -89,21 +84,28 @@ class ScenarioConfigurator:
                 print("Recorded response from CAMPING PCG:", response)
 
                 self.wait_for_pcg(object_id)
-                # sleep(1)
 
             if object_type == CityScenarioMapper.ObjectType.CROWD:
                 seed = scenario_dict["seed"]
                 self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
 
-                # self.wait_for_pcg(object_id)
-                sleep(2)
+                self.wait_for_pcg(object_id)
 
             if object_type == CityScenarioMapper.ObjectType.TRASH:
                 seed = scenario_dict["seed"]
                 self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
 
-                # self.wait_for_pcg(object_id)
-                sleep(2)
+                self.wait_for_pcg(object_id)
+
+            # Always keep that if last here.
+            if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
+                city_generator_name = self.get_object_id("CITY")
+                seed = scenario_dict["seed"]
+
+                self.move_object(city_generator_name, *object_coords)
+                self.glimpse_generator.client.request(f"vbp {city_generator_name} RunPCG {seed}")
+
+                self.wait_for_pcg(city_generator_name)
 
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]
@@ -125,8 +127,3 @@ class ScenarioConfigurator:
                 f'vbp {forest_generator_name} RunPCG {forest_live_trees_density} {forest_dead_trees_density} {forest_stones} {forest_cliffs} {seed}')
 
             self.wait_for_pcg(forest_generator_name)
-
-        if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
-            city_generator_name = self.get_object_id("CITY")
-            self.glimpse_generator.client.request(f"vbp {city_generator_name} spawn")
-            sleep(1)  # Don't wait for PCG here as in the city scenario you can't do that

@@ -41,5 +41,5 @@ classes_to_ids = {
         "SkeletalMeshActor_UAID_08BFB8191750B63A02_1935932861",  # Tank
         "Actor_UAID_08BFB8191750653A02_1095763519",  # Ufo
     ],
-    "CITY": "BP_MassTrafficParkedVehicleSpawner_C_UAID_E04F43E62770FBF100_1205606496"
+    "CITY": "BP_RandomSpawner_C_UAID_08BFB8191750D43E02_1290965279"
 }
