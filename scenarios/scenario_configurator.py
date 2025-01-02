@@ -86,8 +86,8 @@ class ScenarioConfigurator:
                 seed = scenario_dict["seed"]
                 self.glimpse_generator.client.request(f"vbp {object_id} RunPCG {seed}")
 
-                # self.wait_for_pcg(object_id)
-                sleep(1)
+                self.wait_for_pcg(object_id)
+                # sleep(1)
 
             if object_type == CityScenarioMapper.ObjectType.CROWD:
                 seed = scenario_dict["seed"]
