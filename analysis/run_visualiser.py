@@ -1,5 +1,6 @@
 import numpy as np
 
+from string import ascii_uppercase, ascii_lowercase
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 from mpl_toolkits.mplot3d.art3d import Poly3DCollection
@@ -25,7 +26,7 @@ class RunVisualiser:
 
         # Draw line from (x1, y1, z1) to (x2, y2, z2)
 
-        for i in range(len(x) - 1):
+        for i, ltr in zip(range(len(x) - 1), ascii_uppercase):
             x_curr = x[i]
             y_curr = y[i]
             z_curr = z[i]
@@ -54,7 +55,7 @@ class RunVisualiser:
                       normalize=False)
 
             # Annotate current point
-            ax.text(x_curr + 0.3, y_curr, z_curr, f"({x_curr}, {y_curr}, {z_curr})")
+            ax.text(x_curr + 0.3, y_curr, z_curr, f"{ltr}. ({x_curr}, {y_curr}, {z_curr})")
 
         end_location = coords[-1]
         end_x = end_location[0]
@@ -62,7 +63,7 @@ class RunVisualiser:
         end_z = end_location[2]
 
         # Annotate end point
-        ax.text(end_x + 0.3, end_y, end_z, f"({end_x}, {end_y}, {end_z})")
+        ax.text(end_x + 0.3, end_y, end_z, f"{ascii_uppercase[len(x) - 1]}. ({end_x}, {end_y}, {end_z})")
         ax.text(0.3, 0, 0, "(0, 0, 0)")
 
         # Dashed line from end location to origin
@@ -87,7 +88,13 @@ class RunVisualiser:
         ax.plot([x_min, x_max], [y_min, y_min], [0, 0], color='r', linestyle='dashed')
         ax.plot([x_min, x_max], [y_max, y_max], [0, 0], color='r', linestyle='dashed', label="View cone")
 
+        ax.set_aspect("equal")
+
         ax.legend()
+
+        ax.set_zlabel('Z')
+        ax.set_xlabel('X')
+        ax.set_ylabel('Y')
 
 
 def main():

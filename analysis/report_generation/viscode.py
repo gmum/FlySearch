@@ -3,8 +3,14 @@ import sys
 import json
 import re
 import pathlib
+import shutil
 
 from typing import Tuple
+from matplotlib import pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
+
+sys.path.insert(0, '../../')  # This is done so that we can import from the analysis module. # FIXME
+from analysis import RunVisualiser, Run
 
 if len(sys.argv) < 2:
     RUN_NAME = "MC-0S-CR"
@@ -56,6 +62,14 @@ def one_glimpse_latex(glimpse_path):
     return f"""
     \\begin{'{center}'}
     \includegraphics[scale=0.7]{'{'}{glimpse_path}{'}'}
+    \\end{'{center}'}
+    """
+
+
+def illustration_latex(illustration_path):
+    return f"""
+    \\begin{'{center}'}
+    \includegraphics[scale=1.0]{'{'}{illustration_path}{'}'}
     \\end{'{center}'}
     """
 
@@ -135,8 +149,24 @@ def main():
 
     print(total_preamble())
 
+    fig_path = pathlib.Path("build/figures")
+    shutil.rmtree(fig_path, ignore_errors=True)
+    fig_path.mkdir(parents=True, exist_ok=True)
+
     for one_run_dir in sorted([subdir for subdir in os.listdir(run_dir)], key=lambda x: int(x.split("_")[0])):
         one_run_dir = run_dir / str(one_run_dir)
+
+        run = Run(one_run_dir)
+        run_visualiser = RunVisualiser(run)
+
+        fig = plt.figure()
+        ax = Axes3D(fig)
+        fig.add_axes(ax)
+
+        run_visualiser.plot(ax)
+
+        fig.savefig(fig_path / f"{one_run_dir.name}.png")
+        plt.close(fig)
 
         print(generate_section(f"Example"))
         # print(generate_subsection("Basic information"))
@@ -168,6 +198,8 @@ def main():
             print(generate_metadata(start_coords, final_coords, object_type, object_highest_point))
         except:
             pass
+
+        print(illustration_latex(fig_path / f"{one_run_dir.name}.png"))
 
         print(boring_preamble())
         print(one_glimpse_latex(str(one_run_dir / "0.png")))
