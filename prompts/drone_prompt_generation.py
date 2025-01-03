@@ -171,7 +171,7 @@ def xml_found_prompt(glimpses: int) -> str:
     </Formatting>
 
     <Limitations>
-        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit a building which is not ideal.
+        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.
         You can make at most {glimpses - 1} moves.
     </Limitations>
 </Controls>
