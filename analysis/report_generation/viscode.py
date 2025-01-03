@@ -78,6 +78,10 @@ def gpt_speaks(speech):
     return f"\\gptspeaks: {speech}".replace("_", "\\_")
 
 
+def re_speaks(speech):
+    return f"\\respeaks: {speech}".replace("_", "\\_")
+
+
 def stage_direction():
     return "\StageDir{\\re{} presents \\gpt{} with a relevant glimpse}"
 
@@ -204,29 +208,47 @@ def main():
         print(boring_preamble())
         print(one_glimpse_latex(str(one_run_dir / "0.png")))
 
-        i = 0
+        try:
+            with open(one_run_dir / "conversation.json") as f:
+                conversation = json.load(f)
 
-        while True:
-            try:
-                with open(one_run_dir / f"{i}.txt") as f:
-                    speech = f.read()
+                glimpse_count = 0
 
-                # with open(one_run_dir / f"{i}_coords.txt") as f:
-                #    coords = f.read()
+                for speaker, speech in conversation:
+                    if speaker == "Role.USER":
+                        if speech != "image":
+                            print(re_speaks(speech))
+                        else:
+                            print(stage_direction())
+                            print(one_glimpse_latex(one_run_dir / f"{glimpse_count}.png"))
+                            glimpse_count += 1
+                    else:
+                        print(gpt_speaks(speech))
 
-                print(gpt_speaks(speech))
+        except OSError:
+            i = 0
 
-            except OSError:
-                break
+            while True:
+                try:
+                    with open(one_run_dir / f"{i}.txt") as f:
+                        speech = f.read()
 
-            perhaps_image = one_run_dir / f"{i + 1}.png"
-            if perhaps_image.exists():
-                print(stage_direction())
-                print(one_glimpse_latex(one_run_dir / f"{i + 1}.png"))
-            else:
-                break
+                    # with open(one_run_dir / f"{i}_coords.txt") as f:
+                    #    coords = f.read()
 
-            i += 1
+                    print(gpt_speaks(speech))
+
+                except OSError:
+                    break
+
+                perhaps_image = one_run_dir / f"{i + 1}.png"
+                if perhaps_image.exists():
+                    print(stage_direction())
+                    print(one_glimpse_latex(one_run_dir / f"{i + 1}.png"))
+                else:
+                    break
+
+                i += 1
 
         print(end_drama())
 
