@@ -128,6 +128,7 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
     def get_camera_image(self,
                          rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
         img = super().get_camera_image(rel_position_m, force_move=force_move)
+        rel_position_m = self.get_relative_from_start()
         img = pil_to_opencv(img)
         img = dot_matrix_two_dimensional_unreal(img, self.splits_w, self.splits_h, drone_height=rel_position_m[2])
         img = opencv_to_pil(img)
