@@ -142,7 +142,7 @@ class DroneExplorer:
         except Exception as e:
             print("Drone explorer failed", e)
 
-        return position
+        return self.glimpse_generator.get_relative_from_start()
 
     def get_images(self):
         return self.images
