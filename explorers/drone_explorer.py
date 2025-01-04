@@ -25,7 +25,7 @@ class DroneExplorer:
         self.coordinates = []
 
         self.forgiveness = 5
-        self.max_rel_alt = 20
+        self.max_rel_alt = 120
 
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
@@ -87,10 +87,10 @@ class DroneExplorer:
 
         self.images.append(image)
 
-        if messing_with_us:
-            self.conversation.begin_transaction(Role.USER)
-            self.conversation.add_text_message("Please, fly closer to the object of interest.")
-            self.conversation.commit_transaction(send_to_vlm=False)
+        # if messing_with_us:
+        #    self.conversation.begin_transaction(Role.USER)
+        #    self.conversation.add_text_message("Please, fly closer to the object of interest.")
+        #    self.conversation.commit_transaction(send_to_vlm=False)
 
         if start_transaction:
             self.conversation.begin_transaction(Role.USER)
@@ -124,7 +124,7 @@ class DroneExplorer:
                 if z > self.max_rel_alt:
                     self.conversation.begin_transaction(Role.USER)
                     self.conversation.add_text_message(
-                        f"This command would cause you to fly too high. You can't fly higher than 120 meters. Your current altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
+                        f"This command would cause you to fly too high. You can't fly higher than {self.max_rel_alt} meters. Your current altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
                     self.conversation.commit_transaction(send_to_vlm=True)
                     output = self.conversation.get_latest_message()[1]
                 else:
