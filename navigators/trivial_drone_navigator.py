@@ -1,3 +1,4 @@
+from navigators import RecklessFlyingException
 from navigators.abstract_drone_navigator import AbstractDroneNavigator
 from response_parsers import AbstractDroneResponseParser, Direction
 
@@ -9,8 +10,13 @@ class TrivialDroneNavigator(AbstractDroneNavigator):
     def get_new_position(self, current_position: tuple[int, int, int], response: str,
                          throw_if_reckless: bool = False) -> tuple[
         int, int, int]:
+
         direction = self.response_parser.get_direction_from_response(response)
         distance = self.response_parser.get_distance_from_response(response)
+
+        if direction != Direction.UP and direction != Direction.DOWN and throw_if_reckless:
+            if abs(distance) > current_position[2]:
+                raise RecklessFlyingException()
 
         if direction == Direction.NORTH:
             return current_position[0], current_position[1] - distance, current_position[2]

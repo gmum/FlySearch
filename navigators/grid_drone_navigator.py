@@ -1,9 +1,5 @@
-from navigators import AbstractDroneNavigator
+from navigators import AbstractDroneNavigator, RecklessFlyingException
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
-
-
-class RecklessFlyingException(Exception):
-    pass
 
 
 class GridDroneNavigator(AbstractDroneNavigator):
