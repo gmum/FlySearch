@@ -1,3 +1,5 @@
+from time import sleep
+
 from scenarios.classes_to_ids import get_classes_to_object_classes
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator
 from scenarios.object_classes import BaseObjectClass, ForestEnvPCGClass, ForestSunClass, PCGClass
@@ -65,3 +67,5 @@ class ScenarioConfigurator:
             forest_env_class: ForestEnvPCGClass = self.classes_to_ids["FOREST"]
             forest_env_class.run_pcg(seed, forest_live_trees_density, forest_dead_trees_density, forest_stones,
                                      forest_cliffs)
+
+            sleep(1)  # Wait for the fire to start burning -- in case it's needed
