@@ -17,7 +17,7 @@ class GridDroneNavigator(AbstractDroneNavigator):
 
         # FOV = 90 degrees, so we can calculate what does it mean to fly recklessly
 
-        if throw_if_reckless and abs(north_diff) > current_up_down_axis or abs(east_diff) > current_west_east_axis:
+        if throw_if_reckless and abs(north_diff) > current_up_down_axis or abs(east_diff) > current_up_down_axis:
             raise RecklessFlyingException()
 
         # In this coordinate system, going east and north increases the value of the axis
