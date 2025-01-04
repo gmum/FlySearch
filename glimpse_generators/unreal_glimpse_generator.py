@@ -14,6 +14,16 @@ class OutOfBoundsException(Exception):
     pass
 
 
+class ClientWrapper(Client):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+    def request(self, *args, **kwargs):
+        response = super().request(*args, **kwargs)
+        print("Unreal Client Wrapper: request params", args, kwargs, "response", response)
+        return response
+
+
 class UnrealGlimpseGenerator:
     def __init__(self, host='localhost', port=9000, start_position=(3300.289, -26305.121, 0)):
         self.host = host
@@ -32,7 +42,7 @@ class UnrealGlimpseGenerator:
 
         for i in range(11):
             print(f"Trying to connect to UnrealCV server on port {self.port + i}")
-            self.client = Client((self.host, self.port + i))
+            self.client = ClientWrapper((self.host, self.port + i))
             connection_result = self.client.connect()
 
             if connection_result:

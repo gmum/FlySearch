@@ -123,8 +123,14 @@ class ForestScenarioMapper:
         }
 
     def iterate_scenarios(self):
-        for _ in range(self.scenarios_number):
-            yield self.create_random_scenario()
+        # Important! Seeds must be unique due to the way Unreal Engine handles them.
+        # Otherwise, it would cache them and bad things would happen.
+        seeds = random.sample(range(self.seed_min, self.seed_max), self.scenarios_number)
+
+        for seed in seeds:
+            scenario = self.create_random_scenario()
+            scenario["seed"] = seed
+            yield scenario
 
 
 def main():
@@ -138,7 +144,7 @@ def main():
         drone_z_rel_min=3000,
         drone_z_rel_max=10000,
         seed_min=1,
-        seed_max=1000,
+        seed_max=51,
         scenarios_number=50,
         object_probs={
             (ForestScenarioMapper.ObjectType.HELICOPTER,

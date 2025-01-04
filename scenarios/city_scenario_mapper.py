@@ -135,8 +135,12 @@ class CityScenarioMapper:
         }
 
     def iterate_scenarios(self):
-        for _ in range(self.scenarios_number):
-            yield self.create_random_scenario()
+        seeds = random.sample(range(self.seed_min, self.seed_max), self.scenarios_number)
+
+        for seed in seeds:
+            scenario = self.create_random_scenario()
+            scenario["seed"] = seed
+            yield scenario
 
 
 def main():

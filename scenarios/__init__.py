@@ -3,4 +3,4 @@ from .drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMappe
 from .forest_scenario_mapper import ForestScenarioMapper
 from .city_scenario_mapper import CityScenarioMapper
 from .scenario_configurator import ScenarioConfigurator
-from .classes_to_ids import classes_to_ids
+from .classes_to_ids import get_classes_to_object_classes
