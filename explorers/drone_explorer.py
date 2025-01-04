@@ -124,7 +124,7 @@ class DroneExplorer:
                 if z > self.max_rel_alt:
                     self.conversation.begin_transaction(Role.USER)
                     self.conversation.add_text_message(
-                        f"This command would cause you to fly too high. You can't fly higher than 120 meters. Your currnet altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
+                        f"This command would cause you to fly too high. You can't fly higher than 120 meters. Your current altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
                     self.conversation.commit_transaction(send_to_vlm=True)
                     output = self.conversation.get_latest_message()[1]
                 else:
