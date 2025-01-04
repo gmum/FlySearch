@@ -30,9 +30,6 @@ def boring_preamble():
     \\begin{drama}
     \\Character{Researcher}{re}
     \\Character{GPT-4o}{gpt}
-
-    \\respeaks: [...]
-    \\StageDir{\\re{} presents \\gpt{} with a \\(500 \\times 500\\) image of the starting location.}
     """.replace("GPT-4o", MODEL_NAME)
 
 
@@ -206,7 +203,6 @@ def main():
         print(illustration_latex(fig_path / f"{one_run_dir.name}.png"))
 
         print(boring_preamble())
-        print(one_glimpse_latex(str(one_run_dir / "0.png")))
 
         try:
             with open(one_run_dir / "conversation.json") as f:
@@ -226,6 +222,8 @@ def main():
                         print(gpt_speaks(speech))
 
         except OSError:
+            print(stage_direction())
+            print(one_glimpse_latex(str(one_run_dir / "0.png")))
             i = 0
 
             while True:
