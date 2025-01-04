@@ -88,6 +88,27 @@ class RunVisualiser:
         ax.plot([x_min, x_max], [y_min, y_min], [0, 0], color='r', linestyle='dashed')
         ax.plot([x_min, x_max], [y_max, y_max], [0, 0], color='r', linestyle='dashed', label="View cone")
 
+        x_ticks = ax.get_xticks()
+        y_ticks = ax.get_yticks()
+        z_ticks = ax.get_zticks()
+
+        x_min = min(x_ticks)
+        x_max = max(x_ticks)
+
+        y_min = min(y_ticks)
+        y_max = max(y_ticks)
+
+        z_min = min(z_ticks)
+        z_max = max(z_ticks)
+
+        x_min, x_max = x_min - 2, x_max + 2
+        y_min, y_max = y_min - 2, y_max + 2
+        z_min, z_max = z_min - 2, z_max + 2
+
+        ax.set_xlim([x_min, x_max])
+        ax.set_ylim([y_min, y_max])
+        ax.set_zlim([z_min, z_max])
+
         ax.set_aspect("equal")
 
         ax.legend()
