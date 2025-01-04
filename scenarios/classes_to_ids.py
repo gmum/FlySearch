@@ -8,7 +8,10 @@ from scenarios.object_classes.forest_sun_class import ForestSunClass
 def get_classes_to_object_classes(client):
     # Forest
     forest_fire = BaseObjectClass(["NiagaraActor_UAID_08BFB8191750822F02_1834612234"], client=client)
-    forest_trash = BaseObjectClass(["Actor_UAID_08BFB8191750053702_1677020459"], client=client)
+    forest_trash = BaseObjectClass(["BP_Configuration_13_C_UAID_08BFB8191750822F02_1618649219",
+                                    "BP_Configuration_12_C_UAID_08BFB8191750822F02_1620809220",
+                                    "BP_Configuration_14_C_UAID_08BFB8191750822F02_1607678218",
+                                    "Actor_UAID_08BFB8191750053702_1677020459"], client=client)
     camping = PCGClass("BP_RandomSpawner_C_UAID_08BFB8191750113C02_1871747848",
                        ["StaticMeshActor_UAID_08BFB81917501C3F02_1703388951"], client=client)
     building = BaseObjectClass(["StaticMeshActor_UAID_08BFB8191750802F02_1934372840"], client=client)
@@ -34,13 +37,13 @@ def get_classes_to_object_classes(client):
                                  "BP_Configuration_12_C_UAID_08BFB8191750E53702_1361488908",
                                  "SkeletalMeshActor_UAID_08BFB8191750E43702_1589650724"], client=client)
 
-    black_pickup_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750B53A02_2047296678",
-                                          "BP_vehVan_vehicle09_C_UAID_08BFB8191750B53A02_1996565676"], client=client)
+    black_pickup_truck = BaseObjectClass(["BP_vehVan_vehicle09_C_UAID_08BFB8191750B53A02_1996565676"], client=client)
+    black_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750B53A02_2047296678"], client=client)
 
-    green_pickup_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750B53A02_2057827679"], client=client)
-    red_pickup_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750B53A02_2034821677"], client=client)
-    white_pickup_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750913902_1558904503",
-                                          "BP_vehVan_vehicle09_C_UAID_08BFB8191750913902_2076347509"], client=client)
+    green_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750B53A02_2057827679"], client=client)
+    red_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750B53A02_2034821677"], client=client)
+    white_pickup_truck = BaseObjectClass(["BP_vehVan_vehicle09_C_UAID_08BFB8191750913902_2076347509"], client=client)
+    white_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750913902_1558904503"], client=client)
 
     crowd = PCGClass("UNKNOWN", "UNKNOWN", client=client)
     city_trash = PCGClass("UNKNOWN", "UNKNOWN", client=client)
@@ -76,11 +79,13 @@ def get_classes_to_object_classes(client):
         CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS: construction_works,
         CityScenarioMapper.ObjectType.FIRE: city_fire,
         CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK: black_pickup_truck,
-        CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK: green_pickup_truck,
-        CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK: red_pickup_truck,
+        CityScenarioMapper.ObjectType.GREEN_TRUCK: green_truck,
+        CityScenarioMapper.ObjectType.RED_TRUCK: red_truck,
         CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK: white_pickup_truck,
         CityScenarioMapper.ObjectType.CROWD: crowd,
         CityScenarioMapper.ObjectType.TRASH: city_trash,
         CityScenarioMapper.ObjectType.ANOMALY: anomaly,
+        CityScenarioMapper.ObjectType.BLACK_TRUCK: black_truck,
+        CityScenarioMapper.ObjectType.WHITE_TRUCK: white_truck,
         "CITY": city_env,
     }

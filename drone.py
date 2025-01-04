@@ -183,11 +183,13 @@ def get_scenario_mapper(args):
                     CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS,
                     CityScenarioMapper.ObjectType.FIRE,
                     CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK,
-                    CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK,
-                    CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK,
+                    CityScenarioMapper.ObjectType.GREEN_TRUCK,
+                    CityScenarioMapper.ObjectType.RED_TRUCK,
                     CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK,
                     CityScenarioMapper.ObjectType.CROWD,
-                    CityScenarioMapper.ObjectType.TRASH
+                    CityScenarioMapper.ObjectType.TRASH,
+                    CityScenarioMapper.ObjectType.WHITE_TRUCK,
+                    CityScenarioMapper.ObjectType.BLACK_TRUCK
                 ): 1.0
             },
             drone_z_rel_min=args.height_min * 100,
