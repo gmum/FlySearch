@@ -1,7 +1,7 @@
 from typing import Tuple
 
 from conversation.abstract_conversation import Conversation, Role
-from navigators import AbstractDroneNavigator
+from navigators import AbstractDroneNavigator, RecklessFlyingException
 from response_parsers import Direction
 from PIL import Image
 
@@ -23,6 +23,8 @@ class DroneExplorer:
         self.images = []
         self.outputs = []
         self.coordinates = []
+
+        self.forgiveness = 5
 
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
@@ -111,7 +113,18 @@ class DroneExplorer:
 
         self.outputs.append(output)
 
-        new_position = self.navigator.get_new_position(rel_position, output)
+        for i in range(self.forgiveness):
+            try:
+                new_position = self.navigator.get_new_position(rel_position, output, throw_if_reckless=True)
+                break
+            except RecklessFlyingException:
+                self.conversation.begin_transaction(Role.USER)
+                self.conversation.add_text_message(
+                    "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse.")
+                self.conversation.commit_transaction(send_to_vlm=True)
+                output = self.conversation.get_latest_message()[1]
+        else:
+            raise RecklessFlyingException()
 
         return new_position
 

@@ -6,7 +6,8 @@ class TrivialDroneNavigator(AbstractDroneNavigator):
     def __init__(self, response_parser: AbstractDroneResponseParser):
         self.response_parser = response_parser
 
-    def get_new_position(self, current_position: tuple[int, int, int], response: str) -> tuple[
+    def get_new_position(self, current_position: tuple[int, int, int], response: str,
+                         throw_if_reckless: bool = False) -> tuple[
         int, int, int]:
         direction = self.response_parser.get_direction_from_response(response)
         distance = self.response_parser.get_distance_from_response(response)

@@ -1,3 +1,3 @@
 from .abstract_drone_navigator import AbstractDroneNavigator
 from .trivial_drone_navigator import TrivialDroneNavigator
-from .grid_drone_navigator import GridDroneNavigator
+from .grid_drone_navigator import GridDroneNavigator, RecklessFlyingException
