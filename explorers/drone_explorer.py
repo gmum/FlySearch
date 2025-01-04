@@ -25,7 +25,7 @@ class DroneExplorer:
         self.coordinates = []
 
         self.forgiveness = 5
-        self.max_rel_alt = 120
+        self.max_rel_alt = 20
 
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
