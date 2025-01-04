@@ -25,6 +25,7 @@ class DroneExplorer:
         self.coordinates = []
 
         self.forgiveness = 5
+        self.max_rel_alt = 120
 
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
@@ -116,7 +117,18 @@ class DroneExplorer:
         for i in range(self.forgiveness):
             try:
                 new_position = self.navigator.get_new_position(rel_position, output, throw_if_reckless=True)
-                break
+
+                # If this has worked, it's good, but still there's one condition to check
+                x, y, z = new_position
+
+                if z > self.max_rel_alt:
+                    self.conversation.begin_transaction(Role.USER)
+                    self.conversation.add_text_message(
+                        f"This command would cause you to fly too high. You can't fly higher than 120 meters. Your currnet altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
+                    self.conversation.commit_transaction(send_to_vlm=True)
+                    output = self.conversation.get_latest_message()[1]
+                else:
+                    break
             except RecklessFlyingException:
                 self.conversation.begin_transaction(Role.USER)
                 self.conversation.add_text_message(
