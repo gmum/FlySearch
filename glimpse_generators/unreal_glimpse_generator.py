@@ -142,10 +142,9 @@ class UnrealGlimpseGenerator:
 
         return opencv_to_pil(image)
 
-
-def get_camera_image(self,
-                     rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
-    return self.__get_img(rel_position_m, force_move=force_move)
+    def get_camera_image(self,
+                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
+        return self.__get_img(rel_position_m, force_move=force_move)
 
 
 class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
