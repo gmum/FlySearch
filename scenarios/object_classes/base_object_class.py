@@ -20,6 +20,8 @@ class BaseObjectClass:
         if not self.visible:
             return
 
+        self.visible = False
+
         for object_id in self.spawnable_object_ids:
             self._hide_object(object_id)
 
