@@ -134,7 +134,7 @@ def generate_xml_drone_grid_prompt_with_grid_controls(glimpses: int) -> str:
 def xml_found_prompt(glimpses: int) -> str:
     return f'''
 <Context>
-    You are in command of a UAV flying over city, tasked with finding a yellow pickup truck.
+    You are in command of a UAV, tasked with finding a yellow pickup truck.
 </Context>
 
 <Objective>
@@ -181,7 +181,7 @@ def xml_found_prompt(glimpses: int) -> str:
 def xml_found_prompt_cue(glimpses: int) -> str:
     return f'''
 <Context>
-    You are in command of a UAV flying over city, tasked with finding a yellow pickup truck.
+    You are in command of a UAV, tasked with finding a yellow pickup truck.
 </Context>
 
 <Objective>
