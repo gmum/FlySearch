@@ -45,8 +45,10 @@ def get_classes_to_object_classes(client):
     white_pickup_truck = BaseObjectClass(["BP_vehVan_vehicle09_C_UAID_08BFB8191750913902_2076347509"], client=client)
     white_truck = BaseObjectClass(["BP_vehTruck_Vehicle04_C_UAID_08BFB8191750913902_1558904503"], client=client)
 
-    crowd = PCGClass("UNKNOWN", "UNKNOWN", client=client)
-    city_trash = PCGClass("UNKNOWN", "UNKNOWN", client=client)
+    crowd = PCGClass("BP_RandomCrowd_C_UAID_08BFB81917507B3902_1554570401",
+                     ["StaticMeshActor_UAID_08BFB8191750363F02_1619297529"], client=client)
+    city_trash = PCGClass("BP_RandomSpawner_C_UAID_08BFB81917507F3902_1265735256",
+                          ["StaticMeshActor_UAID_08BFB8191750283F02_2033284125"], client=client)
     anomaly = BaseObjectClass([
         "Actor_UAID_08BFB8191750653A02_1780219521",  # Animal
         "SkeletalMeshActor_UAID_08BFB8191750B53A02_1807591675",  # Dino
@@ -56,7 +58,8 @@ def get_classes_to_object_classes(client):
         "Actor_UAID_08BFB8191750653A02_1095763519",  # Ufo
     ], client=client)
 
-    city_env = PCGClass("UNKNOWN", ["UNKNOWN"],
+    city_env = PCGClass("BP_RandomSpawner_C_UAID_08BFB8191750D43E02_1290965279",
+                        ["StaticMeshActor_UAID_08BFB81917502D3F02_1577894471"],
                         client=client)  # Yes, city_env actually moves the spawner so it's PCGClass not PCGEnvClass
 
     return {
