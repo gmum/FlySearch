@@ -1,6 +1,7 @@
 from typing import Tuple
 import json
 import cv2
+import numpy as np
 from unrealcv import Client
 from time import sleep
 from PIL import Image
@@ -57,6 +58,14 @@ class UnrealGlimpseGenerator:
 
         self.reset_camera()
 
+        while not self.is_unreal_ready():
+            print("Unreal Glimpse Generator: Waiting for Unreal to give something meaningful...")
+            sleep(0.5)
+
+        print("Unreal Glimpse Generator: Unreal is ready to go!")
+
+        self.reset_camera()
+
     def reset_camera(self):
         start_position = self.start_position
 
@@ -107,8 +116,14 @@ class UnrealGlimpseGenerator:
         print("Unreal Glimpse Generator: Unreal finished loading the PARTITION",
               self.client.request("vget /camera/1/partition_loaded"))
 
-    def get_camera_image(self,
-                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
+    def is_unreal_ready(self):
+        img = self.__get_img(rel_position_m=(0, 0, 200), force_move=True)
+        img = pil_to_opencv(img)
+
+        blank = np.isclose(img, 0, atol=0.001).all()
+        return blank
+
+    def __get_img(self, rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
         start_position = self.start_position
 
         location = (start_position[0] + rel_position_m[0] * 100, start_position[1] + rel_position_m[1] * 100,
@@ -126,6 +141,11 @@ class UnrealGlimpseGenerator:
         image = cv2.rotate(image, cv2.ROTATE_90_CLOCKWISE)
 
         return opencv_to_pil(image)
+
+
+def get_camera_image(self,
+                     rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
+    return self.__get_img(rel_position_m, force_move=force_move)
 
 
 class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
