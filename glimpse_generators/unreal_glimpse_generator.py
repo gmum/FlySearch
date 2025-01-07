@@ -121,7 +121,7 @@ class UnrealGlimpseGenerator:
         img = pil_to_opencv(img)
 
         blank = np.isclose(img, 0, atol=0.001).all()
-        return blank
+        return not blank
 
     def __get_img(self, rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
         start_position = self.start_position
