@@ -68,4 +68,4 @@ class ScenarioConfigurator:
             forest_env_class.run_pcg(seed, forest_live_trees_density, forest_dead_trees_density, forest_stones,
                                      forest_cliffs)
 
-            sleep(1)  # Wait for the fire to start burning -- in case it's needed
+        sleep(1)  # Wait for the fire to start burning -- in case it's needed
