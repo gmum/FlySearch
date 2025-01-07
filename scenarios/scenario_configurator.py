@@ -26,30 +26,57 @@ class ScenarioConfigurator:
         self.glimpse_generator.reset_camera()
         self.glimpse_generator.get_camera_image((drone_rel_x_semi, drone_rel_y_semi, drone_rel_z_semi), force_move=True)
 
+    def rel_to_real(self, x, y, z, x_rel, y_rel, z_rel):
+        x_rel *= 100
+        y_rel *= 100
+        z_rel *= 100
+
+        return x + x_rel, y + y_rel, z + z_rel
+
     # If during configuration the scenario configurator made another assumption about the scenario, it should be noted
     # in the scenario_dict. E.g. the object id should be noted in the scenario_dict, as its value is randomly sampled from a given class.
-    def configure_scenario(self, scenario_dict):
-        if "object_coords" in scenario_dict:
-            self.load_map(*scenario_dict["object_coords"], *scenario_dict["drone_rel_coords"])
+    def configure_scenario(self, scenario_dict, recovery_generator=None):
+        setup_is_correct = False
 
-        if "set_object" in scenario_dict and scenario_dict["set_object"]:
-            seed = scenario_dict["seed"]
+        while not setup_is_correct:
+            setup_is_correct = True
+            if "object_coords" in scenario_dict:
+                self.load_map(*scenario_dict["object_coords"], *scenario_dict["drone_rel_coords"])
 
-            object_type: BaseObjectClass = scenario_dict["object_type"]
-            object_class = self.classes_to_ids[object_type]
+            if "set_object" in scenario_dict and scenario_dict["set_object"]:
+                seed = scenario_dict["seed"]
 
-            self.hide_all_movable_objects()
+                object_type: BaseObjectClass = scenario_dict["object_type"]
+                object_class = self.classes_to_ids[object_type]
 
-            object_id = object_class.move_and_show(*scenario_dict["object_coords"], seed)
-            scenario_dict["object_id"] = object_id
+                self.hide_all_movable_objects()
 
-            if "object_rot" in scenario_dict:
-                object_class.rotate_object(object_id, *scenario_dict["object_rot"])
+                object_id = object_class.move_and_show(*scenario_dict["object_coords"], seed)
+                scenario_dict["object_id"] = object_id
 
-            # Always keep that if last here.
-            if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
-                city_generator_class: PCGClass = self.classes_to_ids["CITY"]
-                city_generator_class.move_and_show(*scenario_dict["object_coords"], seed)
+                if "object_rot" in scenario_dict:
+                    object_class.rotate_object(object_id, *scenario_dict["object_rot"])
+
+                # Always keep that if last here.
+                if "regenerate_city" in scenario_dict and scenario_dict["regenerate_city"]:
+                    city_generator_class: PCGClass = self.classes_to_ids["CITY"]
+                    city_generator_class.move_and_show(*scenario_dict["object_coords"], seed)
+
+                drone_real_coords = self.rel_to_real(*scenario_dict["object_coords"],
+                                                     *scenario_dict["drone_rel_coords"])
+
+                can_see = object_class.can_be_seen_from(object_id, *drone_real_coords)
+                setup_is_correct = can_see
+
+            if not setup_is_correct and recovery_generator is None:
+                raise ValueError(
+                    "Could not configure scenario properly. Provide the recovery_generator to help recover from the error.")
+
+            if not setup_is_correct and recovery_generator is not None:
+                print("ScenarioConfigurator: Could not configure scenario properly. Trying to recover...")
+                new_scenario = recovery_generator.create_random_scenario()
+                del new_scenario["seed"]
+                scenario_dict.update(new_scenario)
 
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]

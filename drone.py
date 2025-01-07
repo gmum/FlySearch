@@ -211,9 +211,10 @@ def scenario_level_test(args, run_dir):
     for i, scenario_dict in enumerate(scenario_mapper.iterate_scenarios()):
         for repeat in range(args.repeats):
             try:
+                # Scenario configurator can alter scenario dict!!!
+                gen_config.configure_scenario(scenario_dict, recovery_generator=scenario_mapper)
                 drone_rel_coords = scenario_dict["drone_rel_coords"]
                 object_type = scenario_dict["object_type"]
-                gen_config.configure_scenario(scenario_dict)
                 object_id = scenario_dict[
                     "object_id"]  # Note: do not query this before configure scenario. It should set the object_id.
                 object_bbox = gen_config.get_bbox(object_id)
