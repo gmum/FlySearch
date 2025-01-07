@@ -1,3 +1,3 @@
 #!/bin/bash
 
-scp -r /net/people/plgrid/plgdmatuszek/plgwtln/results/$1 .
+scp -r athena:/net/people/plgrid/plgdmatuszek/plgwtln/results/$1 .
