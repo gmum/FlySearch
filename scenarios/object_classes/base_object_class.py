@@ -31,6 +31,3 @@ class BaseObjectClass:
 
     def rotate_object(self, object_id: str, p: float, q: float, r: float):
         self.client.request(f"vset /object/{object_id}/rotation {p} {q} {r}")
-
-    def can_be_seen_from(self, object_id: str, x: float, y: float, z: float) -> bool:
-        return "true" in self.client.request(f"vget /camera/{object_id}/cansee  {x} {y} {z}").lower()

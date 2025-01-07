@@ -62,10 +62,7 @@ class ScenarioConfigurator:
                     city_generator_class: PCGClass = self.classes_to_ids["CITY"]
                     city_generator_class.move_and_show(*scenario_dict["object_coords"], seed)
 
-                drone_real_coords = self.rel_to_real(*scenario_dict["object_coords"],
-                                                     *scenario_dict["drone_rel_coords"])
-
-                can_see = object_class.can_be_seen_from(object_id, *drone_real_coords)
+                can_see = "true" in self.glimpse_generator.client.request(f"vget /camera/1/cansee {object_id}")
                 setup_is_correct = can_see
 
             if not setup_is_correct and recovery_generator is None:
