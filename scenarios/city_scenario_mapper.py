@@ -18,8 +18,8 @@ class CityScenarioMapper:
         CONSTRUCTION_WORKS = 6
         FIRE = 7
         BLACK_PICKUP_TRUCK = 8
-        GREEN_TRUCK = 9
-        RED_TRUCK = 10
+        GREEN_PICKUP_TRUCK = 9
+        RED_PICKUP_TRUCK = 10
         WHITE_PICKUP_TRUCK = 11
         CROWD = 12
         TRASH = 13
