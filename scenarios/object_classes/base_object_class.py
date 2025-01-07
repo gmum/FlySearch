@@ -1,4 +1,4 @@
-import random
+from random import Random
 
 from typing import List
 from unrealcv import Client
@@ -21,8 +21,9 @@ class BaseObjectClass:
 
     # Returns object id of the object moved
     def move_and_show(self, x: float, y: float, z: float, seed: int) -> str:
-        random.seed(seed)
-        object_id = random.choice(self.spawnable_object_ids)
+        rng = Random()
+        rng.seed(seed)
+        object_id = rng.choice(self.spawnable_object_ids)
 
         self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
         self._show_object(object_id)
