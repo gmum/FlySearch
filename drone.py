@@ -207,12 +207,13 @@ def scenario_level_test(args, run_dir):
     navigator = get_navigator(args)
     scenario_mapper = get_scenario_mapper(args)
     conversation_factory = get_conversation_factory(args)
+    backup_mapper = get_scenario_mapper(args)
 
     for i, scenario_dict in enumerate(scenario_mapper.iterate_scenarios()):
         for repeat in range(args.repeats):
             try:
                 # Scenario configurator can alter scenario dict!!!
-                gen_config.configure_scenario(scenario_dict, recovery_generator=scenario_mapper)
+                gen_config.configure_scenario(scenario_dict, recovery_generator=backup_mapper)
                 drone_rel_coords = scenario_dict["drone_rel_coords"]
                 object_type = scenario_dict["object_type"]
                 object_id = scenario_dict[
