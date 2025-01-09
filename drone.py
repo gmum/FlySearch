@@ -159,7 +159,7 @@ def get_scenario_mapper(args):
             drone_z_rel_max=args.height_max * 100,
             seed_min=1,
             seed_max=1000000000,
-            scenarios_number=args.n,
+            scenarios_number=args.n + 1,  # First one is to be discared
             object_probs={
                 (ForestScenarioMapper.ObjectType.HELICOPTER,
                  ForestScenarioMapper.ObjectType.PLANE,
@@ -194,7 +194,7 @@ def get_scenario_mapper(args):
             },
             drone_z_rel_min=args.height_min * 100,
             drone_z_rel_max=args.height_max * 100,
-            scenarios_number=args.n,
+            scenarios_number=args.n + 1,  # First one is to be discared
             seed_max=1000,
             seed_min=0,
         )
@@ -237,6 +237,10 @@ def scenario_level_test(args, run_dir):
                     incontext=(args.incontext == "True")
                 )
                 final_position = explorer.simulate()
+
+                # Ignoring the first run so that engine can "warm up"
+                if i == 0:
+                    continue
 
                 images = explorer.get_images()
                 outputs = explorer.get_outputs()
