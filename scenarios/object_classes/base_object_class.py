@@ -13,12 +13,12 @@ class BaseObjectClass:
         self.visible = True
 
     def _hide_object(self, object_id: str):
-        id_number = re.findall(r'\d+', object_id)[-1]
+        id_number = int(re.findall(r'\d+', object_id)[-1])
 
         print(f"BaseObjectClass _show_object, object id_number of {object_id} is {id_number}")
 
-        x = id_number / 10
-        y = id_number / 10
+        x = id_number // 1000
+        y = id_number // 1000
         z = -1000
 
         self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
