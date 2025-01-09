@@ -1,3 +1,5 @@
+import re
+
 from random import Random
 
 from typing import List
@@ -11,10 +13,15 @@ class BaseObjectClass:
         self.visible = True
 
     def _hide_object(self, object_id: str):
-        self.client.request(f"vset /objects/{object_id}/hide")
+        id_number = re.findall(r'\d+', object_id)[-1]
 
-    def _show_object(self, object_id: str):
-        self.client.request(f"vset /objects/{object_id}/show")
+        print(f"BaseObjectClass _show_object, object id_number of {object_id} is {id_number}")
+
+        x = id_number / 10
+        y = id_number / 10
+        z = -1000
+
+        self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
     def hide_all_objects(self):
         if not self.visible:
@@ -34,7 +41,6 @@ class BaseObjectClass:
         object_id = rng.choice(self.spawnable_object_ids)
 
         self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
-        self._show_object(object_id)
 
         return object_id
 

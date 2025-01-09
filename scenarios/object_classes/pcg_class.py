@@ -11,6 +11,12 @@ class PCGClass(BaseObjectClass):
 
         self.pcg_id = pcg_id
 
+    def _hide_object(self, object_id: str):
+        super()._hide_object(object_id)
+        # Yes, we have to run PCG as the super method will put it somewhere, but you need to regenerate it for it to happen.
+        self.client.request(f"vbp {self.pcg_id} RunPCG 0")
+        self._wait_for_pcg()
+
     def _wait_for_pcg(self):
         ready = json.loads(self.client.request(f'vbp {self.pcg_id} IsPCGReady'))["ready"]
 
