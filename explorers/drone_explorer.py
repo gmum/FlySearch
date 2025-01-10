@@ -26,6 +26,7 @@ class DroneExplorer:
 
         self.forgiveness = 5
         self.max_rel_alt = 120
+        self.xy_bound = 500
 
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
@@ -118,8 +119,11 @@ class DroneExplorer:
             try:
                 new_position = self.navigator.get_new_position(rel_position, output, throw_if_reckless=True)
 
-                # If this has worked, it's good, but still there's one condition to check
+                # If this has worked, it's good, but still there's a bunch of conditions to check
                 x, y, z = new_position
+
+                x_to_rel_start = x - self.start_rel_position[0]
+                y_to_rel_start = y - self.start_rel_position[1]
 
                 if z > self.max_rel_alt:
                     self.conversation.begin_transaction(Role.USER)
@@ -127,6 +131,11 @@ class DroneExplorer:
                         f"This command would cause you to fly too high. You can't fly higher than {self.max_rel_alt} meters. Your current altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
                     self.conversation.commit_transaction(send_to_vlm=True)
                     output = self.conversation.get_latest_message()[1]
+                if abs(x_to_rel_start) > self.xy_bound or abs(y_to_rel_start) > self.xy_bound:
+                    self.conversation.begin_transaction(Role.USER)
+                    self.conversation.add_text_message(
+                        f"This command would cause you to fly out of the search area's bounds. You can't fly further than {self.xy_bound} meters from the starting point in any axis.")
+                    self.conversation.commit_transaction(send_to_vlm=True)
                 else:
                     break
             except RecklessFlyingException:

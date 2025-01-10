@@ -37,6 +37,7 @@ class ScenarioConfigurator:
     # in the scenario_dict. E.g. the object id should be noted in the scenario_dict, as its value is randomly sampled from a given class.
     def configure_scenario(self, scenario_dict, recovery_generator=None):
         setup_is_correct = False
+        scenario_dict["cansee_restarts"] = 0
 
         while not setup_is_correct:
             setup_is_correct = True
@@ -74,6 +75,7 @@ class ScenarioConfigurator:
                 new_scenario = recovery_generator.create_random_scenario()
                 del new_scenario["seed"]
                 scenario_dict.update(new_scenario)
+                scenario_dict["cansee_restarts"] += 1
 
         if "sun_y" in scenario_dict and "sun_z" in scenario_dict:
             sun_y = scenario_dict["sun_y"]

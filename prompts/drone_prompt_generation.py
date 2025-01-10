@@ -172,7 +172,7 @@ def xml_found_prompt(glimpses: int) -> str:
 
     <Limitations>
         You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.
-        You can make at most {glimpses - 1} moves. Your altitude cannot exceed 120 meters.
+        You can make at most {glimpses - 1} moves. Your altitude cannot exceed 120 meters. Your search area is 200x200m from the dronne's starting position. 
     </Limitations>
 </Controls>
 '''
@@ -219,7 +219,7 @@ def xml_found_prompt_cue(glimpses: int) -> str:
 
     <Limitations>
         You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.
-        You can make at most {glimpses - 1} moves. Your altitude cannot exceed 120 meters.
+        You can make at most {glimpses - 1} moves. Your altitude cannot exceed 120 meters. Your search area is 200x200m from the dronne's starting position. 
     </Limitations>
 </Controls>
 '''
