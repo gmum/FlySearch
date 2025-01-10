@@ -104,7 +104,7 @@ class ForestScenarioMapper:
         drone_y = int(drone_y / 100)
         drone_z = int(drone_z / 100)
 
-        sun_y = self.sample_value_between(-90, -80)
+        sun_y = self.sample_value_between(-90, -30)
         sun_z = self.sample_value_between(0, 360)
 
         return {
