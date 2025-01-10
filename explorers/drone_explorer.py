@@ -26,7 +26,7 @@ class DroneExplorer:
 
         self.forgiveness = 5
         self.max_rel_alt = 120
-        self.xy_bound = 200
+        self.xy_bound = 20
 
     def _incontext_step(self):
         self.conversation.begin_transaction(Role.USER)
