@@ -5,6 +5,8 @@ from random import Random
 from typing import List
 from unrealcv import Client
 
+from glimpse_generators import UnrealException
+
 
 class BaseObjectClass:
     def __init__(self, spawnable_object_ids: List[str], client: Client):
@@ -27,10 +29,15 @@ class BaseObjectClass:
         if not self.visible:
             return
 
-        self.visible = False
+        try:
+            self.visible = False
 
-        for object_id in self.spawnable_object_ids:
-            self._hide_object(object_id)
+            for object_id in self.spawnable_object_ids:
+                self._hide_object(object_id)
+        except UnrealException:
+            # We are ignoring this exception because if it is raised it (most likely) means that the object we wanted to hide does not exist
+            # Which is expected, as we are hiding all objects from all environments. There won't be objects from city in forest and vice versa.
+            pass
 
     # Returns object id of the object moved
     def move_and_show(self, x: float, y: float, z: float, seed: int) -> str:

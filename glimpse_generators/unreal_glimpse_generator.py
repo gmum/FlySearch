@@ -15,6 +15,10 @@ class OutOfBoundsException(Exception):
     pass
 
 
+class UnrealException(Exception):
+    pass
+
+
 class ClientWrapper(Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -22,6 +26,10 @@ class ClientWrapper(Client):
     def request(self, *args, **kwargs):
         response = super().request(*args, **kwargs)
         print("Unreal Client Wrapper: request params", args, kwargs, "response", response)
+
+        if "error" in response:
+            raise UnrealException(response)
+
         return response
 
 
