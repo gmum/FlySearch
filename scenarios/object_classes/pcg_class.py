@@ -18,12 +18,12 @@ class PCGClass(BaseObjectClass):
         self._wait_for_pcg()
 
     def _wait_for_pcg(self):
-        ready = json.loads(self.client.request(f'vbp {self.pcg_id} IsPCGReady'))["ready"]
+        response = self.client.request(f'vbp {self.pcg_id} IsPCGReady')
 
-        while ready == "false":
-            ready = json.loads(self.client.request(f'vbp {self.pcg_id} IsPCGReady'))["ready"]
-            print(f"PCG is not ready while waiting for {self.pcg_id}, sleeping for 0.5 seconds, got:", ready)
+        while "false" in response:
+            print(f"PCG is not ready while waiting for {self.pcg_id}, sleeping for 0.5 seconds; got:", response)
             sleep(0.5)
+            response = self.client.request(f'vbp {self.pcg_id} IsPCGReady')
 
     def move_and_show(self, x: float, y: float, z: float, seed: int) -> str:
         object_id = super().move_and_show(x, y, z, seed)
