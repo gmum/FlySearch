@@ -131,7 +131,7 @@ class DroneExplorer:
                         f"This command would cause you to fly too high. You can't fly higher than {self.max_rel_alt} meters. Your current altitude is {rel_position[2]} meters, which means that you can only fly {self.max_rel_alt - rel_position[2]} meters higher.")
                     self.conversation.commit_transaction(send_to_vlm=True)
                     output = self.conversation.get_latest_message()[1]
-                if abs(x_to_rel_start) > self.xy_bound or abs(y_to_rel_start) > self.xy_bound:
+                elif abs(x_to_rel_start) > self.xy_bound or abs(y_to_rel_start) > self.xy_bound:
                     self.conversation.begin_transaction(Role.USER)
                     self.conversation.add_text_message(
                         f"This command would cause you to fly out of the search area's bounds. You can't fly further than {self.xy_bound} meters from the starting point in any axis.")
