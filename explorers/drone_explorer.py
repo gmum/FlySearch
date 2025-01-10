@@ -140,6 +140,7 @@ class DroneExplorer:
                     self.conversation.add_text_message(
                         f"This command would cause you to fly out of the search area's bounds. You can't fly further than {self.xy_bound} meters from the starting point in any axis.")
                     self.conversation.commit_transaction(send_to_vlm=True)
+                    output = self.conversation.get_latest_message()[1]
                 else:
                     break
             except RecklessFlyingException:
