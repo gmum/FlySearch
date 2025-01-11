@@ -25,6 +25,9 @@ class BaseObjectClass:
 
         self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
+        # Fires need also hiding, as it extinguishes them. Fire may burn even after being moved, which is why we need this.
+        self.client.request(f"vset /object/{object_id}/hide")
+
     def hide_all_objects(self):
         if not self.visible:
             return
@@ -48,6 +51,7 @@ class BaseObjectClass:
         object_id = rng.choice(self.spawnable_object_ids)
 
         self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
+        self.client.request(f"vset /object/{object_id}/show")
 
         return object_id
 

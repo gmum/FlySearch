@@ -33,7 +33,6 @@ def get_classes_to_object_classes(client):
                                           "BPP_Park_debris_C_C_UAID_08BFB8191750C63E02_2064132821",
                                           "BPP_Park_debris_D_C_UAID_08BFB8191750C63E02_1941156820"], client=client)
     city_fire = BaseObjectClass(["BP_Configuration_13_C_UAID_08BFB8191750E53702_1640163914",
-                                 "StaticMeshActor_UAID_08BFB8191750E53702_1100736906",
                                  "BP_Configuration_12_C_UAID_08BFB8191750E53702_1361488908",
                                  "SkeletalMeshActor_UAID_08BFB8191750E43702_1589650724"], client=client)
 
