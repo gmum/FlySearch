@@ -106,7 +106,7 @@ class DroneExplorer:
         if not abandon_sending_image:
             self.conversation.add_image_message(image)
 
-        self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters.")
+        self.conversation.add_text_message(f"Your current altitude is {rel_position[2]} meters above ground level.")
         self.conversation.commit_transaction(send_to_vlm=True)
 
         output = self.conversation.get_latest_message()[1]
