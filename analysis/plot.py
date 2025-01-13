@@ -6,7 +6,7 @@ from analysis import Run, RunAnalyser, CriterionPlotter, load_all_runs_from_a_di
 
 
 def main():
-    path = pathlib.Path("../all_logs/MC-0S-F")
+    path = pathlib.Path("../all_logs/MC-0S-C-GPT-CR-1")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 
@@ -64,6 +64,24 @@ def main():
     )
 
     plotter.plot_accuracy_in_aggregated_runs(per_mse_dist, ax, threshold=10)
+
+    plt.show()
+
+    def city_aggregation_function(run: Run):
+        object_type = str(run.object_type).lower()
+
+        if "car" in object_type:
+            return "car"
+        elif "pickup" in object_type:
+            return "pickup"
+        elif "truck" in object_type:
+            return "truck"
+        return object_type
+
+    fig, ax = plt.subplots()
+
+    per_cls_city_dict = plotter.aggregate_runs_per_function(city_aggregation_function)
+    plotter.plot_accuracy_in_aggregated_runs(per_cls_city_dict, ax)
 
     plt.show()
 

@@ -68,4 +68,9 @@ class CriterionPlotter:
 
         print(conf_ints)
 
-        ax.bar(variable_to_means.keys(), variable_to_means.values(), yerr=conf_ints, capsize=5)
+        plot = ax.bar(variable_to_means.keys(), variable_to_means.values(), yerr=conf_ints, capsize=5)
+
+        for idx, rect in enumerate(plot):
+            ax.text(rect.get_x() + rect.get_width() / 2.0, 0,
+                    f"n={len(list(variable_to_successes.values())[idx])}",
+                    ha='center', va='bottom')
