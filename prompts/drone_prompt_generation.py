@@ -134,11 +134,11 @@ def generate_xml_drone_grid_prompt_with_grid_controls(glimpses: int) -> str:
 def xml_found_prompt(glimpses: int) -> str:
     return f'''
 <Context>
-    You are in command of a UAV, tasked with finding a yellow pickup truck.
+    You are in command of a UAV, tasked with finding yellow pickup truck.
 </Context>
 
 <Objective>
-    You should fly AT LEAST 10 meters above the object and then reply with "FOUND".
+    You should fly BELOW 10 meters above the object and then reply with "FOUND". Being lower (closer to the object) (like 9, 8, or less) is good, being higher than that (like 11, 12, or more) is bad. 
 
     You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with "FOUND". The object MUST be in your field of view when you reply with "FOUND". You must be centered on the object. 
 </Objective>
@@ -181,11 +181,11 @@ def xml_found_prompt(glimpses: int) -> str:
 def xml_found_prompt_cue(glimpses: int) -> str:
     return f'''
 <Context>
-    You are in command of a UAV, tasked with finding a yellow pickup truck.
+    You are in command of a UAV, tasked with finding yellow pickup truck.
 </Context>
 
 <Objective>
-    You should fly AT LEAST 10 meters above the vehicle and then reply with "FOUND".
+    You should fly BELOW 10 meters above the object and then reply with "FOUND". Being lower (closer to the object) (like 9, 8, or less) is good, being higher than that (like 11, 12, or more) is bad. 
 
     You may not be able to see the vehicle in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the vehicle was at most 10 meters below the drone when you replied with "FOUND". The vehicle MUST be in your field of view when you reply with "FOUND".
 </Objective>
