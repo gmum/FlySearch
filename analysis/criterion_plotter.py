@@ -35,7 +35,8 @@ class CriterionPlotter:
     def get_runs_aggregated_per_height_bin(self) -> Dict:
         return dict(sorted(self.aggregate_runs_per_function(
             lambda
-                run: f"{int(10 * (run.start_position[2] // 10))} - {int(10 * (run.start_position[2] // 10) + 10)}").items()))
+                run: f"{int(10 * (run.start_position[2] // 10))} - {int(10 * (run.start_position[2] // 10) + 10)}").items(),
+                           key=lambda x: int(x[0].split(" ")[0])))
 
     def plot_accuracy_in_aggregated_runs(self, variable_to_runs: Dict, ax, success_criterion: Callable | None = None,
                                          threshold=10):
