@@ -161,9 +161,6 @@ def get_scenario_mapper(args):
             seed_max=1000000000,
             scenarios_number=args.n + 1,  # First one is to be discared
             object_probs={
-                (ForestScenarioMapper.ObjectType.HELICOPTER,
-                 ForestScenarioMapper.ObjectType.PLANE,
-                 ForestScenarioMapper.ObjectType.UFO): 0.0,
                 (ForestScenarioMapper.ObjectType.PERSON,
                  ForestScenarioMapper.ObjectType.FIRE,
                  ForestScenarioMapper.ObjectType.TRASH,
@@ -174,23 +171,30 @@ def get_scenario_mapper(args):
     elif args.scenario_type == "city":
         return CityScenarioMapper(
             object_probs={
+                (CityScenarioMapper.ObjectType.POLICE_CAR,
+                 CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR,
+                 CityScenarioMapper.ObjectType.BLUE_SPORT_CAR,
+                 CityScenarioMapper.ObjectType.RED_SPORT_CAR,
+                 CityScenarioMapper.ObjectType.WHITE_SPORT_CAR,
+                 CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK,
+                 CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK,
+                 CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK,
+                 CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK,
+                 CityScenarioMapper.ObjectType.WHITE_TRUCK,
+                 CityScenarioMapper.ObjectType.BLACK_TRUCK
+                 ): 0.2,
                 (
-                    CityScenarioMapper.ObjectType.POLICE_CAR,
-                    CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR,
-                    CityScenarioMapper.ObjectType.BLUE_SPORT_CAR,
-                    CityScenarioMapper.ObjectType.RED_SPORT_CAR,
-                    CityScenarioMapper.ObjectType.WHITE_SPORT_CAR,
                     CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS,
+                ): 0.2,
+                (
                     CityScenarioMapper.ObjectType.FIRE,
-                    CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK,
-                    CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK,
-                    CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK,
-                    CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK,
+                ): 0.2,
+                (
                     CityScenarioMapper.ObjectType.CROWD,
+                ): 0.2,
+                (
                     CityScenarioMapper.ObjectType.TRASH,
-                    CityScenarioMapper.ObjectType.WHITE_TRUCK,
-                    CityScenarioMapper.ObjectType.BLACK_TRUCK
-                ): 1.0
+                ): 0.2
             },
             drone_z_rel_min=args.height_min * 100,
             drone_z_rel_max=args.height_max * 100,
@@ -223,6 +227,10 @@ def scenario_level_test(args, run_dir):
                 object_name = str(object_type.name)
                 object_name = object_name.lower()
                 object_name = object_name.replace("_", " ")
+
+                if object_type != ForestScenarioMapper.ObjectType.TRASH and object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS and object_type != CityScenarioMapper.ObjectType.TRASH:
+                    object_name = f"a {object_name}"  # Grammar!
+
                 scenario_dict["passed_object_name"] = object_name
 
                 conversation = conversation_factory.get_conversation()
