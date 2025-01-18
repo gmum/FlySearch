@@ -15,7 +15,11 @@ def get_classes_to_object_classes(client):
     camping = PCGClass("BP_RandomSpawner_C_UAID_08BFB8191750113C02_1871747848",
                        ["StaticMeshActor_UAID_08BFB81917501C3F02_1703388951"], client=client)
     building = BaseObjectClass(["StaticMeshActor_UAID_08BFB8191750802F02_1934372840"], client=client)
-    person = BaseObjectClass(["SkeletalMeshActor_UAID_08BFB8191750A22F02_1368103644"], client=client)
+    person = BaseObjectClass(["Actor_UAID_08BFB8191750FD4202_1885752721",
+                              "Actor_UAID_08BFB8191750FD4202_1974561722",
+                              "Actor_UAID_08BFB8191750FD4202_1987064723",
+                              "Actor_UAID_08BFB8191750FD4202_1997655724",
+                              ], client=client)
     ufo = BaseObjectClass(["Actor_UAID_08BFB8191750053702_1321019457"], client=client)
     plane = BaseObjectClass(["Actor_UAID_08BFB8191750043702_2140437280"], client=client)
     helicopter = BaseObjectClass(["StaticMeshActor_UAID_08BFB8191750683002_1545951497"], client=client)
