@@ -6,6 +6,7 @@ import pathlib
 from PIL import Image
 
 from glimpse_generators.unreal_glimpse_generator import UnrealGridGlimpseGenerator, UnrealGlimpseGenerator
+from glimpse_generators import UnrealClientWrapper
 from response_parsers.xml_drone_response_parser import Direction
 from misc.cv2_and_numpy import opencv_to_pil, pil_to_opencv
 
@@ -27,16 +28,21 @@ class TestUnrealImageGenerator:
             return rel_position[0], rel_position[1], rel_position[2] - distance
 
     def test_linear(self):
-        test_path = pathlib.Path("../all_logs/test_unreal_image_generator/linear_y")
+        test_path = pathlib.Path("../all_logs/test_unreal_image_generator/linear_4y")
         test_path.mkdir(exist_ok=True)
 
-        generator = UnrealGlimpseGenerator(port=9000)
+        client = UnrealClientWrapper(host="localhost", port=9000,
+                                     # unreal_binary_path="/home/dominik/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample"
+                                     unreal_binary_path="/home/dominik/MyStuff/simulator/CitySample/Binaries/Linux/CitySample"
+                                     )
+
+        generator = UnrealGlimpseGenerator(client)
 
         n = 100
-        min_y = -200
-        max_y = 200
+        min_y = 200
+        max_y = 300
 
-        start_x = 0
+        start_x = -30
         start_z = 100
 
         for y in range(min_y, max_y, 10):

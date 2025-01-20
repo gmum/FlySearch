@@ -2,14 +2,14 @@ import argparse
 import json
 import pathlib
 import traceback
+import os
 
 from openai import OpenAI
 
 from conversation import InternFactory, VLLMFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
-from conversation.intern_conversation import InternConversation, get_model_and_stuff
-from misc.config import OPEN_AI_KEY
+from glimpse_generators import UnrealClientWrapper
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator, \
     UnrealDescriptionGlimpseGenerator
 from navigators import TrivialDroneNavigator, GridDroneNavigator
@@ -19,8 +19,7 @@ from prompts.drone_prompt_generation import generate_basic_drone_prompt, generat
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
-from scenarios import DroneScenarioMapperWithOffsets, ScenarioConfigurator, CityScenarioMapper
-from scenarios.drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper
+from scenarios import ScenarioConfigurator, CityScenarioMapper
 from scenarios.forest_scenario_mapper import ForestScenarioMapper
 
 
@@ -35,20 +34,6 @@ def create_test_run_directory(args):
     run_dir.mkdir(exist_ok=False)
 
     return run_dir
-
-
-def get_glimpse_generator(args):
-    if args.glimpse_generator == "standard":
-        return UnrealGlimpseGenerator()
-    elif args.glimpse_generator == "grid":
-        return UnrealGridGlimpseGenerator(splits_w=6, splits_h=6)
-    elif args.glimpse_generator == "description":
-        return UnrealDescriptionGlimpseGenerator(
-            conversation_factory=get_conversation_factory(args),
-            searched_obj="yellow pickup truck",  # FIXME !!!
-            splits_w=6,
-            splits_h=6
-        )
 
 
 def get_conversation_factory(args):
@@ -105,49 +90,8 @@ def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation,
             f.write(str(location))
 
 
-def round_robin(args, run_dir):
-    generator = get_glimpse_generator(args)
-    prompt = get_prompt(args)
-    navigator = get_navigator(args)
-    conversation_factory = get_conversation_factory(args)
-
-    for i in range(args.repeats):
-        try:
-            conversation = conversation_factory.get_conversation()
-            perform_one_test(run_dir, prompt, args.glimpses, generator, conversation, navigator, i)
-        except:
-            print(f"Failed on test {i}")
-    generator.disconnect()
-
-
 def get_scenario_mapper(args):
-    if args.scenario_type == "level_1":
-        return DroneScenarioMapperWithOffsets(
-            min_x=args.x_offset_min,
-            max_x=args.x_offset_max,
-            step_x=args.x_offset_step,
-            min_h=args.height_min,
-            max_h=args.height_max,
-            step_h=args.height_step,
-            min_y=args.y_offset_min,
-            max_y=args.y_offset_max,
-            step_y=args.y_offset_step,
-            scenario_mapper=DroneScenarioMapper()
-        )
-    elif args.scenario_type == "level_1_yellow_truck":
-        return DroneScenarioMapperWithOffsets(
-            min_x=args.x_offset_min,
-            max_x=args.x_offset_max,
-            step_x=args.x_offset_step,
-            min_h=args.height_min,
-            max_h=args.height_max,
-            step_h=args.height_step,
-            min_y=args.y_offset_min,
-            max_y=args.y_offset_max,
-            step_y=args.y_offset_step,
-            scenario_mapper=YellowTruckScenarioMapper()
-        )
-    elif args.scenario_type == "forest":
+    if args.scenario_type == "forest":
         return ForestScenarioMapper(
             x_min=15000,
             x_max=35000,
@@ -201,6 +145,43 @@ def get_scenario_mapper(args):
             scenarios_number=args.n + 1,  # First one is to be discared
             seed_max=1000,
             seed_min=0,
+        )
+
+
+def get_client(args):
+    if args.scenario_type == "forest":
+        forest_binary_path = os.getenv("FOREST_BINARY_PATH")
+
+        if forest_binary_path is None:
+            raise ValueError("FOREST_BINARY_PATH environment variable not set and required for forest scenario type.")
+
+        return UnrealClientWrapper(host="localhost", port=9000, unreal_binary_path=forest_binary_path)
+    elif args.scenario_type == "city":
+        city_binary_path = os.getenv("CITY_BINARY_PATH")
+
+        if city_binary_path is None:
+            raise ValueError("CITY_BINARY_PATH environment variable not set and required for city scenario type.")
+
+        if os.getenv("LOCATIONS_CITY_PATH") is None:
+            raise ValueError("LOCATIONS_CITY_PATH environment variable not set and required for city scenario type.")
+
+        return UnrealClientWrapper(host="localhost", port=9000, unreal_binary_path=city_binary_path)
+
+
+def get_glimpse_generator(args):
+    client = get_client(args)
+
+    if args.glimpse_generator == "standard":
+        return UnrealGlimpseGenerator(client)
+    elif args.glimpse_generator == "grid":
+        return UnrealGridGlimpseGenerator(splits_w=6, splits_h=6, client=client)
+    elif args.glimpse_generator == "description":
+        raise NotImplementedError()
+        return UnrealDescriptionGlimpseGenerator(
+            conversation_factory=get_conversation_factory(args),
+            searched_obj="yellow pickup truck",  # FIXME !!! Don't use this until fixed
+            splits_w=6,
+            splits_h=6
         )
 
 
@@ -336,7 +317,7 @@ def main():
     parser.add_argument("--scenario_type",
                         type=str,
                         required=True,
-                        choices=["round_robin", "level_1", "level_1_yellow_truck", "forest", "city"],
+                        choices=["forest", "city"],
                         )
 
     parser.add_argument("--repeats",
@@ -355,47 +336,12 @@ def main():
     parser.add_argument("--height_min",
                         type=int,
                         required=False,
-                        help="Only for use in scenarios.")
+                        )
 
     parser.add_argument("--height_max",
                         type=int,
                         required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--height_step",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--x_offset_min",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--x_offset_max",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--x_offset_step",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--y_offset_min",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--y_offset_max",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
-
-    parser.add_argument("--y_offset_step",
-                        type=int,
-                        required=False,
-                        help="Only for use in scenarios.")
+                        )
 
     parser.add_argument("--logdir",
                         type=str,
@@ -406,16 +352,13 @@ def main():
                         type=int,
                         required=False,
                         default=100,
-                        help="Number of scenarios to generate. Doesn't do anything in round_robin mode.")
+                        help="Number of scenarios to generate.")
 
     args = parser.parse_args()
 
     run_dir = create_test_run_directory(args)
 
-    if args.scenario_type == "round_robin":
-        round_robin(args, run_dir)
-    else:
-        scenario_level_test(args, run_dir)
+    scenario_level_test(args, run_dir)
 
 
 if __name__ == "__main__":

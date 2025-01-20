@@ -1,5 +1,6 @@
 import random
 import pandas as pd
+import os
 
 import math
 
@@ -73,7 +74,13 @@ class CityScenarioMapper:
         self.seed_min = seed_min
         self.seed_max = seed_max
 
-        self.possible_locations = pd.read_csv("/net/people/plgrid/plgdmatuszek/active-visual-gpt/locations_city.csv")
+        possible_location_csv_path = os.getenv("LOCATIONS_CITY_PATH")
+
+        if possible_location_csv_path is None:
+            raise ValueError(
+                "LOCATIONS_CITY_PATH environment variable must be set to the path of the locations_city.csv file")
+
+        self.possible_locations = pd.read_csv(possible_location_csv_path)
 
         # Drop locations that are not in the specified range
         self.possible_locations = self.possible_locations[self.possible_locations["X"] >= x_min]

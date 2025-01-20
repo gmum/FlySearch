@@ -1,23 +1,20 @@
-#python3 drone.py --prompt xml_grid --glimpses 50 --glimpse_generator grid --model gpt-4o --run_name newlogs4-big3 --repeats 5 --response_parser xml
+export CITY_BINARY_PATH="/home/dominik/MyStuff/simulator/CitySample/Binaries/Linux/CitySample"
+export FOREST_BINARY_PATH="/home/dominik/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample"
+export LOCATIONS_CITY_PATH="/home/dominik/MyStuff/active-visual-gpt/locations_city.csv"
+
 python3 drone.py \
 --prompt xml_grid_grid_found \
 --glimpses 5 \
 --glimpse_generator grid \
 --model gpt-4o \
---run_name MC-0S-F \
---scenario_type forest \
+--run_name A7 \
+--scenario_type city \
 --navigator grid \
 --height_min 30 \
 --height_max 100 \
---height_step 500 \
---x_offset_min 0 \
---x_offset_max 1 \
---x_offset_step 100 \
---y_offset_min 0 \
---y_offset_max 1 \
---y_offset_step 100 \
 --incontext False \
 --repeats 1 \
---logdir ../plgwtln/results
+--logdir all_logs \
+--n 1
 
 

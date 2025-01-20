@@ -11,9 +11,7 @@ class ForestScenarioMapper:
         TRASH = 2
         BUILDING = 3
         PERSON = 4
-        UFO = 5
-        PLANE = 6
-        HELICOPTER = 7
+        ANOMALY = 5
 
     @staticmethod
     def sample_value_between(val_min, val_max):

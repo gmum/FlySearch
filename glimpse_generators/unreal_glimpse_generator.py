@@ -2,7 +2,8 @@ from typing import Tuple
 import json
 import cv2
 import numpy as np
-from unrealcv import Client
+
+from glimpse_generators import UnrealClientWrapper
 from time import sleep
 from PIL import Image
 
@@ -15,29 +16,9 @@ class OutOfBoundsException(Exception):
     pass
 
 
-class UnrealException(Exception):
-    pass
-
-
-class ClientWrapper(Client):
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-    def request(self, *args, **kwargs):
-        response = super().request(*args, **kwargs)
-        print("Unreal Client Wrapper: request params", args, kwargs, "response", response)
-
-        if "error" in response:
-            raise UnrealException(response)
-
-        return response
-
-
 class UnrealGlimpseGenerator:
-    def __init__(self, host='localhost', port=9000, start_position=(3300.289, -26305.121, 0)):
-        self.host = host
-        self.port = port
-        self.client = None
+    def __init__(self, client: UnrealClientWrapper, start_position=(3300.289, -26305.121, 0)):
+        self.client = client
         self.start_position = start_position
 
         self._initialize_client()
@@ -47,18 +28,6 @@ class UnrealGlimpseGenerator:
         self.start_position = new_start_position
 
     def _initialize_client(self):
-        connection_result = False
-
-        for i in range(11):
-            print(f"Trying to connect to UnrealCV server on port {self.port + i}")
-            self.client = ClientWrapper((self.host, self.port + i))
-            connection_result = self.client.connect()
-
-            if connection_result:
-                break
-
-        if not connection_result:
-            raise ConnectionError("Failed to connect to UnrealCV server; is it running?")
 
         self.client.request('vget /unrealcv/status')
         self.client.request('vset /cameras/spawn')
@@ -171,39 +140,6 @@ class UnrealGridGlimpseGenerator(UnrealGlimpseGenerator):
         img = opencv_to_pil(img)
 
         return img
-
-
-class BoundedUnrealGridGlimpseGenerator(UnrealGridGlimpseGenerator):
-
-    def __init__(self, x_min, x_max, y_min, y_max, splits_w: int, splits_h: int, *args, **kwargs):
-        super().__init__(*args, **kwargs)
-
-        self.x_min = x_min
-        self.x_max = x_max
-
-        self.y_min = y_min
-        self.y_max = y_max
-
-    def get_camera_image(self,
-                         rel_position_m: Tuple[int, int, int] = (0, 0, 0), force_move=False) -> Image:
-        real_requested_x = self.start_position[0] + rel_position_m[0] * 100
-        real_requested_y = self.start_position[1] + rel_position_m[1] * 100
-        real_requested_z = rel_position_m[2] * 100
-
-        # FOV = 90 degrees
-        seen_x_max = real_requested_x + real_requested_z
-        seen_x_min = real_requested_x - real_requested_z
-
-        seen_y_max = real_requested_y + real_requested_z
-        seen_y_min = real_requested_y - real_requested_z
-
-        if seen_x_max > self.x_max or seen_x_min < self.x_min:
-            raise OutOfBoundsException()
-
-        if seen_y_max > self.y_max or seen_y_min < self.y_min:
-            raise OutOfBoundsException()
-
-        return super().get_camera_image(rel_position_m, force_move=force_move)
 
 
 class UnrealDescriptionGlimpseGenerator(UnrealGridGlimpseGenerator):

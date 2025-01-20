@@ -7,22 +7,34 @@ from scenarios.object_classes.forest_sun_class import ForestSunClass
 
 def get_classes_to_object_classes(client):
     # Forest
-    forest_fire = BaseObjectClass(["NiagaraActor_UAID_08BFB8191750822F02_1834612234"], client=client)
+    forest_fire = BaseObjectClass(
+        ["NiagaraActor_UAID_08BFB8191750822F02_1834612234", "NiagaraActor_UAID_08BFB81917505D3002_1763215563"
+         ], client=client)
     forest_trash = BaseObjectClass(["BP_Configuration_13_C_UAID_08BFB8191750822F02_1618649219",
                                     "BP_Configuration_12_C_UAID_08BFB8191750822F02_1620809220",
                                     "BP_Configuration_14_C_UAID_08BFB8191750822F02_1607678218",
                                     "Actor_UAID_08BFB8191750053702_1677020459"], client=client)
     camping = PCGClass("BP_RandomSpawner_C_UAID_08BFB8191750113C02_1871747848",
                        ["StaticMeshActor_UAID_08BFB81917501C3F02_1703388951"], client=client)
-    building = BaseObjectClass(["StaticMeshActor_UAID_08BFB8191750802F02_1934372840"], client=client)
+    building = BaseObjectClass(["bp_PrefabBuildings_01_01_C_UAID_08BFB8191750802F02_1619375831",
+                                "bp_PrefabBuildings_01_02_C_UAID_08BFB8191750802F02_1625206832",
+                                "StaticMeshActor_UAID_08BFB8191750802F02_1934372840",
+                                "StaticMeshActor_UAID_08BFB8191750802F02_2096504842",
+                                "StaticMeshActor_UAID_08BFB8191750812F02_1170441019"], client=client)
     person = BaseObjectClass(["Actor_UAID_08BFB8191750FD4202_1885752721",
                               "Actor_UAID_08BFB8191750FD4202_1974561722",
                               "Actor_UAID_08BFB8191750FD4202_1987064723",
                               "Actor_UAID_08BFB8191750FD4202_1997655724",
                               ], client=client)
-    ufo = BaseObjectClass(["Actor_UAID_08BFB8191750053702_1321019457"], client=client)
-    plane = BaseObjectClass(["Actor_UAID_08BFB8191750043702_2140437280"], client=client)
-    helicopter = BaseObjectClass(["StaticMeshActor_UAID_08BFB8191750683002_1545951497"], client=client)
+
+    forest_anomaly = BaseObjectClass([
+        "Actor_UAID_08BFB8191750053702_1321019457",  # Ufo
+        "Actor_UAID_08BFB8191750043702_2140437280",  # Plane
+        "StaticMeshActor_UAID_08BFB8191750683002_1545951497",  # Helicopter
+        "SkeletalMeshActor_UAID_08BFB8191750683002_1238433494",  # Dino
+        "Actor_UAID_08BFB8191750043702_2140437280",  # Animal
+    ], client=client)
+
     sun = ForestSunClass("DirectionalLight_UAID_E04F43E67EF6227D01_1896464149", client=client)
     forest_env = ForestEnvPCGClass("PCGDemo_ForestBP_C_UAID_E04F43E67EF62B7D01_2006191743", client)
 
@@ -52,7 +64,7 @@ def get_classes_to_object_classes(client):
                      ["StaticMeshActor_UAID_08BFB8191750363F02_1619297529"], client=client)
     city_trash = PCGClass("BP_RandomSpawner_C_UAID_08BFB81917507F3902_1265735256",
                           ["StaticMeshActor_UAID_08BFB8191750283F02_2033284125"], client=client)
-    anomaly = BaseObjectClass([
+    city_anomaly = BaseObjectClass([
         "Actor_UAID_08BFB8191750653A02_1780219521",  # Animal
         "SkeletalMeshActor_UAID_08BFB8191750B53A02_1807591675",  # Dino
         "Actor_UAID_08BFB8191750653A02_1976051522",  # Helicopter
@@ -71,9 +83,8 @@ def get_classes_to_object_classes(client):
         ForestScenarioMapper.ObjectType.CAMPING: camping,
         ForestScenarioMapper.ObjectType.BUILDING: building,
         ForestScenarioMapper.ObjectType.PERSON: person,
-        ForestScenarioMapper.ObjectType.UFO: ufo,
-        ForestScenarioMapper.ObjectType.PLANE: plane,
-        ForestScenarioMapper.ObjectType.HELICOPTER: helicopter,
+        ForestScenarioMapper.ObjectType.ANOMALY: forest_anomaly,
+
         "SUN": sun,
         "FOREST": forest_env,
 
@@ -90,7 +101,7 @@ def get_classes_to_object_classes(client):
         CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK: white_pickup_truck,
         CityScenarioMapper.ObjectType.CROWD: crowd,
         CityScenarioMapper.ObjectType.TRASH: city_trash,
-        CityScenarioMapper.ObjectType.ANOMALY: anomaly,
+        CityScenarioMapper.ObjectType.ANOMALY: city_anomaly,
         CityScenarioMapper.ObjectType.BLACK_TRUCK: black_truck,
         CityScenarioMapper.ObjectType.WHITE_TRUCK: white_truck,
         "CITY": city_env,
