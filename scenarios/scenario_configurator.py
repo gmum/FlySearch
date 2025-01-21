@@ -98,5 +98,5 @@ class ScenarioConfigurator:
         if 'FIRE' in str(scenario_dict["object_type"]):
             sleep(10)  # Wait for the fire to start burning -- in case it's needed
         else:
-            sleep(1)
+            sleep(5) # wait for the objects to load
 
