@@ -178,6 +178,8 @@ class DroneExplorer:
                 position = self._step(position, messing_with_us=messing_with_us)
                 messing_with_us = (position == old_position)
 
+        except ConnectionError:
+            raise  # No way to recover from this, either Unreal is down or model's api is down
         except Exception as e:
             print("Drone explorer failed", e)
 

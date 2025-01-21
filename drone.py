@@ -266,7 +266,8 @@ def scenario_level_test(args, run_dir):
 
                     conv = [(str(role), str(content)) for role, content in conv]
                     json.dump(conv, f, indent=4)
-
+            except ConnectionError:
+                raise  # No way to recover from this, either Unreal is down or model's api is down
             except Exception as e:
                 print(f"Failed on test {i}, repeat {repeat}", e)
                 traceback.print_exc()
