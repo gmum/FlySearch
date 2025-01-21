@@ -32,6 +32,7 @@ class UnrealGlimpseGenerator:
         self.client.request('vget /unrealcv/status')
         self.client.request('vset /cameras/spawn')
         self.client.request('vset /camera/1/rotation -90 0 0')
+        self.client.request('vset /camera/1/size 1000 1000')
 
         self.reset_camera()
 

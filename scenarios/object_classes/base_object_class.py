@@ -26,7 +26,10 @@ class BaseObjectClass:
         self.client.request(f"vset /object/{object_id}/location {x} {y} {z}")
 
         # Fires need also hiding, as it extinguishes them. Fire may burn even after being moved, which is why we need this.
-        self.client.request(f"vset /object/{object_id}/hide")
+        if 'Niagara' in object_id or object_id in ["BP_Configuration_13_C_UAID_08BFB8191750E53702_1640163914",
+                                 "BP_Configuration_12_C_UAID_08BFB8191750E53702_1361488908",
+                                 "SkeletalMeshActor_UAID_08BFB8191750E43702_1589650724"]:
+            self.client.request(f"vset /object/{object_id}/hide")
 
     def hide_all_objects(self):
         if not self.visible:
