@@ -1,6 +1,7 @@
 import torchvision
 import numpy as np
 import cv2
+import os
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -70,19 +71,28 @@ def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per
 
         return opposite_color
 
-    pixel_per_unit = (drone_height / 100) * pixel_per_unit
+    img = from_opencv_to_pil(img)
+    width, height = img.size
+
+    assert width == height
+
+    # FIXME: This code ignores the pixel_per_unit parameter and assumes camera FOV=90 degrees
+    # pixel_per_unit = (drone_height / 100) * pixel_per_unit
+    pixel_per_unit = (2 * drone_height) / width
 
     # Unit -> unit used inside of Unreal Engine
     # Pixel -> pixel used in the image
     # Cell -> cell in the grid
 
-    img = from_opencv_to_pil(img)
-
     if img.mode != 'RGB':
         img = img.convert('RGB')
     draw = ImageDraw.Draw(img, 'RGB')
 
-    width, height = img.size
+    font_location = os.getenv("FONT_LOCATION")
+
+    if font_location is None:
+        raise ValueError(
+            "Please set the FONT_LOCATION environment variable to the path of the font file, so that grid labels can be annotated.")
 
     font = ImageFont.truetype("/usr/share/fonts/google-noto/NotoSerif-Bold.ttf",
                               width // 40)  # Adjust font size if needed; default == width // 40
