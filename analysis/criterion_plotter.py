@@ -39,7 +39,7 @@ class CriterionPlotter:
                            key=lambda x: int(x[0].split(" ")[0])))
 
     def plot_accuracy_in_aggregated_runs(self, variable_to_runs: Dict, ax, success_criterion: Callable | None = None,
-                                         threshold=10):
+                                         threshold=10) -> Dict:
 
         def run_was_successful(run):
             return run.model_claimed and RunAnalyser(run).maciek_criterion_satisfied(threshold)
@@ -67,9 +67,12 @@ class CriterionPlotter:
             [(variable_to_means[variable] - conf_int[0], conf_int[1] - variable_to_means[variable]) for
              variable, conf_int in variable_to_conf_ints.items()])
 
-        conf_ints = np.transpose(conf_ints)
+        variable_to_std = {
+            variable: np.std(successes)
+            for variable, successes in variable_to_successes.items()
+        }
 
-        print(conf_ints)
+        conf_ints = np.transpose(conf_ints)
 
         plot = ax.bar(variable_to_means.keys(), variable_to_means.values(), yerr=conf_ints, capsize=5)
 
@@ -86,3 +89,26 @@ class CriterionPlotter:
                     f"({variable_to_conf_ints[list(variable_to_means.keys())[idx]][0]:.2f}, "
                     f"{variable_to_conf_ints[list(variable_to_means.keys())[idx]][1]:.2f})",
                     ha='right', va='top')
+
+        name_to_stats = {}
+
+        for cls_name in variable_to_successes.keys():
+            mean = variable_to_means[cls_name]
+            std = variable_to_std[cls_name]
+            conf_int = variable_to_conf_ints[cls_name]
+
+            mean = round(mean, 4)
+            std = round(std, 4)
+            conf_int = (round(conf_int[0], 4), round(conf_int[1], 4))
+            n = len(variable_to_successes[cls_name])
+            total_successes = int(np.sum(variable_to_successes[cls_name]))
+
+            name_to_stats[cls_name] = {
+                "mean": mean,
+                "std": std,
+                "conf_int": conf_int,
+                "n": n,
+                "total_successes": total_successes
+            }
+
+        return name_to_stats
