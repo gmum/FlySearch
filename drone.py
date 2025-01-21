@@ -4,8 +4,6 @@ import pathlib
 import traceback
 import os
 
-from openai import OpenAI
-
 from conversation import InternFactory, VLLMFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
@@ -32,7 +30,10 @@ def create_test_run_directory(args):
     run_dir = all_logs_dir / args.run_name
 
     all_logs_dir.mkdir(exist_ok=True)
-    run_dir.mkdir(exist_ok=False)
+
+    run_dir_making_ok = args.continue_from is not None
+
+    run_dir.mkdir(exist_ok=run_dir_making_ok)
 
     return run_dir
 
@@ -196,6 +197,9 @@ def scenario_level_test(args, run_dir):
     backup_mapper = get_scenario_mapper(args)
 
     for i, scenario_dict in enumerate(scenario_mapper.iterate_scenarios()):
+        if args.continue_from is not None and i < args.continue_from:
+            continue
+
         for repeat in range(args.repeats):
             run_ended_without_unreal_dying = False
             while not run_ended_without_unreal_dying:
@@ -232,7 +236,7 @@ def scenario_level_test(args, run_dir):
                     run_ended_without_unreal_dying = True
 
                     # Ignoring the first run so that engine can "warm up"
-                    if i == 0:
+                    if i == 0 or (args.continue_from is not None and i == args.continue_from):
                         break
 
                     images = explorer.get_images()
@@ -281,7 +285,7 @@ def scenario_level_test(args, run_dir):
                     traceback.print_exc()
                     run_ended_without_unreal_dying = True  # Don't get stuck in a loop
 
-    generator.disconnect()
+    os.kill(0, 9)  # I don't want to deal with threads and Unreal
 
 
 def main():
@@ -362,7 +366,13 @@ def main():
                         type=int,
                         required=False,
                         default=100,
-                        help="Number of scenarios to generate.")
+                        help="Number of scenarios to generate."
+                        )
+
+    parser.add_argument("--continue_from",
+                        type=int,
+                        required=False,
+                        )
 
     args = parser.parse_args()
 
