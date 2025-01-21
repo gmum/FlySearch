@@ -65,7 +65,7 @@ class UnrealClientWrapper:
 
     def disconnect(self):
         self.client.disconnect()
-        self.guardian.process.terminate()
+        self.guardian.process.kill()
 
 
 def main():
