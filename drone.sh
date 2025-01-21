@@ -8,7 +8,7 @@ python3 drone.py \
 --glimpses 5 \
 --glimpse_generator grid \
 --model gpt-4o \
---run_name A8 \
+--run_name A11 \
 --scenario_type city \
 --navigator grid \
 --height_min 30 \

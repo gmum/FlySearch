@@ -12,7 +12,7 @@ class BaseObjectClass:
     def __init__(self, spawnable_object_ids: List[str], client: Client):
         self.spawnable_object_ids = spawnable_object_ids
         self.client = client
-        self.visible = True
+        self.visible = False  # By default, objects are hidden. This also means that we don't need to care about binary restarts if something goes wrong.
 
     def _hide_object(self, object_id: str):
         id_number = int(re.findall(r'\d+', object_id)[-1])
@@ -27,8 +27,8 @@ class BaseObjectClass:
 
         # Fires need also hiding, as it extinguishes them. Fire may burn even after being moved, which is why we need this.
         if 'Niagara' in object_id or object_id in ["BP_Configuration_13_C_UAID_08BFB8191750E53702_1640163914",
-                                 "BP_Configuration_12_C_UAID_08BFB8191750E53702_1361488908",
-                                 "SkeletalMeshActor_UAID_08BFB8191750E43702_1589650724"]:
+                                                   "BP_Configuration_12_C_UAID_08BFB8191750E53702_1361488908",
+                                                   "SkeletalMeshActor_UAID_08BFB8191750E43702_1589650724"]:
             self.client.request(f"vset /object/{object_id}/hide")
 
     def hide_all_objects(self):
