@@ -1,6 +1,7 @@
 from typing import Tuple
 
 from conversation.abstract_conversation import Conversation, Role
+from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from navigators import AbstractDroneNavigator, RecklessFlyingException
 from response_parsers import Direction
 from PIL import Image
@@ -180,6 +181,8 @@ class DroneExplorer:
 
         except ConnectionError:
             raise  # No way to recover from this, either Unreal is down or model's api is down
+        except UnrealDiedException:
+            raise  # We can't do much about it from this level
         except Exception as e:
             print("Drone explorer failed", e)
 
