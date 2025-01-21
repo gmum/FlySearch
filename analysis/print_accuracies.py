@@ -33,7 +33,15 @@ def main():
 
     pretty_stats = json.dumps(stats, indent=4)
 
+    print("CLAIMED STATS")
     print(pretty_stats)
+
+    unclaimed_stats = plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax,
+                                                               success_criterion=lambda x: RunAnalyser(
+                                                                   x).maciek_criterion_satisfied(10))
+
+    print("UNCLAIMED STATS")
+    print(json.dumps(unclaimed_stats, indent=4))
 
 
 if __name__ == "__main__":
