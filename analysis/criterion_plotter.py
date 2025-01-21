@@ -77,3 +77,12 @@ class CriterionPlotter:
             ax.text(rect.get_x() + rect.get_width() / 2.0, 0,
                     f"n={len(list(variable_to_successes.values())[idx])}",
                     ha='center', va='bottom')
+
+            ax.text(rect.get_x(), rect.get_height(),
+                    f"{variable_to_means[list(variable_to_means.keys())[idx]]:.2f}",
+                    ha='left', va='top')
+
+            ax.text(rect.get_x() + rect.get_width(), rect.get_height(),
+                    f"({variable_to_conf_ints[list(variable_to_means.keys())[idx]][0]:.2f}, "
+                    f"{variable_to_conf_ints[list(variable_to_means.keys())[idx]][1]:.2f})",
+                    ha='right', va='top')
