@@ -10,6 +10,7 @@ from conversation import InternFactory, VLLMFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
 from glimpse_generators import UnrealClientWrapper
+from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator, \
     UnrealDescriptionGlimpseGenerator
 from navigators import TrivialDroneNavigator, GridDroneNavigator
@@ -196,81 +197,89 @@ def scenario_level_test(args, run_dir):
 
     for i, scenario_dict in enumerate(scenario_mapper.iterate_scenarios()):
         for repeat in range(args.repeats):
-            try:
-                # Scenario configurator can alter scenario dict!!!
-                gen_config.configure_scenario(scenario_dict, recovery_generator=backup_mapper)
-                drone_rel_coords = scenario_dict["drone_rel_coords"]
-                object_type = scenario_dict["object_type"]
-                object_id = scenario_dict[
-                    "object_id"]  # Note: do not query this before configure scenario. It should set the object_id.
-                object_bbox = gen_config.get_bbox(object_id)
+            run_ended_without_unreal_dying = False
+            while not run_ended_without_unreal_dying:
+                try:
+                    # Scenario configurator can alter scenario dict!!!
+                    gen_config.configure_scenario(scenario_dict, recovery_generator=backup_mapper)
+                    drone_rel_coords = scenario_dict["drone_rel_coords"]
+                    object_type = scenario_dict["object_type"]
+                    object_id = scenario_dict[
+                        "object_id"]  # Note: do not query this before configure scenario. It should set the object_id.
+                    object_bbox = gen_config.get_bbox(object_id)
 
-                object_name = str(object_type.name)
-                object_name = object_name.lower()
-                object_name = object_name.replace("_", " ")
+                    object_name = str(object_type.name)
+                    object_name = object_name.lower()
+                    object_name = object_name.replace("_", " ")
 
-                if object_type != ForestScenarioMapper.ObjectType.TRASH and object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS and object_type != CityScenarioMapper.ObjectType.TRASH:
-                    object_name = f"a {object_name}"  # Grammar!
+                    if object_type != ForestScenarioMapper.ObjectType.TRASH and object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS and object_type != CityScenarioMapper.ObjectType.TRASH:
+                        object_name = f"a {object_name}"  # Grammar!
 
-                scenario_dict["passed_object_name"] = object_name
+                    scenario_dict["passed_object_name"] = object_name
 
-                conversation = conversation_factory.get_conversation()
-                explorer = DroneExplorer(
-                    conversation=conversation,
-                    glimpse_generator=generator,
-                    prompt_generator=prompt,
-                    glimpses=args.glimpses,
-                    start_rel_position=drone_rel_coords,
-                    navigator=navigator,
-                    object_name=object_name,
-                    incontext=(args.incontext == "True")
-                )
-                final_position = explorer.simulate()
+                    conversation = conversation_factory.get_conversation()
+                    explorer = DroneExplorer(
+                        conversation=conversation,
+                        glimpse_generator=generator,
+                        prompt_generator=prompt,
+                        glimpses=args.glimpses,
+                        start_rel_position=drone_rel_coords,
+                        navigator=navigator,
+                        object_name=object_name,
+                        incontext=(args.incontext == "True")
+                    )
+                    final_position = explorer.simulate()
+                    run_ended_without_unreal_dying = True
 
-                # Ignoring the first run so that engine can "warm up"
-                if i == 0:
-                    continue
+                    # Ignoring the first run so that engine can "warm up"
+                    if i == 0:
+                        break
 
-                images = explorer.get_images()
-                outputs = explorer.get_outputs()
-                coordinates = explorer.get_coords()
+                    images = explorer.get_images()
+                    outputs = explorer.get_outputs()
+                    coordinates = explorer.get_coords()
 
-                test_dir = run_dir / f"{str(i)}_r{str(repeat)} "
-                test_dir.mkdir(exist_ok=True)
+                    test_dir = run_dir / f"{str(i)}_r{str(repeat)} "
+                    test_dir.mkdir(exist_ok=True)
 
-                with open(test_dir / "object_bbox.txt", "w") as f:
-                    f.write(object_bbox)
+                    with open(test_dir / "object_bbox.txt", "w") as f:
+                        f.write(object_bbox)
 
-                with open(test_dir / "scenario_params.json", "w") as f:
-                    scenario_str_dict = {k: str(v) for k, v in scenario_dict.items()}
-                    json.dump(scenario_str_dict, f, indent=4)
+                    with open(test_dir / "scenario_params.json", "w") as f:
+                        scenario_str_dict = {k: str(v) for k, v in scenario_dict.items()}
+                        json.dump(scenario_str_dict, f, indent=4)
 
-                for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
-                    image.save(test_dir / f"{j}.png")
-                    with open(test_dir / f"{j}.txt", "w") as f:
-                        f.write(output)
-                    with open(test_dir / f"{j}_coords.txt", "w") as f:
-                        f.write(str(location))
+                    for j, (image, output, location) in enumerate(zip(images, outputs, coordinates)):
+                        image.save(test_dir / f"{j}.png")
+                        with open(test_dir / f"{j}.txt", "w") as f:
+                            f.write(output)
+                        with open(test_dir / f"{j}_coords.txt", "w") as f:
+                            f.write(str(location))
 
-                with open(test_dir / "final_coords.txt", "w") as f:
-                    f.write(str(final_position))
+                    with open(test_dir / "final_coords.txt", "w") as f:
+                        f.write(str(final_position))
 
-                with open(test_dir / "start_rel_coords.txt", "w") as f:
-                    f.write(str(drone_rel_coords))
+                    with open(test_dir / "start_rel_coords.txt", "w") as f:
+                        f.write(str(drone_rel_coords))
 
-                with open(test_dir / "conversation.json", "w") as f:
-                    if isinstance(conversation, OpenAIConversation):
-                        conv = conversation.get_conversation(save_urls=False)
-                    else:
-                        conv = conversation.get_conversation()
+                    with open(test_dir / "conversation.json", "w") as f:
+                        if isinstance(conversation, OpenAIConversation):
+                            conv = conversation.get_conversation(save_urls=False)
+                        else:
+                            conv = conversation.get_conversation()
 
-                    conv = [(str(role), str(content)) for role, content in conv]
-                    json.dump(conv, f, indent=4)
-            except ConnectionError:
-                raise  # No way to recover from this, either Unreal is down or model's api is down
-            except Exception as e:
-                print(f"Failed on test {i}, repeat {repeat}", e)
-                traceback.print_exc()
+                        conv = [(str(role), str(content)) for role, content in conv]
+                        json.dump(conv, f, indent=4)
+                except UnrealDiedException:
+                    # This is a funny case, as this error means that Unreal died (and was restarted). While the trajectory needs a reset, we are okay (besides that).
+                    run_ended_without_unreal_dying = False
+                    print("drone.py: Unreal died, rerunning the trajectory.")
+                except ConnectionError:
+                    raise  # No way to recover from this, either Unreal is down or model's api is down
+                except Exception as e:
+                    print(f"Failed on test {i}, repeat {repeat}", e)
+                    traceback.print_exc()
+                    run_ended_without_unreal_dying = True  # Don't get stuck in a loop
 
     generator.disconnect()
 

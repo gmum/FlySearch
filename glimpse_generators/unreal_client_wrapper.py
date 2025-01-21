@@ -4,6 +4,10 @@ from unrealcv import Client
 from glimpse_generators import UnrealGuardian
 
 
+class UnrealDiedException(Exception):
+    pass
+
+
 class UnrealException(Exception):
     pass
 
@@ -52,19 +56,12 @@ class UnrealClientWrapper:
     def request(self, *args, **kwargs):
         print("Unreal Client Wrapper: request params", args, kwargs)
 
-        response = None
+        if not self.guardian.is_alive:
+            self.guardian.reset()
+            self._initialize_client()
+            raise UnrealDiedException
 
-        while response is None:
-            if not self.guardian.is_alive:
-                self.guardian.reset()
-                self._initialize_client()
-            try:
-                response = self.client.request(*args, **kwargs)
-            except OSError:
-                self.guardian.reset()
-                self._initialize_client()
-
-        return response
+        return self.client.request(*args, **kwargs)
 
     def disconnect(self):
         self.client.disconnect()
@@ -81,7 +78,11 @@ def main():
     )
 
     while True:
-        client.request("vget /unrealcv/status")
+        try:
+            client.request("vget /unrealcv/status")
+        except UnrealDiedException:
+            print("Unreal died!")
+
         print("Is alive:", client.guardian.is_alive)
         client.guardian.process.kill()
         sleep(5)
