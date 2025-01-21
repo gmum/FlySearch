@@ -1,5 +1,3 @@
-import os
-
 from unrealcv import Client
 from glimpse_generators import UnrealGuardian
 
@@ -54,7 +52,7 @@ class UnrealClientWrapper:
         self.client.request('vset /camera/1/rotation -90 0 0')
 
     def request(self, *args, **kwargs):
-        print("Unreal Client Wrapper: request params", args, kwargs)
+        # print("Unreal Client Wrapper: request params", args, kwargs)
 
         if not self.guardian.is_alive:
             self.guardian.reset()

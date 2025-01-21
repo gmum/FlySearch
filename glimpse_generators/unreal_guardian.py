@@ -12,9 +12,9 @@ class UnrealGuardian:
 
     def _start_unreal(self):
         self.process = subprocess.Popen(
-            [str(self.unreal_binary_path), "-RenderOffscreen"])
+            [str(self.unreal_binary_path), "-RenderOffscreen -nosound"])
 
-        sleep(240)
+        sleep(120)
 
     def reset(self):
         self.process.terminate()

@@ -1,5 +1,4 @@
 from typing import Tuple
-import json
 import cv2
 import numpy as np
 
@@ -42,8 +41,6 @@ class UnrealGlimpseGenerator:
 
         print("Unreal Glimpse Generator: Unreal is ready to go!")
 
-        self.reset_camera()
-
     def reset_camera(self):
         start_position = self.start_position
 
@@ -79,20 +76,10 @@ class UnrealGlimpseGenerator:
         return int(x), int(y), int(z)
 
     def wait_for_unreal_to_finish(self):
-        while "false" in self.client.request("vget /action/game/is_loaded").lower():
-            print("Unreal Glimpse Generator: Waiting for Unreal to finish loading, current status:",
-                  self.client.request("vget /action/game/is_loaded"))
-            sleep(0.5)
-
-        print("Unreal Glimpse Generator: Unreal finished loading", self.client.request("vget /action/game/is_loaded"))
-
         while "false" in self.client.request("vget /camera/1/partition_loaded").lower():
             print("Unreal Glimpse Generator: Waiting for Unreal to finish loading the PARTITION, current status:",
                   self.client.request("vget /camera/1/partition_loaded"))
             sleep(0.5)
-
-        print("Unreal Glimpse Generator: Unreal finished loading the PARTITION",
-              self.client.request("vget /camera/1/partition_loaded"))
 
     def is_unreal_ready(self):
         img = self.__get_img(rel_position_m=(0, 0, 200), force_move=True)
@@ -110,7 +97,8 @@ class UnrealGlimpseGenerator:
         move_type = "location" if force_move else "moveto"
 
         self.client.request(f'vset /camera/1/{move_type} {location[0]} {location[1]} {location[2]}')
-        self.wait_for_unreal_to_finish()
+        if force_move:
+            self.wait_for_unreal_to_finish()
         self.client.request('vget /camera/1/lit /tmp/camera.png')
         image = Image.open('/tmp/camera.png')
         image = image.resize((500, 500), Image.Resampling.BILINEAR)
