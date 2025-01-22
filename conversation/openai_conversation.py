@@ -1,14 +1,10 @@
 import base64
+from time import sleep
+
 import cv2
-import numpy as np
-
-from enum import Enum
-from typing_extensions import Buffer
-
+from PIL import Image
 from openai import OpenAI
 from openai import RateLimitError
-from time import sleep
-from PIL import Image
 
 from conversation.abstract_conversation import Conversation, Role
 from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
@@ -46,11 +42,14 @@ class OpenAIConversation(Conversation):
         if not self.transaction_started:
             raise Exception("Transaction not started")
 
-        content = self.transaction_conversation["content"]
-        content.append({
-            "type": "text",
-            "text": text
-        })
+        if 'mistral' in self.model_name.lower() and self.transaction_conversation['role'] == 'assistant':
+            self.transaction_conversation['content'] = text
+        else:
+            content = self.transaction_conversation["content"]
+            content.append({
+                "type": "text",
+                "text": text
+            })
 
     def add_image_message(self, image: Image.Image):
         if not self.transaction_started:
@@ -83,7 +82,7 @@ class OpenAIConversation(Conversation):
                     model=model,
                     messages=messages,
                     max_tokens=max_tokens,
-                    #seed=seed,
+                    # seed=seed,
                     temperature=temperature,
                     top_p=top_p
                 )
@@ -142,14 +141,19 @@ class OpenAIConversation(Conversation):
                 role = Role.USER if message["role"] == "user" else Role.ASSISTANT
                 content = message["content"]
 
-                for submessage in content:
-                    if submessage["type"] == "text":
-                        yield role, submessage["text"]
-                    elif submessage["type"] == "image_url":
-                        if save_urls:
-                            yield role, submessage["image_url"]
-                        else:
-                            yield role, "image"
+                if isinstance(content, str):
+                    yield role, content
+                elif isinstance(content, list):
+                    for submessage in content:
+                        if submessage["type"] == "text":
+                            yield role, submessage["text"]
+                        elif submessage["type"] == "image_url":
+                            if save_urls:
+                                yield role, submessage["image_url"]
+                            else:
+                                yield role, "image"
+                else:
+                    raise Exception("Invalid content type")
 
         return list(conversation_iterator())
 
