@@ -5,7 +5,8 @@ import traceback
 import os
 from importlib.metadata import requires
 
-from conversation import InternFactory, VLLMFactory
+from conversation import InternFactory, VLLMFactory, AnthropicConversation
+from conversation.anthropic_factory import AnthropicFactory
 from conversation.gemini_factory import GeminiFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
@@ -47,6 +48,8 @@ def get_conversation_factory(args):
         return InternFactory()
     elif 'gemini' in args.model:
         return GeminiFactory(args.model)
+    elif args.model.startswith('anthropic-'):
+        return AnthropicFactory(args.model)
     else:
         return VLLMFactory(args.model)
 
