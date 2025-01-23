@@ -23,7 +23,7 @@ class CityScenarioMapper:
         RED_PICKUP_TRUCK = 10
         WHITE_PICKUP_TRUCK = 11
         CROWD = 12
-        TRASH = 13
+        LARGE_TRASH_PILE = 13
         BLACK_TRUCK = 14
         WHITE_TRUCK = 15
 

@@ -142,7 +142,7 @@ def get_scenario_mapper(args):
                     CityScenarioMapper.ObjectType.CROWD,
                 ): 0.2,
                 (
-                    CityScenarioMapper.ObjectType.TRASH,
+                    CityScenarioMapper.ObjectType.LARGE_TRASH_PILE,
                 ): 0.2
             },
             drone_z_rel_min=args.height_min * 100,

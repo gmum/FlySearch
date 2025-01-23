@@ -100,7 +100,7 @@ def get_classes_to_object_classes(client):
         CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK: red_pickup_truck,
         CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK: white_pickup_truck,
         CityScenarioMapper.ObjectType.CROWD: crowd,
-        CityScenarioMapper.ObjectType.TRASH: city_trash,
+        CityScenarioMapper.ObjectType.LARGE_TRASH_PILE: city_trash,
         CityScenarioMapper.ObjectType.ANOMALY: city_anomaly,
         CityScenarioMapper.ObjectType.BLACK_TRUCK: black_truck,
         CityScenarioMapper.ObjectType.WHITE_TRUCK: white_truck,
