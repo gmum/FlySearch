@@ -3,6 +3,7 @@ import json
 import pathlib
 import traceback
 import os
+from importlib.metadata import requires
 
 from conversation import InternFactory, VLLMFactory
 from conversation.gemini_factory import GeminiFactory
@@ -19,7 +20,7 @@ from prompts.drone_prompt_generation import generate_basic_drone_prompt, generat
 from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
-from scenarios import ScenarioConfigurator, CityScenarioMapper
+from scenarios import ScenarioConfigurator, CityScenarioMapper, MimicScenarioMapper
 from scenarios.forest_scenario_mapper import ForestScenarioMapper
 
 
@@ -96,7 +97,17 @@ def perform_one_test(run_dir, prompt, glimpses, glimpse_generator, conversation,
 
 
 def get_scenario_mapper(args):
-    if args.scenario_type == "forest":
+    if args.mimic_run_name is not None:
+        if args.mimic_run_cls_names is None:
+            raise ValueError("Mimic run specified, but no classes specified.")
+
+        mimic_run_dir = None if args.mimic_run_name is None else pathlib.Path(args.logdir) / args.mimic_run_name
+
+        return MimicScenarioMapper(
+            path=mimic_run_dir,
+            filter_str=args.mimic_run_cls_names
+        )
+    elif args.scenario_type == "forest":
         return ForestScenarioMapper(
             x_min=15000,
             x_max=35000,
@@ -199,12 +210,19 @@ def scenario_level_test(args, run_dir):
     conversation_factory = get_conversation_factory(args)
     backup_mapper = get_scenario_mapper(args)
 
+    if isinstance(scenario_mapper, MimicScenarioMapper):
+        backup_mapper = None
+
     for i, scenario_dict in enumerate(scenario_mapper.iterate_scenarios()):
         if args.continue_from is not None and i < args.continue_from:
             continue
 
+        if scenario_dict is None:
+            continue
+
         for repeat in range(args.repeats):
             run_ended_without_unreal_dying = False
+
             while not run_ended_without_unreal_dying:
                 try:
                     # Scenario configurator can alter scenario dict!!!
@@ -239,12 +257,25 @@ def scenario_level_test(args, run_dir):
                     run_ended_without_unreal_dying = True
 
                     # Ignoring the first run so that engine can "warm up"
-                    if i == 0 or (args.continue_from is not None and i == args.continue_from):
+                    if (
+                            "drop" not in scenario_dict and
+                            (
+                                    i == 0 or (
+                                    args.continue_from is not None and i == args.continue_from)
+                            )
+                    ) or (
+                            "drop" in scenario_dict and scenario_dict["drop"]
+                    ):
                         break
 
                     images = explorer.get_images()
                     outputs = explorer.get_outputs()
                     coordinates = explorer.get_coords()
+
+                    # IMPORTANT
+                    # FIXME ANOTHER GIANT HACK: I'm shadowing the i variable here. This allows me for accurate record keeping. At the slight expense of code's sanity. Although, if you want to refer to the number of iteration, you shall still use that i variable, as it is meant to account for a case when we're mimicking another run. It's complicated.
+                    if "i" in scenario_dict:
+                        i = scenario_dict["i"]
 
                     test_dir = run_dir / f"{str(i)}_r{str(repeat)} "
                     test_dir.mkdir(exist_ok=True)
@@ -376,6 +407,17 @@ def main():
                         type=int,
                         required=False,
                         )
+
+    parser.add_argument("--mimic_run_name",
+                        type=str,
+                        required=False,
+                        help="Overrides everything else (except for --mimic_run_cls_names and --continue_from)."
+                        )
+
+    parser.add_argument("--mimic_run_cls_names",
+                        type=str,
+                        required=False,
+                        help="Class names should be separated by semicolons.")
 
     args = parser.parse_args()
 

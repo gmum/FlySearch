@@ -1,0 +1,195 @@
+import os
+import pathlib
+import json
+
+from scenarios import CityScenarioMapper, ForestScenarioMapper
+
+
+def is_float(value: str) -> bool:
+    try:
+        float(value)
+        return True
+    except ValueError:
+        return False
+
+
+def is_float_tuple(value: str) -> bool:
+    value = value.strip()
+    if not value.startswith("(") or not value.endswith(")"):
+        return False
+
+    value = value[1:-1]
+
+    for item in value.split(","):
+        if not is_float(item):
+            return False
+
+    return True
+
+
+def to_tuple(value: str) -> tuple:
+    if not is_float_tuple(value):
+        raise ValueError(f"Value {value} is not a tuple of floats")
+
+    value = value[1:-1]
+
+    return tuple(map(float, value.split(",")))
+
+
+def is_bool(value: str) -> bool:
+    value = value.strip().lower()
+    return value == "true" or value == "false"
+
+
+def to_bool(value: str) -> bool:
+    if not is_bool(value):
+        raise ValueError(f"Value {value} is not a boolean")
+
+    return value.strip().lower() == "true"
+
+
+def is_int(value: str) -> bool:
+    return value.isdigit()
+
+
+def is_enum(value: str) -> bool:
+    return value.startswith("ObjectType.")
+
+
+# I'm sorry
+def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | ForestScenarioMapper.ObjectType:
+    if not is_enum(value):
+        raise ValueError(f"Value {value} is not an enum")
+
+    if scenario not in ["city", "forest"]:
+        raise ValueError(f"Scenario {scenario} is not valid")
+
+    value = value.strip().removeprefix("ObjectType.").lower()
+
+    if scenario == "city":
+        match value:
+            case 'anomaly':
+                return CityScenarioMapper.ObjectType.ANOMALY
+            case 'police_car':
+                return CityScenarioMapper.ObjectType.POLICE_CAR
+            case 'beige_sport_car':
+                return CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR
+            case 'blue_sport_car':
+                return CityScenarioMapper.ObjectType.BLUE_SPORT_CAR
+            case 'red_sport_car':
+                return CityScenarioMapper.ObjectType.RED_SPORT_CAR
+            case 'white_sport_car':
+                return CityScenarioMapper.ObjectType.WHITE_SPORT_CAR
+            case 'construction_works':
+                return CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS
+            case 'fire':
+                return CityScenarioMapper.ObjectType.FIRE
+            case 'black_pickup_truck':
+                return CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK
+            case 'green_pickup_truck':
+                return CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK
+            case 'red_pickup_truck':
+                return CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK
+            case 'white_pickup_truck':
+                return CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK
+            case 'crowd':
+                return CityScenarioMapper.ObjectType.CROWD
+            case 'large_trash_pile':
+                return CityScenarioMapper.ObjectType.LARGE_TRASH_PILE
+            case 'black_truck':
+                return CityScenarioMapper.ObjectType.BLACK_TRUCK
+            case 'white_truck':
+                return CityScenarioMapper.ObjectType.WHITE_TRUCK
+    elif scenario == "forest":
+        match value:
+            case 'fire':
+                return ForestScenarioMapper.ObjectType.FIRE
+            case 'camping':
+                return ForestScenarioMapper.ObjectType.CAMPING
+            case 'trash':
+                return ForestScenarioMapper.ObjectType.TRASH
+            case 'building':
+                return ForestScenarioMapper.ObjectType.BUILDING
+            case 'person':
+                return ForestScenarioMapper.ObjectType.PERSON
+            case 'anomaly':
+                return ForestScenarioMapper.ObjectType.ANOMALY
+
+
+class MimicScenarioMapper:
+    def __init__(self, path: pathlib.Path, filter_str: str = None):
+        self.path = path
+        self.white_list = filter_str.strip().split(";")
+
+    def parse_scenario(self, scenario):
+        result = {}
+        city = "regenerate_city" in scenario
+
+        for key, value in scenario.items():
+            if is_int(value):
+                result[key] = int(value)
+            elif is_float(value):
+                result[key] = float(value)
+            elif is_float_tuple(value):
+                result[key] = to_tuple(value)
+            elif is_bool(value):
+                result[key] = to_bool(value)
+            elif is_enum(value):
+                result[key] = to_enum(value, "city" if city else "forest")
+            else:
+                result[key] = value
+
+        return result
+
+    def iterate_scenarios(self, duplicate_first=True):
+        entries = os.listdir(self.path)
+        entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))
+
+        for entry in entries:
+            if not os.path.isdir(self.path / entry):
+                continue
+
+            entry_number = int(entry.split("_")[0])
+            scenario = json.load(open(self.path / entry / "scenario_params.json"))
+
+            object_name = scenario["passed_object_name"]
+
+            for white_list_item in self.white_list:
+                if white_list_item in object_name:
+                    # This part is convoluted, so let me explain:
+                    # 1. We need to duplicate first element, because we:
+                    #   a. Need the engine to warm up
+                    #   b. If we mimic, we want the first scenario.
+                    # So, the solution is to duplicate the first scenario
+                    # 2. We don't want parse a scenario dict twice, so the second if applies it only if we have already duplicated the first one
+                    # Hence knowing that the current scenario was not parsed yet.
+
+                    if duplicate_first:
+                        scenario = self.parse_scenario(scenario)
+                        scenario["drop"] = True
+                        scenario["i"] = entry_number
+
+                        yield scenario
+
+                    if not duplicate_first:
+                        scenario = self.parse_scenario(scenario)
+
+                    scenario["drop"] = False
+                    scenario["i"] = entry_number
+                    duplicate_first = False
+
+                    yield scenario
+                    break
+
+
+def main():
+    mimic = MimicScenarioMapper(
+        pathlib.Path("/home/dominik/MyStuff/active-visual-gpt/all_logs/A15"), "construction")
+
+    for scenario in mimic.iterate_scenarios():
+        for k, v in scenario.items():
+            print(k, v, type(v))
+
+
+if __name__ == "__main__":
+    main()

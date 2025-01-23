@@ -11,7 +11,7 @@ from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class OpenAIConversation(Conversation):
-    def __init__(self, client: OpenAI, model_name: str, seed=42, max_tokens=300, temperature=0.8, top_p=1.0):
+    def __init__(self, client, model_name: str, seed=42, max_tokens=300, temperature=0.8, top_p=1.0):
         self.client = client
         self.conversation = []
         self.model_name = model_name
@@ -181,8 +181,8 @@ def main():
         top_p=0.0000000000000000000001
     )
 
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
-    image, question, options, answer = ds[0]
+    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/data/sample_images/burger.jpeg")
+    image = pil_to_opencv(image)
 
     conversation.begin_transaction(Role.USER)
     conversation.add_image_message(opencv_to_pil(image))
