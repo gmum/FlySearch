@@ -5,6 +5,7 @@ import traceback
 import os
 
 from conversation import InternFactory, VLLMFactory
+from conversation.gemini_factory import GeminiFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
 from glimpse_generators import UnrealClientWrapper
@@ -43,6 +44,8 @@ def get_conversation_factory(args):
         return GPTFactory()
     elif args.model == "intern":
         return InternFactory()
+    elif 'gemini' in args.model:
+        return GeminiFactory(args.model)
     else:
         return VLLMFactory(args.model)
 

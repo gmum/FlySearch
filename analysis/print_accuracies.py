@@ -5,11 +5,15 @@ from matplotlib import pyplot as plt
 
 from analysis import Run, RunAnalyser, CriterionPlotter, load_all_runs_from_a_dir
 
+CITY_CATEGORIES = ['construction_works', 'crowd', 'trash', 'fire', 'car']
+FOREST_CATEGORIES = ['camping','trash', 'person', 'fire', 'building']
 
 def main():
-    path = pathlib.Path("../all_logs/MC-0S-F-10G-GPT-CR")
+    path = pathlib.Path("../all_logs/gemini-2.0-flash-City")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
+
+    categories = CITY_CATEGORIES if "city" in str(path).lower() else FOREST_CATEGORIES
 
     # Can be used for forest as well
     def city_aggregation_function(run: Run):
@@ -36,12 +40,18 @@ def main():
     print("CLAIMED STATS")
     print(pretty_stats)
 
+    # print(' & '.join(f'${stats[c]['mean'] * 100:.1f}\\% \\pm {stats[c]['std'] * 100:.1f}\\%$' for c in categories))
+    print(' & '.join(f'${stats[c]['mean'] * 100:.1f}\\%$' for c in categories))
+
+
     unclaimed_stats = plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax,
                                                                success_criterion=lambda x: RunAnalyser(
                                                                    x).maciek_criterion_satisfied(10))
 
     print("UNCLAIMED STATS")
     print(json.dumps(unclaimed_stats, indent=4))
+
+    print(' & '.join(f'${unclaimed_stats[c]['mean'] * 100:.1f}\\%$' for c in categories))
 
 
 if __name__ == "__main__":

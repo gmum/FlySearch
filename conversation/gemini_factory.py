@@ -1,14 +1,12 @@
 from openai import OpenAI
-from conversation import OpenAIConversation
-from misc import VLLM_KEY, VLLM_ADDRESS
+from misc.config import GEMINI_AI_KEY
+from conversation.openai_conversation import OpenAIConversation
 
 
-class VLLMFactory:
+class GeminiFactory:
     def __init__(self, model_name: str):
-        self.client = OpenAI(
-            api_key=VLLM_KEY,
-            base_url=VLLM_ADDRESS
-        )
+        self.client = OpenAI(api_key=GEMINI_AI_KEY, base_url='https://generativelanguage.googleapis.com/v1beta/openai/',
+                             max_retries=100)
 
         self.model_name = model_name
 
@@ -25,7 +23,7 @@ def main():
 
     image = Image.open("../data/sample_images/burger.jpeg")
 
-    factory = VLLMFactory("mistralai/Pixtral-Large-Instruct-2411")
+    factory = GeminiFactory("gemini-2.0-flash-exp")
     conversation = factory.get_conversation()
     conversation.begin_transaction(Role.USER)
 
