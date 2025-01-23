@@ -219,7 +219,7 @@ def scenario_level_test(args, run_dir):
                     object_name = object_name.lower()
                     object_name = object_name.replace("_", " ")
 
-                    if object_type != ForestScenarioMapper.ObjectType.TRASH and object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS and object_type != CityScenarioMapper.ObjectType.TRASH:
+                    if object_type != ForestScenarioMapper.ObjectType.TRASH and object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS and object_type != CityScenarioMapper.ObjectType.LARGE_TRASH_PILE:
                         object_name = f"a {object_name}"  # Grammar!
 
                     scenario_dict["passed_object_name"] = object_name
