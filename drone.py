@@ -1,15 +1,15 @@
 import argparse
 import json
+import os
 import pathlib
 import traceback
-import os
-from importlib.metadata import requires
 
-from conversation import InternFactory, VLLMFactory, AnthropicConversation
+from conversation import InternFactory, VLLMFactory
 from conversation.anthropic_factory import AnthropicFactory
 from conversation.gemini_factory import GeminiFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.openai_conversation import OpenAIConversation
+from explorers.drone_explorer import DroneExplorer
 from glimpse_generators import UnrealClientWrapper
 from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from glimpse_generators.unreal_glimpse_generator import UnrealGlimpseGenerator, UnrealGridGlimpseGenerator, \
@@ -18,7 +18,6 @@ from navigators import TrivialDroneNavigator, GridDroneNavigator
 from prompts import generate_brute_force_drone_prompt, generate_xml_drone_grid_prompt, \
     generate_xml_drone_grid_prompt_with_grid_controls, xml_found_prompt, xml_found_prompt_cue
 from prompts.drone_prompt_generation import generate_basic_drone_prompt, generate_xml_drone_prompt
-from explorers.drone_explorer import DroneExplorer
 from response_parsers.basic_drone_response_parser import BasicDroneResponseParser
 from response_parsers.xml_drone_response_parser import XMLDroneResponseParser
 from scenarios import ScenarioConfigurator, CityScenarioMapper, MimicScenarioMapper
@@ -125,9 +124,9 @@ def get_scenario_mapper(args):
             scenarios_number=args.n + 1,  # First one is to be discared
             object_probs={
                 (ForestScenarioMapper.ObjectType.PERSON,
-                 ForestScenarioMapper.ObjectType.FIRE,
-                 ForestScenarioMapper.ObjectType.TRASH,
-                 ForestScenarioMapper.ObjectType.CAMPING,
+                 ForestScenarioMapper.ObjectType.FOREST_FIRE,
+                 ForestScenarioMapper.ObjectType.TRASH_PILE,
+                 ForestScenarioMapper.ObjectType.CAMPSITE,
                  ForestScenarioMapper.ObjectType.BUILDING): 1.0
             }
         )
@@ -274,7 +273,7 @@ def scenario_level_test(args, run_dir):
                     object_name = object_name.lower()
                     object_name = object_name.replace("_", " ")
 
-                    if object_type != ForestScenarioMapper.ObjectType.TRASH and object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS and object_type != CityScenarioMapper.ObjectType.LARGE_TRASH_PILE:
+                    if object_type != CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS:
                         object_name = f"a {object_name}"  # Grammar!
 
                     scenario_dict["passed_object_name"] = object_name

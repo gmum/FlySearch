@@ -6,9 +6,9 @@ from typing import Tuple
 
 class ForestScenarioMapper:
     class ObjectType(Enum):
-        FIRE = 0
-        CAMPING = 1
-        TRASH = 2
+        FOREST_FIRE = 0
+        CAMPSITE = 1
+        TRASH_PILE = 2
         BUILDING = 3
         PERSON = 4
         ANOMALY = 5
@@ -105,15 +105,18 @@ class ForestScenarioMapper:
         sun_y = self.sample_value_between(-90, -10)
         sun_z = self.sample_value_between(0, 360)
 
+        forest_trees_density = self.sample_value_between(0.01, 0.3)
+        forest_stones = self.sample_value_between(0.0, 0.1)
+
         return {
             "object_coords": (object_x, object_y, object_z),
             "object_type": object_type,
             "drone_rel_coords": (drone_x, drone_y, drone_z),
             "seed": seed,
-            "forest_live_trees_density": 0.09,
-            "forest_dead_trees_density": 0.01,
-            "forest_stones": 0.1,
-            "forest_cliffs": 0.0,
+            "forest_live_trees_density": forest_trees_density * 0.9,
+            "forest_dead_trees_density": forest_trees_density * 0.1,
+            "forest_stones": forest_stones,
+            "forest_cliffs": 0,
             "sun_y": sun_y,
             "sun_z": sun_z,
             "regenerate_forest": True,

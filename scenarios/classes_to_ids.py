@@ -1,7 +1,7 @@
 from scenarios.city_scenario_mapper import CityScenarioMapper
 from scenarios.forest_scenario_mapper import ForestScenarioMapper
 
-from scenarios.object_classes import BaseObjectClass, PCGClass, EnvPCGClass, ForestEnvPCGClass
+from scenarios.object_classes import BaseObjectClass, PCGClass, ForestEnvPCGClass
 from scenarios.object_classes.forest_sun_class import ForestSunClass
 
 
@@ -78,9 +78,9 @@ def get_classes_to_object_classes(client):
                         client=client)  # Yes, city_env actually moves the spawner so it's PCGClass not PCGEnvClass
 
     return {
-        ForestScenarioMapper.ObjectType.FIRE: forest_fire,
-        ForestScenarioMapper.ObjectType.TRASH: forest_trash,
-        ForestScenarioMapper.ObjectType.CAMPING: camping,
+        ForestScenarioMapper.ObjectType.FOREST_FIRE: forest_fire,
+        ForestScenarioMapper.ObjectType.TRASH_PILE: forest_trash,
+        ForestScenarioMapper.ObjectType.CAMPSITE: camping,
         ForestScenarioMapper.ObjectType.BUILDING: building,
         ForestScenarioMapper.ObjectType.PERSON: person,
         ForestScenarioMapper.ObjectType.ANOMALY: forest_anomaly,
