@@ -279,6 +279,9 @@ def scenario_level_test(args, run_dir):
                     if object_type == CityScenarioMapper.ObjectType.ANOMALY or object_type == ForestScenarioMapper.ObjectType.ANOMALY:
                         object_name = "an object that doesn't fit in with the rest on environment"
 
+                    if object_type == CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS:
+                        object_name = "a road construction site"
+
                     scenario_dict["passed_object_name"] = object_name
 
                     conversation = conversation_factory.get_conversation()
