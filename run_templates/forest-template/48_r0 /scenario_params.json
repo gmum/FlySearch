@@ -1,0 +1,17 @@
+{
+    "object_coords": "(31492.771976645585, 16363.594047023429, 0.4080476107154094)",
+    "object_type": "ObjectType.FOREST_FIRE",
+    "drone_rel_coords": "(-28, 7, 88)",
+    "seed": "678943419",
+    "forest_live_trees_density": "0.08352291501919705",
+    "forest_dead_trees_density": "0.009280323891021893",
+    "forest_stones": "0.025262715599626586",
+    "forest_cliffs": "0",
+    "sun_y": "-56.565156927660574",
+    "sun_z": "1.362302685870258",
+    "regenerate_forest": "True",
+    "set_object": "True",
+    "cansee_restarts": "0",
+    "object_id": "NiagaraActor_UAID_08BFB8191750822F02_1834612234",
+    "passed_object_name": "a forest fire"
+}
