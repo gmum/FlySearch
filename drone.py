@@ -162,20 +162,52 @@ def get_scenario_mapper(args):
             drone_z_rel_min=args.height_min * 100,
             drone_z_rel_max=args.height_max * 100,
             scenarios_number=args.n + 1,  # First one is to be discared
-            seed_max=1000,
+            seed_max=1000000000,
+            seed_min=0,
+        )
+    elif args.scenario_type == "forest-anomaly":
+        return ForestScenarioMapper(
+            object_probs={
+                (
+                    ForestScenarioMapper.ObjectType.ANOMALY,
+                ): 1.0
+            },
+            x_min=15000,
+            x_max=35000,
+            y_min=15000,
+            y_max=35000,
+            z_min=0,
+            z_max=1,
+            drone_z_rel_min=args.height_min * 100,
+            drone_z_rel_max=args.height_max * 100,
+            seed_min=1,
+            seed_max=1000000000,
+            scenarios_number=args.n + 1,  # First one is to be discared
+        )
+    elif args.scenario_type == "city-anomaly":
+        return CityScenarioMapper(
+            object_probs={
+                (
+                    CityScenarioMapper.ObjectType.ANOMALY,
+                ): 1.0
+            },
+            drone_z_rel_min=args.height_min * 100,
+            drone_z_rel_max=args.height_max * 100,
+            scenarios_number=args.n + 1,  # First one is to be discared
+            seed_max=1000000000,
             seed_min=0,
         )
 
 
 def get_client(args):
-    if args.scenario_type == "forest":
+    if "forest" in args.scenario_type:
         forest_binary_path = os.getenv("FOREST_BINARY_PATH")
 
         if forest_binary_path is None:
             raise ValueError("FOREST_BINARY_PATH environment variable not set and required for forest scenario type.")
 
         return UnrealClientWrapper(host="localhost", port=9000, unreal_binary_path=forest_binary_path)
-    elif args.scenario_type == "city":
+    elif "city" in args.scenario_type:
         city_binary_path = os.getenv("CITY_BINARY_PATH")
 
         if city_binary_path is None:
@@ -185,6 +217,8 @@ def get_client(args):
             raise ValueError("LOCATIONS_CITY_PATH environment variable not set and required for city scenario type.")
 
         return UnrealClientWrapper(host="localhost", port=9000, unreal_binary_path=city_binary_path)
+    else:
+        raise ValueError("Unknown scenario type.")
 
 
 def get_glimpse_generator(args):
@@ -368,7 +402,7 @@ def main():
     parser.add_argument("--scenario_type",
                         type=str,
                         required=True,
-                        choices=["forest", "city"],
+                        choices=["forest", "city", "forest-anomaly", "city-anomaly"],
                         )
 
     parser.add_argument("--repeats",
