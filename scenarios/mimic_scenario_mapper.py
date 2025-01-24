@@ -102,11 +102,11 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
                 return CityScenarioMapper.ObjectType.WHITE_TRUCK
     elif scenario == "forest":
         match value:
-            case 'fire':
+            case 'forest_fire':
                 return ForestScenarioMapper.ObjectType.FOREST_FIRE
-            case 'camping':
+            case 'campsite':
                 return ForestScenarioMapper.ObjectType.CAMPSITE
-            case 'trash':
+            case 'trash_pile':
                 return ForestScenarioMapper.ObjectType.TRASH_PILE
             case 'building':
                 return ForestScenarioMapper.ObjectType.BUILDING
@@ -114,6 +114,8 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
                 return ForestScenarioMapper.ObjectType.PERSON
             case 'anomaly':
                 return ForestScenarioMapper.ObjectType.ANOMALY
+
+    raise ValueError(f"Value {value} is not a valid enum")
 
 
 class MimicScenarioMapper:
