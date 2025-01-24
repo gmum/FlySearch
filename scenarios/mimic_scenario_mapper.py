@@ -103,11 +103,11 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
     elif scenario == "forest":
         match value:
             case 'fire':
-                return ForestScenarioMapper.ObjectType.FIRE
+                return ForestScenarioMapper.ObjectType.FOREST_FIRE
             case 'camping':
-                return ForestScenarioMapper.ObjectType.CAMPING
+                return ForestScenarioMapper.ObjectType.CAMPSITE
             case 'trash':
-                return ForestScenarioMapper.ObjectType.TRASH
+                return ForestScenarioMapper.ObjectType.TRASH_PILE
             case 'building':
                 return ForestScenarioMapper.ObjectType.BUILDING
             case 'person':
@@ -117,7 +117,7 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
 
 
 class MimicScenarioMapper:
-    def __init__(self, path: pathlib.Path, filter_str: str = None):
+    def __init__(self, path: pathlib.Path, filter_str: str = "*"):
         self.path = path
         self.white_list = filter_str.strip().split(";")
 
@@ -155,7 +155,7 @@ class MimicScenarioMapper:
             object_name = scenario["passed_object_name"]
 
             for white_list_item in self.white_list:
-                if white_list_item in object_name:
+                if white_list_item in object_name or white_list_item == "*":
                     # This part is convoluted, so let me explain:
                     # 1. We need to duplicate first element, because we:
                     #   a. Need the engine to warm up
@@ -184,11 +184,10 @@ class MimicScenarioMapper:
 
 def main():
     mimic = MimicScenarioMapper(
-        pathlib.Path("/home/dominik/MyStuff/active-visual-gpt/all_logs/A15"), "construction")
+        pathlib.Path("/home/dominik/MyStuff/active-visual-gpt/all_logs/forest-template"), "*")
 
     for scenario in mimic.iterate_scenarios():
-        for k, v in scenario.items():
-            print(k, v, type(v))
+        print(scenario["i"])
 
 
 if __name__ == "__main__":
