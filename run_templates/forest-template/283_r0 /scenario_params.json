@@ -1,0 +1,17 @@
+{
+    "object_coords": "(20070.35384227658, 24508.88771737137, 0.6352473686654424)",
+    "object_type": "ObjectType.ANOMALY",
+    "drone_rel_coords": "(3, 35, 81)",
+    "seed": "486319169",
+    "forest_live_trees_density": "0.11662569241770815",
+    "forest_dead_trees_density": "0.012958410268634238",
+    "forest_stones": "0.012341273336741055",
+    "forest_cliffs": "0",
+    "sun_y": "-61.235970340806325",
+    "sun_z": "105.63448976298807",
+    "regenerate_forest": "True",
+    "set_object": "True",
+    "cansee_restarts": "0",
+    "object_id": "SkeletalMeshActor_UAID_08BFB8191750683002_1238433494",
+    "passed_object_name": "an object that doesn't fit in with the rest of the environment (an anomaly)"
+}
