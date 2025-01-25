@@ -276,10 +276,7 @@ def scenario_level_test(args, run_dir):
                     object_name = f"a {object_name}"
 
                     if object_type == CityScenarioMapper.ObjectType.ANOMALY or object_type == ForestScenarioMapper.ObjectType.ANOMALY:
-                        object_name = "an object that doesn't fit in with the rest on environment"
-
-                    if object_type == CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS:
-                        object_name = "a road construction site"
+                        object_name = "an object that doesn't fit in with the rest of the environment (an anomaly)"
 
                     scenario_dict["passed_object_name"] = object_name
 
