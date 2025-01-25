@@ -93,7 +93,7 @@ def get_classes_to_object_classes(client):
         CityScenarioMapper.ObjectType.BLUE_SPORT_CAR: blue_sport_car,
         CityScenarioMapper.ObjectType.RED_SPORT_CAR: red_sport_car,
         CityScenarioMapper.ObjectType.WHITE_SPORT_CAR: white_sport_car,
-        CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS: construction_works,
+        CityScenarioMapper.ObjectType.ROAD_CONSTRUCTION_SITE: construction_works,
         CityScenarioMapper.ObjectType.FIRE: city_fire,
         CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK: black_pickup_truck,
         CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK: green_pickup_truck,

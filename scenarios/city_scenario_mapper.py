@@ -16,7 +16,7 @@ class CityScenarioMapper:
         BLUE_SPORT_CAR = 3
         RED_SPORT_CAR = 4
         WHITE_SPORT_CAR = 5
-        CONSTRUCTION_WORKS = 6
+        ROAD_CONSTRUCTION_SITE = 6
         FIRE = 7
         BLACK_PICKUP_TRUCK = 8
         GREEN_PICKUP_TRUCK = 9

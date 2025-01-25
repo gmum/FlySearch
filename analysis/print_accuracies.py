@@ -5,11 +5,11 @@ from matplotlib import pyplot as plt
 
 from analysis import Run, RunAnalyser, CriterionPlotter, load_all_runs_from_a_dir
 
-CITY_CATEGORIES = ['construction_works', 'crowd', 'trash', 'fire', 'car']
-FOREST_CATEGORIES = ['camping','trash', 'person', 'fire', 'building']
+CITY_CATEGORIES = ['road_construction_site', 'crowd', 'large_trash_pile', 'fire', 'car']
+FOREST_CATEGORIES = ['campsite','trash_pile', 'person', 'forest_fire', 'building']
 
 def main():
-    path = pathlib.Path("../all_logs/gemini-2.0-flash-City")
+    path = pathlib.Path("../all_logs/Pixtral-Large-Instruct-2411-Forestv3")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 
