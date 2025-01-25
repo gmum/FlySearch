@@ -6,14 +6,23 @@ from matplotlib import pyplot as plt
 from analysis import Run, RunAnalyser, CriterionPlotter, load_all_runs_from_a_dir
 
 CITY_CATEGORIES = ['road_construction_site', 'crowd', 'large_trash_pile', 'fire', 'car']
-FOREST_CATEGORIES = ['campsite','trash_pile', 'person', 'forest_fire', 'building']
+FOREST_CATEGORIES = ['campsite', 'trash_pile', 'person', 'forest_fire', 'building']
+ANOMALY_CATEGORY = ['anomaly']
+
 
 def main():
-    path = pathlib.Path("../all_logs/Pixtral-Large-Instruct-2411-Forestv3")
+    path = pathlib.Path("../all_logs/Qwen2-VL-72B-Forest-anomaly")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 
-    categories = CITY_CATEGORIES if "city" in str(path).lower() else FOREST_CATEGORIES
+    if "anomaly" in str(path).lower():
+        categories = ANOMALY_CATEGORY
+    elif "city" in str(path).lower():
+        categories = CITY_CATEGORIES
+    elif "forest" in str(path).lower():
+        categories = FOREST_CATEGORIES
+    else:
+        raise ValueError(f"Path {path} does not contain a valid scenario")
 
     # Can be used for forest as well
     def city_aggregation_function(run: Run):
@@ -42,7 +51,6 @@ def main():
 
     # print(' & '.join(f'${stats[c]['mean'] * 100:.1f}\\% \\pm {stats[c]['std'] * 100:.1f}\\%$' for c in categories))
     print(' & '.join(f'${stats[c]['mean'] * 100:.1f}\\%$' for c in categories))
-
 
     unclaimed_stats = plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax,
                                                                success_criterion=lambda x: RunAnalyser(
