@@ -80,8 +80,8 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
                 return CityScenarioMapper.ObjectType.RED_SPORT_CAR
             case 'white_sport_car':
                 return CityScenarioMapper.ObjectType.WHITE_SPORT_CAR
-            case 'construction_works':
-                return CityScenarioMapper.ObjectType.CONSTRUCTION_WORKS
+            case 'road_construction_site':
+                return CityScenarioMapper.ObjectType.ROAD_CONSTRUCTION_SITE
             case 'fire':
                 return CityScenarioMapper.ObjectType.FIRE
             case 'black_pickup_truck':
