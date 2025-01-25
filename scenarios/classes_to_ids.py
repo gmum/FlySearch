@@ -32,7 +32,7 @@ def get_classes_to_object_classes(client):
         "Actor_UAID_08BFB8191750043702_2140437280",  # Plane
         "StaticMeshActor_UAID_08BFB8191750683002_1545951497",  # Helicopter
         "SkeletalMeshActor_UAID_08BFB8191750683002_1238433494",  # Dino
-        "Actor_UAID_08BFB8191750043702_2140437280",  # Animal
+        "Actor_UAID_08BFB8191750043702_1942904279",  # Plane2
     ], client=client)
 
     sun = ForestSunClass("DirectionalLight_UAID_E04F43E67EF6227D01_1896464149", client=client)
