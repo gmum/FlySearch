@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am now closer to the yellow construction area. I need to descend further to ensure I am within 10 meters of the object while keeping it centered in my field of view. I will move slightly downwards to get a clearer image.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

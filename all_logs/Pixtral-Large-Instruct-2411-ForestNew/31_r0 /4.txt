@@ -1,0 +1,10 @@
+ "Centered" means that the object should be within your drone's center field of view. There is no need to be perfectly dead center, but the trash pile should be clearly in view and you should be directly above or close to it.
+
+Given the current view and altitude, you are close enough to confirm the object:
+
+```xml
+<Reasoning>
+    The object is now within the specified altitude range and clearly visible in the center field of view. I confirm it as the trash pile.
+</Reasoning>
+FOUND
+```

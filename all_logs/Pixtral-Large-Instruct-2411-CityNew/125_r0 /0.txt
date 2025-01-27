@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am currently at an altitude of 82 meters. To start the search for the road construction site, I need to gradually reduce my altitude while moving horizontally to ensure the object is within my field of view. I will first move towards the lower part of the grid and descend to get a closer look.
+</Reasoning>
+<Action>(0, 27, -30)</Action>
+```

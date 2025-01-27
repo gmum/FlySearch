@@ -1,0 +1,10 @@
+  ```xml
+<Reasoning>
+    At this altitude, I can clearly inspect the rooftops for any anomalies. I will move slightly to the right to inspect the area around the coordinates (-7, 3).
+</Reasoning>
+<Action>(-7, 3, 0)</Action>
+```
+
+The object in question is the mannequin sitting in a chair on the rooftop, which doesn't fit in with the urban environment.
+
+Since it is not in the current field of view, you need to move closer to it.

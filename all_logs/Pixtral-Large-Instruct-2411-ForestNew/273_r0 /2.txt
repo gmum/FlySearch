@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The central object appears distinct enough to be an anomaly. I will descend further to ensure I'm within the 10-meter range.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+If the altitude is now within the required range, I'll declare the object "FOUND".

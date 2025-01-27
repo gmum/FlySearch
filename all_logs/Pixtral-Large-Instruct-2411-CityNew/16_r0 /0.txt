@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a crowd of people below at the coordinates (0, 0). To get closer to the crowd and ensure I am within 10 meters above them as required, I need to descend.
+</Reasoning>
+<Action>(0, 0, -24)</Action>
+```

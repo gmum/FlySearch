@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am starting the search for the fire. The current image shows buildings and streets, so I will first lower my altitude to get a closer look and search for any signs of fire. I will move slightly to the right to investigate areas around the building structures visible in the image.
+</Reasoning>
+<Action>(15, 0, -10)</Action>
+```

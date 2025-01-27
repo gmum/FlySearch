@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The potential building is now centered in the view at coordinates (12, 0). It appears to be the target, but I need to descend further to ensure I am below 10 meters above it for a clear identification.
+</Reasoning>
+<Action>(12, 0, -27)</Action>
+```

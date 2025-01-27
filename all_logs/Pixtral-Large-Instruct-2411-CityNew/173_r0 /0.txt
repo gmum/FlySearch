@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential target near the bottom center of the image, marked by a green arrow. I'll move towards it and descend to get a better view. This area looks like a city street, so the potential objects could be fires in dumpsters or on the street.
+</Reasoning>
+<Action>(0, -25, -10)</Action>
+```

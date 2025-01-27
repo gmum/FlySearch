@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>The object at coordinates (0, 3) is clearly a vehicle. I will now move to the edge of the current view to continue the search, maintain the current altitude.</Reasoning>
+<Action>(0, 3, 0)</Action>
+```
+
+Let's proceed to the next coordinates.

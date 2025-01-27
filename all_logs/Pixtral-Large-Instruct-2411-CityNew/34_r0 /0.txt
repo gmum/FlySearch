@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    This is the initial search. I will move to the lower left quadrant of the image to start a systematic search. I'll also descend to get a closer look at the area.
+</Reasoning>
+<Action>(-25, 25, -20)</Action>
+```

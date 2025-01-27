@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>At 20 meters, I can clearly see a large trash pile in the bottom center of the image. The drone is now close enough and centered on the target. I will descend a bit more to ensure the altitude requirement is met.</Reasoning>
+<Action>(0, -13, -5)</Action>
+```
+
+Now, this is your final move. After this move, if you meet the criteria specified in your objective (at most 10 meters above the object and it must be in your field of view), respond with "FOUND". If not, the mission will be considered a failure.

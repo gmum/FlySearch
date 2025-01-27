@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I have a clear view of the trash pile centered below me, but I'm at 19 meters and need to be below 10 meters above the object. I will decrease my altitude to get closer.</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

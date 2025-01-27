@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I see an unusual object at coordinates (0, 19). Moving closer and lowering the altitude to ensure I am within 10 meters above the object for confirmation.
+</Reasoning>
+<Action>(0, 19, -20)</Action>
+```

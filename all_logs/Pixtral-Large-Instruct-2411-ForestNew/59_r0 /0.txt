@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search from the current position. Will initially move downwards to get closer to the ground and then systematically explore the area to locate the person.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

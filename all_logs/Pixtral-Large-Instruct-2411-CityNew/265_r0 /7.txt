@@ -1,0 +1,12 @@
+  ```xml
+<Reasoning>
+    I am currently at 22 meters altitude and centered on the green truck. I need to confirm the object is directly below the drone to ensure I am meeting the requirements.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+```
+
+After making the final adjustment:
+
+```xml
+FOUND
+```

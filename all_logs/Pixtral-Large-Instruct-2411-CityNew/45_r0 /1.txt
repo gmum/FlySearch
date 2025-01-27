@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At this altitude, I can see a potential target which appears to be a large trash pile centered at (0, 0). I need to descend further to ensure I am no more than 10 meters above the object.
+</Reasoning>
+<Action>(0, 0, -50)</Action>
+```

@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The forest fire is visible in the current field of view. I need to descend and move slightly left to position the drone 10 meters or closer above the fire while keeping it centered in the field of view.</Reasoning>
+<Action>(-10, 0, -20)</Action>
+```

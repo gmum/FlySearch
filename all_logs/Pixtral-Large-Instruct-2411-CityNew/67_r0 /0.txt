@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows an urban area with buildings and roads. There is a visible road construction site on the right side of the image. I will move to the coordinates (65, 0) to get closer to this road construction site. I will also decrease my altitude to get a better view and to position myself below 10 meters above the object if it is the correct site.
+</Reasoning>
+<Action>(65, 0, -50)</Action>
+```

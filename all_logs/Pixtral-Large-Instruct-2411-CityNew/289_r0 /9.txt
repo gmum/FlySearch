@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now centered above the large white vehicle. To confirm it as the anomaly, I will need to descend closer to it while ensuring my altitude is below 10 meters relative to the object.
+</Reasoning>
+<Action>(0, 0, -25)</Action>
+```

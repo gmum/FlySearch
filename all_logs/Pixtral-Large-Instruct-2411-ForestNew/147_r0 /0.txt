@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I see a structure at the coordinates (23, -23). I need to move closer and descend to get a better view and ensure it is the building I am tasked to find. I will move to the coordinates (23, -23) and descend by 20 meters to get a closer look.</Reasoning>
+<Action>(23, -23, -20)</Action>
+```

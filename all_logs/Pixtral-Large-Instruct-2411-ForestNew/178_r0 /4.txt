@@ -1,0 +1,15 @@
+  ```xml
+<Reasoning>
+    I am at 14 meters above ground level and there appears to be a structure located at approximately (5, -5) in the image. This is potentially the building I am tasked to find. I will move towards it and adjust my altitude to be precisely below 10 meters above it for confirmation.
+</Reasoning>
+<Action>(5, -5, -5)</Action>
+```
+
+If the building is indeed at (5, -5), and the altitude is adjusted correctly, the next response should be:
+
+```xml
+<Reasoning>
+    The building is directly below the drone, and I am less than 10 meters above it. The objective is completed.
+</Reasoning>
+FOUND
+```

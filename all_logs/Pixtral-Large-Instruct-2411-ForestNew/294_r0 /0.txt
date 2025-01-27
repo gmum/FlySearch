@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Given that my current altitude is 98 meters above ground and I need to be below 10 meters above the object to declare "FOUND", I need to start descending and searching more closely for any anomalies. I will move slightly forward while significantly descending.
+</Reasoning>
+<Action>(0, 33, -50)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have identified a distinct burning site within my current field of view, centered around coordinates (0, 29). This is likely the forest fire that I am tasked with finding. I will descend to ensure that I fly below 10 meters relative to the fire's peak while keeping the fire centered in my vision.
+</Reasoning>
+<Action>(0, 29, -97)</Action>
+```

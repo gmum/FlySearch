@@ -1,0 +1,146 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 60 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am currently 60 meters above the ground. The environment appears to be a city with buildings and roads. I will start by lowering my altitude to get a closer look at the ground level and search for any anomalies. I will move slightly to the south to explore a different part of the environment.\n</Reasoning>\n<Action>(0, -20, -20)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n   I am now at 40 meters above ground level, and I see a lot of construction materials and debris. Among these items is a more organized anomaly at coordinates (27, -13). I will move closer and lower my altitude to investigate this further.\n</Reasoning>\n<Action>(27, -13, -25)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I encountered an obstacle in my previous move, so I will adjust my trajectory and altitude to avoid obstacles. I will move slightly to the northeast to explore another part of the environment and lower my altitude to check closer to the ground.\n</Reasoning>\n<Action>(13, 25, -15)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I need to be more cautious with my movements to avoid collisions. I will move horizontally without lowering altitude to explore more of the environment safely. I will move further to the northeast.\n</Reasoning>\n<Action>(25, 25, 0)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    Given the recent emergency stops, I need to approach the task with much greater caution. I notice an unusual object (a blue tarp) at coordinates (25, 13). I will move closer to it horizontally first to ensure I can safely approach it.\n</Reasoning>\n<Action>(25, 13, 0)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I need to re-evaluate my approach due to the frequent emergency stops. The environment is heavily cluttered, so I must proceed with extreme caution. Instead of moving directly to potential anomalies, I will try to maneuver more conservatively around the environment. I will move slightly to the left and lower my altitude a bit to survey from a different angle.\n</Reasoning>\n<Action>(-13, 13, -5)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    Given the cluttered environment and numerous emergency stops, it's clear that navigating too close to the ground is not feasible. I need to find an approach that balances the need to identify the anomaly with safety. I will move with very small altitude changes, ensuring safety, and will continue to explore different parts of the area.\n</Reasoning>\n<Action>(-25, -25, 0)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    From this new perspective, I notice an irregularity at coordinates (25, -25) which appears to be a large white vehicle. This looks out of place in this environment. I will carefully move towards this anomaly to get a closer look without descending too quickly.\n</Reasoning>\n<Action>(25, -25, -5)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    I am now closer to the large white vehicle. I need to position myself directly above it to confirm it's the anomaly. I will move horizontally to center myself above the vehicle and then descend further to confirm.\n</Reasoning>\n<Action>(11, -11, 0)</Action>\n```\n\nThis move should place me more centrally above the vehicle. Depending on what I observe in the next image, I might descend further to confirm the anomaly."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am now centered above the large white vehicle. To confirm it as the anomaly, I will need to descend closer to it while ensuring my altitude is below 10 meters relative to the object.\n</Reasoning>\n<Action>(0, 0, -25)</Action>\n```"
+    ]
+]

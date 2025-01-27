@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I observe an area that could potentially have the fire. I will descend significantly to get a closer look at the lower levels of the buildings at grid point (0, 16). This will allow me to have a better view of the area directly below.
+</Reasoning>
+<Action>(0, 16, -30)</Action>
+```

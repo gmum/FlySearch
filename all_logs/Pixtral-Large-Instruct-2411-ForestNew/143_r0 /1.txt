@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see a structure that looks like a building directly below the drone. It appears to be partially obscured by trees but its shape and size suggest it could be the target building, as it’s centered in the field of view. I will descend to ensure I am within the required 10 meters above the object.
+</Reasoning>
+<Action>(0, 0, -28)</Action>
+```

@@ -1,0 +1,7 @@
+ ```xml
+<Reasoning>
+    I can see the white truck directly below at the center (0,0) grid. It is within 10 meters of the drone's current altitude. I will confirm that the drone is centered over the truck and within the acceptable altitude range.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+FOUND
+```

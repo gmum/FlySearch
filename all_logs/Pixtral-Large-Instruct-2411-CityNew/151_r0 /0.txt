@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I'm starting the search from my current position. I will initially move horizontally to explore more of the area while descending to get a closer view and potentially spot the trash pile.</Reasoning>
+<Action>(25, 25, -20)</Action>
+```

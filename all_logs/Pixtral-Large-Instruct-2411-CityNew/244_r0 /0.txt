@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current altitude is quite high, and the drone needs to descend to get a closer look at potential objects on the ground. The grid coordinates show several potential landing spots or areas to investigate. I will start by descending while slightly adjusting my position to explore the area more thoroughly.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

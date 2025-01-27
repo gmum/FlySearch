@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see what looks like a large trash pile directly beneath the center of my field of view. I will descend further to ensure I am within the required 10 meters above the object, centrally aligned over it.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

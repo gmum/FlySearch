@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    The fire is now centered in my field of view. I need to carefully descend to ensure I am within 10 meters above the fire without getting too close.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```
+
+After descending to the correct altitude:
+
+```xml
+FOUND
+```

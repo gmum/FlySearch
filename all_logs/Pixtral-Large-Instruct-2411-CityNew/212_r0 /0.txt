@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm currently at an altitude of 95 meters. To start the search, I will initially move downward in small increments to get closer to the ground and potential anomalies. I will also move diagonally to cover more area systematically.
+</Reasoning>
+<Action>(32, -32, -20)</Action>
+```

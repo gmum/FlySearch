@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 58 meters above ground level, and I see a potential road construction site near the coordinates (0, 0). I need to descend closer to the ground to get a better view and ensure it is the road construction site. I will also slightly move to the center of the grid to ensure the object remains in my field of view.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

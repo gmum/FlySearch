@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object at (8, 5) appears to be a tent or part of a campsite. I will move towards this location and descend to ensure the drone is below 10 meters above the object.
+</Reasoning>
+<Action>(8, 5, -15)</Action>
+```

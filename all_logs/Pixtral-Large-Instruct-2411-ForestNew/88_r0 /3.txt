@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+I see a potential object near the coordinates (-6, -6) which might be the person. However, I need to get closer and center it in my field of view to ensure it is the person.
+</Reasoning>
+<Action>(-6, -6, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current altitude is now closer to the ground, making it easier to spot the person. I will continue to move down while slightly adjusting my position to the direction (10, 10) to center the view on the area with the most open space.
+</Reasoning>
+<Action>(10, 10, -10)</Action>
+```

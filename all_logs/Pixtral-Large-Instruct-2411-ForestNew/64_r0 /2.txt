@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The potential campsite appears to be visible and centered around (0, 20). I will move closer to this spot and lower my altitude to within 10 meters to verify the campsite as the objective.
+</Reasoning>
+<Action>(0, 20, -20)</Action>
+```

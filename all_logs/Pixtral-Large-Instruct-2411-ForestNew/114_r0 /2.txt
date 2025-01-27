@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object is now visible in the image, resembling a campsite around coordinates (14, 14). To ensure that I am centered on the object and fly below 10 meters above it, I will move to (14, 14) and descend significantly.
+</Reasoning>
+<Action>(14, 14, -35)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start by moving to the point (10, 10) and descending to get a closer look at the ground. This maneuver will allow me to examine the area more carefully for any anomalies. If nothing is found, I will continue to explore other points in the grid.
+</Reasoning>
+<Action>(10, 10, -10)</Action>
+```

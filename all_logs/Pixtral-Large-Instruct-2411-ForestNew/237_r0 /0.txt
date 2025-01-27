@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search by moving to the center of the grid and descending to get a closer look at the area. This will allow me to cover more ground efficiently and look for any anomalies that might be present in the environment.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

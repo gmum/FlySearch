@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>At this altitude, I am able to see a pattern on the road that looks like a manhole cover, typically present in road construction sites. I need to move slightly to the right to center the drone on this object and ensure it is the construction site.</Reasoning>
+<Action>(3, -3, 0)</Action>
+```

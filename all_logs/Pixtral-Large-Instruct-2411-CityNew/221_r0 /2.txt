@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>
+    I am currently at 16 meters, which is close to the 10-meter requirement. The yellow object is clearly visible and centered in my field of view. I will make a very slight descent to ensure I am below 10 meters above the object.
+</Reasoning>
+<Action>
+    (0, 0, -5)
+</Action>
+```
+
+Once the next image is provided and it confirms that I am below 10 meters above the object and it is in my field of view, I will reply with "FOUND."

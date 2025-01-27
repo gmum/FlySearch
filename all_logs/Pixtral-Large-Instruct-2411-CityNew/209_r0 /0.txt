@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will begin my search by moving closer to the ground to have a better view of any objects that may look out of place. I am choosing to move slightly northeast (towards coordinates 11, 11) to scan that area since it has clear visibility.
+</Reasoning>
+<Action>(11, 11, -20)</Action>
+```

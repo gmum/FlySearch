@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The area ahead (0, 43) seems to be more open and might contain the building. I will move that way and descend slightly further to get a better view from a lower altitude.
+</Reasoning>
+<Action>(0, 43, -10)</Action>
+```

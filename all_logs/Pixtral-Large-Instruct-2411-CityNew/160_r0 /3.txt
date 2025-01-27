@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+I am now at 10 meters above ground level. The image clearly shows the trash pile in the bottom-left quadrant. I need to position the drone directly above and slightly lower than 10 meters from the trash pile to confirm the find.
+</Reasoning>
+<Action>(-7, -7, -5)</Action>
+```
+
+This move should center the drone on the trash pile while descending an additional 5 meters, ensuring that the drone is no more than 10 meters above the trash pile. If this is successful, the next response will be "FOUND."

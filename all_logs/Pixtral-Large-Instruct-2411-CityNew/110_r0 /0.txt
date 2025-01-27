@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently above an urban area with buildings and roads. To start the search for the black truck, I will descend and move towards the road on the right side of the image, where several vehicles are visible. This will allow me to get a closer look at any potential targets.
+</Reasoning>
+<Action>(18, 18, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Starting the initial scan from the current position. Observed a yellow construction area at coordinates (16, 32), which appears to be different from the surrounding buildings. This might be the object of interest. I will move closer to it and descend to get a better view.
+</Reasoning>
+<Action>(16, 32, -20)</Action>
+```

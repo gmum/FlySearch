@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start by lowering the altitude to get a better view of the surface while remaining centered at the current coordinates. This will help in identifying any anomalies that might be closer to the ground.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

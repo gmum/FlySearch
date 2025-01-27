@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I see a crowd centered at coordinates (0, -4). I will descend to be just below 10 meters above the crowd and hover there.
+</Reasoning>
+<Action>(0, -4, -2)</Action>
+```

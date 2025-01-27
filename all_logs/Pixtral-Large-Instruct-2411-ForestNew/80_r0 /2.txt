@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current altitude is 54 meters above ground level. I see a clearing to the northwest (coordinate -18, 18). There seems to be an object in that direction which might be the person I am looking for. I will descend further by 20 meters to get a closer view.
+</Reasoning>
+<Action>(-18, 18, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I can see cars parked along the road in the right part of the image. They are potential targets. I will move closer to that area to check if any of those cars is a police car. I will also descend slightly to get a clearer view.
+</Reasoning>
+<Action>(21, -11, -10)</Action>
+```

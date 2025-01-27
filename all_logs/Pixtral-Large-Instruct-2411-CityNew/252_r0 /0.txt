@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start the search by examining the area in the center of the image. I will move down to get a closer look at the ground and potential anomalies. If nothing is found, I will continue to scan other areas of the grid systematically.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

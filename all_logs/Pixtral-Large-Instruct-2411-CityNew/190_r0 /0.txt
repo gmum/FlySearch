@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 85 meters. I need to systematically search for potential fire sources by flying to different points on the grid while gradually lowering my altitude. I will start by moving to a point slightly to the right and lowering my altitude.
+</Reasoning>
+<Action>(28, 28, -20)</Action>
+```

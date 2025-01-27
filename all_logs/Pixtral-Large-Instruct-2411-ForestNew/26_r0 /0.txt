@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There are a few areas with what appears to be some debris or potential trash piles on the ground. The most visible potential area of trash is slightly to the right and below the center of the grid, at coordinate (18, -18). I will fly there and descend to get a closer look.
+</Reasoning>
+<Action>(18, -18, -30)</Action>
+```

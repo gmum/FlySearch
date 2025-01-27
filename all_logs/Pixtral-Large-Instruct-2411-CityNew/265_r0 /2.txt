@@ -1,0 +1,10 @@
+  ```xml
+<Reasoning>
+    I am now at 42 meters altitude and still centered on the green object, which appears to be a truck or container. It looks unusual in the environment, so I need to move closer for a final inspection.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```
+
+```xml
+FOUND
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At 27 meters, I am getting closer to the required altitude. The cluster of people at coordinates (9, 9) seems likely to be the crowd we are looking for. I will descend further toward this point to get a better view and ensure I am within the required 10 meters relative altitude.
+</Reasoning>
+<Action>(9, 9, -18)</Action>
+```

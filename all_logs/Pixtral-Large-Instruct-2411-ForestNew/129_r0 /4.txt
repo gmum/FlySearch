@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+I will now confirm the object's identity by getting closer, ensuring that I am within the 10-meter height requirement to declare the object found.
+</Reasoning>
+<Action>(10, -10, -5)</Action>
+```
+
+After this action, if the drone confirms that the object is the target person and is centered within the field of view, it should reply with "FOUND." If not, additional movements may be necessary to get the target centered and within the required altitude.

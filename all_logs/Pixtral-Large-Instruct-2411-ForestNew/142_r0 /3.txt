@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    There is a clear spot around the coordinate (10, -10) which looks more promising for a campsite. I'll move there and descend further to investigate.
+</Reasoning>
+<Action>(10, -10, -10)</Action>
+```
+
+If the next image shows that this spot is indeed a campsite and the altitude is 19 meters or less, I will reply with "FOUND". Otherwise, I will continue the search.

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Now that the drone is at 18 meters above ground level, it is easier to identify objects on the ground. I notice a potential point of interest near the coordinates (-12, 6). This could be the person we are looking for. I'll move towards that direction and descend further to get a closer look.
+</Reasoning>
+<Action>(-12, 6, -8)</Action>
+```

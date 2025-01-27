@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I need to get closer to the boat to inspect it more thoroughly. It is an unusual object in this environment. I will move slightly to the left and descend further to ensure I am within the required 10 meters above the boat.
+</Reasoning>
+<Action>(-10, 10, -10)</Action>
+```

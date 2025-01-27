@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The drone is now closer to the road construction site, which is in the bottom right corner of the image. To get an even better view and ensure I am within 10 meters above the object, I will move directly above the construction site and descend further.
+</Reasoning>
+<Action>(31, -16, -32)</Action>
+```

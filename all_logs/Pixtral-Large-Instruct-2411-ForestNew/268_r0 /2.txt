@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Now closer to the ground, I see a large white object to the northeast (12, 12). This object seems unusual for this environment and could be the anomaly. I will head directly there and descend further to get a better look and ensure the drone is less than 10 meters above the object.
+</Reasoning>
+<Action>(12, 12, -28)</Action>
+```

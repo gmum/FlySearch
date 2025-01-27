@@ -1,0 +1,12 @@
+  ```xml
+<Reasoning>
+    I observed what seems to be a trash pile towards the bottom-left part of the image. I will head directly towards it and descend further for a closer examination.
+</Reasoning>
+<Action>(-13, -13, -10)</Action>
+```
+
+After reaching the target coordinates and altitude, if the object is indeed the trash pile, the next response should be:
+
+```xml
+FOUND
+```

@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>
+    The person is now clearly visible and centered in the field of view near coordinates (0, -4). I will move precisely to this location and ensure I am less than or equal to 10 meters above the person.
+</Reasoning>
+<Action>
+    (0, -4, -1)
+</Action>
+```
+
+This move should place the drone directly over the person at an altitude of 12 meters above ground level, which should be within 10 meters relative to the person if their height is considered. If the person is centered and visible, I will declare "FOUND."

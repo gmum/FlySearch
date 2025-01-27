@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I have identified a potential forest fire in the bottom right section of the image, specifically near the coordinates (31, -31). I will move closer to this area and descend to get a better view and confirm if it is indeed the forest fire.</Reasoning>
+<Action>(31, -31, -20)</Action>
+```

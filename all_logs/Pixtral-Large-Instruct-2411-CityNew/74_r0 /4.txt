@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    My current altitude is within the desired range, and I am still searching for a crowd. I will move forward to explore this new section of the road, which may contain the crowd.
+</Reasoning>
+<Action>(0, -6, 0)</Action>
+```
+
+I'm starting to notice a pattern with the arrows on the ground: they appear to be directions. It might be wise to follow these arrows as they could be guiding me towards the crowd.

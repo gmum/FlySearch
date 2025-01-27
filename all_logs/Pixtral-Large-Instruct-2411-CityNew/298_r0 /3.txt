@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+   I will carefully move the drone towards the red object on the ground as it stands out against the environment. I need to lower the altitude to ensure it is no more than 10 meters away to confirm whether this object is the anomaly.
+</Reasoning>
+<Action>(8, -8, -15)</Action>
+```

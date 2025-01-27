@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm now at 26 meters above ground level and closer to the potential campsite at coordinates (9, -9). The object resembles a campsite more closely now. I'll descend further to confirm it is the campsite and position the drone below 10 meters before replying with "FOUND".
+</Reasoning>
+<Action>(9, -9, -15)</Action>
+```

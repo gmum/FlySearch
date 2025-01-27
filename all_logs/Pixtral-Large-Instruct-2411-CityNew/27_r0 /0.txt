@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search for the fire. Given that I am currently at 60 meters altitude, I need to descend to get a closer view of the area and potentially spot any signs of fire. I will start by moving towards the center of the grid while descending to ensure I am within the required altitude range for spotting the fire.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The fire is clearly visible, but I need to be closer and centered on the hottest part of the fire. I will move to the coordinate (0, -10) and descend further to ensure I am below 10 meters above the fire.
+</Reasoning>
+<Action>(0, -10, -21)</Action>
+```

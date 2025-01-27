@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There appears to be a distinct reddish area in the image which could potentially indicate a forest fire. I will move closer to this area to get a better view and lower the altitude to ensure I am within the required 10 meters above the object.
+</Reasoning>
+<Action>(20, 20, -51)</Action>
+```

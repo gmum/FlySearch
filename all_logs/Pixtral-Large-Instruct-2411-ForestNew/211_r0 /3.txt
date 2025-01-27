@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    From this altitude, I can see more details on the ground. There seems to be an object near the coordinates (10, -10) that looks out of place. I will move towards it and get a closer look.
+</Reasoning>
+<Action>(10, -10, -5)</Action>
+```
+
+After analyzing the image, I'm confident that the object near (10, -10) is the anomaly. I will hover directly above it at a height of less than 10 meters to confirm and declare it found.

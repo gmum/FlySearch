@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 84 meters above ground level. Given that I am looking for a road construction site, it makes sense to descend to get a closer look at the ground level activities. By moving downward, I can better inspect the area for any signs of construction. I will start by descending significantly while also moving slightly forward to cover more ground.
+</Reasoning>
+<Action>(0, 28, -40)</Action>
+```

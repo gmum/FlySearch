@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    There are distinct objects at coordinates (-23, 12) and (0, 12). I'll move closer to (-23, 12) and descend further to check if it is the campsite.
+</Reasoning>
+<Action>(-23, 12, -10)</Action>
+```

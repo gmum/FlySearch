@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I have regained an altitude sufficient for safely surveying the area. The forest fire is visible again, centered around coordinates (20, 20). I will move closer to the fire while carefully descending to ensure I am below 10 meters relative to the fire but not too close to risk a crash.
+</Reasoning>
+<Action>(20, 20, -41)</Action>
+```

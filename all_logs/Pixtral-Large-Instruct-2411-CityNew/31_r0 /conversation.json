@@ -1,0 +1,114 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a road construction site.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am currently at an altitude of 58 meters above ground level, and I see a potential road construction site near the coordinates (0, 0). I need to descend closer to the ground to get a better view and ensure it is the road construction site. I will also slightly move to the center of the grid to ensure the object remains in my field of view.\n</Reasoning>\n<Action>(0, 0, -30)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am currently at an altitude of 28 meters above ground level. I can see more details of the potential road construction site near the coordinates (0, -19). I need to get even closer to confirm if it is indeed the construction site. I will descend further while staying centered on the object.\n</Reasoning>\n<Action>(0, -19, -15)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 13 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am currently at an altitude of 13 meters above ground level and have a clear view of a \"STOP / BUS\" sign at coordinates (4, 0). This indicates a chance for the road construction site being nearby. I need to adjust my position slightly to confirm.\n</Reasoning>\n<Action>(4, 0, -5)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am currently at an altitude of 8 meters above ground level. The \"STOP\" sign and road markings are clearly visible, and I am within the required altitude limit. The construction site is not in my immediate view, so I need to move slightly forward to investigate further.\n</Reasoning>\n<Action>(0, -5, 0)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    I am currently at an altitude of 8 meters above ground level. I am now centered on the road signs \"STOP / BUS\". However, there is no construction site in sight. I need to move forward a bit more to see if the construction site is further ahead.\n</Reasoning>\n<Action>(0, -5, 0)</Action>\n```\n\nThis way, we will continue to investigate further down the road for any signs of the road construction site."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I am currently at an altitude of 8 meters above ground level and have a clearer view of the road ahead. There seems to be no road construction site nearby. Since we are still within the permitted move limit, we can move further along the road to search for the construction site.\n</Reasoning>\n<Action>(0, -5, 0)</Action>\n```\n\nLet's continue moving forward to examine if the construction site is farther ahead."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    I am currently at an altitude of 8 meters above ground level. I can see various road markings and objects, but no clear signs of a road construction site. I will move slightly to the left, which will give me a broader view of the road ahead.\n</Reasoning>\n<Action>(-5, 0, 0)</Action>\n```\n\nBy moving slightly to the left, I will be able to inspect a different angle of the road to see if I can spot the construction site."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    I am currently at an altitude of 8 meters above ground level. I can see the \"BUS\" road marking clearly, and there are some construction objects and equipment visible just below the center coordinates (0, -3) which seems to be a construction site. I need to center on this location for a better view and ensure I am within the altitude limit.\n</Reasoning>\n<Action>(0, -3, -2)</Action>\n```\n\nAfter moving, I should be in a position to confirm the presence of the road construction site."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    I am currently at an altitude of 6 meters above ground level. I have a clear view of the construction equipment and objects visible at coordinates (0, 2), which confirms the presence of a construction site. Based on the objective, I am within the altitude limit and the construction site is in my field of view.\n</Reasoning>\n<Action>FOUND</Action>\n```"
+    ]
+]

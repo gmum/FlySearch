@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+There is a potential building in the coordinates (-53, -27). I need to descend to get a closer look and verify if it is the target building. I will move closer to the object while descending to ensure it comes into clear view.
+</Reasoning>
+<Action>(-53, -27, -70)</Action>
+```

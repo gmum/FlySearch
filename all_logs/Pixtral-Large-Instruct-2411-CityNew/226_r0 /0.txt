@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently in an urban environment with buildings and a possible anomaly on a rooftop. I need to get closer to inspect the object on the rooftop at coordinates (22, -22). I will descend while moving towards that location to get a better view.
+</Reasoning>
+<Action>(22, -22, -20)</Action>
+```

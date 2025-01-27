@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current image shows tall buildings and a street. Since I'm looking for a road construction site, it makes sense to descend closer to the ground level while trying to survey the streets and open areas. I will move downward to get a closer view. I'll also move slightly forward to continue scanning.
+</Reasoning>
+<Action>(18, 18, -30)</Action>
+```

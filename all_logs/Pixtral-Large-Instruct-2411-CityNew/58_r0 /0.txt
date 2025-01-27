@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at 50 meters altitude and need to search for the fire. Since the area includes roads and buildings, it is likely that a visible fire would be on the ground level. I will start by moving closer to the ground and scanning methodically. I will first move to the center of the grid and lower my altitude to 20 meters to get a clearer view of the ground.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

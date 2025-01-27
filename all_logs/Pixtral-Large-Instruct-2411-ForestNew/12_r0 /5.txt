@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The object is clearly visible near coordinates (3, -3). I need to descend slightly and center the drone over the object to confirm if it is indeed the person I am looking for.
+</Reasoning>
+<Action>(3, -3, -1)</Action>
+```
+
+If the object is confirmed to be the person and the drone is within 10 meters or below, I will then respond with "FOUND".

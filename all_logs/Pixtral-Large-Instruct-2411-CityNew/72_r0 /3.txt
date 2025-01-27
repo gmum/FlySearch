@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I have spotted the object in question in the center of the grid (0,0). I need to hover above it to get closer and verify that it is the fire.
+</Reasoning>
+<Action>(0, 0, -9)</Action>
+```
+
+After this action, I'll be able to confirm if it is the fire and respond with "FOUND" if the conditions are met.

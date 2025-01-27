@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I'm starting at the current position and altitude. Since I can't see the trash pile directly below me, I will move to a nearby position and lower my altitude to get a better view. I will start by moving to the coordinates (24, 0) and lowering my altitude by 20 meters to get closer to the ground.
+</Reasoning>
+<Action>(24, 0, -20)</Action>
+```

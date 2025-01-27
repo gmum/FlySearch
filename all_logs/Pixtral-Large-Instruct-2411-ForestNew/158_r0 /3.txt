@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object in the center is a trash pile. I will move directly above it and lower the drone to ensure it is within the required 10 meters range.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

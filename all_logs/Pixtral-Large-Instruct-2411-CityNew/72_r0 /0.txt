@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search for the fire. I will first move to the grid point (30, 0) to scan along the intersection of the buildings. This will bring me closer to the central area where I might have a better chance of spotting the fire. I will also descend to get a closer look at the ground level.
+</Reasoning>
+<Action>(30, 0, -30)</Action>
+```

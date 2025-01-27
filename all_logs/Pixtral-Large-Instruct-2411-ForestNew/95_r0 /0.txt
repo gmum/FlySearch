@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The building is visible and centered in my current field of view. To satisfy the objective of being below 10 meters above the building, I will descend.
+</Reasoning>
+<Action>(0, 0, -48)</Action>
+```

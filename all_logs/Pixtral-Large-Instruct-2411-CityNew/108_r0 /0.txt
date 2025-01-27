@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I observe a set of coordinates ahead of me. The most promising coordinate to explore first is (-10, 0) as there appears to be an object in that direction. I will move closer to that location to get a better view while descending to ensure I can see if it is the red pickup truck.
+</Reasoning>
+<Action>(-10, 0, -10)</Action>
+```

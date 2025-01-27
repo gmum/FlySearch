@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The potential anomaly is now more visible. It appears to be near the coordinate (11, -21). I'll move towards this point and descend to ensure the UAV is below 10 meters relative to the object for a closer inspection.
+</Reasoning>
+<Action>(11, -21, -15)</Action>
+```

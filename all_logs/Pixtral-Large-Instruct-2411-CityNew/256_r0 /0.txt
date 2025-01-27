@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows a typical urban area with buildings, roads, and cars. Most objects in the image are consistent with the usual urban environment. However, the small green object in the lower left corner of the image at coordinates (-22, -22) looks anomalous compared to the rest of the surroundings. I will move closer to this object and lower my altitude to ensure it is the anomaly I am looking for.
+</Reasoning>
+<Action>(-22, -22, -22)</Action>
+```

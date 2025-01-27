@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The trash pile is now centered at coordinates (7, -7). I will move to this position and confirm the trash pile while maintaining an altitude of 10 meters above ground level.
+</Reasoning>
+<Action>(7, -7, 0)</Action>
+```
+
+Once you've confirmed that the object is centered and you are within the specified altitude, you will respond with "FOUND".

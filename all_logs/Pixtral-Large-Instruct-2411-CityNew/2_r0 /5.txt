@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I have identified a white truck in the central part of the image. I will descend to a height below 10 meters to meet the objective and then confirm with "FOUND".
+</Reasoning>
+<Action>(0, 0, -15)</Action>
+```

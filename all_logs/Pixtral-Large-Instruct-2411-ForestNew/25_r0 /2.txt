@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I am now close enough to the object at coordinates (3, -3) to determine that it is indeed the campsite. According to the objective, I need to be 10 meters above the object or closer, and I am currently at 5 meters above it, which is acceptable. The campsite is in my field of view and centered.</Reasoning>
+<Action>FOUND</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At 15 meters above ground level, I have a close view of the area. I can clearly see a fire at coordinates (5, -10). I will move closer and descend slightly to ensure I am within the required 10 meters or less above the fire before confirming.
+</Reasoning>
+<Action>(5, -10, -5)</Action>
+```

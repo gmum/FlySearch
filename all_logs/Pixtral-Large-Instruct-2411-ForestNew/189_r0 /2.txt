@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see what might be the trash pile at the location (23, 23). I will move closer to this position while continuing to descend.
+</Reasoning>
+<Action>(23, 23, -10)</Action>
+```

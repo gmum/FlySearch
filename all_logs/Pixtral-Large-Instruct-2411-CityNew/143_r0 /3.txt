@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I can clearly see the fire now. I will descend further to ensure I am below 10 meters above the fire and centered on it.
+</Reasoning>
+<Action>(0, 0, -15)</Action>
+```
+
+At this point, you should be within the required parameters to declare "FOUND". However, if the next image shows you are too high, adjust accordingly.

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I see a structure at coordinates (-12, 12). To confirm if it's the building we're looking for, I need to fly closer to it and descend to get a better view. I will move to the coordinates (-12, 12) and descend by 30 meters to be roughly 7 meters above ground level.
+</Reasoning>
+<Action>(-12, 12, -30)</Action>
+```

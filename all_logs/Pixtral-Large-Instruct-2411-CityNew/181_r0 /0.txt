@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at a high altitude in an urban environment. Given the objective is to find a crowd, I need to descend closer to the ground to get a better view of the streets and open areas where crowds might gather. I will also move slightly to the north to cover more ground.
+</Reasoning>
+<Action>(0, 26, -30)</Action>
+```

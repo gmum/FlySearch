@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I noticed a potential object at coordinates (-51, 0) in the previous image. I will move to this position and descend further to inspect it more closely. This will help me verify if the object is indeed the building I am tasked with finding.
+</Reasoning>
+<Action>(-51, 0, -20)</Action>
+```

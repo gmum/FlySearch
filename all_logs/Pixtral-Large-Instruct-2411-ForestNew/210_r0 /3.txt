@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The airplane is now centered in my field of view. I am already at 12 meters altitude, which is slightly higher than the required 10 meters. I will descend slightly to meet the altitude requirement and then confirm the finding.
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+```

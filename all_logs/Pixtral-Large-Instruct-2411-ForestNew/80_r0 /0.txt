@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 94 meters, and the terrain consists of a mix of trees and clearings. To start the search, I will move towards a clearing that might offer a better view while slightly descending to get closer to the ground and potential objects of interest. I will move towards the coordinate (31, 0) and descend by 20 meters.
+</Reasoning>
+<Action>(31, 0, -20)</Action>
+```

@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The drone is now centered over the suspected anomalous object, which looks out of place. I must confirm it is within 10 meters below the drone.
+</Reasoning>
+<Action>(0, 0, -8)</Action>
+```
+
+If the object is the anomaly and the drone is within 10 meters above it after this move, the next response will be "FOUND".

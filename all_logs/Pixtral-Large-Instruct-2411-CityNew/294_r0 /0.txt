@@ -1,0 +1,2 @@
+ <Reasoning>I am starting from the top left corner of the grid and moving horizontally across the rows to systematically search the area. The first move will be to the point (11, 23) which is within the field of view and will allow me to scan the upper row of the grid.</Reasoning>
+<Action>(11, 23, 0)</Action>

@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I’m currently at 20 meters. I noticed a vehicle that appears to be overturned at the coordinate (7, -13). This is unusual compared to the other vehicles. I will move closer to inspect it.</Reasoning>
+<Action>(7, -13, -10)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    The object at coordinates (12, -25) now appears to be a large trash pile. I need to move closer and get to an altitude below 10 meters for a positive identification.
+</Reasoning>
+<Action>(12, -25, -29)</Action>
+```

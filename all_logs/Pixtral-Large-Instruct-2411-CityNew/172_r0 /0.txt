@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 88 meters and I do not see a white sports car in my field of view. I will descend significantly to get a closer look and search for the white sports car in the area below. By moving to the coordinates (0, 0) and descending by 40 meters, I aim to improve my chances of spotting the car without moving outside of the search boundaries.
+</Reasoning>
+<Action>(0, 0, -40)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting my search for the white truck. There is no visible truck in the current frame, so I will start by moving downwards to get closer to the ground level and increase the likelihood of spotting the truck. I will also move slightly to the right to cover more area.
+</Reasoning>
+<Action>(27, -27, -30)</Action>
+```

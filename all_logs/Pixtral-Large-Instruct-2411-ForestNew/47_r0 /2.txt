@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The drone is now at 12 meters above ground level, which is an appropriate altitude to spot the trash pile if it is in the field of view. There is a noticeable lighter patch at coordinates roughly (-8, 4) that could be the trash pile. I will move closer to this point while slightly descending to get a better look.
+</Reasoning>
+<Action>(-8, 4, -2)</Action>
+```

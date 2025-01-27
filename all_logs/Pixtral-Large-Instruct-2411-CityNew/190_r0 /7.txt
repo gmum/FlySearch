@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am currently at an altitude of 28 meters. I can see the fire directly below the drone. I need to descend further to be within 10 meters of the fire.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```
+
+Once the next move is made, if you confirm the fire within 10 meters, you should reply with "FOUND".

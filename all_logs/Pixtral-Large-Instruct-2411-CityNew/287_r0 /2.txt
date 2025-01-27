@@ -1,0 +1,20 @@
+ ```xml
+<Reasoning>
+    I notice an object on the sidewalk that seems unusual compared to the rest of the surroundings. To get a better view, I will descend slightly further and ensure that the object is within 10 meters below me.
+</Reasoning>
+<Action>(8, 8, -10)</Action>
+```
+
+```xml
+<Reasoning>
+    I will move directly above the object and verify if it meets the criteria for an anomaly.
+</Reasoning>
+<Action>(8, 15, -5)</Action>
+```
+
+```xml
+<Reasoning>
+    The object is now centered in my view and below 10 meters from me. It appears to be an anomaly.
+</Reasoning>
+FOUND
+```

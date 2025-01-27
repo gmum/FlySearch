@@ -1,0 +1,8 @@
+ To proceed safely and continue the search for the fire, we should ascend to avoid obstacles and then move diagonally. This strategy will help us survey a larger area while maintaining a safe distance from potential obstructions.
+
+```xml
+<Reasoning>
+At the current altitude of 35 meters, it's crucial to avoid obstacles and maintain a safe distance. Moving diagonally while ascending slightly will allow us to survey a larger area and look for possible signs of fire from a safer vantage point.
+</Reasoning>
+<Action>(-12, -23, 10)</Action>
+```

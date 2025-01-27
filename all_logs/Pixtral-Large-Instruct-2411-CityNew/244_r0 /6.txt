@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am now close to some objects on the rooftop. The large, boxy structure appears to be an anomaly as it doesn't fit the environment. I will get closer and position myself directly above it at the required altitude.
+</Reasoning>
+<Action>(18, -9, -10)</Action>
+```
+
+This action should bring the drone to the required altitude and centered over the suspected anomalous object. If it succeeds, the next response will be "FOUND".

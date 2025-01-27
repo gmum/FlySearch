@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to descend carefully to get below 10 meters above the airplane while ensuring it remains in my field of view. I will move down gradually to avoid any collision.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object appears to be a person. Since I am currently at 12 meters above ground level, I need to descend further to be below 10 meters above the person.
+</Reasoning>
+<Action>(0, 4, -5)</Action>
+```

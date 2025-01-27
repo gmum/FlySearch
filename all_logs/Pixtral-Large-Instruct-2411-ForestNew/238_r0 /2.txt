@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The object at (0, -4) looks like a vehicle, which is anomalous in this forested environment. It is directly below the drone, but I need to descend further to ensure I am within the required altitude.
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+```

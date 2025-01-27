@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I see a blue object that might be the campsite in the field of view. I will move towards it while decreasing my altitude to get a closer look and ensure I am within the specified 10 meters above the object.</Reasoning>
+<Action>(19, 19, -40)</Action>
+```

@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am at 16 meters. The object in the center of the view is a possible candidate for the road construction site. I will move downwards to get closer and confirm if this is the target.
+</Reasoning>
+<Action>(0, 0, -7)</Action>
+```
+
+If the object in the center is the road construction site, the next command will be "FOUND" if I can reach within 10 meters above it.

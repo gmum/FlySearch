@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current altitude is 74 meters. There are several potential clearings and paths in view. I will move towards the southwest area (coordinate -25, -25) and continue to descend by 20 meters to get closer to the ground and any potential objects of interest there.
+</Reasoning>
+<Action>(-25, -25, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search for the anomaly. Initial position is at (0,0) and altitude is 49 meters. I will first move slightly downward to (0, 33) to get a better view of the street and the objects below. This will help in identifying any unusual objects that don’t fit in the environment.
+</Reasoning>
+<Action>(0, 33, -10)</Action>
+```

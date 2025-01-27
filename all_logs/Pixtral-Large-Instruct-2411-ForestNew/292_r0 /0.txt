@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am starting my search by moving to the coordinate (26, 26), which is near the center of the grid. This should position me above an area with varied terrain. By descending, I can get a closer look at potential anomalies.
+</Reasoning>
+<Action>(26, 26, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start the search by moving to the coordinates (32, 32) and descending to get a closer look at the area. This will allow me to inspect potential objects in that area and determine if any of them might be the building I am searching for.
+</Reasoning>
+<Action>(32, 32, -20)</Action>
+```

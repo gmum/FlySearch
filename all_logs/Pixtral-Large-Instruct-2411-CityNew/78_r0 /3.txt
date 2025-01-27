@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    From this vantage point, the vehicle at coordinates (0, 6) appears to be a blue sports car. I will descend to get within the required altitude range of 10 meters or less above the object to ensure it’s in my field of view and centered.
+</Reasoning>
+<Action>(0, 6, -9)</Action>
+```
+
+After this action, if the car is confirmed to be blue and centered in the field of view, I will respond with "FOUND."

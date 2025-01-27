@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+   Based on the current view from the drone, I can see a person near the center of the image. The drone is currently at an altitude of 9 meters above the ground and is centered on the object. Thus, the person is within the field of view and below 10 meters as required.
+</Reasoning>
+FOUND
+```

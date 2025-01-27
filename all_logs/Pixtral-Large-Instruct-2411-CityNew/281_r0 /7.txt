@@ -1,0 +1,10 @@
+  Now that I have a better vantage point, the anomaly (skeleton) is clearly visible. I will carefully descend while centering over it to ensure I'm within the required range.
+
+```xml
+<Reasoning>
+    Now that the skeleton is clearly visible, I will descend carefully while centering over it to ensure I am within 10 meters or less above the object.
+</Reasoning>
+<Action>(0, 0, -37)</Action>
+```
+
+After this move, if the altitude is correct, you should reply with "FOUND".

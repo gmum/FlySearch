@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+   I can see a person in the bottom-left corner of the image. I'll descend and move towards that position to ensure it's within my field of view and within the required altitude range.
+</Reasoning>
+<Action>(-21, -21, -11)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+   I see a potential campsite near the center of the image, but I need to get closer to confirm it. I will descend and move toward the potential campsite to ensure it is within my field of view and below 10 meters from the drone.
+</Reasoning>
+<Action>(0, 0, -87)</Action>
+```

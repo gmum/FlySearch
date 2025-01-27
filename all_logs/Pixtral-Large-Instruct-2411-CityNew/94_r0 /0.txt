@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 32 meters. To start the search for the trash pile, I will move downwards to get a closer look at the ground and survey the area around the coordinates (0, -11) and (0, -21) as they seem like potential locations for a trash pile. I will also move slightly to the south to cover more ground.
+</Reasoning>
+<Action>(0, -11, -10)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>I have descended further and am now at 20 meters above ground level. I can see a trash pile clearly in the center. I need to descend slightly more to be at or below 10 meters above it.</Reasoning>
+<Action>(0, 0, -15)</Action>
+```
+
+Once you have made this move, you should be positioned correctly to declare "FOUND" if the trash pile is within your criteria.

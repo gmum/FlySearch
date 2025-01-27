@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    The drone is now closer to the rooftop, but there doesn't appear to be anything unusual in the current view. I will continue moving towards the coordinates (0, 31) to inspect the area further and decrease altitude to get a closer look.
+</Reasoning>
+<Action>(0, 31, -10)</Action>
+```

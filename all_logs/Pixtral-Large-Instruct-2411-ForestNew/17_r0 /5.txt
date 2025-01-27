@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The object at the grid point (-3, 3) is clearly a person. I am now 8 meters above the ground, and the object is in my field of view. I am below 10 meters from the object.</Reasoning>
+<Action>FOUND</Action>
+```

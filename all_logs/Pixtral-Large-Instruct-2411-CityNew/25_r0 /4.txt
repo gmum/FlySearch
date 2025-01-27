@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I can see what appears to be a fire on the road. I need to get even closer to confirm and ensure it is within the specified range of 10 meters or less.
+</Reasoning>
+<Action>(11, -11, -10)</Action>
+```
+
+Waiting for the next image to confirm the presence and position of the fire relative to the drone.

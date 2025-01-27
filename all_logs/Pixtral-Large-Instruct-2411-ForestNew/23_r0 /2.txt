@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The area in the bottom of the image looks like it could have a trash pile. I will move towards (-20, -20) and further decrease my altitude to 20 meters above ground level to inspect it.
+</Reasoning>
+<Action>(-20, -20, -10)</Action>
+```

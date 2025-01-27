@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search by moving to the next grid point while descending to get a closer look at the terrain. This will help to identify any potential objects more clearly.
+</Reasoning>
+<Action>(28, 28, -20)</Action>
+```

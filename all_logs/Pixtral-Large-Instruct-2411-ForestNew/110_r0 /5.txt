@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>The object at the bottom is clearly visible and appears to be the trash pile. I need to descend to get below 10 meters above it.</Reasoning>
+<Action>(0, 0, -7)</Action>
+```
+
+If the next image confirms the object is a trash pile, I will reply with "FOUND".

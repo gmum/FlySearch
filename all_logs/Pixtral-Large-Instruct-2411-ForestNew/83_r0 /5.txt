@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>The object is visible in the center of the image. I need to lower the altitude further and center the drone directly above the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+This series of actions should get the drone closer to the object for a better look and confirm its presence.

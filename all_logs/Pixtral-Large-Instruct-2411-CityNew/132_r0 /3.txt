@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>I see a potential trash pile directly below the center of the drone's field of view. I will descend further to confirm it is the trash pile and ensure I am within the required altitude limit.</Reasoning>
+<Action>(0, 0, -5)</Action>
+```
+
+If the object is confirmed as the trash pile upon closer inspection, the next response should be:
+```xml
+<Reasoning>I have found the trash pile directly below the drone. The drone is within 10 meters of the object, centered on it, and it is in the drone's field of view.</Reasoning>
+FOUND
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have spotted a large airplane in what seems to be an open field surrounded by trees. This airplane appears to be an anomaly in this environment. I need to position the drone directly above the airplane and descend to ensure I am within 10 meters above it.
+</Reasoning>
+<Action>(-16, 16, -37)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    From this higher altitude, I can see more clearly. The green arrow is pointing to an object at the bottom center near (0, -22) that looks like a potential fire. I will move towards that area and carefully descend to inspect without getting too close to any obstacles.
+</Reasoning>
+<Action>(0, -22, -10)</Action>
+```

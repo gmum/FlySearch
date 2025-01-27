@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting at 30 meters altitude, I don't see any signs of a fire directly below. I will move slightly forward to (0, -10, -10) to get a closer view of the area and descend to check for any signs of fire.
+</Reasoning>
+<Action>(0, -10, -10)</Action>
+```

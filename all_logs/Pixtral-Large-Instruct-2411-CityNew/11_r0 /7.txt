@@ -1,0 +1,10 @@
+ Given the repeated emergency stops, it's clear that continuing the search in this highly obstructed environment is impractical and unsafe. The drone is likely in a densely built-up urban area, which presents significant risks for collision. At this point, the best course of action is to abort the mission to avoid further damage or accidents.
+
+```xml
+<Reasoning>
+    Due to repeated emergency stops and the highly obstructed environment, it is unsafe to continue the search. The drone is likely in a densely built-up urban area, making it impractical to proceed without risking collision.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+```
+
+Please consider this a request to abort the mission.

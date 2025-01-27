@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am now at a relatively low altitude, making it easier to identify specific details on the ground. Upon close inspection, there appears to be a fire on the left side, around (-10,0). To confirm and ensure I am within the required range, I will move closer and align the UAV.
+</Reasoning>
+<Action>(-10, 0, -10)</Action>
+```

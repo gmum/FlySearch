@@ -1,0 +1,13 @@
+ ```xml
+<Reasoning>
+    I now have a clear view of the area below me that shows signs of fire. I will move directly above it and descend to the specified distance of 10 meters or less above the fire to confirm.
+</Reasoning>
+<Action>(-9, -18, -10)</Action>
+```
+
+```xml
+<Reasoning>
+    After careful positioning directly above the object, I confirm that it is a forest fire. I will now confirm the location by flying below 10 meters above the fire.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search in the middle of the field of view, moving slightly downwards to get a closer look at the area below. This will help in identifying any potential objects of interest at a lower altitude.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

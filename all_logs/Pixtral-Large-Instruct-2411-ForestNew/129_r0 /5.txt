@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+I can now see that the object is indeed a person. I need to descend a bit more to get within 10 meters above the person and be centered directly over them.
+</Reasoning>
+<Action>(0, -8, -10)</Action>
+```
+
+Given the current position and the need to be centered and within the required altitude, this move should place the drone within the specifications to declare "FOUND."

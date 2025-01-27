@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I now see a person in the field of view at coordinates (8, 8). There's a slight adjustment needed to ensure my altitude relative to the person is 10 meters or closer, while also centering on the person.
+</Reasoning>
+<Action>(8, 8, -14)</Action>
+```
+
+**FOUND**

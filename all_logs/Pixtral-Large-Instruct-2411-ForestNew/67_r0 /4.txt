@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>I am now very close to the suspected trash pile. To observe it from the required distance, I will move slightly downwards.</Reasoning>
+<Action>(0, -7, -5)</Action>
+```
+
+After the next move, if the trash pile is clearly visible and you are within 10 meters of it, you will respond with "FOUND."

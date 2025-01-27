@@ -1,0 +1,8 @@
+ I will now attempt to move the drone to better center the object within my field of view.
+
+```xml
+<Reasoning>
+    I need to move to the right to better center myself above the rooftop where the anomaly, the mannequin, is located.
+</Reasoning>
+<Action>(0, -3, 0)</Action>
+```

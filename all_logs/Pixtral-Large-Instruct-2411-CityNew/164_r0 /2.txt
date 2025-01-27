@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at 12 meters above ground level. The object at coordinates (-8, 0) appears to be a fire. I will move closer to ensure it is centered in my field of view and confirm my altitude relative to the object.
+</Reasoning>
+<Action>(-8, 0, -5)</Action>
+```

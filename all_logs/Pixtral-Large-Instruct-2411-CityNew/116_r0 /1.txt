@@ -1,0 +1,10 @@
+ Given the new position and altitude, I see some roadwork with lane closures directly below and ahead of the drone. That area could be the road construction site I'm searching for. To get a closer and better view, I will descend further.
+
+Here is my next action:
+
+```xml
+<Reasoning>
+    There appears to be roadwork with lane closures directly below and ahead of the drone. This could be the road construction site. I will descend further for a closer and clearer view.
+</Reasoning>
+<Action>(0, 21, -30)</Action>
+```

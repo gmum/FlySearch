@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have observed a spot that appears to be a potential forest fire in the upper left quadrant of the image, surrounded by dense greenery. I need to move closer to this spot to confirm if it is indeed the fire and to get within the required 10 meters or less above the object. I will move horizontally towards this spot and lower my altitude significantly to ensure I am within the specified distance when I confirm the object.
+</Reasoning>
+<Action>(-19, 39, -48)</Action>
+```

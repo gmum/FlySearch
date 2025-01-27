@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am at 15 meters and will move down carefully to ensure I am around 9 meters above the object. I need to ensure the airplane remains centered in my view.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ Given the current image and the instructions, here is my plan:
+
+The terrain is quite open with no immediate clear signs of the person. Since I need to ensure that I check the area closely and get below 10 meters if I spot anything, I will start by descending while maintaining a central position. This will give me a closer look at the area directly below the drone.
+
+<Reasoning>I will begin by descending to get a closer view of the area directly below the drone. This will allow me to inspect the terrain more carefully for any signs of the person.</Reasoning>
+<Action>(0, 0, -10)</Action>

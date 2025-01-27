@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I have moved to the northwest corner while maintaining altitude. There appears to be a patch of ground that looks different from the surrounding area at approximately (-18, 18). I will inspect this area more closely by lowering the altitude.
+</Reasoning>
+<Action>(-18, 18, -15)</Action>
+```
+
+This move will bring the UAV close to the suspected location of the trash pile, allowing for a more detailed inspection.

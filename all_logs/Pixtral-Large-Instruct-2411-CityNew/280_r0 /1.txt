@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    The robot on the ground at the center of the image is the anomaly we are searching for. It is clearly visible and within my field of vision. I will descend to ensure I am within 10 meters of the object.
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+```
+
+After this move, assuming the UAV is directly above the robot and at the correct altitude, the response should be:
+
+```xml
+FOUND
+```

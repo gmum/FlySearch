@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object near the coordinates (0, 5) looks like the building we are searching for. I will descend slightly further to be below 10 meters from the object and ensure it is within my field of view.
+</Reasoning>
+<Action>(0, 5, -3)</Action>
+```

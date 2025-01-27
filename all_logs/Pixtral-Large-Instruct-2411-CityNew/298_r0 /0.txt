@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+   I am starting the search by going lower to investigate the ground level. The current altitude of the drone is 37 meters, which might be too high to spot the anomaly. I will descend while also slightly moving forward to explore the area methodically.
+</Reasoning>
+<Action>(12, 12, -10)</Action>
+```

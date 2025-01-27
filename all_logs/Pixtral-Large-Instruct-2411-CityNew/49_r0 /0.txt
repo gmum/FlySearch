@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have identified a potential crowd of people at coordinates (15, 15). I will move closer to these coordinates and descend to get a better view. If it is indeed the crowd, I will position the UAV below 10 meters above them and reply with "FOUND".
+</Reasoning>
+<Action>(15, 15, -36)</Action>
+```

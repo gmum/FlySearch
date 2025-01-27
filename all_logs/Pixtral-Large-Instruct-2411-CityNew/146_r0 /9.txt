@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>Given the multiple emergency stops, I will ascend more substantially to ensure safety and then move forward to find a clearer path to approach the fire.</Reasoning>
+<Action>(0, 17, 10)</Action>
+```
+
+If you notice the fire and meet the criteria (10 meters above it or closer), reply with "FOUND".

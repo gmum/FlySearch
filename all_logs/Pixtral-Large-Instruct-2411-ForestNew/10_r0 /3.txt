@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+From the current position, it appears that the trash pile might be near (10, -10). To get a closer look and ensure it is centered in my view, I will approach these coordinates at a lower altitude.
+</Reasoning>
+<Action>(10, -10, -10)</Action>
+```
+
+If the trash pile is not found within the next few moves, I will continue with a systematic search pattern, gradually expanding the search area while ensuring I remain centered over potential target areas and descend appropriately to maintain a close altitude below the target when found.

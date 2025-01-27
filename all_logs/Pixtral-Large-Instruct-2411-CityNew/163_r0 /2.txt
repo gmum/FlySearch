@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now at 35 meters above ground level. I can see some road construction equipment on the right side of the image. I will move closer to the construction site and further descend to ensure I am below 10 meters from the object.
+</Reasoning>
+<Action>(23, 12, -20)</Action>
+```
+
+Now you should be very close to the road construction site. If the next image confirms you are within the required distance, you can then respond with "FOUND".

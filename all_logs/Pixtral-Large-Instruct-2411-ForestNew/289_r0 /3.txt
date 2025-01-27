@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have detected a possible anomaly to the south-east of my current position. It looks out of place in this natural environment. I will move closer to inspect it further and adjust my altitude to get a better view.
+</Reasoning>
+<Action>(35, -35, -20)</Action>
+```

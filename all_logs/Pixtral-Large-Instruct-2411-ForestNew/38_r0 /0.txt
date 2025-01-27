@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The image shows a structure that resembles a building at coordinates (-33, 0). I need to descend to get a closer look and ensure it is the target building. I will move to the coordinates (-33, 0) and descend to an altitude closer to the object to verify if it is the building.</Reasoning>
+<Action>(-33, 0, -30)</Action>
+```

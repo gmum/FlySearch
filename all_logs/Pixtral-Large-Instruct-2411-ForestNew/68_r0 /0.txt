@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>There's a potential campsite directly below the drone at coordinates (0, 0). I need to descend to get a closer look and determine if it is indeed the campsite. I will move slightly to the south to get a better view.</Reasoning>
+<Action>(0, -23, -30)</Action>
+```

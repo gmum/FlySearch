@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The red pickup truck is visible in the current field of view. I need to position the drone directly above the truck and ensure that the drone is at most 10 meters above it.
+</Reasoning>
+<Action>(32, -16, -30)</Action>
+```

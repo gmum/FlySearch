@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I am currently above an urban area with a clear view of the street and buildings. I will perform a systematic search by moving along the street while gradually decreasing altitude to get closer to the ground and search for the road construction site. I will start by moving to the point (0, 12) and lowering the altitude by 10 meters.</Reasoning>
+<Action>(0, 12, -10)</Action>
+```

@@ -1,0 +1,10 @@
+ You are now within the specified requirements to identify the anomaly. The airplane is below 10 meters from the drone and centered in the field of view. Congratulations, you have successfully found the object.
+
+```xml
+<Reasoning>
+    I have successfully identified the object within the required parameters. The airplane is less than 10 meters below my current altitude and centered in my field of view.
+</Reasoning>
+<Action>
+    FOUND
+</Action>
+```

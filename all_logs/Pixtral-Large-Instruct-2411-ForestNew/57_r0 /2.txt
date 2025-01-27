@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At 40 meters, the trash pile may become more visible if it is present. I will move closer to the ground by descending further. There is a small dark spot near the coordinates (-13, 0) that could potentially be the trash pile. To get a better look, I will move toward that direction while also descending.
+</Reasoning>
+<Action>(-13, 0, -10)</Action>
+```

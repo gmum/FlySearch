@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object near the coordinates (0, 2) appears to be the building we are searching for. Given the emergency stop warning, I will approach it more carefully by moving slightly to the right and descending more gradually.
+</Reasoning>
+<Action>(2, 2, -2)</Action>
+```

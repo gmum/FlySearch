@@ -1,0 +1,17 @@
+{
+    "object_coords": "(30853.539836097163, 29484.165578145905, 0.3203261167540232)",
+    "object_type": "ObjectType.BUILDING",
+    "drone_rel_coords": "(-30, 10, 70)",
+    "seed": "689455917",
+    "forest_live_trees_density": "0.05629530083306849",
+    "forest_dead_trees_density": "0.006255033425896499",
+    "forest_stones": "0.07822661722936833",
+    "forest_cliffs": "0",
+    "sun_y": "-11.765535082900072",
+    "sun_z": "56.09795810192288",
+    "regenerate_forest": "True",
+    "set_object": "True",
+    "cansee_restarts": "1",
+    "object_id": "StaticMeshActor_UAID_08BFB8191750812F02_1170441019",
+    "passed_object_name": "a building"
+}

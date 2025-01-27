@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search for the person. I will first move to the nearest grid point while also descending. This initial move will help in covering ground efficiently while getting closer to the surface, ensuring any potential object can be spotted more easily.
+</Reasoning>
+<Action>(14, 0, -20)</Action>
+```

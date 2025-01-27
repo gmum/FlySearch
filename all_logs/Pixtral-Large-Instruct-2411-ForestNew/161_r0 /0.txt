@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows a diverse terrain with different patterns and textures. The central area and the green patch at around (-16, 16) look promising as they might hide the person. I will move towards the central area and decrease altitude to get a closer look.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

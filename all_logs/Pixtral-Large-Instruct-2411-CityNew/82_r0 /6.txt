@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>I am currently at 7 meters and can confirm that the vehicle at point (2,0) is indeed the beige sport car I'm looking for. I will further descend to ensure I am within the required 10 meters altitude and centered on the vehicle.</Reasoning>
+<Action>(2, 0, -3)</Action>
+```
+
+```xml
+FOUND
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search for the campsite. As there is no visible campsite in the current view, I will move to a different location and also descend to get a closer look. I will move to the coordinate (25, -49) and descend by 20 meters.
+</Reasoning>
+<Action>(25, -49, -20)</Action>
+```

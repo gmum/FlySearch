@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I can see what appears to be a trash pile at coordinates (-13, -13). I will move towards this point and descend further to 10 meters above ground level for a closer inspection.
+</Reasoning>
+<Action>(-13, -13, -10)</Action>
+```
+
+If at this point the object is identified correctly in the center of your view and you're below 10 meters above it, you will proceed with the "FOUND" response.

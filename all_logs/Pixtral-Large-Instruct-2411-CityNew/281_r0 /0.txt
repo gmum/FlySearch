@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will first move towards the bottom-left section of the grid, which contains a structure that looks different from the rest of the environment. This structure could potentially be the anomaly. I will also lower the altitude to get a closer view.
+</Reasoning>
+<Action>(-48, -24, -20)</Action>
+```

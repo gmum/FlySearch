@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am currently at an altitude of 78 meters and cannot clearly identify any trash pile from this height. I need to descend to a lower altitude to get a closer look. I will start by moving downward while keeping my horizontal position relatively unchanged.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

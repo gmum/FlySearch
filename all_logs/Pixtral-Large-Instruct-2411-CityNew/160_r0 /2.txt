@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+I am now at 30 meters above ground level. This image shows a more detailed view of the area. I can see what appears to be a trash pile in the bottom-left quadrant of the image. I will descend further towards the trash pile to ensure I am below 10 meters above it.
+</Reasoning>
+<Action>(-20, -20, -20)</Action>
+```
+
+This action will move the drone closer to the trash pile and below the required 10-meter threshold if the estimated distance is correct.

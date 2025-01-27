@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I now see a potential object of interest at the coordinates (-11, 11). I will move closer and descend further to inspect it.
+</Reasoning>
+<Action>(-11, 11, -10)</Action>
+```

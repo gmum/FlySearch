@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The object near the coordinates (-14, 14) appears to be a trash pile. I will move closer to it and descend further to ensure I am within 10 meters of the object.</Reasoning>
+<Action>(-14, 14, -15)</Action>
+```

@@ -1,0 +1,12 @@
+ Based on the image, the fire appears to be located at approximately (-12, 6). To ensure that I am within 10 meters of the object, I need to position myself directly above it and adjust my altitude accordingly.
+
+Here's the plan:
+1. Move to the coordinates (-12, 6).
+2. Descend to an altitude of approximately 10 meters or less above the fire.
+
+Given my current altitude of 18 meters, I'll move to the coordinates and adjust my altitude to 8 meters above the object.
+
+```xml
+<Reasoning>The fire is located at (-12, 6). I need to move directly above it and adjust my altitude to be within 10 meters above the fire.</Reasoning>
+<Action>(-12, 6, -8)</Action>
+```

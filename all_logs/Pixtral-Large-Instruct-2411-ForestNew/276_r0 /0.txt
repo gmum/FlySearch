@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I will start by moving directly to the location with coordinates (0, 45) to check if there is an anomaly in that area. Since the environment is densely forested, it is important to move closer to the ground to get a better view.
+</Reasoning>
+<Action>(0, 45, -30)</Action>
+```

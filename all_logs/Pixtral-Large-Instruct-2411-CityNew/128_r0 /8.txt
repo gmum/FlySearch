@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>With the burning vehicle in view and the drone now at 10 meters above ground level, I must ensure I am centered on the object and at a safe distance to proceed safely.</Reasoning>
+<Action>(-7, -7, 0)</Action>
+```
+
+I need to reposition slightly to make sure I am directly above the burning vehicle and centered on it before declaring "FOUND."

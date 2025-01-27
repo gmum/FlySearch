@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+   I am now 11 meters above ground level. The large vehicle is now clearly within view. Given its size and position, it appears to be an anomaly in this context. I will descend slightly to be just below 10 meters above the vehicle and center the drone right above it to confirm it as the anomaly.
+</Reasoning>
+<Action>(0, 0, -2)</Action>
+```
+
+Once you provide the next image showing my position relative to the vehicle, I will reply with "FOUND" if the requirements are met.

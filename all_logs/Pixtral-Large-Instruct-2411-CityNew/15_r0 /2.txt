@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Given the proximity to potential obstacles and the constraints, I will proceed cautiously. Observing the grid, it seems likely that the construction site is located near the barriers and equipment. To ensure a safe approach and proper visual confirmation, I will move slightly to the coordinates (-16, -8) while reducing altitude carefully.
+</Reasoning>
+<Action>(-16, -8, -10)</Action>
+```

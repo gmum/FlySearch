@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I detected an area with bright orange and red colors and smoke rising from it at the coordinates (0, 0). This is likely a forest fire. I need to descend closer to it to confirm and be within the required 10 meters or lower altitude.
+</Reasoning>
+<Action>(0, 0, -33)</Action>
+```

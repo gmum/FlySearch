@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search by moving to a new location to get a different perspective. I will move to the coordinates (22, 22) while maintaining the current altitude to survey the area more thoroughly. If I don't find anything, I will continue to move and lower the altitude to get a closer look at any potential anomalies.
+</Reasoning>
+<Action>(22, 22, 0)</Action>
+```

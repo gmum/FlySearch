@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have spotted what appears to be an anomaly at coordinates (4, 0). I will move toward it and lower my altitude to get a closer look.
+</Reasoning>
+<Action>(4, 0, -5)</Action>
+```

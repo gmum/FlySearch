@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to be more cautious and ensure I don't fly too close to any obstacles. I will move towards the more open area on the upper left side of the grid to avoid obstacles and continue the search. I will move to coordinates (-10, 20) and maintain the current altitude to avoid collision.
+</Reasoning>
+<Action>(-10, 20, 0)</Action>
+```

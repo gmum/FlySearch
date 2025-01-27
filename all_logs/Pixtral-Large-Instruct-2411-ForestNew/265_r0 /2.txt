@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The object at (0, 0) appears to be very distinct compared to its surroundings and is now quite clearly visible. I will move directly above it and descend to ensure I am below 10 meters relative to the object.
+</Reasoning>
+<Action>
+    (0, 0, -30)
+</Action>
+```

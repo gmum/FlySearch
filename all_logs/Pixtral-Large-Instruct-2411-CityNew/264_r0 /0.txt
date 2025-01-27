@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at 74 meters above ground level. I see an object at coordinates (49, -25) which could be the anomaly. I will fly closer to it and descend to get a better view and check if it fits the criteria of an anomaly.
+</Reasoning>
+<Action>(49, -25, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image clearly shows a crowd at coordinates (0,11). To ensure I do not fly too close to an obstacle while getting closer to the crowd, I will move slightly away from the buildings while descending.
+</Reasoning>
+<Action>(11, 11, -5)</Action>
+```

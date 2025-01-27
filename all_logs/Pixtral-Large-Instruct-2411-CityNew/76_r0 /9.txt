@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+I am now at a safer altitude again and see the construction site directly below. I will carefully descend while keeping it centered in the field of view to ensure I am within 10 meters above the site.
+</Reasoning>
+<Action>(0, -13, -15)</Action>
+```
+
+If this move positions the drone at the required altitude above the site, I will confirm the site is centered and announce "FOUND."

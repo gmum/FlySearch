@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I will begin the search by descending while maintaining my current horizontal position. This will allow me to get a closer view of the area below and potentially spot the white truck.</Reasoning>
+<Action>(0, 0, -15)</Action>
+```

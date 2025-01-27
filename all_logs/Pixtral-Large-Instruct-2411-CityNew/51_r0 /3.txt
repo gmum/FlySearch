@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see a possible trash pile on the left side of the image, near coordinates (-21, -10). I will move closer to this area while also lowering the altitude to get a clearer view and confirm if it is indeed the trash pile.
+</Reasoning>
+<Action>(-21, -10, -10)</Action>
+```

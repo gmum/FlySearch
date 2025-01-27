@@ -1,0 +1,13 @@
+ ```xml
+<Reasoning>
+I am now at an altitude of 13 meters. The area around (-9, 4) looks like the trash pile. I will move to the center of it and confirm.
+</Reasoning>
+<Action>(-9, 4, -5)</Action>
+```
+
+```xml
+<Reasoning>
+After moving to the coordinates (-9, 4) and being at an altitude of 8 meters, I confirm that the object is indeed the trash pile. I am below 10 meters above the object and it is in my field of view.
+</Reasoning>
+<Action>FOUND</Action>
+```

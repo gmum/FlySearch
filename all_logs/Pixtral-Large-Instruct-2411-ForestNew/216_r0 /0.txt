@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at the starting position. I will begin my search by moving horizontally to cover more ground while maintaining my altitude. I will move to the north to check for any anomalies in that direction.
+</Reasoning>
+<Action>(0, 28, 0)</Action>
+```

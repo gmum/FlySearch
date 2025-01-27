@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The trash pile is now clearly visible centered at position (0, 31). I will move closer to center on it and descend further to ensure I am within 10 meters above the object.
+</Reasoning>
+<Action>(0, 31, -10)</Action>
+```
+
+After taking this action, ensure that the UAV is centered above the trash pile before responding with "FOUND" to confirm the required criteria.

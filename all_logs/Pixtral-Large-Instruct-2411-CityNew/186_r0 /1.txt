@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+At a lower altitude, I will continue to search for signs of a fire. Given the current field of view, I notice what appears to be smoke at the point (-3, -3). I will move towards this location to investigate further if it is a fire.
+</Reasoning>
+<Action>(-3, -3, -5)</Action>
+```

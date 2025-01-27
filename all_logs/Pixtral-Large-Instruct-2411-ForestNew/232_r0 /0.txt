@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current image shows a landscape with mostly green vegetation. There is one notable object that stands out due to its distinct blue color near the coordinates (31, 0). This object is likely the anomaly we are looking for. I will move closer to this object while descending to ensure it remains within my field of view and to get below 10 meters above it.
+</Reasoning>
+<Action>(31, 0, -83)</Action>
+```

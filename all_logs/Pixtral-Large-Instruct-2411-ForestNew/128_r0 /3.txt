@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The object is now more visible and below the altitude threshold of 10 meters. I will move directly above it and reduce altitude slightly to be closer than 10 meters before confirming the sighting.
+</Reasoning>
+<Action>(-7, -7, -15)</Action>
+```
+
+If the object is found and meets the criteria, I will respond with "FOUND".

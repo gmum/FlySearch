@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>The red area is now clearly visible below, centered around (0, -8). I will move directly to this point and lower my altitude to be within 10 meters above the fire.</Reasoning>
+<Action>(0, -8, -15)</Action>
+```
+
+After this move, if the altitude and positioning are correct, I will confirm the fire with "FOUND".

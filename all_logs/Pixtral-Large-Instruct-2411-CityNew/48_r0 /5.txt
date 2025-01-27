@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I am now 50 meters above ground level. My field of view shows a possible fire on the left at approximately (-17, 33). I will move closer and lower to confirm if this is the fire while ensuring I stay within the safe altitude limit.</Reasoning>
+<Action>(-17, 33, -15)</Action>
+```

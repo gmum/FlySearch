@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows an area with dense vegetation. There's a small cleared area at coordinates (26, 0) which might potentially have the trash pile. I will move towards that area and descend slightly to get a better view.
+</Reasoning>
+<Action>(26, 0, -20)</Action>
+```

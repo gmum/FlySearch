@@ -1,0 +1,8 @@
+  From my current altitude, I can see a potential fire in the bottom left corner of the image. I will move closer while maintaining a safe altitude to verify if it is the source of the fire.
+
+```xml
+<Reasoning>
+    I see a potential source of fire in the bottom left corner of the image. I will move closer to that area while staying at a safe altitude to confirm if it is the fire.
+</Reasoning>
+<Action>(-33, -33, 0)</Action>
+```

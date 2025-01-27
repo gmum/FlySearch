@@ -1,0 +1,16 @@
+  ```xml
+<Reasoning>
+I am now close enough to identify the object clearly. The large trash pile is centered directly below me. I will descend slightly more to ensure I am within the 10-meter requirement before confirming the find.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+Upon executing this action, the drone's altitude will be 7 meters above the ground, which is within the 10-meter requirement.
+
+After the action:
+```xml
+<Reasoning>
+The trash pile is directly below me and within the required altitude range.
+</Reasoning>
+<Action>FOUND</Action>
+```

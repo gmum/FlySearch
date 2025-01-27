@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The airplane is still in my field of view, and I need to be exactly 10 meters or lower above it to successfully mark it as found. I will descend slightly to ensure I am within the required altitude.
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+```

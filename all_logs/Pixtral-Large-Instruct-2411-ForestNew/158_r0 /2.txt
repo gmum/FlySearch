@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object in the center does indeed look like a trash pile. I will move directly above it and lower further to make sure it is the object we are searching for.
+</Reasoning>
+<Action>(0, 0, -15)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I need to carefully scan the area to find the person. I will move slightly right and downward to cover new ground while maintaining a relatively low altitude to ensure I don't miss any objects.
+</Reasoning>
+<Action>(8, -8, -5)</Action>
+```

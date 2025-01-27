@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a patch near the coordinates (0, 15) that looks different from the surroundings. It could potentially be a trash pile, so I need to get closer and lower to confirm.
+</Reasoning>
+<Action>(0, 15, -15)</Action>
+```

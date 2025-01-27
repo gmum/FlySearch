@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The first step is to descend in order to get closer to the ground and have a better view of potential objects. I will move towards the center of the image while decreasing altitude significantly to get a closer look at any potential objects below.
+</Reasoning>
+<Action>(0, 0, -40)</Action>
+```

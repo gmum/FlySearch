@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at 48 meters above ground level, and I can see a red area in the image that could be the forest fire. It's located to the northeast of my current position. I will move towards it while maintaining my altitude to get a closer look.
+</Reasoning>
+<Action>(16, 16, 0)</Action>
+```

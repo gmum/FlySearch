@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    I have identified the fire at a much closer range. The object is in my field of view and appears to be a small fire or embers. I will descend a little closer to ensure I am within the 10-meter range and centered on the object before confirming.
+</Reasoning>
+<Action>(0, 3, -3)</Action>
+```
+
+(After executing the action)
+
+```xml
+FOUND
+```

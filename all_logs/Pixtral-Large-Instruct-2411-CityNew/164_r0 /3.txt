@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at 7 meters above ground level, and the object is clearly visible at the coordinates (2, 2). The altitude is within the required range (10 meters or closer), and the object is centered in my field of view. This confirms the presence of a fire.
+</Reasoning>
+<Action>FOUND</Action>
+```

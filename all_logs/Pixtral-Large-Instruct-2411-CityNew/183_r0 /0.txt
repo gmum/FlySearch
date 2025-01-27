@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to start the search by moving closer to the ground to get a better view of the vehicles. I will move to the coordinates (-16, 0) to align with the road and drop altitude to get a clearer view.
+</Reasoning>
+<Action>(-16, 0, -20)</Action>
+```

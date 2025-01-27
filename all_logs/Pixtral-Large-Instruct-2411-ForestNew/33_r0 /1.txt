@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>There is a noticeable dark spot at the coordinates (0, 13) which might be the trash pile. I will move towards it and lower the altitude to get a better view while ensuring I stay below 10 meters above the potential object.</Reasoning>
+<Action>(0, 13, -20)</Action>
+```
+
+Let's move towards that spot and get a closer look.

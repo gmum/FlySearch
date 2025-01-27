@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The environment predominantly consists of green vegetation and a few scattered rocks. There is an unusual circular object with a metallic sheen directly below the drone at coordinates (0,0) which doesn't fit in with the rest of the environment. I will descend to get a closer look and evaluate if this is the anomaly.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

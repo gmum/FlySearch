@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting my search from the current position. I will first move downwards to get a closer look at the objects on the ground. The area seems to be an urban environment, so it's important to check for any anomalies that might stand out.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

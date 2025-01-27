@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There appears to be a red area in the view directly ahead at coordinates (0, 55). This could potentially be the forest fire. I will lower the altitude significantly to get a closer look and ensure the UAV is within the required distance if this is indeed the fire.
+</Reasoning>
+<Action>(0, 55, -75)</Action>
+```

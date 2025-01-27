@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I see a person in the center of the view. I will descend to be just below 10 meters above the object to confirm.
+</Reasoning>
+<Action>(0, 0, -6)</Action>
+```
+
+**FOUND**

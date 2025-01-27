@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to adjust my altitude and position carefully to avoid any collision. I'll move up to gain a better view and then slowly descend to ensure I am below 10 meters above the object without any risk of collision.
+</Reasoning>
+<Action>(0, 0, 20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At this altitude, I can see the roads more clearly. There is an area in the upper-right part of the image that seems to have some activity, which may be a road construction site. I will move closer to that area while continuing to descend to ensure that I get a clear view.
+</Reasoning>
+<Action>(25, 25, -10)</Action>
+```

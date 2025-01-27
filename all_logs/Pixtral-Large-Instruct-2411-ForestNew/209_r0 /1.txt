@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There is a visible object near the coordinates (31, 31) that stands out from the surrounding terrain. I will move closer to this location to get a better view and then descend to ensure I am below 10 meters above the object.
+</Reasoning>
+<Action>(31, 31, -50)</Action>
+```

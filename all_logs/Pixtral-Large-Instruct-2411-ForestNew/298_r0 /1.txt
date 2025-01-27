@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The white object at coordinates (0, -20) is in my field of view and appears to be an anomaly in this environment. I will descend further to ensure I am within the required 10 meters above the object to confirm it is the object in question.</Reasoning>
+<Action>(0, -20, -25)</Action>
+```

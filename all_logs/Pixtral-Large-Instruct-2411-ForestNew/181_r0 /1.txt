@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I noticed a light pattern near the center-left area at coordinates (-12, 12). It might be the trash pile. I will move slightly closer to that area and lower my altitude to get a better view.
+</Reasoning>
+<Action>(-12, 12, -10)</Action>
+```

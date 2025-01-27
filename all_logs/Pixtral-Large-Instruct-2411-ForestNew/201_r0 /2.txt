@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At this altitude, the details of the terrain are more distinct. There seems to be an object at coordinates (-20, 20) that looks different from the rest of the environment. I will move closer to that location to investigate further while ensuring I fly below 10 meters above the object.
+</Reasoning>
+<Action>(-20, 20, -20)</Action>
+```

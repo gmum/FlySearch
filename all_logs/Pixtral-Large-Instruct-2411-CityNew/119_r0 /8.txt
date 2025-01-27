@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The far-right side of the image shows a possible pile of trash within the highlighted region at (27, 14). I will move closer to this location while maintaining a safe altitude to avoid obstacles.
+</Reasoning>
+<Action>(27, 14, -10)</Action>
+```

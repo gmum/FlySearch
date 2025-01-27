@@ -1,0 +1,10 @@
+  ```xml
+<Reasoning>
+    I can now see some signs of construction work on the road near point (-3, 3). I will move towards it and maintain an altitude below 10 meters for a closer inspection.
+</Reasoning>
+<Action>(-3, 3, -1)</Action>
+```
+
+```xml
+FOUND
+```

@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    I see what appears to be a bright, glowing object directly below me. Based on the altitude and the appearance of the object, I believe this could be the fire. I will descend slightly closer to confirm and ensure I am within the required altitude range.
+</Reasoning>
+<Action>(0, 0, -2)</Action>
+```
+
+After the next move, presuming the object in question is indeed the fire and the drone is centered above it and within the required altitude range, the drone should respond with:
+
+```plaintext
+FOUND
+```

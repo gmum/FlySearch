@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The image shows a densely vegetated area with some spots that could potentially contain a trash pile. I will start by moving to (0, 16) to explore the area closer to the center while descending to get a better view of the ground. This will help me identify any potential trash piles more clearly.
+</Reasoning>
+<Action>
+    (0, 16, -16)
+</Action>
+```

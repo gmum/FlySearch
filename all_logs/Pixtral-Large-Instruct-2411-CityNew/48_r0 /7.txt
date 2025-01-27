@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>I am now at 25 meters above ground level. The object that appears to be a fire is directly below me at (0, -8). I need to descend carefully to confirm the object's identity while ensuring I stay within the 10-meter altitude limit relative to the object.</Reasoning>
+<Action>(0, -8, -10)</Action>
+```
+
+FOUND

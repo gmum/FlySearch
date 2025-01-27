@@ -1,0 +1,154 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I will first move towards the bottom-left section of the grid, which contains a structure that looks different from the rest of the environment. This structure could potentially be the anomaly. I will also lower the altitude to get a closer view.\n</Reasoning>\n<Action>(-48, -24, -20)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 52 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    The anomaly in question is the skeleton in the center of the image. It clearly doesn't belong in this environment. I'll now position myself directly above it and lower my altitude to ensure I am within 10 meters above the object.\n</Reasoning>\n<Action>(0, 0, -42)</Action>\n```\n\nAfter this move, if the altitude is correct, you should reply with \"FOUND\"."
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\nI need to careful approach the object while ensuring I am within the safe altitude range and centered over the object. To avoid further issues, I'll move slightly away from the building and then descend carefully to observe the object.\n</Reasoning>\n<Action>(-12, -12, -20)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\n    It appears I'm too close to the building, so I'll move away from it to ensure safety and then descend slowly to get a better view of the object while making sure I don't hit anything.\n</Reasoning>\n<Action>(-24, -24, -5)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    I need to move further away from the building to ensure safety. I will move to an open area and then carefully descend to get closer to the object while maintaining a safe altitude.\n</Reasoning>\n<Action>(-24, 0, 0)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\n    To avoid any more obstacles and ensure my safety, I will move to a more open area before descending. I'll move to the bottom-left corner of the grid and then attempt to lower the altitude again.\n</Reasoning>\n<Action>(-24, -24, 0)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " Given the previous attempts and the current situation, it seems that the drone needs to move very cautiously. Based on the visual data, moving directly downward or diagonally isn't safe due to obstacles. Let's try moving slightly upward to get a clearer view and then reassess the path.\n\n```xml\n<Reasoning>\n    I will ascend slightly to get a better overview of the area and identify a safe path to the object. Moving upward will help to avoid immediate obstacles and allow for a safer approach.\n</Reasoning>\n<Action>(0, 0, 10)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 46 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  Now that I have a better vantage point, the anomaly (skeleton) is clearly visible. I will carefully descend while centering over it to ensure I'm within the required range.\n\n```xml\n<Reasoning>\n    Now that the skeleton is clearly visible, I will descend carefully while centering over it to ensure I am within 10 meters or less above the object.\n</Reasoning>\n<Action>(0, 0, -37)</Action>\n```\n\nAfter this move, if the altitude is correct, you should reply with \"FOUND\"."
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " It is clear from the previous attempts that descending too rapidly or directly results in collisions. I will attempt a more cautious descent, taking smaller steps to ensure safety.\n\n```xml\n<Reasoning>\n    I will make a smaller descent to avoid immediate obstacles and ensure a safe approach to the object. I will move down by 10 meters.\n</Reasoning>\n<Action>(0, 0, -10)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  It's clear that trying to descend directly downward is not feasible with the obstacles present. I will move laterally to an open space and then attempt to descend again more cautiously.\n\n```xml\n<Reasoning>\n    I will move to the left to find a more open area and then attempt to descend more cautiously.\n</Reasoning>\n<Action>(-24, 0, 0)</Action>\n```"
+    ]
+]

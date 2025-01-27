@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>
+    The object at coordinates (6, 5) definitely doesn't fit the environment. I will move directly above it and lower the altitude to ensure I'm below 10 meters above the object.
+</Reasoning>
+<Action>(6, 5, -8)</Action>
+```
+
+```xml
+FOUND
+```

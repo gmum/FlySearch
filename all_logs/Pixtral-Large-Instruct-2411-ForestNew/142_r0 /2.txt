@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    In this image, there seems to be a somewhat clearer area around the coordinate (11,23) which could potentially be the campsite. I will move to this coordinate and descend slightly to get a better view.
+</Reasoning>
+<Action>(11, 23, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start by moving closer to the center of the grid to get a clearer view and then gradually decrease altitude to scan for the trash pile. There are some areas with vegetation that might obscure the view, so it's important to get a closer look.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

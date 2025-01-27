@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>The potential campsite is now clearly visible and centered below the drone. I will descend further to ensure I am within 10 meters above it.</Reasoning>
+<Action>(0, 0, -17)</Action>
+```
+
+This step might be the last to put the drone at an altitude of 9 meters above the campsite. Once this is done, the response will be "FOUND".

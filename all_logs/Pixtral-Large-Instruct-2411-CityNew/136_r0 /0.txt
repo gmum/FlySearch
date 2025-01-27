@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search for the fire. There are multiple points of interest on the grid, but it's unclear if any of them are the fire. I will move towards the center of the grid and begin descending to get a closer look and identify the potential fire more clearly.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now closer to the possible anomaly. To get a detailed inspection, I will move directly above it and descend further to ensure the altitude is below 10 meters relative to the object.
+</Reasoning>
+<Action>(-11, -21, -25)</Action>
+```
+
+This move should position the drone directly above the object, descending closer for a clear view. If the object is indeed the anomaly and within the specified conditions, the next response will be "FOUND."

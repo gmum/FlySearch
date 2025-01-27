@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 34 meters, and I need to get closer to the ground to search for the fire more effectively. I will start by moving to the center of the image and descending significantly to get a better view of the potential fire. This will allow me to scan the area more closely.
+</Reasoning>
+<Action>(0, 0, -24)</Action>
+```

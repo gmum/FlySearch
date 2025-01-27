@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I observe an object that appears to be a blue car in the center of my field of view, at coordinates (0, 0). I will descend to get closer to the object to confirm it is the blue sport car. Since I am currently at 35 meters above ground level, I will descend 26 meters to ensure I am below 10 meters from the object.</Reasoning>
+<Action>(0, 0, -26)</Action>
+```

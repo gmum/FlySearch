@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Initially, there seems to be dense vegetation and some potential structures in the area. I will start by moving closer to the ground to get a better vantage point for identifying the building. I'll move towards (-43, 0), keeping in mind my altitude to ensure I stay within the 10-meter threshold above any potential target.
+</Reasoning>
+<Action>(-43, 0, -30)</Action>
+```

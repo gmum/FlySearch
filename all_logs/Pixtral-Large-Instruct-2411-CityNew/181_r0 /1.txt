@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I've detected a potential crowd at coordinates (-33, 16). I need to descend further and center the drone on this location to confirm that it is indeed a crowd and ensure I'm within the required altitude of 10 meters or less above the object.
+</Reasoning>
+<Action>(-33, 16, -35)</Action>
+```

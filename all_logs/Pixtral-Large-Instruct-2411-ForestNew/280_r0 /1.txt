@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I notice an object that looks different from the surrounding environment in the top-left quadrant at (-25, 25). I will move towards it and descend further to get a closer look.
+</Reasoning>
+<Action>(-25, 25, -20)</Action>
+```

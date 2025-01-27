@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I have identified the construction site centered below me. My current altitude is 29 meters, so I need to descend further to be below 10 meters above the site before declaring "FOUND".
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I'm now at 23 meters above ground level, and I can see the trash pile clearly centered in the field of view near the coordinates (0, -15). To ensure I am within 10 meters of the object and properly centered, I will move slightly downwards to coordinates (8, -15) and descend by 13 meters.
+</Reasoning>
+<Action>(8, -15, -13)</Action>
+```

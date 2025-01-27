@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I spot a potential object in the lower central part of the image, near the coordinates (13, -25). I will move towards this area and descend further to get a closer view and confirm if it is the person I am looking for.
+</Reasoning>
+<Action>(13, -25, -10)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I have spotted what appears to be a fire at the coordinates (10, 10) as it is emitting smoke. I will move towards it and lower the altitude to get a closer view and ensure it is the fire before reporting it.
+</Reasoning>
+<Action>(10, 10, -15)</Action>
+```

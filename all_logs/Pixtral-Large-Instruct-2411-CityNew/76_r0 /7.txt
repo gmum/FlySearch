@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+I see signs of heavy machinery and construction activity at the bottom of the image which is likely the construction site. I will descend directly to get a closer look.
+</Reasoning>
+<Action>(0, -25, -15)</Action>
+```
+
+If this does not place the drone within 10 meters of the construction site and it remains in the center of the field of view, I will readjust to ensure the criteria are met.

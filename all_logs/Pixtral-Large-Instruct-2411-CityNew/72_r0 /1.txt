@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Continuing the search, I will move further down the intersection along the buildings to the coordinate (20, 39) to get a closer look at that area. I will also slightly descend to maintain proximity to the ground level in case the fire is lower in the buildings.
+</Reasoning>
+<Action>(20, 39, -10)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I am currently at an altitude of 12 meters, which is very close to the target altitude. I can now see a large trash pile located at coordinates (8, -8). I will move towards this pile and adjust my altitude to be just below 10 meters from the trash pile while centering on it.
+</Reasoning>
+<Action>(8, -8, -3)</Action>
+```

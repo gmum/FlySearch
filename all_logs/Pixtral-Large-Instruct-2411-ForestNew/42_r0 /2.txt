@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a bright spot which might be a person, near the coordinates (-10, 10). To get a better look, I will descend closer to that position while also moving towards it.
+</Reasoning>
+<Action>(-10, 10, -10)</Action>
+```

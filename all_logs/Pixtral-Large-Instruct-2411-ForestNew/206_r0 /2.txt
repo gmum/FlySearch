@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see something on the ground near (5, 0). It looks unusual in this environment. I need to move closer and center the drone above it to inspect further.
+</Reasoning>
+<Action>(5, 0, -5)</Action>
+```

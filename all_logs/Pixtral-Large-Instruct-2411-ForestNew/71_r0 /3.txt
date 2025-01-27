@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The fire is clearly visible and centered in the drone's field of view. I will descend a bit more to be within the specified range of 10 meters above the fire.
+</Reasoning>
+<Action>(0, 7, -12)</Action>
+```
+
+If the final altitude is expected to be 9 meters above the ground, the next move should be adjusted accordingly to ensure the drone doesn’t go below the required threshold.

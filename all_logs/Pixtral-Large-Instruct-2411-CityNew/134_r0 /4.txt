@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+  I can clearly see the fire now. I will move slightly forward to center the drone on the fire and then descend to approximately 10 meters above it to confirm its presence.
+</Reasoning>
+<Action>(0, -5, -4)</Action>
+```
+
+After executing this action, if the fire is centered in the field of view and the drone is within the required height range, reply with "FOUND."

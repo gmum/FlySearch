@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Given the narrow passage and the previous incidents, I will move more cautiously and try to approach the construction site very slowly while maintaining a safe altitude. I'll first reduce altitude by a very small amount and then move forward incrementally.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+```

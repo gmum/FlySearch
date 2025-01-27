@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    Maintaining current altitude at 37 meters for safety. Shifting to the right to coordinates (12, 0) to continue search and avoid obstacles.
+</Reasoning>
+<Action>(12, 0, 0)</Action>
+```

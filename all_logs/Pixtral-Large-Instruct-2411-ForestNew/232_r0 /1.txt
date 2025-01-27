@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The UAV is now very close to the blue object, and it is within the field of view. I will carefully descend to ensure I am below 10 meters above the object to reply with "FOUND."
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+```

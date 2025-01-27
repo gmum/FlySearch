@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The potential trash pile is now in clearer view towards the bottom-left of the image, near the coordinates (-14, -14). I will move closer to this position to verify and ensure I'm below 10 meters relative to it before marking it as "FOUND".
+</Reasoning>
+<Action>(-14, -14, -10)</Action>
+```
+
+Please provide the next image after executing this action.

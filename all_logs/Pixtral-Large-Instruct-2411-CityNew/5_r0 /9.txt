@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I can see what appears to be a fire at the center of the view. I will descend carefully to get a closer look while making sure to keep a safe distance.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```
+
+This new altitude should bring you closer to 10 meters above the fire, allowing you to confirm it. Make sure to verify if it's within the required range and centered in your field of view before replying with "FOUND."

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm starting at 60 meters altitude. I need to descend to get a closer look at the ground. The area I'm targeting is towards the upper left quadrant of the image where some distinct features and possible human presence can be spotted.
+</Reasoning>
+<Action>(-20, 20, -20)</Action>
+```

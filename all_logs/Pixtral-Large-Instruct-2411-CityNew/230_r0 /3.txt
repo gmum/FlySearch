@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now very close to the vehicle at coordinates (2, 2). It seems to be an anomaly because it is the only one of its kind in this area and it's out of place in the urban environment. I will center on the object and ensure I am below 10 meters above it.
+</Reasoning>
+<Action>(2, 2, -5)</Action>
+```
+
+After this move, if the drone is centered on the object and below 10 meters above it, I will respond with "FOUND."

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I observe a white truck in the field of view, located towards the coordinates (11,0). I am currently at 34 meters above ground level. To ensure the truck is within 10 meters below the drone, I will move to the coordinates (11,0) and descend by 24 meters to get closer.
+</Reasoning>
+<Action>(11, 0, -24)</Action>
+```

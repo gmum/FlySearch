@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I am at 12 meters altitude and need to adjust my altitude slightly to meet the requirement of being below 10 meters. The airplane is centered in my view, so I will move up slightly and then descend carefully to avoid another near collision as the airplane's height might be causing my issues.
+</Reasoning>
+<Action>(0, 0, 3)</Action>
+```

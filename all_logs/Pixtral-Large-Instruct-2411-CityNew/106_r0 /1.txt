@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now 20 meters above ground level. I will continue to descend and aim to fly closer to the center of the view to ensure the object is within my field of vision. I will decrease my altitude further by 10 meters to get closer for better inspection.
+</Reasoning>
+<Action>(0, 7, -10)</Action>
+```

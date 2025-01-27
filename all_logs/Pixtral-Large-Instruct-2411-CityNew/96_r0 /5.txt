@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>I am now very close to the trash pile at coordinates (0, -23). I will descend further to ensure I am within 10 meters of the object and centered on it.</Reasoning>
+<Action>(0, -11, -25)</Action>
+```
+
+This move should bring the drone below 10 meters relative to the trash pile and center it on the object.

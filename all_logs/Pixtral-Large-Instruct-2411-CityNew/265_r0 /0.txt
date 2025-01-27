@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting from an altitude of 82 meters. I need to get a closer look at the environment and search for any anomalies. I will begin by moving towards the center of the grid and descending to get a better view of the area.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I've identified what appears to be a fire near the center of the grid slightly to the left. I am going to move toward the point (-11, 0) and lower my altitude further to get a closer look and confirm if it's the fire.
+</Reasoning>
+<Action>(-11, 0, -10)</Action>
+```

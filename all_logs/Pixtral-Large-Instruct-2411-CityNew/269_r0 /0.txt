@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I will begin the search by moving closer to the ground to get a better view of potential anomalies. Since the environment appears to be urban, I will choose a spot that allows me to inspect buildings and the street below. I will start by moving to the center of the grid and descending.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

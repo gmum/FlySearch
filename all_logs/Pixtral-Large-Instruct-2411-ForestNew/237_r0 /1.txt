@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I've descended and am now at 30 meters above ground level. I'll move slightly forward to the point (0, -10) while maintaining my altitude, to scan the area ahead more closely for any anomalies.
+</Reasoning>
+<Action>(0, -10, 0)</Action>
+```

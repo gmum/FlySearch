@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am starting at an altitude of 40 meters above ground level. To find the road construction site, I need to lower my altitude and get a closer look at the road ahead. I will first move towards the center of the road to ensure I have a clear view and then descend to get closer to the ground.
+</Reasoning>
+<Action>(0, 13, -10)</Action>
+```

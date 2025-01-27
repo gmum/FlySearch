@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>I have descended to 61 meters above ground level and moved slightly eastward. I don't see any signs of fire yet. I will move further down and to the right to inspect the area more closely.</Reasoning>
+<Action>(41, 20, -10)</Action>
+```
+
+Note: When moving to a new location, ensure that the grid coordinates are within your current field of view to avoid moving outside the search area.

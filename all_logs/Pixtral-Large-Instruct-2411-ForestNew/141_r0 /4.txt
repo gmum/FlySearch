@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The object at (3, 0) is clearly a tent, indicating the campsite. I will descend slightly more to be 10 meters above the object or closer, centering directly above it.
+</Reasoning>
+<Action>(3, 0, -5)</Action>
+```
+
+After executing the above action, I will reply with "FOUND" if I am within the specified parameters.

@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am currently at 20 meters above the ground level. There is a person visible in the image below at coordinate (7, -7). I will descend to 10 meters above ground level to get a clearer view of the person.
+</Reasoning>
+<Action>(7, -7, -10)</Action>
+```
+
+If the person is clearly visible and centered in the next image, I will reply with "FOUND".

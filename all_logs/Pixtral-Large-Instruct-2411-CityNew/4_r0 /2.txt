@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The area near (3, 7) shows some cones and construction equipment, which likely indicates a road construction site. I will move directly over it and lower the drone to 8 meters above ground level to confirm.
+</Reasoning>
+<Action>(3, 7, -2)</Action>
+```
+
+After this move, if the object is within the designated altitude and clearly visible, I will reply with "FOUND."

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>At 11 meters above ground level, a burning vehicle is now clearly visible. I will descend further to ensure I am within the required 10 meters or less above the object.</Reasoning>
+<Action>(4, -7, -2)</Action>
+```
+
+By moving to the coordinates (4, -7) and descending by 2 meters, I should be centered on the object and within 10 meters above it. If successful, I will then reply with "FOUND" in the next step.

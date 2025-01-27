@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I have spotted a crowd of people located at the coordinates (0, 22). I need to move closer to the crowd and position the drone below 10 meters above the crowd while ensuring it remains centered in my field of view.</Reasoning>
+<Action>(0, 22, -23)</Action>
+```

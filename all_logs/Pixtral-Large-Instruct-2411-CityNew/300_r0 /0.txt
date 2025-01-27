@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current altitude of 62 meters might be too high to spot anomalies accurately. I will start by descending to a lower altitude while remaining in the central area to scan for any noticeable anomalies.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

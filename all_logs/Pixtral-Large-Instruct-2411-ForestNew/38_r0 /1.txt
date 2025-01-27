@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>The object at coordinates (12, 6) appears to be the building. I need to position myself directly above it and descend to an altitude of 10 meters or less to confirm. I will move to (12, 6) and make a slight descent to ensure I am within the required altitude range.</Reasoning>
+<Action>(12, 6, -8)</Action>
+```
+
+If the resulting altitude is 9 meters or less above the object, you should reply with "FOUND" in your next response.

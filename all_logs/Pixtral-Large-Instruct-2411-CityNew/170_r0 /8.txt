@@ -1,0 +1,10 @@
+ Given the repeated emergency stops due to proximity to obstacles, it is clear that horizontal movements without altitude adjustments are leading to unsafe conditions. 
+
+However, I have one move left, and I will use it cautiously to try to complete the mission successfully.
+
+```xml
+<Reasoning>
+I will make a small lateral move while maintaining the current altitude to see if I can spot the crowd from a safe distance without moving too close to any obstacles. Since this is my final attempt, I will be very cautious.
+</Reasoning>
+<Action>(21, 0, 0)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image now shows a potential crowd to the right at coordinates (14, 14). I need to move closer to this area to confirm if it is indeed the crowd I am searching for. I will descend further while moving towards the area of interest.
+</Reasoning>
+<Action>(14, 14, -10)</Action>
+```

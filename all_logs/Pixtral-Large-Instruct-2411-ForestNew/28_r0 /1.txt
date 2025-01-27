@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Now that I have descended to a lower altitude, I can see more details. I notice a dark object in the center of the view at coordinates (0, 14). This could potentially be the trash pile. I need to get closer and lower to confirm.
+</Reasoning>
+<Action>(0, 14, -10)</Action>
+```

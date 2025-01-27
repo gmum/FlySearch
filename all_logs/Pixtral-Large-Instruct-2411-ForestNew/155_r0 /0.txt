@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There is a visible fire at the coordinates (0, 57) on the grid. I need to move closer to it and descend below 10 meters above the fire to confirm the sighting as per the objective.
+</Reasoning>
+<Action>(0, 57, -76)</Action>
+```

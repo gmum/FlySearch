@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Given the current altitude of 52 meters, I need to descend to get a closer view of the area and locate the building. The coordinates (17, 17) seem to have some structures visible which might be the building. I will descend towards these coordinates to get a better view.
+</Reasoning>
+<Action>(17, 17, -20)</Action>
+```

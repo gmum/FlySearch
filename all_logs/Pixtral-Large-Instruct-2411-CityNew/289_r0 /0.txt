@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently 60 meters above the ground. The environment appears to be a city with buildings and roads. I will start by lowering my altitude to get a closer look at the ground level and search for any anomalies. I will move slightly to the south to explore a different part of the environment.
+</Reasoning>
+<Action>(0, -20, -20)</Action>
+```

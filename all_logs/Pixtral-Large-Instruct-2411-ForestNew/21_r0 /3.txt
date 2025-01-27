@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>I am very close to the forest fire now and need to make a final descent to ensure I am within the 10-meter altitude requirement. I will center on the fire and descend further.</Reasoning>
+<Action>(13, -13, -30)</Action>
+```
+
+If the above move meets the criteria, the response should be:
+
+```xml
+FOUND
+```
+
+Let's make the move and then confirm if the final position meets the requirements to output "FOUND".

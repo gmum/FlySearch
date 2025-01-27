@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I will continue to descend and center on the object that appears to be an anomaly in the environment. It looks like a statue or structure that stands out from the surrounding trees and vegetation. I need to get closer and ensure I am below 10 meters above it.
+</Reasoning>
+<Action>(0, 14, -20)</Action>
+```
+
+After I make this move, I'll check if the drone is centered on the object and confirm if the altitude is below 10 meters. If so, I will reply with "FOUND".

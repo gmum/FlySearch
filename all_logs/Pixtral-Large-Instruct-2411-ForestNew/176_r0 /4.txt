@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>At this altitude and position, I clearly see the person at coordinates (0, -8). According to the guidelines, I should descend further to ensure I am within 10 meters above the person.</Reasoning>
+<Action>(0, -8, -15)</Action>
+```
+
+I expect this to place me around 8 meters above the ground, within the required distance from the person.

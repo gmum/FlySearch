@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+I am now at an altitude of 33 meters. The area around coordinates (-22, 0) looks very much like it could be the trash pile. I will move directly above it and descend further for a closer inspection to confirm if it is indeed the trash pile.
+</Reasoning>
+<Action>(-22, 0, -10)</Action>
+```

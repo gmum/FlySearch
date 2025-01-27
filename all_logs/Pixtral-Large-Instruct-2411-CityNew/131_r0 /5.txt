@@ -1,0 +1,8 @@
+ ### Emergency stop: You've flown too close to the building. You need to back away from the building for safety before continuing the search.
+
+```xml
+<Reasoning>
+    I need to move away from the building immediately for safety. I will move to the left and increase the altitude to avoid hitting the structure. After ensuring a safe distance, I will resume the search for the road construction site.
+</Reasoning>
+<Action>(-13, 0, 5)</Action>
+```

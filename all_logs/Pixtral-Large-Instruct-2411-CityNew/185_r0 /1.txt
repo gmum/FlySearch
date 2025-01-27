@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential police car in the bottom right part of the image. I need to move closer and lower to check.
+</Reasoning>
+<Action>(11, -11, -10)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+The image shows a potential campsite at the coordinates (15, -15). I will move directly to this location and lower the altitude to ensure I am within 10 meters above the object for closer inspection.
+</Reasoning>
+<Action>(15, -15, -35)</Action>
+```

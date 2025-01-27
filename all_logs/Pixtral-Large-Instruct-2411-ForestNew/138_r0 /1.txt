@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have descended to 56 meters and can now see a building structure centered at approximately (0, 0). I will move slightly closer while descending further to ensure I am within 10 meters above the building.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

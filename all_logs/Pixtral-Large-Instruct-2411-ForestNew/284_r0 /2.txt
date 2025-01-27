@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    The current altitude is now 32 meters. I can clearly see an object that stands out in the center of the grid. I will move directly over it and descend further to confirm its nature and to ensure I am at most 10 meters above it.
+</Reasoning>
+<Action>(0, 0, -23)</Action>
+```
+
+After executing the above action, if the image shows the object is centered and the drone is close enough (within 10 meters from the object), the next response should be:
+
+```xml
+FOUND
+```

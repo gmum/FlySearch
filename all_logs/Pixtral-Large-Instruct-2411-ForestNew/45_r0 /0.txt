@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I have spotted a forest fire directly below the UAV. I will descend to get closer to the fire while ensuring I stay within the required altitude limit.
+</Reasoning>
+<Action>(-22, -22, -56)</Action>
+```
+
+Explanation: The coordinates (-22, -22) will center the UAV on the fire. Subtracting 56 meters from the current altitude of 66 meters will bring the UAV to exactly 10 meters above the fire, fulfilling the mission requirement.

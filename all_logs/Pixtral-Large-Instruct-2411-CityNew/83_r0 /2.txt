@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+As I get closer to the ground, I can now see what appears to be a large trash pile near the point (18, 9). I will move towards that position and slightly descend to get a clearer view and ensure I am within the required 10 meters above the object to confirm whether it is the trash pile.
+</Reasoning>
+<Action>(18, 9, -10)</Action>
+```

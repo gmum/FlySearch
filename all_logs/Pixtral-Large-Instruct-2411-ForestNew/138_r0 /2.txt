@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now at 25 meters above ground level, directly over the building. I will descend further to be closer to the building and ensure I am within the required 10 meters.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```
+
+Based on the current altitude of 25 meters above ground level, it is clear that the building is directly centered beneath the drone. The next move will ensure that the altitude constraint (being less than or equal to 10 meters above the building) is met.

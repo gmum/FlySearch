@@ -1,0 +1,8 @@
+ I will move up slightly to ensure safety while approaching the object.
+
+   ```xml
+<Reasoning>
+    The drone is very close to the rooftop and the potential anomaly. I will move slightly upward to avoid collision and ensure a safe distance while centering on the object for clearer identification.
+</Reasoning>
+<Action>(0, -14, 5)</Action>
+```

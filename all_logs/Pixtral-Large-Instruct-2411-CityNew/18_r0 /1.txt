@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Detected an unusual red object at the coordinates approximately (7, -15), which could potentially be a fire. I will move closer and descend further to investigate and verify if it is the fire we are looking for.
+</Reasoning>
+<Action>(7, -15, -12)</Action>
+```

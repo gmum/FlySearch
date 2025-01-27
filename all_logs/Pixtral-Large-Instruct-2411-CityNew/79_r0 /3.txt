@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The area in the coordinates (-6, -3) shows some scattered objects on the ground. I will move closer to verify if this is the large trash pile we are looking for.
+</Reasoning>
+<Action>(-6, -3, -3)</Action>
+```
+
+By moving to (-6, -3) and descending further, the drone should be able to get a closer look at the potential trash pile and ensure it is within 10 meters above the object, meeting the requirements to confirm if it is indeed the trash pile.

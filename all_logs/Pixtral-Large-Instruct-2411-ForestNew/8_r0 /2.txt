@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have identified an object near the coordinates (0, -6) which could be the person we are looking for. I need to descend further to get a clear view and confirm the presence of the person.
+</Reasoning>
+<Action>(0, -6, -8)</Action>
+```

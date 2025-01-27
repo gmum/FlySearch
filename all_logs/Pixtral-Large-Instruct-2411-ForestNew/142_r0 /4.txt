@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The clear spot around the coordinate (0, -13) is more clearly visible and appears to be the campsite. I will descend further, ensuring I am below 10 meters above the object, to confirm this is indeed the campsite.
+</Reasoning>
+<Action>(0, -13, -10)</Action>
+```
+
+If the next image confirms that this is indeed the campsite and my altitude is less than 10 meters, I will respond with "FOUND".

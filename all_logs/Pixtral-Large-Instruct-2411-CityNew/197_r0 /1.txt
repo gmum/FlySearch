@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am currently at an altitude of 13 meters. I see what looks like a large trash pile directly below me at the coordinates (0, -9). I will descend to ensure I am within 10 meters of the object and centered on it.
+</Reasoning>
+<Action>(0, -9, -4)</Action>
+```
+
+This should position the drone roughly 9 meters above the trash pile, ensuring it is in the field of view and centered.

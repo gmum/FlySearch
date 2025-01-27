@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Since I'm currently at 98 meters and there's no clear anomaly visible in the first image, I will start by descending and moving slightly to cover more area. By moving to the coordinates (33,33) and descending by 30 meters, I will get a closer look at the area while ensuring I do not exceed the altitude limits.
+</Reasoning>
+<Action>(33, 33, -30)</Action>
+```

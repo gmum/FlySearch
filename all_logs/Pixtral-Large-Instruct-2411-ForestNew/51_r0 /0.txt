@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I see an object in the center of the image that resembles a building. I will move towards it and decrease my altitude to get a closer look and ensure I am within 10 meters above it.
+</Reasoning>
+<Action>(0, 0, -45)</Action>
+```

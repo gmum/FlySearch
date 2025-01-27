@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows an urban environment with streets, vehicles, and buildings. I am currently at an altitude of 93 meters. The road construction site may be along the roads or intersections visible in the image. I will start by moving downwards to get a closer view and then move horizontally to scan for the construction site. I will move towards the lower section of the image as it has more open spaces which might be construction areas.
+</Reasoning>
+<Action>(31, -62, -30)</Action>
+```

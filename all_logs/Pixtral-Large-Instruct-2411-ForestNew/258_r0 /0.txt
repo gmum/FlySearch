@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I do not see any obvious anomalies in the current field of view. I will move to the upper right (21, 21) to conduct a wider search and lower the altitude slightly to get a closer view. This will help in identifying any anomalies more clearly.</Reasoning>
+<Action>(21, 21, -10)</Action>
+```

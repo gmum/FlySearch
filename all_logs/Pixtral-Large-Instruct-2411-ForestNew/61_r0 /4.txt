@@ -1,0 +1,8 @@
+ Given the current perspective and the previous warnings, it seems we are already quite close and centered on the building. The drone is currently at 6 meters above ground level, and the top of the building appears to be within our field of view. Therefore, we should be below 10 meters from the top of the building.
+
+```xml
+<Reasoning>
+    The building is clearly visible and centered in our field of view. The drone is at 6 meters above ground level, which should be less than 10 meters above the top of the building considering our perspective.
+</Reasoning>
+<Action>FOUND</Action>
+```

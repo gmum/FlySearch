@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The area near (9, -9) doesn't seem to contain the trash pile. I will continue the search by moving to coordinates (11, -22) to inspect the lower area more closely. Given the previous close calls, I will maintain the current altitude to ensure safety.
+</Reasoning>
+<Action>(11, -22, 0)</Action>
+```

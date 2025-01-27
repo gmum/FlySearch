@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potentially notable object near coordinates (0, -14). I need to move closer to identify if it's the person.
+</Reasoning>
+<Action>(0, -14, -10)</Action>
+```

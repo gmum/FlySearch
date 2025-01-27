@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am currently at 49 meters above ground level. Since I need to search for a fire, and fires are typically on the ground, I will start by descending while also moving slightly forward to see if I can spot anything in this area. This will help me get a closer view of the ground and have a better chance of identifying a fire.
+</Reasoning>
+<Action>(0, 16, -20)</Action>
+```

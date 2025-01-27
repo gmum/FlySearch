@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There appears to be an area with discoloration and potentially smoke to the left of my current view at coordinates (-14, 14). I will move towards that area and descend further to investigate whether it is the forest fire.
+</Reasoning>
+<Action>(-14, 14, -5)</Action>
+```

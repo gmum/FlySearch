@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>Currently, I am above a city area with regular features like cars, buildings, and roads. The yellow points in my field of view are potential anomalies, but they could also be regular vehicles or other common objects. I will descend and move closer to the point at (-13, 27) since it appears to be more isolated and might be the anomaly. I will also lower my altitude to get a better view.</Reasoning>
+<Action>(-13, 27, -10)</Action>
+```

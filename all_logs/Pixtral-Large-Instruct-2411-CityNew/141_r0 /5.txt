@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At an altitude of 15 meters, I can see a large trash pile located at approximately coordinates (-5, 10). I need to descend closer to the pile while remaining within 10 meters above it for better observation.
+</Reasoning>
+<Action>(-5, 10, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There is a potential object of interest visible towards the coordinates (0, -50). I will descend further and move towards that area to get a closer look and determine if it is the trash pile.
+</Reasoning>
+<Action>(0, -50, -20)</Action>
+```

@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The new image shows a clearer view of the central area. I notice a particular spot at (-10, -10) that looks distinct and could potentially be a trash pile. I will move closer to this spot and descend further to get a better look and confirm if it is the trash pile.
+</Reasoning>
+<Action>
+    (-10, -10, -11)
+</Action>
+```

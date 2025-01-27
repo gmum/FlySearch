@@ -1,0 +1,15 @@
+ ```xml
+<Reasoning>
+    The crowd is now clearly identifiable directly below the UAV. I am already below 10 meters above them. I will center the UAV above the crowd and confirm the sighting.
+</Reasoning>
+<Action>(0, -5, 0)</Action>
+```
+
+Once the UAV has moved to the new coordinates:
+
+```xml
+<Reasoning>
+    The crowd is centered in my vision and I am at 9 meters above them.
+</Reasoning>
+FOUND
+```

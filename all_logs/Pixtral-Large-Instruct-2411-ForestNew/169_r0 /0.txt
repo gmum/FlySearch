@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Since I am currently at 91 meters above ground level, I will first descend to get closer to the potential objects on the ground while staying within the altitude constraints. The image shows a dense forest area with a clearing that looks like a potential location for a building. I will move towards that clearing slightly to the right while descending to get a better look.
+</Reasoning>
+<Action>(30, -30, -30)</Action>
+```

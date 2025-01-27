@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential road construction site on the right side of the image, near the coordinates (11, 11). I will move closer to this location and descend to get a better view and confirm if it is the road construction site.
+</Reasoning>
+<Action>(11, 11, -24)</Action>
+```

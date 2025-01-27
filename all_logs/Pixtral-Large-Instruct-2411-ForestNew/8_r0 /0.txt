@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to perform a systematic search of the area to locate the person. I will start by moving to the grid point (18, -18) and descending to get a closer view of the terrain.
+</Reasoning>
+<Action>(18, -18, -20)</Action>
+```

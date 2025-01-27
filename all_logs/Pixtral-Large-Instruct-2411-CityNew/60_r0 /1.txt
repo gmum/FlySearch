@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The black truck is clearly visible at position (-38, 0). I need to descend to ensure I am below 10 meters above the truck, positioning myself directly above it.</Reasoning>
+<Action>(-38, 0, -47)</Action>
+```

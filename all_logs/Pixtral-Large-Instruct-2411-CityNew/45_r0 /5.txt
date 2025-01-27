@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    The trash pile is not in the current field of view. I will move cautiously in the direction where the trash pile was last seen while maintaining a safe altitude and then descend slowly to find it.
+</Reasoning>
+<Action>(20, 10, -10)</Action>
+```

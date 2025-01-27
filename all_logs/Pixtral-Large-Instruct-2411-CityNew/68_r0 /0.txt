@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current view mainly shows the urban environment with high buildings and some vehicles below. Given the altitude, it's difficult to identify the white sport car from this height. Therefore, I will reduce the drone's altitude significantly to get a closer look and move slightly to the north to check if the object is in that area.
+</Reasoning>
+<Action>(0, 24, -30)</Action>
+```

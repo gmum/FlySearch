@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At 30 meters above ground level, I have a clearer view of the area. I will scan the visible areas for signs of fire, particularly where there might be smoke or unusual heat signatures. Based on the current view, I can see a spot marked by some activity and a red object near coordinates (-10, -10), which looks like a potential fire. I will descend further towards this point to confirm if it is the fire.
+</Reasoning>
+<Action>(-10, -10, -15)</Action>
+```

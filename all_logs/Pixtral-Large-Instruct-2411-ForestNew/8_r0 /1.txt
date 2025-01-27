@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Upon closer inspection of the terrain, there seems to be a point of interest near the coordinates (11, -11). This could potentially be the person we are looking for. I will move closer to that point and descend further to get a better look.
+</Reasoning>
+<Action>(11, -11, -15)</Action>
+```

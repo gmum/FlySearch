@@ -1,0 +1,6 @@
+   ```xml
+<Reasoning>
+    I am now at an altitude of 36 meters above ground level, closer to the ground, and I can confirm that there is a fire directly below the UAV (indicated by the dark smoke and flame visuals). I will now descend further to get within the 10-meter range from the fire and center the UAV over the object.
+</Reasoning>
+<Action>(0, 12, -10)</Action>
+```

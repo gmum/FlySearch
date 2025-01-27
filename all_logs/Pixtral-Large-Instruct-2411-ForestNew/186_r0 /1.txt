@@ -1,0 +1,7 @@
+ ```xml
+<Reasoning>
+    The object is now clearly visible and within the required altitude range. I will center the drone on the coordinates (3, 0) to ensure the object is directly below the drone and reply with "FOUND".
+</Reasoning>
+<Action>(3, 0, 0)</Action>
+FOUND
+```

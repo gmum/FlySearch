@@ -1,0 +1,11 @@
+  ```xml
+<Reasoning>The object is clearly visible below. I will descend slightly to ensure that I am within 10 meters above the object while keeping it centered in my view.</Reasoning>
+<Action>(0, 0, -12)</Action>
+```
+
+Once I've ensured the altitude is correct and the object is centered, I'll confirm the find.
+
+```xml
+<Reasoning>The object is now clearly in view and I am below 10 meters above it. I have found the anomaly.</Reasoning>
+FOUND
+```

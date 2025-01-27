@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start by moving towards the area with the yellow spot at (-61, 31) as it stands out from the rest of the environment. I will decrease my altitude to get a closer look.
+</Reasoning>
+<Action>(-61, 31, -30)</Action>
+```

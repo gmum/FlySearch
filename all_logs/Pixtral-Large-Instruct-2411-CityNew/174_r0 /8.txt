@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The trash pile appears to be visible near the coordinates (0, 11). I need to center on it and get closer to ensure it is within 10 meters below the drone.
+</Reasoning>
+<Action>(0, 11, -10)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential object on the left side of the image that appears to be a person. I will move to the left and descend to get a closer view and confirm if it is indeed the person we are looking for.
+</Reasoning>
+<Action>(-17, 0, -5)</Action>
+```

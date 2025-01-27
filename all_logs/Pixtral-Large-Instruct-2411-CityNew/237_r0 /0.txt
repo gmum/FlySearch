@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The current view shows a large section of water and a road with vehicles. Since the environment is predominantly water, any anomaly is likely to be on the road or the bridge. I will first move towards the road and descend to get a closer look at any potential anomalies there.</Reasoning>
+<Action>(0, 49, -15)</Action>
+```

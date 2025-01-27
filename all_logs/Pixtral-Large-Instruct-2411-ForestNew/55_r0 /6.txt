@@ -1,0 +1,6 @@
+ From this elevation, we can clearly see the building and safely descend while keeping it in view.
+
+```xml
+<Reasoning>I am now at a safe altitude with the building clearly in my field of view. I will carefully descend to ensure I am below 10 meters relative to the building.</Reasoning>
+<Action>(0, -10, -20)</Action>
+```

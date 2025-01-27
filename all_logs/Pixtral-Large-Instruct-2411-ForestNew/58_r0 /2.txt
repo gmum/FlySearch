@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The potential object is now clearly visible in the center of the field of view. I will position myself closer to it and ensure I am within the required altitude range of 10 meters or less.
+</Reasoning>
+<Action>(0, 0, -8)</Action>
+```
+
+This move will bring the drone to approximately 9 meters above ground level, centered on the object. After making this move, I will reply with "FOUND".

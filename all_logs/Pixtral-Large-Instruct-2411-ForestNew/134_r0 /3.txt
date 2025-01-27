@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The structure at coordinates (15, 8) is clearly a building. I will move directly above it and descend to the required altitude to confirm it is the target.
+</Reasoning>
+<Action>(15, 8, -13)</Action>
+```

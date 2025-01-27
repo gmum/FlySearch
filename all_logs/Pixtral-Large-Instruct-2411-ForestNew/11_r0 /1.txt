@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I have identified a building directly below the drone. I need to ensure that I am less than or equal to 10 meters above it to confirm.
+</Reasoning>
+<Action>(0, 0, -2)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+Given the narrow passage and the previous incidents, I will take a very cautious approach. The lowest safe altitude so far has been 16 meters. Further descent means I have to lower by the smallest increment possible.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+```

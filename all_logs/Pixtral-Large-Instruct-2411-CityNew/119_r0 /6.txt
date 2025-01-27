@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have incurred multiple emergency stops. It's evident that this area is too obstructed to safely search for the trash pile. To preserve the safety of the UAV and the environment, I will halt the current search and reassess the mission parameters.
+</Reasoning>
+<Action>(0, 0, 20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search from the initial position. I will move horizontally to the next grid point and also reduce the altitude to get closer to the ground for a better view.
+</Reasoning>
+<Action>(17, 0, -10)</Action>
+```

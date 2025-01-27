@@ -1,0 +1,18 @@
+ ```xml
+<Reasoning>
+    I need to get a clear view of the ground and potential crowd below. Moving forward while gradually descending should give me a better view of the area.
+</Reasoning>
+<Action>(18, 18, -10)</Action>
+```
+
+I can see the crowd in the field of view. I need to descend carefully.
+
+```xml
+<Action>(0, 0, -5)</Action>
+```
+
+```xml
+<FOUND>
+FOUND
+</FOUND>
+```

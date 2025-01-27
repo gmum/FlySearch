@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>The object is now visible and centered, but I need to get it within 10 meters and remain centered.</Reasoning>
+<Action>(0, -15, -10)</Action>
+```
+
+This should bring the drone down to 34 meters above ground level and positioned directly above the object. If everything looks correct, I will then reply "FOUND."

@@ -1,0 +1,6 @@
+   ```xml
+<Reasoning>
+    I have found a white sports car directly below the drone. I need to ensure the drone is below 10 meters relative to it and centered over the car before confirming "FOUND".
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

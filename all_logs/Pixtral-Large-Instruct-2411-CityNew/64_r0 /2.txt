@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>I see potential construction materials and signs in the northwest of my current position. I will move closer to these objects to inspect them further.</Reasoning>
+<Action>(-5, 5, -6)</Action>
+```
+
+This move should bring me closer to the potential construction site and keep me within the required altitude constraints.

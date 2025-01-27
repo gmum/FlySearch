@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I am positioned above an urban area with high buildings. Given the altitude and the context, it's likely that the road construction site is on the ground level. I will start by descending to get a closer view of the streets and potential construction activity.</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

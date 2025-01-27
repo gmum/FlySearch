@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I see a potential smoke or fire source in the direction (29, 0). I need to move closer to that location and descend to get a better view and confirm if it's the forest fire.
+</Reasoning>
+<Action>(29, 0, -30)</Action>
+```

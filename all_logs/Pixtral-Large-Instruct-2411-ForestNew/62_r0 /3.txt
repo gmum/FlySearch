@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at 20 meters above ground level and can see a structure clearly at coordinates (-7, 7). I will descend to ensure I am within 10 meters of the structure and center the drone on it.
+</Reasoning>
+<Action>(-7, 7, -12)</Action>
+```

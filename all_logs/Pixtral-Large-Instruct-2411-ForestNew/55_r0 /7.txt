@@ -1,0 +1,7 @@
+  We are now safely at an altitude of 8 meters above ground level, with the building in our field of view.
+
+```xml
+<Reasoning>I am now at a safe altitude of 8 meters above the building, with the building centered in my field of view.</Reasoning>
+<Action>(0, -3, 0)</Action>
+FOUND
+```

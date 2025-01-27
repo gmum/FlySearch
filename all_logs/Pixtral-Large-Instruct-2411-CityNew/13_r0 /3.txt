@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object at (0, -9) is emitting some smoke and appears to be a potential fire. I will move closer to it and lower the altitude further to confirm and then report.
+</Reasoning>
+<Action>(0, -9, -5)</Action>
+```

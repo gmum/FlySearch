@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now centered above the red area, which is confirmed to be the forest fire. I am at an altitude of 18 meters and need to descend further to be below 10 meters above the fire.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+After this action, if the altitude is below or at 10 meters above the fire, I will reply with "FOUND."

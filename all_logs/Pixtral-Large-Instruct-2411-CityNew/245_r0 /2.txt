@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At this altitude, I notice that the environment appears to be a construction site with many containers. There is a bright light at coordinates (18, -18), which stands out from the rest of the environment. I will move closer to this bright light to determine if it is the anomaly we are looking for.
+</Reasoning>
+<Action>(18, -18, -20)</Action>
+```

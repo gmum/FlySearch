@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am seeing what appears to be a large trash pile directly below. Since I am currently at 16 meters above ground level, I will need to descend further to be within 10 meters above the trash pile and centered on it.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+Please provide the next image based on this action.

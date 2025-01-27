@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search for the building. I will move to the coordinates (24, 0) which is slightly forward and towards the center of the image and also descend to get closer to the ground for a better view.
+</Reasoning>
+<Action>(24, 0, -20)</Action>
+```

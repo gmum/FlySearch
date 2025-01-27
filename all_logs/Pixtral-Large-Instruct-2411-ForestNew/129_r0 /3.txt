@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I will move directly towards the center-bottom area of the image where an object might be the target. This positioning will allow me to center the drone over the object and get closer for a better evaluation.
+</Reasoning>
+<Action>(0, -12, -5)</Action>
+```

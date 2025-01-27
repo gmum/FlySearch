@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    Given the previous issues, it is clear that the current altitude and directions are leading to obstacles. I will move back to the left and drop the altitude slightly to try finding a clear path or spotting the fire at a safe distance.
+</Reasoning>
+<Action>(-25, 0, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There is an object directly below me that appears to be bright. Given my altitude, I need to check if this object is the fire or something else. I will reduce my altitude slightly to investigate.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+```

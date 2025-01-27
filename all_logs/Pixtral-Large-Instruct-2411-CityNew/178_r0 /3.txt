@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I see the white truck directly below me. I'll move to center myself above it and lower the altitude until I am about 10 meters above it to confirm its identity.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+```

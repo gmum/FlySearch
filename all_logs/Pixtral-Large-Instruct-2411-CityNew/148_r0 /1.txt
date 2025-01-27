@@ -1,0 +1,18 @@
+ 
+```xml
+<Reasoning>
+    I will continue to move closer to the ground to increase the chances of spotting the trash pile. I will move slightly forward and downward, aiming for the coordinates in the middle to maximize the area scanned.
+</Reasoning>
+<Action>(14, 14, -10)</Action>
+```
+
+The image now shows an urban area with tall buildings and an intersection. There is a prominent yellow marking on the ground which seems to resemble a trash pile. I will move closer to investigate this point.
+
+```xml
+<Reasoning>
+    There is a yellow marking on the ground near the coordinates (-14, 14) which could possibly be the trash pile. I will move closer to this location and descend further to get a better view.
+</Reasoning>
+<Action>(-14, 14, -10)</Action>
+```
+
+This approach will help ascertain if the yellow marking is indeed the trash pile we are searching for, while also ensuring the drone remains within safe altitude and distance limits.

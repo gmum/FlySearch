@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have spotted what appears to be a police car in the lower left corner of the image. I will move closer and reduce altitude to position myself directly above the car, ensuring I am within 10 meters of it.
+</Reasoning>
+<Action>(-31, -15, -20)</Action>
+```

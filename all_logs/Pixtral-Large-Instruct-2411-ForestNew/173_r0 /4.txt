@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>I am now directly above what appears to be a campsite, with a clear view of tents. I will descend slightly further to ensure I am within the required 10 meters above the campsite.</Reasoning>
+<Action>(0, 0, -5)</Action>
+```
+
+This final adjustment should place the drone at the required altitude for a clear identification of the campsite.

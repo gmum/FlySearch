@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I can see a vehicle that looks like a police car at coordinates (-14, 14). I will move closer to it to verify if it is indeed a police car.
+</Reasoning>
+<Action>(-14, 14, -20)</Action>
+```

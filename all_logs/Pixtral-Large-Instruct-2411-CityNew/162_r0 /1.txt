@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see what appears to be a construction zone near the coordinates (0, -20). I will move closer to inspect it and further lower my altitude to ensure I am within the required 10 meters above the object if it is indeed the construction site.
+</Reasoning>
+<Action>(0, -20, -30)</Action>
+```

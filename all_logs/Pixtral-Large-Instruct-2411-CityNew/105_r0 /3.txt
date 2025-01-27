@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am at an altitude of 8 meters above ground level, and I see an object in the center of the field of view at coordinates (0, -3). I need to ensure that it is the fire and that I am no more than 10 meters above the object. Since I'm already below the 10-meter threshold, I will move directly over the object to verify.
+</Reasoning>
+<Action>(0, -3, 0)</Action>
+```
+
+Let's confirm the altitude and the presence of the fire in the center of the field of view in the next image.

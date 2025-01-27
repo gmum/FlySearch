@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential fire on the right side of the image, closer to the coordinates (21, -21). I will move towards that direction and descend further for a closer inspection and confirmation.
+</Reasoning>
+<Action>(11, -21, -10)</Action>
+```

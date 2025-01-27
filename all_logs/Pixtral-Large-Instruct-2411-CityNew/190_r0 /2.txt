@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 45 meters. I need to continue my search and get closer to the ground to better inspect potential fire sources. I will move slightly downward and forward.
+</Reasoning>
+<Action>(15, 30, -15)</Action>
+```

@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The anomaly in question is the skeleton in the center of the image. It clearly doesn't belong in this environment. I'll now position myself directly above it and lower my altitude to ensure I am within 10 meters above the object.
+</Reasoning>
+<Action>(0, 0, -42)</Action>
+```
+
+After this move, if the altitude is correct, you should reply with "FOUND".

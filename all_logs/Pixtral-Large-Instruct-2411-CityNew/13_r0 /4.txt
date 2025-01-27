@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can confirm that the object at (0, -3) is a fire, as evidenced by the active flames and smoke. I will move directly above it and ensure I am within the required 10-meter altitude to report it.
+</Reasoning>
+<Action>(0, -3, -1)</Action>
+```

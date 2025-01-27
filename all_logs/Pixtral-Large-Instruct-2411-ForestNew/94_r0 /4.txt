@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I am now at 15 meters altitude and I can spot a potential object to the right of the center grid. I will move closer to this point and descend slightly to verify if it is the person.
+</Reasoning>
+<Action>(5, 0, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The drone flew too close to an obstacle. I need to be more cautious. I will adjust by moving downwards slowly and laterally to continue the search safely.
+</Reasoning>
+<Action>(0, -28, -5)</Action>
+```

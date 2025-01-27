@@ -1,0 +1,8 @@
+ Here's the next action, taking into consideration the emergency stop and the need to avoid obstacles:
+
+```xml
+<Reasoning>
+    I need to carefully maneuver around the building and make sure to stay at a safe distance to avoid any collisions. I will maintain the current altitude and move slightly to the left to get a better view of the structure while remaining centered.
+</Reasoning>
+<Action>(-10, 0, 0)</Action>
+```

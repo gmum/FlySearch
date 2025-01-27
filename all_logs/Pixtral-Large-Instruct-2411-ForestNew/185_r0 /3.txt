@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I see a person standing at coordinates (3, 0). According to the instructions, I must fly below 10 meters relative to the person and be centered on them.
+</Reasoning>
+<Action>(3, 0, -1)</Action>
+```
+
+Once that move is executed, reply with "FOUND".

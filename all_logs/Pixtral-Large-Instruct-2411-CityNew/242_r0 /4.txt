@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I will move precisely to the upper left, targeting the coordinates (-3, 7) where I believe the anomaly is located. This should center it in my field of view.
+</Reasoning>
+<Action>(-3, 7, 0)</Action>
+```
+
+FOUND

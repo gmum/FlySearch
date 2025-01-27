@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>Now that I am at an altitude of 31 meters, I need to get even closer to the yellow spot at coordinates (-21, -21) to determine if it is the anomaly. I will move directly above it and lower my altitude further to get a closer look.</Reasoning>
+<Action>(-21, -21, -20)</Action>
+```

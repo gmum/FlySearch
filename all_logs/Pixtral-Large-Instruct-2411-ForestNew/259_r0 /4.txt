@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+I am now at 18 meters above ground level, and the structure around coordinates (0, 0) is clearly visible and stands out from the natural environment. I will descend further to ensure I am within 10 meters above the object to confirm it as an anomaly.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+After executing this action, if the drone is within 10 meters above the object and it is still in the field of view, you can send "FOUND" as the next response.

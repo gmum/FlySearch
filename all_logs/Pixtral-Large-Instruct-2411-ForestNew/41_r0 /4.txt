@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>
+    The altitude is now 17 meters. I can see a person in the field of view near coordinates (0, -6). I will move closer to this area and descend slightly to confirm and center the person in the view.
+</Reasoning>
+<Action>
+    (0, -6, -3)
+</Action>
+```
+
+This move should place the drone at approximately 14 meters relative to the person and should bring them into the center of the field of view. If the person's height is approximately 2 meters, the drone should be about 12 meters above the ground, complying with the requirements. If the person is visible and centered, I will proceed with "FOUND."

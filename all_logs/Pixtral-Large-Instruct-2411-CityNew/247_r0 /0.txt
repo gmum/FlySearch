@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search from the current position. The center of the image (0, 0) seems to be a good vantage point to begin the search. I will descend to get closer to the ground and have a better view of any potential anomalies.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

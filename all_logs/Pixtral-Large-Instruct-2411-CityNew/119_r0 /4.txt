@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The area in view doesn't contain the trash pile. I will move in the direction of (17, -17), descending slightly to continue searching. 
+</Reasoning>
+<Action>(17, -17, -5)</Action>
+```

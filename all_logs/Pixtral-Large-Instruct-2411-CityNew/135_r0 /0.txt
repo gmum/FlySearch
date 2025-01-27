@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search. I will move to the center of the visible area and descend to get a closer view of the ground while ensuring I remain within safe altitude limits.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

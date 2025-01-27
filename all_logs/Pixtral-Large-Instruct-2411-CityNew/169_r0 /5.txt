@@ -1,0 +1,7 @@
+ ```xml
+<Reasoning>
+    The crowd is now clearly visible, and I need to move directly above it while ensuring I stay within the 10-meter altitude threshold. I'll move to the coordinates that are centered on the crowd and descend to ensure I am below 10 meters in altitude relative to the crowd.
+</Reasoning>
+<Action>(15, 8, -15)</Action>
+FOUND
+```

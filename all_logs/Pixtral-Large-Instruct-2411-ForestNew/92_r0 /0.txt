@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The area below the drone is densely forested, making it difficult to identify any potential objects from this altitude. I will move downwards significantly to get closer to the ground and improve visibility. I will also move slightly to the south to cover more area during the descent.
+</Reasoning>
+<Action>(0, -25, -50)</Action>
+```

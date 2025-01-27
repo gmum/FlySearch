@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+   The object identified previously seems to be a campsite. I will get even closer and lower for a final confirmation.
+</Reasoning>
+<Action>(0, 7, -7)</Action>
+```
+
+This action will bring the drone to 15 meters above the ground (below the 10 meters threshold relative to the campsite) and should position the campsite centrally in the field of view. If the campsite is in frame at 15 meters altitude, the next response should be "FOUND".

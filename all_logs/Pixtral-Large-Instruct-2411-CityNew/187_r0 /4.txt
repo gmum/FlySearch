@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Emergency stop initiated due to flying too close to an object. I have now ascended back to 16 meters above ground level. I need to approach the construction site more cautiously to avoid obstacles. I will move slightly forward and descend to ensure I stay within the acceptable range of 10 meters above the construction site without hitting any obstacles.
+</Reasoning>
+<Action>(5, 5, -5)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential object centered at coordinates (9, 9). I will descend further to get within 10 meters above it to confirm if it is the person.
+</Reasoning>
+<Action>(9, 9, -19)</Action>
+```

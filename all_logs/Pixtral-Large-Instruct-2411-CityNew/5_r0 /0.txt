@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current view shows a large urban area with buildings and streets. There is no visible sign of fire from this altitude. I should descend to get a closer look at the streets and buildings. I will move towards the center of the view to continue the search while descending.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

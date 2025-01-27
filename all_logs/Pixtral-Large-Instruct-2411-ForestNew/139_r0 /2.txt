@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Now, the building is clearly visible below and centered in the field of view of the UAV. Given the objective is to be at most 10 meters above the object, I need to descend just a bit more to achieve the correct altitude.
+</Reasoning>
+<Action>(0, 0, -15)</Action>
+```

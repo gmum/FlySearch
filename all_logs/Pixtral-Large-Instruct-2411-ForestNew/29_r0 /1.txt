@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I see a dark spot at coordinates (0, 22) that could be a campsite. I will move closer to investigate.</Reasoning>
+<Action>(0, 22, -10)</Action>
+```

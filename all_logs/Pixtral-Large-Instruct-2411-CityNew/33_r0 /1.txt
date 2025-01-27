@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have descended to an altitude of 21 meters and now see a group of people on the left side of the image. I need to move closer to this group and ensure I am within the 10-meter requirement to confirm it is the crowd I am looking for. I will move towards the left while slightly descending to get a clearer view.
+</Reasoning>
+<Action>(-14, 0, -5)</Action>
+```

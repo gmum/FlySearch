@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I have descended to a safer altitude. I can now clearly see a fire in the lower middle part of the image near (0, -21). I will move closer to inspect further and ensure I am within the required altitude to confirm it is the fire.
+</Reasoning>
+<Action>(0, -21, -10)</Action>
+```
+
+FOUND

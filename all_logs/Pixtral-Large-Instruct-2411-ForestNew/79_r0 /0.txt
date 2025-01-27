@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>In the current image, there appears to be a possible trash pile near the coordinates (13, -13). I will descend to get a closer look and ensure the object is within 10 meters below the drone if it is indeed the trash pile. I will move slightly north to get a better centered view of the object.</Reasoning>
+<Action>(13, -13, -30)</Action>
+```

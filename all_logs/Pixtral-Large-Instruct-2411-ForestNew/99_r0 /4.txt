@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    At the new position, I observe an object in the center of the field of view (0, 0). I will descend carefully to confirm if it is the person we are looking for. 
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+```

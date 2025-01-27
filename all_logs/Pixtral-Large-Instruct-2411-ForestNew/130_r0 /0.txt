@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to start by moving closer to the ground to get a better view of the area. I will also move towards the potential building or structure that seems to be at coordinates (-60, 30). This will allow me to check if it is the building I am looking for.
+</Reasoning>
+<Action>(-60, 30, -30)</Action>
+```

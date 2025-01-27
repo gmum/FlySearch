@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search by moving to the southwest corner of the grid. This move will help me cover a different area and potentially locate the trash pile. I am also decreasing the altitude to get a closer view of the ground.
+</Reasoning>
+<Action>(-50, -50, -10)</Action>
+```

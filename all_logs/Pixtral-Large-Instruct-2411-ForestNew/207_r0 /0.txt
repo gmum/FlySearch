@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential anomaly at coordinates (19, -19) which looks different from the surrounding environment. I need to get closer to determine if this is the target object. I will move towards the object and also descend to ensure I am within 10 meters above it if it is the target.
+</Reasoning>
+<Action>(19, -19, -50)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The drone is close to the rooftop, and I see what appears to be an anomaly at the bottom center of the view, near coordinates (0, -28). To avoid further collision risks, I'll cautiously move in to investigate this anomaly and ensure the drone is within 10 meters above it to confirm if it’s the object in question.
+</Reasoning>
+<Action>(0, -14, -5)</Action>
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I have identified a blue sports car near the coordinates (0, -10) in the image. I'll move directly above it and descend to within 10 meters of the object to get a clear view.
+</Reasoning>
+<Action>(0, -10, -20)</Action>
+```

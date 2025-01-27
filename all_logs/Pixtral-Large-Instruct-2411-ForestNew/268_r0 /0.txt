@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The environment is a forested area with several trees and patches of grass. The first step should be to descend to a lower altitude to get a closer view of any potential anomalies. I will move slightly to the north (0, 32) while descending 30 meters to check for any unusual objects in that area.
+</Reasoning>
+<Action>(0, 32, -30)</Action>
+```

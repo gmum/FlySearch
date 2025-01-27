@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Currently, the drone is at an altitude of 83 meters above ground level. The image shows a view of buildings and a possible narrow waterway. There is no visible large trash pile in the current field of view. It is necessary to descend to get a closer look and also to move in a direction where it is more likely to encounter the object. I will descend significantly to get closer to the ground and also move slightly north to explore another area.
+</Reasoning>
+<Action>(0, 28, -40)</Action>
+```

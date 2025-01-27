@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object (person) is visible in the center of the field of view. I need to descend to be within 10 meters above the object while making sure it remains centered.
+</Reasoning>
+<Action>(0, 0, -15)</Action>
+```

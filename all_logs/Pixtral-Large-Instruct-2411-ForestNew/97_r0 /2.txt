@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The structure is now clearly visible at coordinates (0, -16). However, I need to descend further to ensure I am below 10 meters relative to the top of the structure.
+</Reasoning>
+<Action>(0, -16, -30)</Action>
+```

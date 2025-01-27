@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    From the current position, I notice that the area at the coordinates (-33, -33) has a clearer view and seems less forested. Since it is more open, it might be more likely to be a camping site. I will move there and descend further to get a closer look.
+</Reasoning>
+<Action>(-33, -33, -10)</Action>
+```

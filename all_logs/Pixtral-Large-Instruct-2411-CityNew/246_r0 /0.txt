@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search by moving forward to get a better view of the area ahead. I will also decrease my altitude to get closer to potential anomalies. The target area at (27, 27) seems like a good point to move towards as it is central and will allow me to survey both sides of the street.
+</Reasoning>
+<Action>(27, 27, -20)</Action>
+```

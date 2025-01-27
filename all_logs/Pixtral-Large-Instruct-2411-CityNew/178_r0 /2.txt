@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I see a white vehicle at the coordinates (8, -8). I will move towards it and lower the altitude to get a clear view and ensure it's the white truck we're searching for.
+</Reasoning>
+<Action>(8, -8, -8)</Action>
+```

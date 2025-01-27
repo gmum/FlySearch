@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>A building is visible at the coordinates (0, -14). To inspect further, I will move to (0, -14) and descend to ensure I am below 10 meters above the building.</Reasoning>
+<Action>(0, -14, -32)</Action>
+```

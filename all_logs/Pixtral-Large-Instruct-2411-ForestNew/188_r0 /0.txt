@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I observe a potential forest fire near the coordinates (31, 31) on the grid. There is visible smoke and some flames, indicating it could be the object in question. I will need to descend to get a closer look and confirm if it is indeed a forest fire. I will move directly to (31, 31) and descend significantly to ensure I am below 10 meters relative to the fire if it is confirmed.
+</Reasoning>
+<Action>(31, 31, -83)</Action>
+```

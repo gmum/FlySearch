@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I observed a potential structure at coordinates (17, 0) that could be the building we are looking for. I need to descend to get a closer look and ensure it is within 10 meters below the UAV. I will maintain my horizontal position and descend by 30 meters to get a clearer view.
+</Reasoning>
+<Action>(17, 0, -30)</Action>
+```

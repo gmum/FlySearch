@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm now at 11 meters above ground level and centered over the potential campsite. However, my altitude is slightly above the required 10 meters. I will descend slightly more to ensure I'm below 10 meters.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+```

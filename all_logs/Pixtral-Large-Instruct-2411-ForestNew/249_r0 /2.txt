@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object that appears distinctly yellow and stands out is located at (3, 3). I will move directly above it and ensure I am within the required altitude range to confirm the object.
+</Reasoning>
+<Action>(3, 3, 0)</Action>
+```

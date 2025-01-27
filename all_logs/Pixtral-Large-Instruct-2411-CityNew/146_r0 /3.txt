@@ -1,0 +1,7 @@
+ ```xml
+<Reasoning>I see an orange-glowing area, which suggests the presence of a fire. I will center the drone on it and move closer to confirm it is the fire.</Reasoning>
+<Action>(-17, -8, -20)</Action>
+```
+
+---
+If you find the object and it meets the criteria specified (10 meters above it or closer), reply with "FOUND".

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start the search by moving towards the point (14, 0). This area seems to have a mix of terrain and objects which might contain the anomaly. I will also decrease my altitude to get a closer look.
+</Reasoning>
+<Action>(14, 0, -10)</Action>
+```

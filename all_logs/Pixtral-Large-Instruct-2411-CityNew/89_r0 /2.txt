@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The altitude is now 10 meters above ground level, and I can clearly see a fire in front of me, directly centered. I need to descend below 10 meters relative to the fire to confirm it.
+</Reasoning>
+<Action>(0, 0, -8)</Action>
+```

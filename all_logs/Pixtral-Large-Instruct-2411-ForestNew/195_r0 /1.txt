@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Now that I'm closer to the ground, I can see more details. There seems to be some objects near the coordinates (22, -22). I will move towards that area while descending further to investigate more closely.
+</Reasoning>
+<Action>(22, -22, -20)</Action>
+```

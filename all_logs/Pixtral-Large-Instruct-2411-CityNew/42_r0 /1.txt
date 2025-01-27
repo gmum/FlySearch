@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I have lowered the altitude and moved slightly to the right. In the current image, there is a bright yellow object on the right side of the view. It might be the fire. I need to move closer to confirm. I will also lower my altitude further to ensure I get within 10 meters of the object if it is indeed the fire.
+</Reasoning>
+<Action>(24, -12, -10)</Action>
+```

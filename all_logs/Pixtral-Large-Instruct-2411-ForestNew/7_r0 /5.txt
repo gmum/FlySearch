@@ -1,0 +1,15 @@
+ ```xml
+<Reasoning>
+    The object is now clearly in my field of view and centered. I will descend a few more meters to ensure I am within the 10-meter threshold before confirming.
+</Reasoning>
+<Action>(0, 0, -8)</Action>
+```
+
+Then,
+
+```xml
+<Reasoning>
+    I am now within the required range to confirm the presence of a forest fire.
+</Reasoning>
+FOUND
+```

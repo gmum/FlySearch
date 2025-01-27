@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I see some suspicious objects at the center bottom of the image. I will move closer and further decrease my altitude to inspect them.</Reasoning>
+<Action>(0, -18, -20)</Action>
+```

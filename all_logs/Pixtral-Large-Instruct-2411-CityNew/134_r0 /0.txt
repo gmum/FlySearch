@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+  I will start my search by moving towards the center of the grid and descending to get a closer look at potential areas where the fire might be located. This approach ensures that I methodically scan the area while systematically decreasing altitude to eventually comply with the 10 meters or less requirement once the fire is spotted.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

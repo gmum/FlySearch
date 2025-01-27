@@ -1,0 +1,13 @@
+  ```xml
+<Reasoning>
+    The building is clearly visible at (6, -6). I am very close to it, well below the 10-meter mark. I will center the drone directly on top of the building.
+</Reasoning>
+<Action>(6, -6, 0)</Action>
+```
+
+```xml
+<Reasoning>
+    The building is centered and I am below 10 meters above it.
+</Reasoning>
+FOUND
+```

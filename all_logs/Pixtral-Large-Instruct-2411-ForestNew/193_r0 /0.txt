@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There is a structure visible to the left in my current field of view. This might be the building I am tasked to find. I need to move closer to this structure and inspect it at a lower altitude to ensure it is the correct target and that I am within the specified 10 meters above it.
+</Reasoning>
+<Action>(-25, 0, -15)</Action>
+```

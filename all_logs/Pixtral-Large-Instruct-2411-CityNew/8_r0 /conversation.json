@@ -1,0 +1,146 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a road construction site.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\nI am starting at an altitude of 40 meters above ground level. To find the road construction site, I need to lower my altitude and get a closer look at the road ahead. I will first move towards the center of the road to ensure I have a clear view and then descend to get closer to the ground.\n</Reasoning>\n<Action>(0, 13, -10)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\nI am now at 30 meters above the ground. I need to continue descending to ensure I am below 10 meters when I find the road construction site. I will move forward and slightly adjust my position to keep the road centered in my vision.\n</Reasoning>\n<Action>(0, 20, -10)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\nI am now at 20 meters above the ground. From the image, I can see some construction equipment ahead. I will move closer to this area while maintaining a safe altitude to ensure I am below 10 meters when I approach the construction site.\n</Reasoning>\n<Action>(0, 13, -10)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\nI am back at 20 meters above the ground. The previous move was too aggressive and resulted in a near collision. I need to carefully navigate the narrow space and descend more cautiously. I will move slightly forward and adjust my altitude in smaller increments.\n</Reasoning>\n<Action>(0, 7, -3)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\nGiven the narrow space and the previous near collisions, I need to take a more cautious approach. I will lower the altitude by a minimal increment to ensure safety and get a clear view of the road construction site without risking another emergency stop.\n</Reasoning>\n<Action>(0, 0, -1)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\nFrom the current altitude of 19 meters, I can see the road construction site clearly. The site appears to be centered between the (0, 6) coordinates. I will move towards this location while lowering the altitude slightly to ensure I am at or below 10 meters from the construction site.\n</Reasoning>\n<Action>(0, 6, -9)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 18 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " ```xml\n<Reasoning>\nGiven the narrow passage and the previous incidents, I will move more cautiously and try to approach the construction site very slowly while maintaining a safe altitude. I'll first reduce altitude by a very small amount and then move forward incrementally.\n</Reasoning>\n<Action>(0, 0, -1)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 17 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "   ```xml\n<Reasoning>\nI now have a good view of the road construction site. The area is clearly visible and marked by construction equipment. From the current altitude of 17 meters, to meet the criteria, I need to lower the UAV to 10 meters above the object while keeping it centered in my field of view.\n</Reasoning>\n<Action>(0, 6, -7)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 16 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\nThe previous attempt was too risky and resulted in near collisions. I will need to proceed with extremely small changes in altitude and position. From the current altitude of 16 meters, I will drop down by 1 meter and slightly advance forward along the center of the road.\n</Reasoning>\n<Action>(0, 5, -1)</Action>\n```"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 16 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "  ```xml\n<Reasoning>\nGiven the narrow passage and the previous incidents, I will take a very cautious approach. The lowest safe altitude so far has been 16 meters. Further descent means I have to lower by the smallest increment possible.\n</Reasoning>\n<Action>(0, 0, -1)</Action>\n```"
+    ]
+]

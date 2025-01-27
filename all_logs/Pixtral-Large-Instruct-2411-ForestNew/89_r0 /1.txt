@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I've descended to 46 meters and can see more details. The square-looking object at coordinates (-15, 0) could potentially be the campsite. I need to move closer to it and get a better view. I will descend further to ensure I am below the 10-meter threshold if this turns out to be the campsite.
+</Reasoning>
+<Action>(-15, 0, -20)</Action>
+```

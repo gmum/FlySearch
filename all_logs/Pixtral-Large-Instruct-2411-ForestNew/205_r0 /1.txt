@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The yellow object at (20, -20) stands out more clearly now. I will move closer and lower my altitude further to inspect it.
+</Reasoning>
+<Action>(20, -20, -20)</Action>
+```

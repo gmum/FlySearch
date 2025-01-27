@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see a tarp-like object at coordinates (0, -10), which looks like it could be part of a campsite. I will move closer to it and lower my altitude to confirm whether it is the campsite.
+</Reasoning>
+<Action>(0, -10, -10)</Action>
+```

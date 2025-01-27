@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The person appears to be in the center of the grid. I will descend further to ensure I am within 10 meters above the person and centered on them.
+</Reasoning>
+<Action>(0, 0, -18)</Action>
+```

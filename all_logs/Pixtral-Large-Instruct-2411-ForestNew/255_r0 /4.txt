@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The image now shows a clear spot to the right at (26, 13). I will move to that location and continue descending to inspect it more closely.
+</Reasoning>
+<Action>(26, 13, -10)</Action>
+```
+
+Let's take a closer look to see if there is any anomaly in that area.

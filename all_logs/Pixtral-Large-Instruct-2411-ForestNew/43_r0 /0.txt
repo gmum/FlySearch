@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The image shows what appears to be a building directly below the drone. I need to descend to ensure I am below 10 meters above the building to confirm it is the target object.</Reasoning>
+<Action>(0, 0, -25)</Action>
+```

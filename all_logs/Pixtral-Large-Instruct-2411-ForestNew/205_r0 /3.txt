@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now very close to the yellow object at (6, -6), which seems to be the anomaly. I will move directly over it and descend to ensure I am below 10 meters from the object.
+</Reasoning>
+<Action>(6, -6, -10)</Action>
+```

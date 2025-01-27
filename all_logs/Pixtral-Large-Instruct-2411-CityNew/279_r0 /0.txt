@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search by descending to get a closer look at the scene while ensuring I am safe from any obstacles. I will also move slightly towards the coordinates (30, -30) to explore the area methodically. This is part of my initial sweep to locate any anomaly.
+</Reasoning>
+<Action>(30, -30, -30)</Action>
+```

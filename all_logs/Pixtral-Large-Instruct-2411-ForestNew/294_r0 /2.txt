@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+I am now at 16 meters above ground level and centered close to the anomalous object. To confirm that it is the object I need to find, I need to descend further so that I am no more than 10 meters above it.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+This move should lower the drone to approximately 6 meters above the ground, centered on the object. This will allow me to declare "FOUND" in the next move if it is indeed the object we are searching for.

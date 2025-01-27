@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I've descended to 51 meters, but I still don't see the trash pile clearly. The grid shows a potential point of interest in the bottom right quadrant. I will move towards the coordinates (17, -17) and descend another 10 meters to get a closer view.
+</Reasoning>
+<Action>(17, -17, -10)</Action>
+```

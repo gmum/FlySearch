@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to start the search by moving to the right side of the image where there appears to be an open area that might contain the trash pile. I will move to coordinates (27, -13) and descend to get a closer look at the ground.
+</Reasoning>
+<Action>(27, -13, -10)</Action>
+```

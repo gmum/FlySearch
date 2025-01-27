@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+At this altitude and location, I can see that there is a visible fire on the right side of the image. I will carefully move closer while ensuring I maintain a safe altitude below 10 meters relative to the object.
+</Reasoning>
+<Action>(7, 7, -5)</Action>
+```
+
+In the next move, I will declare "FOUND" if the conditions are met.

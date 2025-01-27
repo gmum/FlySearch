@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have repeatedly encountered obstacles at various altitudes and locations. Given the multiple emergency stops, the current altitude and area are too risky for further search. I will ascend to a much higher altitude of 100 meters and move to the coordinate (-19, -19) to safely reassess the situation and plan a new path.
+</Reasoning>
+<Action>(-19, -19, 72)</Action>
+```

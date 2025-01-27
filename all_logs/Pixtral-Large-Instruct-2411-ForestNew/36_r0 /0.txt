@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I need to start by moving lower to get a closer look at the ground. I will begin by reducing my altitude to get a better view of potential objects on the ground.
+</Reasoning>
+<Action>(0, 0, -40)</Action>
+```

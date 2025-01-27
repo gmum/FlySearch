@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+   As I get closer and lower, there is a distinct shape near the coordinates (15, 8). It appears to be the object I am tasked to find. I will descend further and center the drone on that shape to confirm.
+</Reasoning>
+<Action>(15, 8, -13)</Action>
+```
+
+This command will bring the drone to the targeted coordinates and at the required height for confirmation. If the object is indeed what we are looking for, the drone will be properly positioned to reply with "FOUND" on the next view.

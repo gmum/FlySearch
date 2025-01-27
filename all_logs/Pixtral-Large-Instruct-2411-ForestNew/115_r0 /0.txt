@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The area below the drone is mostly covered by trees, making it difficult to spot the person from this altitude. I will first reduce the altitude to get a closer look at the ground.
+</Reasoning>
+<Action>(0, 0, -40)</Action>
+```

@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now very close to the white rectangular object, which is predominantly centered at (0, -6). Given my current altitude of 19 meters, I need to descend slightly more to ensure I am within the 10-meter range from the object.
+</Reasoning>
+<Action>(0, -6, -10)</Action>
+```
+
+After this descent, if the object is centered and within 10 meters below the drone, I will reply with "FOUND".

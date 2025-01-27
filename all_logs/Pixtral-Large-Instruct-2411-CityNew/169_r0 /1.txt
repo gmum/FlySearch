@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will adjust my movement to avoid obstacles. Instead of moving forward, I will take a step backward to (0, -17) to ensure a safe descent. I will also lower the altitude gradually to get closer to the ground and continue my search.
+</Reasoning>
+<Action>(0, -17, -10)</Action>
+```

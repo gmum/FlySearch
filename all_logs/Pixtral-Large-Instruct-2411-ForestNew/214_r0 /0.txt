@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting at the current position, I'm going to move to (16, -16) to explore a new area and descend to get closer to the ground and search for any anomalies.
+</Reasoning>
+<Action>(16, -16, -20)</Action>
+```

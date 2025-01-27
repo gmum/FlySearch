@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Given the consecutive near-collisions, I must prioritize safety. I will ascend to a higher altitude to prevent further near-collisions. From there, I can strategically plan my next move while surveying a larger area.
+</Reasoning>
+<Action>(0, 0, 10)</Action>
+```

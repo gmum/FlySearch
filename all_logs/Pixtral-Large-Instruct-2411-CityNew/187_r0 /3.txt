@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at 19 meters above ground level. I can clearly see construction materials and signs of ongoing construction on the road. To meet the requirement of being below 10 meters above the object, I will descend.
+</Reasoning>
+<Action>(0, 6, -10)</Action>
+```

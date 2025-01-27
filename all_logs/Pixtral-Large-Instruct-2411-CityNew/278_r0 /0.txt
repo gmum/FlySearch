@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    In the current view, there is a large yellow object (possibly a vehicle) near the coordinates (0,15). This object stands out in the environment and could be the anomaly we're searching for. I will move closer to this object and descend to get a better view.
+</Reasoning>
+<Action>(0, 15, -10)</Action>
+```

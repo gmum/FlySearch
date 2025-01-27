@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>The object appears to be close to the center of the image, but I need to make sure it's in clear view and below 10 meters. I will move directly above the object, centering it in my field of view and descending slightly to ensure I am below 10 meters.</Reasoning>
+<Action>(0, 0, -1)</Action>
+```
+
+Now that I've centered the object and ensured it's clearly in view, I can confirm its location.
+
+FOUND

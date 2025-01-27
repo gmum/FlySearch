@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see what appears to be a large object near the coordinates (0, -22). I need to move towards it and descend to get a closer look and ensure it's the building we are looking for. I will move lower to get within 10 meters above the object if it is indeed the building.
+</Reasoning>
+<Action>(0, -22, -25)</Action>
+```

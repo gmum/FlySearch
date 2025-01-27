@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I have identified a large trash pile in the bottom-center area of the image, close to the coordinates (0, -18). I will move directly towards it and descend to get a better view.</Reasoning>
+<Action>(0, -18, -40)</Action>
+```

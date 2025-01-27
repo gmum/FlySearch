@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The structure is now very close. One more precise move should allow me to be directly above it and within the required 10 meters altitude.
+</Reasoning>
+<Action>(0, 12, -6)</Action>
+```
+
+And after this action, if the conditions are met (below 10 meters above the object and the object is in the field of view), I will reply with "FOUND."

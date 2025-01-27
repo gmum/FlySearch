@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows a densely forested area with a potential object located at the coordinates (0, -19). I should move closer to this point to get a clearer view and determine if it is the building I am searching for. I will also descend to get a better angle and ensure I stay within the required altitude limits.
+</Reasoning>
+<Action>(0, -19, -20)</Action>
+```

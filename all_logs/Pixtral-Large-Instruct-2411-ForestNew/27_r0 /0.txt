@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I have identified a potential building at the coordinates (0, 0). I need to descend to get a closer look and ensure it is the target object. I will lower my altitude to be below 10 meters above the object if it is indeed the building.
+</Reasoning>
+<Action>(0, 0, -64)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have identified a potential campsite at the top of the image. I need to move closer to confirm it is the campsite and ensure that I am within the required 10 meters above it.
+</Reasoning>
+<Action>(23, 23, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm currently 30 meters above ground level. Because the instruction asks me to fly below 10 meters above the object, I should start descending in order to better scan the area for the road construction site. I will start by moving toward the center of the field of view while descending.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

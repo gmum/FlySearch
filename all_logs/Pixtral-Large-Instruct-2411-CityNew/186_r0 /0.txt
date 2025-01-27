@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Starting the search for the fire in the city. I will move to center coordinates (0, 0) and significantly decrease altitude to get a closer look at the ground level for any signs of fire.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

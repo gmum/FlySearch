@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential building centered at coordinates (0, 0). I need to descend to get a closer look and ensure it is the target building. Moving directly down will position the drone closer to the building to confirm its identity.
+</Reasoning>
+<Action>(0, 0, -22)</Action>
+```

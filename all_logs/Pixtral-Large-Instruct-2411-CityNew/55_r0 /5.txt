@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I need to get closer to the ground where I may find the fire. Since I am still relatively high, I will move forward while descending to continue the search on this road.
+</Reasoning>
+<Action>(22, 44, -10)</Action>
+```
+
+This should help in lowering the altitude and getting closer to possible locations of the fire.

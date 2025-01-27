@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    I am currently at 23 meters altitude and centered on the green object. I need to descend slightly more to be within 10 meters above the object to confirm.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+```
+
+After adjusting the altitude:
+
+```xml
+FOUND
+```

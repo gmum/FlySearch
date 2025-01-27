@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have observed a possible forest fire in the center of the image, marked with a red and yellow spot. I need to descend and get closer for confirmation while ensuring I stay within the required altitude range.
+</Reasoning>
+<Action>(0, 0, -45)</Action>
+```

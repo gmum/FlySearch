@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a white sports car at coordinates (5, 0). It appears to be the target object. I need to move directly above it to get centered and lower my altitude to be below 10 meters to confirm it is the object of interest.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+```

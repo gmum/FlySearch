@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I can see an object in the coordinate (5, -5) that appears to be an anomaly in the environment. It is significantly larger and different from the surrounding trees and bushes. I will move closer to this object and descend further to verify if this is the anomaly I am looking for.
+</Reasoning>
+<Action>(5, -5, -5)</Action>
+```

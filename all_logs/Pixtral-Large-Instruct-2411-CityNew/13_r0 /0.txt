@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current scene is an urban environment with tall buildings on either side of a road. I will first decrease the altitude to get closer to the ground level to search for any potential fires. I will also move slightly forward along the road to explore more of the area.
+</Reasoning>
+<Action>(0, -18, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see a dark object at coordinates (0, -23) that looks like it could be a trash pile. I will move closer and get a better look by decreasing altitude further.
+</Reasoning>
+<Action>(0, -23, -10)</Action>
+```

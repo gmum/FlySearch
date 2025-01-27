@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a tent or a structure positioned around the coordinates (4, 8) in the field of view. Given my altitude is 12 meters, I need to carefully approach closer and lower myself to ensure I am within the 10-meter requirement.
+</Reasoning>
+<Action>(4, 8, -2)</Action>
+```

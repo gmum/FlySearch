@@ -1,0 +1,15 @@
+  ```xml
+<Reasoning>
+    The fire is directly below in the center of the field of view. Descending further to ensure I am within the required altitude range of 10 meters or closer.
+</Reasoning>
+<Action>(0, 0, -8)</Action>
+```
+
+After this move, you should be directly above the fire, within 10 meters, and centered. The next response will be:
+
+```xml
+<Reasoning>
+    The fire is now directly below the drone and the drone is within 10 meters of the fire.
+</Reasoning>
+FOUND
+```

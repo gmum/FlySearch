@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have detected flames near the coordinates (0, 0) on the grid. I need to move closer and descend to ensure I am within 10 meters of the fire and have it centered in my field of view.
+</Reasoning>
+<Action>(0, 0, -43)</Action>
+```

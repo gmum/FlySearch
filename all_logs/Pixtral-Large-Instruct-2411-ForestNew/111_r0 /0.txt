@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows a landscape with some vegetation and a structure that looks like a building in the top right quadrant at coordinates (22, 45). To investigate whether this is the building I am tasked to find, I need to descend significantly to get a closer view while also moving towards the structure.
+</Reasoning>
+<Action>(22, 45, -40)</Action>
+```

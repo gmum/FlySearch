@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I see a potential fire in the bottom left corner of the image. I need to descend further and move towards that direction to inspect it more closely.
+</Reasoning>
+<Action>
+    (-12, -12, -10)
+</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search in the middle of the street. There is a yellow object visible at coordinates approximately (-25, -12). It doesn't fit in with the surrounding environment of cars and buildings. I will move closer to investigate this object more thoroughly.
+</Reasoning>
+<Action>(-25, -12, -20)</Action>
+```

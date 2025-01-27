@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a potential crowd of people on the sidewalk at coordinates (12, 23). I will move towards this location and descend to get a closer look while ensuring I stay below 10 meters above the potential object.
+</Reasoning>
+<Action>(12, 23, -25)</Action>
+```

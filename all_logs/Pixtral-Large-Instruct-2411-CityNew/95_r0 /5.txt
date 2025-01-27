@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I see a green pickup truck directly below my current position, and I am at 10 meters altitude. I need to fly slightly lower to ensure I am within the acceptable altitude range as per the objective.
+</Reasoning>
+<Action>(0, -3, -2)</Action>
+```
+
+After executing this command and ensuring the UAV is centered on the green pickup truck, I will respond with "FOUND" if the conditions are met.

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    To avoid obstacles and continue the search safely, I will move away from the building and adjust my altitude accordingly. The yellow taxi in the top left of the image looks out of place in this environment and might be the anomaly we are looking for. I will move towards it while maintaining a safe altitude.
+</Reasoning>
+<Action>(-18, 18, 0)</Action>
+```

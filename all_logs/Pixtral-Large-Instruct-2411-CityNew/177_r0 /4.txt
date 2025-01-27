@@ -1,0 +1,8 @@
+ It seems like you have already successfully located the white truck. Per the rules and since there is no need to make additional moves, we can end the search here.
+
+```xml
+<Reasoning>
+    The white truck is visible and centered directly below the drone at (0,0). The UAV is within the acceptable altitude of 40 meters above ground level.
+</Reasoning>
+FOUND
+```

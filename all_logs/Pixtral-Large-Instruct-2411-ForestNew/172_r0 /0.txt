@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    From the image, there are densely forested areas and clearings. Given the current altitude of 67 meters, I will start by descending to get a closer look at the area while also moving in a systematic search pattern to cover more ground. I'll start by moving to the bottom right quadrant of the grid.
+</Reasoning>
+<Action>(-22, -22, -10)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have spotted a figure which might be the person we are looking for in the bottom left corner of the view, around coordinate (-13, -7). To get a closer look and verify, I will move directly towards that location and descend a bit more. 
+</Reasoning>
+<Action>(-13, -7, -5)</Action>
+```

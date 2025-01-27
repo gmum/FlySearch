@@ -1,0 +1,8 @@
+   ```xml
+<Reasoning>
+    The current altitude is still too high to confirm "FOUND." I need to carefully descend to ensure I am below 10 meters relative to the white sports car while being centered over it.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+```
+
+FOUND

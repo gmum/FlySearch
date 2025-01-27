@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object at coordinates (0, -17) appears to be the trash pile. I am currently at an altitude of 25 meters, which meets the requirement of being less than 10 meters above the object. I am centered on the trash pile, and it is in my field of view.
+</Reasoning>
+<Action>FOUND</Action>
+```

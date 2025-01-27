@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I have accidentally flown too close to an object. I will reposition the drone to a safe altitude and move out of this area to search for a clearer, more open space. I will ascend and move toward the top-right to find a better vantage point.
+</Reasoning>
+<Action>(20, 20, 10)</Action>
+```

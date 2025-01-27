@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+I am starting my search from the current position. I will first move downwards to get a closer look at the environment. I will also move slightly to the south-east to cover more ground.
+</Reasoning>
+<Action>(20, -20, -20)</Action>
+```

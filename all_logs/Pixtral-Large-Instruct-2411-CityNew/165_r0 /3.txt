@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see an area labeled "GT" in the bottom left corner, which may indicate the construction site. I will descend closer to this area to confirm if it is the target and ensure I am within 10 meters of the object to reply with "FOUND".
+</Reasoning>
+<Action>(-18, -18, -18)</Action>
+```

@@ -1,0 +1,7 @@
+  ```xml
+<Reasoning>
+    The object at coordinates (4, -7) seems to be distinct from the rest of the environment. It could be the anomaly I am searching for. I will move directly above it and ensure I am below 10 meters above the object.
+</Reasoning>
+<Action>(4, -7, -5)</Action>
+FOUND
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Looking at the current view, the trash pile is now clearly visible towards the coordinates (12, -12). I need to position myself directly above this area and descend to just below 10 meters to confirm it is the trash pile.
+</Reasoning>
+<Action>(12, -12, -25)</Action>
+```

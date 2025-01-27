@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm currently at an altitude of 32 meters above ground level. Given the objective to find a fire, I need to start by lowering my altitude to get a closer look at potential targets. I will first move slightly downwards and to the right to get a better view of the area.
+</Reasoning>
+<Action>(11, 11, -10)</Action>
+```

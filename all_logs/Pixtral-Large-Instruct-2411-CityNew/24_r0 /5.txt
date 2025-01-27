@@ -1,0 +1,10 @@
+  ```xml
+<Reasoning>
+    I've repositioned safely. I can now see that there is definitely a large pile of trash located at coordinates (3, -7). I will lower my altitude to be closer to the target while maintaining a safe distance.
+</Reasoning>
+<Action>(3, -7, -3)</Action>
+```
+
+And then:
+
+FOUND

@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The current image shows an airplane in the middle of a forested area, which is highly unusual and likely the anomaly I am tasked with finding. I need to move closer to the airplane and ensure I am less than 10 meters above it to confirm.</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

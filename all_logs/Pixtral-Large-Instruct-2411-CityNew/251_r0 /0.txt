@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting my search in an urban environment with buildings and streets. Currently, I am at 48 meters above ground level. The scene consists of typical urban features such as buildings, roads, and vehicles. The yellow point at approximately (-16, -16) is the most unique-looking feature in this image. I will move closer to get a better view and reduce my altitude to see if it's the anomalous object.
+</Reasoning>
+<Action>(-16, -16, -30)</Action>
+```

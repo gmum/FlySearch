@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see what appears to be a white vehicle in the upper left quadrant of the image. This looks out of place compared to the surrounding environment. I will move closer to this object and descend to get a better view and confirm if it is the anomaly.
+</Reasoning>
+<Action>(-23, 23, -20)</Action>
+```

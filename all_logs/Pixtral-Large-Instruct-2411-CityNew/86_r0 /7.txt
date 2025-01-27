@@ -1,0 +1,14 @@
+ ```xml
+<Reasoning>
+    I observe an area on the ground that appears to have a group of people near the bottom-right corner of the grid. I need to descend further to confirm whether this is the crowd we're looking for while ensuring I remain within the required altitude range.
+</Reasoning>
+<Action>(16, 31, -10)</Action>
+```
+
+I can see the crowd in the field of view.
+
+ ```xml
+<FOUND>
+FOUND
+</FOUND>
+```

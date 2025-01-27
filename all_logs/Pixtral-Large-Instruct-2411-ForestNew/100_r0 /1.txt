@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    From the current position, I observe a denser forest, but there is a potential clearing or path at coordinates (11, -11). I will move in that direction and descend further to get a better view of the ground level. This will help determine if there is a campsite present.
+</Reasoning>
+<Action>(11, -11, -10)</Action>
+```

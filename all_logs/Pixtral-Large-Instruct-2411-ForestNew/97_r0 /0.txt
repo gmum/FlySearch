@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start by descending to get a closer look at the terrain, since the initial altitude is quite high and it's difficult to spot the building from this height. I will move towards the center of the grid slightly to ensure I'm exploring a different area while descending.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

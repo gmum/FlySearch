@@ -1,0 +1,15 @@
+ ```xml
+<Reasoning>
+    Fire spotted in the central area of the image near point (0, -18). I will move towards it while descending to confirm and ensure I am within the required altitude range.
+</Reasoning>
+<Action>(0, -18, -10)</Action>
+```
+
+After confirming the fire is within the required altitude and within the field of view, the response will be:
+
+```xml
+<Reasoning>
+    The fire is directly in the center of view, and the altitude is within the required range.
+</Reasoning>
+FOUND
+```

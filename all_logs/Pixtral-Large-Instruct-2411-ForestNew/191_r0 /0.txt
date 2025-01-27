@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to systematically search the area. I will start by moving to the next point on the grid while descending slightly to get a closer view of the ground. I will move to the coordinate (10, -10) and descend by 10 meters to enhance the visibility of potential objects on the ground.
+</Reasoning>
+<Action>(10, -10, -10)</Action>
+```

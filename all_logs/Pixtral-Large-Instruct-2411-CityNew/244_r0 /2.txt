@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The large metal structure is clearly visible now and seems out of place on the rooftop. I will move closer to get a centered view and lower the altitude to be within 10 meters above the object.
+</Reasoning>
+<Action>(17, 17, -45)</Action>
+```
+
+This action should position the drone directly above the metal structure and within the required 10 meters altitude for a final inspection. If this movement correctly positions the drone, I will reply with "FOUND" in the next response.

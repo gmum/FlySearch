@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current view shows an urban environment with tall buildings. Given the objective to find a road construction site, it is unlikely to be located within this dense urban area. I will first move above the buildings to get a broader view and then search for more open areas where construction might be happening. To start, I'll move upward to gain a better vantage point.
+</Reasoning>
+<Action>(0, 0, 60)</Action>
+```

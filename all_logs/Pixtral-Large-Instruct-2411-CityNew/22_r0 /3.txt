@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am now at an altitude of 39 meters. The previous area did not reveal any fire signs. I will continue my search to coordinates (0, -26) and descend another 10 meters for a closer inspection.
+</Reasoning>
+<Action>(0, -26, -10)</Action>
+```
+
+By moving to different parts of the grid and descending, we can cover more areas and increase the chances of finding the fire. We will continue this approach until the fire is located or the search area is thoroughly scanned.

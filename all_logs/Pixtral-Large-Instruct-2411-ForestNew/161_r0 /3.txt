@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    I've identified the person in the field of view, and the drone is currently at 19 meters above ground level. To get closer and ensure the drone is within the acceptable altitude of 10 meters or less relative to the object, I will descend further.
+</Reasoning>
+<Action>(0, 6, -10)</Action>
+```
+
+You have a person in your field of view, and the altitude difference is within the acceptable range. 
+
+```xml
+FOUND
+```

@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>There is a noticeable red spot at coordinates (22, 0) which could be indicative of a forest fire. I need to move closer and lower to confirm if it is indeed a fire.</Reasoning>
+<Action>(22, 0, -20)</Action>
+```

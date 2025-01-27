@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm now at 20 meters altitude. There seems to be some orange and red objects in the top-left corner ((-13, 13)), which might indicate a fire. I'll move closer to that area and descend further to investigate.
+</Reasoning>
+<Action>(-13, 13, -10)</Action>
+```

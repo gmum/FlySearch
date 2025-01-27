@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>There appears to be an anomaly near the top center of the image within the coordinates (11, 22). It looks like a potentially unnatural object. Moving towards it for closer inspection, while maintaining a height below 10 meters to ensure it is the object in question. </Reasoning>
+<Action>(11, 22, -26)</Action>
+```
+
+Next step will be to descend further if it's the object of interest. If it is, I will reply "FOUND".

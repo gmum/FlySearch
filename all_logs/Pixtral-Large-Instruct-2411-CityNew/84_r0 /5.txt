@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Given the emergency stop, I will ascend slightly to ensure safety and maneuverability. From the image, it looks like the construction site is close by, possibly around coordinates (-9, 0). I will move towards this area with caution and gradually descend to get within 10 meters above the construction site.
+</Reasoning>
+<Action>(-9, 0, 5)</Action>
+```

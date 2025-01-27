@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I have confirmed the location and altitude of the drone. The person is centered within the field of view and the drone is directly above the person at an altitude of 10 meters.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+```
+
+FOUND.

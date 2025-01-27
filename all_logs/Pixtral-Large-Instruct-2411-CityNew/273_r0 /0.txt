@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The image shows various points of interest, but the anomaly might be located near the bottom right corner, which appears to be more open and less cluttered. I will move to the coordinates (21, -21) to explore this area more closely and adjust my altitude lower to get a better view.
+</Reasoning>
+<Action>
+    (21, -21, -10)
+</Action>
+```

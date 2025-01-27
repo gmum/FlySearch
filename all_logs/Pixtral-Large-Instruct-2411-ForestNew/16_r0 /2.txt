@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+   I think I see a potential target near the center of the image, just slightly to the left. I will descend further and move slightly to the left to investigate closer. This should give me a clearer view to determine if it's the object I am looking for.
+</Reasoning>
+<Action>(11, 11, -10)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Starting a search from the current position. Since the environment is mostly covered with vegetation, any anomaly might stand out due to its color, shape, or other distinguishing features. I will first move towards the central area to get a closer look and then descend gradually to ensure I don't miss any potential objects.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

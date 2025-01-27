@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I have spotted a structure directly below the drone at coordinates (0, 0). To ensure it is the object I am searching for and to meet the objective criteria, I will descend to 10 meters or less above the structure.</Reasoning>
+<Action>(0, 0, -50)</Action>
+```

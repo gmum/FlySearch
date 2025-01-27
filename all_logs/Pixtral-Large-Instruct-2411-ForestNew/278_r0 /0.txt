@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The airplane in the center of the image is an anomaly within this forested environment. I need to descend significantly to position the drone below 10 meters above the airplane.</Reasoning>
+<Action>(0, 0, -84)</Action>
+```

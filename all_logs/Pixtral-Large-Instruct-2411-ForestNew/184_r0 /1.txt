@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The blue tent at (3, 6) seems to be the campsite. I will move closer and ensure I am centered on it, then descend to ensure I am below 10 meters relative to the tent in order to confirm it.
+</Reasoning>
+<Action>(3, 6, -1)</Action>
+```

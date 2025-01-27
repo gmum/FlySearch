@@ -1,0 +1,10 @@
+ From the image, I can clearly see the road construction site beneath the drone, and my current altitude is 7 meters. This meets the condition of being at most 10 meters above the road construction site.
+
+Here's my final response:
+
+```xml
+<Reasoning>
+    I can clearly see the road construction site beneath the drone, and the current altitude is 7 meters above ground level. This confirms the target is directly below and within the required altitude.
+</Reasoning>
+FOUND
+```

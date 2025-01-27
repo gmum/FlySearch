@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+Starting from the current position, I will descend to get a closer look at the terrain while also moving slightly to the south to explore more areas. The goal is to bring the drone closer to the ground to identify the campsite more effectively.
+</Reasoning>
+<Action>(0, -29, -30)</Action>
+```

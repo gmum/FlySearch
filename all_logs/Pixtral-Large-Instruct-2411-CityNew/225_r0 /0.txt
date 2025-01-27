@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting my search for the anomalous object. I will first move to the center of the area and then start a systematic search by moving closer to the ground to get a better view. I will choose the coordinates (0, -31) to start my initial scan as it is in the middle of the image.
+</Reasoning>
+<Action>(0, -31, 0)</Action>
+```

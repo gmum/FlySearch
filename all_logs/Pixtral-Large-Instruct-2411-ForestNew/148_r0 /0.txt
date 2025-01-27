@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I will begin the search by moving to a different area while slightly descending to get a closer look at the terrain. I will move to the coordinate (11, 11) and descend by 10 meters to get a better view of the area.</Reasoning>
+<Action>(11, 11, -10)</Action>
+```

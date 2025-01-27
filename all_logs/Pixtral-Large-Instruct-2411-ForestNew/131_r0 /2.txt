@@ -1,0 +1,15 @@
+ ```xml
+<Reasoning>
+    The large patch at coordinates (5, 0) looks like a trash pile. I will descend further and position myself directly above it to ensure it is within 10 meters below the drone and in my field of view.
+</Reasoning>
+<Action>(5, 0, -5)</Action>
+```
+
+(After the next image is provided, if the object is centered and within the required altitude, the response should be:)
+
+```xml
+<Reasoning>
+    The trash pile is directly below, within 10 meters, and in my field of view.
+</Reasoning>
+FOUND
+```

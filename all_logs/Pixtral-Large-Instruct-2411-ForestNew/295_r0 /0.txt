@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start the search by moving closer to the ground to get a clearer view of the objects below. I will descend gradually while moving slightly in one direction to cover more ground. Since I am currently at an altitude of 59 meters, I will descend by 20 meters and move towards (-20, 0) to explore that area.
+</Reasoning>
+<Action>(-20, 0, -20)</Action>
+```

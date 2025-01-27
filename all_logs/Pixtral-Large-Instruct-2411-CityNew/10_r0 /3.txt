@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    My current altitude is 21 meters above ground level. I can see a white pickup truck located towards the bottom-left side of the image. I will move towards this vehicle and descend slightly to ensure I am within the required 10 meters or lower relative to the object.
+</Reasoning>
+<Action>(-14, -14, -10)</Action>
+```

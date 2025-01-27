@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I am now at 15 meters above ground level and the red truck is clearly in my field of view. I believe this is the anomaly since it's the only vehicle parked incorrectly in the middle of the road. To confirm, I will move directly above it and descend to 10 meters or less from the object.
+</Reasoning>
+<Action>(0, 5, -5)</Action>
+```
+
+Once the drone is centered right above the object at 10 meters or less, you should reply with "FOUND".

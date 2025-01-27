@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I need to carefully search for the police car. Given my current altitude of 36 meters, I will move lower to get a closer look at the potential objects in the street. I will move towards the coordinates (12, -12) and descend to get a better view.
+</Reasoning>
+<Action>(12, -12, -20)</Action>
+```

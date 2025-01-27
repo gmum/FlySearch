@@ -1,0 +1,12 @@
+  ```xml
+<Reasoning>
+    I am currently at 25 meters altitude and still centered on the green object which I identified as an anomaly. To meet the requirements, I need to descend a bit more to ensure I'm within 10 meters above the object.
+</Reasoning>
+<Action>(0, 0, -2)</Action>
+```
+
+After adjusting the altitude:
+
+```xml
+FOUND
+```

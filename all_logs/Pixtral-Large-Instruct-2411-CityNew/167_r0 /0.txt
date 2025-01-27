@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The police car is likely to be on the road. From the current view, I can see a potential road below with some vehicles parked. I will move closer to the ground to get a better view of the vehicles and see if any of them is a police car.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

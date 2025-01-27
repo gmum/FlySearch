@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>The object appears to be directly below me, and I am now at 30 meters above ground level. I will move slightly to the right and descend further to ensure I am no more than 10 meters above the object for a clear and centered view.</Reasoning>
+<Action>(10, -10, -10)</Action>
+```
+
+Please provide the next image based on the given action.

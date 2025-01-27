@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search from my current position at 91 meters altitude. I will first move lower to get closer to the ground to identify any anomalies. I will move to the coordinates (-30, 0) and descend by 30 meters to better inspect the lower level of the environment.
+</Reasoning>
+<Action>(-30, 0, -30)</Action>
+```

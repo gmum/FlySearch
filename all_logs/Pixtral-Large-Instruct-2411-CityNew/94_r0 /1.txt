@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at an altitude of 22 meters. I need to get even closer to the ground to accurately identify any trash piles. The area towards the right (east) seems promising, particularly around coordinates (7, 7) and (15, 7). Let's move there and descend further to have a clearer view.
+</Reasoning>
+<Action>(7, 7, -10)</Action>
+```

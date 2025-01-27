@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The drone is now centered on the building at coordinates (0, -3) and is at an altitude of 9 meters above the ground. This meets the criteria specified, as the drone is within 10 meters of the building and it is in the field of view.</Reasoning>
+<Action>FOUND</Action>
+```

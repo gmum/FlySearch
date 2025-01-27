@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    The structure at coordinates (0, 0) looks like the building we're searching for. I need to descend further and center on the building to confirm.
+</Reasoning>
+<Action>(0, 0, -29)</Action>
+```
+
+If you confirm that the UAV reaches 9 meters above ground level and the building is in the UAV's field of view, you should reply with "FOUND".

@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I observe a suspicious spot at the coordinates (11, 0). I need to move closer to this area and descend to determine if it is the campsite. I will fly towards the spot and descend to get a clearer view.</Reasoning>
+<Action>(11, 0, -22)</Action>
+```

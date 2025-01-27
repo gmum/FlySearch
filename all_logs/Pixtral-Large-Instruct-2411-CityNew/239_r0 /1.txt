@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+In the current field of view, I notice a dark spot at coordinates (31, 16). This might be an anomaly, and I need to get closer to identify it. I'll descend and move slightly to the northeast to center on the object.
+</Reasoning>
+<Action>(31, 16, -20)</Action>
+```

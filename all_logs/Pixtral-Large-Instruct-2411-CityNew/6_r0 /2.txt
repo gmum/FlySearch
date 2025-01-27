@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at an altitude of 43 meters, and I see the trash pile directly beneath me. To meet the conditions of being less than 10 meters above the pile and having it centered in my field of view, I'll descend further.
+</Reasoning>
+<Action>(0, 0, -35)</Action>
+```

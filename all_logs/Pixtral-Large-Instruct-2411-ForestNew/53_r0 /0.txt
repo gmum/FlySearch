@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I will begin my search by moving in a grid pattern to cover as much area as possible. Initially, I'll move to the coordinate (20, 0) to enhance my field of view and look for any potential trash piles.</Reasoning>
+<Action>(20, 0, 0)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am now at 36 meters above ground level. I can see a potential anomaly in the center of the grid at coordinates (12, 0). It appears to be a white object that stands out from the surrounding forest environment. I will center on this object and descend further to get a closer view to confirm if it is the anomaly.
+</Reasoning>
+<Action>(12, 0, -10)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will begin my search by moving downwards to get closer to the ground. I will also move slightly towards the bottom-left quadrant to expand my search area. This will allow me to get a closer look at any potential objects on the ground while staying within the search area.
+</Reasoning>
+<Action>(-24, -24, -20)</Action>
+```

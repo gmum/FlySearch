@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I've spotted a potential fire at the coordinates (11, 21). I need to center the drone on the object and descend closer to it to ensure I am within 10 meters above the object.
+</Reasoning>
+<Action>(11, 21, -22)</Action>
+```
+
+After this action, I expect to be centered on the object in question and below the 10-meter threshold if it is indeed the fire. If I am within these parameters, I will confirm with "FOUND".

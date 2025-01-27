@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see several vehicles ahead, including what looks like a white pickup truck at the (-10, 0) coordinate. I will move closer to the vehicle and lower my altitude to ensure it is the target and to position the drone within 10 meters above it.
+</Reasoning>
+<Action>(-10, 0, -10)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search from the center of the grid and will systematically explore each part of the area. I will start by moving to the point (31, 31) and will descend to get a closer look at the environment.
+</Reasoning>
+<Action>(31, 31, -20)</Action>
+```

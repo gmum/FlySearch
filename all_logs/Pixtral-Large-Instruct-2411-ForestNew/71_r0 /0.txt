@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The red spot in the image near coordinates (31, -31) appears to be a potential forest fire. I will descend towards this spot to investigate further.
+</Reasoning>
+<Action>(31, -31, -30)</Action>
+```

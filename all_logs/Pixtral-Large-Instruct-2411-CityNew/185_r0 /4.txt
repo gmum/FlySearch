@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I can see the police car at the bottom left. I need to position myself directly above it and adjust my altitude to be below 10 meters to confirm.
+</Reasoning>
+<Action>(-5, -5, -2)</Action>
+```

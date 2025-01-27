@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am currently at an altitude of 8 meters above ground level. I can see the "BUS" road marking clearly, and there are some construction objects and equipment visible just below the center coordinates (0, -3) which seems to be a construction site. I need to center on this location for a better view and ensure I am within the altitude limit.
+</Reasoning>
+<Action>(0, -3, -2)</Action>
+```
+
+After moving, I should be in a position to confirm the presence of the road construction site.

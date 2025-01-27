@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The object that might be the building is located at coordinates (-25, 25). It appears to be a structure that could be the target. I will move towards this object while descending to ensure I get closer for better visibility and identification.</Reasoning>
+<Action>(-25, 25, -20)</Action>
+```

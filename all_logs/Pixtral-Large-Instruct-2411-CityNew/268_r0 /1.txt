@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will move cautiously to avoid any obstacles. Given the dark area in front, I should move slightly to the left and maintain a safe altitude without descending too quickly.
+</Reasoning>
+<Action>(-16, 16, -5)</Action>
+```

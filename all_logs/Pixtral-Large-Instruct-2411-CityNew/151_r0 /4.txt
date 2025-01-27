@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+The object at coordinate (0, 0) is indeed a trash pile. I need to descend a bit more to ensure I am below 10 meters above the object and center it in my field of view.
+</Reasoning>
+<Action>(0, 0, -7)</Action>
+```
+
+FOUND

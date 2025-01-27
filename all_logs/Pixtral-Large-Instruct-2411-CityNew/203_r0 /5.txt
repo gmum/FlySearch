@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I see a distinct object at coordinates (-12, -12). I will move closer to it, ensuring I remain above 10 meters relative to the object and stay centered on it.
+</Reasoning>
+<Action>(-12, -12, -8)</Action>
+```
+
+When you provide the next image, I will check if the drone is within 10 meters above the object, and if it is in my field of view, I will reply with "FOUND".

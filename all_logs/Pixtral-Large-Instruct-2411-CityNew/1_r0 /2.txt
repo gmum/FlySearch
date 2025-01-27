@@ -1,0 +1,8 @@
+  There seems to be a possible large trash pile in the top left corner of the image. I will move closer to investigate.
+
+```xml
+<Reasoning>
+    I have spotted a potential large trash pile in the top-left corner of the image. I will move closer to that area to get a better view and confirm if it is the target.
+</Reasoning>
+<Action>(-22, 22, -10)</Action>
+```

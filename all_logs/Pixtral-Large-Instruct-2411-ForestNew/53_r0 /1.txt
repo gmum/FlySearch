@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>I have identified a potential trash pile to the right of the drone's current position, near coordinates (19, 0). I will move closer to investigate while also descending to get a better view and ensure I am within the required altitude if it is the trash pile.</Reasoning>
+<Action>(19, 0, -20)</Action>
+```

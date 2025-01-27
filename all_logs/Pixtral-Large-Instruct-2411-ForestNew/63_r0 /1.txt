@@ -1,0 +1,4 @@
+ ```xml
+<Reasoning>The red spot is now directly beneath the drone at coordinates (0, 0) and is more clearly visible. I need to descend further to confirm if it is a fire and to meet the altitude requirement.</Reasoning>
+<Action>(0, 0, -35)</Action>
+```

@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+I have located a crowd in the center area of the image. I will descend further to get below 10 meters above the object while ensuring it remains in my field of view.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```
+
+After this action, if it is clear that the drone is less than 10 meters above the crowd and the crowd is still centered in the field of view, respond with "FOUND."

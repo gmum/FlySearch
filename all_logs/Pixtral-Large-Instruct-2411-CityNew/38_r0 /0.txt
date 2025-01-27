@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The image shows a grid overlay on a street scene. Since the objective is to find a large trash pile, I need to systematically search the area. I will start by moving to one of the corners of the grid and then gradually move towards the center while lowering the altitude to ensure I don't miss any objects that might be the trash pile. I will start by moving to the bottom-left corner and then proceed from there.
+</Reasoning>
+<Action>(-21, -21, -10)</Action>
+```

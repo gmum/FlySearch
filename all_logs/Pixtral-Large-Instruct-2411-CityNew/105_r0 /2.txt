@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am at 10 meters above ground level and have spotted what appears to be a fire in the object at coordinates (0, -7). I need to get closer to ensure detection and to place the object in the center of my field of view. I will move directly towards the object and slightly descend to ensure I am within the required 10 meters above the object.
+</Reasoning>
+<Action>(0, -7, -2)</Action>
+```
+
+Let me know if you now see the fire clearly in the center of your field of view and at the correct altitude.

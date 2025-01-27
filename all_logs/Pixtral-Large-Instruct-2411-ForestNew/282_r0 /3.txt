@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    There seems to be a distinct object near coordinates (0, -17) that does not fit with the surrounding environment. I need to descend and move towards this object to investigate further.
+</Reasoning>
+<Action>(0, -17, -10)</Action>
+```

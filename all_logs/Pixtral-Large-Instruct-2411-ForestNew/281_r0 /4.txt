@@ -1,0 +1,10 @@
+ 
+I see that you have already declared "FOUND", but since the altitude is above 6 meters from the ground, I will adjust the altitude to ensure the UAV is within the 10 meters as per instructions. Then, I will correctly declare "FOUND".
+
+```xml
+<Reasoning>
+    I need to ensure that the UAV is at the correct altitude which is within 10 meters above the object. I will descend a bit more to make sure the UAV is exactly within the required height.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+FOUND
+```

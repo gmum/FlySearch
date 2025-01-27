@@ -1,0 +1,9 @@
+  ```xml
+<Reasoning>The dark patch at coordinates (0, 0) appears to be a trash pile. I will descend further to ensure I am within 10 meters above the object and centered on it.</Reasoning>
+<Action>(0, 0, -11)</Action>
+```
+
+```xml
+<Reasoning>I am now below 10 meters relative to the trash pile, and it is in my field of view. I am centered on the object.</Reasoning>
+<Action>FOUND</Action>
+```

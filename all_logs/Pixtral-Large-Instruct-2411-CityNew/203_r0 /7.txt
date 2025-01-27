@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I see two objects: a white rectangular object at (-13, -13) and a longer object at (13, 7). The longer object appears to be an anomaly in this environment. I will move closer to the longer object while maintaining a safe altitude.
+</Reasoning>
+<Action>(13, 7, -10)</Action>
+```
+
+When you provide the next image, I will check if the drone is within 10 meters above the object, and if it is in my field of view, I will reply with "FOUND".

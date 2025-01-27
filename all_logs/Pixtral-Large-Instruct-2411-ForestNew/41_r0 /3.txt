@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>
+    The altitude is now 19 meters. The person is still not visible in the current field of view. I will move closer to the area near coordinates (-6, -6) to get a better angle, making sure to stay within the required altitude constraints. This area appears to have some potentially interesting features.
+</Reasoning>
+<Action>
+    (-6, -6, -1)
+</Action>
+```
+
+This move will place the drone at an altitude of 18 meters and closer to the area of interest, increasing the chances of spotting the person. If the person is not visible from this vantage point, further fine-tuning of the position might be necessary.

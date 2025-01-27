@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting my search by moving towards the center of the grid. Since I am high above the ground, I will begin to descend to get closer to any potential fire and to enhance the visibility of objects on the ground.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

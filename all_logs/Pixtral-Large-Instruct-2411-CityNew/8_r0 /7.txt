@@ -1,0 +1,6 @@
+   ```xml
+<Reasoning>
+I now have a good view of the road construction site. The area is clearly visible and marked by construction equipment. From the current altitude of 17 meters, to meet the criteria, I need to lower the UAV to 10 meters above the object while keeping it centered in my field of view.
+</Reasoning>
+<Action>(0, 6, -7)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+The area with the red-brownish color at the coordinates (-25, -25) is a potential location for the forest fire. I will move towards this area and simultaneously decrease my altitude to get a closer view and confirm if it is indeed the fire.
+</Reasoning>
+<Action>(-25, -25, -30)</Action>
+```

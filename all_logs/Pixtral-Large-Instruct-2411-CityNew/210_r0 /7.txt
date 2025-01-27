@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Noticed an anomaly in the scene: a skeleton on the ground. This object does not fit in with the rest of the urban environment. I will carefully move closer to it while ensuring safety. Moving to (0, 12) and decreasing altitude by 10 meters to get a closer look.
+</Reasoning>
+<Action>(0, 12, -10)</Action>
+```

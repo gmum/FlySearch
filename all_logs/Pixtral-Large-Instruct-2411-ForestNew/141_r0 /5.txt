@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The object at (0, -2) is clearly the tent, indicating the campsite. The drone is now centered on the object and is below 10 meters in altitude.
+</Reasoning>
+<Action>FOUND</Action>
+```

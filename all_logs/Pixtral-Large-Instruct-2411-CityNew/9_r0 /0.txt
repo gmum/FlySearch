@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    My current altitude is 96 meters, which is too high to identify the trash pile accurately. I will descend significantly while keeping within the safe altitude limit to better inspect the area below.
+</Reasoning>
+<Action>(0, 0, -40)</Action>
+```

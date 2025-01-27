@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    Starting the search by moving to the center of the current view to get closer to the ground and potentially spot the object, which will allow for better visibility and a more detailed view.
+</Reasoning>
+<Action>(0, 0, -40)</Action>
+```

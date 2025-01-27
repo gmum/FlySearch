@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I can see a potential fire at the coordinates directly below (0,0). To ensure that it is indeed the fire and to be within the required altitude, I will descend directly towards it.
+</Reasoning>
+<Action>(0, 0, -15)</Action>
+```

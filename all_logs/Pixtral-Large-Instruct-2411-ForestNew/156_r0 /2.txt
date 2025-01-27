@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    I see what looks like a person in the center of my field of view. I need to descend further and make sure I am within 10 meters of this person to confirm.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

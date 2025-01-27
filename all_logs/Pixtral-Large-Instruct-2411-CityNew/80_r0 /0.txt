@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I will start by lowering my altitude to get a closer view of the ground. This will help me identify any potential crowds more effectively, especially as I need to fly below 10 meters above the object to confirm its presence.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

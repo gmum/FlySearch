@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I'm starting the search for the fire. Since my current altitude is 74 meters and I need to get closer to the ground to spot potential fire sources, I will start by descending while also moving in a direction that allows me to cover more ground. I will move downward and slightly forward to cover more area in the search.
+</Reasoning>
+<Action>(0, 25, -20)</Action>
+```

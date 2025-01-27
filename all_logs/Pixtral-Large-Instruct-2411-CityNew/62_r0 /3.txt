@@ -1,0 +1,8 @@
+ ```xml
+<Reasoning>
+    I now see a possible fire in the middle of my field of view, around the (0, -3) coordinates. I need to lower my altitude further to get closer to it.
+</Reasoning>
+<Action>
+    (0, 0, -5)
+</Action>
+```

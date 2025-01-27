@@ -1,0 +1,4 @@
+  <Reasoning>I am now at a safe altitude of 13 meters above the ground. I need to descend 3 meters to be exactly 10 meters above the airplane. This should bring me to the required altitude while ensuring I am centered on the object.</Reasoning>
+<Action>(0, 0, -3)</Action>
+
+This move should place me at 10 meters above the airplane, allowing me to declare "FOUND" safely.

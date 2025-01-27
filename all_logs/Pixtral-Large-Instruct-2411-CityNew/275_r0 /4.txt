@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+    To safely move closer to the anomaly, I will now move horizontally toward the bottom center of the image without decreasing altitude. The goal is to ensure the drone remains at a safe distance while centering on the object for clearer identification.
+</Reasoning>
+<Action>(0, -14, 0)</Action>
+```

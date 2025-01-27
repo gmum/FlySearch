@@ -1,0 +1,10 @@
+ ```xml
+<Reasoning>The forest fire is now quite close, and I need to descend further to ensure I am within 10 meters of the fire while keeping it centered in my field of view. I will move slightly to the left and descend further.</Reasoning>
+<Action>(-20, 0, -20)</Action>
+```
+
+If this move places the drone correctly above the fire, the response should be:
+
+```xml
+FOUND
+```

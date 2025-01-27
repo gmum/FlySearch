@@ -1,0 +1,12 @@
+  ```xml
+<Reasoning>
+    I am now positioned right above the nose of the airplane. I need to carefully descend to ensure I am below 10 meters above the airplane to mark it as found.
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+```
+
+When you're at 9 meters above the ground, reply with:
+
+```xml
+FOUND
+```

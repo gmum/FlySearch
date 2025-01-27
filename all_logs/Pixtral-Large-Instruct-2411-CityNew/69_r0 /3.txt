@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    I am now at 10 meters altitude and I can see several vehicles. There is a blue sport car on the right side of the image. I need to move closer to it to ensure it's within 10 meters below my altitude and centered in my field of view.
+</Reasoning>
+<Action>(7, 7, -2)</Action>
+```
+
+If the next image confirms the blue sport car is within the specified parameters, I will reply with "FOUND."

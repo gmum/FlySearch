@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am starting the search by moving towards the coordinates (0, -63) to cover the area in front of the drone. This move will keep the drone within the search area and allow for a thorough inspection of the terrain below and around that area.
+</Reasoning>
+<Action>(0, -63, 0)</Action>
+```

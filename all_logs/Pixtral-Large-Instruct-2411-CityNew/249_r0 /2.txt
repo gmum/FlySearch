@@ -1,0 +1,8 @@
+  ```xml
+<Reasoning>
+    The black object in the road is becoming clearer. It definitely seems out of place in this urban environment. I will move directly above it and descend further to get within the required 10 meters range.
+</Reasoning>
+<Action>(0, 7, -10)</Action>
+```
+
+If the drone's altitude is adjusted correctly, I will respond with "FOUND" if the object is clearly visible and centered in the next image.

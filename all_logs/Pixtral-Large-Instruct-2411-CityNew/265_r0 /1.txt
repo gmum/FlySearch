@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently at 62 meters altitude. I see a green object in the top middle of the image that stands out from the surroundings. I need to get closer to inspect this object and ensure it is an anomaly. I will move towards it and descend further to get a clearer view.
+</Reasoning>
+<Action>(0, 41, -20)</Action>
+```

@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I see a blue object that could potentially be the blue sports car. I will move closer to it and descend to ensure I am below 10 meters above it to verify if it is the target.
+</Reasoning>
+<Action>(20, 0, -50)</Action>
+```

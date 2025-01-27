@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    The current altitude is 77 meters, which is much higher than the required 10 meters or below for identifying the crowd. I will descend significantly to get closer to the ground while slightly moving forward to explore the area.
+</Reasoning>
+<Action>(0, 51, -50)</Action>
+```

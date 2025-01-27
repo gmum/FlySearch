@@ -1,0 +1,12 @@
+ ```xml
+<Reasoning>
+    I can see an anomalous object at coordinate (17, -17). I will carefully descend and approach the object to confirm it, ensuring that I remain within 10 meters of it for classification as "FOUND".
+</Reasoning>
+<Action>(17, -17, -40)</Action>
+```
+
+Your current altitude is 11 meters above ground level.
+
+```xml
+FOUND
+```

@@ -1,0 +1,6 @@
+  ```xml
+<Reasoning>
+I have identified a person in the field of view, slightly to the left. I will now move directly towards the coordinates (-9, 0) and descend to ensure I am within 10 meters of the person before confirming the target.
+</Reasoning>
+<Action>(-9, 0, -19)</Action>
+```

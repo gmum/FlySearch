@@ -1,0 +1,6 @@
+ ```xml
+<Reasoning>
+    I am currently above a narrow street flanked by tall buildings. I need to descend to get a closer look at the ground level and the surrounding area. Since the fire might not be on the street, it could be on the building windows or balconies. I will first move downwards to get closer to the street level and then perform a more thorough search.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+```
