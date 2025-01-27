@@ -1,0 +1,2 @@
+<Reasoning>The red pickup truck is located at coordinates (-10, 0) which is in the drone's current field of view. The drone needs to descend to be below 10 meters from the truck to complete the objective.</Reasoning>
+<Action>(-10, 0, -21)</Action>

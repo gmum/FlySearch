@@ -1,0 +1,2 @@
+<Reasoning>Given the current altitude, I need to fly closer to the ground to find the fire. I will move towards the center of the image, where the grid points are most concentrated, and lower my altitude significantly to get a closer look. This will help me identify the fire if it's in this area.</Reasoning>
+<Action>(0, 0, -30)</Action>

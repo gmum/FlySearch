@@ -1,0 +1,2 @@
+<Reasoning>Given the current altitude and the objective to descend towards the object, I should move downwards to reduce the altitude. Approaching the object from above will allow for a better visual search as I descend.</Reasoning>
+<Action>(0, 0, -25)</Action>

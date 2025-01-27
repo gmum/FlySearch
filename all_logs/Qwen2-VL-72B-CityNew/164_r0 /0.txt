@@ -1,0 +1,2 @@
+<Reasoning>There is a fire visible in the center of the current view, located at coordinates (0, 0). To get closer to the fire, I need to descend while maintaining my position above it. I will move directly downward to reduce the altitude to a level that is closer to the fire, aiming to be below 10 meters from the object.</Reasoning>
+<Action>(0, 0, -22)</Action>

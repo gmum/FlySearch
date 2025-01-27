@@ -1,0 +1,134 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given the layout of the grid and the surrounding environment, I will move towards the center of the grid to cover a more central area. This will allow me to observe a wider range of potential anomalies from a central position, increasing the likelihood of spotting the object in question without risking going outside the viewable area or exceeding the altitude limit.</Reasoning>\n<Action>(0, 0, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 52 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Having moved closer to the ground, I'll continue my descent to further reduce my altitude, aiming to be within 10 meters of any potential anomaly. This will ensure I have a closer and clearer view, enabling a more precise identification of the object. I will also slightly shift my position to the northeast to explore this quadrant more closely, as it appears less obstructed by buildings and may reveal the anomaly.</Reasoning>\n<Action>(17, 17, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Having descended to a lower altitude, I observe the environment more closely. The area to the northeast appears clear of structures that could obstruct my view, making it a good candidate for further exploration. Moving in this direction will allow me to maintain a central position and keep a wide field of view while continuing to search for the anomaly.</Reasoning>\n<Action>(15, 15, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>At my current altitude, I should be very close to the ground, which increases the chances of spotting the anomaly. I will move to the southwest, where there seems to be less clutter and possibly a clearer field of view to identify the object in question.</Reasoning>\n<Action>(0, -7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have just moved to the southwest and am still at 22 meters above ground level. I need to continue my search by covering different areas of the grid to increase my chances of finding the anomaly. Moving to the northwest will allow me to explore a new section of the area.</Reasoning>\n<Action>(-7, 7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Having moved to the northwest, I am still searching for the anomaly while maintaining a safe altitude. I should now move towards the south to cover the remaining area of the grid and ensure a comprehensive search. This direction will allow me to observe the southern quadrant of my search area.</Reasoning>\n<Action>(0, -7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Having moved south, I am now positioned to cover a significant portion of the southern quadrant. To continue my search, I should now move west to explore the western part of the grid, ensuring that I maintain a close proximity to potential anomalies and keep my focus on the ground below.</Reasoning>\n<Action>(-7, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>After the emergency stop, I need to reassess my position and the surroundings. Moving northwest will allow me to navigate away from the immediate danger and continue my search for the anomaly in a different section of the grid.</Reasoning>\n<Action>(-7, 7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Having experienced an emergency stop, it's crucial to navigate away from any immediate dangers. Moving southeast will help me regain a safe distance from the obstruction and continue my search for the anomaly in a new area.</Reasoning>\n<Action>(7, -7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Having moved southeast, I am now positioned to cover a different section of the grid. To continue my search for the anomaly, I should move towards the central area of the grid, which will allow me to observe a new quadrant of the environment.</Reasoning>\n<Action>(0, -7, 0)</Action>"
+    ]
+]

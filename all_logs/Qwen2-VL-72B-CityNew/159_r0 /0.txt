@@ -1,0 +1,2 @@
+<Reasoning>I see a white truck on the right side of the image at coordinates (12, 0). This could be the target. I need to descend to get a closer look and confirm if it's the correct object.</Reasoning>
+<Action>(12, 0, -25)</Action>

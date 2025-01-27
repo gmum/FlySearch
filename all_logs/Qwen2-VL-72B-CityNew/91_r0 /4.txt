@@ -1,0 +1,2 @@
+<Reasoning>Upon moving right, I notice a large trash pile on the road at the coordinates (0, 0). This is the object I'm tasked to find. I will now move directly over it and lower my altitude to confirm it is within 10 meters of the drone.</Reasoning>
+<Action>(0, 0, -20)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>Since the initial altitude is 91 meters, I need to decrease the altitude to get closer to the potential construction site. I will move to a point that is 0 meters on the x and y axis and decrease my altitude by 50 meters to reach an altitude of 41 meters above ground level. This should provide a clearer view of the construction site without being too high or too low.</Reasoning>
+<Action>(0, 0, -50)</Action>

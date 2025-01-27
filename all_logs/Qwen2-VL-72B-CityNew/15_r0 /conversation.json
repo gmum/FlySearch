@@ -1,0 +1,118 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a road construction site.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 88 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>There are no evident signs of the road construction site in the current view. The area appears to be a dense urban environment with buildings and roads. I need to lower my altitude to get a better view of potential work sites that might be obscured by the buildings. I will also move slightly to the right to scan a different section of the grid.</Reasoning>\n<Action>(29, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current image still does not reveal any signs of a road construction site. The drone's altitude has been reduced, and I am now moving slightly to the right to examine another section of the grid. This will help me to cover more ground in my search for the construction site.</Reasoning>\n<Action>(19, 0, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>With the current image, I'm still not seeing any indications of a road construction site. The buildings and roads are fairly normal, with no signs of construction work. I need to further lower my altitude to potentially spot any construction zones that might be hidden among the buildings. I will move further south to inspect a new area.</Reasoning>\n<Action>(0, -25, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current image shows a close-up view of what seems to be a roof or a wall, with no signs of a road construction site. I have flown too close and risked hitting an obstacle. To avoid further collisions, I need to raise my altitude slightly and continue the search from a safer distance. I will move back to the right to clear any potential obstacles and maintain a safe flying path.</Reasoning>\n<Action>(7, 0, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Based on the current image, I am still looking down at what appears to be a wall or a structure, without any visible signs of a road construction site. Given that there have been multiple emergency stops due to proximity to obstacles, it's clear that moving in this direction is not a safe or productive approach. To find the road construction site, I need to maneuver away from the current location and attempt to reorient myself or find a clearer path. Moving north should help avoid further collisions and potentially reveal a new area that could contain the construction site.</Reasoning>\n<Action>(0, 27, 5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given the repeated emergency stops and the risk of flying out of bounds, I need to change strategy and avoid direct movements that could lead to collisions. Instead of moving north, which would put the drone out of view and potentially into danger, I should return to a previous safe position and reassess the situation. Moving back to a location where there is a clear view and no immediate risks will allow me to safely continue the search for the road construction site without jeopardizing the drone's safety.</Reasoning>\n<Action>(0, 0, 15)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Returning to a higher altitude after several emergency stops suggests that I need to reassess my search strategy. The current view does not provide any clear signs of a road construction site, and my previous attempts to move closer to the ground have been unsuccessful and unsafe. To avoid further risks and continue the search effectively, I should maintain a safe altitude and explore new areas. Moving east will provide a different perspective and may reveal new information about the location of the construction site.</Reasoning>\n<Action>(23, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From the current view, we can observe an area with a distinctive red vehicle parked near the bottom right of the image, which might be indicative of a construction site, as such vehicles are often associated with construction work. To confirm if this is indeed the construction site, I need to lower the drone's altitude to get a closer look and ensure that I am in line with the object. This will help me verify if the red vehicle is part of the construction activities and whether the area fulfills the requirements of being the targeted road construction site.</Reasoning>\n<Action>(0, 0, -25)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Upon descending to the current altitude, I can confirm that the red vehicle observed earlier is part of a road construction site. The presence of construction materials and equipment around the vehicle supports this conclusion. Given that I am now within the required altitude range of 10 meters or less above the object and have a clear view of the construction site, I am in a position to accurately identify the object as per the objective. It is crucial to provide a precise response indicating the successful identification to ensure that the mission is accomplished effectively.</Reasoning>\n<Action>FOUND</Action>"
+    ]
+]

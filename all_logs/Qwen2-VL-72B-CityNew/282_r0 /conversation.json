@@ -1,0 +1,130 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 79 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Since the grid points are labeled with their coordinates, it can be seen that moving to the point with coordinates (-26, 26, 0) will bring me closer to the object, which is expected to be located further north and slightly to the west. This move will also allow me to see if the object is indeed at that location, or if I need to adjust my search area.</Reasoning>\n<Action>(-26, 26, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 79 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Since the grid points are labeled with their coordinates, it can be seen that moving to the point with coordinates (-53, 26, 0) will bring me closer to the object, which is expected to be located further north and slightly to the west. This move will also allow me to see if the object is indeed at that location, or if I need to adjust my search area.</Reasoning>\n<Action>(-53, 26, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 79 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Based on the coordinates of the grid points and the current altitude, it appears that the object is on the ground level. To approach the object, I need to fly lower and towards the point where the object is likely to be located, which is north of the drone's current position.</Reasoning>\n<Action>(0, 26, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object may require further approach and lowering of altitude to be clearly seen and confirmed as the target. Adjusting to lower altitude can provide a better view and accurate identification of the object of interest.</Reasoning>\n<Action>(0, 0, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The drone has been descending consistently and is now at a lower altitude. The object I'm looking for should be visible at this height, and by moving slightly north, I can get a better view of the area. If the object is not here, I can then adjust my search direction accordingly.</Reasoning>\n<Action>(0, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The drone has been descending consistently and is now at a lower altitude. The object I'm looking for should be visible at this height, and by moving slightly north, I can get a better view of the area. If the object is not here, I can then adjust my search direction accordingly.</Reasoning>\n<Action>(0, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>As the drone has been consistently descending and the current altitude is still higher than the required 10 meters, it is necessary to continue descending in order to reach the target altitude. The current altitude is 29 meters, which is still higher than the required 10 meters. Therefore, the drone needs to continue descending in order to reach the target altitude.</Reasoning>\n<Action>(0, 0, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From the current angle of the image, it appears that the drone is not centered directly above the object, but rather slightly to the left. To ensure that the search is thorough and that the drone is in the correct position, a slight adjustment to the right at the current altitude is necessary. This will allow the drone to be centered directly above the object, which will ensure that the search is thorough and that the drone is in the correct position to identify the anomaly.</Reasoning>\n<Action>(0, 3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Since the drone is already at the required altitude and the object of interest is visible in the current frame, it is likely that the drone is centered directly above the object. Therefore, there is no need to move or adjust the drone's position any further. The search can be considered complete, and the drone can maintain its current position until further action is required.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Since the drone is already at the required altitude and the object of interest is visible in the current frame, it is likely that the drone is centered directly above the object. Therefore, there is no need to move or adjust the drone's position any further. The search can be considered complete, and the drone can maintain its current position until further action is required.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ]
+]

@@ -1,0 +1,4 @@
+<Reasoning>
+I am starting my search from the center of the grid, as it is the most likely position to find the object. I will move west to cover more area in my search.
+</Reasoning>
+<Action>(-10, 0, 0)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>The object in view could potentially be the one I am searching for. However, I need to ensure that it is within 10 meters below me before declaring it found. I will move towards it while reducing altitude.</Reasoning>
+<Action>(15, 0, -10)</Action>

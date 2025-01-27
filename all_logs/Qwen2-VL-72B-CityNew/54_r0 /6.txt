@@ -1,0 +1,2 @@
+<Reasoning>Based on the current view, the crowd is centered at the coordinates (0, 4), which is the closest grid point to the center of the crowd. I should move towards this point and adjust my altitude to be less than 10 meters above the crowd.</Reasoning>
+<Action>(0, 4, -10)</Action>

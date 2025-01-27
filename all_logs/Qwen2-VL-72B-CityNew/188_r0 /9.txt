@@ -1,0 +1,2 @@
+<Reasoning>The fire is at the drone's current location, centered in the drone's field of view. I need to descend further to get closer to the fire and confirm if it is within 10 meters.</Reasoning>
+<Action>(0, 0, -3)</Action>

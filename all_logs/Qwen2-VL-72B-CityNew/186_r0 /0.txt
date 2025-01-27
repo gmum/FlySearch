@@ -1,0 +1,2 @@
+<Reasoning>Based on the current view, there is a potential fire on the ground at coordinates (0, 0). I need to descend and center on this location to confirm if it is the fire and to ensure it is in my field of view when I reply with "FOUND".</Reasoning>
+<Action>(0, 0, -29)</Action>

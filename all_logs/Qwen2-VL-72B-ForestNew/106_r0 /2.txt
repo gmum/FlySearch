@@ -1,0 +1,2 @@
+<Reasoning>The trash pile is visible in the center of the grid at coordinates (0, -10). I am currently 29 meters above the ground, which is more than the required 10 meters. I will lower my altitude to get closer to the trash pile.</Reasoning>
+<Action>(0, 0, -20)</Action>
