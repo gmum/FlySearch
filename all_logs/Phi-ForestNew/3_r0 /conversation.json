@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a campsite.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 76 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(5, 5, -1)</Action>\n</Action space>\n<Reasoning>\n    I am choosing the middle point (5,5) on the grid to minimize the search area for efficiency. Moving down (-1 meter) should also maximize my chances of being in contact with the ground to confirm if there is any ground disturbance at the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(5, 5, -4)</Action>\n</Action space>\n<Reasoning>\n    I am continuing to move down to increase the likelihood that I am closer to the ground, possibly detecting signs of a campsite such as tents or trees.\n</Reasoning>\n\n<Action space>\n    <Action>(5, 5, -8)</Action>\n</Action space>\n<Reasoning>\n    As I am still not at the ground level, I am making a more significant downward move to ensure that if there is a campsite, it would be within my line of sight.\n</Reasoning>\n\n<Action space>\n    <Action>(5, 5, -12)</Action>\n</Action space>\n<Reasoning>\n    I am now closer to the ground, which"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(0, 0, -1)</Action>\n</Action space>\n<Reasoning>\n    I am starting my search by moving to the center of the grid, which may be the most logical place to begin my search for any signs of the campsite. Given that my altitude is just above the ground, I am ensuring that my field of view includes a large portion of the landscape.\n</Reasoning>\n\n<Action space>\n    <Action>(0, 0, -3)</Action>\n</Action space>\n<Reasoning>\n    Moving downward again increases the likelihood of detecting the campsite, as it places me closer to the ground where campsites are usually found.\n</Reasoning>\n\n<Action space>\n    <Action>(0, 0, -6)</Action>\n</Action space>\n<Reasoning>\n    Continuing the descent allows me to increase the area in my view where I might spot signs of the campsite, such as structures or paths.\n</Reasoning>\n\n<Action space>\n    <Action>(0, 0, -9)</Action>\n</Action space>\n<Reasoning>\n    Further downward descent is intended to cover more of the ground and increase the probability of spot"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(0, 0, -14)</Action>\n</Action space>\n<Reasoning>\n    I am moving further down from the center to maximize the area included in my field of view, increasing the chances of spotting campsite indicators on the ground.\n</Reasoning>\n\n<Action space>\n    <Action>(0, 0, -17)</Action>\n</Action space>\n<Reasoning>\n    Continuing my descent to lower altitudes ensures that I am covering more of the landscape and has the best chance of finding the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(0, 0, -20)</Action>\n</Action space>\n<Reasoning>\n    I am making further descents to ensure thorough coverage of the area as I search for ground-level indicators of the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(0, 0, -23)</Action>\n</Action space>\n<Reasoning>\n    At this altitude, I am optimizing my chances of detecting any signs of the campsite, such as tents or paths, by positioning myself as low as possible while still maintaining visibility.\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 57 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(38, 38, -10)</Action>\n</Action space>\n<Reasoning>\n    I am moving to the center of the grid and descending to a lower altitude to maximize ground coverage and visibility.\n</Reasoning>\n\n<Action space>\n    <Action>(38, 38, -20)</Action>\n</Action space>\n<Reasoning>\n    Continuing my descent, I am increasing the area in my view to improve the likelihood of spotting the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(38, 38, -30)</Action>\n</Action space>\n<Reasoning>\n    I am further descending to ensure that I am detecting as much of the landscape as possible in my field of view.\n</Reasoning>\n\n<Action space>\n    <Action>(38, 38, -40)</Action>\n</Action space>\n<Reasoning>\n    I am keeping my mind open to any campsite signs that may appear in this lower altitude and larger field of view.\n</Reasoning>\n\n<Action space>\n    <Action>(38, 38, -50)</"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 46 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(-31, -31, -0)</Action>\n</Action space>\n<Reasoning>\n    I am choosing the center of the grid as my starting point, and as my altitude decreases, I am ensuring that my field of view increases.\n</Reasoning>\n\n<Action space>\n    <Action>(-31, -26, -6)</Action>\n</Action space>\n<Reasoning>\n    Moving downward allows me to include more of the ground in my field of view, increasing the likelihood of detecting any signs of the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-31, -21, -12)</Action>\n</Action space>\n<Reasoning>\n    As I continue to descend, I am optimizing my search area for the campsite, as I might spot it at lower altitudes.\n</Reasoning>\n\n<Action space>\n    <Action>(-31, -16, -18)</Action>\n</Action space>\n<Reasoning>\n    I am now in a lower altitude which allows me to explore a bigger area of the map and potentially spot any signs of the campsite.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(-30, -30, -18)</Action>\n</Action space>\n<Reasoning>\n    As I have reached the lowest altitude specified in the coordinates, I am maximizing the area I can survey while still being able to detect the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-30, -30, -24)</Action>\n</Action space>\n<Reasoning>\n    I am making a deeper dive into the landscape to ensure I am exploring as much as possible while searching for the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-30, -30, -30)</Action>\n</Action space>\n<Reasoning>\n    I am making a significant descent to the lowest point in search of the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-30, -30, -36)</Action>\n</Action space>\n<Reasoning>\n    I am descending further to maximize my ground coverage as I continue to search for the campsite.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 26 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(-17, -17, -14)</Action>\n</Action space>\n<Reasoning>\n    I am moving to the coordinates that are approximately in the center of the grid to minimize the search area and maximize visibility.\n</Reasoning>\n\n<Action space>\n    <Action>(-17, -17, -18)</Action>\n</Action space>\n<Reasoning>\n    Moving downward further increases the area of the map that I am able to survey, which is crucial for spotting the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-17, -17, -24)</Action>\n</Action space>\n<Reasoning>\n    By lowering my altitude to -24 meters, I am giving myself the best chance of seeing the campsite as it is a common location for such structures.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(-7, -7, -5)</Action>\n</Action space>\n<Reasoning>\n    At this low altitude, I am ensuring that any signs of the campsite are within my immediate field of view, as I focus on the center of the grid.\n</Reasoning>\n\n<Action space>\n    <Action>(-7, -7, -10)</Action>\n</Action space>\n<Reasoning>\n    Moving further down allows me to include more ground in my field of view, increasing the likelihood of spotting the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-7, -7, -15)</Action>\n</Action space>\n<Reasoning>\n    I am optimizing my search area by continuing to descend, ensuring that I can detect any signs of the campsite from a lower altitude.\n</Reasoning>\n\n<Action space>\n    <Action>(-7, -7, -20)</Action>\n</Action space>\n<Reasoning>\n    My proximity to the ground level is expected to make it easier to spot the campsite through the ground cover.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(-3, -3, -0)</Action>\n</Action space>\n<Reasoning>\n    I am moving to the center of the grid and ensuring that the altitude is as low as possible to increase the chance of detecting the campsite from the ground.\n</Reasoning>\n\n<Action space>\n    <Action>(-3, -3, -2)</Action>\n</Action space>\n<Reasoning>\n    By lowering my altitude further, I am ensuring that I am maximizing the coverage of the ground, which is essential for detecting the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-3, -3, -4)</Action>\n</Action space>\n<Reasoning>\n    I am making additional descents to ensure that I am covering as much of the landscape as possible while searching for the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-3, -3, -6)</Action>\n</Action space>\n<Reasoning>\n    At this low altitude, I am optimizing my chances of detecting any signs of the campsite on the ground.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(-3, -3, -1)</Action>\n</Action space>\n<Reasoning>\n    I am descending to this altitude to ensure that I am covering a significant portion of the ground and maximizing my chances of spotting the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-3, -3, -2)</Action>\n</Action space>\n<Reasoning>\n    Continuing my descent, I am optimizing my search area and increasing the likelihood of finding the campsite.\n</Reasoning>\n\n<Action space>\n    <Action>(-3, -3, -3)</Action>\n</Action space>\n<Reasoning>\n    I am making deeper descents to ensure that I am thoroughly exploring the area around the center of the grid.\n</Reasoning>"
+    ]
+]

@@ -1,0 +1,2 @@
+<Reasoning>I'm starting from a high altitude and need to get closer to the ground to identify the anomaly. I'll start by moving to the center of the grid (0,0) and descend by 30 meters to get a better view of the area.</Reasoning>
+<Action>(0, 0, -30)</Action>

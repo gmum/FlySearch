@@ -1,0 +1,8 @@
+ <Reasoning>With the altitude being almost half of the maximum, I have a good starting point to begin my search. I should move slowly to accurately assess the area I will be flying over and to avoid missing the trash pile.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>By being at the center of the grid, I have a wider view of the area, but I still can't see the object. I should move to a spot where I have better visibility and hope to spot the trash pile.</Reasoning>
+<Action>(4, 4, -5)</Action>
+
+<Reasoning>The area around the center of the grid seems clear of the trash pile. I will need to move to another spot that might give me a closer look.</Reasoning>
+<Action>(5, 5, -5)</Action>

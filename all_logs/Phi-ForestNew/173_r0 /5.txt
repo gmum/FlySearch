@@ -1,0 +1,14 @@
+ <Reasoning>I'll start at coordinates (0, 0) and move north to cover more ground and get a better view for the search.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>From the new position, I'm moving to coordinates (6, 0) to continue the search in a new direction.</Reasoning>
+<Action>(10, 0, -5)</Action>
+
+<Reasoning>Next, I'll check the coordinates (6, 6) to see if the campsite is located there.</Reasoning>
+<Action>(10, 6, -5)</Action>
+
+<Reasoning>The coordinates (6, 12) seem to be to the northeast and could possibly be the campsite. I'll move down to get a better view and confirm if it's the campsite.</Reasoning>
+<Action>(10, 12, -5)</Action>
+
+<Reasoning>If the campsite is not here, I'll check the coordinates (12, 12) which are further northeast. It should be close to the campsite if it's not found at (6, 12).</Reasoning>
+<Action>(1

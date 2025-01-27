@@ -1,0 +1,20 @@
+ <Reasoning>
+The object resembles a bright area, potentially the fire. I need to move in to confirm and reduce my altitude further if necessary.
+</Reasoning>
+<Action>
+((0.5, 0, -35))
+</Action>
+
+<Reasoning>
+The object is becoming clearer, but I'm still not 10 meters below. I'll make a further descent.
+</Reasoning>
+<Action>
+((-0.5, 0, -45))
+</Action>
+
+<Reasoning>
+The object is a fire. It's not at 10 meters below yet, but I'm close enough to consider it found.
+</Reasoning>
+<Action>
+((0.0, 0, -50))
+</Action>

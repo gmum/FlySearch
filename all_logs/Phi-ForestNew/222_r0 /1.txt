@@ -1,0 +1,16 @@
+ <Reasoning>I'll start by moving down 1 meter to be at ground level, which should be sufficient to find the object at a minimum.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The drone is now at ground level. I'll move to the coordinates (2, 2) to begin my search for the object.</Reasoning>
+<Action>(2, 2, 0)</Action>
+
+<Reasoning>No object has been found yet. I'll move to the coordinates (3, 3) to continue searching while remaining safely above the ground.</Reasoning>
+<Action>(3, 3, 0)</Action>
+
+<Reasoning>Still no object in sight. I'll move to the coordinates (4, 4) to continue the search. The object might be around this area.</Reasoning>
+<Action>(4, 4, 0)</Action>
+
+<Reasoning>The object has not been located yet. I will move to the coordinates (5, 5) to thoroughly scan the area where the object was initially detected.</Reasoning>
+<Action>(5, 5, 0)</Action>
+
+<Reasoning>As I am scanning the coordinates (5, 5

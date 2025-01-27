@@ -1,0 +1,41 @@
+ <Reasoning>
+    I'm flying too low and risk hitting something.
+</Reasoning>
+<Action>
+    (0, 0, -25)
+</Action>
+
+<Reasoning>
+    I need to move back and find a safer spot to continue.
+</Reasoning>
+<Action>
+    (-1, 0, -19)
+</Action>
+
+<Reasoning>
+    I must increase altitude to avoid a collision.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>
+
+<Reasoning>
+    I need to fly higher to look for the building from a safe distance.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>
+
+<Reasoning>
+    I'm still not at the right altitude. I must adjust my position to find the building.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>
+
+<Reasoning>
+    I need to be more cautious and keep my altitude in check.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>

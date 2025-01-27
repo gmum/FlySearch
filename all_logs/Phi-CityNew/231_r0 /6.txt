@@ -1,0 +1,6 @@
+ <Action space>
+    <Action>(0, -10, -30)</Action>
+    <Reasoning>I have detected an imminent collision with an object that I cannot avoid. It is critical to execute an immediate emergency stop to preserve the UAV's function and prevent damage.</Reasoning>
+</Action space>
+
+[Reply "EMERGENCY STOP"]

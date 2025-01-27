@@ -1,0 +1,36 @@
+ At such a low altitude, the drone must be very careful to avoid outside obstacles.
+
+
+<Reasoning>
+
+    Descending to 1 meter is risky, but it's necessary to find the building. The drone must carefully navigate the terrain to ensure it does not miss the target.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -1)
+
+</Action>
+
+
+<Reasoning>
+
+    A decrease of 1 meter in altitude will bring the drone closer to the ground, possibly making it easier to find the building.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -2)
+
+</Action>
+
+
+<Reasoning>
+
+    Moving down another meter will keep the drone at 1 meter above the ground, potentially making the building more visible.
+
+</Reasoning>

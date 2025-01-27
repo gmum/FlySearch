@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I still don't see a fire. I will move to the right of the grid (16,0) and lower the altitude by another 20 meters to check if the object is there.</Reasoning>
+<Action>(16, 0, -20)</Action>
+```

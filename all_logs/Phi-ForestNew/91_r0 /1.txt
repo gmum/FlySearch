@@ -1,0 +1,23 @@
+ <Reasoning>
+    The object appears to be further away and to the right. I will move slightly to the left and a bit forward to get a better view.
+    </Reasoning>
+    <Action>(-1, 1, -10)</Action>
+
+    <Reasoning>
+    The object is now closer and slightly to the northeast of the current position. I will move slightly up to get a better view.
+    </Reasoning>
+    <Action>(1, 0, 10)</Action>
+
+    <Reasoning>
+    The object is now directly above and slightly to the left of the drone. However, it is still too high. I will move slightly down to get a better view.
+    </Reasoning>
+    <Action>(1, -2, -10)</Action>
+
+    <Reasoning>
+    The object is now directly below the drone. I will move slightly to the right to get a better view.
+    </Reasoning>
+    <Action>(1, 1, -10)</Action>
+
+    <Reasoning>
+    The object is now directly above and slightly to the left of the drone. I will move slightly to the right to get a better view.
+    </Reason

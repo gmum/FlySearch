@@ -1,0 +1,2 @@
+<Reasoning>The grid indicates that I should start by searching in the middle of the area. I will move to the center coordinate (0, 0) and adjust my altitude to be below 10 meters to search for the fire. If I don't find it, I will expand my search to adjacent coordinates.</Reasoning>
+<Action>(0, 0, -43)</Action>

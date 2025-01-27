@@ -1,0 +1,23 @@
+ <Action space>
+    <Action>(8, 0, -0.5)</Action>
+</Action space>
+
+<Reasoning>
+    Following the coordinates (8,0), I am making a gentle right turn, widening my search area around the object.
+</Reasoning>
+
+<Action space>
+    <Action>(8,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    I am adjusting my position to be directly over the center of the object for a closer view.
+</Reasoning>
+
+<Action space>
+    <Action>(8,0,0.5)</Action>
+</Action space>
+
+<Reasoning>
+    I am making a slight right turn while remaining at the same altitude to ensure I am closely examining the object from different angles.
+</Reasoning>

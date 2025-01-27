@@ -1,0 +1,42 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a large trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 88 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since I am already quite close to the ground, I will need to move in a direction that is likely to be close to the trash pile. Additionally, I need to be mindful of my altitude restrictions. I will prioritize being in the right place before considering my altitude.</Reasoning>\n<Action>(5, 0, -10)</Action>\n\n<Reasoning>I will continue to move towards the area that seems to be the most promising based on the grid overlaid on the image.</Reasoning>\n<Action>(5, 0, -10)</Action>\n\n<Reasoning>I am now closer to the object which seems to be the trash pile. I will continue to move closer while ensuring that I am within the search area.</Reasoning>\n<Action>(5, 0, -10)</Action>\n\n<Reasoning>The object does not seem to be clearly visible. I will continue the search in a different direction to increase my chances of finding the trash pile.</Reasoning>\n<Action>(5, 0, -10)</Action>\n\n<Reasoning>The object is not clearly visible; however, I am confident that the trash pile is in close proximity. I will prioritize being close to the"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 78 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since my current altitude is 78 meters above ground level, I need to move down to at least 10 meters below the drone's center of vision to fulfill the objective. I will also need to ensure that the altitude does not exceed 120 meters and that the move is within the search area of 400 x 400m.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>I am now in the correct position to take a closer look at the object, which appears to be the trash pile. I will maintain this position as long as it is visible.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>The object is not clearly visible from this position. I will adjust my altitude slightly to see if the trash pile is located in a different spot.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>The trash pile is still not clearly visible. I will continue to search for it while making sure to stay within the search area and altitude limits.</Reasoning>\n<Action>(5, 0, -5)</Action>\n\n<Reasoning>The trash pile is still"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 68 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Given that my current altitude is 68 meters above ground level, I need to adjust my altitude to be as close to 10 meters below the drone's center of vision while staying within the search area. A safe altitude to maintain is slightly above 58 meters to avoid any obstacles.</Reasoning>\n<Action>(58, 0)</Action>\n\n<Reasoning>I am now at the optimal altitude for locating the trash pile. I will remain in this position and search for the object within my field of view.</Reasoning>\n<Action>(58, 0)</Action>\n\n<Reasoning>The trash pile is not clearly visible from this position. I will adjust my altitude slightly to see if the trash pile is located in a different spot.</Reasoning>\n<Action>(58, 0)</Action>\n\n<Reasoning>The trash pile is still not clearly visible. I will continue to search"
+    ]
+]

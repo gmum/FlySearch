@@ -1,0 +1,9 @@
+ <Reasoning>I need to get closer to the ground to check for the large trash pile. To do so, I will make my first move downward and slightly to the left to get a better view of the ground. Then, I will continue searching in that direction.</Reasoning>
+<Action>(-33, -10, 23)</Action>
+
+<Reasoning>The trash pile seems to be nearby. I will make my next move downwards to get closer to the ground and ensure I am correctly identifying the object.</Reasoning>
+<Action>(-35, -10, 22)</Action>
+
+<Reasoning>The large trash pile is visible in my field of view. I have successfully located it below 10 meters, satisfying the criteria for the task. I will now report that I have found the trash pile.</Reasoning>
+<Action>(-20, 0, 0)</Action>
+<Response>FOUND</Response>

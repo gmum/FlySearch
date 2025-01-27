@@ -1,0 +1,2 @@
+ <Reasoning>I need to adjust my altitude to be at least 10 meters above the object I am looking for. Since I am around the center of the view, I will move to (0, 0) and then to (0, -20). After finding the object, I will move back to (0, 0) to ensure I am centered on the object before replying with "FOUND."</Reasoning>
+<Action>(0, -20, -20)</Action>

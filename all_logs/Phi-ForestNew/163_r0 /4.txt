@@ -1,0 +1,2 @@
+ <Reasoning>I need to avoid flying too close to the ground. According to the coordinates, the object might be near the (21, 0) point on the grid. I will move to (21, 0) then continue moving to the right to (21, 1). </Reasoning>
+<Action>(21, 0, -30)</Action>

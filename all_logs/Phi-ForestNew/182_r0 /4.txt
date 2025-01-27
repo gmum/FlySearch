@@ -1,0 +1,10 @@
+ <Reasoning>I am still near the center of the grid. Time to move in a direction possibly more promising for finding the person.</Reasoning>
+<Action>(0, 1, -1)</Action>
+
+<Reasoning>The object is now visible but not clear. I will circle around to scan the area more effectively.</Reasoning>
+<Action>(-1, 1, -1)</Action>
+
+<Reasoning>The object is not clearly visible in the field of view yet. I'll move the drone up slightly to get a better vantage point and search more effectively.</Reasoning>
+<Action>(0, 1, -2)</Action>
+
+<Reasoning>The object is now in the field of view. I am 1 meter below it. I

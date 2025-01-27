@@ -1,0 +1,10 @@
+ <Reasoning>I need to get closer to the ground to search for the object. Since I'm at 50 meters, I should drop to a lower altitude to improve my chances of finding the object. The object appears to be near the water, so I will move towards the water's edge.</Reasoning>
+<Action>(0, -5, -50)</Action>
+
+<Reasoning>The object seems to be in the middle of the image, closer to the water. I will move to a location that can give me a better view of the water to increase the likelihood of finding the object. Staying below 10 meters altitude is crucial.</Reasoning>
+<Action>(0, -10, -50)</Action>
+
+<Reasoning>The object is still not clearly visible. I will move slightly towards the right to cover more of the water area and increase the chances of spotting the object. Being below 10 meters altitude is essential.</Reasoning>
+<Action>(-5, -10, -50)</Action>
+
+<Reasoning>Now I'm in the right position, but still not at the object. I will move slightly right and towards the center of the water area to maximize the chances of finding the object and to be within 10 meters alt

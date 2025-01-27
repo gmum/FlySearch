@@ -1,0 +1,17 @@
+ <Reasoning>I need to move closer to the ground to have a better chance at finding the trash pile. I will move 10 meters south.</Reasoning>
+<Action>(-10, 0, 0)</Action>
+
+<Reasoning>I need to move to the right to scan the area comprehensively. I will move 10 meters to the right.</Reasoning>
+<Action>(0, 10, 0)</Action>
+
+<Reasoning>I need to move up to avoid other obstacles. I will move 10 meters up.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Reasoning>I need to move right to stay in search of the trash pile. I will move 10 meters to the right.</Reasoning>
+<Action>(10, 0, 0)</Action>
+
+<Reasoning>I need to move up again to avoid other obstacles. I will move 10 meters up.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Reasoning>I need to move right to stay in search of the trash pile. I will move 10 meters to the right.</Reasoning>
+<Action>(

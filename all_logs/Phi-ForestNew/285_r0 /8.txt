@@ -1,0 +1,2 @@
+ <Reasoning>After assessing the situation, I have successfully identified the object of interest, which is the yellow point. It is located at (0,0). I will now fly to a safe distance to confirm its identification and then reply with "FOUND" to indicate that the object has been found within the constraints of the altitude and search area.</Reasoning>
+    <Action>(0, 0, -10)</Action>

@@ -1,0 +1,15 @@
+ <Reasoning>
+In order to find the large trash pile, I need to get closer to the ground. The trash pile is located at the coordinates (23, -23) on the grid. I will fly 30 meters lower to make sure I am above the ground.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>
+Now that I am at the desired altitude, I will search for the trash pile. The trash pile is located at coordinates (23, -23) on the grid, which is within my field of view.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+I have located the trash pile at coordinates (23, -23). It is within my field of view and I am flying at the correct altitude. I will report that the object has been found.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Action>FOUND</Action>

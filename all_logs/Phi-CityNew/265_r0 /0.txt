@@ -1,0 +1,17 @@
+ <Reasoning>I will start by flying slowly to get a better view of the environment. I need to focus on areas with high contrast and anomalies. I will try to identify the object based on its location, shape, and color.</Reasoning>
+<Action>(0,0,0)</Action>
+
+<Reasoning>After reviewing the image, I have identified a likely candidate for the anomaly. It appears to be a structure with a distinct shape and pattern that differs from the surrounding environment.</Reasoning>
+<Action>(1,1,0)</Action>
+
+<Reasoning>I will now move closer to the object to get a better view and confirm if it is the anomaly.</Reasoning>
+<Action>(1,1,0)</Action>
+
+<Reasoning>The object in question is clearly visible from this angle. I need to fly lower to confirm it is the anomaly.</Reasoning>
+<Action>(1,1,0)</Action>
+
+<Reasoning>The object does not seem to be the anomaly. I will continue searching for the object.</Reasoning>
+<Action>(1,1,0)</Action>
+
+<Reasoning>I have found a few more candidate structures that could potentially be the anomaly.</Reasoning>
+<Action>(2,2

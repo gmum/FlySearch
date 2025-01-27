@@ -1,0 +1,17 @@
+ <Reasoning>
+    Since my current altitude is 73 meters above ground level, I will adjust my altitude to be closer to the ground to enhance my chances of spotting the subject. I will fly lower since the instruction specifies being below 10 meters relative to the object when found. Since the image shows a large green area with numerous points marked, I should center my search on each point individually to maximize the chances of locating the subject.
+    </Reasoning>
+    <Action>(0, 0, -73)</Action>
+
+    <Reasoning>
+    After adjusting my altitude, I will begin a methodical search by moving to the nearest point in the grid that is potentially close to the subject's location. I will assess the area around this point for the subject.
+    </Reasoning>
+    <Action>(1, 0, -73)</Action>
+
+    <Reasoning>
+    If the subject is not found in the immediate vicinity, I will proceed to the next grid reference point, adjusting my altitude to be close to the ground as I move to ensure a thorough search.
+    </Reasoning>
+    <Action>(2, 0, -73)</Action>
+
+    <Reasoning>
+    Once I have scanned the surrounding area,

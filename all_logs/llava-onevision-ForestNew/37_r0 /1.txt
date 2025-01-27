@@ -1,0 +1,2 @@
+<Reasoning>The object we are looking for is a trash pile, which is likely to be a large and irregular shape. I will start by searching the center of the map and then move in a spiral pattern, decreasing the radius as I go, to systematically search for the object. I will also adjust my altitude as needed to stay below 10 meters above the object when I find it.</Reasoning>
+<Action>(0, 0, -10)</Action>

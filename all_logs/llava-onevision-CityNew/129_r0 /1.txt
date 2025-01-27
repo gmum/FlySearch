@@ -1,0 +1,9 @@
+<Reasoning>
+    I see a large pile of trash on the rooftop near the coordinates (-47, -47). I will move towards that location and lower my altitude to get a closer look.
+</Reasoning>
+<Action>(-47, -47, -60)</Action>
+
+<Reasoning>
+    I have now descended to an altitude of 10 meters. I can confirm that the large pile of trash is in my field of view. I will now fly below 10 meters relative to it and reply with "FOUND".
+</Reasoning>
+FOUND

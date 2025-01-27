@@ -1,0 +1,142 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a campsite.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 94 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The coordinates (0, 0) are within my field of view, close to the location indicated. This will allow me to get a closer view of the object.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>I have a slightly wider view by moving to (0, 31) as it may give me more information about the object.</Reasoning>\n<Action>(0, 31, -5)</Action>\n\n<Reasoning>Moving to (0, 63) will give me another perspective of the area, which could help in locating the object.</Reasoning>\n<Action>(0, 63, -5)</Action>\n\n<Reasoning>The coordinates (31, 0) are within my field of view, close to the location indicated. This will allow me to get a closer view of the object.</Reasoning>\n<Action>(31, 0, -5)</Action>\n\n<Reasoning>I'm going to move slightly to the Northeast to (63, 31) to get a different angle and a wider view of the area.</Reasoning>\n<Action>(63, 31, -5)</Action>\n\n<Reasoning>The coordinates ("
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 89 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will move to (0, 0) to get a closer view of the area and see if I can spot the campsite.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>As I cannot go below 10 meters in altitude due to the task constraints, I will move to (0, 39) to maintain an altitude above 10 meters and still have a view of the area.</Reasoning>\n<Action>(0, 39, -5)</Action>\n\n<Reasoning>I am seeking a different angle to spot the object. Moving to (59, 59) will provide a wide view of this area.</Reasoning>\n<Action>(59, 59, -5)</Action>\n\n<Reasoning>Now that I am in a new position with a broader view, I'll look for the object. I'll move to (59, -30) to see if the campsite is there.</Reasoning>\n<Action>(59, -30, -5)</Action>\n\n<Reasoning>I cannot get closer to the object due to the altitude limit, so I'll try to scan this area from a distance. Moving to (30"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 89 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting with a new perspective, I'll fly to (0, 59) to get a closer view of the area.</Reasoning>\n<Action>(0, 59, -5)</Action>\n\n<Reasoning>Next, I will fly diagonally to (59, 30) to expand my view and potentially spot the campsite.</Reasoning>\n<Action>(59, 30, -5)</Action>\n\n<Reasoning>I'll move slightly left to (0, 0) for another close-up view, in case the object is around the center of the grid.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>Since I'm close to the object, I'll now fly a bit higher to (59, -30) to change my altitude without losing sight of the object.</Reasoning>\n<Action>(59, -30, -5)</Action>\n\n<Reasoning>I am maintaining an altitude above 10 meters and looking for the campsite. Moving to (30, 59) will give me a broad view of the area, as the coordinates are in the general vicinity of the object.</Reasoning>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 84 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to (0, 56) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 56, -5)</Action>\n\n<Reasoning>Next, I will fly to (56, 28) to expand my view and check for the campsite.</Reasoning>\n<Action>(56, 28, -5)</Action>\n\n<Reasoning>I will then fly to (0, 28) for a different angle and closer view of the area.</Reasoning>\n<Action>(0, 28, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (56, -28) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(56, -28, -5)</Action>\n\n<Reasoning>I will then fly to (28, -56) to check the area from a different perspective and ensure I am not missing the campsite.</Reasoning>\n<Action>(28, -56, -5)</Action>\n\n<Reasoning>To finish, I will move to (28"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 79 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting with a new perspective, I'll fly to (0, 53) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 53, -5)</Action>\n\n<Reasoning>Next, I will fly to (53, 26) to expand my view and check for the campsite.</Reasoning>\n<Action>(53, 26, -5)</Action>\n\n<Reasoning>I will then fly to (0, 53) for a different angle and closer view of the area.</Reasoning>\n<Action>(0, 53, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (53, -53) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(53, -53, -5)</Action>\n\n<Reasoning>I will then fly to (53, -26) to check the area from a different perspective and ensure I am not missing the campsite.</Reasoning>\n<Action>(53, -26, -5)</Action>\n\n<Reasoning>Finally, I"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to (0, 54) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 54, -5)</Action>\n\n<Reasoning>Next, I will fly to (25, 9) to expand my view and check for the campsite.</Reasoning>\n<Action>(25, 9, -5)</Action>\n\n<Reasoning>I will then fly to (0, 25) for a different angle and closer view of the area.</Reasoning>\n<Action>(0, 25, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (25, -9) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(25, -9, -5)</Action>\n\n<Reasoning>I will then fly to (25, -25) to check the area from a different perspective and ensure I am not missing the campsite.</Reasoning>\n<Action>(25, -25, -5)</Action>\n\n<Reasoning>Finally, I will move to (25, -49"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since my altitude reduction is not possible due to the task constraints, I will instead maintain my current altitude and move to (25, -49) to ensure I am still within the search area's bounds and keep looking for the campsite.</Reasoning>\n<Action>(25, -49, -5)</Action>\n\n<Reasoning>Moving to (0, -25) would take me out of bounds, so I will instead fly to (53, -26) to expand my view without leaving the search area.</Reasoning>\n<Action>(53, -26, -5)</Action>\n\n<Reasoning>To further improve my search, I will fly to (53, -49) to get a new perspective within the search area.</Reasoning>\n<Action>(53, -49, -5)</Action>\n\n<Reasoning>I will then fly to (53, -73) to ensure I am not missing any potential signs of the campsite within the area's bounds.</Reasoning>\n<Action>(53, -73, -5)</Action>\n\n<Reasoning>Finally, I will move to (53, -97) to manage my remaining altitude while still being within the"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 69 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to (0, 46) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 46, -5)</Action>\n\n<Reasoning>Next, I will fly to (46, 23) to expand my view and check for the campsite.</Reasoning>\n<Action>(46, 23, -5)</Action>\n\n<Reasoning>I will then fly to (0, 46) for a different angle and closer view of the area.</Reasoning>\n<Action>(0, 46, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (46, 23) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(46, 23, -5)</Action>\n\n<Reasoning>I will then fly to (46, 46) to expand my view and check for the campsite.</Reasoning>\n<Action>(46, 46, -5)</Action>\n\n<Reasoning>To further improve my search, I will fly to (46, 69"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 64 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to (0, 43) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 43, -5)</Action>\n\n<Reasoning>Next, I will fly to (43, 21) to expand my view and check for the campsite.</Reasoning>\n<Action>(43, 21, -5)</Action>\n\n<Reasoning>I will then fly to (0, 43) for a different angle and closer view of the area.</Reasoning>\n<Action>(0, 43, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (43, 21) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(43, 21, -5)</Action>\n\n<Reasoning>I will then fly to (43, -21) to expand my view and check for the campsite.</Reasoning>\n<Action>(43, -21, -5)</Action>\n\n<Reasoning>To finally conclude, I will move to (43, -43) to"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since my altitude reduction is not possible due to the task constraints, I will instead maintain my current altitude and move to (21, -21) to ensure I am still within the search area's bounds and keep looking for the campsite.</Reasoning>\n<Action>(21, -21, -5)</Action>\n\n<Reasoning>Next, I will fly to (21, -43) to expand my view without leaving the search area.</Reasoning>\n<Action>(21, -43, -5)</Action>\n\n<Reasoning>To further improve my search, I will fly to (43, -43) to get a new perspective within the search area.</Reasoning>\n<Action>(43, -43, -5)</Action>\n\n<Reasoning>I will then fly to (43, -67) to ensure I am not missing any potential signs of the campsite within the area's bounds.</Reasoning>\n<Action>(43, -67, -5)</Action>\n\n<Reasoning>Finally, I will move to (43, -91"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 59 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to (0, 39) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 39, -5)</Action>\n\n<Reasoning>Next, I will fly to (39, 20) to expand my view and check for the campsite.</Reasoning>\n<Action>(39, 20, -5)</Action>\n\n<Reasoning>I will then fly to (0, 39) for a different angle and closer view of the area.</Reasoning>\n<Action>(0, 39, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (39, 20) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(39, 20, -5)</Action>\n\n<Reasoning>I will then fly to (39, -39) to expand my view and check for the campsite.</Reasoning>\n<Action>(39, -39, -5)</Action>\n\n<Reasoning>Finally, I will move to (39, -59) to manage"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 54 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to (0, 18) to get a closer view of the area and potentially identify the campsite.</Reasoning>\n<Action>(0, 18, -5)</Action>\n\n<Reasoning>Next, I will fly to (18, 36) to expand my view and check for the campsite.</Reasoning>\n<Action>(18, 36, -5)</Action>\n\n<Reasoning>I will then fly to (18, 0) for a different angle and closer view of the area.</Reasoning>\n<Action>(18, 0, -5)</Action>\n\n<Reasoning>To ensure I am not missing any spots, I will fly to (18, 36) to get another broader view while still looking for the campsite.</Reasoning>\n<Action>(18, 36, -5)</Action>\n\n<Reasoning>I will then fly to (18, -36) to expand my view and check for the campsite.</Reasoning>\n<Action>(18, -36, -5)</Action>\n\n<Reasoning>Finally, I will move to (18, -54"
+    ]
+]

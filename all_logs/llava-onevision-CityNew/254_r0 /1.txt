@@ -1,0 +1,5 @@
+<Reasoning>After moving towards the center and descending, I can see a yellow object in the lower left corner of the image. This object does not fit with the rest of the environment and could be the anomaly. I will move closer to it to confirm.</Reasoning>
+<Action>(0, -20, 0)</Action>
+
+<Reasoning>Now that I have moved closer to the yellow object, I can confirm that it is indeed the anomaly. I am centered on the object and my altitude is below 10 meters relative to it. I have found the object.</Reasoning>
+FOUND

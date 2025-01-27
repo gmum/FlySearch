@@ -1,0 +1,130 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a campsite.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 54 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The coordinates (0, 0) seem to be centrally located on the grid, which might be a good starting point for the search. As the coordinates have no specific direction or distance from the starting point, I'll perform a small step in all directions to cover the area and remain in the center. The coordinates (0, 0) seem to be a good initial position for a focused search.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>Moving slightly north-east from the initial position, I see a point with coordinates (0, 36), which is touching the tree borders. This point is distinct and might be the campsite we are searching for.</Reasoning>\n<Action>(0, 36, -10)</Action>\n\n<Reasoning>The land looks more open from this point. I will proceed with a larger movement in the north direction to cover more ground. I'll check the coordinates (18, 36) to see if it's the campsite we're looking for.</Reasoning>\n<Action>(5, 36, -10)</Action>\n\n<Reasoning>Moving further north, I see a point with coordinates (0, 60), which seems to be a clearing"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 43 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I'm starting at the central point (0, 0) to efficiently cover the area. First move is down to make sure I'm not too high up. The coordinates (0, 0) are in the center of the grid, which should provide a good overview of the area.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>From the new position, I can see a point with coordinates (29, 29), which is close to several other points. It's surrounded by trees and might be a good potential campsite.</Reasoning>\n<Action>(29, 29, -5)</Action>\n\n<Reasoning>I'll move to the north-east direction to examine another potential campsite. The coordinates (29, 36) are surrounded by greenery and could possibly be the campsite.</Reasoning>\n<Action>(30, 29, -5)</Action>\n\n<Reasoning>The point (29, 42) is clear of trees and has a distinct shape that could indicate a campsite. I'll move down to get closer for a better view and confirm if it's the campsite.</Reasoning>\n<Action>(30, 42,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I'll stay in the center at (0, 0) for a moment, and then I'll go slightly to the northeast to cover more ground and find a good vantage point to search for the campsite.</Reasoning>\n<Action>(1, 0, -5)</Action>\n\n<Reasoning>Turning north to explore the north-east direction. I'm checking the coordinates (25, 25) as it is close to the central point and might be a good spot for the campsite.</Reasoning>\n<Action>(5, 25, -5)</Action>\n\n<Reasoning>The coordinates (25, 36) are towards the northeast and the surrounding trees appear more spread out. I'm going to follow this direction to see if the campsite is located in this area.</Reasoning>\n<Action>(10, 36, -5)</Action>\n\n<Reasoning>The coordinates (29, 36) are further northeast and seem to have less tree coverage, making it a good candidate for the campsite. I'll get closer for a better examination.</Reasoning>\n<Action>(15, 36, -5)</Action>\n\n<Reasoning>From the coordinates ("
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start at the center of the grid where the coordinates (0, 0) are, then move slightly to the northeast to ensure I am exploring a wide area quickly.</Reasoning>\n<Action>(1, 0, -5)</Action>\n\n<Reasoning>The coordinates (21, 21) are to the northeast of the center and looking promising. I will move there to get a better view of the surroundings.</Reasoning>\n<Action>(5, 21, -5)</Action>\n\n<Reasoning>Now, I'll check the coordinates (21, 36) to see if there's any indication of a campsite. The area looks more open here.</Reasoning>\n<Action>(10, 36, -5)</Action>\n\n<Reasoning>The coordinates (25, 36) are even further northeast. This could potentially be the campsite we are looking for.</Reasoning>\n<Action>(15, 36, -5)</Action>\n\n<Reasoning>Finally, I'll check the coordinates (30, 36), which are on the edge of our search area. If the campsite is not here, it should be close by.</Re"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 25 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I'm starting from coordinates (0, 0), which is in the center of the grid. Moving to the northeast, the coordinates (17, 17) seem to be in a more open area with less tree cover.</Reasoning>\n<Action>(5, 17, -5)</Action>\n\n<Reasoning>Next, I'll check the coordinates (17, 25) to see if the campsite is in this clear area.</Reasoning>\n<Action>(10, 17, -5)</Action>\n\n<Reasoning>The coordinates (17, 25) are further northeast. This might be close to the campsite based on the surrounding environment.</Reasoning>\n<Action>(15, 25, -5)</Action>\n\n<Reasoning>Finally, I'll check coordinates (22, 25) which are in the far northeast. If the campsite is not found here, it should be in the vicinity.</Reasoning>\n<Action>(20, 25, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I'll start at coordinates (0, 0) and move north to cover more ground and get a better view for the search.</Reasoning>\n<Action>(5, 0, -5)</Action>\n\n<Reasoning>From the new position, I'm moving to coordinates (6, 0) to continue the search in a new direction.</Reasoning>\n<Action>(10, 0, -5)</Action>\n\n<Reasoning>Next, I'll check the coordinates (6, 6) to see if the campsite is located there.</Reasoning>\n<Action>(10, 6, -5)</Action>\n\n<Reasoning>The coordinates (6, 12) seem to be to the northeast and could possibly be the campsite. I'll move down to get a better view and confirm if it's the campsite.</Reasoning>\n<Action>(10, 12, -5)</Action>\n\n<Reasoning>If the campsite is not here, I'll check the coordinates (12, 12) which are further northeast. It should be close to the campsite if it's not found at (6, 12).</Reasoning>\n<Action>(1"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 13 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>To start, I'll remain at coordinates (0, 0) to get a comprehensive view of the area. Then I'll move to coordinates (9, 0) for a wider search radius.</Reasoning>\n<Action>(5, 0, -5)</Action>\n\n<Reasoning>Next, I'll check the coordinates (4, 0) to see if the campsite is located there.</Reasoning>\n<Action>(10, 0, -5)</Action>\n\n<Reasoning>The coordinates (4, 4) are to the north-east. If the campsite is not there, it should be in this area.</Reasoning>\n<Action>(15, 4, -5)</Action>\n\n<Reasoning>The coordinates (4, 8) are further north-east. This could potentially be the campsite or very close to it.</Reasoning>\n<Action>(15, 8, -5)</Action>\n\n<Reasoning>Finally, I'll check the coordinates (9, 9) which are to the northeast of the clearing. If the campsite is not found here, it should be in this vicinity.</Reasoning>\n<Action>(15, 9, -5"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting from the center coordinates (0, 0), I'll move north-west to cover the area quickly.</Reasoning>\n<Action>(-5, 5, -5)</Action>\n\n<Reasoning>Moving to coordinates (-5, 0), I'll have a wider view to search for the campsite.</Reasoning>\n<Action>(0, 5, -5)</Action>\n\n<Reasoning>The coordinates (-5, 2) are to the north-west and could be a good spot for the campsite. I'll move down to get a closer look.</Reasoning>\n<Action>(0, 2, -5)</Action>\n\n<Reasoning>The coordinates (-4, 0) are further north-west. If the campsite is not found at (-4, 0), it should be in the area around (-5, 0).</Reasoning>\n<Action>(-5, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since I'm closest to the ground, I'll carefully move to see if the campsite is located in the clearing.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>The coordinates (0, 0) are already clear. I'll proceed to check the coordinates (1, 0) for any signs of the campsite.</Reasoning>\n<Action>(1, 0, -5)</Action>\n\n<Reasoning>The coordinates (1, 1) are nearby and could potentially be the campsite.</Reasoning>\n<Action>(1, 1, -5)</Action>\n\n<Reasoning>If the campsite is not found at (1, 1), it should be in the vicinity of these coordinates.</Reasoning>\n<Action>(1, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I'm close to the ground and cannot fly any lower. I'll need to land immediately to avoid hitting the object.</Reasoning>\n<Action>(0, -"
+    ]
+]

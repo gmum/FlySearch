@@ -1,0 +1,11 @@
+ <Reasoning>At this low altitude, I will focus on scanning the ground to spot the white sport car. I need to make sure I do not collide with any obstacles while moving close to the ground.</Reasoning>
+<Action>(-3, 0, 0)</Action>
+<Reasoning>I have detected some movement near the center of the image. I should quickly move towards it to investigate if it is the car.</Reasoning>
+<Action>(0, 0, -2)</Action>
+<Reasoning>The object is not the car, but I am now closer to the edge of the image, so I should adjust my position to stay focused on the search area.</Reasoning>
+<Action>(3, 0, -4)</Action>
+<Reasoning>I am in a position where the car might be visible. I will now move slightly to the right to ensure I am facing it adequately.</Reasoning>
+<Action>(1, 0, -4)</Action>
+<Reasoning>The car is definitely in the field of view. I will now move slightly downwards and to the left to position myself to spot it easily.</Reasoning>
+<Action>(4, -1, -3)</Action>
+<Reasoning>I am now well-positioned to spot

@@ -1,0 +1,2 @@
+ <Reasoning>The image shows the forest fire which was my objective. The coordinates of the forest fire are (0, 0) on the grid overlay. My altitude is 35 meters above ground level. To be closer to the object, I should move the drone below this altitude.</Reasoning>
+<Action>(0, 0, -25)</Action>

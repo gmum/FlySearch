@@ -1,0 +1,13 @@
+ <Reasoning>Since the drone is at ground level, I cannot fly; therefore, I need to assess the situation visually and move to the closest coordinates where the fire is visible.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I am on the ground and cannot fly; however, by moving to the closest point where the fire is visible, I am closer to the fire and can assess it visually.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The coordinates of the drone are not provided. However, I can see the fire is around the coordinates (0, 0). I will move to this point and then lower the altitude to check if it is the fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The fire is visible at (0, 0). I have successfully located it. Now, I will fly below 10 meters to confirm the object is the fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The coordinates of the drone are not provided. However, I can see the fire is around the coordinates (0, 0). I will fly to this point and then

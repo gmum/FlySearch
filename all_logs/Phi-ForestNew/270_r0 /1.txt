@@ -1,0 +1,13 @@
+ <Reasoning>The image is not clear, and no distinctive object stands out enough to determine if it is an anomaly. I am moving in a diagonal pattern in the hope of reaching the far corners of the image to find any unusual color or structure that could indicate the presence of an object.</Reasoning>
+<Action>(-1, 1)</Action>
+
+<Reasoning>Still no distinctive object. I'm moving further to the right in hopes of finding a clearer area or the object.</Reasoning>
+<Action>(-1, 2)</Action>
+
+<Reasoning>I'm still not seeing anything particularly unusual. I am now moving towards the top section of the image, as the bottom section appears too cluttered. This might reveal a clearer area, or the object.</Reasoning>
+<Action>(1, 1)</Action>
+
+<Reasoning>The object is not visible. It appears to be a dense forest without any significant clearing or structure that stands out. I am now moving up in the hope of finding a wider area or the object. If the object is too far from the visible area, I will continue to move in the same direction.</Reasoning>
+<Action>(-1, 1)</Action>
+
+<Reasoning>The image is still not clear enough. I'm

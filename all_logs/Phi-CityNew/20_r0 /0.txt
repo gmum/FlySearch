@@ -1,0 +1,19 @@
+ <Reasoning>
+    The coordinates given show a grid of a 3D space, and I need to find the trash pile, which is located at 10 meters below the surface.
+    </Reasoning>
+    <Action>(0, 0, -10)</Action>
+</Reasoning>
+<Reasoning>
+    The coordinates given show a grid of a 3D space, and I need to find the trash pile, which is located at 10 meters below the surface.
+    </Reasoning>
+<Action>(5, 0, -30)</Action>
+</Reasoning>
+<Reasoning>
+    Based on the coordinates given, the trash pile is located at the coordinates (0, 0, -10). I need to move closer to the pile and fly lower to get a closer view.
+    </Reasoning>
+<Action>(0, 0, -20)</Action>
+</Reasoning>
+<Reasoning>
+    Based on the coordinates given, the trash pile is located at the coordinates (0, 0, -10). I'm already at -20 meters and still need to move closer to the pile.
+    </Reasoning>
+<Action>(0, 0, -30

@@ -1,0 +1,22 @@
+ <Reasoning>
+    From my current position, the object doesn't appear to be in my direct view. I will move closer to the areas where the grid indicates higher concentrations of green, as these could represent vegetation.
+</Reasoning>
+<Action>(10, 0, -30)</Action>
+
+<Reasoning>
+    The object seems to be located near the center of the image, and I am still within the search area. I will move further south to get a closer view.
+</Reasoning>
+<Action>(20, -10, -40)</Action>
+
+<Reasoning>
+    I have found a candidate object. The object is at a higher elevation than my current position. I will now fly to a lower altitude to verify if it is the object I am searching for.
+</Reasoning>
+<Action>(10, -10, -40)</Action>
+
+<Reasoning>
+    I am now closer to the object. Since I am below the object according to the grid, I can attempt to locate it from this position and verify if it's the building I am searching for.
+</Reasoning>
+<Action>(10, -10, -30)</Action>
+
+<Reasoning>
+    I have confirmed that the

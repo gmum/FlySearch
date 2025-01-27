@@ -1,0 +1,8 @@
+ <Reasoning>Since the drone's current altitude is 82 meters above ground, I need to fly lower to get closer to the object. Lowering the altitude is a simple way to move closer to the ground without moving away from the object. As long as I remain within the 400x400m search area, I can adjust my altitude accordingly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>By lowering the drone to 72 meters above ground, I can get closer to the object and increase the chances of finding it. If the object is not directly below, I can make a small adjustment and move to the north to cover more ground.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>After getting closer to the object, I will be able to see if it's the one I'm looking for. I will also move slightly to the north to increase the possibility of spotting the object in my field of vision.</Reasoning>
+<Action>(10, 0, -20)</Action>

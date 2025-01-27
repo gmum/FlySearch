@@ -1,0 +1,11 @@
+ <Reasoning>I have found the fire, which is located near the center of the image, at the coordinates (7, 7, 0). I am below the object, so I can now reply with 'FOUND'.</Reasoning>
+<Action>(7, 7, -10)</Action>
+
+<Reasoning>The object is not directly visible. I need to move closer to it. Since I am just above the object, I should also move down a bit.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The object is not clearly visible. I should move slightly to the left to get a better view of the area.</Reasoning>
+<Action>(-1, 0, -10)</Action>
+
+<Reasoning>The object is not clearly visible. I should move slightly to the right to get a better view of the area.</Reasoning>
+<Action>(1, 0, -10)</Action>

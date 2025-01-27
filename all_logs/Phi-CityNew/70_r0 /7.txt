@@ -1,0 +1,6 @@
+ <Action style="font-size: 20px; color: red;">
+    <Reasoning>
+        I am at an unsafe altitude and cannot continue the search.
+    </Reasoning>
+    <Action>(0, 0, 0)</Action>
+</Action>

@@ -1,0 +1,2 @@
+<Reasoning>I see the building in the bottom right corner. It is at coordinates (15, -7). I need to move there and reduce my altitude to be below 10 meters above the building.</Reasoning>
+<Action>(15, -7, -15)</Action>

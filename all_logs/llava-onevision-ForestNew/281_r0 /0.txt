@@ -1,0 +1,2 @@
+<Reasoning>The UAV needs to search for an anomaly in the center. Moving towards the center of the grid while lowering the altitude will help in identifying the object without going out of bounds.</Reasoning>
+<Action>(0, 0, -10)</Action>

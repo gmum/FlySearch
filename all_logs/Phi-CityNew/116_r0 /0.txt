@@ -1,0 +1,17 @@
+ <Action space>
+    <Reasoning>I suspect that the road construction site is south-east of the starting position. I will move towards that direction, keeping an eye on the grid to ensure that I am moving in the right direction. I will also decrease my altitude slowly to get closer to the ground level.</Reasoning>
+    <Action>(50, 50, -10)</Action>
+</Action space>
+
+<Action space>
+    <Reasoning>I have moved closer to the area with a yellow point on the grid. I believe that the yellow point might be the construction site. I will now decrease my altitude even further to get a better view of the object.</Reasoning>
+    <Action>(40, 50, -20)</Action>
+</Action space>
+
+<Action space>
+    <Reasoning>I have flown lower and am now at around 3 meters above ground level. The yellow point seems to be the construction site. I will now get a closer look to confirm.</Reasoning>
+    <Action>(50, 40, -30)</Action>
+</Action space>
+
+<Action space>
+    <Reasoning>I am now at the construction site. The yellow point on the grid is indeed the construction site. I will now fly below 10

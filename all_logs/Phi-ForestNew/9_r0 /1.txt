@@ -1,0 +1,14 @@
+ <Reasoning>Based on my altitude, I need to carry out a detailed search for the trash pile. I'll start with the coordinates (18, 18) to focus my search.</Reasoning>
+<Action>(2, 0, -15)</Action>
+
+<Reasoning>The object isn't visible at (18, 18). I'll proceed to (18, 9) to broaden my view.</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>The trash pile is not in my current field of view. So, I'll move to (19, 9) to get a better angle on the area.</Reasoning>
+<Action>(-2, 0, -10)</Action>
+
+<Reasoning>The target is not visible at (19, 9). I'll shift to (19, 8) to search more effectively.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+
+<Reasoning>The object appears to be at (19, 18). I must descend to 5 meters above it to confirm.</Reasoning>
+<Action>(-1, 0, -5)</

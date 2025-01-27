@@ -1,0 +1,24 @@
+ <Reasoning>
+    I am looking for a trash pile in the image. The yellow point could be the object I am looking for, so I will head towards it.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>
+    I am now hovering around the yellow point. I need to check if it is a trash pile before moving on.
+</Reasoning>
+<Action>(5, 0, -8)</Action>
+
+<Reasoning>
+    I will move up to check the surrounding area for a trash pile. This will allow me to confirm if it is the trash pile I am looking for.
+</Reasoning>
+<Action>(5, 0, -6)</Action>
+
+<Reasoning>
+    I am checking the area around the yellow point more closely. I need to move in closer to confirm it is a trash pile.
+</Reasoning>
+<Action>(5, 0, -4)</Action>
+
+<Reasoning>
+    I will move down and check the area around the yellow point. I need to be sure it is a trash pile before moving on.
+</Reasoning>
+<Action>(5, 0, -2)</Action>

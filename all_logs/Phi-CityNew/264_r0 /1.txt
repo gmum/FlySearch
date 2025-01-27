@@ -1,0 +1,16 @@
+ <Reasoning>I am starting my search from 44 meters above ground level. I need to move lower to find the object. I will start with a move that takes me closer to the bottom of the image and see if the object is visible.</Reasoning>
+<Action>(5, 0, -15)</Action>
+
+<Reasoning>I don't see the object on the ground. I will move closer to it and try to find it again.</Reasoning>
+<Action>(10, 0, -25)</Action>
+
+<Reasoning>I still cannot see the object. I will move closer to it again.</Reasoning>
+<Action>(10, 0, -20)</Action>
+
+<Reasoning>I can see the object on the ground. I will fly below it and see if it is the anomaly we are looking for.</Reasoning>
+<Action>(4, 0, -20)</Action>
+
+<Reasoning>I still cannot see the object. I will move closer to it again.</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>I can see the object on the ground. It is not the anomaly we are looking for. I will continue the search.</Reason

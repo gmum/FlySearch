@@ -1,0 +1,2 @@
+<Reasoning>I can see a fire in the top right corner of the frame, at coordinates ~ (3,3). I should move toward it so that it is centered in my view. I'm already below 10 meters, so I don't need to move down. I will move to the top right.</Reasoning>
+<Action>(3,3,0)</Action>

@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+I am 10 meters above the yellow point, which is the object you are searching for.
+    </Reasoning>
+    <Action>(0, 0, 10)</Action>
+</Response>

@@ -1,0 +1,12 @@
+ <Reasoning>I'm starting my search from the top left corner, ensuring the drone's safe altitude and visibility.</Reasoning>
+<Action>(-30, 0, -120)</Action>
+<Reasoning>Heading towards the center, as it's easier to scan from a mid-height spot.</Reasoning>
+<Action>(0, 0, -120)</Action>
+<Reasoning>The large object in the middle could be the anomaly. I'm lowering the altitude to get closer.</Reasoning>
+<Action>(0, 0, -110)</Action>
+<Reasoning>Still no sign of the object. I'll move to the central point to cover a larger area.</Reasoning>
+<Action>(0, 0, -100)</Action>
+<Reasoning>I'm still not closer to the object. I'll continue to the center, keeping an eye out for any irregularities.</Reasoning>
+<Action>(0, 0, -90)</Action>
+<Reasoning>No significant findings so far. I'll move to the bottom center to expand my search.</Reasoning>
+<Action>(0, -1, -90)</Action>

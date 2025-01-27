@@ -1,0 +1,9 @@
+ <Reasoning>
+    I am at coordinates (0,0), and the object that does not fit is likely to be at a lower altitude. I will move to (0, -1) to get even closer to the object and have more vertical search area to find it.
+</Reasoning>
+<Action>(0, -1, -15)</Action>
+
+<Reasoning>
+    After moving to (0, -1), I am closer to the object. However, it is not easy to see it clearly yet. I will move to (0, -2) to zoom in even more and find the object.
+</Reasoning>
+<Action>(0, -2, -20)</Action>

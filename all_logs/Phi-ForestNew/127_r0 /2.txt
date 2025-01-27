@@ -1,0 +1,10 @@
+ <Reasoning>I have located a potential forest fire and will lower my altitude while ensuring it is within the field of view for a precise assessment.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The fire is within my field of view and I will maintain the drone's safety within the view range.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Another smaller fire is detected and I will hover to assess it better.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+Result: FOUND

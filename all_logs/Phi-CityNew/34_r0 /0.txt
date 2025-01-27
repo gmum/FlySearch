@@ -1,0 +1,4 @@
+ To move the drone closer to the area, I will fly to the coordinates (5, 0, -10) which is 10 meters below the current position.
+
+<Reasoning>This location is near a large grey and brown area that might be a construction site, and I will move closer to check for the road construction. If there's no road construction, I will still be able to analyze the pattern of the grey and brown area for any more indication of a construction site.</Reasoning>
+<Action>(5, 0, -10)</Action>

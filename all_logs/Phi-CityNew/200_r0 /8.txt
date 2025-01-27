@@ -1,0 +1,13 @@
+ <Reasoning>I have recalibrated my altitude and am ready to continue the search for the police car.</Reasoning>
+<Action>(5, 0, -10)</Action>
+<Reasoning>I am moving down to a closer altitude to better search the area for the police car.</Reasoning>
+<Action>(10, 0, -50)</Action>
+<Reasoning>I am adjusting my path to the left, aiming to locate the police car's position.</Reasoning>
+<Action>(10, 0, -40)</Action>
+<Reasoning>I am now further north to continue following the left path towards the object.</Reasoning>
+<Action>(10, -10, -60)</Action>
+<Reasoning>I am moving left to the next grid point, to be closer to the object's potential location.</Reasoning>
+<Action>(10, -10, -60)</Action>
+<Reasoning>I am now at the bottom of the grid, ensuring that I am looking at the object's possible location.</Reasoning>
+<Action>(10, -10, -60)</Action>
+<Reasoning>I am moving upwards to

@@ -1,0 +1,7 @@
+ <Reasoning>The object of interest is indicated by the grid point (0, 0). It appears to be surrounded by trees and is centrally located in the image. Given the altitude and the surrounding terrain, it might be challenging to spot the person directly. The coordinates of the drone are (0, 0, 60), which means it is 60 meters above ground level. Since the search area is 400x400m, and my current altitude is above the lowest point of the search area, I need to descend to ensure the object is within my field of view. Therefore, I will move towards the object and lower my altitude.</Reasoning>
+<Action>(0, 0, 50)</Action>
+
+<Reasoning>Moving up to the coordinates (5, 0, 50) will increase the altitude but not reduce the search area's constraints. I am trying to reach the object that is surrounded by trees. But since the higher altitude doesn't offer a considerable decrease in altitude, it will not likely enhance the visibility of the person and may still be above the object.</Reasoning>
+<Action>(5, 0, 65)</Action>
+
+<Reasoning>My last move will be lowering further to the object. Following instructions to stay within 10

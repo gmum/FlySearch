@@ -1,0 +1,10 @@
+<Reasoning>The search area is quite large, and I need to cover as much ground as possible while keeping an eye out for the trash pile. I will start by moving to the center of the image and lowering my altitude to get a better view.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Now that I have lowered my altitude, I will move to the center of the image to get a better view of the surroundings. If the trash pile is not in the center, I will continue to search by moving in different directions.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have arrived at the center of the image and I can see the trash pile below me. I will lower my altitude to get closer to it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+FOUND

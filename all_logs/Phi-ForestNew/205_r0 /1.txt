@@ -1,0 +1,15 @@
+ <Reasoning>The object of interest is the yellow point in the lower left quadrant of the image. It's different from the surrounding greenery, and my altitude needs to be 10 meters or lower to confirm it. Let's move closer.</Reasoning>
+
+<Action>(-41, -41, 0)</Action>
+
+<Reasoning>I've reached the yellow point. Now I need to be 10 meters or lower. Moving northwest seems to be the option that brings me closer to my desired altitude while keeping the object in view.</Reasoning>
+
+<Action>(-31, -31, -10)</Action>
+
+<Reasoning>I'm still close to the yellow point, but there's no need to descend further. I'll continue moving northwest while monitoring the altitude.</Reasoning>
+
+<Action>(-31, -21, -10)</Action>
+
+<Reasoning>The yellow point is still in my line of sight, and my altitude is within the required range. I've found the object and can now reply with "FOUND."</Reasoning>
+
+<Action>FOUND</Action>

@@ -1,0 +1,11 @@
+ <Reasoning>The drone's altitude is currently 32 meters above ground level, which is too high for the objective. I need to decrease my altitude to be closer to the object.</Reasoning>
+<Action>(0, 0, -32)</Action>
+<Reasoning>I am now at ground level, which gives me a better view of the area. I need to start my search for the object.</Reasoning>
+<Action>(-1, 0, -0)</Action>
+<Reasoning>I am not directly above the object, but I am still close to the ground. I need to move closer to the object to maintain the drone's center of vision.</Reasoning>
+<Action>(-2, 0, -1)</Action>
+<Reasoning>I am still not at the center of the object. I need to move to a point closer to the object.</Reasoning>
+<Action>(0, -1, -2)</Action>
+<Reasoning>I am now directly above the object. I will check the object in my field of view.</Reasoning>
+<Action>(0, -1, 0)</Action>
+<Reasoning>I am at the correct altitude and directly above the object. I will continue my search.</Reasoning>

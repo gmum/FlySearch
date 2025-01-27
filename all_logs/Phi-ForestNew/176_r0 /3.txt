@@ -1,0 +1,14 @@
+ <Reasoning>I am still too high. I need a reduction in altitude to get closer to the person. The person seems to be in front of some yellowish vegetation, which suggests they might be near an area with specific flora.</Reasoning>
+<Action>(11.1, 11, -5)</Action>
+
+
+<Reasoning>The person is not at the exact coordinates but is partially obscured by the yellowish vegetation. I need to adjust my attitude and altitude to get a clearer view.</Reasoning>
+<Action>(11.1, 11, -5)</Action>
+
+
+<Reasoning>I am at a suitable altitude now and can clearly see the person. I am within the drone's field of view to monitor the person. The person appears to be walking in a clearing.</Reasoning>
+<Action></Action>
+
+
+<Reasoning>Now that I have the person in the drone's field of view, I can confirm they are the person I was looking for.</Reasoning>
+<Action></Action>

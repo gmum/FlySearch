@@ -1,0 +1,21 @@
+ <Reasoning>
+    Given the coordinates of the drone's current position, it seems to be a bit high for detecting an anomaly. I will start by flying to the coordinates (0, 0, 0) to get a better view of the ground level.
+</Reasoning>
+<Action>(0, 0, -34)</Action>
+
+<Reasoning>
+    I found a point (0, 0) which seems promising. To get a closer view, I will move to (11, -1) which is approximately 11 meters south of the drone's current position.
+</Reasoning>
+<Action>(11, 0, -23)</Action>
+
+<Reasoning>
+    From this point, I will fly north to get a wider view of the area. The coordinates (0, 23) seems strategic.  
+</Reasoning>
+<Action>(0, 23, -23)</Action>
+
+<Reasoning>
+    I can see a few interesting points. The point (1, 23) is located on the ground level and might be a potential anomaly. I will head towards it.
+</Reasoning>
+<Action>(0, 23, -22)</Action>
+
+<Reason

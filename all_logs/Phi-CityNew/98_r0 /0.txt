@@ -1,0 +1,16 @@
+ <Reasoning>The object seems to be located in the middle of the image, but I need to get lower to be in the drone's field of vision. I can fly slightly north to be in line with the object.</Reasoning>
+<Action>(20, 0, -10)</Action>
+
+<Reasoning>The object is still not in my field of vision. I will continue to move downward to get closer.</Reasoning>
+<Action>(20, -5, -20)</Action>
+
+<Reasoning>I am still not at my object. I should move down again to get closer to the object.</Reasoning>
+<Action>(20, -10, -25)</Action>
+
+<Reasoning>I am still not at my object. I will continue to move downward until I am in the drone's field of vision.</Reasoning>
+<Action>(20, -15, -30)</Action>
+
+<Reasoning>I am still not at my object. I will make one more move downward to be certain.</Reasoning>
+<Action>(20, -20, -35)</Action>
+
+<Reasoning>The object is finally in my field of vision and is 10 meters or less below

@@ -1,0 +1,7 @@
+ <Reasoning>The object in question is likely at (0, 0), where the colors are significantly different. I will move closer to confirm that.</Reasoning>
+<Action>(-1, -1, -10)</Action>
+<Reasoning>The object is no longer visible in my field of view. It may be below the surface or out of the current frame of the image. I will move lower to confirm this.</Reasoning>
+<Action>(-1, -1, -15)</Action>
+<Reasoning>The object is now visible in my field of view. It is not 10 meters below the drone, so I will continue the search.</Reasoning>
+<Action>(-1, -1, -15)</Action>
+<

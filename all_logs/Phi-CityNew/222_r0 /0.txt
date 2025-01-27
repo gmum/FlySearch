@@ -1,0 +1,10 @@
+ <Reasoning>I need to move closer to the ground to properly search for the object. Since I currently have no precise location to start searching from, I will move towards the center of the image to maximize the chances of finding the object. This will also bring me into a lower altitude range, as the object might be closer to the ground.</Reasoning>
+<Action>(0, 0, -25)</Action>
+
+<Reasoning>The object in question appears to be in the lower left quadrant of the image. I will move over to this area, and since I am on the left edge of the image, I can safely assume the object is near the ground level. This will allow me to fly below 10 meters altitude when I make my next move.</Reasoning>
+<Action>(0, 5, -25)</Action>
+
+<Reasoning>I'm still not at the object's location. I will proceed to move further left and slightly down, ensuring I stay within the 10-meter altitude, to increase the chance of locating the object.</Reasoning>
+<Action>(-5, 5, -25)</Action>
+
+<Reasoning>Since I can't see the object clearly yet due to the distance, I'll move to the center of the lower half of the

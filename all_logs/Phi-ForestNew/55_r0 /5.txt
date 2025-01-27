@@ -1,0 +1,8 @@
+ <Reasoning>The building can be seen from this altitude, but it's not entirely clear. I'll ascend slightly to get a better view of the surrounding area and the building.</Reasoning>
+<Action>(10, 22, 0)</Action>
+
+<Reasoning>I can now see a clear path leading to the building. I'll begin my descent to confirm its location.</Reasoning>
+<Action>(5, 22, 0)</Action>
+
+<Reasoning>The building is clearly visible now, and I'm able to confirm its coordinates. I'll make my move to report the successful search.</Reasoning>
+<Action>(0, 22, 0)</Action>

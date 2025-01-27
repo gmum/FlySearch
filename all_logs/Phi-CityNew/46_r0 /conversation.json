@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a large trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>As I am standing at an altitude of 61 meters above the ground, I will move 11 meters closer to the ground to get lower and have a better chance of finding the large trash pile, which is mentioned in the context. This will bring my altitude down to 50 meters and also improve my field of view.</Reasoning>\n<Action>(11, 0, -21)</Action>\n<Reasoning>After the first move, I will now move further south to ensure that I am closer to the object's estimated location on the grid. This should maximize the chances of finding the object if it is in the downward direction.</Reasoning>\n<Action>(3, -15, -13)</Action>\n<Reasoning>Now that I am much closer to the ground, I will move a bit northeast to increase my chances of locating the large trash pile, which should be on the grid within my current field of view.</Reasoning>\n<Action>(1, 10, -2)</Action>\n<Reasoning>If the object is not visible, I will move to the left to broaden my field of view. Being able to see less than 10 meters below means that I am likely to spot the object if it is located within that range.</Re"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Currently, I am flying at a height of 40 meters, which is still too high compared to the grass-like areas I am searching for. To get a closer view, I should make a drastic descent of 21 meters to 2 meters above the ground, while ensuring that my altitude is not above 10 meters above the ground for the final spotting of the trash pile.</Reasoning>\n<Action>(-21, 0, -21)</Action>\n<Reasoning>After the initial descent, I will proceed to move slightly northeast to ensure that I am covering a wider area, which may increase the probability of spotting the large trash pile within the given field of view.</Reasoning>\n<Action>(0, 5, -16)</Action>\n<Reasoning>If the trash pile is not directly visible, I will perform another descent to get closer to the ground while continuing to scan the area. A lower altitude will mean a larger field of view, which is crucial for finding the trash pile.</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I am at an altitude of 19 meters, which is slightly higher than I would prefer to spot the trash pile. Therefore, I need to lower my altitude by 6 meters to get closer to the potential location of the trash pile, which should be within my current field of view.</Reasoning>\n<Action>(4, 0, -3)</Action>\n<Reasoning>Once I've descended to the new altitude, I will perform a minor adjustment to my position to the left to increase the chances of the trash pile falling within the center of my visible area, as this grid may indicate important features to focus on during the search.</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 16 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude of 16 meters, I am just below the optimum altitude for spotting the large trash pile. I need to lower my altitude by 1 meter to ensure that I am as close to the ground as possible, minimizing the distance I have to scan for the trash pile.</Reasoning>\n<Action>(-1, 0, -1)</Action>\n<Reasoning>After descending to the new altitude, I will adjust my position to the left to increase the likelihood of the trash pile falling within my field of view, as the grid indicates potential areas of interest.</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>My current altitude of 15 meters is still not ideal for spotting the large trash pile. To maximize my chances of finding it, I need to lower my altitude by 1 meter to be as close to the ground as possible, which will give me the largest possible field of view.</Reasoning>\n\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Once I've descended, I will adjust my position slightly to the left to ensure that I am scanning a wider area that could potentially contain the trash pile, as indicated by the grid positions.</Reasoning>\n<Action>(-1, -1, -1)</Action>\n<Reasoning>I need to make one more step to the left to cover more ground and increase the probability of spotting the trash pile. If it's not found within the next move, I will continue to do so until it is within my view.</Reasoning>\n<Action>(-2, -1, -1)</Action>\n<Reasoning>Since I have only a 9-move limit, I will now perform another slight adjustment to the left to ensure that the area I am scanning is as large as possible without going beyond the view I have at this altitude.</Reasoning>\n<Action>(-"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 14 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>My current altitude is 14 meters, which is not optimal for spotting the large trash pile. I need to descend by 1 meter to get closer to the ground and increase the chances of spotting the trash pile.</Reasoning>\n<Action>(-1, 0, -1)</Action>\n<Reasoning>I will need to readjust my position slightly to the left to cover a wider area and increase the probability of finding the trash pile.</Reasoning>\n<Action>(-1, -1, -1)</Action>\n<Reasoning>Since I have made 9 moves so far, I will now make one more slight adjustment to the left to ensure that I am scanning a wider area without going beyond the view I have at this altitude.</Reasoning>\n<Action>(-2, -1, -1)</Action>\n<Reasoning>After completing the last move, I will now perform one final adjustment to the right to scan a broader area, potentially increasing the chances of spotting the large trash pile.</Reasoning>\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Given that the large trash pile should be in my field of view, I will now focus on scanning the area"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 13 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>My current altitude of 13 meters is still not ideal for spotting the large trash pile. I need to lower my altitude by 1 meter to get closer to the ground and increase the chances of spotting the trash pile.</Reason>\n\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Once I've descended, I will readjust my position slightly to the left to cover a wider area.</Reasoning>\n<Action>(-1, -1, -1)</Action>\n<Reasoning>Since I have made 9 moves, I will now make one more slight adjustment to the left to ensure that I am scanning a wider area.</Reasoning>\n<Action>(-2, -1, -1)</Action>\n<Reasoning>After completing the last move, I will now focus on scanning the area to find the large trash pile</Reasoning>\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Given that the large trash pile should be in my field of view, I will now focus on scanning the area</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 12 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>My current altitude is 12 meters, which is still not ideal for spotting the large trash pile. I need to lower my altitude by 1 meter to get closer to the ground and increase the chances of finding the trash pile.</Reason>\n\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Once I've descended, I will readjust my position slightly to the left to cover a wider area</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>My current altitude of 11 meters is still too high for spotting the large trash pile. I need to lower my altitude by 1 meter to get closer to the ground.</Reason>\n\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Once I've descended, I will readjust my position slightly to the left to cover a wider area.</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>My current altitude of 9 meters is still too high for spotting the large trash pile. I need to lower my altitude by 1 meter to get closer to the ground.</Reason>\n\n<Action>(-1, 0, -1)</Action>\n<Reasoning>Once I've descended, I will readjust my position slightly to the left to cover a wider area.</Reason"
+    ]
+]

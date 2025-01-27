@@ -1,0 +1,11 @@
+ <Reasoning>The object in question is likely at the bottom right of the grid, where the colors are weirdly different. I will move closer to confirm if it is indeed the object.</Reasoning>
+<Action>(-5, 0, -30)</Action>
+<Reasoning>The object appears to be in the bottom left of the grid. I will move directly to it to check if it is the object.</Reasoning>
+<Action>(-50, -50, -10)</Action>
+<Reasoning>The object is now almost directly on top of me. It seems to be the object in question. I will lower my altitude further.</Reasoning>
+<Action>(-50, -50, -10)</Action>
+<Reasoning>The object is no longer visible in my field of view. It might be below the surface or simply out of the current frame of the image. I will move down to confirm this.</Reasoning>
+<Action>(-50, -50, -15)</Action>
+<Reasoning>The object is now visible in my field of view. It is not 10 meters below the drone, so I will continue searching.</Reasoning>
+<Action>(-50, -50, -15)</Action>
+<

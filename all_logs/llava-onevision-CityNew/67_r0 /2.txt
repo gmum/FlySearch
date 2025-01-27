@@ -1,0 +1,4 @@
+<Reasoning>Upon examining the image, I can see a road construction site at coordinates (0, -65). I will adjust the drone's altitude to 97 meters to be directly above the construction site.</Reasoning>
+>Action>(0, 0, -65)</Action>
+<Reasoning>The road construction site is at coordinates (0, -65). I will now descend to 97 meters to be directly above it.</Reasoning>
+<found>FOUND</found>

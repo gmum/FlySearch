@@ -1,0 +1,17 @@
+ <Reasoning>
+As the elevation is too low, I need to quickly execute an emergency maneuver to avoid contact with the terrain. I'll ascend slightly to maintain control of the UAV while preventing any damage.
+</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+<Reasoning>
+Moving 1 meter up from the current altitude will provide some buffer space to avoid the terrain. It's a safety measure to prevent a collision while I reassess the situation.
+</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+<Reasoning>
+I will adjust my altitude to 0 meters above ground level, which should provide a stable flight position while I perform an emergency maneuver to ensure the UAV can safely continue its mission.
+</Reasoning>
+
+<Action>(0, 0, 1)</Action>
+<Reasoning>
+|

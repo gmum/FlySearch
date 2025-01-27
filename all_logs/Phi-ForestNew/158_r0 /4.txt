@@ -1,0 +1,4 @@
+ <Action space="1">
+    <Action>(-5, 0, 20)</Action>
+    <Reasoning>I will fly to the coordinates (-5, 0, 20) because the coordinates of the point in the center of my field of view are (-5, 0, 20). I will check if this is the trash pile. If it is not, I will continue the search in the surrounding coordinates.</Reasoning>
+</Action space>

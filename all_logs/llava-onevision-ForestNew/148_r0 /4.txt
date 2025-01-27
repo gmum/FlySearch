@@ -1,0 +1,21 @@
+<Reasoning> I need to move slightly to the left to get a better view of the ground. I will move to the coordinates (-5, 0).
+<Reasoning>
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning> I have moved slightly to the left and I need to decrease my altitude further to get a better view of the ground. I will move down 5 meters.
+<Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning> I have decreased my altitude further and I need to move slightly to the right to get a better view of the ground. I will move to the coordinates (5, 0).
+<Reasoning>
+<Action>(5, 0, 0)</Action>
+
+<Reasoning> I have moved slightly to the right and I need to decrease my altitude further to get a better view of the ground. I will move down 5 meters.
+<Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning> I have decreased my altitude further and I need to move slightly to the left to get a better view of the ground. I will move to the coordinates (-5, 0).
+<Reasoning>
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning> I have moved slightly to the left and I need to decrease my altitude further to get a better view of the ground. I will move down 

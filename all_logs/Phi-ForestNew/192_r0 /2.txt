@@ -1,0 +1,23 @@
+ <Reasoning>I am closer to the ground and can make more accurate moves. I will move to the coordinates of the object's last known location.</Reasoning>
+
+<Action>(4, 0, -10)</Action>
+
+<Reasoning>I am now directly above the object. I will move slightly to the left to ensure that I am centered on them.</Reasoning>
+
+<Action>(4, -2, -10)</Action>
+
+<Reasoning>The person is now in my field of view. I will move slightly to the right to ensure that I am centered on them.</Reasoning>
+
+<Action>(4, -1, -10)</Action>
+
+<Reasoning>I am now directly above the person. I will move slightly up to get the best view of them.</Reasoning>
+
+<Action>(4, 0, -10)</Action>
+
+<Reasoning>I am now directly above the person. I will move slightly to the right to ensure that I am centered on them.</Reasoning>
+
+<Action>(4, -1, -10)</Action>
+
+<Reasoning>I can see the person now. I will move slightly to the left to ensure that I am centered on them.</Reasoning>
+
+<Action>(

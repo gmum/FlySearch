@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I need to start searching for the road construction site. I will start by moving to the center and going down. I'll move to (0,0) and go down 30 meters. This should give me a better view.</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

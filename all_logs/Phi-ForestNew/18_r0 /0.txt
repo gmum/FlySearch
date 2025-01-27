@@ -1,0 +1,26 @@
+ <Reasoning>
+It is important to stay around the center of the object coordinates, which is (31,31). Since we are tasked with finding a trash pile and the trash pile is indicated by the coordinates (31,31), it is safe to move towards that point.
+</Reasoning>
+
+<Action>
+We start by moving to the coordinates (32,31,0), slightly above the trash pile's center.
+</Action>
+
+<Reasoning>
+Next, we need to get lower to check if it is indeed the trash pile. Since we are at 32 meters above the ground, we can't confirm it's the trash pile yet.
+</Reasoning>
+
+<Action>
+Let's move towards the nearest point (31,31,0) to check the object at ground level.
+</Action>
+
+<Reasoning>
+Moving further to the southwest of the object will help us see if the object is at ground level at (30,31,0).
+</Reasoning>
+
+<Action>
+We move to coordinates (30,31,0).
+</Action>
+
+<Reasoning>
+Now, it's time to check if the object is at ground level. Since the next

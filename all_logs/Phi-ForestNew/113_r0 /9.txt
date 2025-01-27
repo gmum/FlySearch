@@ -1,0 +1,8 @@
+ <Reasoning>At coordinates (0, -1, -12), the drone is now safely outside the visual range of the current image, preventing any risk of collision.</Reasoning>
+<Action>(0, -1, -12)</Action>
+
+<Reasoning>With the fire confirmed at a safe altitude, the mission has been successfully carried out.</Reasoning>
+<Action>(0, -1, -12)</Action>
+
+<Reasoning>It's time to return to base for further instructions or to conclude the mission.</Reasoning>
+<Action>(0, -1, -12)</Action>

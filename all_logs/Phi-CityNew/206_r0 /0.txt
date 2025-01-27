@@ -1,0 +1,5 @@
+ <Reasoning>As per the coordinates on the ground, I am now at (30,20), which is below the 10 meters altitude limit. I need to search for the anomaly and get closer if it's not the object in question.</Reasoning>
+<Action>(-0,0,-30)</Action>
+
+<Reasoning>I am looking for an object that doesn't fit in with the environment. I need to be on the ground to see more closely.</Reasoning>
+<Action>(0, 0, -30)</Action>

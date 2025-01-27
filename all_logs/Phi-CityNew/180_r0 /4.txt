@@ -1,0 +1,7 @@
+ <Reasoning>
+
+    Since I am instructed that I should not move into coordinates that are outside of my view and I must reply with "FOUND" if the object is in my field of view and I am at most 10 meters above it, and given the conditions, it seems I have approached too closely to an object causing an emergency stop.
+
+    <Action>(31,0,0)</Action>
+
+</Reasoning>

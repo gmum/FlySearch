@@ -1,0 +1,13 @@
+ <Reasoning>I need to adjust my altitude to get a better vantage point and be able to answer the question.</Reasoning>
+
+<Action>(0, 0, 32)</Action>
+
+<Reasoning>The drone is now closer to the ground level, which will help in scanning the area more closely and providing better visibility for the task at hand.</Reasoning>
+
+<Action>(0, 0, 32)</Action>
+
+<Reasoning>I need to move towards the coordinates (11, 21) to investigate the area around it.</Reasoning>
+
+<Action>(11, 21, -3)</Action>
+
+<Reasoning>The object at (11, 21) seems to be the fire we are looking for. It's at least 10 meters below the drone. I will now make a

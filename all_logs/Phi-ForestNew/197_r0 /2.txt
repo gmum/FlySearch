@@ -1,0 +1,9 @@
+ <Reasoning>I will proceed with caution, moving to a position in the vicinity of the object while remaining within the operational boundaries and altitude limits.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is within the allowed altitude and the search area, thus it is safe to proceed with the search.</Reasoning>
+<Action>(5,0,0)</Action>
+
+<Reasoning>Located the object at the coordinates (5,0,0). It is below the ten-meter altitude restriction, which means I can confirm the search with a 'FOUND' response.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

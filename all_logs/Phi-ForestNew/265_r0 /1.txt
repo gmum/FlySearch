@@ -1,0 +1,8 @@
+ <Reasoning>The object, which is the only yellow point, seems to be located at the southern edge of my current view. Given that I am at an altitude of 30 meters, moving northward will help me get a clearer view of it without going too low.</Reasoning>
+<Action>(0, -20, -30)</Action>
+
+<Reasoning>To get closer to the object and potentially confirm its nature, I will move slightly eastward while decreasing the altitude further to ensure the object is within the 10 meters altitude limit when I reply with "FOUND."</Reasoning>
+<Action>(-5, -10, -40)</Action>
+
+<Reasoning>The object is now closer, but to confirm it's the anomaly, I will move slightly further right and lower my altitude. This should ensure I am within 10 meters below the object when I reply with "FOUND."</Reasoning>
+<Action>(-5, -10, -40)</Action>

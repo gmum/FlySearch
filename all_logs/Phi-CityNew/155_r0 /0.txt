@@ -1,0 +1,14 @@
+    
+
+    <Reasoning>Starting at the center of the image, I should move closer to the object in question and lower my altitude. Since the object is somewhere in the middle of the image, I will move towards the left side of the grid to increase my chances of finding it.</Reasoning>
+    <Action>(5, 0, -30)</Action>
+
+    <Reasoning>After making the first move, I need to continue searching for the object. The object might be towards the upper left part of the grid, so I should move towards that direction while keeping the altitude low.</Reasoning>
+    <Action>(8, 0, -10)</Action>
+
+    <Reasoning>I should continue my search in the upper left area of the grid. Now, I am closer to the object and still below the altitude of 10 meters. If the object is indeed the yellow point, I will reply with "FOUND".</Reasoning>
+    <Action>(10, 0, -5)</Action>
+
+    <Reasoning>The object might be slightly to the right of the yellow point. I should move slightly left and keep my altitude low to increase my chances of seeing it.</Reasoning>
+    <Action>(9, 0, -5)</Action>
+

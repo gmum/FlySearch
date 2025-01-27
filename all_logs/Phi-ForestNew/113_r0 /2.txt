@@ -1,0 +1,11 @@
+ <Reasoning>The coordinates are currently at (-11, 11), which is not ideal for a thorough inspection of the bottom right section of the image where the fire might be located.</Reasoning>
+<Action>(-10, 11, -10)</Action>
+
+<Reasoning>The coordinates have now been updated to (-10, 11, -10), which is a better position to inspect the bottom right of the image for the fire.</Reasoning>
+<Action>(-15, 11, -15)</Action>
+
+<Reasoning>The coordinates are now at (-15, 11, -15), and there is a large area with orange patches that resembles the forest fire. I will fly lower to confirm.</Reasoning>
+<Action>(-20, 11, -20)</Action>
+
+<Reasoning>The coordinates have been updated to (-20, 11, -20), and the orange area is indeed the forest fire. I am below 10 meters relative to it, fulfilling the mission requirement.</Reasoning>
+<Action>(-20, 

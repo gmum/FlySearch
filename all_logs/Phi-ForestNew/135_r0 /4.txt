@@ -1,0 +1,4 @@
+ <Reasoning>
+    I have unfortunately flown too low and need to abort the mission to avoid collision.
+</Reasoning>
+<Action>halt_drone_operation</Action>

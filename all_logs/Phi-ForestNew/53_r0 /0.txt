@@ -1,0 +1,22 @@
+ <Reasoning>
+    I am looking for a trash pile in the image. The yellow point could be the trash pile, so I will head towards it and hover below it at a lower altitude.
+</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>
+    I will continue to hover below the yellow point. This will allow me to check closely if it is the trash pile I am looking for.
+</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>
+    I need to check if there are other potential trash piles. I will move slightly north and go up to confirm if the trash pile is not in the heart of the yellow area.
+</Reasoning>
+<Action>(6, 0, -10)</Action>
+
+<Reasoning>
+    I am now checking the surrounding area for a trash pile. I need to move closer to the yellow point to confirm if it is the trash pile.
+</Reasoning>
+<Action>(6, 0, -5)</Action>
+
+<Reasoning>
+    I will move down and check the area around the yellow point. I need to be sure it is a trash pile before

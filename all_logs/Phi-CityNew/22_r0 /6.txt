@@ -1,0 +1,11 @@
+ <Reasoning>
+I will be moving closer to the coordinates that are adjacent to the potential object location on the grid. This should bring me into a better position to spot the object.
+</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>
+I'll continue to move downward to get a better angle to the potential object.
+</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reason

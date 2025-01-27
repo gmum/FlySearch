@@ -1,0 +1,11 @@
+ <Reasoning>I am preparing to search for the forest fire. I'll begin by navigating closer to the coordinates that could indicate the location of the fire. The coordinates (25, 50) and (50, 50) seem to be important points as they are surrounded by other coordinates. I will move down towards these coordinates to get a closer view.</Reasoning>
+<Action>(15, 0, -5)</Action>
+
+<Reasoning>After moving down, I found that the yellow point near (25, 50) could be the object of interest. It's close to the coordinates that seem important, so I will move closer to get a better view.</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>Now that I am closer to the marked locations, I confirm that the yellow point is indeed a forest fire. I will ensure I'm within the required altitude range to safely monitor the situation.</Reasoning>
+<Action>(8, 0, -10)</Action>
+
+<Reasoning>With the fire confirmed, I will continue to maintain a steady position for monitoring as per instructions. The area is critical, and I need to stay vigilant.</Reasoning>
+<Action>(8, 0, -10

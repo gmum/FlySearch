@@ -1,0 +1,19 @@
+ <Reasoning>
+    The object is around (0, 0) in the grid. I will start by moving towards that location and then check the surrounding area for the fire.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    The object is still not clearly visible from this position. I will move slightly north to increase visibility and proceed to the coordinates (0, 8, -1) to get a better angle.
+</Reasoning>
+<Action>(0, 8, -1)</Action>
+
+<Reasoning>
+    The object is still not in view. I will move further north to enlarge the field of view. I will also decrease altitude to 0 meters to get closer to the ground and increase chances of spotting the fire.
+</Reasoning>
+<Action>(8, 8, -1)</Action>
+
+<Reasoning>
+    The object is still not clearly visible. I will continue to move further north to increase visibility. I will also decrease altitude to -2 meters to get closer to the ground and increase chances of spotting the fire.
+</Reasoning>
+<Action>(8, 10, -1)</Action>

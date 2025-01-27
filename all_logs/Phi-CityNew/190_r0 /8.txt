@@ -1,0 +1,14 @@
+ <Reasoning>I must act quickly to avoid a collision with the large object. I am now at a safer altitude and can continue my search.</Reasoning>
+<Action>(0, -4, -30)</Action>
+<Action>(-1, -3, -30)</Action>
+<Action>(-1, -2, -30)</Action>
+<Action>(-2, -2, -30)</Action>
+<Action>(-3, -2, -30)</Action>
+<Action>(-4, -2, -30)</Action>
+
+<Reasoning>Now that I am in a safer position, I will continue to search for the fire, ensuring that I maintain a safe distance from the large object while scanning the ground. I will adjust my altitude as needed to keep the object within my field of view.</Reasoning>
+<Action>(-2, -1, -25)</Action>
+<Action>(-2, -2, -25)</Action>
+<Action>(-2, -3, -25)</Action>
+<Action>(-2, -4, -25)</Action>
+<Action

@@ -1,0 +1,7 @@
+ <Action space>
+    <Action>(-2, -30, -30)</Action>
+</Action space>
+
+<Reasoning>
+    This last move to the bottom-right should cover the potentially remaining unseen areas. Lowering the drone to the ground is crucial for finding any final anomalies.
+</Reasoning>

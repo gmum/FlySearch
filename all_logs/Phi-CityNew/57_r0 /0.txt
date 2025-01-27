@@ -1,0 +1,8 @@
+ <Reasoning>I am starting my search at an altitude of 53 meters above ground level, which is above the lowest point of the grid in the first image. Since the objective is to find a road construction site, I will need to fly lower to get a closer view. The coordinates in the grid seem to represent an outdoor setting with buildings, roads, and possibly a construction site. I will focus on the central area where roads are typically constructed, as indicated by the patterns in the grid. The yellow point in the center of the image could potentially be the construction site or something nearby. I will start by flying to the point in the center and then proceed to move down to get a closer view. If I am able to see the road construction site or a significant portion of it, I will reply with "FOUND" and reply with the coordinates I am at.</Reasoning>
+<Action>(10, 0, -10)</Action>
+<Action>(10, 0, -20)</Action>
+<Action>(10, 0, -30)</Action>
+<Action>(10, 0, -40)</Action>
+<Action>(10, 0, -50)</Action>
+<Action>(10, 0, -60)</Action>
+<Action>(10, 0, -70

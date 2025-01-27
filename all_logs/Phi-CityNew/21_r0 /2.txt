@@ -1,0 +1,11 @@
+ <Reasoning>I will proceed to fly below 10 meters above the ground, ensuring my search area is confined within the visible part of the image to avoid the risk of flying into unknown areas or anything that could be out of bounds.</Reasoning>
+<Action>(-80, 0, -10)</Action>
+
+<Reasoning>My next move involves scanning the area of the grid that could potentially hide the truck. I'll make a conservative move within the image area to see if I can spot the truck without straying into risky areas.</Reasoning>
+<Action>(-60, 0, -10)</Action>
+
+<Reasoning>I will continue to search for the truck, taking care to stay within the visible area. This will help me stay safe and avoid any hazards that could be present outside the image.</Reasoning>
+<Action>(-50, 0, -10)</Action>
+
+<Reasoning>I will adjust my search pattern to ensure that I am always within the confines of the image, making sure I do not venture into unknown territories while continuing to look for the truck.</Reasoning>
+<Action>(-40, 0, -10)</Action>

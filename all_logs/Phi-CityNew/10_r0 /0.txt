@@ -1,0 +1,13 @@
+ <Reasoning>The object in question must be somewhere in the image, and since it's a white pickup truck, it's not immediately apparent where it might be. I need to move closer to the ground to have a better chance of spotting it. I will also try to move slightly to the right to cover more ground.</Reasoning>
+<Action>(10, 0, -30)</Action>
+
+<Reasoning>I need to get even closer to the ground to increase my chances of finding the truck. I'm also going to adjust my position slightly to the left because the truck might not be in the center of the image.</Reasoning>
+<Action>(12, 0, -30)</Action>
+
+<Reasoning>I'm moving further to the left and lower to make sure I cover more ground. The object might be closer to the right edge or to the center edge.</Reasoning>
+<Action>(15, 0, -30)</Action>
+
+<Reasoning>The object is not visible yet, but I'm moving in the right direction. I need to lower my altitude further to see if it's there.</Reasoning>
+<Action>(18, 0, -30)</Action>
+
+<Reasoning>I'm

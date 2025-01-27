@@ -1,0 +1,10 @@
+ <Reasoning>Since I need to locate an object below me, I will start by moving closer to the ground. I'm aware of the object's coordinates on the grid, specifically at (62, 62), so I will move towards this point to see if I can find it.</Reasoning>
+<Action>(0, 0, -31)</Action>
+
+<Reasoning>As I move closer to ground level, I will do a scan to find the object. Given its coordinates seem to be close to the center of the street, it might be harder to spot. I'll navigate through the area to get a better view.</Reasoning>
+<Action>(0, 0, -31)</Action>
+
+<Reasoning>I'm not yet close enough to the ground to find the object. The yellow point on the grid might be the object I'm looking for, so I'll move slightly north to get a better view while still maintaining an altitude below the object.</Reasoning>
+<Action>(-1, 0, -31)</Action>
+
+<Reasoning>I'm finally close enough to the ground to see the object clearly. It's the yellow point on the grid (31, 31), which matches one of the labels in the image. I will move down to be

@@ -1,0 +1,16 @@
+ <Reasoning>At coordinates (-1, 1), the altitude is too high to conduct a thorough search for the forest fire.</Reasoning>
+<Action>(0, 1, -1)</Action>
+
+<Reasoning>The coordinates have changed to (0, 1, -1), which allows me to look closer at the bottom section of the image.</Reasoning>
+<Action>(0, -1, -3)</Action>
+
+<Reasoning>Now at coordinates (0, -1, -3), I can see several spots of intense orange coloration, which are likely the forest fires.</Reasoning>
+<Action>(0, -1, -6)</Action>
+
+<Reasoning>I am now at coordinates (0, -1, -6), and the fire is directly in front of me. I must fly below the fire to confirm its presence.</Reasoning>
+<Action>(0, -1, -10)</Action>
+
+<Reasoning>At coordinates (0, -1, -10), I am directly above the fire, confirming its presence. My altitude is below the required 10 meters, and I am centered on the fire.</Reasoning>
+<Action>(0, -1, -12)</Action>
+
+<Reasoning>

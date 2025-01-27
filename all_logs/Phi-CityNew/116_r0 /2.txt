@@ -1,0 +1,19 @@
+ <Action space>
+    <Reasoning>The construction site seems to be north of the starting position. I will move towards that direction while keeping an eye on the grid to make sure I am moving in the right direction.</Reasoning>
+    <Action>(48, 0, -10)</Action>
+</Action space>
+
+<Action space>
+    <Reasoning>I am now at the construction site. The yellow point on the grid is indeed the construction site. I am now flying at 3 meters above ground level.</Reasoning>
+    <Action>(48, 0, -20)</Action>
+</Action space>
+
+<Action space>
+    <Reasoning>The construction site is now in my field of view. I am now below 10 meters above ground level.</Reasoning>
+    <Action>(60, 0, -30)</Action>
+</Action space>
+
+<Action space>
+    <Reasoning>I am now below the construction site. The yellow point on the grid is indeed the construction site. I have found the construction site.</Reasoning>
+    <Action>(70, 0, -30)</Action>
+</Action space>

@@ -1,0 +1,10 @@
+ <Reasoning>The area at (4, 4) seems to be an outlier with its lighter color. It's not what I'm looking for, but worth noting for the anomaly search.</Reasoning>
+<Action>(8, 0, -10)</Action>
+
+<Reasoning>The green area at (8, 8) stands out as it has a different color and texture compared to its surroundings. This could be the anomaly.</Reasoning>
+<Action>(8, 0, -10)</Action>
+
+<Reasoning>The green area at (8, 8) appears to be the anomaly we were looking for. Its distinct color and texture confirm it as the correct object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The green area at (8, 8) seems to be the anom

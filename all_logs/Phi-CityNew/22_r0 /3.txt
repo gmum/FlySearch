@@ -1,0 +1,13 @@
+ <Reasoning>
+I will make my way to the coordinates that are closest to the object's location on the grid. This should bring me into a better position to spot the object.
+</Reasoning>
+<Action>(0, -1, -10)</Action>
+
+<Reasoning>
+I'll now move downward to get a better angle of the potential object.
+</Reasoning>
+<Action>(1, -1, -10)</Action>
+
+<Reasoning>
+If the object is not directly at the coordinates I'm moving to, I'll adjust my direction slightly to the right to explore more of the image.
+</Reason

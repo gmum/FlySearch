@@ -1,0 +1,8 @@
+<Reasoning>Based on the aerial view, I will start by moving towards the center point of the grid (0, 0) and decrease my altitude to 10 meters to get a closer look at the potential object in that area.</Reasoning>
+<Action>(0, 0, -48)</Action>
+
+Once I have arrived at the center point and I am 10 meters above the ground, I will observe the area closely to determine if the object is there. If the object is not visible, I will continue to search by moving in a systematic pattern, such as a spiral or grid search, while maintaining an altitude below 10 meters.
+
+If I find the object, I will reply with "FOUND" and ensure that I am centered on the object and at an altitude of 10 meters or less. If I do not find the object, I will continue the search until I have exhausted all possible locations within the search area and my move limit.
+
+If I have exhausted all possible locations and moves and have not found the object, I will report that the object was not found within the given constraints.

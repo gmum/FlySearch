@@ -1,0 +1,6 @@
+ <Reasoning>I will move to a higher altitude to ensure the building is in my view.</Reasoning>
+<Action>(2, 2, -1)</Action>
+<Reasoning>The building is partially visible. I will move closer to it to confirm its identity.</Reasoning>
+<Action>(3, 2, -1)</Action>
+<Reasoning>The building is within my view. I will stay here to confirm my findings.</Reaction>
+<Action>(3, 2, -1)</Action>

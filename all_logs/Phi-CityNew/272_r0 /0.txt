@@ -1,0 +1,17 @@
+ <Reasoning>I need to move closer to ground level to be able to identify the object better. I will move down gradually to ensure I have a good view. It is important to note that I have limited time and altitude to conduct this search, so I need to be efficient in this process.</Reasoning>
+
+<Action>(-10, 0, -10)</Action>
+
+<Reasoning>This orange marker seems to be the object I'm looking for. It's at ground level and stands out against the others. I've chosen to move down 10 meters to see if I can get a closer look.</Reasoning>
+
+<Action>(0, -0, -32)</Action>
+
+<Reasoning>This white point is the last object I need to investigate. I believe it might also be the object in question, given its color and position. I will move down 10 meters to see if it's the target.</Reasoning>
+
+<Action>(0, -0, -32)</Action>
+
+<Reasoning>I think I have found the object! It's the orange marker at ground level. To confirm, I will lower myself to 5 meters below it.</Reasoning>
+
+<Action>(0, -5, -35)</Action>
+
+<Re

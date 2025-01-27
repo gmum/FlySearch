@@ -1,0 +1,8 @@
+ <Reasoning>The red object, which seems to be the forest fire, is visible on the right side of the grid. I need to move closer to confirm if it is the fire.</Reasoning>
+<Action>(0, 0, -7)</Action>
+
+<Reasoning>The drone remains at a safe altitude, and the red object is still clearly visible.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The red object is confirmed as the forest fire, as it is visible from above and below.</Reasoning>
+<Action>FOUND</Action>

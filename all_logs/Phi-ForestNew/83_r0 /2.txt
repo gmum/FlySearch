@@ -1,0 +1,17 @@
+ <Reasoning>
+    At this lower altitude, my focus will be on scanning the ground closely while adhering to the command of flying below 10 meters relative to the subject when found. I will begin at the point closest to the subject's predicted location and continue to move systematically to cover all areas efficiently within the constraints provided.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    Moving from my starting point, I will navigate through the grid, being mindful of the search area limitations and keeping a close watch on the ground. If the subject is not in the first grid point, I will continue to move in a grid pattern, ensuring full coverage within the given search space.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    After the initial sweep of the area, I will remain in this lower altitude, continuing to scan the grid points for the subject. I will make adjustments to my altitude as needed, but I will prioritize staying within the altitude limit and maintaining a thorough search.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    If

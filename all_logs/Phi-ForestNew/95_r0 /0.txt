@@ -1,0 +1,2 @@
+ <Reasoning>I am trying to find a building in the image. I will move closer to the object that might be the building based on the grid coordinates provided.</Reasoning>
+<Action>(1, 1, -10)</Action>

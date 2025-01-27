@@ -1,0 +1,15 @@
+ <Reasoning>
+I will start by moving to a point in the image that is likely to be closer to the car. Since I don't have an exact view of the car, I will use the coordinates that are nearest to it.
+</Reasoning>
+<Action>(23, 23, -10)</Action>
+
+<Reasoning>
+I have moved to a better position to look for the car. Now, I will perform a systematic search in a grid pattern to cover a larger area of the image.
+</Reasoning>
+<Action>(-23, 23, 0)</Action>
+<Action>(-11, 23, 0)</Action>
+<Action>(-11, 0, 0)</Action>
+<Action>(0, 0, 0)</Action>
+<Action>(11, 0, 0)</Action>
+<Action>(11, 23, 0)</Action>
+<Action>(-11, 23)

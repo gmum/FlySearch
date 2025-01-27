@@ -1,0 +1,13 @@
+ <Reasoning>The coordinates above have several points, but it's not clear which one is the object. Since I'm not seeing the object yet, I will fly lower and slightly to the west to see the area in more detail.</Reasoning>
+<Action>(-10, 0, -20)</Action>
+
+<Reasoning>No significant changes in altitude or coordinates, but the area has slightly shifted. I'll move further down to see if the object might be hiding within the grass.</Reasoning>
+<Action>(-20, -0, -20)</Action>
+
+<Reasoning>Still no object in sight. I'll continue to move lower to keep scanning the area. Considering the object may be underground or partially obscured, flying further down should increase my chances of seeing it.</Reasoning>
+<Action>(-30, -5, -30)</Action>
+
+<Reasoning>I still haven't found anything. I am going to make one last move down to ensure I am as close to the ground as possible to spot the object.</Reasoning>
+<Action>(-40, -10, -30)</Action>
+
+<Reasoning>The object seems to be under the tree. It's partially obscured, which makes

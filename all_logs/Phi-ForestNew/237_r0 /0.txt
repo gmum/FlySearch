@@ -1,0 +1,11 @@
+ <Reasoning>
+To begin the search for the anomaly, I would identify the central point in the image, which appears to be at (0,0) coordinates, to get a good overview of the area. The object of interest may not be immediately visible from this vantage point, so I would analyze the surrounding areas for any unusual patterns or items that differ from the rest of the environment. If a suspicious object is spotted, I will then calculate the move required to get below it, ensuring the altitude is not more than 51 meters (my current altitude) to minimize the risk.
+</Reasoning>
+
+<Action>(-10, 0, -10)</Action>
+
+<Reasoning>
+After analyzing the area around the central point, I noticed a dark object consistent with the anomaly. I will now proceed to get low to the object, ensuring I am within 10 meters below it to fulfill the task's requirements.
+</Reasoning>
+
+<Action>(0, 0, -5)</Action>

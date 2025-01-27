@@ -1,0 +1,146 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a road construction site.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 82 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see some construction equipment at the bottom of the image, I should move closer and lower to identify it. I will move to (0, -55) and descend by 70 meters to be closer to the object.</Reasoning>\n<Action>(0, -55, -70)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 67 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>My previous move made me go too low and I almost crashed. I need to be more careful with my altitude changes. I will go up a bit and to the North since I think the construction site is in that direction.</Reasoning>\n<Action>(0, 0, 30)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I think I see construction materials at (-65, 0). I'll move there and descend to get a better look.</Reasoning>\n<Action>(-65, 0, -70)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 67 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I keep crashing trying to descend, I need to be more careful. I will go up a bit and try to search for the object again. It seems I was in the wrong direction so I will go back to the center and slightly to the south.</Reasoning>\n<Action>(0, -32, 30)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I think the construction site is at the bottom of the image at coordinates (0, -65). I should move there and descend to be under 10 meters from it.</Reasoning>\n<Action>(0, -65, -87)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 17 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I almost crashed again! I am clearly not good at descents. I will go up again and evaluate the situation. I will go to the center.</Reasoning>\n<Action>(0, 0, 30)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 47 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I think the construction site is at the bottom right of my view at coordinates (16, -16). I will go there and descend to be under 10 meters of it.</Reasoning>\n<Action>(16, -16, -37)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 23 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am struggling with altitude and crashing so I will go up a bit. I will also go to the center of the image again.</Reasoning>\n<Action>(0, 0, 30)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 53 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see construction equipment at (18, 0). I will go there and descend to be under 10m from it.</Reasoning>\n<Action>(18, 0, -45)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am having a lot of trouble with descents. I will go up again and try to find the construction site. I will go to the center.</Reasoning>\n<Action>(0, 0, 20)</Action>\n"
+    ]
+]

@@ -1,0 +1,2 @@
+ <Action>(0, 0, -0)</Action>
+<Reasoning>The drone will move to (0, 0, -0) meters, which means it will fly at the same altitude as the ground. The trash pile should be clearly visible and the drone will be 10 meters closer, which should be within the search area. The drone will not be able to fly below 10 meters relative to the trash pile.</Reasoning>

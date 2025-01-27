@@ -1,0 +1,4 @@
+```xml
+<Reasoning>This is very frustrating. I need to go up and away from the wall. I will go to (0, 0) and increase the altitude by 60 meters. This should clear the wall and I can begin searching again.</Reasoning>
+<Action>(0, 0, 60)</Action>
+```

@@ -1,0 +1,13 @@
+ <Reasoning>Starting from (0, 0) is a good decision to keep the search efficient and safe. After assessing the area, I need to adjust my altitude to avoid any potential obstacle and to get a clearer view for the next search area.</Reasoning>
+
+<Action>(0, 0, -13)</Action>
+
+<Reasoning>I've identified a possible construction site at (3, 0). I need to be close enough to assess it but also ensure I'm not too low for safety. I'll fly a bit higher and then descend cautiously towards the site.</Reasoning>
+
+<Action>(0, 0, -12)</Action>
+
+<Reasoning>I've confirmed the site at (3, 0). Now I'll continue my search in a controlled pattern to cover all areas around the site systematically.</Reasoning>
+
+<Action>(0, 0, -12)</Action>
+
+<Re

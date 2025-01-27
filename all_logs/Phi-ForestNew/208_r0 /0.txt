@@ -1,0 +1,3 @@
+ <Reasoning>Based on the visible coordinates, there are several points of interest. I'll start with the point closest to the center of my field of view, which is (12, 12). This point is already at the lowest altitude and if the object is located there, it will be less than 10 meters below the drone, satisfying the criteria.</Reasoning>
+
+<Action>(0, 0, -5)</Action>

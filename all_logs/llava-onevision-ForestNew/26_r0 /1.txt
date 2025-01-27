@@ -1,0 +1,13 @@
+<Reasoning>Since I did not find the trash pile at the center of the grid, I will continue to move to the next point in my search pattern. I will move to the top-right corner of the grid and continue to descend to 10 meters to get a closer look at the ground.</Reasoning>
+<Action>(13, 7, -10)</Action>
+
+<Reasoning>At this point, I will check for the trash pile. If I do not find it, I will move to the next point in my search pattern. I will continue this process until I have covered the entire area or found the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since I did not find the trash pile at the top-right corner, I will continue to move to the next point in my search pattern. I will move to the bottom-right corner of the grid and continue to descend to 10 meters to get a closer look at the ground.</Reasoning>
+<Action>(13, -7, -10)</Action>
+
+<Reasoning>At this point, I will check for the trash pile. If I do not find it, I will move to the next point in my search pattern. I will continue this process until I have covered the entire area or found the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since I did

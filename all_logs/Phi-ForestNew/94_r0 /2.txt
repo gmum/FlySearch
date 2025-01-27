@@ -1,0 +1,11 @@
+ <Reasoning>With the current altitude at 10 meters above ground level, I need to move in a new direction to cover fresh ground and potentially spot the person.</Reasoning>
+<Action>(0, 1, 0)</Action>
+<Reasoning>Moving slightly to the northwest might lead me to areas not yet searched and increase the chances of finding the person.</Reasoning>
+<Action>(1, 1, 0)</Action>
+<Reasoning>I will maintain the altitude and continue to scan the area as I have not yet spotted any sign of the person, indicating that they might be in a new location.</Reasoning>
+<Action>(1, 1, 0)</Action>
+<Reasoning>I will make another slight turn to the northeast to thoroughly search this area, as it is likely the person's last known location.</Reasoning>
+<Action>(2, 1, 0)</Action>
+<Reasoning>As I continue to scan the northeast, I will keep an eye out for any movement or indicators of the person's presence.</Reasoning>
+<Action>(2, 1, 0)</Action>
+<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.

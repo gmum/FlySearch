@@ -1,0 +1,6 @@
+ <Action space>
+    <Action>(0, -10, -30)</Action>
+    <Reasoning>The UAV is in a critical state with an imminent collision. I must take immediate action to avoid impact with the object and initiate an emergency stop to stabilize the UAV.</Reasoning>
+</Action space>
+
+[Reply "EMERGENCY STOP"]

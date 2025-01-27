@@ -1,0 +1,8 @@
+ <Reasoning>I'll start by going up to increase my chances of spotting the building, especially since it's not immediately in my view.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>I've identified a small structure that might be the building. I will approach it to verify.</Reasoning>
+<Action>(4, 0, -10)</Action>
+<Reasoning>The building is right in front of me now. I will fly at the correct altitude to confirm its identity.</Reasoning>
+<Action>(4, 0, 0)</Action>
+<Reasoning>I'm now sure that this is the building. I will stay here to confirm my findings.</Reasoning>
+<Action>(4, 0, 0)</Action>

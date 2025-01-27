@@ -1,0 +1,14 @@
+ <Reasoning>I am still too high to identify the object correctly. I need to fly lower to get a better view.</Reasoning>
+<Action>(0, 19, -20)</Action>
+
+<Reasoning>The object seems to be in the bottom left quadrant, but I need to be more precise.</Reasoning>
+<Action>(1, 29, -30)</Action>
+
+<Reasoning>I am still too high. It is time to get closer to the ground.</Reasoning>
+<Action>(2, 39, -40)</Action>
+
+<Reasoning>The object seems to be in the bottom left quadrant, but I need to be more precise.</Reasoning>
+<Action>(3, 49, -50)</Action>
+
+<Reasoning>The object seems to be in the bottom right quadrant, but I need to be more precise.</Reasoning>
+<Action>(4, 59, -60)</Action>

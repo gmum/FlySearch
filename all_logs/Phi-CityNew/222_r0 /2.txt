@@ -1,0 +1,11 @@
+ <Reasoning>I must reduce my altitude to search for the object. Since I am already close to the ground, I will stay within the 1 meter altitude range. The object might be on the road, so I will move towards the road to give me a better chance to spot it.</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>The object is not clearly visible. I will move to the right to cover more of the road and increase the chances of finding the object. Staying below 1 meter altitude is essential.</Reasoning>
+<Action>(-1, -1, -1)</Action>
+
+<Reasoning>I am in a better position to search for the object. I will move slightly right to give me a better view of the road and to increase the chances of finding the object. Being below 1 meter altitude is crucial.</Reasoning>
+<Action>(-1, -0.5, -1)</Action>
+
+<Reasoning>After analyzing the image, I still cannot locate the object. I will move slightly right to cover more of the road to maximize the chances of finding the object. Being below 1 meter altitude is important.</Reasoning>
+<Action>(-1, -0.5, -1)</Action

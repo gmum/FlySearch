@@ -1,0 +1,2 @@
+<Reasoning>I see a building at (19, -19). I need to move there and go down to be less than 10 meters above it.  I'll start by moving to the center of the building, and then go down. </Reasoning>
+<Action>(19, -19, 0)</Action>

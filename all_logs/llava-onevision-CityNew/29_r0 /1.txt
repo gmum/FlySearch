@@ -1,0 +1,4 @@
+<Reasoning>
+    I see a blue sports car on the street at coordinates (0, 0). I will move towards it and adjust my altitude to be below 10 meters above it.
+</Reasoning>
+<Action>(0, 0, -25)</Action>

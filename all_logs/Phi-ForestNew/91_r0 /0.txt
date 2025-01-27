@@ -1,0 +1,23 @@
+ <Reasoning>
+    The object does not appear to be in the immediate vicinity. I should move slightly to the right to continue the search. As I get closer, I will try to decrease my altitude.
+    </Reasoning>
+    <Action>(5, 10, 10)</Action>
+
+    <Reasoning>
+    The object appears to be north of the drone. I will move slightly to the right and then slightly to the left in the northern direction to get a better angle on the object.
+    </Reasoning>
+    <Action>(0, 0, -10)</Action>
+
+    <Reasoning>
+    The object appears to be in the northeastern direction. I will move slightly to the northeast to get a better view.
+    </Reasoning>
+    <Action>(2, 3, -10)</Action>
+
+    <Reasoning>
+    The object appears to be directly above the drone. I will move slightly to the east to get a better view.
+    </Reasoning>
+    <Action>(3, 3, -10)</Action>
+
+    <Reasoning>
+    The object is now directly above the drone. I will move slightly to the northeast to get a better view.
+    </Reason

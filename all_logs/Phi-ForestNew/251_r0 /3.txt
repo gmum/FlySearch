@@ -1,0 +1,2 @@
+ <Action>(-30, 0, -40)</Action>
+<Reasoning>Based on the previous coordinates, I'm moving the drone further to the left and down to (-30, 0, -40) to ensure we are as close to the coordinates (0, 0, -40) as possible. It's the closest known point to the initial point, and staying within the drone's view is crucial for safety and precision in the search for the anomaly. The coordinates (0, 0, -40) is the most likely area where we would find the object, and I'm making sure to be close to it before it disappears from view.</Reasoning>

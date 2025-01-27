@@ -1,0 +1,19 @@
+ <Reasoning>I am closer to the ground, which should improve my chances of locating the person. I will move down carefully to avoid any obstacles.</Reasoning>
+
+<Action>(9, 0, -15)</Action>
+
+<Reasoning>I have a better view of the ground after taking the previous action. I will move to check the coordinates that are the closest to the object's last known location.</Reasoning>
+
+<Action>(9, -10, -15)</Action>
+
+<Reasoning>I am now in a better position to locate the person. I will move slightly to the right to ensure that I am centered on them.</Reasoning>
+
+<Action>(9, -9, -15)</Action>
+
+<Reasoning>I can see the person now. I need to ensure that I am directly over them to locate them. This means I will need to move slightly up to get the best view.</Reasoning>
+
+<Action>(9, -9, -15)</Action>
+
+<Reasoning>I am now directly above the person. I will move slightly to the left to ensure that I am centered on them. This will give me the best view of them.</Reasoning>
+
+<Action>(9, -8, -15)</Action

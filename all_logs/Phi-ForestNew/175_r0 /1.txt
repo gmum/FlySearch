@@ -1,0 +1,8 @@
+ <Reasoning>Considering the object's location at roughly (-0.73, 1.73), the drone needs to descend to improve visibility. The current altitude is 109 meters, which is above the object. To properly locate the person, the altitude must be reduced while ensuring the object is within view. A careful descent is essential to prevent missing the target while maintaining a safe altitude throughout the operation.</Reasoning>
+<Action>(0, 1.73, 99)</Action>
+
+<Reasoning>Since the altitude is still quite high, descending further appears necessary. This move should bring the drone closer to the object, ensuring that it is within the drone's field of view and is at the correct altitude to spot the person.</Reasoning>
+<Action>(0.2, 2.73, 92)</Action>
+
+<Reasoning>The drone's current coordinates are still not optimal for spotting the object. A further descent of 2 meters will bring the altitude closer to the object on the grid. This approach is to ensure that the object is within the drone's field of view and at a height that is conducive to spotting the person.</Reasoning>
+<Action>(2.2, 2.73, 

@@ -1,0 +1,2 @@
+<Reasoning>I see a building at (0,0). I should move directly above it and reduce the altitude to be below 10 meters. </Reasoning>
+<Action>(0, 0, -30)</Action>

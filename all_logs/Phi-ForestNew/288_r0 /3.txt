@@ -1,0 +1,10 @@
+ <Reasoning>The area at (2, 1) has a different texture and color compared to its surroundings. It's not the anomaly, but it's worth mentioning for context.</Reasoning>
+<Action>(1, 0, -5)</Action>
+
+<Reasoning>The green area at (1, 1) seems to be the anomaly. Its distinct color and texture compared to the surrounding environment suggest it is the correct object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The green area at (1, 1) appears to be the anomaly. Its distinct color and texture confirmed it as the correct object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The green area at (1, 1) seems to be the anom

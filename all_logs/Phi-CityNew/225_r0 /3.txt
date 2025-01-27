@@ -1,0 +1,8 @@
+ <Reasoning>I am now at the lowest possible altitude to search for the object at coordinates (0, 0). I need to ensure that I am centered on the object to confirm its presence.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I've located the object at (0, 0), but I need to confirm it's in my field of view. I'll move a bit to the left to ensure I'm centered on it before I reply with 'FOUND'.</Reasoning>
+<Action>(-1, 0, 0)</Action>
+
+<Reasoning>I'm now centered on the object, and it's definitely in my field of view. I will reply with 'FOUND' to show I've located the object.</Reasoning>
+<Action>FOUND</Action>

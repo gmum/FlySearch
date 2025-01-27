@@ -1,0 +1,16 @@
+ <Reasoning>The starting altitude is too high for the initial move. I need to fly lower to improve my chances of finding the object.</Reasoning>
+<Action>(74, 74, -50)</Action>
+
+<Reasoning>I've moved to a lower altitude to increase my chances of finding the object. Now I need to search the area around me for the trash pile.</Reasoning>
+<Action>(74, 74, -50)</Action>
+
+<Reasoning>I'm moving slightly to the right to cover more ground. This will help me find the large trash pile more efficiently.</Reasoning>
+<Action>(72, 74, -50)</Action>
+
+<Reasoning>The trash pile should be around this area, I'm going to move lower to get closer and try to spot it.</Reasoning>
+<Action>(72, 72, -60)</Action>
+
+<Reasoning>I've seen a pile of waste in the distance. I'm going to fly lower to get a closer look.</Reasoning>
+<Action>(69, 72, -60)</Action>
+
+<Reasoning>The pile is close, but I

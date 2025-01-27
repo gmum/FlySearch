@@ -1,0 +1,14 @@
+ <Reasoning>With my altitude set, I'll begin a thorough search for the trash pile. I'll start by heading towards (8, 8) to set the direction for my search.</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>The object is not visible at (8, 8). I'll proceed to (8, 4) to cover a different area of the map.</Reasoning>
+<Action>(-2, 0, -5)</Action>
+
+<Reasoning>Still no sign of the trash pile at (8, 4). I'll move to (8, 0) to shift my perspective.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+
+<Reasoning>The object is not visible at (8, 0). I'll continue my search by moving to (8, -4) which is closer to the center of the map.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+
+<Reasoning>The object is not within my current view. I'll proceed to (4, 4) to check a different section of the area.</Reasoning>
+<Action>(-2, 0, -

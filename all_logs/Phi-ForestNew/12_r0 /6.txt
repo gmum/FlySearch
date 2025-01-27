@@ -1,0 +1,4 @@
+ <Reasoning>
+    The drone is at an emergency stop due to an object in direct contact with the ground. I need to revert to a safe altitude and adjust the drone's orientation.
+</Reasoning>
+<Action>(0, 0, -1)</Action>

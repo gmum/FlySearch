@@ -1,0 +1,14 @@
+ <Reasoning>I have flown too close to an obstacle and would have hit it. I need to stop and assess the situation to ensure the safety of the vehicle and the mission.</Reasoning>
+<Action>Emergency stop</Action>
+
+<Reasoning>Upon assessment, I have determined that the obstacle is a large rock that would have caused damage to the vehicle and led to mission failure. I will need to find a safe way to avoid the obstacle and continue the search.</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+<Reasoning>After scanning the area for a safe spot, I have identified a clearing ahead. I will make a controlled landing and perform repairs before continuing the mission.</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+<Reasoning>The vehicle has been safely landed. I will use this time to assess the damage and plan the next steps in the mission.</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+<Reasoning>After a thorough assessment, I have determined that the vehicle is repairable. I will proceed to make the necessary repairs and then continue the search for the anomaly.</Reasoning>
+<Action>(0, 0,

@@ -1,0 +1,2 @@
+<Reasoning>Given the objective to find a crowd, I should first aim to move closer to the ground level as crowds are more likely to be found at lower altitudes. Moving directly downwards with a small x and y offset will help in maintaining a central position for better visibility.</Reasoning>
+<Action>(0, 0, -20)</Action>

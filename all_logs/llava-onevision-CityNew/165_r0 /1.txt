@@ -1,0 +1,13 @@
+<Reasoning> I have arrived at (0,-20) and decreased my altitude. Now I will move to the next point on the grid while decreasing my altitude. I will move to (0,-40) and decrease my altitude by 10 meters.</Reasoning>
+<Action>(0,-40,-10)</Action>
+
+<Reasoning> I have arrived at (0,-40) and decreased my altitude. Now I will move to the next point on the grid while decreasing my altitude. I will move to (20,-40) and decrease my altitude by 10 meters.</Reasoning>
+<Action>(20,-40,-10)</Action>
+
+<Reasoning> I have arrived at (20,-40) and decreased my altitude. Now I will move to the next point on the grid while decreasing my altitude. I will move to (20,-60) and decrease my altitude by 10 meters.</Reasoning>
+<Action>(20,-60,-10)</Action>
+
+<Reasoning> I have arrived at (20,-60) and decreased my altitude. Now I will move to the next point on the grid while decreasing my altitude. I will move to (40,-60) and decrease my altitude by 10 meters.</Reasoning>
+<Action>(40,-60,-10)</Action>
+
+<Reasoning> I have arrived at (40,-

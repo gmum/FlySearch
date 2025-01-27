@@ -1,0 +1,12 @@
+ <Reasoning>
+    At 1 meter above ground level, the UAV will need to navigate to the precise location of the trash pile. The coordinates are approximately (0, -1), and upon arrival, a descent to ground level is essential to confirm the pile's presence.
+</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>
+    The drone will then verify the trash pile's presence at or below ground level. A confirmation will be made and the task will be declared complete.
+</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>
+    Lastly, the UAV will report "FOUND" to indicate the successful completion of the mission, confirming the trash pile's presence.

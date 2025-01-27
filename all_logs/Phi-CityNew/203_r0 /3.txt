@@ -1,0 +1,2 @@
+ <Reasoning>At 41 meters above ground level, I should be able to find the object at most 10 meters below, considering the drone's altitude has not exceeded 120 meters. I will look for coordinates that are lower than my current altitude.</Reasoning>
+<Action>(0, 0, 40)</Action>

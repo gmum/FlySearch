@@ -1,0 +1,19 @@
+ <Reasoning>I believe I have identified a yellow point that could be the object in question, so I will try to get closer to it.</Reasoning>
+
+<Action>(3, 0, -20)</Action>
+
+<Reasoning>I have determined that the yellow point is the object in question.</Reasoning>
+
+<Action>(1, 0, -9)</Action>
+
+<Reasoning>I am now below the object, so I have found it.</Reasoning>
+
+<Action>(1, 0, -9)</Action>
+
+<Reasoning>I am now below the object, so I have found it.</Reasoning>
+
+<Action>(1, 0, -9)</Action>
+
+<Reasoning>There is a point marked (35, -23) that doesn't fit in with the rest of the environment. I will fly to that point to check if it is the object in question. This point is likely to be an anomaly.</Reasoning>
+
+<Action>(35, -23, 0)</Action>

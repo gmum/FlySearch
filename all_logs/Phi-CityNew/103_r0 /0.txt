@@ -1,0 +1,13 @@
+   
+    <Reasoning>The coordinates (29, 29) seem to be a potential location of the fire. I am currently at (29, 29) meters above ground level. To fly more accurately, I need to move closer and lower my altitude.</Reasoning>
+    <Action>(0, 29, -20)</Action>
+</Reasoning>
+<Reasoning>The object seems to be close by here. Now I should move down further to get a better view. I am planning to move to the coordinates (0, 29, -24) meters above ground level.</Reasoning>
+    <Action>(0, 29, -24)</Action>
+</Reasoning>
+    <Reasoning>The coordinates (0, 29, -24) are near the object. Moving to these coordinates would put me at a lower altitude to further investigate.</Reasoning>
+    <Action>(-2, 29, -30)</Action>
+</Reasoning>    
+    <Reasoning>I am now at a much lower altitude and closer to the object. I should now check if I found the object.</Reasoning>
+    <Action>(0, 29, -30)</Action>
+</Reasoning

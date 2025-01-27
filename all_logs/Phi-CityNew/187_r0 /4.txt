@@ -1,0 +1,7 @@
+ <Reasoning>I have corrected my altitude and will search for the object again, making sure not to get too close this time.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>I have moved to a safe distance from the object. Now, I will scan the area for the object.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>I have found the object. The object is located at the bottom right quadrant of the image, which is consistent with

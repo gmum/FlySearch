@@ -1,0 +1,11 @@
+ <Reasoning>I will start by flying to a yellow point on the grid that might be the object in question. From there, I need to explore the area downwards to get as close to the object as possible without exceeding the altitude limitations. If the object is not found, I will continue to move to other points on the grid that seem potentially relevant.</Reasoning>
+
+<Action>(5, 0, -30)</Action>
+<Reasoning>Based on the current coordinates, I am trying to get closer to the yellow point on the grid that might be the object in question. I will proceed to move the drone to the yellow point.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Now that I am at the yellow point, I will explore the area downwards to get close to the potential object while respecting the altitude limitations.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I will continue to move downwards, keeping an eye on the ground to find the potential object. If I find it, I will reply with "FOUND". I will ensure that the drone remains close to the ground without exceeding the altitude limit.</Reasoning>
+<Action>(5, 0, -30)</

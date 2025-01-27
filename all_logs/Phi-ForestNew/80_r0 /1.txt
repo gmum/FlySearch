@@ -1,0 +1,13 @@
+ <Reasoning>With the new coordinates, I will start from (43, 21, -60) and descend towards the object, checking the area as I go. I will keep moving to different points systematically to ensure a thorough search.</Reasoning>
+<Action>(-3, -2, -50)</Action>
+
+<Reasoning>After some time, if I haven't found the object, I'll head to (0, 0, -60) to scan that area and then return to the last point to continue searching methodically.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>If no object is visible at the coordinates (0, 0, -60), I will proceed to (43, 43, -60) and continue the search in the same fashion.</Reasoning>
+<Action>(43, 43, -40)</Action>
+
+<Reasoning>I will keep this pattern of descending to the object and climbing back up to cover more area until I find the person or run out of altitude to change.</Reasoning>
+<Action>(43, 43, -40)</Action>
+
+<Reasoning>As I continue to search, I will ensure to communicate

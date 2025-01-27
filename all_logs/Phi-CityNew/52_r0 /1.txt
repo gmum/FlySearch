@@ -1,0 +1,13 @@
+ <Reasoning>I must move closer to the ground while being cautious of the buildings. I will go south to get closer, then slightly to the west to keep an eye on the yellow point on the grid. By doing this, I ensure I am approaching the object at the correct angle.</Reasoning>
+<Action>(50, -5, 82)</Action>
+
+<Reasoning>I will now continue moving southwest, ensuring I am maintaining a safe distance from the buildings. This will aid in getting closer to the object without risking a collision.</Reasoning>
+<Action>(55, -5, 82)</Action>
+
+<Reasoning>I will adjust my direction slightly to the northeast to optimize my search pattern and preserve altitude safety. This should help in reducing altitude while staying on course.</Reasoning>
+<Action>(60, -10, 82)</Action>
+
+<Reasoning>Next, I will move further southwest to maintain the safe distance from the buildings and continue in the direction of the yellow point on the grid. This will help in fine-tuning my position closer to the object.</Reasoning>
+<Action>(65, -10, 82)</Action>
+
+<Reasoning>I am now closer to the object and need to

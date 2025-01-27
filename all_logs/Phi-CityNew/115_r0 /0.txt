@@ -1,0 +1,13 @@
+ <Reasoning>I am starting my search from a certain altitude. I need to get as close to the ground as possible to find the construction site. But I also need to be careful not to fly too low and risk collision with the ground or other objects.</Reasoning>
+<Action>(9, 0, -60)</Action>
+
+<Reasoning>I am now 68 meters above ground level and will continue to move closer to the ground to find the construction site. I will also try to move to the right to cover more area.</Reasoning>
+<Action>(9, -1, -60)</Action>
+
+<Reasoning>I am now 69 meters above ground level and still not close enough to the ground. I will continue to move closer to the ground while also moving to the left to cover more area.</Reasoning>
+<Action>(-1, -1, -60)</Action>
+
+<Reasoning>I am still not close enough to the ground. I will continue to move closer to the ground and move to the left.</Reasoning>
+<Action>(-2, -1, -60)</Action>
+
+<Reasoning>I am now 70 meters above ground level, but I still need to get closer. I will move closer to the ground and to the left.</Re

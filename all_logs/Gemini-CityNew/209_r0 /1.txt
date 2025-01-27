@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I am close to the object but not yet below 10 meters. I will go lower to be below 10 meters above the object. The object is at around (9, 0), I will move there and go lower.</Reasoning>
+<Action>(9, 0, -6)</Action>
+```

@@ -1,0 +1,15 @@
+ <Reasoning>Since I am currently 85 meters above ground level, I need to descend closer to the ground to get a better view of the object below. I will analyze the grid to determine the best path to take.</Reasoning>
+<Action>(-1, -1, -90)</Action>
+
+<Reasoning>After analyzing the grid, I have found a point that could potentially be the object. To get closer, I will make a series of moves.</Reasoning>
+<Action>(-2, -2, -20)</Action>
+<Action>(-3, -3, -10)</Action>
+<Action>(-3, -2, -10)</Action>
+<Action>(-4, -4, -10)</Action>
+<Action>(-5, -5, -10)</Action>
+<Action>(-6, -6, -10)</Action>
+
+<Reasoning>After descending 10 meters, I can now confirm that the point I am looking at is the object that needs to be extinguished. I will fly at a height of 0 meters below the object to have it in my field of view.</Reasoning>
+<Action>(-6, -5, 0)</Action>
+
+<Reasoning>I

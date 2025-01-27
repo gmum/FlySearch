@@ -1,0 +1,11 @@
+<Reasoning>I will start by moving to the center of the image to get a better view of the surroundings and look for any signs of the red pickup truck.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that I am at the center, I will move down to get a closer look at the objects on the ground.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>At this altitude, I can see a red pickup truck on the road. I will move closer to it to confirm if it is the object in question.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Now I am at a lower altitude and I can confirm that the red pickup truck is the object in question. I will stay at this altitude and reply with "FOUND".</Reasoning>
+FOUND

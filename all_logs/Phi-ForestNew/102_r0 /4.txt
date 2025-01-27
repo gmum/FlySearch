@@ -1,0 +1,2 @@
+ <Reasoning>The image shows a forest fire at the coordinates (1, 0) on the grid overlay. My current altitude is 1 meter above ground level. To confirm the presence of the forest fire and to be within the field of view when I reply with "FOUND", I need to move the drone lower.</Reasoning>
+<Action>(1, 0, -1)</Action>

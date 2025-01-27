@@ -1,0 +1,13 @@
+ <Reasoning>I will start at the center of the grid where the coordinates (0, 0) are, then move slightly to the northeast to ensure I am exploring a wide area quickly.</Reasoning>
+<Action>(1, 0, -5)</Action>
+
+<Reasoning>The coordinates (21, 21) are to the northeast of the center and looking promising. I will move there to get a better view of the surroundings.</Reasoning>
+<Action>(5, 21, -5)</Action>
+
+<Reasoning>Now, I'll check the coordinates (21, 36) to see if there's any indication of a campsite. The area looks more open here.</Reasoning>
+<Action>(10, 36, -5)</Action>
+
+<Reasoning>The coordinates (25, 36) are even further northeast. This could potentially be the campsite we are looking for.</Reasoning>
+<Action>(15, 36, -5)</Action>
+
+<Reasoning>Finally, I'll check the coordinates (30, 36), which are on the edge of our search area. If the campsite is not here, it should be close by.</Re

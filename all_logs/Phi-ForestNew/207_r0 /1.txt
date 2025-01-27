@@ -1,0 +1,12 @@
+ <Reasoning>The object seems to be far in the background of the image. To find it, I have to move lower and to the right.</Reasoning>
+<Action>(22, 0, -33)</Action>
+
+<Reasoning>I'm still too far left. Moving closer to the right will give me a better chance at spotting the anomaly.</Reasoning>
+<Action>(25, 1, -38)</Action>
+
+<Reasoning>Still no luck. I need to get closer to the edge to maximize my search area.</Reasoning>
+<Action>(28, 3, -43)</Action>
+
+<Reasoning>Just one more move before the limits. I'll try to get closer to the right side of the image to see if the anomaly is there.</Reasoning>
+<Action>(30, 5, -48)</Action>
+

@@ -1,0 +1,36 @@
+ The drone can decrease its altitude to get closer to the building that is situated at the center of the image.
+
+
+<Reasoning>
+
+    With the current altitude being 4 meters, the drone has a higher chance to spot and focus on the building. Descending is necessary, but the drone must also be cautious to remain within the search area.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -3)
+
+</Action>
+
+
+<Reasoning>
+
+    Descending a meter to -3 meters in altitude will grant the drone a better view, but exceeding this altitude limit is not allowed.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -10)
+
+</Action>
+
+
+<Reasoning>
+
+    Going lower to -10 meters is NOT ADVISABLE as it is the limit, and the drone should not exceed this altitude.
+
+</Reasoning>

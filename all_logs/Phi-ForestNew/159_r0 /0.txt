@@ -1,0 +1,9 @@
+ <Reasoning>The image shows a grid with various coordinates. The center of the image appears to be at (0, 0), which could be a strategic point for starting the search given the central location. The bright area towards the bottom center that stands out from the rest of the image is likely the forest fire, given the context. Since I am to find the forest fire and it's easier to determine proximity in the first vertical and horizontal movements, I will start by moving north to the grid point (5, 0).</Reasoning>
+
+<Action>$(5, 0, -30)$</Action>
+
+<Reasoning>After moving to this point, I see the bright area, indicating it's close to the location of the forest fire. To get a closer look and to comply with the instruction of flying below 10 meters when found, I need to move slightly to the left and downward. The next move will be to position myself directly above the fire for a thorough inspection.</Reasoning>
+
+<Action>$(4, 0, -25)$</Action>
+
+<Reasoning>The image is now clear, showing the forest fire at the lower central part of the image. It's directly below the drone, and I can confirm that I am 10 meters below it. This satisfies the condition of being 10 meters

@@ -1,0 +1,16 @@
+ <Reasoning>I am starting close to the object of interest, which is a forest fire. I will need to move closer to get a better view and confirm if I have found the fire.</Reasoning>
+<Action>(0, 0, 20)</Action>
+
+<Reasoning>I will move further south, as the fire seems to be in that direction based on the image.</Reasoning>
+<Action>(2, 0, 20)</Action>
+
+<Reasoning>Moving further down to get closer to the fire. I need to be closer than 10 meters to the object for confirmation.</Reasoning>
+<Action>(4, 0, 10)</Action>
+
+<Reasoning>I am now within 10 meters of the fire. I will check for the fire visually. If it's not the fire, I'll continue to move southward.</Reasoning>
+<Action>(5, 0, 10)</Action>
+
+<Reasoning>I have found the fire, as I am now within 10 meters of it and can confirm by visual inspection.</Reasoning>
+<Action>(5, 0, 10)</Action>
+
+<Reasoning>I have located the fire and am confirming it visually.

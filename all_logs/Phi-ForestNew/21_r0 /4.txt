@@ -1,0 +1,15 @@
+ <Reasoning>The coordinates (0, -10) are not far from the fire, but I am not low enough to see it. I need to move lower to get a better view of the coordinates.</Reasoning>
+<Action>(1, -10, 0)</Action>
+
+<Reasoning>I am now closer to the fire, but I am still a bit high. I need to move even lower to see the fire.</Reasoning>
+<Action>(1, -10, -5)</Action>
+
+<Reasoning>I am now below the fire and can confirm that I am at the right altitude to see the fire.</Reasoning>
+<Action>(0, -10, 0)</Action>
+
+
+<Reasoning>I am now above the fire and need to move even lower to potentially see the fire from below.</Reasoning>
+<Action>(1, -10, -5)</Action>
+
+<Reasoning>I am now at the correct altitude and can confirm that I am at the right point above the fire. I will now search for the object in question.</Reasoning>
+<Action>(0, -10, 0)</Action>

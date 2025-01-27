@@ -1,0 +1,15 @@
+ <Reasoning>As I start my search, I will look for significant differences in the environment that the numbers on the grid might indicate. I will focus on the area with different numbers, which could signify an object of interest.</Reasoning>
+
+<Action>(-4, -46, 0)</Action>
+
+<Reasoning>I have identified an area with a higher number on the grid, indicating something that stands out. I will need to check for the object at this location.</Reasoning>
+
+<Action>(-6, -46, -10)</Action>
+
+<Reasoning>The Yellow point seems to be the object in question. As the drone navigates to it, it is essential to keep an eye on its altitude to ensure it does not exceed the 120 meters limit.</Reasoning>
+
+<Action>(-4, -46, -10)</Action>
+
+<Reasoning>As the drone is at the Yellow point, it is within my field of view. I have found the object in question and am below 10 meters relative to it. I will now reply with "FOUND" to indicate a successful search.</Reasoning>
+
+<Action>FOUND</Action>

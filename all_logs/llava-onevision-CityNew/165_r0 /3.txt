@@ -1,0 +1,3 @@
+<Reasoning> I have made a mistake and flown too close to an obstacle. I need to abort the mission and return to a safe altitude. I will move away from the obstacle and increase my altitude.</Reasoning>
+<Reasoning> I will move to (0,0,60) to increase my altitude and avoid any further obstacles.</Reasoning>
+<Action>(0,0,60)</Action>

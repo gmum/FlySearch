@@ -1,0 +1,15 @@
+ <Reasoning>The drone's aggressive search pattern is due to the need to locate the anomaly quickly, given the drone's current altitude. It will scour the immediate area around the origin point, (0, 0), and any adjacent areas that appear different from the rest of the terrain as potential locations for the anomaly.</Reasoning>
+<Action>(-3, 0, -7)</Action>
+<Action>(-4, 0, -7)</Action>
+<Action>(-4, -1, -7)</Action>
+<Action>(-5, -1, -7)</Action>
+<Action>(-5, -2, -7)</Action>
+<Action>(-5, -2, -6)</Action>
+<Action>(-5, -3, -7)</Action>
+<Action>(-4, -3, -6)</Action>
+<Action>(-4, -3, -5)</Action>
+<Action>(-3, -3, -6)</Action>
+<Action>(-3, -3, -5)</Action>
+<Action>(-3, -3, -4)</Action>
+<Action>(-4, -3, -4)</Action>
+<Action>(-4, -2, -4

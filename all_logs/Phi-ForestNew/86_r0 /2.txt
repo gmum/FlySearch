@@ -1,0 +1,2 @@
+ <Reasoning>Upon realizing that the drone has flown too close to something and would have hit it, immediately cease movement and avoid any further actions that could lead to a collision or crash. The priority is to ensure the drone's safety.</Reasoning>
+<Action>Emergency stop;</Action>

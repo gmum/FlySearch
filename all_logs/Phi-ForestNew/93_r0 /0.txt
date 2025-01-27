@@ -1,0 +1,16 @@
+ <Reasoning>The coordinates (0, 0) are within my field of view, close to the location indicated. This will allow me to get a closer view of the object.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>I have a slightly wider view by moving to (0, 31) as it may give me more information about the object.</Reasoning>
+<Action>(0, 31, -5)</Action>
+
+<Reasoning>Moving to (0, 63) will give me another perspective of the area, which could help in locating the object.</Reasoning>
+<Action>(0, 63, -5)</Action>
+
+<Reasoning>The coordinates (31, 0) are within my field of view, close to the location indicated. This will allow me to get a closer view of the object.</Reasoning>
+<Action>(31, 0, -5)</Action>
+
+<Reasoning>I'm going to move slightly to the Northeast to (63, 31) to get a different angle and a wider view of the area.</Reasoning>
+<Action>(63, 31, -5)</Action>
+
+<Reasoning>The coordinates (

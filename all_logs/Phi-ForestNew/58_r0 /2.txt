@@ -1,0 +1,9 @@
+ <Reasoning>
+    The coordinates in the image range from (-1, 1) to (1, 1) which is a much smaller area with less apparent vegetation. The central part of the image has a mix of green and brown, indicating some trees but also areas of cleared land or rocks. Since we are looking for a campsite, areas with more visible trees would be ideal, but considering the supposed emergency, there are few options left.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+<Action>(1, 0, -1)</Action>
+<Action>(-1, 0, -1)</Action>
+<Action>(0, -1, -1)</Action>
+<Action>(-1, -1, -1)</Action>
+<Action>(1, -1, -1)</Action>

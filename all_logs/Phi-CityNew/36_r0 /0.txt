@@ -1,0 +1,21 @@
+ <Reasoning>Starting with the current altitude, I will move on the ground to get closer to the object without violating the altitude restrictions.</Reasoning>
+
+<Action>(0, 0, -60)</Action>
+
+<Reasoning>After moving down to the ground, I will scan the area with the grid to determine the next best move.</Reasoning>
+
+<Action>(5, 0, -60)</Action>
+
+<Reasoning>The nearest grid point appears to be (-5, 0, -20), which means it is still above the object on the ground.</Reasoning>
+
+<Action>(10, 0, -20)</Action>
+
+<Reasoning>I am closer to the object on the ground but still need to lower my altitude further.</Reasoning>
+
+<Action>(15, 0, -30)</Action>
+
+<Reasoning>Moving down slightly will allow me to get below the ground object without being too close.</Reasoning>
+
+<Action>(15, 0, -40)</Action>
+
+<Reasoning>The object is now closer to the drone's view, but I need to ensure that it is directly underneath the drone for a confirmation.</Reasoning

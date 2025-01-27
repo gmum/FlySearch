@@ -1,0 +1,9 @@
+ <Reasoning>My current altitude is 14 meters, which is not optimal for spotting the large trash pile. I need to descend by 1 meter to get closer to the ground and increase the chances of spotting the trash pile.</Reasoning>
+<Action>(-1, 0, -1)</Action>
+<Reasoning>I will need to readjust my position slightly to the left to cover a wider area and increase the probability of finding the trash pile.</Reasoning>
+<Action>(-1, -1, -1)</Action>
+<Reasoning>Since I have made 9 moves so far, I will now make one more slight adjustment to the left to ensure that I am scanning a wider area without going beyond the view I have at this altitude.</Reasoning>
+<Action>(-2, -1, -1)</Action>
+<Reasoning>After completing the last move, I will now perform one final adjustment to the right to scan a broader area, potentially increasing the chances of spotting the large trash pile.</Reasoning>
+<Action>(-1, 0, -1)</Action>
+<Reasoning>Given that the large trash pile should be in my field of view, I will now focus on scanning the area

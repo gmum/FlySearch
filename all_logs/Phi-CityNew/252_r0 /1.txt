@@ -1,0 +1,11 @@
+ <Reasoning>Based on the image, there is a point that does not fit with the rest of the environment, possibly the object in question. I will move closer to the object to verify it.</Reasoning>
+<Action>(1, 0, -20)</Action>
+
+<Reasoning>I will move closer to the object and lower my altitude to verify it in my field of view.</Reasoning>
+<Action>(-0.5, 0, -35)</Action>
+
+<Reasoning>I have found the object in question. I will fly below 10 meters to verify it.</Reasoning>
+<Action>(-0.5, 0, -35)</Action>
+
+<Reasoning>I have verified the object and it is 10 meters below me. I will reply with "FOUND".</Reasoning>
+<Action>FOUND</Action>

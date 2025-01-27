@@ -1,0 +1,13 @@
+ <Reasoning>The UAV was getting dangerously close to an obstacle. I must initiate an emergency stop and try to recover my position safely.
+<Action>(0, 0, 0)</Action>
+</Reasoning>
+
+<Reasoning>I am now attempting to stabilize and recover from the emergency stop, ensuring that my altitude does not drop below the limit set by the task instructions. I will continue to scan the area for a safe path forward.
+<Action>(0, 0, -1)</Action>
+</Reasoning>
+
+<Reasoning>I am now moving cautiously, avoiding the danger of hitting the obstacle. I will analyze the area to determine the safest course of action.
+<Action>(0, 0, -5)</Action>
+</Reasoning>
+
+<Reasoning>I have now

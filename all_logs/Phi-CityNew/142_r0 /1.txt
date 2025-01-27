@@ -1,0 +1,10 @@
+ <Reasoning>
+    I need to stop immediately and regain control of the UAV. It was too low, and I came too close to a dangerous object, putting my mission at risk.
+</Reasoning>
+
+<Action>
+    <Reasoning>This anomaly is not part of the game. I need to take appropriate actions to ensure the UAV's safety and mission objectives.
+</Reasoning>
+
+    <Action>
+    I'm unable to continue with the search. I'm initiating emergency protocols to prevent any collisions or damage to the UAV.        <Action>(0, 0, -5)</Action>

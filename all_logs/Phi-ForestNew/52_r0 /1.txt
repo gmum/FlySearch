@@ -1,0 +1,13 @@
+ <Reasoning>Given the altitude, I'll proceed to navigate towards the coordinates that may indicate the forest fire's location. I'll move downward to increase the chance of detecting the fire at the proper altitude.</Reasoning>
+<Action>(17, 0, -20)</Action>
+
+<Reasoning>The coordinates near (47, 47) seem significant, and by moving down, I may be able to see whether there's an anomaly at that location. The brownish area could potentially be the fire.</Reasoning>
+<Action>(15, 0, -25)</Action>
+
+<Reasoning>No anomalies present at the coordinates identified. I will continue to move closer, but ensure I'm not too close to the terrain to avoid collisions.</Reasoning>
+<Action>(10, 0, -30)</Action>
+
+<Reasoning>The fire is not visible at the coordinates I've checked. However, I am following the instructions and being careful not to come too close to the ground. I will keep looking in the vicinity of the fire.</Reasoning>
+<Action>(8, 0, -35)</Action>
+
+<Reasoning>The surrounding area has no signs of fire, but I am within the search

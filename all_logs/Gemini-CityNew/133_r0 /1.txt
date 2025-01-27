@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a pile of trash at the coordinates (21,0). I should move directly above it and descend below 10 meters to satisfy the condition.</Reasoning>
+<Action>(21, 0, -55)</Action>
+```

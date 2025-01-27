@@ -1,0 +1,11 @@
+ <Reasoning>The grid overlaid on the image shows the current location of the drone. To search for the object, I need to move closer to the ground. The object appears to be in the bottom right quadrant of the grid, so I will move towards there.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I have moved to a location that is closer to the ground. Now, I need to scan the area for the object.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I have scanned the area, and I have found the object. The object is located at the bottom right quadrant of the image, which is consistent with the coordinates on the grid.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I am at 5 meters above the ground, which is below the required 10 meters above the object. I will fly lower to get closer to it.</Reasoning>
+<Action>(5, 0, -40)</Action>

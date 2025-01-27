@@ -1,0 +1,2 @@
+ <Action>(-10, 0, -5)</Action>
+<Reasoning>The trash pile is likely the dark patch near the center of the grid at (0, 0). I'll move the drone closer to it. This move will bring the drone 15 meters closer to the patch, within the searchable area, without exceeding the altitude limit or the move limit.</Reasoning>

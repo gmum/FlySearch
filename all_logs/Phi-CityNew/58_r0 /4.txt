@@ -1,0 +1,3 @@
+ <Action>(0, -2, -2)</Action>
+
+    <Reasoning>I will move two meters down the grid to keep the drone within the limits of the last seen image. This small adjustment ensures that I remain within the known area and reduces the risk of flying out of bounds, while also allowing me to search at a lower altitude for the object.</Reasoning>

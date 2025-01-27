@@ -1,0 +1,7 @@
+ <Action space>
+    I will identify the point that appears to be the campsite on the grid and move the drone to this point. If I am not at the correct point, I will continue moving within the search area until I am at the correct point.
+    <Action>(10, 10, 0)</Action>
+</Action space>
+
+<Reasoning>
+    The campsite seems to be at (10, 10) on the grid. I will move to this location and check if I am at the correct point. If not, I will continue moving within the search area until I am at the correct point. Once I am at the correct point, I will ensure I am below 10 meters above the object to reply with "FOUND".

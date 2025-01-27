@@ -1,0 +1,6 @@
+ <Reasoning>
+    The object in question is located at grid (36, -18). I need to fly lower to check for that.
+</Reasoning>
+<Action>
+    (36, -18, -10)
+</Action>

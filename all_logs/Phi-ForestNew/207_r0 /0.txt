@@ -1,0 +1,15 @@
+ <Reasoning>It seems like the object is in the middle of the image, which could be the anomaly we are looking for. To check, I need to get lower than the current altitude.</Reasoning>
+<Action>(0, 0, -38)</Action>
+
+<Reasoning>I'm still not at the object. Time to go lower and to the right to cover more ground.</Reasoning>
+<Action>(10, 0, -40)</Action>
+
+<Reasoning>Still no luck. I'll move a bit further to the right, and also lower because the object might be on the right side of the open field.</Reasoning>
+<Action>(19, 2, -41)</Action>
+
+<Reasoning>Definitely not the object. I need to get closer, so I'll move lower and to the left to maximize the area I cover.</Reasoning>
+<Action>(20, -2, -45)</Action>
+
+<Reasoning>One move left, let's try to get closer to the edge of the tree line to cover more ground. This should give me a better chance of spotting the anomaly.</Reasoning>
+<Action>(28, -10, -50)</Action>
+

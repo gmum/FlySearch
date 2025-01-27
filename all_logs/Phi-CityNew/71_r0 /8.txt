@@ -1,0 +1,7 @@
+ <Reasoning>I am at the lowest altitude and must avoid a collision. I will quickly ascend to a safe altitude.</Reasoning>
+<Action>((0, 0, -10))</Action>
+
+<Reasoning>I cannot see the fire. I will proceed to move based on the coordinates that could indicate the fire's location.</Reasoning>
+<Action>((-1, -1, -1))</Action>
+
+<Reasoning>I will be vigilant in my search, keeping an eye on the coordinates and the environment for

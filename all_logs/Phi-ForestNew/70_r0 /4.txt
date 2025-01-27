@@ -1,0 +1,19 @@
+ <Action>(-1, 0, -15)</Action>
+<Reasoning>
+I'm moving to (-1, 0, -15) because it's a safer location to avoid hitting the tree, still in view of the possible building.
+</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+<Reasoning>
+I'm moving to (0, 0, -30) because it's closer to the object and I can confirm it's the building.
+</Reasoning>
+
+<Action>(-1, 0, -20)</Action>
+<Reasoning>
+I found the building! I'm now staying at this spot to confirm it's the building.
+</Reasoning>
+
+<Action>(-1, 0, -20)</Action>
+<Reasoning>
+I found the building! I'm now staying at this spot to confirm it's the building.
+</Reasoning>

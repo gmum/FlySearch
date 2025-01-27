@@ -1,0 +1,1 @@
+ <Reasoning>To maximize the area I search, I'll move to coordinates (5, 0, -10) first. Next, I'll explore the area adjacent to the bridge to find potential objects. If not found, I will proceed to lower the altitude to (-5, 0, -20) to ensure a closer view, before giving the "FOUND" response if the object is within range. <Action>(5, 0, -10)</Action></Reasoning>

@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+There is a yellow point marked with coordinates (47, 47) in the grid, which is probably the object you are searching for. I will move closer to that point and check if I am within 10 meters below the drone relative to the object.
+    </Reasoning>
+    <Action>(5, 0, -30)</Action>
+</Response>

@@ -1,0 +1,2 @@
+ <Reasoning>Since my current altitude is not below 10 meters, I need to decrease my altitude to be closer to the ground and increase my chances of finding the object. I'll move to the point with the y-coordinate of 0, which is the closest to the ground.</Reasoning>
+<Action>(0, 0, -10)</Action>

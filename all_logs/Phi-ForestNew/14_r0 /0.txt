@@ -1,0 +1,10 @@
+ <Reasoning>Starting with a search for the trash pile, I will begin by moving closer to the brightest point in the image, as it is most likely the closest point of interest in the terrain. This should bring me within a closer range to assess if it's the trash pile.</Reasoning>
+<Action>(-10, 0, -42)</Action>
+
+<Reasoning>Since the object is not in my initial field of view, I'll proceed to move towards the center of the image, which is the middle of the grid and likely to be the most prime object to search for. This should bring me closer to the possible location of the trash pile.</Reasoning>
+<Action>(0, 0, -21)</Action>
+
+<Reasoning>By now, the object should be in my field of view. I'll adjust my altitude to be 10 meters above to ensure I'm in the right position to inspect the object.</Reasoning>
+<Action>(0, 0, -12)</Action>
+
+<Reasoning>If the object is still not within view, my next move will be to ensure I am centrally located in relation to the object, as this might be the most likely spot to find it. This should also minimize the distance I need to

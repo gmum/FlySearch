@@ -1,0 +1,17 @@
+ <Reasoning>I have identified a point of interest on the grid that I want to investigate further. It appears to be in a location that may be the trash pile, and it is at a lower altitude than the current altitude. To investigate further, I need to move down to 0 meters above the object.</Reasoning>
+
+<Action>(0, 0, -38)</Action>
+
+<Reasoning>I am at 0 meters altitude and the object appears to be at a lower altitude than the drone. I will now fly closer to the object to confirm if it is indeed a trash pile.</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now at the same level as the object and need to ensure it is the trash pile by performing a closer inspection. I will move to a point directly above the object to allow for a view below.</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The object is clearly visible below me, and it appears to be a trash pile. I will now fly below 10 meters relative to it to confirm my finding.</Reasoning>
+
+<Action>(0, -5, 0)</Action>
+
+<

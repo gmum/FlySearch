@@ -1,0 +1,23 @@
+ <Reasoning>
+The object is likely to be just below the drone, which is 72 meters above ground due to the instruction "lowering the drone". To focus on the sport car, which appears to be located just below the center of the image, I will make a move to get closer to the ground without losing sight of the potential location of the car.
+</Reasoning>
+<Action>
+(-18, 0, -40)
+</Action>
+
+<Reasoning>
+Moving in this direction will bring the drone closer to the center of the image, increasing the chances of spotting the white sport car, while avoiding any sudden moves that could lead to loss of the target.
+</Reasoning>
+<Action>
+(-36, 0, -60)
+</Action>
+
+<Reasoning>
+Continuing to move closer to the center of the image and the ground is crucial in order to locate the object. The altitude should be reduced without exceeding the search area limits.
+</Reasoning>
+<Action>
+(-54, 0, -80)
+</Action>
+
+<Reasoning>
+By now, the drone should be much closer to the ground, allowing for a better chance to spot the white sport car if it is indeed in the image. Careful

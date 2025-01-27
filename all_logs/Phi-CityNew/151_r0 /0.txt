@@ -1,0 +1,14 @@
+ 
+<Reasoning>I start by moving towards the grid center to cover a large area quickly. Then I will search the nearby coordinates that may contain the trash pile.</Reasoning>
+<Action>(0, 0, 36)</Action>
+
+<Reasoning>The trash pile might be located near the grid (-25, -25) or (25, 25) as these areas are in the middle of the grid and might contain the trash pile, considering the trash is likely on the ground.</Reasoning>
+<Action>(-5, -6, 2)</Action>
+
+<Reasoning>I will now move to the grid point (5, 0) to check the upper part of the grid which was not covered in the previous move.</Reasoning>
+<Action>(0, 0, 3)</Action>
+
+<Reasoning>Ranging to the area (-20, -5) and (10, 3) to cover the upper and lower parts of the grid to check for the trash pile.</Reasoning>
+<Action>(0, 0, 6)</Action>
+
+<Reasoning>I will move to the coordinates (0, -5) to check for the trash pile on the left side.</Reasoning>

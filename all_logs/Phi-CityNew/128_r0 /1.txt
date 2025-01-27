@@ -1,0 +1,24 @@
+ <Action>(-1, -1, -2)</Action>
+<Reasoning>
+Having moved to a 1-meter altitude above the object, I am now going to fly further west, hoping to find the fire based on the change in color on the road.
+</Reasoning>
+
+<Action>(-1, 0, -2)</Action>
+<Reasoning>
+Now, I am flying flat to the street, looking for any signs of fire based on the irregularities in the road or presence of smoke.
+</Reasoning>
+
+<Action>(-1, 0, -1)</Action>
+<Reasoning>
+Since no clear signs of fire, I am adjusting my altitude to be above 10 meters to ensure visibility is maintained.
+</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+<Reasoning>
+Now that I am at 0 meters altitude, I am moving further north-east, as indicated by the grid, to cover a larger area.
+</Reasoning>
+
+<Action>(-1, 1, -1)</Action>
+<Reasoning>
+Moving slightly back to the north allows me to scan a different section of the road and see if the fire or its signs are visible.
+</Reasoning

@@ -1,0 +1,6 @@
+ <Reasoning>
+    Given the starting point and the task to find a building, I will begin by moving towards the area with the highest concentration of yellow points, as they might indicate a more built-up area which could include buildings. This should increase the likelihood of locating the building. If the building is nearby, I will attempt to hover at its estimated altitude to locate it on the ground.
+</Reasoning>
+<Action>
+    (10, 10, -30)
+</Action>

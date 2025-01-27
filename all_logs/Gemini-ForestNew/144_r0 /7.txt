@@ -1,0 +1,3 @@
+<Reasoning>I see two fires, one at (1, 0) and another at (2,-1). I will center the drone to (1, 0) and since I'm below 10m I will reply with FOUND.</Reasoning>
+<Action>(1, 0, 0)</Action>
+FOUND

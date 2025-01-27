@@ -1,0 +1,2 @@
+ <Reasoning>The image shows the forest fire at the coordinates (1, 0) on the grid overlay. I am at 1 meter above ground level, and there is no fire visible at this location. I need to move the drone to a new point of interest and perform a careful search.</Reasoning>
+<Action>(1, -1)</Action>

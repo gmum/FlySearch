@@ -1,0 +1,2 @@
+<Reasoning>The airplane is clearly the anomaly in this environment. I need to fly directly above its center and descend to get closer. The center point on grid is (0,0). I need to go below 10 meters, so I will decend to 8 meters.</Reasoning>
+<Action>(0, 0, -21)</Action>

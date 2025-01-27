@@ -1,0 +1,27 @@
+ <Reasoning>
+    I am making sure to follow the safe path and not go out of bounds.
+    </Reasoning>
+    <Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    Moving left to explore the potentially water-rich area more thoroughly.
+    </Reasoning>
+    <Action>(0, -5, -1)</Action>
+
+<Reasoning>
+    A full left turn to get the best view of the green area.
+    </Reasoning>
+    <Action>(0, -10, -1)</Action>
+
+<Reasoning>
+    Continuing to move down to increase the search area while staying within safe limits.
+    </Reasoning>
+    <Action>(0, -15, -1)</Action>
+
+<Reasoning>
+    Staying within the coordinates to stay safe.
+    </Reasoning>
+    <Action>(0, -15, -1)</Action>
+
+<Reasoning>
+    Following

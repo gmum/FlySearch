@@ -1,0 +1,10 @@
+ <Reasoning>To start my search, I will fly to the coordinates where the yellow marker is placed. The color of the marker stands out against the urban environment, suggesting it might be a significant point of interest.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Upon arrival at the yellow marker, I will survey the area for any unusual objects or structural changes that could indicate an anomaly. After a quick scan, it's clear that the area around the marker is consistent with the surrounding urban environment.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Since the area does not display any anomalies, I'll proceed to the next grid point, which is (16, 33). This point is close to a yellow marker's location and might provide a different vantage point to search for the anomaly.</Reasoning>
+<Action>(16, 33, -20)</Action>
+
+<Reasoning>The coordinates (16, 33) show a point with a stark contrast to the surrounding environment. It appears to be a building that stands out due to its isolation and height. This could potentially be the anomaly I am searching for.</Reasoning>

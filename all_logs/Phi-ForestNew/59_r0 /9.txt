@@ -1,0 +1,11 @@
+ <Reasoning>I am starting my search at an altitude of 1 meter. I need to move down to get closer to the ground before I can scan for the person.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>I have moved down to the ground. Now, I will scan the area to find the person. As I scan, I will keep moving slightly to the left to cover more ground.</Reasoning>
+<Action>(-0.5, 0.45, -1)</Action>
+
+<Reasoning>I found a red spot on the map. It could be the location of the person, but we can't be sure from this image alone. I will move down to 2 meters to get a closer look.</Reasoning>
+<Action>(-0.5, 0.45, -2)</Action>
+
+<Reasoning>Still not the person. I will move down again to 1 meter to get closer.</Reasoning>
+<Action>(-0.5, 0.45, -1)</Action>

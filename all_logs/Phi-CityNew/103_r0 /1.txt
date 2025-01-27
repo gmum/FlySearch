@@ -1,0 +1,6 @@
+ <Reasoning>I need to move closer to the potential fire point at (-29, 29) meters above ground level. I will lower my altitude to the coordinates (-29, 29, -29) meters above ground level.</Reasoning>
+    <Action>(-29, 29, -29)</Action>
+</Reasoning>
+<Reasoning>I am now at a lower altitude and closer to the object. I should now check if I found the object.</Reasoning>
+    <Action>(-29, 29, -29)</Action>
+</Reasoning

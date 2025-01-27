@@ -1,0 +1,9 @@
+ <Reasoning>
+The coordinates point toward the building's vicinity, yet the current altitude is too low to ascertain the building's actual position. To accurately assess the building, the drone should continue descending.
+<Action>(11, -2, -2)</Action>
+</Reasoning>
+
+<Reasoning>
+Given the current altitude, the drone needs to descend further to get a better view of the area around the coordinates provided for the building.
+<Action>(13, -2, -0)</Action>
+</Reasoning>

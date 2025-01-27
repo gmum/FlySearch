@@ -1,0 +1,13 @@
+ <Action>(20, 20, -10)</Action>
+<Reasoning>I need to get closer to the object. The object might be around the intersection of the grid (10, 10). Moving closer should help me to lower my altitude and find the object.</Reasoning>
+
+<Action>(40, 40, -20)</Action>
+<Reasoning>I need to move further south to the center of the grid to avoid the buildings on the sides. Being at the center should help me to get closer to the object.</Reasoning>
+
+<Action>(50, 50, -30)</Action>
+<Reasoning>I should move west to get closer to the object. The object might be around the grid (25, 25). Moving there should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(80, 80, -40)</Action>
+<Reasoning>I need to move north to avoid the intersection of the grid (25, -25). The object might be around grid (10, -25). Moving there should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(90, 90, -40)</Action>

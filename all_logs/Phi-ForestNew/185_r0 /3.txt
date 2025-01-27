@@ -1,0 +1,27 @@
+ <Reasoning>
+The drone is at a good altitude, and I can start the search for the object from a safe distance.
+</Reasoning>
+<Action>(5, 0, 0)</Action>
+
+<Reasoning>
+I will start the search for the object near the coordinates (5, 0) on the grid.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>
+The object might be in the grassy area, judging by the yellow coloration. I will lower my altitude to check for the object.
+</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>
+The object might be in the water, judging by the green coloration. I will move to the coordinates on the map and check for the object.
+</Reasoning>
+<Action>(-5, 0, -15)</Action>
+
+<Reasoning>
+The object might be in the tree, judging by the green coloration. I will move to the coordinates on the map and check for the object.
+</Reasoning>
+<Action>(-5, 0, -45)</Action>
+
+<Reasoning>
+The object might be in the

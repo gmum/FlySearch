@@ -1,0 +1,5 @@
+ Given the coordinates of the object and my current altitude, my next move would be to descend and move towards the object to confirm it is the person in question.
+
+<Reasoning>The object I am looking for is located at the coordinates (31, 31) and I am at 47 meters above the ground, so I will need to descend and move in that direction to confirm if it's the person I am looking for.</Reasoning>
+
+<Action>(-3, -3, 0)</Action>

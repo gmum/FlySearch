@@ -1,0 +1,12 @@
+ <Reasoning>To commence the search, I will move closer to the area with the highest concentration of yellow points, as it might indicate a deforestation site or an area of interest. I will ensure I stay within the search area to avoid unnecessary risks.</Reasoning>
+<Action>
+    I will move to the coordinates that correspond to the most yellow points in the image. After assessing the area, if none of the yellow points seem to match the description of the anomaly, I will continue to search for other areas with significant color difference from the norm.
+</Action>
+
+<Reasoning>By focusing on the area with the most yellow points, I increase the likelihood of identifying the anomaly. Once closer to the yellow points, I will then determine if one of them matches the expected outcome of the anomaly.</Reasoning>
+<Action>
+    If a yellow point does not appear to match the expected outcome, I will adjust my flight path to the next area with a high concentration of yellow points, ensuring I'm still within the 400x400m search area and do not exceed 9 moves or the 120m altitude limit.
+</Action>
+
+<Reasoning>
+    Since the altitude is sufficient for a detailed inspection, I will quickly descend to 10 meters below the detected anomaly to confirm its

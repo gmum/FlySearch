@@ -1,0 +1,4 @@
+<Reasoning>After moving closer to the building, I can now see that there is a fire on the roof. I will lower my altitude further to confirm that I am centered on the object and then report that I have found the fire.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning> I have now confirmed that I am centered on the fire and that it is within 10 meters of my altitude. I will report that I have found the fire.</Reasoning>
+FOUND

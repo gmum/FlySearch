@@ -1,0 +1,8 @@
+ <Reasoning>I need to get closer to the ground to find the fire. Since I can't see the object in the first image, I will start by moving in the direction of the yellow point indicated on the grid. If that is not the object, I will continue the search and try to move to points on the grid that are closer to the ground.</Reasoning>
+<Action>(-10, -10, -20)</Action>
+
+<Reasoning>The yellow point is not the object, but there is another orange point in the grid that can be seen in the first image. I will fly towards that point and try to get closer to the ground.</Reasoning>
+<Action>(-2, -3, 0)</Action>
+
+<Reasoning>The orange point is not the object, but there is another black point in the grid that can be seen in the first image. I will fly towards that point and try to get closer to the ground.</Reasoning>
+<Action>(-6, -3, 0)</Action>

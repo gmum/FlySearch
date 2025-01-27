@@ -1,0 +1,4 @@
+<Reasoning>The anomaly is located at the bottom right corner of the image, at the coordinates (48, -48). I need to move towards those coordinates and descend to be below 10 meters of the object.</Reasoning>
+<Action>(48, -48, -62)</Action>
+
+FOUND

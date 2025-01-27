@@ -1,0 +1,11 @@
+ <Reasoning>The drone is at coordinates (12,23). I move to coordinates (0,23) to explore a different area, possibly where the object is located.</Reasoning>
+<Action>(0,0,0)</Action>
+
+<Reasoning>I'm still in the same place. I move slightly to the right and down to coordinates (12,12) to check for the object.</Reasoning>
+<Action>(12,0,0)</Action>
+
+<Reasoning>Still no object in sight. I move further down to (12,-2) to continue the search, but as the drone is at 35 meters, I must check for the object's proximity.</Reasoning>
+<Action>(12,-2,0)</Action>
+
+<Reasoning>The object is still not found. I move slightly left to (10, 12) to explore a different area while being cautious of the object's potential location at these coordinates, considering the drone's altitude.</Reasoning>
+<Action>(10,12,0)</Action>

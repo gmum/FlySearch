@@ -1,0 +1,26 @@
+ <Reasoning>
+    I'm going to fly straight down to get closer to the ground and see if there's any indication of the campsite.
+    </Reasoning>
+    <Action>(0, 0, -26)</Action>
+
+<Reasoning>
+    Ending up too low, I need to adjust my altitude and direction to cover more ground and increase the chances of finding the campsite.
+    </Reasoning>
+    <Action>(0, 15, -22)</Action>
+
+<Reasoning>
+    Moving diagonally to the right might help in covering more area and potentially finding the campsite.
+    </Reasoning>
+    <Action>(15, 25, -22)</Action>
+
+<Reasoning>
+    I'm still too high. I will move in vertically to get closer to the ground.
+    </Reasoning>
+    <Action>(0, 25, -22)</Action>
+
+<Reasoning>
+    I am in a better position now, but I need to move right and slightly down to increase my coverage.
+    </Reasoning>
+    <Action>(10, 20, -22)</Action>
+
+<Reasoning>

@@ -1,0 +1,7 @@
+ <Reasoning>I'm moving closer to the ground to see if I can spot the white pickup truck.</Reasoning>
+<Action>(-3, -3, 0)</Action>
+
+<Reasoning>I'm still not seeing the truck, so I'll move to (-6, -3, 0) to cover more ground.</Reasoning>
+<Action>(-6, -3, 0)</Action>
+
+<Reasoning>The truck is not visible in the image. I need to adjust my altitude to

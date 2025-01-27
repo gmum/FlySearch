@@ -1,0 +1,4 @@
+ <Reasoning>The current altitude is 87 meters; to be within the 10-meter altitude range, I need to fly down to at least 77 meters. The closest coordinates to this target altitude are (0, 0, -10). This move will allow me to get closer to the ground and search for the road construction site.</Reasoning>
+<Action>
+    (0, 0, -10)
+</Action>

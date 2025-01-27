@@ -1,0 +1,3 @@
+ <Reasoning>The first point of interest is (43, 43), which is at the lowest altitude, 11 meters below the drone. If this is the object, it will be at least 9 meters below the drone, meeting the criteria.</Reasoning>
+
+<Action>(0, 0, -10)</Action>

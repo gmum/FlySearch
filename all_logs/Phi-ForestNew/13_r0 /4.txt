@@ -1,0 +1,12 @@
+ <Reasoning>
+    I am at the ground level, which is the safest position for navigation. I will carefully observe the surroundings and look for any potential hazards or obstacles.
+    </Reasoning>
+    <Action>(0, 0, -0)</Action>
+
+<Reasoning>
+    I have identified a potential hazard just below the ground surface. I need to take quick and cautious action to avoid any accidents.
+    </Reasoning>
+    <Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I have successfully navigated around the hazard and can continue my search for the object. I will now slowly move towards the area with the highest concentration of points and increase

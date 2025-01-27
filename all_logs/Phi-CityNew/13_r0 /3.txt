@@ -1,0 +1,2 @@
+ <Reasoning>I need to get closer to the ground to find the fire. Based on the coordinates given, I will move to the closest point to the ground, at a height of 6 meters below the drone's current altitude.</Reasoning>
+<Action>(-6, 0, -3)</Action>

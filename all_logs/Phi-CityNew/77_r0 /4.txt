@@ -1,0 +1,1 @@
+ <Reasoning>I will start by flying to the coordinates (5, 0, -10) to cover as much area as possible. I will then adjust my horizontal movement based on the object's location, making sure to go as low as possible to -20 meters. If no object is found, I will proceed to lower the altitude to -10 meters to ensure closer proximity. <Action>(5, 0, -10)</Action></Reasoning>

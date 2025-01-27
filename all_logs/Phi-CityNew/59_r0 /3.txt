@@ -1,0 +1,8 @@
+ <Reasoning>I need to stop the search because I've flown too close to something and would have hit it. It's important to be aware of my limits and not move into areas outside of my view. I'm stopping the search.</Reasoning>
+<Action>(0, 0, -22)</Action>
+
+<Reasoning>I've reached my limits. I can't move any further and it's better to stop the search.</Reasoning>
+<Action>(0, 0, -22)</Action>
+
+<Reasoning>Emergency stop. I've reached my limits and there's a risk of hitting something. I need to stop the search and assess the situation.</Reasoning>
+<Action>(0, 0, -22)</Action>

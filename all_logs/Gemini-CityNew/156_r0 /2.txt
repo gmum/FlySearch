@@ -1,0 +1,2 @@
+<Reasoning>Okay, I need to be more careful. I see a green trash container at the coordinates (10, 20), I need to get below 10 meters to check if this is the trash pile. I will go to that point and go down 22 meters. This should be around 8 meters above the trash can.</Reasoning>
+<Action>(10, 20, -22)</Action>

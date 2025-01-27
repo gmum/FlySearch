@@ -1,0 +1,13 @@
+ <Reasoning>Since my current altitude is 78 meters above ground level, I need to move down to at least 10 meters below the drone's center of vision to fulfill the objective. I will also need to ensure that the altitude does not exceed 120 meters and that the move is within the search area of 400 x 400m.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now in the correct position to take a closer look at the object, which appears to be the trash pile. I will maintain this position as long as it is visible.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object is not clearly visible from this position. I will adjust my altitude slightly to see if the trash pile is located in a different spot.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The trash pile is still not clearly visible. I will continue to search for it while making sure to stay within the search area and altitude limits.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>The trash pile is still

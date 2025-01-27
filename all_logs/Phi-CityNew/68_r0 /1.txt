@@ -1,0 +1,30 @@
+ <Reasoning>
+The sport car might be somewhere within the central part of the image, as indicated by the coordinates. To locate it, I will move the drone to the area with the highest concentration of coordinates, to increase the chances of finding it, while being aware of the altitude constraints.
+</Reasoning>
+<Action>
+(0, 0, -48)
+</Action>
+
+<Reasoning>
+This move targets the central area of the image and aligns with the higher concentration of coordinates, potentially leading to the detection of the white sport car.
+</Reasoning>
+<Action>
+(8, -6, -72)
+</Action>
+
+<Reasoning>
+Nearly 32 meters below the starting altitude, the drone is better positioned to spot the object without exceeding the altitude limit.
+</Reasoning>
+<Action>
+(16, -12, -84)
+</Action>
+
+<Reasoning>
+This action brings the drone even closer to the ground, which should improve the likelihood of finding the white sport car.
+</Reasoning>
+<Action>
+(24, -18, -96)
+</Action>
+
+<Reasoning>
+Keeping the drone within the constraints of the search area and

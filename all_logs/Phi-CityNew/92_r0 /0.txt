@@ -1,0 +1,11 @@
+ <Reasoning>Starting from the center of the image, I will move to the coordinates (-29, -29) to ensure I am in the correct search area and at a lower altitude to begin my search. I will then proceed to the coordinates (0, -1) to get closer to potential object locations.</Reasoning>
+<Action>(-29, -29, 0)</Action>
+
+<Reasoning>I will now adjust my altitude to 5 meters above ground level to get a better view of the area and to start my search for the object as requested. This should also allow me to scan a wider area as I search for the fire.</Reasoning>
+<Action>(0, -2, 5)</Action>
+
+<Reasoning>Next, I will move to the coordinates (59, 0) to ensure I am within the search area and to prepare for a more detailed search.</Reasoning>
+<Action>(59, 0, 0)</Action>
+
+<Reasoning>From the coordinates (59, 0), I will then move to the coordinates (29, 0) to scan the area and to be ready if the object is located in that region. I will also attempt to get closer to the object for a more detailed inspection.</Reasoning>
+<Action>(2

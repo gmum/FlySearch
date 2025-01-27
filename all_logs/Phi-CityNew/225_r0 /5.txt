@@ -1,0 +1,5 @@
+ <Reasoning>I need to make sure the object is within my field of view at this altitude. I'll move slightly to the right to ensure I have a clear view of the object.</Reasoning>
+<Action>(0, 1, 0)</Action>
+
+<Reasoning>The object is definitely within my field of view, and it's the yellow point on the grid (10, 10). I will reply with 'FOUND' to show I've found the object.</Reasoning>
+<Action>FOUND</Action>

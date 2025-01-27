@@ -1,0 +1,27 @@
+ <Reasoning>
+    The drone should avoid collisions and remain operational. Moving to a new position allows for a fresh assessment of the area.
+    </Reasoning>
+
+    <Action>(4, -3, -1)</Action>
+
+    <Reasoning>
+    This move brings the drone to a new location, improving its field of view for the search.
+    </Reasoning>
+
+    <Action>(4, -3, 0)</Action>
+
+    <Reasoning>
+    Adjusting the altitude to ensure a wide field of view is key to the search process.
+    </Reasoning>
+
+    <Action>(4, -3, 1)</Action>
+
+    <Reasoning>
+    The drone should continue to adjust its altitude to maintain visibility and control.
+    </Reasoning>
+
+    <Action>(4, -3, 3)</Action>
+
+    <Reasoning>
+    Moving to the extreme right side of the image could provide new perspectives and increase the likelihood of finding the anomaly.
+    </Reasoning>

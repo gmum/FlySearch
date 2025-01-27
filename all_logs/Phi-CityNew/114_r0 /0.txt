@@ -1,0 +1,9 @@
+ <Reasoning>Since the current altitude is above the initial 10-meter altitude limit, I need to find a way to lower it to have a better chance of detecting the crowd. The yellow point on the grid may be the crowd, so I will move downwards towards that point.</Reasoning>
+<Action>(10, 0, 30)</Action>
+<Reasoning>As I move down, I will be more likely to spot the object in question. I need to ensure that I keep moving towards the yellow point and maintain a safe distance from the building.</Reasoning>
+<Action>(-5, 0, 30)</Action>
+<Reasoning>I have to continue moving downwards while being cautious not to go too low to ensure the safety of the drone. The crowd might be located in the area indicated by the yellow point on the grid.</Reasoning>
+<Action>(-10, 0, 30)</Action>
+<Reasoning>I'm getting closer to the yellow point, which might be the object I am searching for. I need to maintain my altitude lower than the original 10 meters and ensure that I am focused on the yellow point.</Reasoning>
+<Action>(-15, 0, 30)</Action>
+<Reasoning

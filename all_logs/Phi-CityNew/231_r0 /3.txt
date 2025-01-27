@@ -1,0 +1,6 @@
+ <Action space>
+    <Action>(0, -15, -30)</Action>
+    <Reasoning>I am unable to move forward due to the emergency stop. I need to process what I have seen and try to identify the object that I was too close to. From my current position, I will attempt to determine the best way to safely navigate back and minimize damage to the UAV.</Reasoning>
+</Action space>
+
+[Reply "EMERGENCY STOP"]

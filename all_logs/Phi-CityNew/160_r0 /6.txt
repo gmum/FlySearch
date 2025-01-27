@@ -1,0 +1,7 @@
+ <Reasoning>I will start by adjusting my altitude and position to get a better view of the large trash pile, which seems to be located near the center of the image.</Reasoning>
+<Action>(1, 0, -0.5)</Action>
+
+<Reasoning>I am closer to the object, but still not at the desired altitude. I will continue to adjust my altitude and position accordingly.</Reasoning>
+<Action>(1, 0, -0.75)</Action>
+
+<Reasoning>I am at the desired altitude and in the correct position to confirm if the object is the large trash pile. I will now make a final adjustment to my position to ensure I

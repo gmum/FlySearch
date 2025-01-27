@@ -1,0 +1,9 @@
+ <Reasoning>I will start by moving to a location that is closest to the suspected location of the object without violating the search area boundary or exceeding the altitude limit.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object is within the field of view and beneath the ten-meter altitude restriction. I proceed with the search for the object.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>Actually found the object. The coordinates are (3,0,0), and it is in the required altitude range for reporting a 'FOUND' status.</Reasoning>
+<Action>(3,0,0)</Action>
+<Reply>FOUND</Reply>

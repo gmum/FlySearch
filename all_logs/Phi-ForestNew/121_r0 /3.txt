@@ -1,0 +1,16 @@
+ <Reasoning>I will move closer to the ground to have a better chance of spotting the trash pile. Moving to (-1, -1, -20) to start my descent.</Reasoning>
+<Action>(-1, -1, -20)</Action>
+
+<Reasoning>I'm still not at the ground level. I'll move down to (-1, -2, -20) for an even closer view.</Reasoning>
+<Action>(-1, -2, -20)</Action>
+
+<Reasoning>I'm at the ground now. I'll move slightly to the right to check the surrounding area for the trash pile.</Reasoning>
+<Action>(0, -2, -20)</Action>
+
+<Reasoning>No trash pile visible. Moving one step to the right to continue the search.</Reasoning>
+<Action>(1, -2, -20)</Action>
+
+<Reasoning>Still nothing. Moving further to the right to ensure thorough coverage of the area.</Reasoning>
+<Action>(2, -2, -20)</Action>
+
+<Reasoning>I'm starting to see a yellowish patch. Moving closer to verify if it's the tr

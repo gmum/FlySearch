@@ -1,0 +1,11 @@
+ <Reasoning>Since the object chosen to look for is located at the coordinates (0,0), I should move to the center of the drone's field of view to ensure it's as close as possible. The coordinates (0,0) are directly below the center of the drone's view.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The drone is currently at a height of 49 meters above ground level. To search the area directly below, I need to adjust my altitude to be at least 10 meters lower than the object to fulfill the requirement of finding the object below 10 meters.</Reasoning>
+<Action>(0, 0, -49)</Action>
+
+<Reasoning>Now that I am hovering at ground level, I can start my search by moving in directions that might lead me to the object. I should keep an eye out for any significant differences in the environment to determine the object's location more accurately.</Reasoning>
+<Action>(1, 0, -48)</Action>
+
+<Reasoning>The environment does not show any significant changes that would indicate the presence of the object. I should proceed to move further away from the center of the view to cover more area.</Reasoning>
+<Action>(3

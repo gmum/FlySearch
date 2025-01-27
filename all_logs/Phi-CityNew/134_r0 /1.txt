@@ -1,0 +1,12 @@
+ <Reasoning>The object in question is not clearly visible. I need to fly lower to get closer to the ground. I will move down by 30 meters to get closer to the ground. This should be within the 400x400m search area. I will also slightly move to the right to explore that area.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+Current altitude is now 16 meters above ground level.
+
+<Reasoning>The object is still not clearly visible. I need to fly lower to get closer to the ground. I will move down by an additional 10 meters to get even closer to the ground. This should be within the 400x400m search area. I will also slightly move to the right to explore that area.</Reasoning>
+<Action>(5, 1, -40)</Action>
+
+Current altitude is now -4 meters above ground level.
+
+<Reasoning>The object in question is still not clearly visible. I need to fly lower. I will move down by 40 meters to get closer to the ground. This should be within the 400x400m search area. I will also slightly move to the right to explore that area.</Reasoning>
+<Action>(-5, 1,

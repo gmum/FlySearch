@@ -1,0 +1,9 @@
+ <Reasoning>First, I will need to move to the grid location where the object is believed to be situated. I will move to the coordinates (10,10,0) which is closest without overshooting my search area.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object is in the field of view, it is at a distance where I can get below the ten meter altitude restriction and within the detection range. Therefore, I am able to proceed with the search.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>I found the object. It is located at (3,0,0) and it is below the ten-meter altitude restriction. My altitude is closer to the object than ten meters, therefore I can reply with "FOUND" as my final response.</Reasoning>
+<Action>(3,0,0)</Action>
+<Reply>FOUND</Reply>

@@ -1,0 +1,11 @@
+ <Reasoning>The object in question appears to be located towards the lower left part of the image. Since I am instructed to find the object, I will move to a position that is closer to it. As I am currently at 92 meters altitude and the object is reached at 61 meters, I need to fly lower. I will also slightly move north to cover more ground efficiently.</Reasoning>
+<Action>(61, 0, -31)</Action>
+
+<Reasoning>After assessing my surroundings, it appears that the object might be in the center of the image. I will proceed there while ensuring that I am 10 meters below the drone's altitude to confirm if it is the object.</Reasoning>
+<Action>(18, 0, -71)</Action>
+
+<Reasoning>The object seems to be adjacent to the previous spot I've been focusing on. I'll move closer to confirm if it is the same, and maintain a 10 meters lower altitude.</Reasoning>
+<Action>(19, 0, -61)</Action>
+
+<Reasoning>The object appears to be at the intersection of the previous two coordinates. I will move closer to confirm if it is the object.</Reasoning>
+<Action>(20, 

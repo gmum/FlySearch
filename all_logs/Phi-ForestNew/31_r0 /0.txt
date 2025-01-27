@@ -1,0 +1,16 @@
+ <Reasoning>The object of interest might be at a lower altitude than the drone. I need to descend to get closer. If the object is below, I will report 'FOUND'; if not, I will continue to look for it.</Reasoning>
+<Action>(0, 0, -44)</Action>
+
+<Reasoning>This change in altitude should give me a closer view to the object if it is located in the grid area. I will iterate through the grid systematically.</Reasoning>
+<Action>(-1, -1, -44)</Action>
+
+<Reasoning>This move allows me to explore more of the grid systematically and potentially find the trash pile.</Reasoning>
+<Action>(0, 0, -44)</Action>
+
+<Reasoning>This move will show if the object is in a different section of the grid I have not yet explored.</Reasoning>
+<Action>(-1, -1, -44)</Action>
+
+<Reasoning>This move will change my perspective on the area I am looking at, possibly revealing the trash pile in a new light.</Reasoning>
+<Action>(0, -1, -44)</Action>
+
+<Reasoning>This move will give me a wider view

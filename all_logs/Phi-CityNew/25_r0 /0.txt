@@ -1,0 +1,12 @@
+ <Reasoning>I'm starting my search to find the fire. I need to get as close as possible to the object, which is at (32, 65).</Reasoning>
+<Action>(32, -5, 0)</Action>
+
+<Reasoning>I'm looking for the fire, which might be at (25, 65). I need to fly lower to increase my chances of finding it.</Reasoning>
+<Action>(27, -5, -10)</Action>
+
+<Reasoning>I'm still looking for the fire at (25, 65). I need to get closer.</Reasoning>
+<Action>(29, -5, -10)</Action>
+
+<Reasoning>I'm focusing on the fire, which might be at (25, 65). I need to go lower to check.</Reasoning>
+<Action>(28, -5, -10)</Action>
+

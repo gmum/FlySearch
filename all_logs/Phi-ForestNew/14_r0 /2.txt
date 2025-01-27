@@ -1,0 +1,7 @@
+ <Reasoning>The initial movement has led to a lower altitude where darker areas are more visible. This is a strategic move to ensure a closer inspection of potential trash piles. By moving closer, I am ensuring that the object in view can be assessed more accurately.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>Having a closer view of the object, I will now search the area by moving in a direction that is most likely to lead to the trash pile. The goal is to move into the center of the object's likely location.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>After positioning the drone centrally over the potential trash pile, I will begin a thorough search for the trash pile by descending further to

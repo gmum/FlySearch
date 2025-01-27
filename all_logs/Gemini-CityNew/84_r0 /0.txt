@@ -1,0 +1,2 @@
+<Reasoning>I see a potential construction site at around (0, 0). I need to go lower to confirm if that is the construction site and then respond with "FOUND" once I'm within 10 meters of it.</Reasoning>
+<Action>(0, 0, -85)</Action>

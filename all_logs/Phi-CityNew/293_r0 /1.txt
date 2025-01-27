@@ -1,0 +1,13 @@
+ <Reasoning>I will start my search by moving to the leftmost coordinate on the grid that is closest to the drone's current position. This will allow me to quickly scan the area and save time. If the object is not found, I will move diagonally to the next coordinates to cover more area.</Reasoning>
+<Action>(-27, 0, 0)</Action>
+
+<Reasoning>I have scanned the leftmost coordinate on the grid and have not found the object. I will now move diagonally to the top right to cover more area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have scanned the coordinates above the yellow mark and have not found the object. I will now move diagonally to the bottom left to cover more area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have scanned the coordinates below the yellow mark and have not found the object. I will now move diagonally to the top right to cover more area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have scanned the coordinates above the yellow mark and have not found the object. I will now move diagonally to the bottom

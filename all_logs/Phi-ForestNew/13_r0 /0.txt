@@ -1,0 +1,19 @@
+ <Reasoning>
+    I need to search for the object below the 120 meters altitude limit. Since I am currently at 58 meters above the ground, I have 62 meters of clearance to adjust my altitude. I will try to get closer to the object to ensure I can spot it with my field of view.
+    </Reasoning>
+    <Action>(0, 0, -62)</Action>
+
+<Reasoning>
+    Now I am at ground level. I need to fly below 10 meters to be able to spot the object. I should look for the building in my field of view and move closer to it if possible.
+    </Reasoning>
+    <Action>(-1, 0, -0)</Action>
+
+<Reasoning>
+    I have scanned the area around the building and found the object. I will now fly below 10 meters to confirm its presence and ensure it is within my field of view.
+    </Reasoning>
+    <Action>(0, 0, -9)</Action>
+
+<Reasoning>
+    I have found the building and confirmed it above my altitude limit of 10 meters. I will now mark the location with "FOUND" since I am confident in my spot.
+    </Reasoning>
+    <

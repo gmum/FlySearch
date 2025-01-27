@@ -1,0 +1,20 @@
+ <Reasoning>I am starting my search from the starting position and I'll move in a north-west direction to cover a large area quickly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After moving north, I'll change direction to move east to cover more area.</Reasoning>
+<Action>(0, 10, 0)</Action>
+
+<Reasoning>I am continuing my search pattern to cover more area. Next, I'll move north again.</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>I am going to move to the north to continue my search pattern.</Reasoning>
+<Action>(10, 10, 0)</Action>
+
+<Reasoning>I am moving in a south-east direction to cover more area.</Reasoning>
+<Action>(20, 10, 0)</Action>
+
+<Reasoning>I am moving north to continue my search pattern.</Reasoning>
+<Action>(10, 20, 0)</Action>
+
+<Reasoning>I am going to move to the north again to continue my search pattern.</Reasoning>
+<Action>(10,

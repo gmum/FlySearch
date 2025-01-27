@@ -1,0 +1,11 @@
+ <Reasoning>I need to be closer to ground level to perform a thorough search for the fire. I will move to the closest point directly below the suspected fire, which is marked by the grid point (-1, 1). Being closer to the ground level will increase the visibility and accuracy of my search.</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>I am now down to an altitude of 1 meter, directly above the grid point (-1, 1). I will proceed to scan the area in that vicinity for any signs of fire. If I do not find the fire, I will adjust my position accordingly while maintaining a low altitude.</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>After scanning the area below (-1, 1), if there is no sign of fire, I will make another move to the next grid point that is both centrally located and at a low altitude to continue the search. This grid point is approximately (-0.5, 1.5), and it is where I should be moving next.</Reasoning>
+
+<Action>(-0.5, 1.5, -1)</Action>

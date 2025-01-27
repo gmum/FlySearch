@@ -1,0 +1,12 @@
+ <Reasoning>Given my current altitude of 115 meters, I cannot go any higher. I will prioritize descending to confirm the presence of the large trash pile below 10 meters before reporting.</Reasoning>
+<Action>(-39, -10, 24)</Action>
+
+<Reasoning>After moving below 10 meters, I must assess if the large trash pile is visible in my field of view to report the find successfully.</Reasoning>
+<Action>(-38, -10, 23)</Action>
+
+<Reasoning>The large trash pile is in my field of view. I will confirm its presence below 10 meters to ensure I meet the task's criteria before reporting my find.</Reasoning>
+<Action>(-39, -13, 20)</Action>
+
+<Reasoning>With the large trash pile confirmed below me, I will now respond with my findings to complete the task.</Reasoning>
+<Action>(-39, -10, 20)</Action>
+<Response>FOUND</Response>

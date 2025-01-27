@@ -1,0 +1,14 @@
+ <Reasoning>Starting from the center, I will look to the south-east to search for the forest fire. If I don't find it, I will look in other directions by making small adjustments to my position. </Reasoning>
+<Action>(0, -5, 0)</Action>
+
+<Reasoning>I will proceed to the south-east direction to get a closer view of the scene. If I find the object, I will fly lower to get closer. If not, I will continue searching in this direction.</Reasoning>
+<Action>(40, -5, 0)</Action>
+
+<Reasoning>I will make a slight change in my direction to get a different perspective of the scene. I will keep looking for the object.</Reasoning>
+<Action>(40, -9, 0)</Action>
+
+<Reasoning>I will move slightly to the south to see if I have found the object. If not, I will continue my search in the same direction.</Reasoning>
+<Action>(40, -9, 0)</Action>
+
+<Reasoning>I will move a little to the right to check for the forest fire. If I do not find it, I will continue searching in this direction.</Reasoning>
+<Action>(40, -7, 

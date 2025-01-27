@@ -1,0 +1,11 @@
+<Reasoning>After checking the center bottom, I should move towards the top center of the image to continue my search. I will move to (0, 14, 0) to check that area.</Reasoning>
+<Action>(0, 14, 0)</Action>
+
+<Reasoning>Now that I'm at the top center, I will lower my altitude again to 10 meters to get a better view. If I find the fire, I will report it. If not, I will continue to search in a systematic way. I will also need to adjust my search strategy based on whether any clues are visible from this angle.</Reasoning>
+<Action>(0, 0, -33)</Action>
+
+<Reasoning>After checking the top center, I should move towards the top-right side of the image to continue my search. I will move to (29, 29, 0) to check that area.</Reasoning>
+<Action>(29, 29, 0)</Action>
+
+<Reasoning>Now that I'm at the top-right side, I will lower my altitude again to 10 meters to get a better view. If I find the fire, I will report it. If not, I will continue to search in a systematic way. I will also need to adjust my search strategy based on whether any clues are visible from this angle.</Reasoning>
+<Action>(0, 0, -3

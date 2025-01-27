@@ -1,0 +1,30 @@
+ <Action space>
+    <Action>(5, 0, -30)</Action>
+</Action space>
+
+<Reasoning>
+    I am starting by moving slightly to the north without changing the altitude to see if the object is in my field of view.
+</Reasoning>
+
+<Action space>
+    <Action>FOUND</Action>
+</Action space>
+
+<Reasoning>
+    The yellow point I have just moved to is in my field of view. I am 5 meters above the object, so I will now move lower to get closer.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 10, -35)</Action>
+</Action space>
+
+<Reasoning>
+    I have moved lower to get closer to the object. I am now 39 meters below the object.
+</Reasoning>
+
+<Action space>
+    <Action>(5, 0, -40)</Action>
+</Action space>
+
+<Reasoning>
+    I am moving slightly to the north to get a better view of the object.

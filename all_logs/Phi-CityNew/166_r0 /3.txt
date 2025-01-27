@@ -1,0 +1,11 @@
+ <Reasoning>I'm searching for the construction site in the grid area where the white space is located.</Reasoning>
+<Action>(0, 0, -3)</Action>
+
+<Reasoning>I'm now closer to the ground and can see the white space clearly. It's the construction site, so I can confirm my discovery.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>I've confirmed the construction site. Now, I need to report my success and any details about the site.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>I've reported the presence of the construction site and its location in the grid coordinates. The mission was successful, and the UAV can now proceed with further tasks.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,14 @@
+ <Reasoning>
+    The grid is overlaid on the image, and I need to find the object that does not fit. I am currently at (1,1) on the grid, and I will move closer to the object by going to (0,0) on the grid. This will bring me lower and closer to the object. I am aware that I need to be at most 10 meters below the object when I find it.
+</Reasoning>
+<Action>(0, 0, -25)</Action>
+
+<Reasoning>
+    I have moved to (0, 0) on the grid, which means I am going deeper into the grid and closer to the lower part of the image. The object that does not fit is likely to be lower than the rest. I will now move to (0, -1) on the grid to get even closer.
+</Reasoning>
+<Action>(0, -1, -20)</Action>
+
+<Reasoning>
+    I am at (0, -1) on the grid, and it looks like the object might be to the right of the grid's center. I will move to (0, -2) to get even closer. The object still looks like the one I am looking for.
+</Reasoning>
+<Action>(0, -2, -25

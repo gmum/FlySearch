@@ -1,0 +1,11 @@
+ <Reasoning>With a clear view of the terrain, I will start my descent towards the area where the building is likely to be. The building may be located on the terrain feature that appears to slope towards the center of the map.</Reasoning>
+<Action>(20, 22, 0)</Action>
+
+<Reasoning>The building is becoming more visible as I descend. I will continue my descent to ensure I am in the vicinity of the building.</Reasoning>
+<Action>(15, 22, 0)</Action>
+
+<Reasoning>I am now very close to the building. It's time to capture the coordinates to confirm if this is the building I'm looking for.</Reasoning>
+<Action>(0, 22, 0)</Action>
+
+<Reasoning>The building is finally in sight. I've successfully located it and confirmed its coordinates. Time to report the successful search.</Reasoning>
+<Action>(0, 22, 0)</Action>

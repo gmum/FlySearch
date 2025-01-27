@@ -1,0 +1,2 @@
+ <Reasoning>I am now at the coordinates (2, 0). I will move to the closest coordinates indicating a campsite, which is (0, 0), and then descend to check the area.</Reasoning>
+<Action>(0, 0, -10)</Action>

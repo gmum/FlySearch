@@ -1,0 +1,7 @@
+ <Action space>
+    <Action>(20, -10)</Action>
+</Action space>
+
+<Reasoning>
+    The yellow point on the image may be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.
+</Reasoning>

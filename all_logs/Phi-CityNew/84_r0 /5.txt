@@ -1,0 +1,7 @@
+ <Reasoning>The road construction site is likely to be on the ground, so I need to fly lower to check it out. I need to ensure that I am in the correct location as well, so I will start by moving to the center of the image grid (0, 0) and then adjust my altitude accordingly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>As I approach the location, I will watch the images to ensure that I am on the right track and that I am closer to the potential construction site.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>The elements in the image are still unclear, so I will continue to fly lower and then check the coordinates to determine my next move.

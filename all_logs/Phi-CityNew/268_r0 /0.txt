@@ -1,0 +1,11 @@
+ <Reasoning>The yellow point on the grid is south of me. Because the object could be anywhere in the image, I should move to the south of this point to increase my chances of finding it.</Reasoning>
+<Action>(4, -3, 0)</Action>
+<Reasoning>There is a red point on the grid, which might be the anomaly. Since the object I am looking for is not common in this environment, I should move to that point to check for it.</Reasoning>
+<Action>(3, 0, 0)</Action>
+<Reasoning>I am now very close to the red point, but the object is not in my field of view. I should move to the center to be able to see the object.</Reasoning>
+<Action>(6, 0, 0)</Action>
+<Reasoning>The object is not in my field of view. I should move to the blue point on the grid to be able to see it.</Reasoning>
+<Action>(5, -1, 0)</Action>
+<Reasoning>The blue point is very close to the object. I should move to the center of the image to increase my chances of seeing the object.</Reasoning>
+<Action>(6, 0, 0)</Action>
+<Reasoning

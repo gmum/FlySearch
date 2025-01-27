@@ -1,0 +1,17 @@
+ <Reasoning>I have flown too close to a building, and I risk hitting it.</Reasoning>
+<Action>(39, 39, -5)</Action>
+
+<Reasoning>I am now at a safe distance from the building. I will continue my search.</Reasoning>
+<Action>(39, 39, 0)</Action>
+
+<Reasoning>The truck is not yet visible. I will move further and lower to increase the chances of finding it.</Reasoning>
+<Action>(39, 39, -10)</Action>
+
+<Reasoning>A yellow truck is visible in the image. If it's the object we're looking for, I will need to move lower.</Reasoning>
+<Action>(39, 39, -20)</Action>
+
+<Reasoning>The truck is closer to the ground now. I will verify if it's the correct object.</Reasoning>
+<Action>(39, 39, -30)</Action>
+
+<Reasoning>The truck is within the field of view and is the object we were looking for. I will now lower the drone to confirm.</Reasoning>
+<Action>(39, 39, -40

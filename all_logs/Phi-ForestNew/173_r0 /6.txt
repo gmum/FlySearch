@@ -1,0 +1,14 @@
+ <Reasoning>To start, I'll remain at coordinates (0, 0) to get a comprehensive view of the area. Then I'll move to coordinates (9, 0) for a wider search radius.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>Next, I'll check the coordinates (4, 0) to see if the campsite is located there.</Reasoning>
+<Action>(10, 0, -5)</Action>
+
+<Reasoning>The coordinates (4, 4) are to the north-east. If the campsite is not there, it should be in this area.</Reasoning>
+<Action>(15, 4, -5)</Action>
+
+<Reasoning>The coordinates (4, 8) are further north-east. This could potentially be the campsite or very close to it.</Reasoning>
+<Action>(15, 8, -5)</Action>
+
+<Reasoning>Finally, I'll check the coordinates (9, 9) which are to the northeast of the clearing. If the campsite is not found here, it should be in this vicinity.</Reasoning>
+<Action>(15, 9, -5

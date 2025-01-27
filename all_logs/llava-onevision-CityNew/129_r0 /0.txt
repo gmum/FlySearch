@@ -1,0 +1,22 @@
+<Reasoning>
+    I will start by moving towards the center of the image to get a better view of the surroundings. Based on the grid, I will move towards the coordinates (0, 0) which should be the center of the image.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+    Now that I am at the center, I will lower my altitude to get a closer look at the ground. I will descend by 20 meters to an altitude of 50 meters.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>
+    At this altitude, I should be able to see if there is a trash pile in the vicinity. I will continue to lower my altitude in small increments to get a better view.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I have now descended to an altitude of 40 meters. I should be able to see if there is a trash pile in the vicinity. I will continue to lower my altitude in small increments to get a better view.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>
+    I have now descended to an altitude of 35 meters. I should be able to see if there is a trash pile in the vicinity. I will continue to lower my altitude in small increments to get a better

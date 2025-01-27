@@ -1,0 +1,19 @@
+<Reasoning> I will start by moving towards the center of the map to cover more ground and search for the anomaly. I will then adjust my altitude to get a better view. </Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning> I have arrived at the center and adjusted my altitude. I will now move slightly to the right to search for the anomaly. </Reasoning>
+<Action>(20, 0, 0)</Action>
+
+<Reasoning> I have moved to the right and I still haven't found the anomaly. I will now move slightly down to search for it. </Reasoning>
+<Action>(0, -20, 0)</Action>
+
+<Reasoning> I have moved down and I still haven't found the anomaly. I will now move slightly to the left to search for it. </Reasoning>
+<Action>(-20, 0, 0)</Action>
+
+<Reasoning> I have moved to the left and I still haven't found the anomaly. I will now move slightly up to search for it. </Reasoning>
+<Action>(0, 20, 0)</Action>
+
+<Reasoning> I have moved up and I still haven't found the anomaly. I will now move slightly back to the center and adjust my altitude again. </Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning> I have arrived back at

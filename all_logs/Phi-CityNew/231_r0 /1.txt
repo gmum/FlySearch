@@ -1,0 +1,6 @@
+ <Action space>
+    <Action>(0, -10, -30)</Action>
+    <Reasoning>It's important to maintain that I am not too high. I need to be close to the ground to perform a thorough search. After that, I will move in a pattern that allows me to cover the largest area with the fewest moves, ensuring that I'm moving in a search pattern that makes sense given the layout of the area.</Reasoning>
+</Action space>
+
+[Reply "FOUND"] (Note: As the user has not indicated what object they are searching for, this response is incomplete. The user should specify the object they are looking for in their next move or message to receive a more precise response.)

@@ -1,0 +1,5 @@
+ <Reasoning>Since the current altitude allows me to maneuver the drone within the 10-meter limit and I am not yet at the lower option, I will move down by one grid point to (25, 50) in the lower left quadrant of the image. This will give me a better view of the terrain and increase my chances of spotting the person.</Reasoning>
+
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning>I will then proceed to the lower right quadrant of

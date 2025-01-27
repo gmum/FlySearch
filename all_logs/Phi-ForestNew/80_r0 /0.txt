@@ -1,0 +1,13 @@
+ <Reasoning>If the object is at the coordinates (0, 0, 0), I will start the search by flying towards it and then move down to scan the area more closely. I will continue searching systematically, changing altitude and moving across the grid as necessary to cover the area thoroughly.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>After reviewing the area at this lower altitude, if I still have not located the object, I will climb back to a higher altitude to get a broader view and continue the search.</Reasoning>
+<Action>(0, 0, 30)</Action>
+
+<Reasoning>If the object is not found, I will move to the coordinates (31, 0, 0) to search a new area and then repeat the process of lowering to search and then climbing back to cover more ground.</Reasoning>
+<Action>(31, 0, -30)</Action>
+
+<Reasoning>I will continue this methodical pattern of descending to the object's vicinity and ascending to cover more ground until the object is found or I exhaust the allowed number of moves.</Reasoning>
+<Action>(31, 0, -30)</Action>
+
+<Reasoning

@@ -1,0 +1,21 @@
+ <Reasoning>
+Since I am already at 9 meters above ground level, I am in the right altitude range to search for the large trash pile. I need to fly lower to ensure that the trash pile is in my field of view.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>
+The trash pile is located at coordinates (-6, -3). I am now flying at the correct altitude and can search for the trash pile in my field of view.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+I have found the large trash pile at coordinates (-6, -3). It is within my field of view and I am flying at the correct altitude. I will report that the object has been found.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Action>FOUND</Action>
+
+<Reasoning>
+The trash pile is located at coordinates (-6, -3). I am now flying at the correct altitude and can search for the trash pile in my field of view.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Action>

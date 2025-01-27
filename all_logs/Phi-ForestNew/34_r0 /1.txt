@@ -1,0 +1,16 @@
+ <Reasoning>The drone is currently at a high altitude, so the first move will be to descend to a lower altitude to ensure better visibility of the ground.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>After descending, I will attempt to position the drone above the building to scan for it. The coordinates suggest it is at the center of the grid, so I will move to the center for a better chance to see it.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>I will now attempt to move closer to the object while ensuring I am at a lower altitude to see if it is indeed the building.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The building should be at (0, 0), so I will move there to check if it is the building in question.</Reasoning>
+<Action>(0, 0, -0.5)</Action>
+
+<Reasoning>I will continue to move closer to the object, making sure the drone is directly above it for a positive identification.</Reasoning>
+<Action>(0, 0, -0.4)</Action>
+
+<Reasoning>I will now

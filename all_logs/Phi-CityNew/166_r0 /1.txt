@@ -1,0 +1,16 @@
+ <Reasoning>I've started my search for a construction site. The grid is overlaid on the image, which should help me navigate towards the area I'm interested in.</Reasoning>
+<Action>(0, 0, -15)</Action>
+
+<Reasoning>I need to adjust my altitude to get closer to the ground and better inspect potential sites. The yellow square stands out and could be a sign of a construction site.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>The yellow structure is indeed a construction site. However, I must maintain an altitude close to the ground to assess its details.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>I'm looking for specific features of the construction site. The black rectangular section might be another area of interest, but I need to get low for a better view.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>The black section is not the construction site, but there's a distinct white space which could be indicative of the site. I must continue to lower to get a closer look.</Reasoning>
+<Action>(5, 0, -4)</Action>
+
+<

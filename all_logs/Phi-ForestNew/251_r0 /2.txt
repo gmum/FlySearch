@@ -1,0 +1,2 @@
+ <Action>(-20, 0, -30)</Action>
+<Reasoning>I must move the drone slightly further to the left and down to improve our chances of finding the object. By going to (-20, 0, -30), I'm closer to the coordinates (0, 0, -30), which is the closest known point to the initial point, and it's within the drone's view. This action will keep us focused on the area where the object might be found.</Reasoning>

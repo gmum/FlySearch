@@ -1,0 +1,17 @@
+ <Reasoning>
+    Based on the coordinates given at the last image, the trash pile is located at (0, 0, 0). I need to move closer and lower to get a closer view without hitting something.
+    </Reasoning>
+    <Action>(-3, 0, -10)</Action>
+</Reasoning>
+<Reasoning>
+    Based on the coordinates given at the last image, the trash pile is located at (0, 0, 0). I'm already at -10 meters and still need to move closer to the pile.
+    </Reasoning>
+<Action>(-6, 0, -15)</Action>
+</Reasoning>
+<Reasoning>
+    Based on the coordinates given at the last image, the trash pile is located at (0, 0, 0). I need to move closer and lower to get a closer view without hitting something.
+    </Reasoning>
+<Action>(-9, 0, -20)</Action>
+</Reasoning>
+<Reasoning>
+    Based on the coordinates given at the last image, the trash pile is located at (0, 0, 0). I'm already at -20 meters and still need to move closer to the p

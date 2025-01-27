@@ -1,0 +1,13 @@
+ <Reasoning>I will start by flying to a spot that is close to the object. I'll fly to (0, -1, -30) to get closer.</Reasoning>
+<Action>(0, -1, -30)</Action>
+
+<Reasoning>The object is not in my field of view yet. I'll move to a spot that is closer to it. I'll fly to (0, 1, -20).</Reasoning>
+<Action>(0, 1, -20)</Action>
+
+<Reasoning>I can't see the object in this area. I'll try moving slightly to the left to get a better view. I'll fly to (-1, 0, -20).</Reasoning>
+<Action>(-1, 0, -20)</Action>
+
+<Reasoning>The object is still not in my field of view, but I'm getting closer. I'll move a bit further south. I'll fly to (-1, -1, -20).</Reasoning>
+<Action>(-1, -1, -20)</Action>
+
+<Reasoning>I'm closer to the object, but it's still not in my field of view. I'll go below the

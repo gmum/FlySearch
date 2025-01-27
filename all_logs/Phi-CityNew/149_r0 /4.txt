@@ -1,0 +1,14 @@
+ <Reasoning>I am below the possible altitude range for finding the object. I need to increase my altitude by 5 meters to start the search from above the object.</Reasoning>
+<Action>(5, 0, 1)</Action>
+
+<Reasoning>The object might be located at the intersection of the yellow point and the street. I will move to that point to confirm.</Reasoning>
+<Action>(20, -3, 0)</Action>
+
+<Reasoning>The yellow point is not the object. I will move towards the building and see if the object is on or near the building.</Reasoning>
+<Action>(15, -3, 0)</Action>
+
+<Reasoning>The object is on the building. I am now above the object but need to fly lower to confirm.</Reasoning>
+<Action>(12, -3, 0)</Action>
+
+<Reasoning>I am below the object. If it is the object, I can conclude the search. Otherwise, I need to continue searching.</Reasoning>
+<Action>(9, -3, 0)</Action>

@@ -1,0 +1,7 @@
+ <Reasoning>This will be my last attempt to find the object.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>I'll fly as close to the ground as possible within my altitude limit.</Reasoning>
+<Action>(0, -1, 0)</Action>
+
+<Response>FOUND</Response>

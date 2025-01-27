@@ -1,0 +1,4 @@
+ <Reasoning>
+    First, I need to move to a position where the object is in my line of sight and closer to the ground. Since the object is indicated by a yellow point on the grid, I will aim to fly to the spot denoted by (0, 36), which is closest to the yellow point on the grid. After identifying the object, I will then lower my altitude to 10 meters below the object.
+</Reasoning>
+<Action>(0, 36, 24)</Action>

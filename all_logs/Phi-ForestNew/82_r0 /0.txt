@@ -1,0 +1,3 @@
+ <Reasoning>Starting from the center, I need to fly south looking for the building. If it is not directly below the center, I will move slightly eastward while keeping an eye on the grid for any buildings that resemble the one in question.</Reasoning>
+
+<Action>(0, -10, -20)</Action>

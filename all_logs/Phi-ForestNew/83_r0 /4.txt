@@ -1,0 +1,17 @@
+ <Reasoning>
+    At an altitude of 1 meter above ground level, I must optimize my search pattern to ensure a thorough examination of the area. I will start by moving to the coordinates that are nearest to the estimated location of the subject while being close to the ground.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    As I move through the grid, I will adjust my altitude to stay as low to the ground as possible. This will increase the likelihood of detecting the subject if it is present in the area.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    If the initial grid point has not yielded the subject, I will proceed to the next grid point that is close to the object's predicted location. I will maintain this pattern and adjust my search based on the feedback from the search pattern each time.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    If the subject is not in the immediate vicinity of the current grid point, I will extend my search to the next closest grid point. I will continue this pattern, ensuring that I cover the search area effectively while ad

@@ -1,0 +1,8 @@
+ <Reasoning>The cross-shaped object is the most prominent feature in the image. I will decrease my altitude to get a closer look.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The cross-shaped object is the object we were looking for. I will now fly below it to confirm.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have confirmed that the cross-shaped object is indeed the object we were looking for. I will report my findings.</Reasoning>
+<Action>FOUND</Action>

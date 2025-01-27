@@ -1,0 +1,5 @@
+ <Reasoning>The chart indicates that the last coordinates are within the range of the altitude malfunction warning, suggesting I am too low and need to stop the vehicle.</Reasoning>
+
+<Action>EmergencyStop</Action>
+
+<Reasoning>As the coordinates are in the danger zone, I have to halt the UAV immediately to avoid a collision with the ground or any obstacles.</Reasoning>

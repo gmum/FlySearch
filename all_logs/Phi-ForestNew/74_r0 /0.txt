@@ -1,0 +1,4 @@
+ <Response>
+    <Reasoning>I will move to the coordinates marked at (10, 10) which is within my field of view and slightly north to see if it's the object. Based on the coordinates provided, this location is centrally located in the image.</Reasoning>
+    <Action>(10, 10, 0)</Action>
+</Response>

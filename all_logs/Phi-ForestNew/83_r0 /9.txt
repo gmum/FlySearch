@@ -1,0 +1,17 @@
+ <Reasoning>
+    At this altitude, the UAV's search pattern will be adjusted to ensure the most efficient use of the search area. The UAV will systematically move through the grid, prioritizing points close to the subject's predicted location.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    The UAV will continue to scan each grid point, making adjustments to its altitude and search pattern as necessary to cover the area effectively. This methodical approach will ensure a thorough search while adhering to the operational limits.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    If the subject is not located near the grid points initially scanned, the UAV will proceed to the next closest points. The UAV will continue this systematic movement of the grid while staying vigilant for any signs of the subject.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    Upon locating the subject or if the search area is exhausted, the UAV will lower its altitude to 10 meters below ground level and then resume scanning the area for any additional subjects

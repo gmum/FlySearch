@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since the object chosen to look for is located at the coordinates (0,0), I should move to the center of the drone's field of view to ensure it's as close as possible. The coordinates (0,0) are directly below the center of the drone's view.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>The drone is currently at a height of 49 meters above ground level. To search the area directly below, I need to adjust my altitude to be at least 10 meters lower than the object to fulfill the requirement of finding the object below 10 meters.</Reasoning>\n<Action>(0, 0, -49)</Action>\n\n<Reasoning>Now that I am hovering at ground level, I can start my search by moving in directions that might lead me to the object. I should keep an eye out for any significant differences in the environment to determine the object's location more accurately.</Reasoning>\n<Action>(1, 0, -48)</Action>\n\n<Reasoning>The environment does not show any significant changes that would indicate the presence of the object. I should proceed to move further away from the center of the view to cover more area.</Reasoning>\n<Action>(3"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 48 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>To find the object that does not fit the surrounding environment, I need to start by moving to the center of the drone's view. By doing this, I can ensure that the drone will cover as much of the area as possible.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>The object must be at most 10 meters below the current altitude of the drone. I should reduce my altitude to achieve this, so the drone can be closer to the ground in the search area.</Reasoning>\n<Action>(0, 0, -48)</Action>\n\n<Reasoning>The object appears to be in the center of the image. To confirm its location and ensure the drone's altitude is appropriate, I should make small adjustments in altitude and direction.</Reasoning>\n<Action>(1, 0, -47)</Action>\n\n<Reasoning>The drone seems to be hovering close to the object. I should now make a final move to confirm the object's presence and check for any anomalies.</Reasoning>\n<Action>(1, 0, -46)</Action>\n\n<Reasoning>After a detailed search, I have found the object that stands out in the environment, ver"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 47 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>To locate the anomaly, I am starting by moving to the center of the drone's field of view, which is the most efficient way to begin the search.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>The object must be 10 meters below my current altitude. I will decrease my altitude to ensure adequate proximity to the ground for the search.</Reasoning>\n<Action>(0, 0, -47)</Action>\n\n<Reasoning>The object seems to be centrally located. I will make minor adjustments to confirm its position and to ensure that my altitude is near 10 meters below the object.</Reasoning>\n<Action>(1, 0, -46)</Action>\n\n<Reasoning>I have found the object that does not fit the uniformity of the surrounding environment. The drone's altitude is now 10 meters below the object.</Reasoning>\n<Action>(1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at 47 meters above ground level, which is suitable for searching at this altitude without exceeding the altitude limit. The object should be visible and close in the field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 46 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will begin by moving to the center of the drone's view to start the search process.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>To find the object that doesn't fit with the environment, I need to be at least 10 meters lower than my current altitude. So, I will decrease my altitude accordingly.</Reasoning>\n<Action>(0, 0, -46)</Action>\n\n<Reasoning>The object seems to be in a corner of the image. I will make a slight move to check the area more thoroughly.</Reasoning>\n<Action>(1, 0, -45)</Action>\n\n<Reasoning>After a comprehensive search, I have found the object. The drone's altitude is now close to the ground, in line with the object.</Reasoning>\n<Action>(1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at a height of 46 meters above ground level, well within the altitude limit. The object should be clearly visible and in the drone's field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>To begin the search, I will position the drone at the center of the field of view to cover the widest area possible.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>The object must be 10 meters or less below the drone's current altitude. To search effectively, I will decrease the altitude below this threshold.</Reasoning>\n<Action>(0, 0, -45)</Action>\n\n<Reasoning>The object appears to be located in the bottom right of the image. I will make a slight adjustment to better inspect the area.</Reasoning>\n<Action>(1, 0, -44)</Action>\n\n<Reasoning>After thoroughly scanning the area, I have found the object. The drone's altitude is now at the required level to confirm the object's presence.</Reasoning>\n<Action>(1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at a height of 45 meters above ground level, which is appropriate for this search task. The object should be clearly visible and within the drone's field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 44 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to the center of the drone's view to ensure maximum coverage.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>To find the object that does not fit the environment, I need to be at least 10 meters lower than my current altitude. So, I will decrease my altitude to the required level.</Reasoning>\n<Action>(0, 0, -44)</Action>\n\n<Reasoning>The object seems to be located in the center of the image. I will make minor adjustments to confirm its location and proper altitude.</Reasoning>\n<Action>(1, 0, -43)</Action>\n\n<Reasoning>After a detailed search, I have found the object. The drone's altitude is now within the required range to ensure it is close enough to the object to identify it.</Reasoning>\n<Action>(1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at a height of 44 meters above ground level, which is within the altitude limit. The object should be clearly visible and detectible within the drone's field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 43 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will begin my search at the center of the drone's view to ensure I am maximizing the area covered.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>To locate the object, I must be at least 10 meters lower than the drone's current altitude. Therefore, I will decrease my altitude to meet this requirement.</Reasoning>\n<Action>(0, 0, -43)</Action>\n\n<Reasoning>The object seems to be located in the lower part of the image. I will adjust my altitude to confirm its presence.</Reasoning>\n<Action>(-1, 0, -42)</Action>\n\n<Reasoning>After conducting a thorough search around the area, I have found the object. The drone's altitude is now suitable for confirmation.</Reasoning>\n<Action>(-1, 0, -16)</Action>\n\n<Reasoning>The drone is currently at 43 meters above ground level, which is appropriate for this task. The object should be clearly visible and within the drone's field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I begin by moving to the center of the drone's field of view to cover the area effectively.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>To find the object that does not fit the environment, I need to be at least 10 meters below my current altitude. I will decrease my altitude accordingly.</Reasoning>\n<Action>(0, 0, -42)</Action>\n\n<Reasoning>The object seems to be located in the central part of the image. I will make slight adjustments to better investigate the area.</Reasoning>\n<Action>(-1, 0, -41)</Action>\n\n<Reasoning>After a complete search, I have found the object. The drone's altitude is now at the correct level to confirm the object's presence.</Reasoning>\n<Action>(-1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at a height of 42 meters above ground level, which meets the altitude requirements for this search task. The object should be visible and identifiable within the drone's field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 41 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving to the center of the drone's view to cover as much area as possible.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>The object must be at most 10 meters below the drone's current altitude. I will decrease my altitude to ensure I am within the required range.</Reasoning>\n<Action>(0, 0, -41)</Action>\n\n<Reasoning>The object seems to be located in the lower part of the image. I will make minor adjustments to better inspect the area.</Reasoning>\n<Action>(-1, 0, -40)</Action>\n\n<Reasoning>After a detailed search, I have found the object. The drone's altitude is now within the required range for confirmation.</Reasoning>\n<Action>(-1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at a height of 41 meters above ground level, which is appropriate for this search task. The object should be clearly visible and detectable within the drone's field of view.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will begin my search by moving to the center of the drone's view to ensure I am maximizing the area covered.</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>To find the object that does not fit the environment, I need to be at least 10 meters lower than my current altitude. I will decrease my altitude to meet this requirement.</Reasoning>\n<Action>(0, 0, -40)</Action>\n\n<Reasoning>The object seems to be located in the lower part of the image. I will make slight adjustments to better inspect the area.</Reasoning>\n<Action>(-1, 0, -39)</Action>\n\n<Reasoning>After a thorough search, I have found the object. The drone's altitude is now within the required range to confirm the object's presence.</Reasoning>\n<Action>(-1, 0, -16)</Action>\n\n<Reasoning>The drone is flying at a height of 40 meters above ground level, which is appropriate for this task. The object should be clearly visible and detectable within the drone's field of view.</Reasoning>"
+    ]
+]

@@ -1,0 +1,13 @@
+ <Reasoning>Since the drone can only go so high, I can't go above 120 meters. Additionally, the altitude of the drone is already high, so I will need to be careful not to exceed the altitude limit. I will start by moving to a point that seems different from the rest and closer in height to the ground to increase my chances of finding the anomaly. I will not make a move that would take me out of view since that might lead to collision.</Reasoning>
+
+<Action>(10, -5, -30)</Action>
+
+<Reasoning>After my first move, it looks like I am moving towards an area with trees. The object might be in this area, but still not in my line of sight. I should make another move to get closer to the ground and increase the chances of the object being in my field of view.</Reasoning>
+
+<Action>(8, -10, -30)</Action>
+
+<Reasoning>I am now closer to the ground and the yellow spot seems more prominent. It might be the object I am looking for. I will take two steps down to 8 meters above the ground to check it out.</Reasoning>
+
+<Action>(6, -10, -10)</Action>
+
+<Reasoning>After moving down

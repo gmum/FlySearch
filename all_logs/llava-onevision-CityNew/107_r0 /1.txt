@@ -1,0 +1,2 @@
+<Reasoning>As I'm currently centered on the grid, I will begin my search by moving to the grid point (0, 10, 0). If the object isn't there, I will continue to move outwards in a spiral pattern, increasing the radius of my search area.</Reasoning>
+<Action>(0,10,0)</Action>

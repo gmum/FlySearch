@@ -1,0 +1,7 @@
+<Reasoning>I see a potential trash pile near the center of the image, I will move towards it and slightly down to get a closer look.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>As I moved slightly down, I can now see a trash pile on the ground. I will move slightly to the left to get a better view of the area.</Reasoning>
+<Action>(-5, 0, 0)</Action>
+
+FOUND.

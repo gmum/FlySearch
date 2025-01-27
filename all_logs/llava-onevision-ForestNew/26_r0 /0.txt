@@ -1,0 +1,13 @@
+<Reasoning>Given the starting position and the need to find a trash pile, I will begin by moving to the center of the grid to ensure I have a good starting point for my search. I will then descend to 20 meters to get a closer view of the ground.</Reasoning>
+<Action>(0, 0, -34)</Action>
+
+<Reasoning>At this altitude, I will now move to the center of the grid to begin my systematic search. I will start by checking the center and then move in a pattern to cover the entire area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>From the center, I will now move to the first point in my search pattern, which is the top-left corner of the grid. I will continue to descend to 10 meters to get a closer look at the ground.</Reasoning>
+<Action>(-36, 36, -10)</Action>
+
+<Reasoning>At this point, I will check for the trash pile. If I do not find it, I will move to the next point in my search pattern. I will continue this process until I have covered the entire area or found the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since I did not find the trash pile at the top-left corner, I will now move to the next point in my search pattern,

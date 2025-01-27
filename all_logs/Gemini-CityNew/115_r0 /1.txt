@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I am now closer to the ground. I still don't see any road construction. I will move to the left, since I see some different colors of the ground. I will move to (-24,0) and go down by 20 meters. That should give me a good view.</Reasoning>
+<Action>(-24, 0, -20)</Action>
+```

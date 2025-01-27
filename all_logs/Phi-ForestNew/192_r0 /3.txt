@@ -1,0 +1,23 @@
+ <Reasoning>I am very close to the ground, and I need to ensure that I am directly above the object to locate them.</Reasoning>
+
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>I am now directly above the object. I will move slightly to the left to ensure that I am centered on them.</Reasoning>
+
+<Action>(-1, -1, -1)</Action>
+
+<Reasoning>I can see the person now. I will move slightly up to get the best view of them.</Reasoning>
+
+<Action>(-1, -1, -1)</Action>
+
+<Reasoning>I am now directly above the person. I will move slightly to the right to ensure that I am centered on them.</Reasoning>
+
+<Action>(-1, -1, -1)</Action>
+
+<Reasoning>I can see the person now. I will move slightly to the left to ensure that I am centered on them.</Reasoning>
+
+<Action>(-1, -1, -1)</Action>
+
+<Reasoning>I am now directly above the person. I will move slightly to the right to ensure that I am centered on them.</Reasoning>
+
+<Action>(-1, -1, -1

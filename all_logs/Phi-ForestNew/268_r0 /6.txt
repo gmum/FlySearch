@@ -1,0 +1,8 @@
+ <Reasoning>The object in question is likely at (0, 0). I will move closer to confirm this.</Reasoning>
+<Action>(-1, -1, -5)</Action>
+<Reasoning>The object is now visible in my field of view. It is not 10 meters below the drone, so I will continue the search.</Reasoning>
+<Action>(-1, -1, -5)</Action>
+<Reasoning>The object is not visible in my field of view. It may be below the surface or out of the current frame of the image. I will move even lower to confirm this.</Reasoning>
+<Action>(-2, -2, -5)</Action>
+<Reasoning>The object is no longer visible in my field of view. It may be below the surface or out of the current frame of the image. I will move even lower to confirm this.</Reasoning>
+<Action>(-2, -2, -5)</Action>

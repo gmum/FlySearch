@@ -1,0 +1,2 @@
+ <Action>(-5, 0, -10)</Action>
+<Reasoning>The object that I am supposed to find appears to be at the coordinates (0,0), directly in front of the drone's starting position. To increase the chances of spotting the person, I need to lower my altitude. This will bring me closer to the ground, allowing for better visual assessment of the area below my drone. The altitude must be reduced to be at most 10 meters below ground to ensure the object is within my field of view when I reply with "FOUND".</Reasoning>

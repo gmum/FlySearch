@@ -1,0 +1,2 @@
+ <Reasoning>The image shows the forest fire at the coordinates (0, 6) on the grid overlay. My current altitude is 9 meters above ground level. To get a closer view and confirm the presence of the forest fire, I need to descend the drone.</Reasoning>
+<Action>(0, 6, -5)</Action>

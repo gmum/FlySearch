@@ -1,0 +1,30 @@
+ Given the current altitude is 60 meters above ground level, I will move as follows:
+
+<Reasoning>
+I am going to lower the altitude to get closer to the ground to ensure the object is in my field of view when I state "FOUND".
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+This is my first move, lowering the altitude.
+
+<Reasoning>
+Now I will move downward to the coordinates where I think the object might be located.
+</Reasoning>
+<Action>(0, -10, -30)</Action>
+
+I suspect the object might be near the coordinates (0, -10).
+
+<Reasoning>
+Next, I will slightly move to the right to explore the area around the expected location of the object.
+</Reasoning>
+<Action>(10, -10, -30)</Action>
+
+<Reasoning>
+I am staying low and moving right, hoping the object might be around these coordinates.
+</Reasoning>
+<Action>(10, -10, -30)</Action>
+
+<Reasoning>
+I am still in the vicinity of the coordinates where I thought the object might be located.
+</Reasoning>
+<

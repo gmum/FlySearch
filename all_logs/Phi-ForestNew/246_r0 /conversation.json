@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 66 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The coordinates specify an area to search, focusing on the bottom left. Since the drone's altitude is 66 meters and the search area is 400 meters by 400 meters, it's unlikely the object is at the coordinates (0,0) as it's in the upper left area. The object is probably located lower. I'll start looking there.</Reasoning>\n<Action>(30, 0, -30)</Action>\n\n<Reasoning>I'll need further information, but the object might be located in the center. I try to fly a few steps to the south and slightly shift to the left to explore the middle area.</Reasoning>\n<Action>(20, -5, -8)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The drone is at coordinates (12,23). I move to coordinates (0,23) to explore a different area, possibly where the object is located.</Reasoning>\n<Action>(0,0,0)</Action>\n\n<Reasoning>I'm still in the same place. I move slightly to the right and down to coordinates (12,12) to check for the object.</Reasoning>\n<Action>(12,0,0)</Action>\n\n<Reasoning>Still no object in sight. I move further down to (12,-2) to continue the search, but as the drone is at 35 meters, I must check for the object's proximity.</Reasoning>\n<Action>(12,-2,0)</Action>\n\n<Reasoning>The object is still not found. I move slightly left to (10, 12) to explore a different area while being cautious of the object's potential location at these coordinates, considering the drone's altitude.</Reasoning>\n<Action>(10,12,0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 34 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object may be at coordinates (23, 11), so I move to coordinates (23,11). Given the drone's altitude is 34 meters, I need to be careful in my movement to avoid the object.</Reasoning>\n<Action>(23,11,0)</Action>\n\n<Reasoning>The object isn't found at (23,11). I move to (23, 11) and slightly down to (22,11) to continue the search, keeping in mind the potential proximity of the object.</Reasoning>\n<Action>(23,11,-1)</Action>\n\n<Reasoning>I look around for the object. It's not visible at coordinates (23,11) or (22,11), so I proceed to (22,11) to further explore the area.</Reasoning>\n<Action>(22,11,0)</Action>\n\n<Reasoning>The object might be close to coordinates (0,11), so I move there and slightly down to avoid the object while continuing the search.</Reasoning>\n<Action>(0,11,0)</Action>\n\n<Reasoning>Still no sign of the object. I move left"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (22,22). I move to coordinates (22,22) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>\n<Action>(22,22,0)</Action>\n\n<Reasoning>The object is not at (22,22), so I move to (22,11) and slightly down to (22, 11) to continue the search, considering the object's possible location.</Reasoning>\n<Action>(22,22,-1)</Action>\n\n<Reasoning>I'm not finding the object at (22,11), so I move to (22, 11) and slightly down to (22,10) to further explore the area.</Reasoning>\n<Action>(22,11,0)</Action>\n\n<Reasoning>The object is not found at (22,11), so I move to (22,11) and slightly down to (22,10) to continue the search, keeping in mind the potential proximity of the object.</Reasoning>\n<Action>(22,11,-1)</Action>\n\n<Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (21,21). I move to coordinates (21,21) to explore that area, taking care not to go too low given the drone's altitude.</Reasoning>\n<Action>(21,21,0)</Action>\n\n<Reasoning>The object isn't at (21,21), so I move to (21,21) and slightly down to (21,18) to continue the search, being cautious of the object's possible location.</Reasoning>\n<Action>(21,21,-1)</Action>\n\n<Reasoning>The object is not found at (21,21). I move to (21,21) and slightly down to (21,20) to further explore the area, considering the potential proximity to the object.</Reasoning>\n<Action>(21,21,-2)</Action>\n\n<Reasoning>The object might be around coordinates (11,21). I move to coordinates (11,21) and slightly down to (11,19) to continue the search while being careful of the object.</Reasoning>\n<Action>(11,21,-1)</Action>\n\n<Reasoning"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (11,21). I move to coordinates (11,21) to explore that area, keeping in mind the drone's altitude and the potential proximity to the object.</Reasoning>\n<Action>(11,21,0)</Action>\n\n<Reasoning>The object isn't at (11,21), so I move to (11,21) and slightly down to (11,19) to continue the search, being cautious of the object's possible location.</Reasoning>\n<Action>(11,21,-1)</Action>\n\n<Reasoning>The object is still not found at (11,19), so I move to (11,19) and slightly down to (11,16) to further explore the area, considering the potential proximity to the object.</Reasoning>\n<Action>(11,19,0)</Action>\n\n<Reasoning>The object isn't found at (11,19). I move to (11,19) and slightly down to (11,16) to continue the search while being careful of the object.</Reasoning>\n<Action>(11,19,-1)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (11,20). I move to coordinates (11,20) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>\n<Action>(11,20,0)</Action>\n\n<Reasoning>The object isn't at (11,20), so I move to (11,20) and slightly down to (11,18) to continue the search, being cautious of the object.</Reasoning>\n<Action>(11,20,-1)</Action>\n\n<Reasoning>The object is still not found at (11,18). I move to (11,18) and slightly down to (11,16) to further explore the area, considering the potential proximity to the object.</Reasoning>\n<Action>(11,18,0)</Action>\n\n<Reasoning>The object isn't found at (11,16). I move to (11,16) and slightly down to (11,14) to continue the search while being careful of the object.</Reasoning>\n<Action>(11,16,0)</Action>\n\n<Re"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (10,19). I move to coordinates (10,19) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>\n<Action>(10,19,0)</Action>\n\n<Reasoning>The object isn't at (10,19), so I move to (10,19) and slightly down to (10,18) to continue the search, being cautious of the object.</Reasoning>\n<Action>(10,19,-1)</Action>\n\n<Reasoning>The object is still not found at (10,18). I move to (10,18) and slightly down to (10,17) to further explore the area, considering the potential proximity to the object.</Reasoning>\n<Action>(10,18,0)</Action>\n\n<Reasoning>The object isn't found at (10,17). I move to (10,17) and slightly down to (10,16) to continue the search while being careful of the object.</Reasoning>\n<Action>(10,17,0)</Action>\n\n<Re"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (9,19). I move to coordinates (9,19) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>\n<Action>(9,19,0)</Action>\n\n<Reasoning>The object isn't at (9,19), so I move to (9,19) and slightly down to (9,18) to continue the search, being cautious of the object.</Reasoning>\n<Action>(9,19,-1)</Action>\n\n<Reasoning>The object is still not found at (9,18). I move to (9,18) and slightly down to (9,17) to further explore the area, considering the potential proximity to the object.</Reasoning>\n<Action>(9,18,0)</Action>\n\n<Reasoning>The object isn't found at (9,17). I move to (9,17) and slightly down to (9,16) to continue the search while being careful of the object.</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object might be at coordinates (8,18). I move to coordinates (8,18) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>\n<Action>(8,18,0)</Action>\n\n<Reasoning>The object isn't at (8,18), so I move to (8,18) and slightly down to (8,17) to continue the search, being cautious of the object.</Reason"
+    ]
+]

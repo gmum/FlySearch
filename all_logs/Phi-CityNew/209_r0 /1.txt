@@ -1,0 +1,24 @@
+ <Reasoning>
+    The coordinates of the drone are scattered across the image. I'll start by flying to the coordinates (0, 0) as it's centrally located.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    The coordinates (0, 0) seems critical for a broad scan. Now, I'll fly to (0, 23) to get a wider view of the area.
+</Reasoning>
+<Action>(0, 23, -1)</Action>
+
+<Reasoning>
+    The coordinates (1, 23) might be the object. I need to approach from the ground level.
+</Reasoning>
+<Action>(1, 23, -1)</Action>
+
+<Reasoning>
+    The coordinates (0, 0) seems promising. I'll move to (0, 1) to get a closer view.
+</Reasoning>
+<Action>(0, 1, -1)</Action>
+
+<Reasoning>
+    After checking (0, 1), I will fly to (0, -1) to ensure I've scanned the entire area around the suspected anomaly.
+</Reasoning>
+<Action>(

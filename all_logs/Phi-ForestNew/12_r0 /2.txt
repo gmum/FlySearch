@@ -1,0 +1,4 @@
+ <Reasoning>
+    My current altitude is 40 meters above ground level. To get closer to the object, I will fly lower by 20 meters.
+</Reasoning>
+<Action>(20, 0, -20)</Action>

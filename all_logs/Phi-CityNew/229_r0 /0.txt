@@ -1,0 +1,23 @@
+ <Reasoning>
+    In the first image, I'm currently hovering at 48 meters above the ground.
+</Reasoning>
+<Action>
+    Before proceeding with my search for the anomaly, I need to go down to a level where I can get a closer look at the objects below.
+</Action>
+<Reasoning>
+    Since I am only 48 meters above ground level, I should focus my search around the center of the grid to maximize my chances of spotting anything unusual.
+</Reasoning>
+<Action>
+    I will fly to the coordinates (0, 0, 0) and stay directly below these points, which will help me in covering a larger area and increasing the probability of finding the object.
+</Action>
+<Reasoning>
+    By flying here, I am ensuring that my altitude is at the lowest point possible without exceeding the altitude restriction.
+</Reasoning>
+<Action>
+    <Action>(0, 0, -12)</Action>
+</Action>
+<Reasoning>
+    Now, I'm at the lowest altitude I can be to start my search. I will hover around the center of the grid and scan for any objects that stand out as being different from the rest.
+</Reasoning>
+<Action>
+   

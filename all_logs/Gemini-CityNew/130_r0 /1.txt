@@ -1,0 +1,2 @@
+<Reasoning>I see a fire at coordinates (-3,0). I am at 10 meters, which is the maximum allowed height for the solution but I'm not sure if I'm centered, so I will move slightly to the left and lower myself by 1 meter.</Reasoning>
+<Action>(-3, 0, -1)</Action>

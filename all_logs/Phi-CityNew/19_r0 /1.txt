@@ -1,0 +1,16 @@
+ <Reasoning>There is no clear evidence of the construction site in the current coordinates. I need to move to a location where the construction site will be visible.</Reasoning>
+<Action>(-10, 0, -10)</Action>
+
+<Reasoning>The coordinates now have a marked yellow area indicating the construction site. I will lower my altitude to have a better view of the site.</Reasoning>
+<Action>(-5, 0, -25)</Action>
+
+<Reasoning>The construction site is visible, but it's a bit too far. I need to get closer for a detailed inspection.</Reasoning>
+<Action>(-10, 0, -20)</Action>
+
+<Reasoning>I will now inspect the site for any signs of ongoing construction, such as machinery, materials, and workers.</Reasoning>
+<Action>(-10, 0, -20)</Action>
+
+<Reasoning>The site is clearly marked, but no active construction is visible. I will adjust my coordinates to get a closer view of the site.</Reasoning>
+<Action>(-12, 0, -25)</Action>
+
+<Reasoning>The site has a visible yellow area indicating it is the construction site. I will

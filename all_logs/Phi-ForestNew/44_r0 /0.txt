@@ -1,0 +1,9 @@
+ Assuming the drone is at the coordinates (0, 0) and is looking for the object at (56, 56), the task would be to move closer to the object while maintaining an altitude of 84 meters or less. The drone should move to a position that is closer to the object while still staying below 10 meters relative to it, to ensure that the object is within view (if it is the object in question).
+
+Given the objective to find the person, the drone should prioritize moving into the area where the person is most likely to be. Since we do not have an image of the person, we must assume that the person is likely to be located in one of the grid boxes that are widely distributed throughout the image.
+
+<Reasoning>
+It appears that the object may be located in one of the grid boxes with coordinates (56, 56), (28, 56), or (0, 56). To get a better view of this area, the drone should fly slightly upward to 84 meters, then move down towards the object while maintaining an altitude of 10 meters or less below the object. This would allow the drone to fly over the area and get a closer look at the potential object of interest.
+</Reasoning>
+
+<Action>(0, 56, 8

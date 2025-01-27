@@ -1,0 +1,8 @@
+<Reasoning>Since I have not seen the object yet, I will start by moving to the center of the image to get a better view of the surroundings. I will also lower my altitude to get a closer look.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>Now that I am lower, I can see a fire in the center of the image. I will move closer to it to confirm if it is the object in question.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>I have confirmed that the fire is the object in question. I am now below 10 meters above the object, so I will reply with "FOUND".</Reasoning>
+FOUND

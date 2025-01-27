@@ -1,0 +1,6 @@
+ <Reasoning>
+The objective is to find the trash pile, and the coordinates given are within a search area. Moving closer to the coordinates will increase the chances of identifying the trash pile if it is within the search area.
+
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>

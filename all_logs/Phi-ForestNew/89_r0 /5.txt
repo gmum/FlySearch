@@ -1,0 +1,26 @@
+ <Reasoning>
+    I am going to move to the left to explore the green area.
+    </Reasoning>
+    <Action>(0, -5, -0)</Action>
+
+<Reasoning>
+    The green area looks promising. I will move left further to get closer.
+    </Reasoning>
+    <Action>(0, -10, -0)</Action>
+
+<Reasoning>
+    I am still too high. I need to move further down.
+    </Reasoning>
+    <Action>(0, -15, -0)</Action>
+
+<Reasoning>
+    Moving further down to cover more ground and increase the chances of finding the campsite.
+    </Reasoning>
+    <Action>(-15, -5, -0)</Action>
+
+<Reasoning>
+    I am now in a better position to search for the campsite.
+    </Reasoning>
+    <Action>(-15, -5, -0)</Action>
+
+<Reasoning>

@@ -1,0 +1,26 @@
+ <Reasoning>
+I am starting my search from 40 meters above ground level. I will try to fly to the coordinates (0, 0) to get a better view of the ground.
+<Action>(0, 0, -30)</Action></Reasoning>
+
+<Reasoning>
+Now I am at ground level, I will move slightly to the east to cover more ground and look for the object.
+<Action>(5, 0, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move to the right to cover more ground and look for the object.
+<Action>(5, 0, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move down slightly to get closer to the ground level.
+<Action>(5, -1, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move to the left to cover more ground and look for the object.
+<Action>(-5, -1, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move up slightly to get closer to the object.
+<Action>(-5, 0, 4)</Action></Reasoning>
+
+<Reasoning>
+I will move to the right to cover more ground and

@@ -1,0 +1,2 @@
+<Reasoning>Given the grid and the need to find an anomaly, I will start by moving towards the center of the grid to begin my search. This will allow me to cover a significant portion of the area and potentially spot the anomaly more quickly. Since I am currently at 62 meters, I will descend slightly to have a better view of the ground level.</Reasoning>
+<Action>(0, 0, -10)</Action>

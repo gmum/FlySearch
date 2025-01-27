@@ -1,0 +1,12 @@
+ <Reasoning>
+
+All three possible spots are at (62, 31), (31, 31), and (0, 31). I can move to check and reply with "FOUND" if I am below 10 meters.
+
+I can move to spot (62, 31), (31, 31), and (0, 31).
+
+</Reasoning>
+<Action>
+
+(62, 31, 0)
+
+</Action>

@@ -1,0 +1,27 @@
+ <Reasoning>
+I will first move towards the grid coordinates that are most likely to be in the vicinity of the object. This will allow me to have the best possible view of the area where the object might be located.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+I will now move to the coordinates that are adjacent to the potential object location.
+</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>
+I'll continue to move closer to the object by making a slight downward movement to reduce my altitude.
+</Reasoning>
+<Action>(1, 0, -20)</Action>
+
+<Reasoning>
+If the object is not at the coordinates I'm moving to, I will adjust my direction slightly to the right to explore more of the image.
+</Reasoning>
+<Action>(0, 1, -20)</Action>
+
+<Reasoning>
+I'll carefully survey the area to the right side of the image to ensure that the object is being covered.
+</Reasoning>
+<Action>(0, 2, -20)</Action>
+
+<Reasoning>
+If necessary, I'll take a step to the

@@ -1,0 +1,2 @@
+ <Reasoning>I need to stay in the area around the grid points to ensure I am not missing any possible road construction sites. I will move to (0, 0), which is the center of the grid, and then to (0, -20), ensuring I am at least 10 meters below the object I am searching for in the center of the grid. After that, I will move to the bottom right of the grid to ensure I am covering as much area as possible before finding the road construction site.</Reasoning>
+<Action>(0, -20, -20)</Action>

@@ -1,0 +1,20 @@
+ <Reasoning>
+The image has been analyzed, and the point at (3, 3) is considered the most likely object of interest. My next action is to adjust the altitude to fly at 10 meters below this point to get closer for a better view.
+
+<Action>(-2, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>
+Upon approaching the object at (3, 3), I will assess whether it matches the criteria for an outlier. The object at this location has a distinct texture that sets it apart from the surrounding area.
+
+<Action>(0, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>
+The object at (3, 3) appears to have a unique pattern that is consistent with other anomalies detected in the area. It stands out against the surrounding vegetation and is not immediately adjacent to any other marked points.
+
+<Action>(0, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>
+Since

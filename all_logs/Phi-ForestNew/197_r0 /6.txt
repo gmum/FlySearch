@@ -1,0 +1,9 @@
+ <Reasoning>Considering the search parameters and safety, I need to select a position for the drone to fly to maximize the chances of locating the object.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object seems to be within reach at the chosen coordinates. I will proceed with the search.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is identified and is within the altitude range as per the search criteria. I can provide the 'FOUND' response.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

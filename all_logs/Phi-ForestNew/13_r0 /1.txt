@@ -1,0 +1,22 @@
+ <Reasoning>
+    I am at an altitude of 1 meter, which is dangerously close to the ground. I need to take immediate action to avoid any potential collision with the surface or nearby objects.
+    </Reasoning>
+    <Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    The UAV's altitude is too low to continue the search safely. I need to execute an emergency stop to prevent any accidental damage.
+    </Reasoning>
+    <Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    The UAV has safely returned to a higher altitude. I will now re-evaluate the search area and continue the search from a safe distance.
+    </Reasoning>
+    <Action>(5, 0, -1)</Action>
+
+<Reasoning>
+    I am now at a safer altitude and can resume the search for the object. I will slowly move towards the area with the highest concentration of points to increase the chances of finding the building.
+    </Reasoning>
+    <Action>(5, 0, -2)</Action>
+
+<Reasoning>
+    I am moving closer to the area with the potential building. I need to make sure I am moving in the

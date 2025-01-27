@@ -1,0 +1,6 @@
+ <Reasoning>I need to move down further to ensure the building's presence is confirmed. I should aim for coordinates that seem to be central and then descend to the ground level where the building is most likely to be.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+After moving, I will check the next grid coordinates to search for the building.
+
+<Reasoning>The terrain

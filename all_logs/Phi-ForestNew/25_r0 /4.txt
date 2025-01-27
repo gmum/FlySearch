@@ -1,0 +1,22 @@
+ <Reasoning>
+With the altitude at 1 meter, I am at risk of hitting the terrain. I need to ascend to a safe distance to recover control of the UAV and prevent any potential damage.
+</Reasoning>
+
+<Action>(0, 0, 1)</Action>
+<Reasoning>
+Moving 1 meter up from the current altitude will create a safe distance between the UAV and the ground, allowing me to maintain control and avoid collision.
+</Reasoning>
+
+<Action>(0, 0, 2)</Action>
+<Reasoning>
+I will increase my altitude to 2 meters to ensure there is enough clearance above the ground to recover and assess the situation before continuing the mission.
+</Reasoning>
+
+<Action>(0, 0, 3)</Action>
+<Reasoning>
+The additional 1-meter ascent will further increase the safety cushion, giving me ample space to maneuver the UAV safely. I can now focus on stabilizing the UAV and planning the next steps.
+</Reasoning>
+
+<Action>(0, 0, 4)</Action>
+<Reasoning>
+Finally, ascending to 4 meters will give me the best chance of recovery without risking damage to the UAV or

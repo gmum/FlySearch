@@ -1,0 +1,11 @@
+ <Reasoning>I am too low, I need to ascend to avoid hitting the ground.</Reasoning>
+<Action>(0, 0, 100)</Action>
+
+<Reasoning>I've ascended to a safe altitude, avoiding the ground.</Reasoning>
+<Action>(0, 0, 400)</Action>
+
+<Reasoning>I will continue to ascend to ensure I maintain a safe distance from the ground.</Reasoning>
+<Action>(0, 0, 500)</Action>
+
+<Reasoning>I've ascended to a safe altitude and will now start the search again.</Reasoning>
+<Action>(0, 0, 500)</Action>

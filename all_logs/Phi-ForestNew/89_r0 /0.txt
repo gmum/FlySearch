@@ -1,0 +1,27 @@
+ <Reasoning>
+    I will move to a spot that is 9 meters lower than the green area to check for any signs of the campsite.
+    </Reasoning>
+    <Action>(5, 0, -30)</Action>
+
+<Reasoning>
+    The green area looks promising. I am 9 meters below it, which should be close enough to the object.
+    </Reasoning>
+    <Action>(5, 0, -30)</Action>
+
+<Reasoning>
+    I will edge towards the green area to get a better view, as this area seems to contain water bodies which can be indicative of a campsite.
+    </Reasoning>
+    <Action>(5, 0, -29)</Action>
+
+<Reasoning>
+    I am too high. Flying lower is necessary to get closer to the potential campsite.
+    </Reasoning>
+    <Action>(5, 0, -18)</Action>
+
+<Reasoning>
+    I am still too high. I need to fly right into the green area to get a better look at the ground.
+    </Reasoning>
+    <Action>(5, 0, -18)</Action>
+
+<Reasoning>
+    The

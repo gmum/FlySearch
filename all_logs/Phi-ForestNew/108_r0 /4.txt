@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+The yellow point is still the object you are searching for, and I am now closer to it. I am within 10 meters below the drone relative to the object. I will now check if I am 10 meters above the object.
+    </Reasoning>
+    <Action>(0, 0, 0)</Action>
+</Response>

@@ -1,0 +1,10 @@
+ <Reasoning>I am starting my search for the trash pile by looking around the area marked (31, 0) on the grid to see if there's any yellowish coloration that might indicate a pile of trash. I'll move in a small circle around this point to ensure I don't miss it.</Reasoning>
+<Action>(31, 0, -5)</Action>
+
+<Reasoning>Since the object of interest is likely to be on the ground given the coordinates, I will proceed to coordinates (1, 0) to see if there's any distinguishable feature or color that stands out.</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>The object is not immediately visible, but I can see that the area around (31, 0) might be shaded differently from the surrounding area. I will move to (31, -1) to get a closer look.</Reasoning>
+<Action>(31, -1, -10)</Action>
+
+<Reasoning>I've found a couple of yellowish patches around (31, 0) which could indicate the presence of a trash pile. I will move closer to confirm if it's indeed a pile of trash or just a regular patch

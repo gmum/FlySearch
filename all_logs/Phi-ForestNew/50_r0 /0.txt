@@ -1,0 +1,33 @@
+ <Reasoning>
+    I need to move down to get closer to the ground and see the objects below. I'm looking for a building which might be the target.
+</Reasoning>
+<Action>
+    (0, 8, -26)
+</Action>
+
+<Reasoning>
+    I need to go northwest to cover more area of the ground. I'm still looking for the building but have not located it yet.
+</Reasoning>
+<Action>
+    (-15, 0, -38)
+</Action>
+
+<Reasoning>
+    This yellow point could be the building I'm looking for. I need to descend for a better view.
+</Reasoning>
+<Action>
+    (0, -7, -39)
+</Action>
+
+<Reasoning>
+    I need to stay in the northwest area to increase my chances of finding the building.
+</Reasoning>
+<Action>
+    (-15, -2, -41)
+</Action>
+
+<Reasoning>
+    I'm still not sure if this is the building. I need to stay in this direction a bit longer but also pay attention to other buildings.
+</Reasoning>
+<Action>
+    (-17, -4, -4

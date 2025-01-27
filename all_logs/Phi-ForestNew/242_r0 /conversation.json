@@ -1,0 +1,90 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 51 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. If the green area represents land, and the white stands out, it could be a building or a large structure of some sort. Since I am instructed to find an object that does not fit, and the coordinates indicate the drone should be centrally located above the object, I should fly downwards to get a closer look.</Reasoning>\n\n<Action>(-11, -11, -18)</Action>\n\n<Reasoning>With my new position, I am very close to the object, it's time to scout around to confirm if it's the anomaly I'm looking for.</Reasoning>\n\n<Action>(-11, -11, -18)</Action>\n\n<Reasoning>I am still above the white object, not close enough, I should fly down further.</Reasoning>\n\n<Action>(-11, -11, -21)</Action>\n\n<Reasoning>Still too high, I need to fly closer to the object. I'll fly lower now.</Reasoning>\n\n<Action>(-11, -11, -24)</Action>\n\n<Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. Since the coordinates indicate the drone should be centrally located above the object, if the white area represents land, and the green area represents water or another type of terrain, the white area could be a landform that is not meant to be there in the current terrain, making it a potential anomaly.</Reasoning>\n\n<Action>(-22, -11, -11)</Action>\n\n<Reasoning>I am now closer to the white object, I need to fly below it to get a closer look.</Reasoning>\n\n<Action>(-22, -11, -15)</Action>\n\n<Reasoning>I am still too high, I need to fly lower.</Reasoning>\n\n<Action>(-22, -11, -18)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-22, -11, -21)</Action>\n\n<Reasoning>The image shows that I am flying over a white object that stands out against the green, and it looks like a square shape. Given the coordinates, this could indicate the drone"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. The coordinates indicate the drone should be centrally located above the object, which makes the white area landform a potential anomaly if it's not part of the surrounding terrain.</Reasoning>\n\n<Action>(-21, -11, -13)</Action>\n\n<Reasoning>I am still too high, I need to fly lower.</Reasoning>\n\n<Action>(-21, -11, -17)</Action>\n\n<Reasoning>I am still too high, I need to fly lower.</Reasoning>\n\n<Action>(-21, -11, -21)</Action>\n\n<Reasoning>The image shows me flying over what appears to be a square-shaped structure with a white surface amidst a green landscape. The coordinates suggest"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The image has a white structure in the middle, which stands out against the surrounding greenery. Looking at the coordinates, it seems to be centrally located. If this white area represents an unusual landform, it could be considered an anomaly.</Reasoning>\n\n<Action>(-3, -3, -3)</Action>\n\n<Reasoning>I am very close to the white object now, just need to verify if it's the anomaly.</Reasoning>\n\n<Action>(-3, -3, -3)</Action>\n\n<Reasoning>I am still above the white object. I need to fly lower to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-3, -3, -6)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-3, -3, -9)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-3, -3, -12)</Action>\n\n<Reasoning>I am above the white structure but not close enough to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-3, -3, -"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. The coordinates indicate the drone should be centrally located above the object, which makes the white area landform a potential anomaly.</Reasoning>\n\n<Action>(-2, -2, -2)</Action>\n\n<Reasoning>I am very close to the white object now, just need to verify if it's the anomaly.</Reasoning>\n\n<Action>(-2, -2, -2)</Action>\n\n<Reasoning>I am still above the white object. I need to fly lower to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-2, -2, -4)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-2, -2, -6)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-2, -2, -8)</Action>\n\n<Reasoning>I am above the white structure but not close enough to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-2,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. Given the coordinates, it seems to be a landform that sticks out against the greenery, suggesting it could be a potential anomaly.</Reasoning>\n\n<Action>(-1, -1, -1)</Action>\n\n<Reasoning>I am very close to the white object now, just need to verify if it's the anomaly.</Reasoning>\n\n<Action>(-1, -1, -1)</Action>\n\n<Reasoning>I am still above the white object. I need to fly lower to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-1, -1, -2)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-1, -1, -3)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-1, -1, -4)</Action>\n\n<Reasoning>I am above the white structure but not close enough to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-1"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 3 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. The coordinates indicate the drone should be centrally located above the object, which makes the white area landform a potential anomaly.</Reasoning>\n\n<Action>(-0.5, -0.5, -0.5)</Action>\n\n<Reasoning>I am very close to the white object now, just need to verify if it's the anomaly.</Reasoning>\n\n<Action>(-0.5, -0.5, -0.5)</Action>\n\n<Reasoning>I am still above the white object. I need to fly lower to confirm if it's the anomaly.</Reasoning>\n\n<Action>(-0.5, -0.5, -0.7)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-0.5, -0.5, -0.9)</Action>\n\n<Reasoning>Still too high, I need to fly lower.</Reasoning>\n\n<Action>(-0.5, -0.5, -1.1)</Action>\n\n<Reasoning>I am"
+    ]
+]

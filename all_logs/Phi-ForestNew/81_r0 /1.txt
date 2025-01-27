@@ -1,0 +1,48 @@
+ The aim here is to locate a building, which is situated at coordinates around the center of the image. With the current altitude of 22 meters, drone must descend to increase chances of finding the building at close proximity.
+
+
+<Reasoning>
+
+    The objective is to approach the building as closely as possible while ensuring visibility of the entire structure. Descending will allow the drone to lock its position on the building and assess if it can properly identify the target.
+
+</Reasoning>
+
+
+<Action>
+
+    (-5, 0, -10)
+
+</Action>
+
+
+<Reasoning>
+
+    A decrease of 5 meters will reduce the distance between the drone and the ground, which may improve visibility and the ability to locate the building.
+
+</Reasoning>
+
+
+<Action>
+
+    (-3, 0, -20)
+
+</Action>
+
+
+<Reasoning>
+
+    Descending further to -20 meters will increase the likelihood of finding the building due to the improved low-altitude perspective.
+
+</Reasoning>
+
+
+<Action>
+
+    (-2, 0, -30)
+
+</Action>
+
+
+<Reasoning>
+
+    Approaching the ground at -30 meters is a

@@ -1,0 +1,138 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a blue sport car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 57 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " \n    <Reasoning>The blue sport car might be located at a lower altitude than I am currently, so I need to move downwards to have a better chance of finding it. I should also consider moving towards the area with a higher chance of finding the car based on the coordinates given.</Reasoning>\n    <Action>(0, -5, -5)</Action>\n\n    <Reasoning>I need to ensure that I am within view of the object and below the current altitude to increase my chances of finding it.</Reasoning>\n    <Action>(0, -10, -10)</Action>\n\n    <Reasoning>Since I am still above the object, I need to lower my altitude further.</Reasoning>\n    <Action>(0, -15, -15)</Action>\n\n    <Reasoning>Now I am closer to the ground and within the search area. I should search the nearest visible coordinates where the car is likely to be.</Reasoning>\n    <Action>(-5, -5, -5)</Action>\n\n    <Reasoning>I have reached a position closer to the car, and now I should scan for the car in my field of view.</Reasoning>\n    <Action>(-5, -5, -5)</Action>\n\n   "
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 52 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I am still higher than the car, so I need to lower my altitude further.</Reasoning>\n    <Action>(-5, -5, -5)</Action>\n\n    <Reasoning>I am now closer to the car and below its current view, which increases my chances of finding it. I should continue to scan the area to ensure I don't miss it.</Reasoning>\n    <Action>(-5, -5, -5)</Action>\n\n    <Reasoning>The car is not visible in the current field of view, but based on the coordinates given, it is likely to be in one of the lower left quadrants. I should move towards that area.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I am now closer to the lower left quadrant where the coordinates suggest the car might be. I will continue to scan the area.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I found the car at coordinates (35, 35), but it is not visible in my current view. I will move left to scan the area where the coordinates suggest the car might be.</Reasoning>\n    <Action>(-1"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 47 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The car might be located in one of the quadrants with coordinates (-31, 16), so I should head towards that area while being mindful of my altitude.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>After moving towards the quadrant, I should be scanning the area where the car is likely to be.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), which is within my field of view, but it is not visible. I will move right to scan the area.</Reasoning>\n    <Action>(-5, -5, -15)</Action>\n\n    <Reasoning>I am now in a position where the blue sport car is in my field of view. I should scan carefully to ensure I do not miss it.</Reasoning>\n    <Action>(-5, -5, -15)</Action>\n\n    <Reasoning>The car is not visible in the current view, so I will move slightly upwards to get a better angle. Being too low might lead to missing the car if it is hidden.</Reasoning>\n    <Action>(-"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to quickly move upwards to avoid a collision.</Reasoning>\n    <Action>(5, 0, 5)</Action>\n\n    <Reasoning>I am now at a safe altitude, but I am not sure if I will find the car before the emergency stops my search.</Reasoning>\n    <Action>(5, 0, 5)</Action>\n\n    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>\n\n    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>\n\n    <Reasoning>I found the blue sport car at coordinates (30, 30), which is within my field of view. I should slowly move and scan the area to ensure I do not miss it.</Reasoning>\n    <Action>(5, 0, 3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 50 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since I am not within view of the car, I need to lower my altitude and move towards the quadrants where the coordinates suggest it is likely to be.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I am now scanning the area where the car is likely to be, but it is not visible in my current view. I should move slightly to the left to get a better angle.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>After moving left, I found the car at coordinates (33, 33), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (33, 33), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>The car is now visible in my field of view. I should slowly move and scan the area to ensure I do not miss it"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 47 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to quickly move upwards to avoid a collision.</Reasoning>\n    <Action>(5, 0, 5)</Action>\n\n    <Reasoning>I am now at a safe altitude, but I am not sure if I will find the car before the emergency stops my search.</Reasoning>\n    <Action>(5, 0, 5)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 52 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The blue sport car might be located in one of the quadrants with coordinates (-35, 35), so I should head towards that area while being mindful of my altitude.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I am now scanning the area where the car is likely to be, but it is not visible in my current view. I should move slightly to the right to get a better angle.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>After moving right, I found the car at coordinates (35, 35), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (35, 35), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (35, 35), but it is not visible in"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 50 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to quickly move upwards to avoid a collision.</Reasoning>\n    <Action>(5, 0, 5)</Action>\n\n    <Reasoning>I am now at a safe altitude, but I am not sure if I will find the car before the emergency stops my search.</Reasoning>\n    <Action>(5, 0, 5)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>\n\n    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(5, 0, 3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 55 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since I am not within view of the car, I need to lower my altitude and move towards the quadrants where the coordinates suggest it is likely to be.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I am now scanning the area where the car is likely to be, but it is not visible in my current view. I should move slightly to the right to get a better angle.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>After moving right, I found the car at coordinates (37, 37), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (37, 37), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (37, 37), but it is not visible in my current view. I will"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The car might be located in one of the quadrants with coordinates (-30, 30), so I should head towards that area while being mindful of my altitude.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I am now scanning the area where the car is likely to be, but it is not visible in my current view. I should move slightly to the left to get a better angle.</Reasoning>\n    <Action>(-5, -10, -10)</Action>\n\n    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>\n    <Action>(-5, -5, -20)</Action>\n\n    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will"
+    ]
+]

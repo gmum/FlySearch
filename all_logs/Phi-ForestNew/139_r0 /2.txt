@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+        After moving in the first two moves, I'm at (0, 1, -2) meters above ground level. The coordinates (0, 0) and (0, 1) are close to the object, so I should move towards these to be closer to the object.
+    </Reasoning>
+    <Action>(0, 0, -5)</Action>
+</Response>

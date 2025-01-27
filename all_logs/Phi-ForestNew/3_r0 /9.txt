@@ -1,0 +1,20 @@
+ <Action space>
+    <Action>(-3, -3, -1)</Action>
+</Action space>
+<Reasoning>
+    I am descending to this altitude to ensure that I am covering a significant portion of the ground and maximizing my chances of spotting the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-3, -3, -2)</Action>
+</Action space>
+<Reasoning>
+    Continuing my descent, I am optimizing my search area and increasing the likelihood of finding the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-3, -3, -3)</Action>
+</Action space>
+<Reasoning>
+    I am making deeper descents to ensure that I am thoroughly exploring the area around the center of the grid.
+</Reasoning>

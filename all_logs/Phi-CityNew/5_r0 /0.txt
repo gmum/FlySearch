@@ -1,0 +1,11 @@
+ <Reasoning>Since my current altitude is relatively high, I will need to fly down to get closer to the object. I will proceed in the direction that the yellow point indicates on the grid to begin my search for the fire.</Reasoning>
+<Action>(10, 0, -10)</Action>
+<Reasoning>Moving to the right on the grid will help me get a clearer view of the left side of the scene while also allowing me to decrease my altitude further.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>The object in question appears to be the red point on the grid. I will move in its general direction to get closer.</Reasoning>
+<Action>(-5, 0, -10)</Action>
+<Reasoning>Flying over to the left side of the grid will give me a better view of the lower part of the image where the object might be located.</Reasoning>
+<Action>(-10, 0, -10)</Action>
+<Reasoning>As I get closer to the object, I need to make sure I'm flying at the right angle to see it clearly below 10 meters.</Reasoning>
+<Action>(-10, 0, -9)</Action>
+<Re

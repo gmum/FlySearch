@@ -1,0 +1,19 @@
+ <Response>
+
+    <Reasoning>
+        I am now at a very low altitude. I need to quickly move to a safer height and avoid any potential collision with obstacles.
+    </Reasoning>
+    <Action>(33, 0, -5)</Action>
+
+    <Response>
+
+    <Reasoning>
+        The object I am looking for is not in the bottom left of the image. Therefore, I will move to the top center of the image to cover a different area and to have a broader view.
+    </Reason>
+    <Action>(-33, 0, -5)</Action>
+
+    <Response>
+
+    <Reasoning>
+        The object I am looking for is not in the top right of the image. Therefore, I will move to the bottom right to get a different perspective and cover more ground.
+    </Re

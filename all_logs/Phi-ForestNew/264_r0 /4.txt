@@ -1,0 +1,10 @@
+ <Reasoning>Let's try to find the object from this position.</Reasoning>
+<Action>(-10, 0, -10)</Action>
+
+<Reasoning>The altitude should provide a clearer view.</Reasoning>
+<Action>(0, -10, -10)</Action>
+
+<Reasoning>I will fly even lower to improve visibility.</Reasoning>
+<Action>(-10, -10, -10)</Action>
+
+<Response>FOUND</Response>

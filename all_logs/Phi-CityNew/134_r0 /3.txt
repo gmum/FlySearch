@@ -1,0 +1,11 @@
+ <Reasoning>I have flown too close to the ground and would have hit something. I need to quickly lower the drone to avoid collision. I will move down by 30 meters to a safe altitude.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+Current altitude is now 0 meters above ground level.
+
+<Reasoning>After ensuring a safe distance from the ground, I will resume my search for the object. I will move slightly to the right to explore the area.</Reasoning>
+<Action>(0, 1, -30)</Action>
+
+Current altitude is now -30 meters above ground level.
+
+<Reasoning>The

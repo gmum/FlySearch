@@ -1,0 +1,14 @@
+ <Reasoning>I have flown too close to something and would have hit it. It is important to be aware of the limits and avoid flying into objects. I will start over and take my time to find the fire while staying within the limits.</Reasoning>
+<Action>(45, 0, 0)</Action>
+
+<Reasoning>I will start over and take my time to find the fire while staying within the limits. I will move in a safe direction and try to avoid flying too close to objects.</Reasoning>
+<Action>(22, 0, 0)</Action>
+
+<Reasoning>My altitude is too low, so I will increase it slightly while still moving in a safe direction to continue the search.</Reasoning>
+<Action>(22, 0, 20)</Action>
+
+<Reasoning>I am still not close to the ground, so I will continue moving downward. If I am not getting closer, I will try to find another object on the grid to guide me.</Reasoning>
+<Action>(21, -1, 0)</Action>
+
+<Reasoning>The black point in the first image can guide me in the search. I will move in the direction of that point and try to get closer to the ground.</Reasoning>
+<Action

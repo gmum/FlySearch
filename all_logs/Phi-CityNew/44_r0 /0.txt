@@ -1,0 +1,22 @@
+ <Reasoning>The object might be close to the bottom as we are relatively high above it.</Reasoning>
+<Action>(-1, 0, -10)</Action>
+
+<Reasoning>The object might be on the right side considering the layout.</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>The object might be on the left side considering the layout.</Reasoning>
+<Action>(-1, 0, -10)</Action>
+
+<Reasoning>The object might be on the right bottom corner considering the layout.</Reasoning>
+<Action>(1, -1, -10)</Action>
+
+<Reasoning>The object might be on the left bottom corner considering the layout.</Reasoning>
+<Action>(-1, -1, -10)</Action>
+
+<Reasoning>The object might be on the right top corner considering the layout.</Reasoning>
+<Action>(1, 1, -10)</Action>
+
+<Reasoning>The object might be on the left top corner considering the layout.</Reasoning>
+<Action>(-1, 1, -10)</Action>
+
+<Reasoning>The object might be on the right bottom corner considering

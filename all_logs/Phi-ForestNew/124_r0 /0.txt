@@ -1,0 +1,18 @@
+   
+<Reasoning>
+    Since the UAV is currently at an altitude of 78 meters above ground level, I will need to descend to check the trash pile which might be at or below ground level. Looking at the grid, the trash pile appears to be at approximate coordinates (52, -52). I need to move to this location to verify if the trash pile is as described.
+</Reasoning>
+<Action>(52, -0, -46)</Action>
+
+<Reasoning>
+    After moving the drone to the coordinates (52, -0), I will now assess the height of the drone relative to the suspected trash pile. If the pile is at or below ground level, I will reply with "FOUND".
+</Reasoning>
+<Action>(52, -2, -46)</Action>
+
+<Reasoning>
+    After descending further, I will reassess the trash pile's height and determine if it is indeed the intended target. If the trash pile is now clearly at or below ground level, I will reply with "FOUND".
+</Reasoning>
+<Action>(52, -4, -46)</Action>
+
+<Reasoning>
+    I have confirmed that the trash

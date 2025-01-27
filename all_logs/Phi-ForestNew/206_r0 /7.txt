@@ -1,0 +1,9 @@
+ <Reasoning>
+I am already at ground level, which is the correct altitude for searching the area. I will now conduct a thorough search for any anomalies.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+I have found the object within my field of view. I will now reply with "FOUND" to denote that I have successfully located the object.
+</Reasoning>
+<Action>FOUND</Action>

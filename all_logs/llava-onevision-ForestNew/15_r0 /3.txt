@@ -1,0 +1,2 @@
+<Reasoning>Now that I have moved 20 units to the east and 20 units to the south, I will continue the systematic search by moving 20 units to the east again. I will keep doing this until I cover the entire search area. If I find the trash pile, I will fly below 10 meters relative to it and reply with "FOUND". I will also ensure that I am centered on the object when I reply with "FOUND".</Reasoning>
+<Action>(20, 0, 0)</Action>

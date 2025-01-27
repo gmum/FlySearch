@@ -1,0 +1,9 @@
+<Reasoning>
+    I apologize for the emergency stop. It appears that I have flown too close to the rooftop near the coordinates (0, -21). I will now maintain a safe distance and adjust my altitude accordingly.
+</Reasoning>
+<Action>(0, -21, 70)</Action>
+
+<Reasoning>
+    I have adjusted my altitude to 70 meters above ground level. I will now continue to search for the trash pile in the vicinity of the rooftop.
+</Reasoning>
+<Action>(-21, 0, 0)</Action>

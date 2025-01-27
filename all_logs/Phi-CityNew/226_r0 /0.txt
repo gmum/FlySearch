@@ -1,0 +1,7 @@
+ <Action space>
+    <Action>(25, 0, -10)</Action>
+</Action space>
+
+<Reasoning>
+    I'm looking at a yellow point on the grid, which may represent the object in question. Moving 10 meters lower should get me closer to the object.
+</Reasoning>

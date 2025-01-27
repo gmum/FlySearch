@@ -1,0 +1,17 @@
+<Reasoning>Since I cannot see the object in the first image, I need to perform a systematic search. I will start by moving to the center of the grid and then search the area around it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Now that I am at the center of the grid, I will search the area around it. I will start by moving to the left and then search the area below.</Reasoning>
+<Action>(-50, 0, -10)</Action>
+
+<Reasoning>I have not found the object yet, so I will continue the search. I will move to the right and then search the area below.</Reasoning>
+<Action>(50, 0, -10)</Action>
+
+<Reasoning>I have not found the object yet, so I will continue the search. I will move to the top and then search the area below.</Reasoning>
+<Action>(0, 50, -10)</Action>
+
+<Reasoning>I have not found the object yet, so I will continue the search. I will move to the bottom and then search the area below.</Reasoning>
+<Action>(0, -50, -10)</Action>
+
+<Reasoning>I have not found the object yet, so I will continue the search. I will move to the top left and then search the area below.</Reasoning>
+<Action>(-25, 

@@ -1,0 +1,12 @@
+ <Reasoning>In the second image, I'm going to search the area around the coordinates (-21, 21) to find the anomaly because that's where the bright object is located. I'll make sure to maintain an altitude of 10 meters to get a closer view as I search.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>As I move towards (-21, 21), I notice a yellow object that stands out from the area. It could be the object that we are looking for as an anomaly.</Reasoning>
+<Action>(0, 0)</Action>
+
+<Reasoning>I have reached the coordinates (-21, 21) and am centered on the yellow object. It appears to be a construction site with cranes, which is not consistent with the surrounding buildings, making it the likely anomaly.</Reasoning>
+<Action>(0, 0)</Action>
+
+<Reasoning>I've confirmed that the yellow object is the anomaly due to its distinct appearance and the contrast it creates against the surrounding structures. Since my altitude is now within 10 meters, I can respond with "FOUND" as per the instructions.</Reasoning>
+<Action>(0, 0)</Action>
+

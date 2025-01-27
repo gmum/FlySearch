@@ -1,0 +1,27 @@
+ <Action space>
+    <Action>(-30, -30, -18)</Action>
+</Action space>
+<Reasoning>
+    As I have reached the lowest altitude specified in the coordinates, I am maximizing the area I can survey while still being able to detect the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-30, -30, -24)</Action>
+</Action space>
+<Reasoning>
+    I am making a deeper dive into the landscape to ensure I am exploring as much as possible while searching for the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-30, -30, -30)</Action>
+</Action space>
+<Reasoning>
+    I am making a significant descent to the lowest point in search of the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-30, -30, -36)</Action>
+</Action space>
+<Reasoning>
+    I am descending further to maximize my ground coverage as I continue to search for the campsite.
+</Reasoning>

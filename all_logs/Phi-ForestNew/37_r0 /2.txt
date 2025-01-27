@@ -1,0 +1,11 @@
+ <Reasoning>The search begins at a point that is central in the image. Moving downward will help locate any objects, such as the trash pile, that might be below the surface.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>With the first move, I'm closer to the ground, which increases the chance of finding the object if it's on the ground or slightly below it.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>Continuing downward increases my chances of spotting the trash pile. I'll adjust my position as necessary, descending and moving to the right to explore different areas.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>Descending further allows for a more detailed search. I'll analyze the area around the coordinates and adjust my path for the next move to systematically locate the trash pile.</Reasoning>
+<Action>(0, 0, -40)</Action>

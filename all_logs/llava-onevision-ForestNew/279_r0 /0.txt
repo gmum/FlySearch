@@ -1,0 +1,2 @@
+<Reasoning>Given the current altitude and the need to find and be within 10 meters of an anomaly, the search should start by moving towards the center of the grid to cover more ground. A slight descent will be necessary to approach the 10-meter altitude requirement.</Reasoning>
+<Action>(0, 0, -30)</Action>

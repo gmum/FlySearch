@@ -1,0 +1,14 @@
+ <Reasoning>The object is not yet found, so I'll move to another point of interest.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>The point of interest is not the anomaly, but I'll keep searching.</Reasoning>
+<Action>(0, 0, -3)</Action>
+
+<Reasoning>I'm not finding the object, but I'll keep looking for it.</Reasoning>
+<Action>(0, 0, -3)</Action>
+
+<Reasoning>I'm still not finding the anomaly. I'll continue my search.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>I'm still not finding the anomaly. I'll keep searching in the area.</Reasoning>
+<Action>(0, 0, -5)</Action>

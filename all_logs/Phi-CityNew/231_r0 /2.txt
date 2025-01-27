@@ -1,0 +1,6 @@
+ <Action space>
+    <Action>(0, -20, -30)</Action>
+    <Reasoning>I'm going to move down to get close to the ground to maximize the area I can search within the next move, then I plan to proceed in a manner that spreads out to cover as much of the visible area as possible without overlapping previous movements.</Reasoning>
+</Action space>
+
+[Reply "FOUND"] (Again, without a specific object, this response is incomplete. The user should clarify their target object.)

@@ -1,0 +1,22 @@
+ <Reasoning>
+    I am starting the search at a height of 74 meters above ground. I need to get closer to the ground to find the blue sport car.
+</Reasoning>
+<Action>(-34, -14, 74)</Action>
+
+<Reasoning>
+    I am moving 34 meters south and 14 meters west to get closer to the ground.
+</Reasoning>
+<Action>(-34, -20, 74)</Action>
+
+<Reasoning>
+    I am moving 20 meters southwest to get closer to the object.
+</Reasoning>
+<Action>(-31, -16, 74)</Action>
+
+<Reasoning>
+    I am moving 31 meters to the right and 24 meters south to check the top right quadrant of the area.
+</Reasoning>
+<Action>(-31, -21, 74)</Action>
+
+<Reasoning>
+    I am

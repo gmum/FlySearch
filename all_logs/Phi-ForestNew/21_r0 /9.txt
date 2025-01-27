@@ -1,0 +1,5 @@
+ <Reasoning>The fire is directly above the coordinates (0, 0), but it is also in the direction of (9, 9). I will move further north to get a clearer view of the coordinates and the fire.</Reasoning>
+<Action>(1, 0, -5)</Action>
+
+<Reasoning>I am now at the correct altitude and can confirm that I am at the right point above the fire. I will now search for the object in question.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,16 @@
+<Reasoning>The object is not visible in the image, so I need to search the area. I will start by moving to the center of the grid and then move in a spiral pattern to cover the entire area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that I am at the center of the grid, I will start moving in a spiral pattern. I will move 27 units to the west, then 27 units to the north, then 27 units to the east, and finally 27 units to the south.</Reasoning>
+<Action>(-27, 0, 0)</Action>
+<Action>(0, 27, 0)</Action>
+<Action>(27, 0, 0)</Action>
+<Action>(0, -27, 0)</Action>
+
+<Reasoning>Now that I have covered the first ring of the spiral, I will move 27 units to the west again, then 27 units to the north, then 27 units to the east, and finally 27 units to the south.</Reasoning>
+<Action>(-27, 0, 0)</Action>
+<Action>(0, 27, 0)</Action>
+<Action>(27, 0, 0)</Action>
+<Action>(0, -27, 0)</Action>
+
+<Reasoning>Now that I have covered the

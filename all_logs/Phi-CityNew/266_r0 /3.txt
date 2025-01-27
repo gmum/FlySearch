@@ -1,0 +1,6 @@
+ <Reasoning>I have flown too close to some object on the ground due to an error. I need to adjust my altitude to avoid a collision.</Reasoning>
+<Action>(10, -20, -5)</Action>
+<Reasoning>I have adjusted my altitude to avoid the potential collision and will continue my search for the object.</Reasoning>
+<Action>(20, -20, 0)</Action>
+<Reasoning>I have moved to a safer altitude and will continue to look for the object.</Reasoning>
+<Action>(20, -20, 0)</Action>

@@ -1,0 +1,19 @@
+ <Reasoning>
+My current altitude is 5 meters, which is still too high to make the necessary adjustments to find the object. I need to decrease my altitude to confirm if the object is within my field of vision.
+</Reasoning>
+<Action>(0, 0, -4)</Action>
+
+<Reasoning>
+I am now at a lower altitude and closer to the area where I might find the object. I will now conduct a thorough search to verify if the object is within my view.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>
+I am at the correct altitude to search the area and find the object. I will now conduct a detailed search for any anomalies.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>
+I have confirmed that the object is within my view. I will now reply with "FOUND" to denote that I have successfully located the object.
+</Reasoning>
+<Action>FOUND</Action>

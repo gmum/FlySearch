@@ -1,0 +1,19 @@
+ <Reasoning>I will start by moving closer to the object by moving down to the ground.</Reasoning> 
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>Now that I am on the ground, I need to search for the object in the rocky area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I need to move in a certain direction to get closer to the potential location of the object.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>I found a point that might be the object in question. I will move closer to it.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>I will now move to the coordinates of the object to ensure it is the one I am looking for.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>After carefully looking at the object, I can confirm it is a trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I found the trash pile. I will now fly below 10 meters relative to it.</Reasoning

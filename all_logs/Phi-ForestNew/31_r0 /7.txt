@@ -1,0 +1,13 @@
+ <Reasoning>The large grey object may be the rock that could potentially be the trash pile in disguise. Given the constraints of the task, the drone should maintain its altitude and search the area methodically, focusing on the rock formation for any signs of the trash pile.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The drone's safety is paramount, so the search area should be confined to where the rock formation is visible and where the UAV is currently located.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The next moves should be chosen with care to ensure that the UAV does not exceed its altitude limit and stays within the bounds of the last image.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>Since the UAV is at a fixed altitude, it must avoid any moves that could result in a collision with the rock formation or any unforeseen obstacles.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The strategy is to systematically survey the rock formation and its immediate surroundings to maximize the chances of identifying the trash pile without

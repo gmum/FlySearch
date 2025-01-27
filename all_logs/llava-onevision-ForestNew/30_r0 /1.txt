@@ -1,0 +1,2 @@
+<Reasoning>At this altitude, I can see a person near the coordinates (0, -3). I need to move closer to that point and adjust my altitude to ensure I'm within 10 meters of the object. Since I'm at 10 meters above ground level, which is the required altitude, I will simply move to (0, -3) to center the object in my field of view.</Reasoning>
+<Action>(0, -3, 0)</Action>

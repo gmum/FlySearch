@@ -1,0 +1,13 @@
+ <Reasoning>I will start by moving in the direction of (0, 19), as it is the closest point to the drone's initial location. This should bring me close to the area of interest.</Reasoning>
+<Action>(0, 1, -10)</Action>
+
+<Reasoning>The area around (-13, 19) looks more distinct. I will move to the left and above, to get a broader view and to move towards the yellow spot near (13, 19), which could indicate vegetation or an object.</Reasoning>
+<Action>(-5, 1, -10)</Action>
+
+<Reasoning>I have now located a yellow spot near (13, 19), but there is no clear object there. I will continue to move east, looking for the object.</Reasoning>
+<Action>(5, 1, -10)</Action>
+
+<Reasoning>I have now moved into the area near (13, 27). There is a clear yellow patch that could be the object I am looking for.</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The yellow patch near (13, 27) looks promising. I will move down

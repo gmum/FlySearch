@@ -1,0 +1,5 @@
+ <Reasoning>The coordinates specify an area to search, focusing on the bottom left. Since the drone's altitude is 66 meters and the search area is 400 meters by 400 meters, it's unlikely the object is at the coordinates (0,0) as it's in the upper left area. The object is probably located lower. I'll start looking there.</Reasoning>
+<Action>(30, 0, -30)</Action>
+
+<Reasoning>I'll need further information, but the object might be located in the center. I try to fly a few steps to the south and slightly shift to the left to explore the middle area.</Reasoning>
+<Action>(20, -5, -8)</Action>

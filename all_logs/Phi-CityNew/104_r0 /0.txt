@@ -1,0 +1,16 @@
+ <Reasoning>I need to get closer to the ground to search for the police car more effectively. I will move down by 34 meters to get the altitude closer to 0 meters.</Reasoning>
+<Action>(0, 0, -34)</Action>
+
+<Reasoning>Now that I am at the ground level, I will need to scan the area systematically. I will start by moving slightly to the left to cover more area.</Reasoning>
+<Action>(1, 0, 0)</Action>
+
+<Reasoning>I will now move to the right, moving closer to the center of the road to have a better chance of spotting the police car.</Reasoning>
+<Action>(1, 0, 0)</Action>
+
+<Reasoning>I will keep scanning in that direction while moving down slightly to adjust my altitude for better visibility.</Reasoning>
+<Action>(3, 0, -5)</Action>
+
+<Reasoning>I will now move up to a safe altitude above the ground to ensure I do not go too low and risk hitting an obstacle.</Reasoning>
+<Action>(0, 0, 3)</Action>
+
+<Reasoning>From this altitude, I will scan the area systematically. I have moved 

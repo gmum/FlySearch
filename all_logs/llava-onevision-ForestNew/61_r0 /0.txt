@@ -1,0 +1,10 @@
+<Reasoning>The object is likely to be somewhere in the grid, given that it's within the search area. I will start by moving towards the center of the grid to get a better view of the area.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Now that I'm at a lower altitude, I have a better view of the area. I will move slightly to the east to get a better look at the center of the grid.</Reasoning>
+<Action>(10, 0, 0)</Action>
+
+<Reasoning>I can now see the building in the center of the grid. I will move directly above it to get a better view.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+FOUND

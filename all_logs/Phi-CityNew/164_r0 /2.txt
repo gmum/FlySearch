@@ -1,0 +1,27 @@
+ <Reasoning>
+I'm starting by looking at the grid where the object might be. I'll move in the southeast direction.
+<Action>(10, 10, 0)</Action>
+</Reasoning>
+
+<Reasoning>
+Moving southeast, I found a point on the grid. I need to get closer.
+<Action>(8, 10, 0)</Action>
+</Reasoning>
+
+<Reasoning>
+The object is not in my field of view yet, so I'm moving to the northwest direction.
+<Action>(5, 7, 0)</Action>
+</Reasoning>
+
+<Reasoning>
+I'm moving closer to the object.
+<Action>(4, 8, 0)</Action>
+</Reasoning>
+
+<Reasoning>
+I'm checking this point again, as I suspect the object might be here.
+<Action>(5, 8, 0)</Action>
+</Reasoning>
+
+<Reasoning>
+I found the object! I'm

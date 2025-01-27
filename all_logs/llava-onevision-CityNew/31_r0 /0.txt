@@ -1,0 +1,6 @@
+<Reasoning>There is a yellow object that appears to be a construction site. I will move down and forward to check if it is the object in question.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>The object in question is indeed a construction site. I will lower my altitude to be 10 meters above it to complete the task.</Reasoning>
+<Action>(0, 0, -28)</Action>
+FOUND

@@ -1,0 +1,16 @@
+ <Reasoning>This is the first glimpse of the grid, and the coordinates are scattered. I need to start at one point and follow the grid to systematically search for the person.</Reasoning>
+<Action>(3, 3, -1)</Action>
+
+<Reasoning>The object appears to be to the left of the drone. To confirm, I'll move the drone towards that area.</Reasoning>
+<Action>(1, 3, -1)</Action>
+
+<Reasoning>Now the object is within my field of view. I must circle around for a better look, ensuring I'm maintaining the correct altitude.</Reasoning>
+<Action>(-1, 3, -1)</Action>
+
+<Reasoning>The object is not within the field of view now. I will adjust the altitude slightly to maximize the view before moving in the desired direction.</Reasoning>
+<Action>(-1, 2, -1)</Action>
+
+<Reasoning>The object is not clearly visible in the field of view yet. I'll move the drone to get a better vantage point and search more effectively.</Reasoning>
+<Action>(-1, 1, -1)</Action>
+
+<Reasoning>The object appears to be more

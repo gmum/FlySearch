@@ -1,0 +1,5 @@
+<Reasoning>There are no visible signs of fire in the image. I will move towards the center of the image to investigate further.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have moved towards the center of the image but there are still no visible signs of fire. I will continue to search by moving towards the right side of the image.</Reasoning>
+<Action>(0, 7, 0)</Action>

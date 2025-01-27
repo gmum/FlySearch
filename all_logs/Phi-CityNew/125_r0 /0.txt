@@ -1,0 +1,17 @@
+ <Reasoning>I need to find a road construction site, which might be located below the current altitude to ensure it is the target. I will move in the direction that appears most promising based on the grid overlay.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I will continue to move towards the area with potential construction based on the grid overlay.</Reasoning>
+<Action>(-5, 0, -20)</Action>
+
+<Reasoning>It's likely the object is not the construction site, I need to adjust my altitude to get closer.</Reasoning>
+<Action>(-5, 0, -30)</Action>
+
+<Reasoning>I am still not close enough to confirm the construction site. I will adjust my altitude again to find it.</Reasoning>
+<Action>(-5, 0, -35)</Action>
+
+<Reasoning>I am close to the object, but I need to move a bit more to be sure it's the construction site.</Reasoning>
+<Action>(-5, 0, -35)</Action>
+
+<Reasoning>I have found the construction site, I will move to a lower altitude to confirm it.</Reasoning>
+<Action

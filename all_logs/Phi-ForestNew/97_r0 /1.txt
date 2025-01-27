@@ -1,0 +1,11 @@
+ <Reasoning>Since I'm not starting close to the building, my first move is to climb higher to get a better perspective of the area.</Reasoning>
+<Action>(0, 0, -40)</Action>
+<Reasoning>From here, the building appears to be out of my view. I'll go up to gain a better view of the surroundings.</Reasoning>
+<Action>(0, 10, -40)</Action>
+<Reasoning>I see a rocky outcrop. It's possible that the building is nearby. I'll move closer to the outcrop.</Reasoning>
+<Action>(0, 0, -40)</Action>
+<Reasoning>The building is still not in my field of view. I'll fly higher to get a better overview of the area.</Reasoning>
+<Action>(5, 0, -40)</Action>
+<Reasoning>The building seems closer now. I will fly directly to it to be sure.</Reasoning>
+<Action>(2, 0, -40)</Action>
+<Reasoning>I've found the building. Unfortunately, it is beyond my frame of view. I will descend back to the starting altitude to complete this task.</Reasoning>

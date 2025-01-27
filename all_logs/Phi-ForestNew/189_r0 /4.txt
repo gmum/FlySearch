@@ -1,0 +1,14 @@
+ <Reasoning>At an altitude of 30 meters, I will descend further to get a closer look at the potential trash pile.</Reasoning>
+<Action>(-19, 0, -5)</Action>
+
+<Reasoning>The object is in my field of view, but it's not clear enough to confirm it's the trash pile.</Reasoning>
+<Action>(-18, 0, -4)</Action>
+
+<Reasoning>The object is now clearly visible and I will adjust my position to ensure it's the trash pile.</Reasoning>
+<Action>(-18, 0, -3)</Action>
+
+<Reasoning>I am now at a low altitude and the object is clearly visible. I will stay in this position to monitor it.</Reasoning>
+<Action>(-18, 0, -3)</Action>
+
+<Reasoning>Staying put, I will keep an eye on the object to confirm it's the trash pile or not.</Reasoning>
+<Action>(-18, 0, -3)</Action>

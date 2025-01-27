@@ -1,0 +1,13 @@
+ <Reasoning>I have flown too close to a building and would have collided with it.</Reasoning>
+<Action>(10, 2, 0)</Action>
+
+<Reasoning>I will adjust my altitude to avoid flying out of bounds and will keep my movements within the last visible area.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>I will find the building to ascertain its condition and check for signs of construction.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>Given the building's proximity, I will move within the last visible area to ensure I'm not in a hazardous position.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reason

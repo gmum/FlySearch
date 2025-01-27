@@ -1,0 +1,14 @@
+ <Reasoning>I need to fly closer to the potential trash pile, which appears to be the yellow point on the map. Since I'm currently at 90 meters above ground level, I will fly to a lower altitude to increase my chances of spotting the object.</Reasoning>
+<Action>(5, 0, -45)</Action>
+
+<Reasoning>Upon approaching the yellow point, I will ensure that the object is within my field of view and then fly below 10 meters to confirm its presence.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>The object is within my field of view and I am 9 meters below it. I will fly closer to confirm it is the trash pile.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>I have confirmed the object is the yellow point, which is the trash pile. I will maintain this altitude and focus on this area.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>Staying put at this location and altitude, I will keep an eye out for any movement that could be associated with the trash pile.</Reasoning>
+<Action>(

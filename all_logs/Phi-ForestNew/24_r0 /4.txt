@@ -1,0 +1,15 @@
+ <Reasoning>Given the current altitude of 93 meters, which is much higher than the ideal altitude, I must make a move to descend and be closer to the ground for better visibility of potential trash piles.</Reasoning>
+<Action>(-40, -40, 20)</Action>
+
+<Reasoning>I need to choose coordinates that will bring me down to a lower altitude without going beyond the allowed altitude change.</Reasoning>
+<Action>(-36, -40, 16)</Action>
+
+<Reasoning>These coordinates seem to be in the area of interest. I'll need to be cautious and look closely for the trash pile to ensure it's visible on the ground.</Reasoning>
+<Action>(-36, -40, 15)</Action>
+
+<Reasoning>I am in the vicinity of a potential trash pile. I'll need to fly at a lower altitude and focus on the area to confirm if the trash pile is present and report my findings.</Reasoning>
+<Action
+
+--
+
+-

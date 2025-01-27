@@ -1,0 +1,23 @@
+ <Reasoning>
+    The object in question is likely below the surface, given the instruction to find an anomaly that doesn't fit in with the rest of the environment. I will move the drone to the coordinates provided, which are (0, 0), to increase my chances of finding the object.
+</Reasoning>
+<Action>
+    (0, 0, 0)
+</Action>
+
+<Reasoning>
+    Now that the drone is in place, I will be able to have a better look at the area and identify the anomaly. I must ensure that I am flying at most 10 meters below the object when I identify it.
+</Reasoning>
+<Action>
+    (0, 0, -15)
+</Action>
+
+<Reasoning>
+    Based on the current view, the object seems to be at the coordinates (20, -31), and I am now flying 15 meters below it. I am still at a safe distance, ensuring I do not rise too high in case there is an obstacle below the surface, but I am close enough to assess the situation.
+</Reasoning>
+<Action>
+    (0, 0, -20)
+</Action>
+
+<Reasoning>
+    The object at coordinates (20, -3

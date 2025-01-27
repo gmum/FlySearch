@@ -1,0 +1,26 @@
+ <Action space>
+    <Action>(5, 5, -1)</Action>
+</Action space>
+<Reasoning>
+    I am choosing the middle point (5,5) on the grid to minimize the search area for efficiency. Moving down (-1 meter) should also maximize my chances of being in contact with the ground to confirm if there is any ground disturbance at the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(5, 5, -4)</Action>
+</Action space>
+<Reasoning>
+    I am continuing to move down to increase the likelihood that I am closer to the ground, possibly detecting signs of a campsite such as tents or trees.
+</Reasoning>
+
+<Action space>
+    <Action>(5, 5, -8)</Action>
+</Action space>
+<Reasoning>
+    As I am still not at the ground level, I am making a more significant downward move to ensure that if there is a campsite, it would be within my line of sight.
+</Reasoning>
+
+<Action space>
+    <Action>(5, 5, -12)</Action>
+</Action space>
+<Reasoning>
+    I am now closer to the ground, which

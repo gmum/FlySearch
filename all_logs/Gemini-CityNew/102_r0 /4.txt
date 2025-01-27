@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I'm now at (0,0) and 7 meters above the ground. I can see some marks on the ground, which could be related to road construction. I will move to the right to center on the largest mark in the field of view and then reply "FOUND".</Reasoning>
+<Action>(5, 0, 0)</Action>
+```

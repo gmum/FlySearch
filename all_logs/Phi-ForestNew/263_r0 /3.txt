@@ -1,0 +1,2 @@
+ <Reasoning>I am now at the coordinates (51, 51), but the object has moved again. I need to move to the coordinates (27, 27) while staying 5 meters below. I will move southeast to be in view and 5 meters below.</Reasoning>
+<Action>(26, 26, 5)</Action>

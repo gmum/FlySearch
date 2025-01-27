@@ -1,0 +1,13 @@
+ <Reasoning>I am on the ground, and the person should be within my field of view at this altitude. I will move slightly to the left to ensure that I am directly over them.</Reasoning>
+
+<Action>(0, -1, 0)</Action>
+
+<Reasoning>I can see the person now. I will move slightly up to get the best view of them.</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I am still directly above the person. I will move slightly to the right to ensure that I am centered on them.</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I am still directly above the person. I will move slightly to the right to ensure that I am centered on them.</Reasoning>

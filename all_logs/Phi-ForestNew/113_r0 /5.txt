@@ -1,0 +1,12 @@
+ <Reasoning>At the coordinates (-1, 1), the drone's altitude is high, and it's not possible to spot the forest fires clearly.</Reasoning>
+<Action>(-2, 1, -2)</Action>
+
+<Reasoning>I have moved to coordinates (-2, 1, -2), which provides a better angle for detecting the fires.</Reasoning>
+<Action>(-3, 1, -3)</Action>
+
+<Reasoning>The new coordinates at (-3, 1, -3) show several hot spots below the drone's field of view. I should move lower to get a closer look.</Reasoning>
+<Action>(-4, 1, -4)</Action>
+
+<Reasoning>At coordinates (-4, 1, -4), the fire is directly below the drone, confirming its presence.</Reasoning>
+<Action>(-4, 1, -10)</Action>
+<Reasoning>I am now below the fire and confirmed, meeting the mission objective.</Reasoning>

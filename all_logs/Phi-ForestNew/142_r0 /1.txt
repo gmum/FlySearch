@@ -1,0 +1,14 @@
+ <Reasoning>I will begin my search by moving to the center of the grid, which is (0,0), to ensure I have covered the most likely area for the object.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>The object seems to be around the area of (29,49), so I will move to (29,29) to check if the object is located there or near it.</Reasoning>
+<Action>(29, 29, -30)</Action>
+
+<Reasoning>The object appears to be in the area of (29,29), so now I will move to (0,29) to see if it is at the center of the grid.</Reasoning>
+<Action>(0, 29, -30)</Action>
+
+<Reasoning>I will move slightly to (29,29) to check if the object is in that direction or if it is slightly to the left of the center grid.</Reasoning>
+<Action>(29, 29, -30)</Action>
+
+<Reasoning>The object is definitely near the center of the grid, so I will move to (29,29) to confirm its location.</Reasoning>
+<

@@ -1,0 +1,2 @@
+ <Reasoning>I am in the middle of the grid and have not found the object. I should move down to (0, 0) to be centered on the grid and then to (0, -20) to be 10 meters below the object I am searching for. After finding the object, I will move back to (0, 0) to ensure I am centered on the object before replying with "FOUND."</Reasoning>
+<Action>(0, -20, -20)</Action>

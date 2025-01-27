@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I don't see any fire from this altitude. I will move to the coordinates (0,0) because it is the center of the grid. I will also lower the altitude by 20 meters to try and see if anything is visible from closer.</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

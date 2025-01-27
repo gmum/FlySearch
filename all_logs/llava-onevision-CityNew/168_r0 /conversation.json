@@ -1,0 +1,114 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a blue sport car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 54 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given the specific requirements to find a blue sports car and the need to maintain an altitude below 10 meters above the object, I will begin by moving to a central location in the search area to gain a broader perspective. The coordinates (-18, 0) on the grid seem to be a good starting point as they are roughly in the middle of the search area. I will descend to an altitude of 10 meters to comply with the altitude requirement. If the car is not visible from this position, I will adjust my location accordingly, moving towards areas with higher likelihood of containing the car, such as roads or parking spaces.</Reasoning>\n<Action>(-18, 0, -44)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given the emergency stop warning, it's clear that the drone has encountered an obstacle. To avoid further complications and continue the search, I will move away from the obstacle while maintaining the current altitude of 28 meters. I will ascend slightly to 30 meters to avoid any other potential obstacles. The next step will be to move towards the center of the search area to resume the search for the blue sports car. If the car is not visible from this position, I will continue to adjust my location, focusing on areas that are more likely to contain the car.</Reasoning>\n<Action>(0, 9, 2)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this elevated position, I can see a yellow car on the road. However, the objective is to find a blue sports car. I will continue to search the area by moving slightly towards the center of the search area while maintaining the altitude of 30 meters. If the car is not visible from this position, I will continue to adjust my location, focusing on areas that are more likely to contain the car.</Reasoning>\n<Action>(9, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Continuing the search for a blue sports car, I will move slightly towards the left and slightly lower the altitude to 28 meters to gain a better view of the vehicles on the road. If the car is not visible from this position, I will continue to adjust my location, focusing on areas that are more likely to contain the car.</Reasoning>\n<Action>(-9, 0, -2)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>As the search continues, I have moved slightly to the left and slightly lower to 27 meters. From this position, I can see the vehicles on the road more clearly. The objective is to find a blue sports car, so I will continue to adjust my location, focusing on areas that are more likely to contain the car. If the car is not visible from this position, I will continue to move in a systematic way to cover the search area.</Reasoning>\n<Action>(-9, 0, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this position, I will continue to search for the blue sports car by moving slightly towards the crosswalk. The objective is to find a blue sports car, so I will continue to adjust my location, focusing on areas that are more likely to contain the car. If the car is not visible from this position, I will continue to move in a systematic way to cover the search area.</Reasoning>\n<Action>(0, 9, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Continuing to search for the blue sports car, I will move slightly towards the road on the left side of the image. The objective is to find a blue sports car, so I will continue to adjust my location, focusing on areas that are more likely to contain the car. If the car is not visible from this position, I will continue to move in a systematic way to cover the search area.</Reasoning>\n<Action>(-9, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this position, I will move slightly towards the road on the left side of the image while maintaining the current altitude of 27 meters. The objective is to find a blue sports car, so I will continue to adjust my location, focusing on areas that are more likely to contain the car. If the car is not visible from this position, I will continue to move in a systematic way to cover the search area.</Reasoning>\n<Action>(-9, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ]
+]

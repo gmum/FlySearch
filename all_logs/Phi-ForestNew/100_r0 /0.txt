@@ -1,0 +1,2 @@
+ <Reasoning>I am currently at 45 meters above ground level, which is above the 10 meters required for the objective. I need to move the drone lower to reach the object at or below the 10 meters altitude. My next move will be towards the coordinates that are closest to the possible location of the object.</Reasoning>
+<Action>(0, 0, -30)

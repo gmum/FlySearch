@@ -1,0 +1,13 @@
+ <Reasoning>With the current altitude, I'm still too high to be closer to the person. I need to descend my drone to a lower altitude. The person seems to be in the center of the image, so I will move towards them without changing my horizontal position.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+
+<Reasoning>Now I am at a height that allows me to scan the area more effectively. The person seems to be in a thick green area. I will move towards them to get a better view. As I move, I will analyze the environment for any sign of the person.</Reasoning>
+<Action>(14, 14, -10)</Action>
+
+
+<Reasoning>The person is not located at the (14, 14) coordinate. I need to move in a direction that brings me closer to the person. The person seems to be in a region with a mix of grassy and tree-covered areas. I will adjust my altitude and horizontal position to be closer.</Reasoning>
+<Action>(14, 14, -5)</Action>
+
+
+<Reasoning>I am now closer to the person. I can see through the surrounding greenery, but it's not clear if the person is indeed in the area.

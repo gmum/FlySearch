@@ -1,0 +1,2 @@
+<Reasoning>The fire is visible in the image, located at the coordinates (20, -20). I need to move to this location and adjust my altitude to be below 10 meters relative to the fire.</Reasoning>
+<Action>(20, -20, -20)</Action>

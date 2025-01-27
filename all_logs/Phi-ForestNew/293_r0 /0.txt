@@ -1,0 +1,11 @@
+ <Reasoning>
+<Action>
+    Based on the coordinates provided, I will fly towards the point that looks to be an anomaly, which is the yellow point on the map. It's located at (4, -35) relative to the drone's current position. Given that my current altitude is 67 meters, I will need to fly down to ensure I'm closer to the ground to accurately assess the object. I will keep an eye out for the object while I move, and once I reach it, I will reply with "FOUND".
+</Action>
+<Reasoning>
+<Action>
+    Since my altitude cannot exceed 120 meters, I will start by descending to 80 meters above ground level to ensure I am within a reasonable search range. I will then assess the location of the object that I believe to be the anomaly. If I cannot identify the object upon reaching this altitude, I will continue to descend while maintaining visual confirmation of its presence in my field of view. Once I am certain I am at least 10 meters below the object and within its estimated area, I will signal that I have found the object by replying with "FOUND".
+</Action>
+<Reasoning>
+<Action>
+    The final set of instructions indicates that I should move to the coordinates (3, -25) above

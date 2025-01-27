@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Given my current altitude is 33 meters, and I need to be 10 meters or lower to be in line with the object in question, I will begin by descending to a lower altitude. I'll aim for the point directly below my current position, which seems to be at approximately (-1, 11) on the grid.</Reasoning>\n\n<Action>(0, 0, -30)</Action>\n\n<Reasoning>Upon descending, I will now scan the area below the assumed object location to check for signs of fire. If the object is visible and no fire is found, I will adjust my altitude and maneuver to scan the area closer to the object's location.</Reasoning>\n\n<Action>(0, 0, -27)</Action>\n\n<Reasoning>After scanning the areas below, I will proceed to the next grid point that seems to be in line with the assumed object location, which I can now identify as approximately (-2, 11). I will move downwards to ensure I am within 10 meters below this point.</Reasoning>\n\n<Action>(-1, 0, -27)</Action>\n\n<Reasoning>The point I am now at seems to be directly above the object. Since I found the object in"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 3 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>To ensure I am within 10 meters of the supposed fire location, I need to descend further. I will move to a point that is directly above the suspected fire, as indicated by the grid reference (-1, 1) to maintain a low altitude and increase the chances of detecting the fire.</Reasoning>\n\n<Action>(0, 0, -2)</Action>\n\n<Reasoning>I am now in a lower altitude, making it easier to inspect the area below the suspected fire point. I'll move down to the next point marked by the grid, which is about (-0.5, 1.5). This should give me a better angle to spot any signs of fire.</Reasoning>\n\n<Action>(-0.5, 1.5, -2)</Action>\n\n<Reasoning>I've moved down to the new location, now directly above the grid point (-0.5, 1.5). I'll quickly scan the area for any signs of fire. If the fire isn't visible, I will make another move to continue the search process.</Reasoning>\n\n<Action>(-0.5, 1.5, -2)</Action>\n\n<Reasoning>The area above (-0.5, 1.5) appears to be the"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to be closer to ground level to perform a thorough search for the fire. I will move to the closest point directly below the suspected fire, which is marked by the grid point (-1, 1). Being closer to the ground level will increase the visibility and accuracy of my search.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>I am now down to an altitude of 1 meter, directly above the grid point (-1, 1). I will proceed to scan the area in that vicinity for any signs of fire. If I do not find the fire, I will adjust my position accordingly while maintaining a low altitude.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>After scanning the area below (-1, 1), if there is no sign of fire, I will make another move to the next grid point that is both centrally located and at a low altitude to continue the search. This grid point is approximately (-0.5, 1.5), and it is where I should be moving next.</Reasoning>\n\n<Action>(-0.5, 1.5, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Under the circumstances, I need to remain in close proximity to the ground to ensure a thorough search for fire. I will continue to stay at an altitude of 1 meter as I move to the next point directly above the grid point (-0.5, 1.5) to maintain a low altitude and high visibility for detecting fire signs.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>After arriving at the new location above (-0.5, 1.5), I will perform a detailed scan of the area below this point, looking for any indications of fire. If the fire is not visible, I will proceed with the next move to continue the search process while ensuring I remain within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>The next point to scan is below the grid point (-0.5, 1.5). If no fire signs are detected, I will make a calculated move to the next grid point that I can reach from my current location to maintain the search process and continue the search process from a lower altitude.</Reasoning>\n\n<Action>(0.5, 0.5, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I am staying at an altitude of 1 meter due to the need for high visibility and accuracy in my search for the fire. I will move to the next point directly above the grid point (-0.5, 1.5) to maintain the low altitude for an effective search.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Upon reaching the location above (-0.5, 1.5), I will perform a detailed inspection of the area below, looking for any signs of fire. If the fire isn't visible, I will adjust my position accordingly to continue the search process while ensuring I remain within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>If there is no fire visible at the current grid point, I will make another move to the next grid point that I can reach from my current location to continue the search process from a lower altitude.</Reasoning>\n\n<Action>(0.5, 0.5, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since I am already at an adequate altitude for the search, I will move to the next grid point to continue the search process. The next point of interest is approximately (-0.5, 1.5), which is directly above the suspected fire location.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>After reaching the new location above (-0.5, 1.5), I will perform an inspection of the area below this point, looking for any signs of fire. If the fire is not visible, I will continue the search process.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>I have arrived at the next point of interest. I will carefully examine the area below it for signs of fire. If there is no fire, I will make another move to the next grid point that I can reach from my current location to maintain the search process while staying within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0.5, 0.5, -1)</Action>\n\n<Reasoning>The search continues above the grid point (-0.5, 1.5). If no fire is detected, I will move to the next grid point that I can reach from my current location"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I am still at an altitude of 1 meter to maximize visibility and accuracy during the search. I will move to the next point directly above the grid point (-0.5, 1.5) to continue the search.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Upon arriving at the new location above (-0.5, 1.5), I will perform a detailed inspection of the area below this point, looking for any signs of fire. If the fire is not visible, I will adjust my position accordingly to continue the search process while ensuring I remain within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>If no fire is detected at the current grid point, I will make another move to the next grid point that I can reach from my current location to maintain the search process while staying within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0.5, 0.5, -1)</Action>\n\n<Reasoning>The search process continues above the grid point (-0.5, 1.5). I will carefully examine the area below it for signs of fire. If no fire is detected, I will move to the"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>As I am already at the optimal altitude for the search, I will move to the next point directly above the grid point (-0.5, 1.5) to continue the search process.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Upon reaching the new location above (-0.5, 1.5), I will perform a detailed inspection of the area below this point, looking for any signs of fire. If there is no fire visible, I will continue the search process.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>If no fire is detected at the current grid point, I will make another move to the next grid point that I can reach from my current location to maintain the search process while staying within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0.5, 0.5, -1)</Action>\n\n<Reasoning>The search process continues above the grid point (-0.5, 1.5). I will carefully examine the area below it for signs of fire. If no fire is detected, I will move to the next grid point that I can reach from my current location to maintain the search process while ensuring I remain within the 10-meter"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I am staying at an altitude of 1 meter to maximize visibility and accuracy during the search. I will move to the next point directly above the grid point (-0.5, 1.5) to continue the search.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Upon arriving at the new location above (-0.5, 1.5), I will perform a detailed inspection of the area below this point, looking for any signs of fire. If the fire is not visible, I will adjust my position accordingly to continue the search process while ensuring I remain within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>If no fire is detected at the current grid point, I will make another move to the next grid point that I can reach from my current location to maintain the search process while staying within the 10-meter radius requirement.</Reasoning>\n\n<Action>(0.5, 0.5, -1)</Action>\n\n<Reasoning>The search process continues above the grid point (-0.5, 1.5). I will carefully examine the area below it for signs of fire. If no fire is detected, I will move to"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I am still at an altitude of 1 meter due to the need for high visibility and accuracy in my search for the fire. I will continue to stay"
+    ]
+]

@@ -1,0 +1,9 @@
+ <Reasoning>
+I've found the object and am now in a safe position to return to my starting altitude.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>
+It's important to carefully control altitude to ensure safe flight.
+</Reasoning>
+<Action>(0, 0, -1)</Action>

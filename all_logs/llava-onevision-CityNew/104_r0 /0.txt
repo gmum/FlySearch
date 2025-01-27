@@ -1,0 +1,19 @@
+<Reasoning>
+The police car is likely to be on the road, as it is a common place for police cars to be. I will start by flying towards the road and then move in a systematic way to search for the car. I will start by moving towards the center of the road and then move in a zigzag pattern to cover the entire area.
+</Reasoning>
+<Action>(0, 0, -15)</Action> 
+
+<Reasoning>
+I have moved lower and I can now see the road better. I will start moving in a zigzag pattern to cover the entire area. I will start by moving towards the left side of the road.
+</Reasoning>
+<Action>(-10, 0, 0)</Action> 
+
+<Reasoning>
+I have moved towards the left side of the road and I can see a car. I will move closer to check if it is a police car.
+</Reasoning>
+<Action>(0, 0, -10)</Action> 
+
+<Reasoning>
+I have moved closer and I can confirm that the car is a police car. I am now at a safe altitude and I can see the car clearly. I will report that I have found the police car.
+</Reasoning>
+FOUND

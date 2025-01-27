@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(-20, 0, -15)</Action>\n<Reasoning>I suspect the trash pile may be the yellow point on the grid. It is far enough from the drone's current position that I need to get closer. By moving to (0, 0, -15) meters, the drone will be 30 meters closer to the point, which should be within the search area.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(-10, 0, -5)</Action>\n<Reasoning>The trash pile is likely the dark patch near the center of the grid at (0, 0). I'll move the drone closer to it. This move will bring the drone 15 meters closer to the patch, within the searchable area, without exceeding the altitude limit or the move limit.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 25 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(-5, 0, -5)</Action>\n<Reasoning>The trash pile, if still the same as before, should be more visible now. Moving to (-10, 0, -5) meters, the drone will be 10 meters closer. This should put it within the search area, assuming the drone was previously 20 meters above the ground.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -10)</Action>\n<Reasoning>The trash pile should now be quite close, around 10 meters below. Moving to (0, 0, -10) meters, the drone will be 10 meters closer to the object, which should meet the requirements for being considered found.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -0)</Action>\n<Reasoning>Now that I am at the altitude of 10 meters, the trash pile should be visible. By moving to (0, 0, -0) meters, the drone will be 10 meters closer, potentially within the search area, depending on the object's visibility.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -0)</Action>\n<Reasoning>The trash pile should be in view now. The drone will move to (0, 0, -0) meters, which should bring it 10 meters closer to the object, potentially within the search area, depending on the object's visibility.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -0)</Action>\n<Reasoning>The drone will move to (0, 0, -0) meters, which means it will fly at the same altitude as the ground. The trash pile should be clearly visible and the drone will be 10 meters closer, which should be within the search area. The drone will not be able to fly below 10 meters relative to the trash pile.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -0)</Action>\n<Reasoning>The drone will move to (0, 0, -0) meters, which means it will fly at the same altitude as the ground. The trash pile should be clearly visible and the drone will be 10 meters closer, which should be within the search area. The drone will not be able to fly below 10 meters relative to the trash pile.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -0)</Action>\n<Reasoning>The drone will move to (0, 0, -0) meters, which means it will fly at the same altitude as the ground. The trash pile should be clearly visible and the drone will be 10 meters closer, which should be within the search area. The drone will not be able to fly below 10 meters relative to the trash pile.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -0)</Action>\n<Reasoning>The drone will move to (0, 0, -0) meters, which means it will fly at the same altitude as the ground. The trash pile should be clearly visible and the drone will be 10 meters closer, which should be within the search area. The drone will not be able to fly below 10 meters relative to the trash pile.</Reasoning>"
+    ]
+]

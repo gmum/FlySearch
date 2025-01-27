@@ -1,0 +1,28 @@
+ <Reasoning>
+    I will fly towards the area that seems to be the closest to the buildings and roads. This might be where the object is.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>
+    I have moved closer to the buildings. The object might be on the bridge.
+</Reasoning>
+<Action>(-10, 10, -30)</Action>
+
+<Reasoning>
+    I am now below the bridge and close to the buildings. The object might be on the side of one of the buildings.
+</Reasoning>
+<Action>(0, 10, -20)</Action>
+
+<Reasoning>
+    I am now in a good position to spot the object. I will continue to look around the buildings.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I found the yellow point on the bridge. I will move down to get a closer view.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>
+    I have confirmed that the yellow point is the object in question. I will reply with "FOUND".
+</Reasoning>

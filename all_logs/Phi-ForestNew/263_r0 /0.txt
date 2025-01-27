@@ -1,0 +1,2 @@
+ <Reasoning>I need to move closer to the object, which seems to be located at (0, 0), but I also need to guarantee that I am at least 5 meters below it. I will move northwest to get closer while ensuring I am within view. If the object is not what I'm looking for, I will continue my search.</Reasoning>
+<Action>(22, 22, 5)</Action>

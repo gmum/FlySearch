@@ -1,0 +1,7 @@
+ <Reasoning>
+At 20 meters above sea level, my current altitude is 10 meters above ground level since the drone's starting altitude is 10 meters above sea level (20 - 10 = 10 meters). I should move closer to the ground, but not too low, to search for the anomaly.
+</Reasoning>
+
+<Action>
+    (0, 0, -10)
+</Action>

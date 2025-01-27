@@ -1,0 +1,13 @@
+ <Reasoning>The current coordinates are (-25, 25), which is quite a distance from the bottom of the image. I will fly closer to the bottom to increase the chances of finding the forest fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>With the coordinates now at (0, 0, 0), I will look for the fire in the bottom left corner of the image.</Reasoning>
+<Action>(-5, -5, -5)</Action>
+
+<Reasoning>The coordinates are now at (-25, -25), and I can see some yellowish areas that could be an active fire. I will fly below 10 meters to get a closer look.</Reasoning>
+<Action>(-25, -25, -20)</Action>
+
+<Reasoning>The coordinates are now at (-25, -25, -20), and I did indeed find the forest fire, which can be seen as bright orange. I am below 10 meters relative to it.</Reasoning>
+<Action>(-25, -25, -10)</Action>
+
+<Reasoning>With the coordinates now at (-25, -25, -10), I am about 10

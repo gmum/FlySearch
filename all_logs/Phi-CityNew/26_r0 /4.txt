@@ -1,0 +1,15 @@
+ <Reasoning>I'm too close to the ground at (0, 0), so I need to reset to a safer altitude. Rising to a moderate altitude will also give me a better vantage point for scanning the area for the construction site.</Reasoning>
+
+<Action>(0, 0, 14)</Action>
+
+<Reasoning>I will now scan the grid around (0, 0) for any notable features. The grid coordinates (1, 0) seem to be a good starting point, and it's within my view to make a decision based on visual cues.</Reasoning>
+
+<Action>(1, 0, 0)</Action>
+
+<Reasoning>It's not the site, so I'll move to (0, 1) to get a different perspective. Safety gains priority, so I'll maintain a moderate altitude to avoid any immediate threats.</Reasoning>
+
+<Action>(0, 1, 0)</Action>
+
+<Reasoning>I'll continue the search around this safe position. The point at (0, 2) might be worth checking due to its proximity and visibility. I'll reassess my altitude for the next move to ensure safety.</Reasoning>
+
+<Action>(0

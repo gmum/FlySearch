@@ -1,0 +1,14 @@
+ <Reasoning>It looks like the object might be in the lower part of the image. I need to navigate to it with caution, ensuring that I don't fly too high to miss it or too low to risk a collision. The coordinates I can see seem to be in a vertical section of the image, which suggests that the object might be on the ground or close to it.</Reasoning>
+<Action>(-10, -20, 10)</Action>
+<Action>(0, -20, 10)</Action>
+<Action>(10, -20, 10)</Action>
+<Action>(20, -20, 10)</Action>
+<Action>(-20, -10, 0)</Action>
+<Action>(-10, -10, 0)</Action>
+<Action>(0, -10, 0)</Action>
+<Action>(10, -10, 0)</Action>
+<Action>(-20, -20, 0)</Action>
+<Action>(-10, -20, 0)</Action>
+<Action>(0, -20, 0)</Action>
+<Action>(10, -20, 0)</Action>
+<Action>(

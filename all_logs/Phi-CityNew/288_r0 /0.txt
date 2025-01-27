@@ -1,0 +1,20 @@
+ <Reasoning>Starting search around the central grid point, which seems to be at (0, 0). Flying lower to scout for any color differences or anomalies.</Reasoning>
+<Action>
+    (-4, -4, 0)
+</Action>
+<Reasoning>Next move southwest, the grid point (1, -1) looks promising, closer to the ground.</Reasoning>
+<Action>
+    (-6, -6, -2)
+</Action>
+<Reasoning>Now, I'm scanning the area around (-5, -5), following the line of grid points (1, 1) to (1, -1)</Reasoning>
+<Action>
+    (-8, -8, -4)
+</Action>
+<Reasoning>Heading northeast now, checking the section between grid points (-4, -4) to (-2, -2).</Reasoning>
+<Action>
+    (-6, -6, -2)
+</Action>
+<Reasoning>Moving back to the center, the object might be around (0, 0). Let's go to (2, 2) to get a different angle.</Reasoning>
+<Action>
+    (-4, -4, -2)
+</Action>

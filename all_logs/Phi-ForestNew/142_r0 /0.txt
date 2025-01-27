@@ -1,0 +1,13 @@
+ <Reasoning>I will start by moving towards the point denoted by (0,0), which is likely to be near the object since it is the center of the grid. This seems to be a strategic place to begin my search for the campsite based on the grid's orientation.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>The object seems to be around the area of (49,49), so I will move slightly to (0,49) to check if the object is located there or near it.</Reasoning>
+<Action>(0, 49, -30)</Action>
+
+<Reasoning>I do not think the object is here, so I will move to (49,0) to align with the grid's zone that is most likely to contain the object.</Reasoning>
+<Action>(49, 0, -30)</Action>
+
+<Reasoning>I will move slightly northeast to (25,49) to see if the object is in that direction, as this is closer to the center of the grid where the object might be.</Reasoning>
+<Action>(25, 49, -30)</Action>
+
+<Reasoning>The object might be in the center of this

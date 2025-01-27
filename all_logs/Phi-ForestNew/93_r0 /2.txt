@@ -1,0 +1,13 @@
+ <Reasoning>Starting with a new perspective, I'll fly to (0, 59) to get a closer view of the area.</Reasoning>
+<Action>(0, 59, -5)</Action>
+
+<Reasoning>Next, I will fly diagonally to (59, 30) to expand my view and potentially spot the campsite.</Reasoning>
+<Action>(59, 30, -5)</Action>
+
+<Reasoning>I'll move slightly left to (0, 0) for another close-up view, in case the object is around the center of the grid.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since I'm close to the object, I'll now fly a bit higher to (59, -30) to change my altitude without losing sight of the object.</Reasoning>
+<Action>(59, -30, -5)</Action>
+
+<Reasoning>I am maintaining an altitude above 10 meters and looking for the campsite. Moving to (30, 59) will give me a broad view of the area, as the coordinates are in the general vicinity of the object.</Reasoning>

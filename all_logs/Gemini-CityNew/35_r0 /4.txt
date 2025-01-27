@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a white truck in the bottom left part of the image. I will move so that my center will be on top of the white truck and then come down.</Reasoning>
+<Action>(-15, -7, -6)</Action>
+```

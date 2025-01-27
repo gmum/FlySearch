@@ -1,0 +1,41 @@
+ <Reasoning>
+    I'm flying too low.
+</Reasoning>
+<Action>
+    (0, 0, -25)
+</Action>
+
+<Reasoning>
+    I'm flying too low again. I need to find a safe spot.
+</Reasoning>
+<Action>
+    (-1, 0, -19)
+</Action>
+
+<Reasoning>
+    I'm still flying too low and risk a collision.
+</Reasoning>
+<Action>
+    (1, 1, 1)
+</Action>
+
+<Reasoning>
+    I need to increase altitude carefully to avoid hitting something.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>
+
+<Reasoning>
+    I need to find a safe area to continue the search.
+</Reasoning>
+<Action>
+    (-1, -1, 1)
+</Action>
+
+<Reasoning>
+    I'm still unable to locate the building. I should move to a different area.
+</Reasoning>
+<Action>
+    (-1, -1, 1)
+</Action>

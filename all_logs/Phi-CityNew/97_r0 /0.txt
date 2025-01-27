@@ -1,0 +1,8 @@
+ <Reasoning>Given the current altitude and the task to find a white sport car, I will start by moving closer to the ground to have a better chance of spotting the object. I will move diagonally downwards and slightly to the left to cover more area. My next move will be to further decrease altitude to maximize my chances of seeing the car.</Reasoning>
+<Action>(10, -5, 0)</Action>
+<Reasoning>I now have a lower altitude and should continue to move in the same direction to stay focused on the task. Adjusting my direction slightly to the right might help me spot the car if it's to the left of where I am currently.</Reasoning>
+<Action>(15, -10, 0)</Action>
+<Reasoning>Since the car is a white sport car, I should now be in a position where it can be seen clearly. If it's not in my field of view, I will continue to adjust my position to maximize visibility.</Reasoning>
+<Action>(25, -15, 0)</Action>
+<Reasoning>I will now attempt to spot the car. If it is not in the frame, I will make a final adjustment to my position to ensure it is within my field of view.</Reasoning>
+<

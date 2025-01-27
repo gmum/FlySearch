@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a yellow car on the right side. I need to check if the green vehicle on the left is a pickup truck. I will go to the position (-5, 0) and descend by 10 meters.</Reasoning>
+<Action>(-5, 0, -10)</Action>
+```

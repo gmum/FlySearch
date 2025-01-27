@@ -1,0 +1,22 @@
+ <Reasoning>
+    As the aircraft starts the search, the yellow point, which could be the building, seems to be in the top left corner of the grid. Since the drone's current altitude is 32 meters and the starting altitude is 0 meters, it will need to fly down.
+</Reasoning>
+<Action>(-21, -21, -31)</Action>
+
+<Reasoning>
+    With a lower altitude, the drone can cover more ground and find the object. Moving to the grid point in the bottom left corner seems like a good start.
+</Reasoning>
+<Action>(-21, -15, -31)</Action>
+
+<Reasoning>
+    Looking to the right, another yellow point is visible which might be the building. The drone should continue descending to get a closer look.
+</Reasoning>
+<Action>(-16, -21, -26)</Action>
+
+<Reasoning>
+    The yellow point in the bottom right corner appears to be the building. The drone will fly down to get a closer view.
+</Reasoning>
+<Action>(-16, -21, -26)</Action>
+
+<Reasoning>
+    The drone is now at the

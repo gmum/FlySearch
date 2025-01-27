@@ -1,0 +1,2 @@
+<Reasoning>Since the fire is not visible in the center of the grid, I will move to the left side of the grid to start a systematic search. I will move to the coordinate (-25, 0) to check for the fire and then continue moving along the grid if necessary.</Reasoning>
+<Action>(-25, 0, 0)</Action>

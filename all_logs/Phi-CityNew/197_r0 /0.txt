@@ -1,0 +1,10 @@
+ <Reasoning>I believe I am currently in a location that is not close enough to the object I am searching for. I need to move closer, so I will start by going south to get on land before moving horizontally to find the object.</Reasoning>
+<Action>(-22, -22, 0)</Action>
+<Reasoning>I have found the object in question! It is a large pile of trash located at (-22.2, 22.2) on the grid.</Reasoning>
+<Action>(-22, 22, -10)</Action>
+<Reasoning>I am now at the correct height of 10 meters above the object. I am centered on the object and ready to continue with my search if necessary.</Reasoning>
+<Action>(-22, 22, -10)</Action>
+<Reasoning>I have now found the object in question and am decreasing my altitude to 10 meters below it.</Reasoning>
+<Action>(-22, 22, -10)</Action>
+<Reasoning>I am now at the correct height of 10 meters below the object. I am centered on the object and ready to continue with my search if necessary.</Reasoning>
+<Action>(-2

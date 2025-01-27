@@ -1,0 +1,14 @@
+ <Reasoning>Keeping my altitude in mind, I'll start scanning the map for the trash pile. I'll begin by moving to (1, 1) to set the direction of my search.</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>The object is beyond my current view at (1, 1). I'll proceed to (1, 0) to expand my search area.</Reasoning>
+<Action>(-2, 0, -5)</Action>
+
+<Reasoning>The trash pile isn't visible at (1, 0). I'll adjust my position to (1, -1) to check another area.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+
+<Reasoning>Still no sign of the trash pile at (1, -1). I'll continue to (0, 1) to cover more of the map.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The trash pile should be within my view at (0, 1). I'll descend to 1 meter above it to confirm its presence.</Reasoning>
+<Action>(0, 0

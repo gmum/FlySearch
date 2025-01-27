@@ -1,0 +1,4 @@
+ <Reasoning>The object might be at coordinates (8,18). I move to coordinates (8,18) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>
+<Action>(8,18,0)</Action>
+
+<Reasoning>The object isn't at (8,18), so I move to (8,18) and slightly down to (8,17) to continue the search, being cautious of the object.</Reason

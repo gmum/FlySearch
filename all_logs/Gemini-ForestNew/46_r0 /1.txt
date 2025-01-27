@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a pile of trash at (-12, -12). I need to go lower to confirm and get close. It's located at the bottom part of the view, so I am moving the drone to that location. </Reasoning>
+<Action>(-12, -12, -28)</Action>
+```

@@ -1,0 +1,16 @@
+ <Reasoning>I will start by moving to (0, 54) to get a closer view of the area and potentially identify the campsite.</Reasoning>
+<Action>(0, 54, -5)</Action>
+
+<Reasoning>Next, I will fly to (25, 9) to expand my view and check for the campsite.</Reasoning>
+<Action>(25, 9, -5)</Action>
+
+<Reasoning>I will then fly to (0, 25) for a different angle and closer view of the area.</Reasoning>
+<Action>(0, 25, -5)</Action>
+
+<Reasoning>To ensure I am not missing any spots, I will fly to (25, -9) to get another broader view while still looking for the campsite.</Reasoning>
+<Action>(25, -9, -5)</Action>
+
+<Reasoning>I will then fly to (25, -25) to check the area from a different perspective and ensure I am not missing the campsite.</Reasoning>
+<Action>(25, -25, -5)</Action>
+
+<Reasoning>Finally, I will move to (25, -49

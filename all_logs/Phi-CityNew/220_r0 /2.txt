@@ -1,0 +1,23 @@
+ <Reasoning>I will analyze the proximity of the yellow squares to each other. The one that is quite isolated seems to be the one I am looking for.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>By making a move down, I am now closer to the isolated yellow square, providing a better chance to confirm if it's the object in question.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>I am now closer to the object, allowing me to investigate it more closely.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>After thoroughly inspecting the area, I can confirm the isolated yellow square is indeed the object of interest as it is distinctly different.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>I am still 30 meters below the object, meeting the altitude requirement.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>Since I found the object, I will now change my position to ensure it is in my field of view.</Reasoning>
+
+<Action>(0, 

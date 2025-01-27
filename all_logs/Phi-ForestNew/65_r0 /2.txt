@@ -1,0 +1,2 @@
+ <Action>(-5, 0, -5)</Action>
+<Reasoning>The trash pile, if still the same as before, should be more visible now. Moving to (-10, 0, -5) meters, the drone will be 10 meters closer. This should put it within the search area, assuming the drone was previously 20 meters above the ground.</Reasoning>

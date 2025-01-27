@@ -1,0 +1,13 @@
+ <Reasoning>The drone needs to descend to a lower altitude to scan the ground for the building.</Reasoning>
+<Action>(0, 0, -4)</Action>
+
+<Reasoning>I will attempt to position the drone above the building to scan for it.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>The building should be at (0, 0), so I will move there to check if it is indeed the building.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I will now attempt to move closer to the object to confirm its identity.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>Since the building has been confirmed to be at (0, 0), I will

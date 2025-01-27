@@ -1,0 +1,11 @@
+ <Reasoning>I will start by checking potential locations as indicated by the coordinates in the image. I need to avoid flying too high to not miss any potential object at the ground level. If I haven't found the object, I will continue searching, moving down closer to the ground as I go.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>Since I am still 30 meters above ground, I need to move down to get closer to the ground level and improve my chances of finding the object. I will move in a direction that takes me closer to the coordinates (0, 0).</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+<Reasoning>After moving, I am now 40 meters above ground. I need to move closer to the object, but I must ensure I am not above the object. I will proceed to the next closest possible position based on the available coordinates.</Reasoning>
+<Action>(0, 0, -50)</Action>
+
+<Reasoning>I am still at 40 meters above ground. I need to get closer to the object. I will move again to get as close as possible without being too high.</Reasoning>
+<Action>(0, 0, -60)</Action>

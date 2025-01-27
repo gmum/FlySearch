@@ -1,0 +1,34 @@
+ <Reasoning>
+    I must stop flying to avoid a collision.
+</Reasoning>
+<Action>
+    (0, 0, -25)
+</Action>
+
+<Reasoning>
+    I'm still too low. I need to back up and find a safe area.
+</Reasoning>
+<Action>
+    (-1, 0, -19)
+</Action>
+
+<Reasoning>
+    I need to increase altitude to avoid a collision.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>
+
+<Reasoning>
+    I'm still at risk. I should move to a different area to continue the search safely.
+</Reasoning>
+<Action>
+    (-1, -1, 1)
+</Action>
+
+<Reasoning>
+    I need to be more aware of my surroundings and adjust my altitude accordingly.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>

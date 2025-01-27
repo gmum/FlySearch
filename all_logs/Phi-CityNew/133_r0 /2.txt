@@ -1,0 +1,17 @@
+ <Reasoning>The trash pile is not within my field of view. I need to move down to get a better look.</Reasoning>
+
+<Action>(0, 0, -29)</Action>
+
+<Reasoning>I am now at a lower altitude, looking for the trash pile in the lower right area of the image. I will continue to move down to scan the area.</Reasoning>
+
+<Action>(-5, -3, -29)</Action>
+
+<Reasoning>The trash pile seems to be nearby, so I will move down further to get a closer view.</Reasoning>
+
+<Action>(-5, -3, -33)</Action>
+
+<Reasoning>I am now at a lower altitude, looking for the trash pile in the lower right area of the image. I will continue to move down to scan the area.</Reasoning>
+
+<Action>(-5, -3, -37)</Action>
+
+<Reasoning>The trash pile is within my field of view now, so I will reply with "FOUND".

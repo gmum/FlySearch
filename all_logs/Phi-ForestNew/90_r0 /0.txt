@@ -1,0 +1,11 @@
+ <Reasoning>Starting at (0, 0) in the field of view, I will first move to the (14, 0) coordinate to explore the area horizontally. Then, I will decrease altitude to get closer to the potential trash pile.</Reasoning>
+<Action>(14, 0, -20)</Action>
+
+<Reasoning>Now I am 20 meters below my starting point, I can move to the right to check the next grid point at (14, 28) which is further away horizontally. Reducing altitude further to get closer.</Reasoning>
+<Action>(14, 28, -20)</Action>
+
+<Reasoning>I am still quite high, so I need to decrease altitude to get closer. Moving to the left to check (0, 28) and then to the right (28, 28) should help.</Reasoning>
+<Action>(0, 28, -20)</Action>
+
+<Reasoning>Since the object must be in my field of view, I will move down further to ensure it is within the frame. Let's try (28, 0), which is the closest grid point to the object on the left side.</Reasoning>
+<Action>(

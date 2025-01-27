@@ -1,0 +1,9 @@
+ <Reasoning>I will begin my search for the forest fire by moving down to investigate the area around the point (0, 0), as it is centrally located and may indicate the presence of fire activity. I have a 30 meter altitude, and I am 2 meters above the ground level. Being close to the ground level will help me to quickly identify any fire activity. </Reasoning>
+
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>The yellow point visible on the left side might be the object in question. I will move down to investigate the area around it. Being close to the ground level will allow me to quickly identify the fire activity. I will also slightly move to the north to get a better view of the fire. </Reasoning>
+
+<Action>(5, 0, -3)</Action>
+
+<Reasoning>The fire seems to be at the point (0, -10). I am now 2 meters above the

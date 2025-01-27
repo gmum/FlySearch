@@ -1,0 +1,158 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 59 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object looks like a large white cylinder on the roof to the right. I should move towards the center of it and then go down to get closer.</Reasoning>\n<Action>(20, 20, 0)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 59 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have moved to the right place. Now I need to go down to get a better look at this white object and see if it's the one I'm looking for. Also, I need to get below 10 meters of it. I will move to the center to be sure, based on the grid overlay.</Reasoning>\n<Action>(-20, -20, -50)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I've made a mistake, I should have gone a lot lower. I should also center myself on the object again.</Reasoning>\n<Action>(-20, -39, -25)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I made a mistake in the previous move, trying to go too low without checking the coordinates carefully. I need to go lower, but I should remain in the visible area on the roof and avoid going too much to the south-west. I should move to (-20, -20) which is the center of the object and then go down.</Reasoning>\n<Action>(-20, -20, -25)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I keep making the same mistake by going too far down and crashing. I will try to go down only 20 meters while making sure I'm centered at the object. It's at (-20, -20) so I will try to go there and down.</Reasoning>\n<Action>(-20, -20, -20)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am still having trouble with my altitude. I will move down only 15 meters, while making sure I am centered at the object, which is at (-20, -20). I will go there and down gently.</Reasoning>\n<Action>(-20, -20, -15)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am having a lot of trouble with the altitude, it seems. I will go down just 5 meters, to be safe, and I will center on the object again, at (-20, -20). I am being very careful here.</Reasoning>\n<Action>(-20, -20, -5)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I'm clearly having trouble with the immediate surroundings when I descend. I will move to the center of the object again, and then I will go down only 1 meter. This way I should be able to see what's causing the crashes.</Reasoning>\n<Action>(-20, -20, -1)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>It seems that I am very close to an object and I am hitting it immediately after descending. I am clearly centered, but I need to go up so I can survey the area again. I will go up 20 meters.</Reasoning>\n<Action>(-20, -20, 20)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 51 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Okay, I went up. I still see the object on the right roof. I need to be careful while going down, as I want to avoid crashing again. I think I was crashing when hitting the roof. I should move slowly down to the center of the object, which I think is around (20, 20) from the first image. I will move to (17, 17) and then go down.</Reasoning>\n<Action>(17, 17, 0)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 51 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Okay, I am closer to the object. I should now move down. I will move down 42 meters to get close enough, while making sure the object is centered, which it is. I know from previous attempts not to go below 10, so 9 meters should be good enough.</Reasoning>\n<Action>(17, 17, -42)</Action>\n"
+    ]
+]

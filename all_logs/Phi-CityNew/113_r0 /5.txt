@@ -1,0 +1,14 @@
+ <Reasoning>I need to quickly move upwards to avoid a collision.</Reasoning>
+    <Action>(5, 0, 5)</Action>
+
+    <Reasoning>I am now at a safe altitude, but I am not sure if I will find the car before the emergency stops my search.</Reasoning>
+    <Action>(5, 0, 5)</Action>
+
+    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>
+    <Action>(5, 0, 3)</Action>
+
+    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>
+    <Action>(5, 0, 3)</Action>
+
+    <Reasoning>I found the car at coordinates (31, 31), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>
+    <Action>(5, 0, 3)</Action>

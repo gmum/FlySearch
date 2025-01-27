@@ -1,0 +1,2 @@
+ <Reasoning>The object I'm looking for is located at (0, 0), which is approximately 3 meters away. To get the object into my field of view, I need to fly 3 meters down. To be 10 meters below the object, I need to further decrease my altitude by 3 meters. Since the altitude restrictions are important, I will make this altitude change.</Reasoning>
+<Action>(0, 0, -3)</Action>

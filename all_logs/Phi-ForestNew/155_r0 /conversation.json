@@ -1,0 +1,102 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a forest fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 86 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object in question appears to be at (0, 0), which is around 67 meters away. To get the object into my field of view, I need to fly 67 meters down. To ensure I am 10 meters below the object and in the center of its field of view, I will decrease my altitude by 7 meters.</Reasoning>\n<Action>(0, 0, -7)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 79 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The potential object is located at (0, 0), which is approximately 53 meters away. To capture the object in the drone's field of view and be 10 meters below it, I need to decrease my altitude by 53 meters. To comply with the altitude restriction and to be 10 meters below the potential object, I will make this change to my altitude.</Reasoning>\n<Action>(0, 0, -53)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 26 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object I'm searching for appears to be at (0, 0), which is about 17 meters distant. To get the object into my field of view, I must descend 17 meters. Since I'm supposed to be 10 meters below the object, I will further decrease my altitude by 7 meters below the estimated distance to the object.</Reasoning>\n<Action>(0, 0, -7)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to get the object, which is likely at (0, 0), into my field of view. The distance to the object is approximately 13 meters. To be 10 meters below the object, I need to descend 3 meters. However, to stay within the view limitations and comply with the altitude restrictions, I will make this altitude change.</Reasoning>\n<Action>(0, 0, -3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 16 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object I'm searching for seems to be at (0, 0), which is roughly 11 meters away. To get the object into the drone's field of view, I need to descend 11 meters. Since I am required to be 10 meters below the object, I will make this change to my altitude.</Reasoning>\n<Action>(0, 0, -11)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object I'm looking for is located at (0, 0), which is approximately 3 meters away. To get the object into my field of view, I need to fly 3 meters down. To be 10 meters below the object, I need to further decrease my altitude by 3 meters. Since the altitude restrictions are important, I will make this altitude change.</Reasoning>\n<Action>(0, 0, -3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 2 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object I'm searching for seems to be at (0, 0), which is roughly 1 meter away. To get the object into my field of view, I need to fly 1 meter down. Since I am required to be 10 meters below the object, I will make this change to my altitude, ensuring it is within the view limitations and altitude restrictions.</Reasoning>\n<Action>(0, 0, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object I'm searching for seems to be at (0, 0), which is roughly 0.5 meters away. To get the object into my field of view, I need to fly 0.5 meters down. Since I am required to be 10 meters below the object, I will make this change to my altitude, ensuring I am within the view limitations and altitude restrictions.</Reasoning>\n<Action>(0, 0, -0.5)</Action>"
+    ]
+]

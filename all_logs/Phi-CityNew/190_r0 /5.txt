@@ -1,0 +1,15 @@
+ <Reasoning>I have managed to find an object that is of significant size, which has put me in a dangerous position. I must quickly make moves to avoid a collision.</Reasoning>
+<Action>(0, -4, -20)</Action>
+<Action>(-1, -3, -20)</Action>
+<Action>(-1, -2, -20)</Action>
+<Action>(-2, -2, -20)</Action>
+<Action>(-3, -2, -20)</Action>
+<Action>(-4, -2, -20)</Action>
+
+<Reasoning>I have resumed my search, but I need to maintain a safe distance from the large object while scanning for the fire. I will make sure to keep my altitude low enough to scan the ground effectively.</Reasoning>
+<Action>(-1, -1, -5)</Action>
+<Action>(-1, -1, -10)</Action>
+<Action>(-1, -2, -10)</Action>
+<Action>(-2, -2, -10)</Action>
+<Action>(-3, -2, -10)</Action>
+<Action

@@ -1,0 +1,10 @@
+ <Reasoning>The object that I am searching for is not among the numbered boxes on the image. I will move closer to the bottom of the grid to get better visibility of the ground. This will allow me to determine the coordinates of the object more accurately.</Reasoning>
+<Action>(7, 0, -10)</Action>
+<Reasoning>I have spotted a yellow object on the ground. This could be the anomaly I am looking for. I will fly lower to get a closer look.</Reasoning>
+<Action>(5, 0, -20)</Action>
+<Reasoning>The yellow object on the ground is not the object I am looking for. I will continue to move further south to get a better view of the area.</Reasoning>
+<Action>(4, -2, -10)</Action>
+<Reasoning>I have spotted a yellow object that matches the description of the anomaly. I will fly closer to it to get a better view and confirm if it is the object I am looking for.</Reasoning>
+<Action>(3, -4, -10)</Action>
+<Reasoning>The yellow object on the ground is not the object I am looking for. I will continue to move further south to get a better view of the area.</Reasoning>
+<Action

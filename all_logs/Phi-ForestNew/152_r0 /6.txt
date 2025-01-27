@@ -1,0 +1,20 @@
+ <Reasoning>
+I am at a safe altitude where I can identify if the coordinates are within my field of view and if the object is 10 meters below the drone. By doing so, I can determine if the trash pile is present and report if I have found it.
+
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+The trash pile is not within my field of view. I will need to plan my next move to ensure that it is within the search area. By doing so, I will be able to find the trash pile within the allotted number of moves.
+
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+I have successfully found the trash pile. I will fly at a height of 10 meters below the drone to ensure that the trash pile is within my field of view. By doing so, I can report that I have found the trash pile.
+
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>

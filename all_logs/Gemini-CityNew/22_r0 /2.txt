@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I still don't see a fire. I will move back to the center, (0,0). I will also lower the altitude by 20 meters to see if it is visible at the lower altitude.</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

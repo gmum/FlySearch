@@ -1,0 +1,2 @@
+ <Reasoning>The black truck is likely to be in the lower part of the image since it is an object on the ground. I will start by moving downwards to get closer to the object. I will move in the direction of the grid position (-57, 58) and (-58, 58) to cover a large area of the ground.</Reasoning>
+<Action>(0, -10, 0)</Action>

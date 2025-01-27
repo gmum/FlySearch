@@ -1,0 +1,13 @@
+ <Reasoning>Given the coordinates and the current altitude, I need to ensure I am in a position to locate the forest fire efficiently. Since trees are visible, I should move towards areas with dense foliage where fires may be more likely to occur.</Reasoning>
+<Action>(0, 25, -30)</Action>
+
+<Reasoning>The coordinates are now within green vegetated areas, increasing the likelihood of locating the fire. The altitude is reduced to zero, indicating I am at the ground level and can scan for signs of fire.</Reasoning>
+<Action>(0, 25, 0)</Action>
+
+<Reasoning>There's a bright spot with orange and red colors in the image. This is indicative of a fire. The altitude is further reduced to -58 meters relative to the object to get a closer look.</Reasoning>
+<Action>(-58, 0, -58)</Action>
+
+<Reasoning>I am now at the spot with the fire. The coordinates <Reasonings indicates a direct search, and the altitude is zero, which means I'm at the same level as the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The fire is identified, and I

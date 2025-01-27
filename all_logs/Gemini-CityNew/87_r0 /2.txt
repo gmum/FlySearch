@@ -1,0 +1,4 @@
+```xml
+<Reasoning>The green vehicle below me is not a pickup truck, it's a normal car. I need to go back up and look for another vehicle. I will go up 10 meters and move to a point which is a little further away.</Reasoning>
+<Action>(0, 0, 10)</Action>
+```

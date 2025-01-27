@@ -1,0 +1,2 @@
+ <Reasoning>Starting with a small search area, I'll move towards the area with a (-59, 0) coordinate, as it's close to the ground. If I don't find the object, I'll adjust my position based on the grid coordinates provided.</Reasoning>
+    <Action>(-59, 0, -30)</Action>

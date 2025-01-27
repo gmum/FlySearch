@@ -1,0 +1,6 @@
+ <Reasoning>The object in question appears to be located at (21, 21) on the grid. I will move the drone to a lower altitude to get closer to it. I will also slightly move to the right to ensure it is visible.</Reasoning>
+<Action>(1, 0, -5)</Action>
+<Reasoning>The object appears to be located at (31, 43) on the grid. I will now move the drone to a lower altitude to get closer to it. I will also slightly move to the right to ensure it is visible.</Reasoning>
+<Action>(1, -0, -5)</Action>
+<Reasoning>The object seems to be located at (63, 43). I will now move the drone to a lower altitude to get closer to it. I will also slightly move to the right to ensure it is visible.</Reasoning>
+<Action>(-1, 0, -5)</Action>

@@ -1,0 +1,7 @@
+ <Reasoning>The coordinates have changed, and I am now in a new place. There's a possibility that the object is in this new area, so I will fly lower to ensure I am within close proximity to the ground. Considering my current altitude, this should help me detect the object if it's there.</Reasoning>
+<Action>(-10, -5, -10)</Action>
+
+<Reasoning>Still no object in sight. I am going to continue moving downwards to cover more ground and increase the chances of finding the object. I will also adjust my direction to ensure I am more likely to spot the object if it's partially visible.</Reasoning>
+<Action>(-15, -10, -10)</Action>
+
+<Reasoning>The object seems to be under the tree. It's partially obscured, which makes

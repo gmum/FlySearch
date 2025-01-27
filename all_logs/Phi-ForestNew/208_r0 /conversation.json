@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 70 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Based on the visible coordinates, there are several points of interest. I'll start with the point closest to the center of my field of view, which is (12, 12). This point is already at the lowest altitude and if the object is located there, it will be less than 10 meters below the drone, satisfying the criteria.</Reasoning>\n\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 65 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The first point of interest is (43, 43), which is at the lowest altitude, 11 meters below the drone. If this is the object, it will be at least 9 meters below the drone, meeting the criteria.</Reasoning>\n\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 55 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The second point of interest is (37, 37), which is still at the lowest altitude, 11 meters below the drone. It meets the criteria for the object being discovered.</Reasoning>\n\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The third point of interest is (30, 30), which is at the lowest altitude, 10 meters below the drone. This satisfies the criteria for finding the object.</Reasoning>\n\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fourth point of interest is (23, 23), which is 8 meters below the drone. This meets the criteria for finding the object.</Reasoning>\n\n<Action>(0, 0, -8)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fifth point of interest is (18, 18), which is at the lowest altitude, 7 meters below the drone. This satisfies the criteria for finding the object.</Reasoning>\n\n<Action>(0, 0, -7)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The sixth point of interest is (7, 7), which is at the lowest altitude, 1 meter below the drone. This meets the criteria for finding the object.</Reasoning>\n\n<Action>(0, 0, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The seventh point of interest is (6, 6), which is at the lowest altitude, 0 meters below the drone. This satisfies the criteria for finding the object.</Reasoning>\n\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>As I'm at the lowest altitude, I have found the object, which is at 0 meters relative to my altitude. I have adjusted my altitude to 1 meter below the object, making the object 1 meter above me, as required.</Reasoning>\n\n<Action>(0, 0, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 18 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>As I am at the lowest altitude, I have found the object, which is at 0 meters relative to my altitude. I have adjusted my altitude to 1 meter below the object, making the object 1 meter above me, as required.</Reasoning>\n\n<Action>(0, 0, -1)</Action>"
+    ]
+]

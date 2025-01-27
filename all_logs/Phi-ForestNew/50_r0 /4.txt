@@ -1,0 +1,34 @@
+ <Reasoning>
+    I'm too low and risk hitting something.
+</Reasoning>
+<Action>
+    (0, 0, -25)
+</Action>
+
+<Reasoning>
+    I need to increase altitude to avoid a collision.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>
+
+<Reasoning>
+    I'm still low; I should gradually ascend.
+</Reasoning>
+<Action>
+    (1, -0.5, 1)
+</Action>
+
+<Reasoning>
+    I'm still unable to find any buildings. I need to move to a different area to continue the search.
+</Reasoning>
+<Action>
+    (-1, -1, 1)
+</Action>
+
+<Reasoning>
+    I need to find the building quickly to complete the task.
+</Reasoning>
+<Action>
+    (-1, -1, 1)
+</Action>

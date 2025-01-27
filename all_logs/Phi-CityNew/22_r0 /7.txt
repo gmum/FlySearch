@@ -1,0 +1,13 @@
+ <Reasoning>
+Based on the grid, I'll make my way to the coordinates that are closest to the object. This should help me get a better view of the area around the object.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+I'll now move to the coordinates that are adjacent to the potential object location.
+</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>
+I'll continue to move closer to the coordinates that seem to be in the vicinity of the object.
+</Reason

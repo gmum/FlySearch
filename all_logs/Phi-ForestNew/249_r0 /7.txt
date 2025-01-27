@@ -1,0 +1,19 @@
+ <Reasoning>
+I've detected the object and now I need to verify its position.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>
+I need to be below the object to verify, but not too close.
+</Reasoning>
+<Action>(-1, 0, -3)</Action>
+
+<Reasoning>
+The object is below 10 meters from me, I can verify it's the correct one.
+</Reasoning>
+<Action>(-2, 0, -3)</Action>
+
+<Reasoning>
+I've confirmed the object meets the criteria. I can now return to my starting altitude.
+</Reasoning>
+<Action>(0, 0, -1)</Action>

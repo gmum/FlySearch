@@ -1,0 +1,8 @@
+ <Reasoning>My goal is to search for the black truck by flying below 10 meters above the ground. I will start by descending to ground level, ensuring that the drone maintains its position within the image's boundary to avoid flying into unknown areas. I will take into account the coordinates provided and make strategic movements to stay within the view that shows the truck and continues to look for it.</Reasoning>
+<Action>(-80, 0, -10)</Action>
+
+<Reasoning>My next move will be to fly in a direction that brings me closer to the coordinates that might indicate the location of the black truck. I'll move in a direction that ensures I am still within the bounds of the image, keeping a careful watch for the truck while continuing to search.</Reasoning>
+<Action>(-60, 0, -10)</Action>
+
+<Reasoning>I will now continue to move in a safe manner, ensuring that I do not venture outside the known area of the image. I will look for any clues that might indicate the presence of the truck, such as dark shadows or unusual structures that could be associated with the truck, while still maintaining a safe distance from the image's edges.</Reasoning>
+<Action>(-50, 0, -

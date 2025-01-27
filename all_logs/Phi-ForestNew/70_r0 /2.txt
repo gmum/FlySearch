@@ -1,0 +1,14 @@
+ <Action>(2, 0, -10)</Action>
+<Reasoning>
+I'm moving to (2, 0, -10) because it's closer to the object and I can confirm it's the building.
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+<Reasoning>
+I found the building! I'm now staying at this spot to confirm it's the building.
+</Reasoning>
+
+<Action>(0, 0, -5)</Action>
+<Reasoning>
+I found the building! I'm now staying at this spot to confirm it's the building.
+</Reasoning>

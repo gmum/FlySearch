@@ -1,0 +1,16 @@
+ <Reasoning>This is the starting position of the drone. I should start by moving to a position where the object might be visible in the field of view.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The object might be at the lower left corner of the image, where there is a yellow trash can. I need to move closer to it.</Reasoning>
+<Action>(-20, -20, -10)</Action>
+
+<Reasoning>I need to move closer to the trash can by going lower. I can move further west by moving left on the grid.</Reasoning>
+<Action>(-40, -20, -10)</Action>
+
+<Reasoning>I need to move further down to get closer to the trash can. I should also move a bit to the left to avoid going too high.</Reasoning>
+<Action>(-60, -20, -10)</Action>
+
+<Reasoning>Now I am very close to the trash can. I should move up slightly to avoid hitting the ground.</Reasoning>
+<Action>(-60, -20, -5)</Action>
+
+<Reasoning>I should move left to avoid moving too close to the tr

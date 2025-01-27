@@ -1,0 +1,102 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a blue sport car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 96 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>It's crucial to stay as close to the ground as possible without breaching the altitude limit to increase the chances of spotting the blue sport car.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>After flying closer to the ground, I need to scan the area and look for the blue sport car.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>The object's coordinates seem to be (0, 0). It's time to move to that spot and investigate.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>I've reached the destination. Now I'll check the area for the blue sport car.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>There's a blue object in view. It could be the car. I need to get below 10 meters before I make my final assessment.</Reasoning>\n<Action>(0, 0, -20)</Action>\n\n<Reasoning>The object is indeed the blue sport car. I have located it.</Reasoning>\n<Action>(0, 0,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 86 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I'm starting the search at 86 meters above ground level to maintain a safe altitude while beginning the search.</Reasoning>\n<Action>(0, 0, -6)</Action>\n\n<Reasoning>I'm scanning the area around the coordinates (0,-57). The object's presence is uncertain.</Reasoning>\n<Action>(0, 0, -6)</Action>\n\n<Reasoning>I'm moving slightly north and proceeding to the next set of coordinates. The object might no longer be in the same spot.</Reasoning>\n<Action>(0, 0, -6)</Action>\n\n<Reasoning>I've reached the next set of coordinates. It\u2019s time to search for that blue object.</Reasoning>\n<Action>(0, 0, -6)</Action>\n\n<Reasoning>I will continue the search. The coordinates (32, 32) seem promising. I should be vigilant for the blue sport car.</Reasoning>\n<Action>(0, 0, -6)</Action>\n\n<Reasoning>I've located the blue object. It's the sport car I was looking for. The coordinates are (32, 32).</Reasoning>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 80 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting the search at 80 meters ensures I'm above the potential ground obstacles while maintaining a safe and effective search pattern.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>Proceeding to (0, 57) in search of the sport car. The coordinates will help to determine if the object is within the search area.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>Heading to (0, -57). It is crucial to find the blue sport car, so I'm staying within the search grid to not miss any potential views of the object.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>I am moving to (57, 57) to get a closer look for the blue car. This is the next likely location based on the grid coordinates.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n<Reasoning>I am now at (57, 57), ready to search for the blue sport car. The object should be in the center of this view.</Reasoning>\n<Action>(0, 0, -5)</Action>\n\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 75 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Initiating the search at 75 meters allows me to keep a safe altitude while beginning the search for the object.</Reasoning>\n<Action>(0, 0, -4)</Action>\n\n<Reasoning>Heading to the coordinates (50, 50). The blue object is likely to be located in one of these areas.</Reasoning>\n<Action>(0, 0, -4)</Action>\n\n<Reasoning>I am scanning the area around (0, 50). The blue sports car, if present, should be visible from this viewpoint.</Reasoning>\n<Action>(0, 0, -4)</Action>\n\n<Reasoning>Next, I will move to (-50, 50). This is another potential spot for the blue sports car.</Reasoning>\n<Action>(0, 0, -4)</Action>\n\n<Reasoning>Moving to (0, 0) to check the central area. The blue object may be directly below me.</Reasoning>\n<Action>(0, 0, -4)</Action>\n\n<Reasoning>Heading to (50, 50) for a final check before concluding the search.</Reasoning>\n<Action>(0, 0"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to stay within the safe altitude margin and maintain a strategic approach to finding the blue sports car.</Reasoning>\n<Action>(0, 0, -3)</Action>\n\n<Reasoning>Exploring the coordinates (0, 47) for the blue car. It is possible the car is located in this area.</Reasoning>\n<Action>(0, 0, -3)</Action>\n\n<Reasoning>Moving to (50, 47) to check if the car is present in a more open space.</Reasoning>\n<Action>(0, 0, -3)</Action>\n\n<Reasoning>The object's coordinates are still (0, 0). I must continue to search in this area.</Reasoning>\n<Action>(0, 0, -3)</Action>\n\n<Reasoning>Next, I am moving to (50, 50) for a broader search. The car might be in this vicinity.</Reasoning>\n<Action>(0, 0, -3)</Action>\n\n<Reasoning>Descending to (0, -57) for a closer look. The blue car should be visible from a lower altitude.</Reasoning>\n<Action>(0, 0"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 68 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting the search at 68 meters helps to ensure I'm within a safe altitude while beginning the search for the blue sports car.</Reasoning>\n<Action>(0, 0, -2)</Action>\n\n<Reasoning>Heading to (50, 50). This is a common area where cars are likely to be parked or driven.</Reasoning>\n<Action>(0, 0, -2)</Action>\n\n<Reasoning>Proceeding to (0, 45) to continue the search for the blue car. It is possible the car is located in this area.</Reasoning>\n<Action>(0, 0, -2)</Action>\n\n<Reasoning>Examining the coordinates (0, 0). The blue car should be in view from this altitude.</Reasoning>\n<Action>(0, 0, -2)</Action>\n\n<Reasoning>Descent to (0, -57) for a closer inspection of the area. The object may be below me at this altitude.</Reasoning>\n<Action>(0, 0, -2)</Action>\n\n<Reasoning>Moving to (50, 50) for a final check in the area where cars are commonly parked"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 66 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With a starting altitude of 66 meters, I am ensuring a safe search while looking for the blue sports car.</Reasoning>\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Exploring the coordinates (50, 50). It is possible the car is located in this area.</Reasoning>\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Checking (0, 45). The blue car might be in this spot.</Reasoning>\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Descending to (0, 0) for a detailed search in the central area.</Reasoning>\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Moving to (50, 50) for another thorough search. The car could be parked or driving here.</Reasoning>\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Proceeding to (0, 50). I'm checking this area for any signs of the blue sports car.</Reasoning>\n<Action>(0, 0, -1)</Action>\n\n<Reasoning>Ex"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 65 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>A starting altitude of 65 meters allows me to ensure I'm safely above any potential obstacles while searching for the blue sports car.</Reasoning>\n<Action>(0, 0, -0.5)</Action>\n\n<Reasoning>Heading to (50, 50). This is a common area where cars are likely to be parked or driven.</Reasoning>\n<Action>(0, 0, -0.5)</Action>\n\n<Reasoning>Proceeding to (0, 45). The blue car might be in this spot.</Reasoning>\n<Action>(0, 0, -0.5)</Action>\n\n<Reasoning>Descent to (0, 0) for a detailed search in the central area.</Reasoning>\n<Action>(0, 0, -0.5)</Action>\n\n<Reasoning>Moving to (50, 50) for another thorough search. The car could be parked or driving here.</Reasoning>\n<Action>(0, 0, -0.5)</Action>\n\n<Reasoning>Proceeding to (0, 50). I'm checking this area for any signs of the blue sports car.</Reasoning>\n<Action>("
+    ]
+]

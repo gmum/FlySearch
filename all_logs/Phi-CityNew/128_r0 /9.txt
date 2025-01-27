@@ -1,0 +1,28 @@
+ <Action>(-36, -1, -1)</Action>
+<Reasoning>
+I am making a strategic move to fly closer to the area where the potential fire is located while ensuring that I am still within the bounds of the search area.
+</Reasoning>
+
+<Action>(-36, 0, -1)</Action>
+<Reasoning>
+I am ensuring that I am within 10 meters altitude relative to the potential fire.
+</Reasoning>
+
+<Action>(-36, 0, 0)</Action>
+<Reasoning>
+I am flying parallel to the road to make sure I am not missing any signs of the potential fire.
+</Reasoning>
+
+<Action>(-36, -1, 1)</Action>
+<Reasoning>
+I am ensuring that I am still within 10 meters altitude relative to the yellowish smoke sign.
+</Reasoning>
+
+<Action>(-36, 0, 2)</Action>
+<Reasoning>
+I am trying to ensure safety by flying higher and looking for more indications of the fire.
+</Reasoning>
+
+<Action>(-36, -1, 2)</Action>
+<Reasoning>
+I am ensuring that

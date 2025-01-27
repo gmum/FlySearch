@@ -1,0 +1,13 @@
+ <Reasoning>Starting the search at the grid coordinates (0, 0) seems like a good low-risk move. If the object is not immediately visible, it gives me time to make subsequent moves more informed by previous observations. If it's not found here, I will move to another low-risk area and employ a more systematic search pattern.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>The yellowish object seems promising; I'll head directly to it to confirm if it's the construction site. By flying lower, I'll be able to assess the ground to confirm it's a road construction site.</Reasoning>
+
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>The yellow likely isn't the construction site, so I'll move a bit north and west to the grid coordinates (1, -2). This should keep me on the lookout for the site while staying visible to any potential obstacles.</Reasoning>
+
+<Action>(1, -2, -29)</Action>
+
+<Reasoning>The nearest grid point with a distinctive structure is at (4, 0). I should move there to confirm if it's the construction site, as it's the closest structure to

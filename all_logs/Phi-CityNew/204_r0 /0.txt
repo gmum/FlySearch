@@ -1,0 +1,7 @@
+ <Reasoning>
+I am currently at an altitude of 65 meters, which means I am at 75 meters above sea level as the drone's starting altitude is 10 meters above sea level (65 - 95 = 75 meters). I need to descend to get closer to the ground to find the object that doesn't fit in with the environment.
+</Reasoning>
+
+<Action>
+    (0, 0, -45)
+</Action>

@@ -1,0 +1,3 @@
+<Reasoning> I have found the object, which is a small rectangular structure. I will move to the center of the grid and then move in a spiral pattern, decreasing the radius of the spiral as I get closer to the ground, to ensure that I am flying below 10 meters above the object.</Reasoning>
+<Action>(0, 0, -20)</Action>
+FOUND

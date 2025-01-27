@@ -1,0 +1,12 @@
+ <Reasoning>The object is at (25, 25), which is below my current altitude. I should move closer to it to ensure it is within my field of view.</Reasoning>
+<Action>(5, 0, -2)</Action>
+
+<Reasoning>Now I am at (30, 25), it's time to descend to confirm the object is the campsite.</Reasoning>
+<Action>(10, 0, 0)</Action>
+
+<Reasoning>The object appears to be at (25, 25), which is below the current altitude, and it's in my field of view.</Reasoning>
+<Action>(5, 0, -1)</Action>
+
+<Reasoning>I am now at a lower altitude, and the object is confirmed to be the campsite.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>FOUND</Reasoning>

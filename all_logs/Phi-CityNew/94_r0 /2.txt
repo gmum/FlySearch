@@ -1,0 +1,10 @@
+ <Reasoning>
+    I need to be closer to the ground and search for the object. I will also move to the coordinates that are likely to contain the object.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+
+<Reasoning>
+    I am searching for the object and have already moved to the coordinates that are close to it. I will now make a more precise move to get a better view of the object.
+</Reasoning>
+<Action>(0.5, 0.5, 0)</Action>

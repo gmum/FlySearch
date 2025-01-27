@@ -1,0 +1,2 @@
+ <Reasoning>Given the drone is at its lowest altitude, the object should be within my field of view. I will focus on scanning for the object and report any findings or abort the mission if it's not visible.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,31 @@
+ <Action space>
+    <Action>(3, 0, -6)</Action>
+</Action space>
+
+<Reasoning>
+    The coordinates (3,0) are guiding me to move slightly to the left, providing a broad coverage of the area around the object.
+</Reasoning>
+
+<Action space>
+    <Action>(3,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    This is to ensure I am over the center of the object.
+</Reasoning>
+
+<Action space>
+    <Action>(3,0,5)</Action>
+</Action space>
+
+<Reasoning>
+    I am making a more defined move in the right direction to get a closer look.
+</Reasoning>
+
+<Action space>
+    <Action>(3,0,5)</Action>
+</Action space>
+
+<Reasoning>
+    I am maintaining my focus on the object, adjusting my position for a clearer view.
+</Reasoning>

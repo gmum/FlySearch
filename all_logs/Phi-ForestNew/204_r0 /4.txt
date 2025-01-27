@@ -1,0 +1,10 @@
+ <Reasoning>
+The text description does not provide any specific coordinate, but I will start my search based on the grid layout and look for the object that doesn't fit in with the rest of the environment.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+<Reasoning>
+Since no specific coordinates are mentioned in the text, I will make a general move in the center of the grid to start my search. I will also lower my altitude to get a closer look.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+<Reasoning>
+I will continue to move in the center of the grid and adjust

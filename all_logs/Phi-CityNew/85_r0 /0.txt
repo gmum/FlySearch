@@ -1,0 +1,13 @@
+ <Reasoning>Given my current altitude is 33 meters, and I need to be 10 meters or lower to be in line with the object in question, I will begin by descending to a lower altitude. I'll aim for the point directly below my current position, which seems to be at approximately (-1, 11) on the grid.</Reasoning>
+
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>Upon descending, I will now scan the area below the assumed object location to check for signs of fire. If the object is visible and no fire is found, I will adjust my altitude and maneuver to scan the area closer to the object's location.</Reasoning>
+
+<Action>(0, 0, -27)</Action>
+
+<Reasoning>After scanning the areas below, I will proceed to the next grid point that seems to be in line with the assumed object location, which I can now identify as approximately (-2, 11). I will move downwards to ensure I am within 10 meters below this point.</Reasoning>
+
+<Action>(-1, 0, -27)</Action>
+
+<Reasoning>The point I am now at seems to be directly above the object. Since I found the object in

@@ -1,0 +1,134 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a building.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 56 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    Given the starting point and the task to find a building, I will begin by moving towards the area with the highest concentration of yellow points, as they might indicate a more built-up area which could include buildings. This should increase the likelihood of locating the building. If the building is nearby, I will attempt to hover at its estimated altitude to locate it on the ground.\n</Reasoning>\n<Action>\n    (10, 10, -30)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 26 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nSince the starting point is not within the yellow area, and the objective is to find a building, my first move will be towards the yellow points to scout the area. Once I reach the closest yellow point, I will descend to a low enough altitude to investigate for the building or any signs of it. If the building is not within the yellow area and not immediately apparent, I will continue to move towards other yellow points.\n</Reasoning>\n<Action>\n    (10, 0, -30)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAs per instructions, I must not move into coordinates outside of my view. Unfortunately, I am on the verge of hitting the terrain which is not ideal. I will now make a controlled move to a safe altitude where I can continue the search.\n</Reasoning>\n<Action>\n    (0, 0, 10)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nThe terrain is more varied and the search is more challenging now. I will carefully maneuver to a stable altitude while searching for the building among the trees, keeping in mind the altitude and visibility limits.\n</Reasoning>\n<Action>\n    (0, 0, 10)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAn optimal path would be to continue moving in the direction of the cluster of yellow points, as these could indicate a residential or built-up area where the building might be located.\n</Reasoning>\n<Action>\n    (8, 0, -40)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI am now flying at a dangerously low altitude, and I need to make a controlled descent to avoid hitting the ground. I will continue to monitor the surroundings and find a safe path to fly without endangering the drone.\n</Reasoning>\n<Action>\n    (0, 0, 10)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nConsidering the current altitude and the need to stay within the search area, I will continue to navigate towards areas with yellow points, which may lead me closer to the building. I must also be vigilant not to exceed the altitude limit.\n</Reasoning>\n<Action>\n    (0, 0, 10)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI will continue to navigate towards the yellow points, which could signify potential locations of buildings, staying within the mission limits and altitude to increase the chance of locating the building.\n</Reasoning>\n<Action>\n    (0, 0, 10)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nNow my goal is to fly as low as possible while still maintaining safe operations. I need to be close enough to the ground to detect the building, if present, and should be ready to make further adjustments if necessary.\n</Reasoning>\n<Action>\n    (0, 0, 5)\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nThe drone is now at a lower altitude where a building could be located based on the previous and current patterns of yellow points. It's vital to maintain the low altitude to increase the likelihood of finding and identifying the building.\n</Reasoning>\n<Action>\n    (0, 0, 5)\n</Action>"
+    ]
+]

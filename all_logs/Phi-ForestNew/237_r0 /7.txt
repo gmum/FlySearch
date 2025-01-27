@@ -1,0 +1,11 @@
+ <Reasoning>
+Starting from the coordinates (0,0), I will scan the area for the anomaly and adjust my altitude to be 10 meters below any found objects.
+</Reasoning>
+
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>
+The anomaly is identified at the central coordinates. I will make sure to be within the required distance of the ground when I find it.
+</Reasoning>
+
+<Action>(0, 0, -5)</Action>

@@ -1,0 +1,4 @@
+ <Reasoning>
+Initially, to effectively search for the anomaly, given the high altitude, I will start moving down. Yellow points on the grid are notably different from their surroundings, which may indicate they are the anomalies. The grid gives a sense of direction and location, and I will use those to fine-tune my search.
+</Reasoning>
+<Action>(0, 0, -10)</Action>

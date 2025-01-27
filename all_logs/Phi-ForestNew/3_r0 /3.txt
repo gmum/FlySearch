@@ -1,0 +1,30 @@
+ <Action space>
+    <Action>(38, 38, -10)</Action>
+</Action space>
+<Reasoning>
+    I am moving to the center of the grid and descending to a lower altitude to maximize ground coverage and visibility.
+</Reasoning>
+
+<Action space>
+    <Action>(38, 38, -20)</Action>
+</Action space>
+<Reasoning>
+    Continuing my descent, I am increasing the area in my view to improve the likelihood of spotting the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(38, 38, -30)</Action>
+</Action space>
+<Reasoning>
+    I am further descending to ensure that I am detecting as much of the landscape as possible in my field of view.
+</Reasoning>
+
+<Action space>
+    <Action>(38, 38, -40)</Action>
+</Action space>
+<Reasoning>
+    I am keeping my mind open to any campsite signs that may appear in this lower altitude and larger field of view.
+</Reasoning>
+
+<Action space>
+    <Action>(38, 38, -50)</

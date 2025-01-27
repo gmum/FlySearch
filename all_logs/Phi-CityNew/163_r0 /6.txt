@@ -1,0 +1,2 @@
+ <Reasoning>The coordinate system shows that I am near the bottom, so I should move up to (0, 0) to be centered and then to (0, -20) to ensure I am at least 10 meters below the object I am searching for. If the object is not found, I will continue the search in the area around where the object was detected.</Reasoning>
+<Action>(0, -20, -20)</Action>

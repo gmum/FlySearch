@@ -1,0 +1,12 @@
+ <Reasoning>
+    At a starting altitude of 1 meter above ground level, the drone must navigate to the location of the trash pile, which appears to be at coordinates (0, -1). After reaching these coordinates, the UAV will conduct a search for trash at or below ground level and report the findings.
+</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>
+    The drone will then make a descent to check the trash pile's presence. If found, it will report the discovery.
+</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>
+    Following the confirmation, the drone will issue a "FOUND" report, marking the successful completion of the objective.   

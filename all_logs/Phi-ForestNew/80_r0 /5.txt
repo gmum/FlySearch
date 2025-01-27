@@ -1,0 +1,21 @@
+ <Reasoning>I have identified a potential obstacle at the coordinates (0, 0, 0). To avoid any collision and ensure safety, I will halt the search and perform a rapid climb to a safe altitude to assess the situation and determine the next course of action.</Reasoning>
+<Action
+    >(1, 0, 10)</Action>
+</Reasoning>
+
+<Reasoning>Once I have a better view of the surroundings, I will determine the safest route to continue the search, possibly altering my search grid based on the new information received.</Reasoning>
+<Action
+    >(1, 0, 10)</Action>
+</Reasoning>
+
+<Reasoning>After reevaluating the situation and ensuring it's safe to proceed, I will make a decision on whether to continue the search or abort the mission.</Reasoning>
+<Action
+    >(1, 0, 10)</Action>
+</Reasoning>
+
+<Reasoning>I will communicate the status to the ground control and follow their instructions for the next steps in the mission.</Reasoning>
+<Action
+    >(1, 0, 10)</Action>
+</Reasoning>
+
+<Reasoning>I will monitor the drone

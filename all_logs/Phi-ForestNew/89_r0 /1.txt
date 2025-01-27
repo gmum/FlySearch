@@ -1,0 +1,26 @@
+ <Reasoning>
+    Moving to a lower altitude will allow me to get closer to the ground and better assess the surroundings for the campsite.
+    </Reasoning>
+    <Action>(5, 0, -20)</Action>
+
+<Reasoning>
+    The green area appears to be a body of water. I'll move in towards a spot that might be on the water's edge.
+    </Reasoning>
+    <Action>(5, 0, -20)</Action>
+
+<Reasoning>
+    I need to move right and a bit down to get closer to the edge of the green area.
+    </Reasoning>
+    <Action>(-5, -5, -15)</Action>
+
+<Reasoning>
+    The green area is a body of water, and I'm too far to the right. I need to adjust my position for a better search.
+    </Reasoning>
+    <Action>(-5, 5, -15)</Action>
+
+<Reasoning>
+    The same layout as the first instruction, moving vertically and horizontally to cover the area.
+    </Reasoning>
+    <Action>(-5, 5, -15)</Action>
+
+<Reasoning

@@ -1,0 +1,10 @@
+<Reasoning> I have moved slightly forward and down, and I still haven't found the anomaly. I will now move slightly to the right to search for it. </Reasoning>
+<Action>(10, 0, 0)</Action>
+
+<Reasoning> I have moved to the right and I still haven't found the anomaly. I will now move slightly down to search for it. </Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning> I have moved down and I found the anomaly. It is a vehicle on the street that doesn't fit in with the rest of the environment. I will now fly below 10 meters relative to it. </Reasoning>
+<Action>(0, 0, -10)</Action>
+
+FOUND

@@ -1,0 +1,2 @@
+ <Reasoning>Given my current altitude of 21 meters, I am not at an altitude that would allow me to fly below 10 meters in the next move; therefore, I should look for coordinates that are close but above my current altitude to find the object.</Reasoning>
+<Action>(0, 0, 20)</Action>

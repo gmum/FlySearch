@@ -1,0 +1,7 @@
+ <Reasoning>I have collided with the ground due to the emergency stop. Now I must take corrective action to avoid further incidents.</Reasoning>
+
+<Action>(0, 0, -100)</Action>
+
+<Reasoning>Now I will carefully navigate back up to a safe altitude.</Reasoning>
+
+<Action>(0, 0, 120)</Action>

@@ -1,0 +1,41 @@
+ <Reasoning>
+    I need to move down to see if the yellow point is the building I'm looking for.
+</Reasoning>
+<Action>
+    (0, 0, -19)
+</Action>
+
+<Reasoning>
+    I need to stay in the northwest area to continue searching.
+</Reasoning>
+<Action>
+    (-15, -2, -26)
+</Action>
+
+<Reasoning>
+    I need to proceed to the southwest to cover more area.
+</Reasoning>
+<Action>
+    (-18, 2, -5)
+</Action>
+
+<Reasoning>
+    I need to stay in the southwest for a while to find the building.
+</Reasoning>
+<Action>
+    (-21, 2, -21)
+</Action>
+
+<Reasoning>
+    I need to move back to the northeast to look for the building.
+</Reasoning>
+<Action>
+    (0, 2, -38)
+</Action>
+
+<Reasoning>
+    I need to move to the northeast to find the building.
+</Reasoning>
+<Action>
+    (2, 2, -39)
+</Action>

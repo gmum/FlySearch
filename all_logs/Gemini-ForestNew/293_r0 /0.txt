@@ -1,0 +1,2 @@
+<Reasoning>The object that doesn't fit is the plane. It's clearly visible at the coordinates (-22, 0). I need to get below 10 meters of that in altitude, so I will fly to (-22, 0) and go down 60 meters. That should put me at around 7 meters above the plane.</Reasoning>
+<Action>(-22, 0, -60)</Action>

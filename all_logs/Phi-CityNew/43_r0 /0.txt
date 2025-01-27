@@ -1,0 +1,19 @@
+ <Reasoning>I am starting my search from the top of the grid, which is the highest point, and will move down to search the area below.</Reasoning>
+<Action>(0, 0, -60)</Action>
+
+<Reasoning>I will move down to the target grid point and check for the construction site below 10 meters.</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+<Reasoning>I will move down further to check if the construction site is still within the 10 meters range.</Reasoning>
+<Action>(0, 0, -60)</Action>
+
+<Reasoning>I need to move further down to search for the construction site as there is no visible indication of the site yet.</Reasoning>
+<Action>(0, 0, -80)</Action>
+
+<Reasoning>I have found the construction site at the bottom of the grid, which is under 10 meters below the target point.</Reasoning>
+<Action>(0, 0, -100)</Action>
+
+<Reasoning>I will now check the construction site for any signs of roadwork.</Reasoning>
+<Action>(0, 0, -100)</Action>
+
+<Reason

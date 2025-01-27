@@ -1,0 +1,17 @@
+ <Reasoning>
+    With the UAV at 1 meter above ground level, the initial move will be towards the grid point that is at the shortest distance from the predicted location of the subject. This ensures we cover the area quickly while also being compliant with the requirement to fly below the object when it's seen.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    From this starting point, the UAV will navigate through the grid in a structured pattern, ensuring no area is missed. The altitude will be managed to stay as close as possible to the ground within the operational limits.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    Continuously checking each grid point for the subject while maintaining the required altitude is crucial. If the subject is not located at the current grid point, the UAV will proceed to the next grid point close to the predicted location of the subject.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    Upon locating the subject, the UAV will adjust its altitude to be as close to the ground as possible, ensuring it meets

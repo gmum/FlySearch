@@ -1,0 +1,17 @@
+ <Reasoning>I need to adjust my altitude to get a better vantage point and be able to answer the question.</Reasoning>
+
+<Action>(0, 0, 4)</Action>
+
+<Reasoning>The drone is now closer to the ground level, which will help in scanning the area more closely and providing better visibility for the task at hand.</Reasoning>
+
+<Action>(0, 0, 4)</Action>
+
+<Reasoning>The area is quite spread out, and I need to systematically search through the coordinates to find the target object. I'll make a move to the coordinates given as (1, 1).</Reasoning>
+
+<Action>(1, 1, -10)</Action>
+
+<Reasoning>Now that I'm in the vicinity of the coordinates (1, 1), I will scan for the object to ensure it fits the criteria of being at most 10 meters below the drone.</Reasoning>
+
+<Action>(1, 1, -10)</Action>
+
+<Reasoning>The object at (1, 1) seems to be the correct one. I'm at least 10 meters below it and am able to confirm it with a "FOUND" response. The coordinates are now (2,

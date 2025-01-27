@@ -1,0 +1,14 @@
+ <Reasoning>Finding the object: Initially, I will fly to the yellow point since it looks like it might be an anomaly based on its color and the fact that it stands out among the greenery. This point could potentially be the object I am looking for.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Flying lower: I have now moved to a lower altitude to get a closer look at the yellow point and check it against the expected characteristics of the anomaly.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Finding the object: I have now seen the object, which looks like a small structure surrounded by greenery. It matches the characteristics of the anomaly described in the task description.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Flying lower: I will fly even lower to verify that this is indeed the object of interest.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Finding the object: Upon closer inspection, I confirm that the small structure is indeed the anomaly.</Reasoning>
+<Action>(5, 0, -30)</Action>

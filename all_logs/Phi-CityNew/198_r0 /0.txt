@@ -1,0 +1,13 @@
+ <Reasoning>Since I am already quite close to the ground, I will need to move in a direction that is likely to be close to the trash pile. Additionally, I need to be mindful of my altitude restrictions. I will prioritize being in the right place before considering my altitude.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I will continue to move towards the area that seems to be the most promising based on the grid overlaid on the image.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I am now closer to the object which seems to be the trash pile. I will continue to move closer while ensuring that I am within the search area.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>The object does not seem to be clearly visible. I will continue the search in a different direction to increase my chances of finding the trash pile.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>The object is not clearly visible; however, I am confident that the trash pile is in close proximity. I will prioritize being close to the

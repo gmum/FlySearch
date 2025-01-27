@@ -1,0 +1,8 @@
+ <Reasoning>The image shows a complex environment with multiple points of interest on the grid. I will start my search in the upper right quadrant where there are several yellow and white spots that could potentially be the object in question. The grid's height is not visible, but I will assume it's the same as the horizontal width to simplify the search.</Reasoning>
+<Action>(-37, 0, 0)</Action>
+<Reasoning>This yellow spot seems to be a possible candidate for the object. According to the coordinates, I will now fly to this point, which is at the same height as the grid to start with, and then determine the altitude needed to be below 10 meters relative to the potential object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>I'm now 10 meters lower. I need to be closer to the object to ensure it is the one in question. I will slightly move north and then turn to the right to get a better view of the area.</Reasoning>
+<Action>(0, 10, 0)</Action>
+<Reasoning>The image is clearer now, but the yellow spot is not centralized. I will continue moving to the right to see if another spot becomes more central.</Reasoning>
+<Action>

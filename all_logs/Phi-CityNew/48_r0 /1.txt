@@ -1,0 +1,19 @@
+ <Reasoning>I need to move to a lower altitude to investigate the object.</Reasoning>
+<Action>(-3, 0, -20)</Action>
+
+<Reasoning>This point visually seems closer to the object and lower than previous points.</Reasoning>
+<Action>(-4, 0, -25)</Action>
+
+<Reasoning>I am centered on the object, but I need to be lower to check for fire.</Reasoning>
+<Action>(-5, 0, -25)</Action>
+
+<Reasoning>No signs of fire. Moving to another point to search further.</Reasoning>
+<Action>(-6, 0, -30)</Action>
+
+<Reasoning>I am centered on the object, ensuring visibility for the next move. It's time to lower myself further.</Reasoning>
+<Action>(-7, 0, -30)</Action>
+
+<Reasoning>I am directly below the object, but still 3 meters above the required altitude. It's time to fly even lower.</Reasoning>
+<Action>(-8, 0, -35)</Action>
+
+<Reasoning>No fire visible. Moving to another point below to search further.</Re

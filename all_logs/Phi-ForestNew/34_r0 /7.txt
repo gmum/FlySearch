@@ -1,0 +1,7 @@
+ <Reasoning>The drone is at its lowest altitude for the search, and the coordinates suggest the building is at (0, 0). I should move to the center to ensure the object is in the drone's field of view.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that the building's coordinates are confirmed, the task is complete, and the object has been found. The drone should remain at this position.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since

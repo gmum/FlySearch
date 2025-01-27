@@ -1,0 +1,8 @@
+ <Reasoning>Starting from (0, 0) in the field of view, I will move to (0, -7) to check the area to the right of the starting position. Then, I will reduce altitude.</Reasoning>
+<Action>(0, -10, -20)</Action>
+
+<Reasoning>Lowering altitude is necessary. I will continue to move vertically to (0, -3) to still be in my field of view.</Reasoning>
+<Action>(0, -20, -20)</Action>
+
+<Reasoning>Finally, I'll move to (7, -7) to further reduce altitude and check for the object.</Reasoning>
+<Action>(7, -10, -20)</Action>

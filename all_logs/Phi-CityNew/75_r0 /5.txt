@@ -1,0 +1,13 @@
+ <Reasoning>The object of interest is the large building in the center of the image. I will make a move to decrease my altitude while staying within the 400 X 400m search area and ensuring not to exceed 9 moves.
+<Action>(-3, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>I am now moving closer to the building, staying within the limit of my altitude and within my move limit. I'll continue scanning the area for the road construction site.
+<Action>(0, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>I am now within 10 meters of the building. After a thorough inspection, I can confirm that it is not the road construction site. I will now search for it in a different grid section.
+<Action>(3, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>I have now

@@ -1,0 +1,2 @@
+ <Reasoning>I have successfully found the object of interest, which is the yellow point, located at (0,0). I will fly to a safe distance to confirm its identification and then reply with "FOUND." to indicate that the object has been found.</Reasoning>
+    <Action>(0, 0, -10)</Action>

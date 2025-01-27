@@ -1,0 +1,25 @@
+ <Reasoning>
+At this altitude, I am able to cover a wider area of interest. I will systematically move through the coordinates around the (0,0) grid point to find the campsite.
+</Reasoning>
+
+<Action>(0, 0, 5)</Action>
+<Reasoning>
+Descending to 5 meters will give me a better view of the green area that might be the campsite.
+</Reasoning>
+
+<Action>(0, -5, 5)</Action>
+<Reasoning>
+A move 5 meters south will expand my search area, increasing the chances of spotting signs of a campsite.
+</Reasoning>
+
+<Action>(0, -10, 5)</Action>
+<Reasoning>
+Continuing to descend as I move east will help in scanning for campsite indicators. The coordinates (0,0) provide a central point around which to systematically search.
+</Reasoning>
+
+<Action>(0, -15, 5)</Action>
+<Reasoning>
+Descending further to 5 meters below ground level will allow me to cover a larger area and increase the likelihood of finding the campsite.
+</Reasoning>
+
+<Action>(0, -20,

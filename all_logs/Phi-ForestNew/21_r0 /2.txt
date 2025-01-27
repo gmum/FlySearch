@@ -1,0 +1,5 @@
+ <Reasoning>The coordinates given are (0, -29), but the fire is not at that point. I will move closer to the area where the fire is likely located.</Reasoning>
+<Action>(1, -29, -10)</Action>
+
+<Reasoning>The fire is now closer, but I am still a bit high. I need to move lower to get a better view of the fire.</Reasoning>
+<Action>(1, -29, -20)</Action>

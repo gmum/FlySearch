@@ -1,0 +1,13 @@
+ <Reasoning>I have detected the forest fire and will hover to assess its size and intensity.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have determined the fire is non-threatening. I will move to a different location to continue monitoring.</Reasoning>
+<Action>(5, 5, 0)</Action>
+
+<Reasoning>I have found another potential fire but will need to approach closer to assess it.</Reasoning>
+<Action>(1, -10, -5)</Action>
+
+<Reasoning>The fire is confirmed larger and closer to the edge of the view. I will move to a safer distance.</Reasoning>
+<Action>(-5, 10, 0)</Action>
+
+Result: FOUND

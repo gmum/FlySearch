@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I need to find the road construction site. I don't see it in the current view. I will start by moving to the center of the image at (0,0) and then go down to 10m, hoping to see it. If not, I will continue searching.</Reasoning>
+<Action>(0, 0, -24)</Action>
+```

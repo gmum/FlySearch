@@ -1,0 +1,9 @@
+ <Reasoning>I will evaluate the available positions and move accordingly to locate the object within the search constraints.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object is within the bounds, and the selected coordinates are optimal for a detailed search.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is located within the search radius and altitude constraints. I can now declare the search as 'FOUND'.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

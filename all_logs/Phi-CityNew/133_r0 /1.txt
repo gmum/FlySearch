@@ -1,0 +1,19 @@
+ <Reasoning>I am flying at a high altitude, looking for the trash pile. I need to move down for it to be within my field of view.</Reasoning>
+
+<Action>(0, 0, -39)</Action>
+
+<Reasoning>I am now at a lower altitude, looking for the trash pile in the lower left area of the image. I will continue to move down to scan the area.</Reasoning>
+
+<Action>(-5, -3, -39)</Action>
+
+<Reasoning>I am closer to the ground and the trash pile. It is now within my field of view, so I will move down further to get a better view.</Reasoning>
+
+<Action>(-5, -3, -43)</Action>
+
+<Reasoning>I am now at a lower altitude, looking for the trash pile in the lower left area of the image. I will continue to move down to scan the area.</Reasoning>
+
+<Action>(-5, -3, -47)</Action>
+
+<Reasoning>The trash pile seems to be nearby, so I will move down further to get a closer view.</Reasoning>
+
+<Action>(-5, -3, -51)</

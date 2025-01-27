@@ -1,0 +1,20 @@
+ <Reasoning>I am too high, I need to descend to a safe altitude.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I've descended to a safe altitude, below the treetops.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I will move to a location with a clear view of the building.</Reasoning>
+<Action>(3, 0, -10)</Action>
+
+<Reasoning>I'm still not close enough to identify the building.</Reasoning>
+<Action>(3, -10, -20)</Action>
+
+<Reasoning>I will move slightly to the left to get a better view of the area.</Reasoning>
+<Action>(3, -10, -20)</Action>
+
+<Reasoning>I'm closer to the building, I'll fly even lower to get a clearer view.</Reasoning>
+<Action>(3, -10, -30)</Action>
+
+<Reasoning>I have identified the building, I will fly below 10 meters relative to it and reply with "FOUND".</Reasoning>
+<Action>(3, -1

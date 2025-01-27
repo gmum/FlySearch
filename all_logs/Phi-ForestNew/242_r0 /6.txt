@@ -1,0 +1,21 @@
+ <Reasoning>The object in the image is towards the top left corner, and it seems to be a white structure that stands out from the greenery. The coordinates indicate the drone should be centrally located above the object, which makes the white area landform a potential anomaly.</Reasoning>
+
+<Action>(-0.5, -0.5, -0.5)</Action>
+
+<Reasoning>I am very close to the white object now, just need to verify if it's the anomaly.</Reasoning>
+
+<Action>(-0.5, -0.5, -0.5)</Action>
+
+<Reasoning>I am still above the white object. I need to fly lower to confirm if it's the anomaly.</Reasoning>
+
+<Action>(-0.5, -0.5, -0.7)</Action>
+
+<Reasoning>Still too high, I need to fly lower.</Reasoning>
+
+<Action>(-0.5, -0.5, -0.9)</Action>
+
+<Reasoning>Still too high, I need to fly lower.</Reasoning>
+
+<Action>(-0.5, -0.5, -1.1)</Action>
+
+<Reasoning>I am

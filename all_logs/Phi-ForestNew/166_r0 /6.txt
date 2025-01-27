@@ -1,0 +1,10 @@
+ <Reasoning>This is the starting point of the search. The drone is at a height of 34 meters above ground level. The coordinates are not given in the grid, so I will start at the coordinates (0,0). I will look for the building in the image.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I will move to the right to increase the chances of finding the building. The coordinates are not given in the grid, so I will move to (20, 0). I will check this point for the presence of the building.</Reasoning>
+<Action>(20, 0, 0)</Action>
+
+<Reasoning>The building may be located in the top right corner of the grid. I will move towards it. The coordinates are not given in the grid, so I will move to (80, 0). I will check this point for the presence of the building.</Reasoning>
+<Action>(80, 0, 0)</Action>
+
+<Reasoning>The building may be located in the top right corner of the grid. I will move towards it. The coordinates are not given in the grid, so I will move to (50, 0). I will check this point for the presence of the building.</Reasoning>

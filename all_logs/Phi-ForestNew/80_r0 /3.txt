@@ -1,0 +1,11 @@
+ <Reasoning>I will begin the search from the coordinates (1, 1, 0) and methodically move to nearby coordinates to scan for the person.</Reasoning>
+<Action>(1, 1, -2)</Action>
+
+<Reasoning>If the object isn't found at the coordinates (1, 1, -2), I will move to the coordinates (1, 1, 2) and continue the search, keeping the altitude low to allow for detailed inspection.</Reasoning>
+<Action>(1, 1, 2)</Action>
+
+<Reasoning>I will repeat this process, adjusting the location for each subsequent move to ensure a thorough search while maintaining an altitude that allows for optimal field of view.</Reasoning>
+<Action>(1, 1, -2)</Action>
+
+<Reasoning>I will continue this process, adjusting the altitude and area searched based on the location of the object until found or the search limit is reached. The drone must be within the vicinity of the object when stating it's found.</Reasoning>
+<Action>(1, 1, 2)</Action>

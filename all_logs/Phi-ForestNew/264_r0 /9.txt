@@ -1,0 +1,7 @@
+ <Reasoning>I'll move to the coordinates closest to the object.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>This should bring me right above the object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Response>FOUND</Response>

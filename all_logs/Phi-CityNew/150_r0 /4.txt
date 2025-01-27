@@ -1,0 +1,7 @@
+ <Reasoning>
+The object seems to be located in the lower right area of the grid. I will move to the coordinates (26, 28) which is in the lower right area of the grid and get as close as possible to the object without confirming it is the object in question.
+</Reasoning>
+<Action>(26, 28, 0)</Action>
+
+<Reasoning>
+The object seems to be located in the lower right area of the grid. I will move to the coordinates (26, 28) which is in the lower right area of the grid and get as close

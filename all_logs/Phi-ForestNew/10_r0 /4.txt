@@ -1,0 +1,17 @@
+ <Reasoning>I have executed an emergency stop by lowering the altitude to avoid collision. I will now move to a safe location.</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>I have moved to a safe location to assess the situation. I will now analyze the coordinates to determine the next steps.</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>The potential hazard has been assessed. I will now make a strategic move to continue the search.</Reasoning>
+<Action>(1, 0, -20)</Action>
+
+<Reasoning>I am now in a position that allows me to continue the search without the risk of collision. I will move in the direction indicated by the coordinates.</Reasoning>
+<Action>(1, 0, -20)</Action>
+
+<Reasoning>I have successfully repositioned the drone. I will now continue the search as per the assigned task.</Reasoning>
+<Action>(1, 0, -20)</Action>
+
+<Reasoning>I have located the trash pile. I will now fly lower to 10 meters to ensure a clear view.</Reasoning>
+<Action>(1,

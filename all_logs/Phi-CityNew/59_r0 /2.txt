@@ -1,0 +1,10 @@
+ <Reasoning>I will start by flying to a spot that is close to the object. I'll fly to (0, 0, -22) to get closer.</Reasoning>
+<Action>(0, 0, -22)</Action>
+
+<Reasoning>The object is still not in my field of view yet. I'll try moving to the right to get a better view. I'll fly to (0, 1, -18).</Reasoning>
+<Action>(0, 1, -18)</Action>
+
+<Reasoning>I can't see the object in this area. I'll try moving a bit further to the right to get a better view. I'll fly to (0, 2, -18).</Reasoning>
+<Action>(0, 2, -18)</Action>
+
+<Reasoning>The object might be on the top floor. I'll fly to the right to check the top floor. I'll fly to (0, 3, -18).</Re

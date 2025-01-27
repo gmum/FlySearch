@@ -1,0 +1,9 @@
+ <Reasoning>Since the current altitude is 52 meters above ground level and I need to fly below 10 meters to find the object, I will make several moves in different directions and altitudes to search the area efficiently without exceeding the altitude limit.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>I will move towards the expected location of the person by making a slight turn to the northwest and then ascending to a height of 10 meters above the expected location to ensure visibility.</Reasoning>
+<Action>(2, 2, 0)</Action>
+<Reasoning>From the previous location, I will continue to move northwest since that is the general direction of the person. This will allow me to cover more ground while keeping an eye on the coordinates for the person's potential location.</Reasoning>
+<Action>(4, 4, 0)</Action>
+<Reasoning>Next, I will make a slight turn to the northeast to examine a different area, as the person's location might be in a different direction than the initial estimate.</Reasoning>
+<Action>(6, 6, 0)</Action>
+<Reasoning>Finally, I will ascend to a height of 10 meters above the latest location to ensure that I

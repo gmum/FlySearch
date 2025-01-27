@@ -1,0 +1,7 @@
+ <Reasoning>The fire is within my field of view. I will carefully assess its size and spread.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The fire is now clearly visible and appears to be localized. I will hover to assess the situation.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+Result: FOUND

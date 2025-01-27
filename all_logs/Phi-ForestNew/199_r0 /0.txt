@@ -1,0 +1,2 @@
+ <Reasoning>I need to find a building. Based on the grid coordinates provided, the building seems to be located in the center of the image. To find it, I will move to the center of the view, flying just below 10 meters with respect to the building's altitude.</Reasoning>
+<Action>(0, 0, -35)</Action>

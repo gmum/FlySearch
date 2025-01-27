@@ -1,0 +1,110 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given that the object could be anywhere in this dense forest, it's prudent to start by moving to a central location to broaden my search area. The position (-24, 0) should provide a good vantage point to survey the surroundings.</Reasoning>\n<Action>(-24, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given the lack of any clear indication of an object in the center of the image, it's important to continue the search systematically. Moving northwards slightly, to the position (0, 20) should provide a new set of trees to inspect.</Reasoning>\n<Action>(0, 20, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>After moving northwards, it's clear that the object was not in the center of the image. A systematic approach is still necessary, so moving southwards slightly to (0, 0) will provide a new area to inspect closely.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given the dense distribution of trees, it's crucial to inspect each cluster closely. Moving westwards slightly to (-24, 0) will allow for a detailed inspection of the trees in that area.</Reasoning>\n<Action>(-24, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>While inspecting the trees at (-24, 0), it's clear that the object isn't there. The next step is to move slightly eastwards to (0, 0) to inspect another set of trees.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Inspecting the trees at (0, 0), the object is still not in the center of the field of view. A further systematic approach will involve moving back slightly westwards to (-24, 0) to continue the search.</Reasoning>\n<Action>(-24, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Returning to the same location (-24, 0), it's still evident that the object is not visible in the center of the field of view. To avoid redundancy and cover new ground, moving slightly northwards to (-24, 24) will allow for an inspection of a different set of trees.</Reasoning>\n<Action>(-24, 24, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Inspecting the area at (-24, 24), there is no clear sight of the object. Moving a bit eastwards to (0, 24) will allow for a new set of trees to be examined.</Reasoning>\n<Action>(0, 24, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ]
+]

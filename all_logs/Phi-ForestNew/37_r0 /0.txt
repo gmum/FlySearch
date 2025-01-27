@@ -1,0 +1,10 @@
+ <Reasoning>I will begin my search by locating a marker with coordinates close to the center of the image. Moving down will help me get closer and potentially spot the trash pile if it's below 10 meters. Then, based on the findings, I will adjust my search area to focus on the most promising coordinates to increase the chances of finding the object.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I have moved to a central point in the grid. Now, I need to make another move down to get closer to the ground, which can help in spotting the trash pile if it's located beneath the surface.</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>I've made two moves in the downward direction. If I haven't found the trash pile, I will need to adjust the altitude and movement direction to increase my chances of finding it.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>I'm now at a straighter angle relative to the marker. I'll make another move down to increase the chance of spotting the trash pile if it's below the surface.</Reasoning>

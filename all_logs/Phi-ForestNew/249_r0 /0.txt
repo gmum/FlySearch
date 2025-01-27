@@ -1,0 +1,29 @@
+ <Reasoning>
+I'm starting with a moderate altitude and need to lower it to get a proper look at the ground. To be efficient, I'll decrease altitude as I progress.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>
+Based on the visible terrain, there are no immediate anomalies. I will decrease altitude further to find the object.
+</Reasoning>
+<Action>(-5, 0, -35)</Action>
+
+<Reasoning>
+The terrain here looks normal, I'll proceed lower.
+</Reasoning>
+<Action>(-10, 0, -40)</Action>
+
+<Reasoning>
+This spot looks more promising, I'll look closer.
+</Reasoning>
+<Action>(-10, -5, -40)</Action>
+
+<Reasoning>
+The contour of the ground is consistent, but I'll go a bit more south to be sure.
+</Reasoning>
+<Action>(-15, -10, -45)</Action>
+
+<Reasoning>
+No obvious anomalies yet, I'll continue the search.
+</Reasoning>
+<Action>(-

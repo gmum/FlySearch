@@ -1,0 +1,10 @@
+ <Reasoning>I'm too close to the ground and risk hitting something.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>I have to stop immediately.</Reasoning>
+<Action>(0, 0, -1)</Action>
+<Reasoning>I'm at maximum height, but not at maximum altitude, might find something.</Reasoning>
+<Action>(0, 0, -2)</Action>
+<Reasoning>I'm too close to the ground, might hit something.</Reasoning>
+<Action>(0, 0, -2)</Action>
+<Reasoning>I'm too close to the ground, might hit something.</Reasoning>
+<Action>(0, 0, -2)</Action>

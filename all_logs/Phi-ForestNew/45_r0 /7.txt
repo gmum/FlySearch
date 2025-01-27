@@ -1,0 +1,7 @@
+ <Reasoning>Since the drone is on the ground, I will move to the closest coordinates where the fire is visible and then lower the altitude to check if it is the fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The fire is visible at (0, 0). I have successfully located it. Now, I will fly below 10 meters to confirm the object is the fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The coordinates of

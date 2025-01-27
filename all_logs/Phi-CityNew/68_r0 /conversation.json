@@ -1,0 +1,54 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a white sport car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nThe object is likely to be just below the drone, which is 72 meters above ground due to the instruction \"lowering the drone\". To focus on the sport car, which appears to be located just below the center of the image, I will make a move to get closer to the ground without losing sight of the potential location of the car.\n</Reasoning>\n<Action>\n(-18, 0, -40)\n</Action>\n\n<Reasoning>\nMoving in this direction will bring the drone closer to the center of the image, increasing the chances of spotting the white sport car, while avoiding any sudden moves that could lead to loss of the target.\n</Reasoning>\n<Action>\n(-36, 0, -60)\n</Action>\n\n<Reasoning>\nContinuing to move closer to the center of the image and the ground is crucial in order to locate the object. The altitude should be reduced without exceeding the search area limits.\n</Reasoning>\n<Action>\n(-54, 0, -80)\n</Action>\n\n<Reasoning>\nBy now, the drone should be much closer to the ground, allowing for a better chance to spot the white sport car if it is indeed in the image. Careful"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nThe sport car might be somewhere within the central part of the image, as indicated by the coordinates. To locate it, I will move the drone to the area with the highest concentration of coordinates, to increase the chances of finding it, while being aware of the altitude constraints.\n</Reasoning>\n<Action>\n(0, 0, -48)\n</Action>\n\n<Reasoning>\nThis move targets the central area of the image and aligns with the higher concentration of coordinates, potentially leading to the detection of the white sport car.\n</Reasoning>\n<Action>\n(8, -6, -72)\n</Action>\n\n<Reasoning>\nNearly 32 meters below the starting altitude, the drone is better positioned to spot the object without exceeding the altitude limit.\n</Reasoning>\n<Action>\n(16, -12, -84)\n</Action>\n\n<Reasoning>\nThis action brings the drone even closer to the ground, which should improve the likelihood of finding the white sport car.\n</Reasoning>\n<Action>\n(24, -18, -96)\n</Action>\n\n<Reasoning>\nKeeping the drone within the constraints of the search area and"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nSince we have flown too close to an object, which would have caused an emergency stop, I will make a move to safely increase our altitude and avoid any potential collision. It is crucial to analyze the coordinates and determine the safest path to avoid the obstacle and continue the search for the white sport car.\n</Reasoning>\n<Action>\n(8, 0, 12)\n</Action>\n\n<Reasoning>\nThis move will take us 1 meter away from the potentially dangerous area, ensuring we are not in immediate danger of a collision.\n</Reasoning>\n<Action>\n(16, 0, 24)\n</Action>\n\n<Reasoning>\nBy increasing our altitude, we can now safely continue the search without the risk of a collision, while still being close enough to the coordinates that suggest the possible presence of the sport car.\n</Reasoning>\n<Action>\n(24, 0, 36)\n</Action>\n\n<Reasoning>\nThe drone is now at a safe distance from the obstacle, with altitude and coordinates in mind, to continue searching for the white sport car.\n</Reasoning>\n<Action>\n(32, 0, 48)\n</Action>\n\n<Rereason"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nOur situation has become perilous due to the close proximity to an obstacle, and any further movement towards that area could result in the drone flying out\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n to,\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n</\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n<\n\n\n\n\n\n\n\nto\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n"
+    ]
+]

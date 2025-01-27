@@ -1,0 +1,11 @@
+ <Reasoning>I am now at an appropriate altitude to search for the police car. I should be able to see if it is in my visible area below the drone.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I need to adjust my y-coordinate to be as close to the object as possible within the visible area to make sure I can see if the car is present. I will move slightly downwards to stay in the visible area while also reducing the altitude.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning>I am now at a lower altitude, which allows me to scan the visible area for the police car. I will continue to ensure that my altitude is within the specified limit of 120 meters.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After scanning the area, I did not find the police car. It's time to move to a new location where I can continue my search.</Reasoning>
+<Action>(0, 0, 0)</Action>

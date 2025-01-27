@@ -1,0 +1,8 @@
+ <Action space>
+    To move the drone to a point within the search area, I will start by looking for the point in the grid that appears to be the campsite. Once I find it, I will adjust my altitude to ensure I am at least 10 meters below the object. If the point is not the campsite, I will continue to search the grid for the correct point.
+    <Action>(10, 10, 0)</Action>
+</Action space>
+
+<Reasoning>
+    The campsite seems to be at the center of the grid at (10, 10). I will move to this location and check for the object. If I am not at the correct point, I will continue moving until I am within 10 meters below the object.
+</Reasoning>

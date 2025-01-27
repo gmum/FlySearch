@@ -1,0 +1,19 @@
+ <Reasoning>
+    I need to move closer to the middle of the area to have a better chance of spotting the person.
+</Reasoning>
+<Action>(2, 0, -3)</Action>
+
+<Reasoning>
+    Now that I am closer to the object, I will continue my search in the direction that I believe the person might be in.
+</Reasoning>
+<Action>(2, -1, -3)</Action>
+
+<Reasoning>
+    I have still not found the person, I will try to move towards the top of the area and try to get closer.
+</Reasoning>
+<Action>(2, -2, -3)</Action>
+
+<Reasoning>
+    If I am still unable to spot the person, I will move to the center of the area and try to get closer.
+</Reasoning>
+<

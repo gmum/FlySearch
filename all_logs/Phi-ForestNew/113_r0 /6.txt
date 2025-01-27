@@ -1,0 +1,8 @@
+ <Reasoning>The coordinates at (0, -1, -10) place the drone dangerously close to the edge of the image, risking collision with unseen obstacles.</Reasoning>
+<Action>(0, -1, -12)</Action>
+
+<Reasoning>Confirming the presence of the fire while maintaining a safe altitude, the mission can be completed without any risks of collision.</Reasoning>
+<Action>(0, -1, -10)</Action>
+
+<Reasoning>With the fire confirmed and safely within the search area, I will now return to the base for further instructions or to conclude the mission.</Reasoning>
+<Action>(0, -1, -12)</Action>

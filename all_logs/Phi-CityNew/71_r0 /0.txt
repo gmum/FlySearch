@@ -1,0 +1,11 @@
+ <Reasoning>I will start by flying to a position closer to the ground to increase my chances of spotting the fire. Since <Reasoning>the object I am looking for is likely to be on the ground, it's best to make the drone's altitude as low as possible without going below 10 meters, considering this is the maximum allowable altitude above ground.</Reasoning>
+<Action>((10, 0, -20))</Action>
+
+<Reasoning>I will now move slightly upwards to avoid the constraint of not exceeding an altitude of 120 meters, still ensuring I am close to the ground where fires are most likely to be.</Reasoning>
+<Action>((10, 0, -15))</Action>
+
+<Reasoning>Since I need to maintain the altitude limitation, I'll continue to hover at a lower altitude to search the area thoroughly, aiming to locate the fire.</Reasoning>
+<Action>((10, 0, -10))</Action>
+
+<Reasoning>Given that I cannot see the fire in the first image, I will move horizontally to explore as much of the area as possible while keeping an eye on the coordinates-grid for potential matches.</Reasoning>
+<Action>((10

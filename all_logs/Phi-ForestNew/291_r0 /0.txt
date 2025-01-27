@@ -1,0 +1,14 @@
+ <Reasoning>I will begin my search in the area with coordinates (0, 0), as the object might be located here. If I don't find anything, I will move to the nearest coordinates that might be of interest.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+
+<Reasoning>It seems like I am not getting any results at (0, 0), it's time to move to the area with coordinates (10, 10). If the object is still not found at this coordinates, I will continue scanning other areas.</Reasoning>
+<Action>(10, 10, -10)</Action>
+
+
+<Reasoning>At coordinates (10, 10), there is still no progress. Next, I will search in the area with coordinates (20, 20). If the object is not present, I will move to the next set of coordinates and repeat.</Reasoning>
+<Action>(20, 20, -10)</Action>
+
+
+<Reasoning>Nothing interesting at coordinates (20, 20). Now I will try the area with (30, 30) coordinates, hoping the object might be located there.</Reasoning>
+<Action>(30, 30, -10

@@ -1,0 +1,14 @@
+ <Reasoning>With the drone's current altitude, it is at the brink of the safe operating range for inspection. The drone will conduct a meticulous search around the origin point, (0, 0), and the most contrasting surrounding areas to ensure no detail is missed.</Reasoning>
+<Action>(-1, 0, -1)</Action>
+<Action>(-1, -1, -1)</Action>
+<Action>(-2, -1, -1)</Action>
+<Action>(-2, -2, -1)</Action>
+<Action>(-2, -3, -1)</Action>
+<Action>(-3, -3, -1)</Action>
+<Action>(-3, -2, -1)</Action>
+<Action>(-3, -3, -2)</Action>
+<Action>(-2, -2, -2)</Action>
+<Action>(-2, -3, -2)</Action>
+<Action>(-3, -3, -2)</Action>
+<Action>(-3, -2, -2)</Action>
+<Action>(-3, -3, -3)</Action>

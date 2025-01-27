@@ -1,0 +1,17 @@
+ <Reasoning>
+    With the UAV at 1 meter above ground level, I will carry out a systematic search of the area, moving in a grid pattern to ensure that every potential location of the subject is covered. I will prioritize points that are closer to the subject's predicted location.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    As I proceed through the grid points, I will maintain this low altitude to maximize the visibility of the ground and potential signs of the subject. I will continue this pattern, making adjustments as necessary, until the subject is found.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    If the subject is not located at the grid points I have checked, I will move to the next closest point. This methodical approach will ensure that the search is thorough and that no potential location is overlooked.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    Upon finding the subject, I will adjust my altitude to be 10 meters below ground level to comply with the instruction. I will then begin scanning the area again for any additional subjects.

@@ -1,0 +1,23 @@
+ <Reasoning>
+    
+    The image shows a bird's eye view of a city with tall buildings and a wide river. The grid provides coordinates that help in locating specific points in the image. The current altitude is 39 meters above ground level, which is below the limit of 120 meters.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+<Reasoning>
+    
+    To get closer to the ground and check the broad area, I will move straight down the river to avoid any tall buildings that might obstruct my view.
+</Reasoning>
+<Action>(0, -20, -30)</Action>
+<Reasoning>
+    
+    Moving further down the river to get closer to the ground level will allow me to scan the area more thoroughly for the road construction site.
+</Reasoning>
+<Action>(0, -40, -30)</Action>
+<Reasoning>
+    
+    This move will provide further distance to get a wider view of the river and the surrounding area, increasing the chances of locating the construction site.
+</Reasoning>
+<Action>(0, -60, -30)</Action>
+<Reasoning>
+    
+    Moving down to this location will cover a significant portion

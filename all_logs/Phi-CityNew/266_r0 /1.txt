@@ -1,0 +1,6 @@
+ <Reasoning>I detected a yellow point on the ground that is the object I am looking for. I will move lower to get closer to it. If it's not the object, I will continue to look.</Reasoning>
+<Action>(5, 0, -25)</Action>
+<Reasoning>I'm now hovering over the yellow point, which is confirmed to be the object in question. I will report FOUND once I am centered over it.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>I am centered above the yellow point. I have found the object and will reply with FOUND.</Reasoning>
+<Action>(0, 0, 0)</Action>

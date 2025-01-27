@@ -1,0 +1,11 @@
+ <Reasoning>I must immediately stop my movement to avoid any potential danger. I have flown too close to the buildings and would have hit them if I did not change my course.</Reasoning>
+<Action>(-29, -29, 0)</Action>
+
+<Reasoning>I will now quickly move to a safe altitude and location, away from the buildings, to assess the damage and proceed with caution.</Reasoning>
+<Action>(-25, -5, 5)</Action>
+
+<Reasoning>I will then move to the coordinates (29, 0) to scan the area for any visible signs of the fire and to ensure the safety of the surrounding environment.</Reasoning>
+<Action>(29, 0, 0)</Action>
+
+<Reasoning>Next, I will move to the coordinates (59, 0) to get a better view of the area and to check for any flames or smoke that may indicate the presence of a fire.</Reasoning>
+<Action>(59, 0, 0)</Action

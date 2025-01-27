@@ -1,0 +1,18 @@
+ <Response>
+
+<Reasoning>
+I need to find the large trash pile, so I will move to the left to get closer to the ground and start my search.</Reasoning>
+<Action>(5, 0, -12)</Action>
+
+<Reasoning>
+I can see a yellow point in the distance. It might be the trash pile, so I will move down to get closer and continue searching.</Reasoning>
+<Action>(5, 0, -16)</Action>
+
+<Reasoning>
+I can see the large trash pile! It is in the center of my view, so I will move down to get even closer.</Reasoning>
+<Action>(20, 0, -16)</Action>
+
+<Reasoning>
+I am still not close enough to the trash pile, so I will move down again to get even closer.</Reasoning>
+<Action>(20, 0, -16)</Action>
+</Response>

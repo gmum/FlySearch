@@ -1,0 +1,14 @@
+ <Reasoning>Given the drone's current altitude, there is limited time to locate the anomaly. The drone will employ a focused search around the center of the grid, where the most likely concentration of anomalies might be identified. Should the anomaly not be found at this center point, the drone will investigate the surrounding areas that stand out against the backdrop of the terrain, such as clearings or areas with unique geographical features.</Reasoning>
+<Action>(-1, 0, -8)</Action>
+<Action>(0, -1, -8)</Action>
+<Action>(-1, -2, -8)</Action>
+<Action>(-2, -2, -8)</Action>
+<Action>(-2, -3, -8)</Action>
+<Action>(-1, -3, -7)</Action>
+<Action>(0, -2, -7)</Action>
+<Action>(0, -1, -7)</Action>
+<Action>(-1, -1, -7)</Action>
+<Action>(-2, -2, -6)</Action>
+<Action>(-2, -3, -6)</Action>
+<Action>(-1, -3, -6)</Action>
+<Action>(0, -3, -

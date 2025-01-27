@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see what looks like construction equipment at coordinates (0,-31). I will move there and descend to a safe height below 10 meters. Because I am already very close to the ground, I will descend only 5 meters.</Reasoning>
+<Action>(0, -31, -5)</Action>
+```

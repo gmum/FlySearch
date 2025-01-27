@@ -1,0 +1,2 @@
+ <Reasoning>Since the provided coordinates are mainly positive, and I am close to the center of the grid, I will remain in the area of this grid to ensure I can see the entire viewable area. I will then move to the coordinate (0, 0) to ensure I am centered and then to (0, -10) to get 10 meters below the object I am searching for, which is in the center of the grid. If the object is not found at this point, I will continue to search the area around the center grid point.</Reasoning>
+<Action>(0, -10, -10)</Action>

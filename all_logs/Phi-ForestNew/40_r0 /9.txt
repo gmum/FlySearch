@@ -1,0 +1,5 @@
+ <Reasoning>I am trying to maintain a safe altitude, but I need to adjust my flight path to avoid hitting the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I will now make a controlled adjustment to my altitude to ensure a safe flight.</Reasoning>
+<Action>(0, 0, -2)</Action>

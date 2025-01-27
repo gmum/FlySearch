@@ -1,0 +1,19 @@
+ <Reasoning>I need to fly lower to check the area around the object with coordinates (13, 26).</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I will move further south to cover more ground.</Reasoning>
+<Action>(-8, 0, -30)</Action>
+
+<Reasoning>Now I am closer to the coordinates (13, 26). I need to fly lower to check the area around the object.</Reasoning>
+<Action>(5, 0, -70)</Action>
+
+<Reasoning>The object appears to be further south than I initially thought.</Reasoning>
+<Action>(-8, -30, -70)</Action>
+
+<Reasoning>I am now in a position to confirm if the fire is at the coordinates (13, 26).</Reasoning>
+<Action>(5, -30, -70)</Action>
+
+<Reasoning>I am still not at the correct position. I need to move further south.</Reasoning>
+<Action>(-8, -60, -70)</Action>
+
+<Reasoning>The object is now within my field of view. It is a fire

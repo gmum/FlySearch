@@ -1,0 +1,17 @@
+ <Reasoning>I will move down to search for the object. Being close to the ground will increase my chances of spotting it.</Reasoning>
+<Action>(-10, 0, 0)</Action>
+
+<Reasoning>I am now flying at 10 meters below ground level. The object seems to be in the lower right area of the image. I will move towards it.</Reasoning>
+<Action>(-10, -5, 0)</Action>
+
+<Reasoning>The object is in my view, but I am too high. I will continue to descend.</Reasoning>
+<Action>(-10, -10, 0)</Action>
+
+<Reasoning>I am now at the right spot and can confirm that I found the object.</Reasoning>
+<Action>(-10, -10, 0)</Action>
+
+<Reasoning>Flying slightly to the left to rotate the drone for a better view of the object.</Reasoning>
+<Action>(-10, -15, 0)</Action>
+
+<Reasoning>The object is center-aligned and below my current altitude. I will now hover above it.</Reasoning>
+<Action>(-10, -10, 0)</

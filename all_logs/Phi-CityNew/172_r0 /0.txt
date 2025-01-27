@@ -1,0 +1,31 @@
+ <Reasoning>
+
+I will first fly to a point that is closer to the bottom left corner of the image to get a better view of the area where the car might be hiding. This should give me a clear view of any white objects.
+
+<Action>(0, -59, 0)</Action>
+
+</Reasoning>
+
+<Reasoning>
+
+Now that I have a better view, I will fly to a point where the car is likely to be hiding, based on the expected location of the object. This should give me a better chance of spotting the car.
+
+<Action>(0, -59, 0)</Action>
+
+</Reasoning>
+
+<Reasoning>
+
+I will fly to a point that is closer to the center of the image to get a better view of the area where the car might be hiding. This should give me a clear view of any white objects.
+
+<Action>(0, -29, 0)</Action>
+
+</Reasoning>
+
+<Reasoning>
+
+I will fly to a point that is closer to the center of the image to get a better view of the area where the car might be hiding. This should give me a clear view of any white objects.
+
+<Action>(0, -29, 0)</Action>
+
+</

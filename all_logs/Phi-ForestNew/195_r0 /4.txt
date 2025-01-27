@@ -1,0 +1,18 @@
+ <Reasoning>Starting examination below the lowest coordinates to maintain a safe altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Looking for patterns or landmarks to better identify the trash pile.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object seems to be in the lower left part of the image.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object is not clearly visible yet, but it might be closer to the upper left part of the image.</Reasoning>
+<Action>(0, 10, -10)</Action>
+
+<Reasoning>Continuing the search in the same area, but slightly adjusting to the upper left part, closer to the object.</Reasoning>
+<Action>(0, 10, -10)</Action>
+
+<Reasoning>The object is still not visible; moving further up to the upper left part of the image.</Reasoning>
+<Action>(0, 10, -10)</Action>
+

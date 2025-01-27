@@ -1,0 +1,10 @@
+ <Reasoning>Since the object I am looking for does not fit in with the rest of the environment, I should focus on areas that seem different. The grid coordinates (0, 31) seem to be in a darker and more textured area which might indicate an anomaly. I need to fly lower to check this point.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object in question is located at (0, 31), I need to be at the same level or lower to confirm if it's the one. I should also consider the height of the drone which is currently 47 meters above ground level, so I need to descend to 37 meters to be within range.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now 37 meters above ground level, close to the grid point (0, 31). I need to continue to the right to verify if this is the anomaly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am at the coordinates (0, 31), which matches the potential location of the anomaly. I need to fly close to it to confirm if it

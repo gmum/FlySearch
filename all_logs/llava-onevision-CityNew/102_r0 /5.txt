@@ -1,0 +1,10 @@
+<Reasoning> I will start by flying towards the center of the image to get a better view of the surroundings. </Reasoning>
+<Action>(0, 0, 0)</Action> 
+
+<Reasoning> I have arrived at the center of the image and I can see that there is a road construction site at coordinates (0,-29). I will now fly towards that location. </Reasoning>
+<Action>(0, -29, 0)</Action> 
+
+<Reasoning> I have arrived at the road construction site and I am currently at an altitude of 42 meters. I need to fly below 10 meters to get a closer look. </Reasoning>
+<Action>(0, 0, -32)</Action> 
+
+FOUND

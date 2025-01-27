@@ -1,0 +1,12 @@
+ <Reasoning>The main objective is to locate the building on the ground. I will move closer to the center of the area where buildings are usually located, which is in the middle of the 10x10 grid. Then I will proceed to search vertically towards the ground until I find the building.</Reasoning>
+<Action>(5, 5, -30)</Action>
+
+After moving, I will adjust my altitude and continue to fly downward, inspecting each of the grid coordinates until I see a change in terrain that would indicate the presence of a building.
+
+<Reasoning>I have now moved closer. If the green area represents vegetation, it may not be the building itself, but I'll note the coordinates to return to it and conduct a more thorough search. The building must be within my field of view, so I will keep an eye out for it.</Reasoning>
+<Action>(3, 4, -20)</Action>
+
+<Reasoning>The area is still too high, and although I can see the building's shadow, I cannot confirm its presence. I will continue to descend.</Reasoning>
+<Action>(3, 3, -15)</Action>
+
+<Reasoning>The building is now visible at a lower altitude, making it easier to confirm its presence. I will fly below

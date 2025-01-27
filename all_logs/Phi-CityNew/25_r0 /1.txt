@@ -1,0 +1,17 @@
+ <Reasoning>The fire might be located around the intersection of the roads. I need to fly lower to check for it.</Reasoning>
+<Action>(7, 0, -10)</Action>
+
+<Reasoning>I'm focusing on the intersection area as a potential fire spot. It's becoming clearer now.</Reasoning>
+<Action>(9, 0, -10)</Action>
+
+<Reasoning>I'm still not sure about the location of the fire. I need to get closer.</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>I found a potential spot for the fire near the intersection. I need to go lower to confirm it.</Reasoning>
+<Action>(11, 0, -10)</Action>
+
+<Reasoning>I'm focused on the intersection area, which is 10 meters below my current drone position. Now I'm checking for possible fire spots.</Reasoning>
+<Action>(11, 0, -10)</Action>
+
+<Reasoning>I found a 10-meter square of potential fire on one side of the intersection. I need to check lower.</Reasoning>
+<Action>(11, 0, -

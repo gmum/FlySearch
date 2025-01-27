@@ -1,0 +1,14 @@
+ <Reasoning>I need to fly lower to check if I am near the object in the image. If I am not, I will continue to move down to find it. I will also adjust my altitude to be closer to the ground.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>The object might be in the lower part of the image. I need to move towards it and make sure I am close enough to identify it.</Reasoning>
+<Action>(10, 0, -20)</Action>
+
+<Reasoning>I need to adjust my position to be closer to the object. I will move to a position that is closer to the center of the image.</Reasoning>
+<Action>(8, 0, -10)</Action>
+
+<Reasoning>The object might be located in the lower part of the image. I need to move towards it and check if I am close enough to identify it. If not, I will continue to move down to find it.</Reasoning>
+<Action>(9, 0, -5)</Action>
+
+<Reasoning>I am close to the object. I will adjust my altitude to make sure I am at the required height when I find it.</Reasoning>
+<Action>(3, 0,

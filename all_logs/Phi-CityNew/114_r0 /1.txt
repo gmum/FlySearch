@@ -1,0 +1,9 @@
+ <Reasoning>I have flown too close to the building and would have hit it, so I need to stop immediately. I must be careful not to repeat the same mistake and ensure that I maintain a safe distance from the buildings.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>I have stopped the drone to avoid hitting the building. Now I need to reassess the situation and find a safe altitude where I can continue the search for the crowd without risking a collision with the building.</Reasoning>
+<Action>(0, 0, -30)</Action>
+<Reasoning>I am flying at a lower altitude, which gives me a better chance of spotting the crowd. I will continue to navigate towards the yellow point on the grid, which might be the object I am searching for.</Reasoning>
+<Action>(-5, 0, -30)</Action>
+<Reasoning>As I continue to move downwards, I will be more likely to spot the crowd. I need to ensure that I maintain my altitude lower than the initial 10 meters and that I am focused on the yellow point.</Reasoning>
+<Action>(-10, 0, -30)</Action>
+<Reasoning>I am getting closer to the yellow point, which

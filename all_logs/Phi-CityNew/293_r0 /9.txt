@@ -1,0 +1,4 @@
+ <Reasoning>I have flown too close and would have hit the object if I didn't stop the UAV and take action. I need to quickly analyze the situation and find a safer position to continue the search.</Reasoning>
+<Action>(-27, 0, 0)</Action>
+
+<Reasoning>I will start my search by moving to the leftmost coordinate on the grid that is closest to the drone's

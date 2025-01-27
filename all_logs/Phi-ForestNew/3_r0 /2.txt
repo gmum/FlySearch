@@ -1,0 +1,26 @@
+ <Action space>
+    <Action>(0, 0, -14)</Action>
+</Action space>
+<Reasoning>
+    I am moving further down from the center to maximize the area included in my field of view, increasing the chances of spotting campsite indicators on the ground.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 0, -17)</Action>
+</Action space>
+<Reasoning>
+    Continuing my descent to lower altitudes ensures that I am covering more of the landscape and has the best chance of finding the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 0, -20)</Action>
+</Action space>
+<Reasoning>
+    I am making further descents to ensure thorough coverage of the area as I search for ground-level indicators of the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 0, -23)</Action>
+</Action space>
+<Reasoning>
+    At this altitude, I am optimizing my chances of detecting any signs of the campsite, such as tents or paths, by positioning myself as low as possible while still maintaining visibility.

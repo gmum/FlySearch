@@ -1,0 +1,27 @@
+ <Action space>
+    <Action>(-3, -3, -0)</Action>
+</Action space>
+<Reasoning>
+    I am moving to the center of the grid and ensuring that the altitude is as low as possible to increase the chance of detecting the campsite from the ground.
+</Reasoning>
+
+<Action space>
+    <Action>(-3, -3, -2)</Action>
+</Action space>
+<Reasoning>
+    By lowering my altitude further, I am ensuring that I am maximizing the coverage of the ground, which is essential for detecting the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-3, -3, -4)</Action>
+</Action space>
+<Reasoning>
+    I am making additional descents to ensure that I am covering as much of the landscape as possible while searching for the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-3, -3, -6)</Action>
+</Action space>
+<Reasoning>
+    At this low altitude, I am optimizing my chances of detecting any signs of the campsite on the ground.
+</Reasoning>

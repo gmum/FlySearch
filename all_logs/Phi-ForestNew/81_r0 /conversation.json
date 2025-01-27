@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a building.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " Given the current altitude is 42 meters above ground level, it is too high for the drone to find the building at a 10 meters or closer altitude. Therefore, the drone needs to descend to a lower altitude. The objective is to find a building which appears to be centrally located within the image, and the coordinates range from (-28, 0) to (0, 28) on both the x and y axis.\n\n\n<Reasoning>\n\n    Descending to a lower altitude will increase the likelihood of finding the building. The drone should aim to be as close to the ground as possible without missing the target, ensuring that the object is visible and centered in the field of view.\n\n</Reasoning>\n\n\n<Action>\n\n    (-5, 0, -20)\n\n</Action>\n\n\n<Reasoning>\n\n    Moving the drone down 5 meters from its current altitude will bring it to a more suitable height for locating the building given the constraints of the grid coordinates.\n\n</Reasoning>\n\n\n<Action>\n\n    (-3, 0, -10)\n\n</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 22 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " The aim here is to locate a building, which is situated at coordinates around the center of the image. With the current altitude of 22 meters, drone must descend to increase chances of finding the building at close proximity.\n\n\n<Reasoning>\n\n    The objective is to approach the building as closely as possible while ensuring visibility of the entire structure. Descending will allow the drone to lock its position on the building and assess if it can properly identify the target.\n\n</Reasoning>\n\n\n<Action>\n\n    (-5, 0, -10)\n\n</Action>\n\n\n<Reasoning>\n\n    A decrease of 5 meters will reduce the distance between the drone and the ground, which may improve visibility and the ability to locate the building.\n\n</Reasoning>\n\n\n<Action>\n\n    (-3, 0, -20)\n\n</Action>\n\n\n<Reasoning>\n\n    Descending further to -20 meters will increase the likelihood of finding the building due to the improved low-altitude perspective.\n\n</Reasoning>\n\n\n<Action>\n\n    (-2, 0, -30)\n\n</Action>\n\n\n<Reasoning>\n\n    Approaching the ground at -30 meters is a"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 12 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " With the current altitude being 12 meters, drone needs to decrease its altitude to better find the building, though it must ensure the drone remains within the search area's bounds.\n\n\n<Reasoning>\n\n    We're aiming to get closer to the building at the center of the image. Reducing altitude is necessary, yet the drone must stay within a confined area for safety and to not miss the target.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -3)\n\n</Action>\n\n\n<Reasoning>\n\n    A reduction of 1 meter in altitude is more significant than a previous descending order, as it provides a larger change in altitude which could lead to an earlier identification of the building.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -10)\n\n</Action>\n\n\n<Reasoning>\n\n    By going lower another 10 meters, the drone should be able to confirm the presence of the building and center itself over the structure.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -20)\n\n</Action>\n\n\n<Reasoning>\n\n    An altitude of -20 meters is"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " Since the current altitude is only 9 meters, there is room to descend and get closer to the building to ensure it can be found and centered.\n\n\n<Reasoning>\n\n    DescENDING to a lower altitude is crucial for the drone to locate and focus on the building. The drone must be sufficiently low to see and identify the building.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -5)\n\n</Action>\n\n\n<Reasoning>\n\n    A decrease of 5 meters in altitude will allow the drone to get closer to the ground and get a better view of the building.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -10)\n\n</Action>\n\n\n<Reasoning>\n\n    An altitude of -10 meters is more substantial and will"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " The drone can decrease its altitude to get closer to the building that is situated at the center of the image.\n\n\n<Reasoning>\n\n    With the current altitude being 4 meters, the drone has a higher chance to spot and focus on the building. Descending is necessary, but the drone must also be cautious to remain within the search area.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -3)\n\n</Action>\n\n\n<Reasoning>\n\n    Descending a meter to -3 meters in altitude will grant the drone a better view, but exceeding this altitude limit is not allowed.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -10)\n\n</Action>\n\n\n<Reasoning>\n\n    Going lower to -10 meters is NOT ADVISABLE as it is the limit, and the drone should not exceed this altitude.\n\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " At such a low altitude, the drone must be very careful to avoid outside obstacles.\n\n\n<Reasoning>\n\n    Descending to 1 meter is risky, but it's necessary to find the building. The drone must carefully navigate the terrain to ensure it does not miss the target.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -1)\n\n</Action>\n\n\n<Reasoning>\n\n    A decrease of 1 meter in altitude will bring the drone closer to the ground, possibly making it easier to find the building.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -2)\n\n</Action>\n\n\n<Reasoning>\n\n    Moving down another meter will keep the drone at 1 meter above the ground, potentially making the building more visible.\n\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " The drone should proceed with extreme caution while descending.\n\n\n<Reasoning>\n\n    descending to 1 meter above ground level is risky but necessary to locate the building. The drone must navigate carefully to avoid obstacles.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -1)\n\n</Action>\n\n\n<Reasoning>\n\n    A decrease of 1 meter in altitude will bring the drone closer to the ground but must be done carefully to avoid obstacles.\n\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " The drone must remain vigilant about its position to avoid colliding with the ground-level vegetation.\n\n\n<Reasoning>\n\n    The drone is at a critical altitude of 1 meter. It must carefully navigate to avoid hitting the ground, especially with the presence of vegetation that can obstruct the path.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -1)\n\n</Action>\n\n\n<Reasoning>\n\n    A decrease of 1 meter in altitude will bring the drone to ground level while also needing to be cautious of immediate obstacles.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -2)\n\n</Action>\n\n\n<Reasoning>\n\n    Moving down another 1 meter will bring the drone to a very low altitude. The drone must ensure it stays in a clear area to avoid contact with the vegetation.\n\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " The drone has to be very careful to avoid any obstacles while descending due to its low altitude.\n\n\n<Reasoning>\n\n    At only 1 meter above the ground, the drone must tread carefully to avoid contacting the ground and any nearby obstacles.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -1)\n\n</Action>\n\n\n<Reasoning>\n\n    A decrease of 1 meter in altitude will bring the drone to the lowest altitude, necessitating caution to avoid any obstacles.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -2)\n\n</Action>\n\n\n<Reasoning>\n\n    Descending again to -2 meters, while already close to the ground, will require the drone to be even more aware of its surroundings.\n\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " The drone is at the lowest altitude possible, and the risk of collision is high.\n\n\n<Reasoning>\n\n    At 1 meter above the ground, the drone must carefully maneuver to avoid any form of ground obstacles, considering the ferns and other vegetation present.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -1)\n\n</Action>\n\n\n<Reasoning>\n\n    Descending to -1 meter in altitude increases the risk of colliding with the ground and vegetation.\n\n</Reasoning>\n\n\n<Action>\n\n    (-1, 0, -2)\n\n</Action>\n\n\n<Reasoning>\n\n    Moving to an even lower altitude of -2 meters is being excessively cautious and could result in the drone being too close to the obstacles, veering off course, or landing in vegetation.\n\n</Reasoning>"
+    ]
+]

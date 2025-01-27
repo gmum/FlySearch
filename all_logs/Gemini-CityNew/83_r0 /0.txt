@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I don't see any trash pile in the initial image. I will move the drone to the location (0, 0) and then fly down to get a better view of the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+```

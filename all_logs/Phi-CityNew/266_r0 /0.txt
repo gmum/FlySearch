@@ -1,0 +1,6 @@
+ <Reasoning>I have a suspected yellow point on the ground that could be the object in question. I need to fly closer by moving lower. As I can't see if it's the object, I should also adjust my position horizontally and make sure I am centered over it before saying FOUND.</Reasoning>
+<Action>(5, -10, -5)</Action>
+<Reasoning>I have now reached a lower altitude and am centered over the suspected yellow point. It is likely that I have found the object, so I should reply with FOUND if it is indeed the object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>I have confirmed that the yellow point is the object in question, and I am no longer searching. I will reply with FOUND to signify that I have completed the task.</Reasoning>
+<Action>(0, 0, 0)</Action>

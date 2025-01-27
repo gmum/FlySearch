@@ -1,0 +1,22 @@
+ <Reasoning>
+The object in question likely corresponds to one of the grid coordinates that is close to the edge of the image. I will move towards the center of the image, which should be the best overall approach, and then react accordingly to the specific coordinates of the object.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+Now, I will move closer to the coordinates that I initially targeted. The grid coordinates are likely to lead to the object in question.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>
+I'll continue moving closer to the coordinates by adjusting the altitude to be even lower.
+</Reasoning>
+<Action>(4, 0, -20)</Action>
+
+<Reasoning>
+If the object is not at the coordinates I'm moving to, I need to make a slight adjustment to my course towards the eastern side of the image, which would possibly bring me closer to its location.
+</Reasoning>
+<Action>(4, 1, -20)</Action>
+
+<Reasoning>
+I'll try moving slightly to the left, away from the middle of the image. This should bring me closer to the object and possibly within the 1

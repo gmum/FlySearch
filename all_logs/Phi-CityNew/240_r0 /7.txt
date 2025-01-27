@@ -1,0 +1,17 @@
+ <Reasoning>I am at the ground level, but I need to fly higher to get a better view.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>I am still too high. It is time to get closer to the ground.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning>The object seems to be in the bottom left quadrant, but I need to be more precise.</Reasoning>
+<Action>(0, -6, -20)</Action>
+
+<Reasoning>I am still too high. It is time to get closer to the ground.</Reasoning>
+<Action>(0, -7, -30)</Action>
+
+<Reasoning>The object seems to be in the bottom left quadrant, but I need to be more precise.</Reasoning>
+<Action>(0, -8, -40)</Action>
+
+<Reasoning>I am still too high. It is time to get closer to the ground.</Reasoning>
+<Action>(0, -9, -50)</Action>

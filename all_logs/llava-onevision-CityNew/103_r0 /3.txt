@@ -1,0 +1,14 @@
+<Reasoning>Since I'm at the top-right side and I didn't see the fire, I need to continue my search. I will move towards the top-right corner of the image to check that area.</Reasoning>
+<Action>(29, 29, 0)</Action>
+
+<Reasoning>Now that I'm at the top-right corner, I will lower my altitude again to 10 meters to get a better view. If I find the fire, I will report it. If not, I will continue to search in a systematic way.</Reasoning>
+<Action>(0, 0, -33)</Action>
+
+<Reasoning>After checking the top-right corner, I need to continue my search. I will move towards the bottom-right corner of the image to check that area.</Reasoning>
+<Action>(29, -29, 0)</Action>
+
+<Reasoning>Now that I'm at the bottom-right corner, I will lower my altitude again to 10 meters to get a better view. If I find the fire, I will report it. If not, I will continue to search in a systematic way.</Reasoning>
+<Action>(0, 0, -33)</Action>
+
+<Reasoning>After checking the bottom-right corner, I need to continue my search. I will move towards the bottom-right side of the image to check that area.</Reasoning>
+<Action>(29, -14, 

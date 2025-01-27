@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I am now at (0,0). Now I will go down to get a better view at the center of the image. I will go down by 65 meters. That will put me at 10 meters above the ground.</Reasoning>
+<Action>(0, 0, -65)</Action>
+```

@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I need to find a road construction site. I will start by moving towards the center of the image and then go down. The center is at (0,0). I will move there and decrease altitude to 26 meters. I will keep going down in the next move.</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

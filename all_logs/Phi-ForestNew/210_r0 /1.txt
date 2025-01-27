@@ -1,0 +1,34 @@
+ <Reasoning>
+    The object in the image is a distant large airplane. It doesn't seem to be different from other airplanes in the area. I need to search for something unusual.
+</Reasoning>
+
+<Action>
+    (-5, 0, -30)
+</Action>
+
+<Reasoning>
+    I see a green object in the image. It's not an airplane, and it's not like the others. I need to fly closer to see it better.
+</Reasoning>
+
+<Action>
+    (-3, 0, -45)
+</Action>
+
+<Reasoning>
+    The object seems to be a green area with some small yellow details. I'm not sure what the anomaly is. I'll fly closer to see it better.
+</Reasoning>
+
+<Action>
+    (-4, 0, -50)
+</Action>
+
+<Reasoning>
+    I can spot a small yellow detail in the green area. It could be the object we're looking for. I'm going to fly closer to see it better.
+</Reasoning>
+
+<Action>
+    (-5, 0, -55)
+</Action>
+
+<Reasoning>
+    The yellow detail is a small

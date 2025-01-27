@@ -1,0 +1,2 @@
+<Reasoning>Given the instructions, I need to start searching from the center of the grid, moving in a systematic pattern. I will begin by moving to the center of the grid (0,0,0) and then start a spiral search pattern, slowly expanding the radius to cover more area. I need to descend to 10 meters below the object when I find it, so I will keep track of my altitude as well.</Reasoning>
+<Action>(0,0,0)</Action>

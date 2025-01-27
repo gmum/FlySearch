@@ -1,0 +1,14 @@
+ <Reasoning>As I am starting at an altitude of 48 meters, I need to decrease my altitude to get closer to the ground for an accurate search. I will move 4 meters down to start my search.</Reasoning>
+<Action>(0, 0, 44)</Action>
+
+<Reasoning>I should now scan the visible area and look for any irregularities that stand out from the rest. If there's any object that doesn't fit, I should move closer to confirm.</Reasoning>
+<Action>(2, 0, 0)</Action>
+
+<Reasoning>After scanning the area, I found a yellow point that stands out as an anomaly. I need to get closer to verify if it's the object of interest.</Reasoning>
+<Action>(-1, 0, 0)</Action>
+
+<Reasoning>The yellow point is indeed the object. I am now at the correct altitude to confirm it's the anomaly. I should report my find.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that I have confirmed the object as an anomaly, I will maintain my current position and altitude, which is 10 meters below the object.</Reasoning>
+<Action>(

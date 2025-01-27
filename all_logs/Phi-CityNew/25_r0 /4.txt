@@ -1,0 +1,13 @@
+ <Reasoning>The fire might be around the coordinates (45, 51). I need to fly lower to find it.</Reasoning>
+<Action>(43, 0, -10)</Action>
+
+<Reasoning>I'm focusing on the coordinates (45, 51) to find the fire. It's not clear yet.</Reasoning>
+<Action>(43, 0, -10)</Action>
+
+<Reasoning>I found a potential spot for the fire near (43, 51). I need to check lower to confirm it.</Reasoning>
+<Action>(43, 0, -10)</Action>
+
+<Reasoning>I'm still investigating around the coordinates (43, 51). The fire might be there.</Reasoning>
+<Action>(43, 0, -10)</Action>
+
+<Reasoning>I found the fire near the coordinates (43, 51). I'm confirming it's the

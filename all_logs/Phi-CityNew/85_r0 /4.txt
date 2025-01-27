@@ -1,0 +1,11 @@
+ <Reasoning>I am staying at an altitude of 1 meter due to the need for high visibility and accuracy in my search for the fire. I will move to the next point directly above the grid point (-0.5, 1.5) to maintain the low altitude for an effective search.</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>Upon reaching the location above (-0.5, 1.5), I will perform a detailed inspection of the area below, looking for any signs of fire. If the fire isn't visible, I will adjust my position accordingly to continue the search process while ensuring I remain within the 10-meter radius requirement.</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>If there is no fire visible at the current grid point, I will make another move to the next grid point that I can reach from my current location to continue the search process from a lower altitude.</Reasoning>
+
+<Action>(0.5, 0.5, -1)</Action>

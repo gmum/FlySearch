@@ -1,0 +1,2 @@
+<Reasoning>I see a fire at the coordinates (10,0). I will move to (10,0) and go down to below 10 meters to be able to send a FOUND message.</Reasoning>
+<Action>(10, 0, -20)</Action>

@@ -1,0 +1,25 @@
+ <Reasoning>
+    
+    The image shows a grassy area with a few trees and a path. The current altitude of 1 meter above ground level is just above the limit and poses a risk of collision.
+</Reasoning>
+<Action>(0, 0, -3)</Action>
+<Reasoning>
+    
+    To avoid any potential collision and to not violate the limitations, I will move horizontally across the area and then move slightly to the right to ensure a safe distance from any obstacles.
+</Reasoning>
+<Action>(0, -2, -3)</Action>
+<Reasoning>
+    
+    This move will keep me in the search area without the risk of hitting anything and will allow me to cover more ground.
+</Reasoning>
+<Action>(0, -4, -3)</Action>
+<Reasoning>
+    
+    Moving further down will provide a broader view of the area and increase the chance of spotting the construction site.
+</Reasoning>
+<Action>(0, -6, -3)</Action>
+<Reasoning>
+    
+    This move will allow me to scan a wider area and increase the chances of finding the construction site.
+</Reasoning>
+<Action>(0, -8, -3)</Action

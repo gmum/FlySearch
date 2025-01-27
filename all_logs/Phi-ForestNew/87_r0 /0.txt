@@ -1,0 +1,4 @@
+ <Reasoning>The object is located in the center of the image at coordinates (0, 0), which means I need to be focused on that point to ensure I find it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+Response to new data: The object has been identified at coordinates (0, 0). The current altitude is 37 meters above ground level, and I have replied with "FOUND" to confirm the identification.

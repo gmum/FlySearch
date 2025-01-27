@@ -1,0 +1,10 @@
+<Reasoning>As I have moved to the top left section of the grid, I will now lower my altitude further to 61 meters above ground level to get an even closer view of the area. This will allow me to inspect the ground more closely and potentially spot the trash pile.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+
+<Reasoning>Since the trash pile has not been found at the previous coordinates, I will now move to the coordinates (-78, 0, 0) to cover the leftmost section of the grid. This will help to cover more ground and increase the chances of locating the trash pile.</Reasoning>
+<Action>(-78, 0, 0)</Action> 
+
+<Reasoning>As the trash pile was not found at the previous points, I will now move to the coordinates (-78, 24, 0) to cover the top left corner of the grid. This will help to cover more ground and increase the chances of locating the trash pile.</Reasoning>
+<Action>(-78, 24, 0)</Action> 
+
+<Reasoning>Since the trash pile has not been found at the previous coordinates, I will continue the search by moving to the coordinates (-78, 47, 0) to cover the top left corner of the grid. This will help to cover more ground and increase the chances of locating the trash pile.</

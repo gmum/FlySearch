@@ -1,0 +1,16 @@
+ <Reasoning>Since the object's coordinates are (5,5), I will move to (5,9) to look for it in the surrounding area.</Reasoning>
+<Action>(5, 9, 0)</Action>
+
+<Reasoning>I will now move to (9,5) to continue scanning the area around the object's coordinates.</Reasoning>
+<Action>(9, 5, 0)</Action>
+
+<Reasoning>After moving to (9,5), the object seems to be around there, so I will move to (9,9) to get a closer look.</Reasoning>
+<Action>(9, 9, 0)</Action>
+
+<Reasoning>The object is not found at (9,9), so I will move to (0,9) to continue the search in the area around the object's coordinates.</Reasoning>
+<Action>(0, 9, 0)</Action>
+
+<Reasoning>The object is not found at (0,9), so I will move to (9,0) to continue the search in the area around the object's coordinates.</Reasoning>
+<Action>(9, 0, 0)</Action>
+
+<Reasoning>I will now move to (9,9)

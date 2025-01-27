@@ -1,0 +1,18 @@
+ 
+<Reasoning>The building might be the object to find. Since I am not sure if I am looking at it, I will fly lower to get a better view and check for it.</Reasoning>
+<Action>(0, 0, -50)</Action>
+
+<Reasoning>I'll fly to the coordinates (0, -50) to get a closer look and see if the building is there.</Reasoning>
+<Action>(1, 0, -50)</Action>
+
+<Reasoning>Moving to (1, -50, 0) to keep within the view and scout for the building.</Reasoning>
+<Action>(1, -50, -50)</Action>
+
+<Reasoning>I will continue to descend to get closer to the ground and look for the building.</Reasoning>
+<Action>(1, -50, -70)</Action>
+
+<Reasoning>I'll move slightly to the east to cover more ground while still staying close to the building.</Reasoning>
+<Action>(1, -50, -70)</Action>
+
+<Reasoning>I'm still not close enough to the building, I need to move closer.</Reasoning>
+<Action>(1, -50

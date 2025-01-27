@@ -1,0 +1,10 @@
+ <Reasoning>I'm going to start my search by flying to a point that is much closer to the ground than my current altitude. This will help me better locate the object if it is indeed below my current altitude. I'll also choose a point that is to the north, as this will increase my chances of finding the object if it's located in that direction.</Reasoning>
+<Action>(0, 0, -50)</Action>
+
+<Reasoning>Now, I've moved to a point that is much closer to the ground than I was. It's possible that the object is below 10 meters, so I should look for a point that is well below my current altitude.</Reasoning>
+<Action>(10, 10, -10)</Action>
+
+<Reasoning>I've flown to a point closer to the ground and now I'm looking for a point that is 10 meters or less below my current altitude. This will help me locate the object more easily if it's indeed below my current altitude.</Reasoning>
+<Action>(10, 10, -9)</Action>
+
+<Reasoning>I've found a point that is below my current altitude. I need to fly to that point to find the object. This will also

@@ -1,0 +1,2 @@
+<Reasoning>I see a fire at (0,-65) coordinates. I need to go lower and center the drone on the fire to confirm that this is the object and then reply with "FOUND". I will move to (0, -65) and lower the altitude.</Reasoning>
+<Action>(0, -65, -80)</Action>

@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a strange object near the bottom left corner of the image, near coordinates (-23,-11). It looks like a person in a strange position. I will move towards that and go lower.</Reasoning>
+<Action>(-23, -11, -20)</Action>
+```

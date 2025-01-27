@@ -1,0 +1,4 @@
+ <Reasoning>
+The drone needs to fly lower to get a closer look at the objects in the image. This will allow for a better chance of finding the black truck in the images.
+</Reasoning>
+<Action>(15, 0, -10)</Action>

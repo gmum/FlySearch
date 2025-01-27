@@ -1,0 +1,23 @@
+ <Action space="Action (0,0,0)">
+    <Reasoning>Starting from a neutral altitude, I'll make a move to try and find the building. It's important to keep the altitude at 120 meters for safety.
+    </Reasoning>
+</Action>
+
+<Action space="Action (1,0,0)">
+    <Reasoning>I will move north to explore the area. You can't always see the object, so moving around might help.
+    </Reasoning>
+</Action>
+
+<Action space="Action (0,1,0)">
+    <Reasoning>I will then move east to cover more ground. This is necessary because of the limited movement allowed.
+    </Reasoning>
+</Action>
+
+<Action space="Action (1,0,0)">
+    <Reasoning>I will then move south to explore further. The drone can fly in any direction as long as it is not outside of the search area.
+    </Reasoning>
+</Action>
+
+<Action space="Action (0,1,0)">
+    <Reasoning>I will move to the west, covering more ground. It's essential to keep the altitude at 120 meters for safety.
+    </Reasoning>

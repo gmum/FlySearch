@@ -1,0 +1,10 @@
+ <Reasoning>Given the starting position of the UAV, it is not immediately clear which of the darker areas could potentially be the trash pile. Therefore, I will make a conservative move to a point with a higher probability of being near the trash pile.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>As I approach this point, I should now check if the trash pile is directly below me or if I need to move further down to get a closer view. Assuming the trash pile is in the vicinity, I'll then start descending the drone to a lower altitude.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>Once I have a lower altitude, I will perform a more focused search around this area, as the trash pile should now be in my field of view. If it is not the trash pile, I'll narrow down my search by moving closer to the specific area that appears suspicious.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>With the object in my field of view, I will now assess if it is indeed the trash pile or not. If it is not, I will proceed to move towards the

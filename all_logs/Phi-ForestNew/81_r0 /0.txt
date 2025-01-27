@@ -1,0 +1,29 @@
+ Given the current altitude is 42 meters above ground level, it is too high for the drone to find the building at a 10 meters or closer altitude. Therefore, the drone needs to descend to a lower altitude. The objective is to find a building which appears to be centrally located within the image, and the coordinates range from (-28, 0) to (0, 28) on both the x and y axis.
+
+
+<Reasoning>
+
+    Descending to a lower altitude will increase the likelihood of finding the building. The drone should aim to be as close to the ground as possible without missing the target, ensuring that the object is visible and centered in the field of view.
+
+</Reasoning>
+
+
+<Action>
+
+    (-5, 0, -20)
+
+</Action>
+
+
+<Reasoning>
+
+    Moving the drone down 5 meters from its current altitude will bring it to a more suitable height for locating the building given the constraints of the grid coordinates.
+
+</Reasoning>
+
+
+<Action>
+
+    (-3, 0, -10)
+
+</Action>

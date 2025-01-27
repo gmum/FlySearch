@@ -1,0 +1,14 @@
+ <Reasoning>Since I cannot move below 10 meters above the object, I need to increase my altitude to at least 40 meters above ground level to get a clear view of the object.</Reasoning>
+<Action>(0, 0, 1)</Action>
+
+<Reasoning>Based on the available coordinates, I see a yellow point which might be the object in question. To get closer to it, I will move to the coordinates (35, 0, -10)</Reasoning>
+<Action>(35, 0, -10)</Action>
+
+<Reasoning>I am still not close enough to the yellow point to confirm if it is the object. I will move further down and slightly to the right to get a better view.</Reasoning>
+<Action>(38, 0, -15)</Action>
+
+<Reasoning>The yellow point is now clearly visible. I will move to get closer to confirm if it is the object in question.</Reasoning>
+<Action>(30, 0, -25)</Action>
+
+<Reasoning>I am now below 10 meters above the yellow point. However, I still need to get closer to confirm if it is the object in question.</Reasoning>
+<Action>(25, 0

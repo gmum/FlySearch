@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I don't see any fire in the image. I will move to the center of the grid, at (0, 0) and go down by 20 meters to get a better view.</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

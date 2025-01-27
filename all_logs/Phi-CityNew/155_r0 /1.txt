@@ -1,0 +1,13 @@
+ <Reasoning>Starting at the center of the image, I should move towards the upper right corner of the grid to cover more ground while still being below 10 meters above the object.</Reasoning>
+    <Action>(14, 28, -5)</Action>
+
+    <Reasoning>The object might be located in the upper right corner of the grid. I will continue moving upwards and to the right while keeping my altitude low.</Reasoning>
+    <Action>(14, 28, -10)</Action>
+
+    <Reasoning>I am now close to the top of the grid, which covers the lower right area. The object might be in this region. I need to move down slightly and to the left to see if it's there.</Reasoning>
+    <Action>(13, 28, -3)</Action>
+
+    <Reasoning>I should now move slightly up and to the left to get closer to the right edge of the grid, where the object might be. I will also be significantly lower since the altitude above ground level is 42 meters.</Reasoning>
+    <Action>(12, 28, -8)</Action>
+
+    <Reasoning>The object might be harder to see now since I am deeper in the grid. Therefore

@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I will start by moving towards the center of the image and go down, as there is no object in sight. I'll go to (0,0) and descend 30 meters to get closer to the ground.</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

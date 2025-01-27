@@ -1,0 +1,2 @@
+<Reasoning>I need to search for a building. I'll start by moving to the center of the grid at (0, 0) and then descend to get a better view. Currently, I'm at an altitude of 87 meters, and the building needs to be below 10 meters away. The object might be hidden, so I'll move to a better view to start with.</Reasoning>
+<Action>(0, 0, 0)</Action>

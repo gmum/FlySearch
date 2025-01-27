@@ -1,0 +1,10 @@
+ <Reasoning>The description suggests a search for a trash pile. The coordinates are scattered across the map, with different numbers of points visible. I will start at the lowest coordinates to potentially find trash piles that are easier to spot from the ground. Since the current altitude is 41 meters, I will move to an area that is closer to the ground to increase the chances of spotting trash piles.</Reasoning>
+<Action>(-20, -20, 11)</Action>
+
+<Reasoning>From the new coordinates, I need to adjust my position to be closer to the potential trash pile but still maintain a safe altitude. The objective is to be as low as possible without crashing.</Reasoning>
+<Action>(-11, -20, 6)</Action>
+
+<Reasoning>I will now shift my focus to higher coordinates, where the trash pile may be located. I have to be careful not to go too high.</Reasoning>
+<Action>(0, -20, 0)</Action>
+
+<Reasoning>With the trash pile potentially in the view, I'll need to confirm its location. I'll stay at a lower altitude but not too low to maintain a safe hovering altitude for the drone.</Reasoning>

@@ -1,0 +1,17 @@
+ <Reasoning>Since I'm at a critical altitude, I must prevent any risk of collision. I will immediately move to a safer altitude.</Reasoning>
+<Action>((0, 0, -10))</Action>
+
+<Reasoning>I cannot see any fire spots. I will move in the direction of the coordinates that may indicate the fire's location.</Reasoning>
+<Action>((-1, -1, -1))</Action>
+
+<Reasoning>I will proceed with caution, adjusting my altitude and position to search for any signs of the fire.</Reasoning>
+<Action>((-1, -1, -2))</Action>
+
+<Reasoning>I will maintain a low altitude to ensure a thorough search of the area, being careful with my movements.</Reasoning>
+<Action>((-1, -1, -0))</Action>
+
+<Reasoning>I will be vigilant in my search, keeping an eye on the coordinates and the environment for any potential fire spots.</Reasoning>
+<Action>((0, -1, -1))</Action>
+
+<Reasoning>I will be prepared to make further adjustments to my altitude and position based on the feedback from my sensors.</Reasoning>
+<

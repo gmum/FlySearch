@@ -1,0 +1,2 @@
+<Reasoning>Starting at position (0, 0), I will move 30 meters east and 30 meters down to check the area marked with yellow dots. If it's not the object, I will continue the search.</Reasoning>
+<Action>(30, 0, -30)</Action>

@@ -1,0 +1,10 @@
+ <Reasoning>Since I cannot see the object in the image directly, I will rely on the grid coordinates to guide my search. I will start by moving closer to the (0, 0) coordinates where the drone is currently located. I will then assess the surroundings and make further moves based on visual cues to find the object.</Reasoning>
+<Action>(0, 0, -50)</Action>
+
+<Reasoning>The area around (-53, 0) and (0, 27) seems to have a slight brown patch which could suggest the presence of an object. I will move closer to this area to investigate.</Reasoning>
+<Action>(5, 0, -60)</Action>
+
+<Reasoning>I have now moved into the area around (-53, 53), which has more distinct features than the surrounding area. There's a hint of yellow which could indicate an object or vegetation. This is a good direction to continue my search.</Reasoning>
+<Action>(-10, 0, -60)</Action>
+
+<Reasoning>No visible object in this area. However, I have located a yellow spot near (3, 53), which could be an indication of vegetation or a small structure. I will move closer to verify and see if this is

@@ -1,0 +1,12 @@
+ <Reasoning>I need to fly lower to check for the large trash pile. My current altitude is too high, and I have not found the object yet.</Reasoning>
+<Action>(0, 0, -42)</Action>
+
+<Reasoning>I have moved lower and am now 42 meters below ground level. The object might be in my field of view.</Reasoning>
+<Action>(0, 0, -74)</Action>
+
+<Reasoning>I have moved lower and am now 74 meters below ground level. The object might be in my field of view.</Reasoning>
+<Action>(0, 0, -106)</Action>
+
+<Reasoning>I have found the large trash pile at (0, 0, -106) and am 106 meters below the ground level. I am close enough to consider the search complete.</Reasoning>
+<Action>(0, 0, -106)</Action>
+<Reply>FOUND</Reply>

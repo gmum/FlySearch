@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 85 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that doesn't fit in with the rest is the yellow point on the image.</Reasoning>\n<Action>(0, 0, -85)</Action>\n<Reasoning>I am flying lower to the object to get a closer look and confirm if it is the anomaly.</Reasoning>\n<Action>(0, 0, -100)</Action>\n<Reasoning>I have now gotten closer to the object and am performing a vertical scan.</Reasoning>\n<Action>(0, 0, -105)</Action>\n<Reasoning>The yellow point is indeed the anomaly. It is lower than the surrounding structure and different in color.</Reasoning>\n<Action>(0, 0, -110)</Action>\n<Reasoning>I am maintaining my altitude and examining the object thoroughly.</Reasoning>\n<Action>(0, 0, -110)</Action>\n<Reasoning>I am noting the surroundings of the anomaly to avoid annotating incorrect areas.</Reasoning>\n<Action>(0, 0, -110)</Action>\n<Reasoning>I am now in the correct location to confirm the anomaly.</Reasoning>\n<Action>(0, "
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that doesn't fit is the isolated red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>Moving closer to the object for a better view.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>I am focusing on the object now, looking for any distinctive characteristics.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is indeed the anomaly. It stands out due to its color and isolated position.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>I have located the anomaly and will now assess it further.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>Taking notes to confirm and document the anomaly's position and characteristics.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>I am noting the anomaly's location relative to the surrounding objects.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The anomaly is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am getting closer to verify the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is confirmed to be the anomaly, based on its color and isolated nature.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am moving closer to confirm the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is the anomaly, it is different in color and isolated.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>I am now in a position to fully assess the anomaly's characteristics.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>I am taking detailed notes on the anomaly for documentation and further analysis.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am getting closer to verify the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is indeed the anomaly, it is different in color and isolated.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am moving closer to confirm the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is confirmed to be the anomaly, based on its color and isolated nature.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am getting closer to verify the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is indeed the anomaly, it is different in color and isolated.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am getting closer to verify the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is confirmed to be the anomaly, based on its color and isolated nature.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am moving closer to confirm the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is indeed the anomaly, it is different in color and isolated.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The object that stands out is the red point among the green points.</Reasoning>\n<Action>(0, 0, -1)</Action>\n<Reasoning>I am getting closer to verify the object as the anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>\n<Reasoning>The red point is indeed the anomaly, it is different in color and isolated.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ]
+]

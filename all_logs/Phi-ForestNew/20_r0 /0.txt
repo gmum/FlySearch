@@ -1,0 +1,3 @@
+ <Reasoning>This person seems to be walking away from the drone's current position. Since the coordinates are close to each other, I should aim to get lower to their height without exceeding the altitude limit.</Reasoning>
+<Action>(2, 0, -9)</Action>
+

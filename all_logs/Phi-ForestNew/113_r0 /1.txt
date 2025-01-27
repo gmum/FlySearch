@@ -1,0 +1,11 @@
+ <Reasoning>The coordinates are currently at (-18, 18), which is not close enough to the bottom of the image to make a detailed inspection of the potential fire. I will move closer by descending slightly to the bottom of the image, but still keeping an eye out for the fire.</Reasoning>
+<Action>(-20, 18, -10)</Action>
+
+<Reasoning>The coordinates have been updated to (-20, 18, -10), and the bottom area is now visible. I will look carefully for the fire in this section.</Reasoning>
+<Action>(-25, 18, -15)</Action>
+
+<Reasoning>The coordinates are now at (-25, 18, -15), and I can see a patch of red which could be the forest fire. I will fly even lower to get a clearer view and confirm if it's indeed the fire.</Reasoning>
+<Action>(-30, 18, -20)</Action>
+
+<Reasoning>The coordinates have been adjusted to (-30, 18, -20), and I am now directly above the red patch. The fire is confirmed to be the object of interest in this image.</Reasoning>
+<Action>(-30, 

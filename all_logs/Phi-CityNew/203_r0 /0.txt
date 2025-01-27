@@ -1,0 +1,2 @@
+ <Reasoning>I am starting with an altitude of 81 meters. Since the drone's altitude has not exceeded 120 meters, I should not be affected by altitude restrictions. I will try to find the object by searching for coordinates that are below 10 meters in altitude.</Reasoning>
+<Action>(5, 0, -30)</Action>

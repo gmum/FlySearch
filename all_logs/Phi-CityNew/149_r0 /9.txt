@@ -1,0 +1,17 @@
+ <Reasoning>I am considering the command to fly further, but I must ensure I do not go out of bounds of the last seen image, possibly flying into unknown territories, recklessly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have adjusted my position to avoid flying out of bounds and ensure safety.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I have identified a potential target, but I must ensure I do not go out of bounds to avoid potential hazards.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I am now in a safe position to confirm if the object is present.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I am confident the object is located near the building. I will adjust my position accordingly.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I am now in the optimal position to confirm if the object is present. If not, I will continue to search in the surrounding area.</Reasoning>
+<Action></Action>

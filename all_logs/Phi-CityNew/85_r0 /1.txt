@@ -1,0 +1,13 @@
+ <Reasoning>To ensure I am within 10 meters of the supposed fire location, I need to descend further. I will move to a point that is directly above the suspected fire, as indicated by the grid reference (-1, 1) to maintain a low altitude and increase the chances of detecting the fire.</Reasoning>
+
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>I am now in a lower altitude, making it easier to inspect the area below the suspected fire point. I'll move down to the next point marked by the grid, which is about (-0.5, 1.5). This should give me a better angle to spot any signs of fire.</Reasoning>
+
+<Action>(-0.5, 1.5, -2)</Action>
+
+<Reasoning>I've moved down to the new location, now directly above the grid point (-0.5, 1.5). I'll quickly scan the area for any signs of fire. If the fire isn't visible, I will make another move to continue the search process.</Reasoning>
+
+<Action>(-0.5, 1.5, -2)</Action>
+
+<Reasoning>The area above (-0.5, 1.5) appears to be the

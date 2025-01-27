@@ -1,0 +1,9 @@
+ <Reasoning>Given that I'm at 75 meters above ground level, I need to fly closer to the ground to get within 10 meters. If the green pickup truck is on the ground, I'll have to fly 65 meters down to be within the range for a positive response.</Reasoning>
+<Action>(5, 0, -65)</Action>
+<Reasoning>I'm now flying lower. I need to scan the area horizontally to confirm if the green pickup truck is indeed in the field of view. If not, I will proceed to move further to the left to cover more ground.</Reasoning>
+<Action>(1, 0, -65)</Action>
+<Reasoning>I've spotted a green pickup truck on the left side of the frame. I need to position myself over the truck to ensure I can see it when I reply 'FOUND'.</Reasoning>
+<Action>(0, 0, -65)</Action>
+<Reasoning>I'm now centered on the pickup truck. I have to ensure that I am reporting being 10 meters or less below the truck.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>The pickup

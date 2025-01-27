@@ -1,0 +1,13 @@
+ <Reasoning>To get closer to the object at (14, 14), I should move to (14, 7) and then to (14, -7) to explore vertically as well.</Reasoning>
+<Action>(14, 7, -10)</Action>
+
+<Reasoning>As I cannot see the object yet, I will try the next grid point below at (7, 7). I need to decrease altitude even more to get closer.</Reasoning>
+<Action>(7, 7, -30)</Action>
+
+<Reasoning>I am still too high; I need to decrease altitude further. Moving to (0, 7) should help me get closer to the object. I need to be careful not to go lower than 10 meters.</Reasoning>
+<Action>(0, 7, -30)</Action>
+
+<Reasoning>Now I should be at a good altitude to spot the object. I will move to (7, 7) to confirm if the object is indeed at this point.</Reasoning>
+<Action>(7, 7, -10)</Action>
+
+<Reasoning>The object is not at (7, 7); it's at (0, 7). I will now move

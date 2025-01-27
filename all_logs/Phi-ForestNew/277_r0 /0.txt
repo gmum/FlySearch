@@ -1,0 +1,2 @@
+ <Reasoning>The object in question appears to be around the coordinates (-65, 65), as they are marked with a yellow point unlike the rest of the brown points which are marked with white. The drone needs to move closer to this point to verify if it is the anomaly. To do so, I will decrease my altitude by 2 meters and head to the (0, -65) coordinates.</Reasoning>
+<Action>(0, -65, 95)</Action>

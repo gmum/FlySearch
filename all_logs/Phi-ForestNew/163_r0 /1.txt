@@ -1,0 +1,2 @@
+ <Reasoning>I need to be closer to the ground to find the target. According to the coordinates, the target might be near the (0, 0) point on the grid. I will move to (0, 10) then continue moving to the right to (10, 10). </Reasoning>
+<Action>(0, 10, -30)</Action>

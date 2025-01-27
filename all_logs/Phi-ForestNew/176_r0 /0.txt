@@ -1,0 +1,9 @@
+ <Reasoning>Since the current altitude is 63 meters, I am still too high. I need to decrease my altitude to get closer to the object. I will try to fly down towards the (0, 0) location on the grid, as it seems to be in the center of the area where the person might be located. This will also help me cover more ground while decreasing altitude.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+
+<Reasoning>I have moved to the center of the grid and am now at the lowest possible altitude. Now I need to scan the area to find the person. I will move slightly towards the (21, 21) coordinate to cover a larger area, which seems to be a green forested area below with some visible paths, likely where the person might be.</Reasoning>
+<Action>(21, 21, -10)</Action>
+
+
+<Reasoning>There is a person located near the center of the green area, but it's not exactly at the position (21, 21). I need to adjust my altitude and move at the same time to get closer to the person without losing sight of them. The person appears to be in a broad leafy area near trees, so I will move towards (21, 21

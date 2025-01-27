@@ -1,0 +1,12 @@
+ <Reasoning>I have completed my initial search from the starting point (0,0). Time to react to the new situation and continue the search.</Reasoning>
+<Action>(28,-28,0)</Action>
+
+<Reasoning>Since the initial search didn't yield any results, I'll now move closer to the other high-rise structures. The point (28,-28) has a high elevation, so I will head there for a better view.</Reasoning>
+<Action>(28,-28,0)</Action>
+
+
+<Reasoning>Now that I am at a lower altitude, I can thoroughly inspect the surroundings in the area around (28,-28) to spot any anomalies.</Reasoning>
+<Action>(28,-28,0)</Action>
+
+<Reasoning>Since nothing anomalous can be seen, I'll look slightly to the left and downwards to the (22,-28) point. If the object isn't visible from there, I will continue to search from within the 400x400m search area.</Reasoning>
+<Action>(22,-28,0)</Action>

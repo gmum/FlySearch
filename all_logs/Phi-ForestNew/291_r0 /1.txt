@@ -1,0 +1,6 @@
+ <Reasoning>With the beginning coordinates I took, I'll move to the area with coordinates (10, 10). If the object is not found, I will continue the search in the area with coordinates (20, 20). If it's still not uncovered, I will move to the area with coordinates (30, 30)</Reasoning>
+<Action>(10, 10, -10)</Action>
+
+
+<Reasoning>The coordinates (10, 10) still do not reveal any clues. Moving to coordinates (20, 20), the object is not here. Now, I will try the area with coordinates (30, 30) to be sure that I am covering all possible spots</Reasoning>
+<Action>(30, 30, -10)

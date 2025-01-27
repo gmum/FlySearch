@@ -1,0 +1,17 @@
+ <Reasoning>
+    With my current altitude at 1 meter above ground level, I will need to fly closer to the ground to meet the search objectives. I will maneuver to the first point in the grid that could potentially be the object's location, given the instruction to fly below 10 meters relative to it upon finding it.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    From this point, I will systematically proceed in a grid pattern, moving to the next point that is within the search area, while staying within the altitude limit set by the instruction.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    If the subject isn't located at my current grid point, I will continue to move to the next until it is spotted or I complete the search area. I must remain vigilant to ensure that I do not exceed the altitude and movement limits given.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    Upon finding the object, I will adjust my altitude to be 10 meters below it or higher to comply with the instruction of being below

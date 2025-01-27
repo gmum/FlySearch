@@ -1,0 +1,4 @@
+ <Reasoning>
+    Initially, I need to reduce my altitude to get closer to the ground and search for the large trash pile. Since the objective is to search for an object at most 10 meters below the drone, I need to start by descending to lower altitudes.
+</Reasoning>
+<Action>(10, 0, -30)</Action>

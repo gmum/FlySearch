@@ -1,0 +1,13 @@
+ <Reasoning>The car might be located in one of the quadrants with coordinates (-30, 30), so I should head towards that area while being mindful of my altitude.</Reasoning>
+    <Action>(-5, -10, -10)</Action>
+
+    <Reasoning>I am now scanning the area where the car is likely to be, but it is not visible in my current view. I should move slightly to the left to get a better angle.</Reasoning>
+    <Action>(-5, -10, -10)</Action>
+
+    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>
+    <Action>(-5, -5, -20)</Action>
+
+    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will move slightly upwards to get a better angle.</Reasoning>
+    <Action>(-5, -5, -20)</Action>
+
+    <Reasoning>I found the car at coordinates (30, 30), but it is not visible in my current view. I will

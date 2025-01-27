@@ -1,0 +1,13 @@
+ <Reasoning>With the current altitude of 112 meters, which is higher than the ideal altitude for spotting trash piles, I must descend to a lower altitude for better visibility.</Reasoning>
+<Action>(-48, -48, 24)</Action>
+
+<Reasoning>I need to choose coordinates that will safely bring me down to a lower altitude without exceeding the altitude limit.</Reasoning>
+<Action>(-44, -48, 22)</Action>
+
+<Reasoning>These coordinates are a good choice to safely descend and remain within the search area. I'll need to scan the area carefully for the trash pile.</Reasoning>
+<Action>(-44, -48, 21)</Action>
+
+<Reasoning>I am now at a lower altitude, which should make the trash pile more visible. I must focus on the area to spot the trash pile and report my findings.</Reasoning>
+<Action>(-44, -48, 20)</Action>
+
+<Reasoning>I have now reached the correct altitude to spot the trash pile. I must carefully scan the area for signs of the trash pile to ensure it is detected and reported.</Re

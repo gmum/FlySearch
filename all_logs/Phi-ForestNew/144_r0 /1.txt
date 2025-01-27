@@ -1,0 +1,19 @@
+ <Reasoning>I need to move south to investigate the area around the object with coordinates (5, 5).</Reasoning>
+<Action>(-5, 0, -30)</Action>
+
+<Reasoning>I will move further south to cover more ground.</Reasoning>
+<Action>(-10, 0, -30)</Action>
+
+<Reasoning>I am now in a position to check the area around the object with coordinates (3, 5).</Reasoning>
+<Action>(-5, -30, -30)</Action>
+
+<Reasoning>The object appears to be further south than I initially thought.</Reasoning>
+<Action>(-10, -60, -30)</Action>
+
+<Reasoning>I am still not at the correct position. I need to move further south.</Reasoning>
+<Action>(-15, -60, -30)</Action>
+
+<Reasoning>I am now in a position to confirm if the fire is at the coordinates (3, 5).</Reasoning>
+<Action>(-5, -60, -30)</Action>
+
+<Reasoning>The object is now within my field of view. It is a fire

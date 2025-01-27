@@ -1,0 +1,14 @@
+ <Reasoning>I have been too close to the ground and made an error in judgment. It's important to maintain a safe distance to avoid collision with any obstacles.</Reasoning>
+<Action>(4, 0, -40)</Action>
+
+<Reasoning>The objective was to find the road construction site, and I have been too close to the ground. I need to reassess and move to a different location to continue the search safely.</Reasoning>
+<Action>(5, 0, -40)</Action>
+
+<Reasoning>I'm now in a better position to look for the road construction site without the risk of hitting the ground. I need to scan the area thoroughly to find the site accurately.</Reasoning>
+<Action>(5, 0, -40)</Action>
+
+<Reasoning>I have a clear view of the ground and can see the yellow line which might be the edge of the road construction area. I should locate the object more precisely and adjust my position to ensure a proper search.</Reasoning>
+<Action>(5, 0, -40)</Action>
+
+<Reasoning>I have identified the edge of the road construction area and will now move to position myself above the site for a clear view.</Reasoning>
+<Action>(5, 0,

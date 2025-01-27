@@ -1,0 +1,13 @@
+ <Reasoning>I am starting my search as instructed, taking into consideration my current altitude and the visible area. I will start my search by moving closer to the yellow point to see if it is the object in question and to get a better view.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>I am now in a better position to see the area around the yellow point. I need to refine my search to ensure I am as close as possible to the ground level to find the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now closer to the yellow point and the surrounding area. I will continue my search by moving slightly to the northeast to cover more ground in the area I am interested in.</Reasoning>
+<Action>(0, 1, -5)</Action>
+
+<Reasoning>I am exploring the northeast region and I have found a structure that might be the object in question. I need to fly closer to get a better view and ensure I am not higher than 10 meters above the object.</Reasoning>
+<Action>(0, 3, -10)</Action>
+
+<Reasoning>I am still unsure if the structure is the object in question. I

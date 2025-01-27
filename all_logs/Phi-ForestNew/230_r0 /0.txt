@@ -1,0 +1,7 @@
+ <Reasoning>Based on the coordinates provided, it appears that I need to move south to get closer to the object. Flying south would allow me to see more of the ground and increase the chance of discovering the anomaly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>By moving now to coordinate (0, 0), I'm bringing myself closer to the object in question. This change in altitude brings me to an altitude of 25 meters, which is not as high as the current altitude of 35 meters, and it's still within the search area of 400x400m.</Reasoning>
+<Action>(0, 0, -5)</Action>
+<Reasoning>This move brings me further south and allows me to see the terrain more clearly. The object might now be in range for a lower altitude. However, I am still maintaining a higher altitude than 25 meters, which is good for me to remain visible and safe.</Reasoning>
+<Action>(5, 0, -15)</Action>
+<Reasoning>Now, I am looking at a lower altitude of 20 meters, and I am further south, increasing my chances of spotting the anomaly. It's still within the search

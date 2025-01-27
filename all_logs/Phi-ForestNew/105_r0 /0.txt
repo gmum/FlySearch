@@ -1,0 +1,18 @@
+ <Reasoning>
+The coordinates provided indicate a specific location in the grid, which appears to be the precise spot for the building. Considering the drone's current altitude and the coordinates of the building, it's clear that the drone is far above the building, potentially missing the target.
+<Action>(5, 0, -30)</Action>
+</Reasoning>
+
+<Reasoning>
+Upon analyzing the coordinates, it seems the building is situated near the center of the image. Given that the drone is currently at a higher altitude, it is necessary to descend to get a closer view and confirm the building's presence.
+<Action>(7, 0, -20)</Action>
+</Reasoning>
+
+<Reasoning>
+The drone needs to descend further to reach the building's vicinity. The coordinates show that the building is closer to the bottom center of the image, and it's evident that without further action, the drone won't be able to confirm the building's location.
+<Action>(9, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>
+The drone should continue to descend to get a closer view of the area around the coordinates provided. The building is clearly visible and within view, considering the current altitude.
+<

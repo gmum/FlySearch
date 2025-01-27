@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    Since my current altitude is 73 meters above ground level, I will adjust my altitude to be closer to the ground to enhance my chances of spotting the subject. I will fly lower since the instruction specifies being below 10 meters relative to the object when found. Since the image shows a large green area with numerous points marked, I should center my search on each point individually to maximize the chances of locating the subject.\n    </Reasoning>\n    <Action>(0, 0, -73)</Action>\n\n    <Reasoning>\n    After adjusting my altitude, I will begin a methodical search by moving to the nearest point in the grid that is potentially close to the subject's location. I will assess the area around this point for the subject.\n    </Reasoning>\n    <Action>(1, 0, -73)</Action>\n\n    <Reasoning>\n    If the subject is not found in the immediate vicinity, I will proceed to the next grid reference point, adjusting my altitude to be close to the ground as I move to ensure a thorough search.\n    </Reasoning>\n    <Action>(2, 0, -73)</Action>\n\n    <Reasoning>\n    Once I have scanned the surrounding area,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    With my current altitude at 1 meter above ground level, I will need to fly closer to the ground to meet the search objectives. I will maneuver to the first point in the grid that could potentially be the object's location, given the instruction to fly below 10 meters relative to it upon finding it.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    From this point, I will systematically proceed in a grid pattern, moving to the next point that is within the search area, while staying within the altitude limit set by the instruction.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject isn't located at my current grid point, I will continue to move to the next until it is spotted or I complete the search area. I must remain vigilant to ensure that I do not exceed the altitude and movement limits given.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    Upon finding the object, I will adjust my altitude to be 10 meters below it or higher to comply with the instruction of being below"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    At this lower altitude, my focus will be on scanning the ground closely while adhering to the command of flying below 10 meters relative to the subject when found. I will begin at the point closest to the subject's predicted location and continue to move systematically to cover all areas efficiently within the constraints provided.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    Moving from my starting point, I will navigate through the grid, being mindful of the search area limitations and keeping a close watch on the ground. If the subject is not in the first grid point, I will continue to move in a grid pattern, ensuring full coverage within the given search space.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    After the initial sweep of the area, I will remain in this lower altitude, continuing to scan the grid points for the subject. I will make adjustments to my altitude as needed, but I will prioritize staying within the altitude limit and maintaining a thorough search.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    If"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    With the UAV at 1 meter above ground level, the initial move will be towards the grid point that is at the shortest distance from the predicted location of the subject. This ensures we cover the area quickly while also being compliant with the requirement to fly below the object when it's seen.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    From this starting point, the UAV will navigate through the grid in a structured pattern, ensuring no area is missed. The altitude will be managed to stay as close as possible to the ground within the operational limits.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    Continuously checking each grid point for the subject while maintaining the required altitude is crucial. If the subject is not located at the current grid point, the UAV will proceed to the next grid point close to the predicted location of the subject.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    Upon locating the subject, the UAV will adjust its altitude to be as close to the ground as possible, ensuring it meets"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    At an altitude of 1 meter above ground level, I must optimize my search pattern to ensure a thorough examination of the area. I will start by moving to the coordinates that are nearest to the estimated location of the subject while being close to the ground.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    As I move through the grid, I will adjust my altitude to stay as low to the ground as possible. This will increase the likelihood of detecting the subject if it is present in the area.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the initial grid point has not yielded the subject, I will proceed to the next grid point that is close to the object's predicted location. I will maintain this pattern and adjust my search based on the feedback from the search pattern each time.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject is not in the immediate vicinity of the current grid point, I will extend my search to the next closest grid point. I will continue this pattern, ensuring that I cover the search area effectively while ad"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    With the UAV at 1 meter above ground level, it is crucial to maintain the lowest possible altitude while still ensuring visibility of the ground. This altitude optimizes the search area and increases the likelihood of detecting the subject.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    I will move across the grid in a structured manner, ensuring that each point is thoroughly scanned for the subject. Since the subject must be within 10 meters below the drone when found, I must stay as low to the ground as possible while respecting the altitude constraints.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject is not detected at the current point, I will move to the next closest point that is potentially within the search area. This will ensure a comprehensive search within the given parameters.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    Upon locating the subject, I will decrease my altitude to be 10 meters below ground level, as instructed, and then return to scanning the area for any other possible subjects. I"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    At an altitude of 1 meter above ground level, I will adjust my search pattern to ensure thorough coverage of the area. I will prioritize points close to the object's predicted location to optimize the search process.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    As I scan the grid, I will maintain this low altitude to increase the probability of detecting the subject. I will alternate between different grid points to ensure that my search is comprehensive.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject is not near the grid points I have checked, I will move to the next closest points, continuing the systematic search. I"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    Starting at an altitude of 1 meter above ground level, I will begin moving in a grid pattern, taking into consideration the surrounding terrain and vegetation to optimize the search area. This altitude allows for a detailed search while adhering to the instruction of flying below 10 meters relative to the object when found.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    Following the initial move, I will proceed to the grid points that are nearest to the predicted location of the subject. This ensures that my search is focused and efficient in finding the subject.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject is not found in the first two grid points, I will continue to move in a grid pattern, scanning each point thoroughly. I will only adjust the altitude when necessary and within the limits provided.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    Upon finding the subject, I will adjust my altitude to be 10 meters below the ground level, as instructed, and then continue to scan the area for any other potential subjects. The"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    With the UAV at 1 meter above ground level, I will carry out a systematic search of the area, moving in a grid pattern to ensure that every potential location of the subject is covered. I will prioritize points that are closer to the subject's predicted location.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    As I proceed through the grid points, I will maintain this low altitude to maximize the visibility of the ground and potential signs of the subject. I will continue this pattern, making adjustments as necessary, until the subject is found.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject is not located at the grid points I have checked, I will move to the next closest point. This methodical approach will ensure that the search is thorough and that no potential location is overlooked.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    Upon finding the subject, I will adjust my altitude to be 10 meters below ground level to comply with the instruction. I will then begin scanning the area again for any additional subjects."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n    At this altitude, the UAV's search pattern will be adjusted to ensure the most efficient use of the search area. The UAV will systematically move through the grid, prioritizing points close to the subject's predicted location.\n    </Reasoning>\n    <Action>(-1, 0, -1)</Action>\n\n    <Reasoning>\n    The UAV will continue to scan each grid point, making adjustments to its altitude and search pattern as necessary to cover the area effectively. This methodical approach will ensure a thorough search while adhering to the operational limits.\n    </Reasoning>\n    <Action>(-2, 0, -1)</Action>\n\n    <Reasoning>\n    If the subject is not located near the grid points initially scanned, the UAV will proceed to the next closest points. The UAV will continue this systematic movement of the grid while staying vigilant for any signs of the subject.\n    </Reasoning>\n    <Action>(-3, 0, -1)</Action>\n\n    <Reasoning>\n    Upon locating the subject or if the search area is exhausted, the UAV will lower its altitude to 10 meters below ground level and then resume scanning the area for any additional subjects"
+    ]
+]

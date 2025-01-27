@@ -1,0 +1,2 @@
+ <Action>(0, -1, -2)</Action>
+<Reasoning>I'm moving the drone even closer to the (-1, -1, -1) coordinate to keep a safe distance from the terrain. The drone now has a better angle to scan for the anomaly without risking collision.</Reasoning>

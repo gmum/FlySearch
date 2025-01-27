@@ -1,0 +1,10 @@
+ <Reasoning>I need to move to the grid (0, 0) to avoiding the building. The object might be around the grid (0, 0). Moving to the grid (0, 0) should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(0, 0, -40)</Action>
+<Reasoning>I need to move to the grid (-10, 0) to get closer to the object. The object might be around the grid (-10, 0). Moving to the grid (-10, 0) should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(-10, 0, -50)</Action>
+<Reasoning>I need to move to the grid (-15, 0) to get closer to the object. The object might be around the grid (-15, 0). Moving to the grid (-15, 0) should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(-15, 0, -60)</Action>
+<Reasoning>I need to move to the grid (-20, 0) to get closer to the object. The object might be around the grid (-20, 0). Moving

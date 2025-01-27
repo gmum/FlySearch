@@ -1,0 +1,10 @@
+ <Reasoning>I am starting with a higher altitude, so I need to descend to be closer to the fire. Moving to the south will help me get closer to the fire.</Reasoning>
+<Action>(-1, 0, 68)</Action>
+
+<Reasoning>I will continue to move down to get closer to the fire. It's important to be as close as possible to confirm the fire's presence.</Reasoning>
+<Action>(-2, 0, 65)</Action>
+
+<Reasoning>I am now within 10 meters of the fire. I will confirm the fire visually.</Reasoning>
+<Action>(-2, 0, 10)</Action>
+
+<Reasoning>I have found the fire and am confirming it visually.

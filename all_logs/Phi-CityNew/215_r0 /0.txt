@@ -1,0 +1,14 @@
+ <Reasoning>The object that doesn't fit in with the rest is the yellow point on the image.</Reasoning>
+<Action>(0, 0, -85)</Action>
+<Reasoning>I am flying lower to the object to get a closer look and confirm if it is the anomaly.</Reasoning>
+<Action>(0, 0, -100)</Action>
+<Reasoning>I have now gotten closer to the object and am performing a vertical scan.</Reasoning>
+<Action>(0, 0, -105)</Action>
+<Reasoning>The yellow point is indeed the anomaly. It is lower than the surrounding structure and different in color.</Reasoning>
+<Action>(0, 0, -110)</Action>
+<Reasoning>I am maintaining my altitude and examining the object thoroughly.</Reasoning>
+<Action>(0, 0, -110)</Action>
+<Reasoning>I am noting the surroundings of the anomaly to avoid annotating incorrect areas.</Reasoning>
+<Action>(0, 0, -110)</Action>
+<Reasoning>I am now in the correct location to confirm the anomaly.</Reasoning>
+<Action>(0, 

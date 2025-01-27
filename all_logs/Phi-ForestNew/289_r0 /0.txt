@@ -1,0 +1,19 @@
+ <Reasoning>A large white object is too different from the surrounding green environment, it's likely the anomaly we are looking for.</Reasoning>
+
+<Action>(0, 0, -100)</Action>
+
+<Reasoning>I have found the object. I am at most 10 meters low relative to it and in its center of view.</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am too high above the object. It's not in my field of view.</Reasoning>
+
+<Action>(0, 0, -9)</Action>
+
+<Reasoning>No significant change in my view. The object is still far away.</Reasoning>
+
+<Action>(0, 0, -8)</Action>
+
+<Reasoning>Still not close to the object. I need to move closer.</Reasoning>
+
+<Action>(0, 0, -7)</Action>

@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I am still running into the wall. I should have realized, that I need to go straight up to avoid it. I will move to (0,0) and increase the altitude by 100 meters. This should definitely clear the wall and let me see the fire.</Reasoning>
+<Action>(0, 0, 100)</Action>
+```

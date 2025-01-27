@@ -1,0 +1,4 @@
+<Reasoning>I have located the object in the center of the image at coordinates (0, 0). I will now fly directly above it and center my view on the object to ensure I am at an altitude of 10 meters or less.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+FOUND

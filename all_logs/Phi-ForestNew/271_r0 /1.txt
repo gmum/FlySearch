@@ -1,0 +1,16 @@
+ <Reasoning>Starting from the middle of the grid as indicated by the (0,0) coordinates, I will move to the left and slightly down to be above and close to the object in question.</Reasoning>
+<Action>(-2, -2, -10)</Action>
+
+<Reasoning>I will now move to the left and slightly down to increase my proximity to the object.</Reasoning>
+<Action>(-4, -2, -10)</Action>
+
+<Reasoning>I will move further to the left and down to maintain a close view of the object.</Reasoning>
+<Action>(-6, -2, -10)</Action>
+
+<Reasoning>I have maintained a consistent altitude and moved within the search area. I now need to move to the left and slightly up to ensure I am not too high and still close to the object to perform a thorough search.</Reasoning>
+<Action>(-8, -1, -10)</Action>
+
+<Reasoning>I will now perform a final check by moving to the left and just below the previous altitude to ensure I am close enough while not being too high.</Reasoning>
+<Action>(-10, -1, -10)</Action>
+
+<Reasoning>I have located

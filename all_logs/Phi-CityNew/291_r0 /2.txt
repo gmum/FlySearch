@@ -1,0 +1,8 @@
+ <Finding>
+
+<Reasoning>
+The drone is currently at (0, 0, 99) meters, so it needs to descend by 10 meters to be at maximum of 90 meters above ground level, which is below the object in question (at 80 meters).
+</Reasoning>
+<Action>(0, 0, 90)</Action>
+
+</Finding>

@@ -1,0 +1,8 @@
+ <Reasoning>Given my current altitude, I have a better view of the area. I should move to a different spot to increase my chances of finding the trash pile. I must also ensure that I am below the altitude limit while moving.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+
+<Reasoning>By moving to a better vantage point, I should be able to see more of the area and spot the trash pile. It's crucial to continue scanning for the object while staying within the altitude constraints.</Reasoning>
+<Action>(-2, 0, -5)</Action>
+
+<Reasoning>The object might not be immediately visible, but I will move to a spot that could provide a clearer view. It's essential to adjust my altitude to maximize the likelihood of finding the trash pile.</Reasoning>
+<Action>(-1, 0, -4)</Action>

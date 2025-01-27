@@ -1,0 +1,19 @@
+ <Reasoning>
+    The object that does not fit is likely at a lower altitude than I am currently at (0,0). I will move to (-1,0) to get closer to the object and have more altitude available to descend towards the object.
+</Reasoning>
+<Action>(-1, 0, -10)</Action>
+
+<Reasoning>
+    I am at (-1, 0), and the object is still not clear. I will move to (-2, 0) to zoom in even more and find the object.
+</Reasoning>
+<Action>(-2, 0, -20)</Action>
+
+<Reasoning>
+    I am at (-2, 0), and the object is becoming more visible, but I am still not sure if it is the one. I will move to (-3, 0) to get even closer.
+</Reasoning>
+<Action>(-3, 0, -20)</Action>
+
+<Reasoning>
+    Finally, I am at (-3, 0), and the object is visible. It is the one I was looking for. I am 10 meters below it, which is within the acceptable range.
+</Reasoning>
+<Action>(-3, 0, -10)</Action>

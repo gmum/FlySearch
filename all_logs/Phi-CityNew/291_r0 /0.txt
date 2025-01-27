@@ -1,0 +1,8 @@
+ <Finding>
+
+<Reasoning>
+The drone is currently at (0, 0, 99) meters, which means it is 99 meters above ground. Since the objective is to find an object at most 10 meters below the drone when replying with "FOUND", the drone needs to descend to 89 meters. The object in question appears to be at (0, 0, 0) meters, so the drone needs to descend by 10 meters.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+</Finding>

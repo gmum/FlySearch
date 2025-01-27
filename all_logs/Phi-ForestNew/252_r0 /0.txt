@@ -1,0 +1,4 @@
+ <Reasoning>
+  Since my current altitude is 79 meters above ground level, I need to descend to 69 meters to find the object below 10 meters.
+</Reasoning>
+<Action>(0, 0, -10)</Action>

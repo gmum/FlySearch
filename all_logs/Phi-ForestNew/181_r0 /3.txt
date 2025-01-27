@@ -1,0 +1,13 @@
+ <Reasoning>The trash pile's location is now visible, and it's surrounded by dense vegetation. I'll drop to a lower altitude to ensure I don't miss it.</Reasoning>
+<Action>(11, -10, -5)</Action>
+
+<Reasoning>The object is right where I thought it would be, but it's surrounded by trees. I'll need to get closer to confirm it's the trash pile.</Reasoning>
+<Action>(7, -10, -5)</Action>
+
+<Reasoning>I've confirmed that the object is indeed the trash pile. It's partially obscured by foliage, but now it's clear. I'll hover over it to ensure I'm not missing any details.</Reasoning>
+<Action>(0, -10, -5)</Action>
+
+<Reasoning>Now that I've confirmed it's the trash pile, I'll maintain a steady altitude to get a better look and ensure it's completely in my field of view.</Reasoning>
+<Action>(0, -10, -5)</Action>
+
+<Reasoning>The area around the trash pile is not safe, with potential obstacles nearby. I'

@@ -1,0 +1,114 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 69 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nThe object in question likely corresponds to one of the grid coordinates that is close to the edge of the image. I will move towards the center of the image, which should be the best overall approach, and then react accordingly to the specific coordinates of the object.\n</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>\nNow, I will move closer to the coordinates that I initially targeted. The grid coordinates are likely to lead to the object in question.\n</Reasoning>\n<Action>(5, 0, -10)</Action>\n\n<Reasoning>\nI'll continue moving closer to the coordinates by adjusting the altitude to be even lower.\n</Reasoning>\n<Action>(4, 0, -20)</Action>\n\n<Reasoning>\nIf the object is not at the coordinates I'm moving to, I need to make a slight adjustment to my course towards the eastern side of the image, which would possibly bring me closer to its location.\n</Reasoning>\n<Action>(4, 1, -20)</Action>\n\n<Reasoning>\nI'll try moving slightly to the left, away from the middle of the image. This should bring me closer to the object and possibly within the 1"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 69 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nBased on the grid provided, I'll start by moving towards the center of the image where the object of interest might be located. It's important to stay within the image's boundaries to prevent hitting any objects outside of the view.\n</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>\nI'll proceed to the coordinates that seem to be in the vicinity of the object, possibly leading to the location.\n</Reasoning>\n<Action>(1, 0, -10)</Action>\n\n<Reasoning>\nNow, to get closer to the potential object, I'll move down further to get a better view.\n</Reasoning>\n<Action>(1, 0, -20)</Action>\n\n<Reasoning>\nI'll make a slight adjustment to my direction to see if the object could be on the right side of the image.\n</Reasoning>\n<Action>(0, 1, -20)</Action>\n\n<Reasoning>\nIf the object is not yet visible, I will perform another directional adjustment to increase the possibility of locating it.\n</Reasoning>\n<Action>(0, 2, -20)</Action>\n\n<Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 69 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI will first move towards the grid coordinates that are most likely to be in the vicinity of the object. This will allow me to have the best possible view of the area where the object might be located.\n</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>\nI will now move to the coordinates that are adjacent to the potential object location.\n</Reasoning>\n<Action>(1, 0, -10)</Action>\n\n<Reasoning>\nI'll continue to move closer to the object by making a slight downward movement to reduce my altitude.\n</Reasoning>\n<Action>(1, 0, -20)</Action>\n\n<Reasoning>\nIf the object is not at the coordinates I'm moving to, I will adjust my direction slightly to the right to explore more of the image.\n</Reasoning>\n<Action>(0, 1, -20)</Action>\n\n<Reasoning>\nI'll carefully survey the area to the right side of the image to ensure that the object is being covered.\n</Reasoning>\n<Action>(0, 2, -20)</Action>\n\n<Reasoning>\nIf necessary, I'll take a step to the"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 69 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI will make my way to the coordinates that are closest to the object's location on the grid. This should bring me into a better position to spot the object.\n</Reasoning>\n<Action>(0, -1, -10)</Action>\n\n<Reasoning>\nI'll now move downward to get a better angle of the potential object.\n</Reasoning>\n<Action>(1, -1, -10)</Action>\n\n<Reasoning>\nIf the object is not directly at the coordinates I'm moving to, I'll adjust my direction slightly to the right to explore more of the image.\n</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 59 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nBased on the grid, I'll start by moving towards the coordinates that are closer to the object. This should help me get a better view of the area around the object.\n</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>\nI'll now move to the coordinates that are adjacent to the potential object location.\n</Reasoning>\n<Action>(1, 0, -10)</Action>\n\n<Reasoning>\nI'll continue to move closer to the coordinates that seem to be in the vicinity of the object.\n</Reasoning>\n<Action>(2, 0, -10)</Action>\n\n<Reasoning>\nIf the object is not yet visible, I will adjust my direction slightly to the right to explore more of the image.\n</Reasoning>\n<Action>(2, 1, -10)</Action>\n\n<Reasoning>\nI'll continue to survey the area to"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 59 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nBased on the grid, I'll start by moving towards the coordinates that are closer to the object. This should help me get a better view of the area around the object.\n</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 59 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI will be moving closer to the coordinates that are adjacent to the potential object location on the grid. This should bring me into a better position to spot the object.\n</Reasoning>\n<Action>(1, 0, -10)</Action>\n\n<Reasoning>\nI'll continue to move downward to get a better angle to the potential object.\n</Reasoning>\n<Action>(2, 0, -10)</Action>\n\n<Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nBased on the grid, I'll make my way to the coordinates that are closest to the object. This should help me get a better view of the area around the object.\n</Reasoning>\n<Action>(0, 0, 0)</Action>\n\n<Reasoning>\nI'll now move to the coordinates that are adjacent to the potential object location.\n</Reasoning>\n<Action>(1, 0, -10)</Action>\n\n<Reasoning>\nI'll continue to move closer to the coordinates that seem to be in the vicinity of the object.\n</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI will be moving closer to the coordinates that are adjacent to the potential object location on the grid. This should bring me into a better position to spot the object.\n</Reason"
+    ]
+]

@@ -1,0 +1,5 @@
+ <Reasoning>I can see the building from this altitude. I'll start my descent to investigate it and confirm its location.</Reasoning>
+<Action>(5, 22, 0)</Action>
+
+<Reasoning>The building is clearly visible now, and I'm able to confirm its coordinates. I'll make my move to report the successful search.</Reasoning>
+<Action>(0, 22, 0)</Action>

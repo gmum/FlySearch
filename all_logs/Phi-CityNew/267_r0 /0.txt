@@ -1,0 +1,21 @@
+ <Response>
+
+    <Reasoning>
+        I need to start my search from the area that seems to have the most detail. The area on the bottom left of the image has more visible elements that could be part of the infrastructure. Thus, I will start there and look for any sign of an object that stands out from the surroundings.
+    </Reasoning>
+    <Action>(-52, 0, -10)</Action>
+
+    <Reasoning>
+        The object I am looking for does not seem to be in the bottom left. I should move to the area where the environment appears less detailed, which might be the middle of the image, to reduce the number of features to look at.
+    </Reasoning>
+    <Action>(-52, 0, -10)</Action>
+
+    <Reasoning>
+        The object I am looking for is not in the middle of the image. Therefore, I will move to the right side of the image to cover a different area and to have a broader view of the environment.
+    </Reasoning>
+    <Action>(-52, 0, -10)</Action>
+
+    <Response>
+
+    <Reasoning>
+        The object I am looking for is not in the right side of the image. Therefore, I will

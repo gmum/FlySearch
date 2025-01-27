@@ -1,0 +1,29 @@
+ 
+
+<Action space>
+
+To move the drone to a specific coordinate on the grid, you would use the format <Action>X,Y,Z</Action>, where X and Y are the map coordinates and Z is the altitude.
+
+For instance, to reach coordinates (13, 13) with an altitude of 0 meters above ground level, you would use the command: <Action>(13, 13, 0)</Action>.
+
+The coordinates represent location on the map, where the first number stands for the horizontal position (easting or northing), and the second number for the vertical position (elevation).
+
+<Reasoning>
+
+Since I do not have visual capabilities, I cannot identify specific objects or areas of interest on the map. Therefore, I cannot provide an action that would lead to finding a campsite or any other object.
+
+</Reasoning>
+
+</Action space>
+
+
+<Limitations>
+
+You should avoid coordinates outside your current field of view to prevent collisions. The drone's altitude should not exceed 120 meters, and the search area is confined to 400 by 400 meters from the drone's starting position.
+
+</Limitations>
+
+
+<Controls>
+
+The drone's movement is constrained by altitude and

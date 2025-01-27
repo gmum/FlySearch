@@ -1,0 +1,146 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 91 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I don't see any obvious anomalies from this height. I should go down and search the area around (0,0). I'll go down to 60 meters so I can still see the overall area, but closer than before.</Reasoning>\n<Action>(0, 0, -31)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 60 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Still nothing obvious at this height. I'll go down to a lower altitude. I will target the middle of the screen, roughly around (0,0). I'll go down to 10 meters to make the object stand out if I am near it.</Reasoning>\n<Action>(0, 0, -50)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I seem to have flown too close to a building. I should go up to 25 meters and move to the right to a free space. I'll check out the area around (20, 0).</Reasoning>\n<Action>(20, 0, 6)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Okay, I need to stay within the bounds of the last image. I should go up to 25 meters and try to go to the area that was around (0, 0) but slightly to the right, to (6,0), so that I do not fly into a building.</Reasoning>\n<Action>(6, 0, 6)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 25 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see a ladder on the right and I am near a wall. I should move a bit higher and to the left. I will go to (-8,0) and fly 20 meters up to 45 meters of altitude.</Reasoning>\n<Action>(-8, 0, 20)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see a water tower to my right and some kind of metal structure. I am still not seeing any anomalies. I will go down to 10 meters and move the drone to the center of the screen to check the area more closely.</Reasoning>\n<Action>(0, 0, -35)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I've again flown too close to a wall. I need to go up to a safer altitude and move to a different area. I'll fly up to 30 meters and move to the area around (15, 0) where I saw a water tower. That should be a more open space.</Reasoning>\n<Action>(15, 0, 11)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see the water tower now.  I'll move to the right a bit to get out of the shadow and then go down to check the area more closely around (10, 0). I'll go down to 9 meters.</Reasoning>\n<Action>(10, 0, -21)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am close to something again. I need to back up and reassess. I'll go up to 30m again, then move left to around (0,0) to get away from the water tower.</Reasoning>\n<Action>(0, 0, 3)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can't see anything, which means I'm inside a building. I need to go up and find a good open area again. I'll go up to 60 meters and stay in the same x,y location (0,0) to see the surroundings.</Reasoning>\n<Action>(0, 0, 30)</Action>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 60 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see a tower to the left and some other objects, but nothing stands out as an anomaly from this height. I'll move to x=20, y=0 and go down to 10 meters to check out the area closer.</Reasoning>\n<Action>(20, 0, -50)</Action>\n"
+    ]
+]

@@ -1,0 +1,28 @@
+ <Action>(-39, -1, -1)</Action>
+<Reasoning>
+This is a more strategic move by flying lower to stay in the area with the potential fire sign, which is a yellowish patch on the road.
+</Reasoning>
+
+<Action>(-39, 0, -1)</Action>
+<Reasoning>
+I am confirming that I am still above 10 meters altitude relative to the yellowish patch.
+</Reasoning>
+
+<Action>(-39, 0, 0)</Action>
+<Reasoning>
+I am flying parallel to the road to maintain a steady check on that particular area.
+</Reasoning>
+
+<Action>(-39, -1, 0)</Action>
+<Reasoning>
+This is to check for any signs of smoke or fire in the air, as it is not visible from the current position.
+</Reasoning>
+
+<Action>(-39, -2, 0)</Action>
+<Reasoning>
+I am continuing to scan for any signs of fire by moving steadily among the cars and road.
+</Reasoning>
+
+<Action>(-39, -1, 1)</Action>
+<Reasoning>
+I am flying above the yellow

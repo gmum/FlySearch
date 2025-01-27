@@ -1,0 +1,13 @@
+ <Reasoning>I will start by moving towards the center of the image, as there is a concentration of points around the center, which might indicate a higher probability of the target being there. This will also help me get a better view of the surroundings.</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now, I will move towards the lower left corner of the image where there is a point labeled (51, 51), which seems like a potential target area. Given its isolated nature and the fact that it's one of the higher points on the grid, it's a strategic point to start the search.</Reasoning>
+
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning>I will now focus on the lower left portion of the image to check for any signs of the person. The area around (51, 51) seems promising as it is one of the highest points in this region.</Reasoning>
+
+<Action>(-10, -5, 0)</Action>
+
+<Reasoning>The point (25, 51) is another high point on the grid. Since I am moving within the 10-meter limit, I will head towards this point to investigate it more closely.</Reasoning

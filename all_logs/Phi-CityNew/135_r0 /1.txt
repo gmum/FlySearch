@@ -1,0 +1,16 @@
+ <Reasoning>Since I'm already at 1 meter, I can maintain my current altitude to avoid potential collisions with the ground.</Reasoning>
+<Action>(0, 0, 1)</Action>
+
+<Reasoning>Staying at 1 meter, but slightly to the north, will increase the likelihood of spotting the object assuming it's north of the current position.</Reasoning>
+<Action>(0, 0.1, 1)</Action>
+
+<Reasoning>It's time to scan the area. If the object isn't visible, I'll make another pass and adjust my altitude accordingly.</Reasoning>
+<Action>(0, 0.1, 1)</Action>
+
+<Reasoning>As I'm still not spotting the object, I'll take a higher altitude to scan a larger area in the next move.</Reasoning>
+<Action>(0, 0.1, 3)</Action>
+
+<Reasoning>I've searched the area with the new altitude, but still no sign of the object. I'll adjust my altitude again.</Reasoning>
+<Action>(0, 0.1, 1)</Action>
+
+<Reasoning>Upon further scanning, there's

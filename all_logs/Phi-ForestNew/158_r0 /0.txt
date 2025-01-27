@@ -1,0 +1,4 @@
+ <Action space="1">
+    <Action>(-5, 0, 30)</Action>
+    <Reasoning>The coordinates of the point in the center of my field of view are (-5, 0, 30). This point seems to be the trash pile because it is yellow and is located in a terrain that looks like a dirt area. I will move there to fly below 10 meters relative to it and check for the trash pile.</Reasoning>
+</Action space>

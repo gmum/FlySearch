@@ -1,0 +1,7 @@
+ <Reasoning>Since the object is no longer visible at this altitude, I need to evacuate to a lower altitude to proceed with the search.</Reasoning>
+<Action>(0, 0, 3)</Action>
+
+<Reasoning>The object is still not clearly visible, so I will go further south to increase my chances of detecting it.</Reasoning>
+<Action>(0, 0, -7)</Action>
+
+<Reasoning>The object appears to be in the distance. I need to fly further south to cover more area   

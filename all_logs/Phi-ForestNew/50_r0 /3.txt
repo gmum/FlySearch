@@ -1,0 +1,34 @@
+ <Reasoning>
+    I cannot continue flying at this altitude. I'm too low.
+</Reasoning>
+<Action>
+    (0, 0, -25)
+</Action>
+
+<Reasoning>
+    I need to back up to ensure I'm not hit by any possible obstacles.
+</Reasoning>
+<Action>
+    (-1, 0, -19)
+</Action>
+
+<Reasoning>
+    I need to find a safe area to continue my search.
+</Reasoning>
+<Action>
+    (1, 1, 1)
+</Action>
+
+<Reasoning>
+    I need to be cautious and plan my next move.
+</Reasoning>
+<Action>
+    (-1, 1, 1)
+</Action>
+
+<Reasoning>
+    I need to fly higher to avoid collisions.
+</Reasoning>
+<Action>
+    (1, -1, 1)
+</Action>

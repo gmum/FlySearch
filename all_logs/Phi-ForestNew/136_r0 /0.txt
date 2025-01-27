@@ -1,0 +1,24 @@
+ <Reasoning>
+
+    Given the current altitude of 52 meters, I will initially move closer to the ground to increase my chances of finding the building. I will then analyze the surrounding points to determine my next move.
+
+</Reasoning>
+<Action>
+    (0, -10, -30)
+</Action>
+
+<Reasoning>
+This decision was made based on the following:
+    The building is located at approximately (0, 0) and (35, -35) on the grid, which are south of the starting position. Moving south will align me with the building's general location.
+    The points at (35, 0) and (0, 0) are at a similar distance from the object, but without additional information on the object's size or shape, I cannot determine which direction will get me closer.
+    The building is not yet in my field of view.
+    I have made fewer movements than my maximum allowed, so I have not yet reached my limit of 9 moves.
+
+</Reasoning>
+<Action>
+    (5, -10, -30)
+</Action>
+
+<Reasoning>
+Now closer to the ground, my next move should bring me closer to one of the two potential building locations
+    I have made 3 moves, and

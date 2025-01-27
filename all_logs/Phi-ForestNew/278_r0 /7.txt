@@ -1,0 +1,24 @@
+ <Reasoning>
+  I'm starting my search by looking for the grid coordinates that are closest to the objects in the image.
+</Reasoning>
+<Action>(-16, 6, -10)</Action>
+
+<Reasoning>
+  In the eighth image, the grid coordinates closest to any potential object are (-16, 6). I'll check there first.
+</Reasoning>
+<Action>(-16, 6, -5)</Action>
+
+<Reasoning>
+  Now, let's move the drone to the coordinates (-16, 6) and look for the object.
+</Reasoning>
+<Action>(-16, 6, -0)</Action>
+
+<Reasoning>
+  I've reached the coordinates and checked the area thoroughly, but I didn't find any object. So, I need to move to a different set of coordinates that might be the object.
+</Reasoning>
+<Action>(-16, 6, -10)</Action>
+
+<Reasoning>
+  I'll move down to -10 meters to get a closer view, and then I'll check if the object is there.
+</Reasoning>
+<Action>(-16, 

@@ -1,0 +1,6 @@
+ <Reasoning>I have identified a yellow point on the lower floor that seems to be the object. I need to get closer to confirm if it's the object or not.</Reasoning>
+<Action>(5, -10, -15)</Action>
+<Reasoning>I am now centered over the yellow point, which I'm sure is the object. I will reply with FOUND.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>I am now hovering at ground level. I have found the object and will reply with FOUND to indicate completion of the task.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,14 @@
+ <Reasoning>Since the object I am searching for is at or near the 0, -40 coordinates on the grid, I need to move slightly south to get a closer look.</Reasoning>
+<Action>(0, -0, -10)</Action>
+
+<Reasoning>I have successfully located the object at the coordinates (0, -40). I will now move closer to confirm its nature and exact position.</Reasoning>
+<Action>(5, -0, -5)</Action>
+
+<Reasoning>The object is now clearly visible, and its coordinates are (0, -40). I must ensure I am 0 meters above it to confirm the presence of the fire.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have confirmed that the object is indeed a fire located at (0, -40), and I am 0 meters above it. The search objective is completed.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now, I must return to my starting altitude and maintain a safe distance from the structure.</Reasoning>
+<Action>(0, 0, 0)</Action>

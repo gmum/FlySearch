@@ -1,0 +1,20 @@
+ <Action style="font-size: 20px; color: green;">
+    <Reasoning>
+        I will fly lower to get closer to the ground and be more likely to find the fire.
+    </Reasoning>
+    <Action>(15, 0, -25)</Action>
+</Action>
+
+<Action style="font-size: 20px; color: green;">
+    <Reasoning>
+        I am centered on the grid and looking for the fire in the image.
+    </Reasoning>
+    <Action>(10, 0, -5)</Action>
+</Action>
+
+<Action style="font-size: 20px; color: green;">
+    <Reasoning>
+        I have found an object that likely is the fire I am looking for. I am now at a height that is 10 meters below the object.
+    </Reasoning>
+    <Action>(15, 0, -25)</Action>
+</Action>

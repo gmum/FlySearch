@@ -1,0 +1,11 @@
+ <Reasoning>I am at an appropriate altitude to search for the police car. I should be able to see if it is in my visible area below the drone.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I need to be precise in my movements to ensure that the police car is within my field of view. I will make small adjustments to my y-coordinate to stay within the visible area.</Reasoning>
+<Action>(0, -1, -10)</Action>
+
+<Reasoning>I will now scan the area to check for the presence of the police car. Being at a lower altitude increases the chance of identifying the car.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After scanning the area, it is confirmed that the police car is present. I am now in a position where I can accurately spot the car and declare it found.</Reasoning>
+<Action>(0, 0, 0)</Action>

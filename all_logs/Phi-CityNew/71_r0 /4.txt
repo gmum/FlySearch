@@ -1,0 +1,16 @@
+ <Reasoning>No clear fire spots are visible in this image. I will attempt to move to areas with potential signs of a fire based on the coordinates provided.</Reasoning>
+<Action>((-1, -1, -10))</Action>
+
+<Reasoning>Despite the poor visibility, I will continue to scan the area for signs of fire, adjusting my altitude and position as necessary.</Reasoning>
+<Action>((-1, -1, -5))</Action>
+
+<Reasoning>I will now make adjustments to hover at a lower altitude, preparing for a detailed search of the area.</Reasoning>
+<Action>((-1, -1, -2))</Action>
+
+<Reasoning>I will be cautious with my movements, focusing on the coordinates that match the description of the potential fire area.</Reasoning>
+<Action>((-1, -1, -0))</Action>
+
+<Reasoning>I will scan the area more thoroughly, keeping in mind the coordinates that could lead to the fire's location.</Reasoning>
+<Action>((-1, -1, -1))</Action>
+
+<Reasoning>I will be vigilant in my search, paying close attention to any changes in the environment that may indicate

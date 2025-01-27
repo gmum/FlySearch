@@ -1,0 +1,14 @@
+ <Reasoning>I will start by moving towards a point with a lower coordinate value on the y-axis to reduce altitude and increase the chance of spotting the fire on the ground.</Reasoning>
+<Action>((5, 0, -20))</Action>
+
+<Reasoning>Now, I will move slightly upwards to reach the highest altitude allowed, which is 120 meters, before focusing on the ground search.</Reasoning>
+<Action>((10, 0, -15))</Action>
+
+<Reasoning>After ensuring I'm within my altitude limits, I will hover at a lower altitude to search the area for the fire, emphasizing the need to be as low as possible within the guidelines.</Reasoning>
+<Action>((10, 0, -10))</Action>
+
+<Reasoning>Since the image does not clearly show the fire, I will adjust my position to scan a wider area while keeping the coordinates in mind to narrow down the search space.</Reasoning>
+<Action>((1, 0, -20))</Action>
+
+<Reasoning>I will continue to move horizontally to cover more ground and spot the fire, taking into account the constraints and the given coordinates for my abilities.</Reasoning>
+<

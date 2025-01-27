@@ -1,0 +1,2 @@
+<Reasoning>Given the instruction to find a road construction site, we should look for areas with ground-level activity that may involve machinery, workers, and materials. The grid points around (0, 0) and (0, 19) seem to be lower in the image, which could indicate a lower altitude or an object of interest on the ground. I will start by moving towards the center and slightly lowering my altitude to get a better view of the ground level.</Reasoning>
+<Action>(0, 0, -10)</Action>

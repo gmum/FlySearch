@@ -1,0 +1,9 @@
+ <Reasoning>With my current altitude being 49 meters, I should continue to descend further to get closer to the object. The yellow point on the grid appears to be the closest to the bottom of the image, which suggests I should move in its general direction.</Reasoning>
+<Action>(-10, 0, -20)</Action>
+<Reasoning>As the drone approaches the yellow point, I will need to ensure that I am flying at an appropriate angle to see the object below 10 meters.</Reasoning>
+<Action>(-15, 0, -20)</Action>
+<Reasoning>The object seems to be the yellow point on the grid. I will continue to move in its direction to keep getting closer.</Reasoning>
+<Action>(-20, 0, -20)</Action>
+<Reasoning>I am now in a position that should give me a better view of the object. I will make another move to ensure I am within the altitude limit and continue to look for the fire.</Reasoning>
+<Action>(-20, 0, -19)</Action>
+<Reasoning>As I approach the object, I need to ensure that I am not moving too far away to maintain the altitude requirement of being below 10 meters above the object.</

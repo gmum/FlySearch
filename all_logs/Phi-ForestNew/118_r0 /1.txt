@@ -1,0 +1,11 @@
+ <Reasoning>I've already taken a few steps to the direction where I believe the object might be. It's time to take another step closer to the northeast quadrant to search more thoroughly.<Action>(2, 3, 0)</Action>
+
+<Reasoning>I've found a small area that looks like a clearing or a building in the northeast of my current position. It might be the object in question. I need to adjust my position to get a closer inspection.<Action>(1, 3, 0)</Action>
+
+<Reasoning>The object is not in the small clearing, but it's possible that it is to the north of it. I'll move to the northwest to explore that area.<Action>(-1, 2, 0)</Action>
+
+<Reasoning>I'm seeing a patch of greenery that is different from the rest. It could be related to the object I'm looking for, but I need to get closer to confirm.<Action>(-1, -1, 0)</Action>
+
+<Reasoning>The clearing is too large to contain the object. I'll move further north to get a better view of the surrounding terrain.<Action>(0, 3, 0)</Action>
+
+<Reasoning>I've taken a closer

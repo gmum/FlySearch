@@ -1,0 +1,2 @@
+ <Reasoning>The image shows a complex system of buildings with a grid overlay on the ground. I need to identify an anomaly that doesn't belong with the rest of the environment. Based on the coordinates visible on the image, I will start my search around the center. I will move 5 meters south (south) to get closer to the ground, which might help me better identify if the anomaly is on the ground or stuck between buildings.</Reasoning>
+<Action>(0, 0, -10)</Action>

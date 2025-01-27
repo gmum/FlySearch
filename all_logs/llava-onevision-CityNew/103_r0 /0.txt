@@ -1,0 +1,13 @@
+<Reasoning>Given the grid, I will start by moving towards the center of the image to potentially find the fire. I'll move to (0, 0, 0) to start my search from the center.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since I'm now centered, I will lower my altitude to get a better view of the ground. I'll move down to 10 meters above the ground to be within the required altitude for spotting the fire.</Reasoning>
+<Action>(0, 0, -33)</Action>
+
+<Reasoning>At this altitude, I should be able to see if there's a fire directly below me. If I don't see it, I will need to expand my search area. For now, I will check the center point.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Since I didn't see the fire directly below me, I will now move towards the left side of the image to expand my search area. I will move to (-29, 0, 0) to check that side.</Reasoning>
+<Action>(-29, 0, 0)</Action>
+
+<Reasoning>Now that I'm at the left side, I will lower my altitude again to 10 meters to get a better view. If I find the fire, I will report it. If not,

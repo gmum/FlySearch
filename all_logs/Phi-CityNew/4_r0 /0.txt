@@ -1,0 +1,11 @@
+ <Reasoning>The object in question is likely somewhere in the lower right quadrant of the image, based on the grid visible. Since I am currently at a higher altitude, I should move closer to get a better view of the ground level. I want to be around 10 meters below the object in question to fulfill the requirement of being 10 meters or less above the ground when I found it.</Reasoning>
+<Action>(4, 0, -50)</Action>
+
+<Reasoning>I have made the move closer to the object in question, and it is now within my field of view. It is essential to ensure that I am close enough to view the object correctly and identify it as the road construction site.</Reasoning>
+<Action>(4, 0, -50)</Action>
+
+<Reasoning>The object seems to be located in a predefined area on the road. I will lower my altitude further to get a clearer view of the ground and to ensure I am within the 10 meters or less above the ground requirement.</Reasoning>
+<Action>(5, 0, -60)</Action>
+
+<Reasoning>I am now closer to the object and can confirm that it is the road construction site. I will maintain this position to avoid missing the object.</Reasoning>
+<Action>(5

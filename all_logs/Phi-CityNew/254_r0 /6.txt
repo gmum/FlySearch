@@ -1,0 +1,23 @@
+ <Reasoning>
+    I have flown too close to the bridge and would have hit it. I will make a few moves to escape.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>
+    I am now above the road and away from the bridge. I will continue to look for the object.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I am now in a good position to spot the object. I will continue to look around the buildings.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I found the yellow point on the bridge. I will move down to get a closer view.
+</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>
+    I have confirmed that the yellow point is the object in question. I will reply with "FOUND".
+</Reasoning>

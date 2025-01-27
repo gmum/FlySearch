@@ -1,0 +1,20 @@
+ <Reasoning>I need to descend quickly to avoid hitting anything on the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I've reached a safe altitude, ready to continue the search.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Reasoning>I'll move to a location with a clear view of the surrounding area.</Reasoning>
+<Action>(3, 0, 10)</Action>
+
+<Reasoning>I'm still not close enough to the object of interest.</Reasoning>
+<Action>(3, -10, 10)</Action>
+
+<Reasoning>I'll move further to the left to cover more ground.</Reasoning>
+<Action>(3, -10, 10)</Action>
+
+<Reasoning>I'm closer, but I still need to get closer to identify the object.</Reasoning>
+<Action>(3, -10, 10)</Action>
+
+<Reasoning>I have identified the object, I will fly below 10 meters relative to it and reply with "FOUND".</Reasoning>
+<Action>(3, -10, -5)</Action

@@ -1,0 +1,16 @@
+ <Reasoning>The grid overlay indicates a more organized approach is necessary. I'll begin at the grid's center and move in a pattern that allows me to systematically search for the person.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The object seems to be in the middle of the grid. It's time to move the drone closer to the object without crossing the line of sight.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The object is now visible. I will continue circling to ensure I am not missing it.</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reasoning>The object seems to be at a distance. I'll adjust the altitude to get closer for a better view.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>The object is not clearly visible in the field of view yet. I'll move the drone up slightly to get a better vantage point and search more effectively.</Reasoning>
+<Action>(0, -1, -2)</Action>
+
+<Reasoning>The object is now in the field of view. I am 1 meter below it. I

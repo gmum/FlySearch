@@ -1,0 +1,11 @@
+ <Reasoning>I've started my search in a grid point relatively close to the object; I need to systematically search to find it efficiently.<Action>(2, 2, 0)</Action>
+
+<Reasoning>The object seems to be in the northeast quadrant. I'll move further in that direction to get a closer view.<Action>(4, 4, 0)</Action>
+
+<Reasoning>The object is neither here nor there; it might be to the southwest. I'll adjust my course and try to fly further west to cover more ground.<Action>(-2, 2, 0)</Action>
+
+<Reasoning>I'm observing a patch of vegetation and no clear landmark. It's possible that the object is around this area, so I'll adjust my altitude slightly to get a closer inspection.<Action>(0, 2, -5)</Action>
+
+<Reasoning>This area seems to be void of any distinct features that match the object I'm looking for. I must adjust my position to search from a different angle.<Action>(0, -1, 0)</Action>
+
+<Reasoning>I'm closer to a potential obstacle here; I'll move to an alternative position to avoid it and continue my search.<Action>(-1,

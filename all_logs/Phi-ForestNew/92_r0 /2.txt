@@ -1,0 +1,13 @@
+ <Reasoning>I will now focus on the lower right quadrant of the image as it may have different terrain features that could be indicative of the person's location.</Reasoning>
+
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning>Strategically, I will move the drone one grid point down from (25, 51) to (25, 50) to ensure I am within the 10-meter range from the potential target area. This will allow me to have a better view of the terrain and the search pattern.</Reasoning>
+
+<Action>(-10, -5, 0)</Action>
+
+<Reasoning>Next, I will move the drone to the lower left quadrant of the image to cover a different area and increase the chances of spotting the person. The area around (25, -25) seems to be a good place to start the search as it's lower than the initial high-point target.</Reasoning>
+
+<Action>(-15, -5, 0)</Action>
+
+<Reasoning>Finally, I will move to the center of the lower right quadrant of the image, around the point (25, -25), to ensure I am scanning all the possible areas within the 

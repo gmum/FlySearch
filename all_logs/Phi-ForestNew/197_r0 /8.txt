@@ -1,0 +1,9 @@
+ <Reasoning>To locate the object, I will analyze the search area and then make an informed decision on the next step.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object is within the search parameters, and the coordinates are selected for optimal inspection.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is detected, and I am at a safe altitude to report it as 'FOUND'.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

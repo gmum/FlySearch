@@ -1,0 +1,2 @@
+ <Reasoning>With my current altitude at 51 meters, I should aim to find the object below 10 meters in altitude before making any moves. Given our previous response was at -30 meters, I should adjust my altitude accordingly to avoid moving into positions that are too far from the ground.</Reasoning>
+<Action>(0, 0, -30)</Action>

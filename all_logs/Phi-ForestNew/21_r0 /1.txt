@@ -1,0 +1,14 @@
+ <Reasoning>The fire appears to be closer to the coordinates (19, 19) than to any other point. I'll move closer to get a clearer view and if possible, get below 10 meters above the fire.</Reasoning>
+<Action>(6, 0, -30)</Action>
+
+<Reasoning>I've focused on the coordinates where the fire is likely located. I am now in the vicinity of the fire and need to fly lower to check for the object in question. I will continue to move closer to this area to ensure I'm at the right altitude to find the fire.</Reasoning>
+<Action>(6, 0, -30)</Action>
+
+<Reasoning>The fire is visible, but I am still a bit high. I need to move even lower to potentially be at the right altitude to see the fire from below.</Reasoning>
+<Action>(6, 0, -50)</Action>
+
+
+<Reasoning>I am now at a lower altitude and within the area of the fire. However, I cannot confirm if I am at the right point above the fire. I will need to move further down to explore the area more thoroughly.</Reasoning>
+<Action>(6, 0, -30)</Action>
+
+<Reason

@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see some vehicles on the left side of the image. I will start searching by going towards those vehicles. I will go to the point (-27, 0) and also descend 20 meters.</Reasoning>
+<Action>(-27, 0, -20)</Action>
+```

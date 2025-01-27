@@ -1,0 +1,8 @@
+ <Reasoning>I need to move closer to the ground to see if the person is in the area.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>I am now in the area where the person might be. I need to move slightly north to get closer to them, and ensure that I am below 10 meters relative to them.</Reasoning>
+<Action>(0, 10, 0)</Action>
+
+<Reasoning>The person is now in my field of view. I will reply with "FOUND" to indicate that I found the person.</Reasoning>
+<Action>FOUND!</Action>

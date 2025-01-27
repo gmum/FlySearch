@@ -1,0 +1,22 @@
+ <Reasoning>
+Based on the grid, I'll start by moving towards the coordinates that are closer to the object. This should help me get a better view of the area around the object.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+I'll now move to the coordinates that are adjacent to the potential object location.
+</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>
+I'll continue to move closer to the coordinates that seem to be in the vicinity of the object.
+</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>
+If the object is not yet visible, I will adjust my direction slightly to the right to explore more of the image.
+</Reasoning>
+<Action>(2, 1, -10)</Action>
+
+<Reasoning>
+I'll continue to survey the area to

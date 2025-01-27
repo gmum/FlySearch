@@ -1,0 +1,2 @@
+<Reasoning>I see a large giraffe statue at (0,0). It is clearly an anomaly in this environment. I need to get lower to get a better look and satisfy the requirement to be below 10 meters of the object.</Reasoning>
+<Action>(0, 0, -25)</Action>

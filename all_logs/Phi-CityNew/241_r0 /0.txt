@@ -1,0 +1,8 @@
+ <Reasoning>I will begin by looking in the areas that are closer to the ground, especially around the coordinates with negative z values which indicate a lower altitude. I will make my way towards areas with coordinates such as (-55, 0) or (0, -55) which are potential areas where the object may be located.</Reasoning>
+<Action>(0, 10, -30)</Action> 
+<Reasoning>It is important to maintain a lower altitude to improve the chances of spotting the object. I should focus on areas where the altitude difference is significant, as it could reveal the object more clearly.</Reasoning>
+<Action>(5, 0, -40)</Action>
+<Reasoning>Since the object's shape or size is not visible in this image, I should aim to move towards areas with larger x and y values, seeking out the object out of the dense urban environment.</Reasoning>
+<Action>(15, 10, -40)</Action>
+<Reasoning>Since the object's shape or size is not visible in this image, I should aim to move towards areas with larger x and y values, seeking out the object out of the dense urban environment.</Reasoning>
+<Action>(20, 20, -40)</Action>

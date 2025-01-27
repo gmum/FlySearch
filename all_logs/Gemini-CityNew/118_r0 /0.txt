@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a few cars on the street. Based on the prompt, I should look for a black pickup truck. I will move towards the center of the street at (0,0) and lower my altitude by 30 meters.</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

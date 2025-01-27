@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 52 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since the current altitude is 52 meters above ground level and I need to fly below 10 meters to find the object, I will make several moves in different directions and altitudes to search the area efficiently without exceeding the altitude limit.</Reasoning>\n<Action>(0, 0, -10)</Action>\n<Reasoning>I will move towards the expected location of the person by making a slight turn to the northwest and then ascending to a height of 10 meters above the expected location to ensure visibility.</Reasoning>\n<Action>(2, 2, 0)</Action>\n<Reasoning>From the previous location, I will continue to move northwest since that is the general direction of the person. This will allow me to cover more ground while keeping an eye on the coordinates for the person's potential location.</Reasoning>\n<Action>(4, 4, 0)</Action>\n<Reasoning>Next, I will make a slight turn to the northeast to examine a different area, as the person's location might be in a different direction than the initial estimate.</Reasoning>\n<Action>(6, 6, 0)</Action>\n<Reasoning>Finally, I will ascend to a height of 10 meters above the latest location to ensure that I"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Given the current altitude of 42 meters, my next action is to descend to a height of 10 meters to ensure I am at the correct altitude to spot the person, if they are in that general area.</Reasoning>\n<Action>(0, 0, -32)</Action>\n<Reasoning>From this lower altitude, I will make a sideways move to the northeast to see if the person is in this area, as it is a direction not yet thoroughly searched.</Reasoning>\n<Action>(2, 2, 0)</Action>\n<Reasoning>After moving to the northeast, I will continue to scan this area for signs of the person. If the person is not found, I will adjust my course based on the most likely direction they are located in.</Reasoning>\n<Action>(4, 4, 0)</Action>\n<Reasoning>I will now make a slight turn to the northwest and descend to the 10-meter altitude. This might bring me closer to the person's last known location since they have not been seen in this direction yet.</Reasoning>\n<Action>(0, 0, -32)</Action>\n<Reasoning>I will persist in moving in the northeast direction to cover more ground and increase the ch"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I need to move in a new direction to cover fresh ground and potentially spot the person.</Reasoning>\n<Action>(0, 1, 0)</Action>\n<Reasoning>Moving slightly to the northwest might lead me to areas not yet searched and increase the chances of finding the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I have not yet spotted any sign of the person, indicating that they might be in a new location.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will make another slight turn to the northeast to thoroughly search this area, as it is likely the person's last known location.</Reasoning>\n<Action>(2, 1, 0)</Action>\n<Reasoning>As I continue to scan the northeast, I will keep an eye out for any movement or indicators of the person's presence.</Reasoning>\n<Action>(2, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I will continue to search the area for the person, moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 0, 0)</Action>\n<Reasoning>Moving slightly to the northeast, I will increase the chances of spotting the person if they are in this area, as it has not been searched yet.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I will continue to search the area for the person, moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 0, 0)</Action>\n<Reasoning>Moving slightly to the northeast, I will increase the chances of spotting the person if they are in this area, as it has not been searched yet.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I will continue to search the area for the person, moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 0, 0)</Action>\n<Reasoning>Moving slightly to the northeast, I will increase the chances of spotting the person if they are in this area, as it has not been searched yet.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I will continue to search the area for the person, moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 0, 0)</Action>\n<Reasoning>Moving slightly to the northeast, I will increase the chances of spotting the person if they are in this area, as it has not been searched yet.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I will continue to search the area for the person, moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 0, 0)</Action>\n<Reasoning>Moving slightly to the northeast, I will increase the chances of spotting the person if they are in this area, as it has not been searched yet.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Given the current altitude of 10 meters above ground level, my next action is to continue searching the area for the person by moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 1, 0)</Action>\n<Reasoning>Moving slightly to the northwest may lead me to areas not yet searched, increasing the chances of spotting the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude at 10 meters above ground level, I will continue to search the area for the person, moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>\n<Action>(0, 0, 0)</Action>\n<Reasoning>Moving slightly to the northeast, I will increase the chances of spotting the person if they are in this area, as it has not been searched yet.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>\n<Action>(1, 1, 0)</Action>\n<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>"
+    ]
+]

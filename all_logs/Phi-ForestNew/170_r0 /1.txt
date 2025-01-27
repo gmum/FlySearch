@@ -1,0 +1,14 @@
+ <Reasoning>
+    The object is at a considerable height, and I need to descend to verify it is the building. I will start by moving in the direction of the object but remain vigilant for any obstacles that might be outside my view.
+</Reasoning>
+<Action>(10, -20, -60)</Action>
+
+<Reasoning>
+    I've located the object and am now below it. I need to get closer to confirm if it's the building.
+</Reasoning>
+<Action>(5, -10, -30)</Action>
+
+<Reasoning>
+    The object is confirmed to be the building. I am now at a safe altitude to ensure I am not too close to the object.
+</Reasoning>
+<Action>(5, -10, -20)</Action>

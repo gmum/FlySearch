@@ -1,0 +1,32 @@
+ <Reasoning>
+    With so little altitude, I should move to a coordinate that maximizes my field of view and search area.
+</Reasoning>
+<Action>
+    (0, 0, -3)
+</Action>
+<Reasoning>
+    Moving 3 meters down will allow me to scan the forest floor more effectively.
+</Reasoning>
+<Action>
+    (0, 0, -3)
+</Action>
+<Reasoning>
+    Adjusting my altitude can help me cover more ground and increase the chances of finding the object.
+</Reasoning>
+<Action>
+    (5, 0, -3)
+</Action>
+<Reasoning>
+    Moving 5 meters to the right will help me explore a different part of the forest and potentially find the object.
+</Reasoning>
+<Action>
+    (5, 0, -3)
+</Action>
+<Reasoning>
+    By adjusting my position to the right and lowering my altitude, I can have a wider view of the forest floor.
+</Reasoning>
+<Action>
+    (5, -3, -3)
+</Action>
+<Reasoning>
+    Moving 3 meters further to the right and lowering another meter will

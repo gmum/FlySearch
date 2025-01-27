@@ -1,0 +1,2 @@
+<Reasoning>I see a building at (0,0). I need to go lower to check if it's the object and then say FOUND once I'm less than 10 meters above the object. I will descend by 65 meters to be at 9 meters above it.</Reasoning>
+<Action>(0, 0, -65)</Action>

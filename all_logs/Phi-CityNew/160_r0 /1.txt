@@ -1,0 +1,16 @@
+ <Reasoning>I need to adjust my altitude to get closer to the object in the image. I will also adjust my position to get a better view.</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+<Reasoning>I am closer to the object, but still not at the desired altitude. I will continue to adjust my altitude and position accordingly.</Reasoning>
+<Action>(0, 0, -50)</Action>
+
+<Reasoning>I am now at the desired altitude and in the correct position to confirm if the object is the large trash pile. I will make a final adjustment to my position to ensure I am centered on it.</Reasoning>
+<Action>(5, -5, 0)</Action>
+
+<Reasoning>I have found the object and confirmed it is the large trash pile. I will now fly lower to provide a closer view.</Reasoning>
+<Action>(5, 0, -60)</Action>
+
+<Reasoning>I am at the right location, but still not at the desired altitude. I will continue to adjust my position to get closer to the object.</Reasoning>
+<Action>(5, 0, -70)</Action>
+
+<Reasoning>I am at

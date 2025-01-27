@@ -1,0 +1,13 @@
+ <Reasoning>Considering the current altitude, I should focus on the areas that are within the 10-meter range from any potential target location. I will move one grid point down the way to the lower left, as it allows me to start my search closer to ground level.</Reasoning>
+
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning>Now, I need to ensure that I am moving towards an area that may have the person. The area around (25, 51) seems to be a good starting point, as it is relatively higher than the average and close to the center, which might make it easier to spot someone.</Reasoning>
+
+<Action>(-10, -5, 0)</Action>
+
+<Reasoning>With the drone now closer to ground level, I will scan the area around (25, 51) for any signs of the person. Since I am only 10 meters away from the ground, I have a better chance of spotting someone if they are around this point.</Reasoning>
+
+<Action>(-5, 0, -5)</Action>
+
+<Reasoning>Now, I will move to the center of the lower left quadrant of the image to ensure I am scanning all the possible areas within the 10

@@ -1,0 +1,30 @@
+ <Reasoning>
+    Since the starting coordinates are already too high, I will start by flying lower to get a better view of the ground. I also want to move towards the center of the image to have a wider search area.
+</Reasoning>
+<Action>
+    (-23, 0, 34)
+</Action>
+
+<Reasoning>
+    The grid shows that there might be a yellow point of interest near the center of the image. I will move towards it to check if it is the large trash pile.
+</Reasoning>
+<Action>
+    (-23, 0, 34)
+</Action>
+
+<Reasoning>
+    The yellow point is not the object in question. I will move slightly to the left to continue the search while keeping the altitude low.
+</Reasoning>
+<Action>
+    (-23, -10, 34)
+</Action>
+
+<Reasoning>
+    The grid shows a yellow point of interest near the center of the image. I will move towards it to check if it is the large trash pile.
+</Reasoning>
+<Action>
+    (-23, -10, 34)
+</Action>
+
+<Reasoning>
+    The yellow point is not the object in question

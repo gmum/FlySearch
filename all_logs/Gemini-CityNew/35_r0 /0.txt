@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I do not see a white pickup truck in the initial image. I will move to the center of the image i.e. (0,0) before beginning my search. I will also come down a bit.</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

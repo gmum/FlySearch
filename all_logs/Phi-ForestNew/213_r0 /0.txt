@@ -1,0 +1,15 @@
+ <Reasoning>
+I will first move towards the center of the image, which is the location of the drone's current position. From there, I will make a series of moves downwards and to the right to check for the object. If I am unable to find it, I will continue to move in the same direction and lower altitude to scan the entire area.
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>
+I will make another move to the right, lowering my altitude further to cover a larger area. This should help me locate the object more easily.
+<Action>(-1, 0, -45)</Action>
+
+<Reasoning>
+I will continue moving to the right, but making a slight turn to the left to cover an even larger area. This should help me find the object if it is located in the north-west part of the image.
+<Action>(0, -1, -20)</Action>
+
+<Reasoning>
+I will make a final move to the left to scan the entire area. This should help me find the object if it is located in the north-east part of the image. If I am unable to find it, I will make another move to the left to scan the entire area.
+<Action>(1, 0, -30)</Action

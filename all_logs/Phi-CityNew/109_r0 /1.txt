@@ -1,0 +1,22 @@
+ <Reasoning>
+The coordinates given are (47, 41), which is quite high. I'll fly down to be lower and have a better chance of finding the road construction site.
+</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>
+The coordinates are now (47, 41, 51), which is better, but I still need to be closer. I'll move slightly north to cover more ground and look for the road construction site.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>
+The coordinates are now (47, 41, 41), which is still not low enough. I'll continue moving north to cover more ground and look for the road construction site.
+</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>
+The coordinates are now (47, 41, 11), which is getting closer to the desired altitude. I'll continue moving north to cover more ground and look for the road construction site.
+</Reasoning>
+<Action>(5, 0, -61)</Action>
+
+<Reasoning>
+The coordinates are now (4

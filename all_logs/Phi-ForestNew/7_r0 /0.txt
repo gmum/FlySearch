@@ -1,0 +1,14 @@
+ <Reasoning>The red object that appears to be a fire is visible on the right side of the grid. I should move closer to it to confirm if it is the forest fire since we are looking for it.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The red object is now within a very close range of the drone. If it is indeed the forest fire, I need to move higher to confirm it is above ground level or to get a better perspective.</Reasoning>
+<Action>(0, 0, 45)</Action>
+
+<Reasoning>The red object is still within the frame and appears to be the forest fire. I should confirm its presence closer.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The red object is clearly visible. I'm 10 meters below its surface, which is ideal for confirming if it's the forest fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The red object is confirmed as the forest fire, as it is visible from above and below, which means it's on the ground.</Reasoning>
+<Action>FOUND</Action>

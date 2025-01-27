@@ -1,0 +1,10 @@
+ <Reasoning>I need to move closer to the ground to search for the police car. The constraints require me to be at most 10 meters below the object when I declare it found. I will move southward while also reducing the altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I need to adjust my y-coordinate to be as close to the object as possible within the visible area to make sure I can see if the car is present. I will move slightly downwards to stay in the visible area while also reducing the altitude.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning>I need to confirm if the object is located within my field of view. If not, I must adjust my y-coordinate further until it is visible. This is important as it helps me ensure that the next move will be in a position where the object can be found if it exists.</Reasoning>
+<Action>(0, -10, -10)</Action>
+
+<Reasoning>I am now at a lower altitude which allows me to check for the presence of the police car in the visible area below the drone. I will continue to ensure that my altitude is within the specified limit of 120 meters.</Reasoning>

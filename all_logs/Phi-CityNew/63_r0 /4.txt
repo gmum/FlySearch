@@ -1,0 +1,14 @@
+ <Reasoning>I am at the right altitude to search for the police car. I should be able to see if it is in my visible area below the drone.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I need to adjust my y-coordinate to be as close to the object as possible within the visible area to ensure I can spot it. It is important to stay within the visible range to make the search efficient.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning>I need to confirm the presence of the object in my field of view. Once confirmed, I will lower the altitude even further to ensure the car is visible and at a safe distance.</Reasoning>
+<Action>(0, -10, -10)</Action>
+
+<Reasoning>Now that the object is within my field of view, I can lower the drone to 10 meters or lower to have a better chance of identifying the police car.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I will now scan the area to check for the presence of the police car. Being at a lower altitude increases the chance of spotting the car.</Reasoning>
+<

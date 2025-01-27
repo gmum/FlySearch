@@ -1,0 +1,6 @@
+ <Reasoning>
+    Since the current altitude is 65 meters above ground level, I should make a move to lower my altitude. I should also be mindful of the altitude limitations and make sure not to exceed 120 meters. Furthermore, the search area is 400x400m, so I need to move within this area.
+    </Reasoning>
+    
+    <Action>(0, 0, 0)</Action>
+</Reasoning>

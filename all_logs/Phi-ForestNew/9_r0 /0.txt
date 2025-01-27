@@ -1,0 +1,13 @@
+ <Reasoning>Since my altitude is already relatively low, I will initiate a search for the trash pile. Given the coordinates, I'll start by moving towards the point (38, 38) to center my view.</Reasoning>
+<Action>(2, 0, -30)</Action>
+
+<Reasoning>After scanning the area around (38, 38), I'll adjust my search to explore slightly northward at the coordinates (19, 38).</Reasoning>
+<Action>(5, 0, -35)</Action>
+
+<Reasoning>The object seems to be out of reach at (19, 38). Next, I'll move to (0, 38) to cover another part of the area.</Reasoning>
+<Action>(5, 0, -25)</Action>
+
+<Reasoning>The object is not yet visible. I will proceed to (38, 19) to widen my search scope.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>The trash pile is not within my view at (38, 19). I'll continue to (38, 38).</Reasoning>

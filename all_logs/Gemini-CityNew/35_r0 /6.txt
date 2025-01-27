@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see the white pickup truck is to my left. I need to center on it and go lower. It's at (-11, 5). I will go to that location and lower my altitude.</Reasoning>
+<Action>(-11, 5, -8)</Action>
+```

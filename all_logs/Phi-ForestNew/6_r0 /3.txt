@@ -1,0 +1,16 @@
+ <Reasoning>Starting at the center of the image, I am searching for a trash pile. The object in question is the yellow point. I will move the drone to (5, 0, -5).</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>The object is not the trash pile I am looking for, so I will move to (10, 0, -10).</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The object isn't the one I am looking for, so I will move to (15, 0, -10).</Reasoning>
+<Action>(15, 0, -10)</Action>
+
+<Reasoning>The object is not the one I am looking for, so I will move to (20, 0, -10).</Reasoning>
+<Action>(20, 0, -10)</Action>
+
+<Reasoning>The object is not the one I am looking for, so I will move to (25, 0, -10).</Reasoning>
+<Action>(25, 0, -10)</Action>
+
+<

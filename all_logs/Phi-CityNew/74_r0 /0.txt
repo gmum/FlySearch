@@ -1,0 +1,14 @@
+ <Reasoning>
+I have identified a potential object of interest in the image. It appears to be a yellow point that could be the crowd we are searching for. However, I am not centered on it. I need to fly lower to get a better view. In addition, I am too far away from it. I will make a move to the north and decrease my altitude to get closer.
+</Reasoning>
+<Action>(5, 0, -30)</Action>
+<Reasoning>
+After making the move, I am now centered on the object. I can confirm that the yellow point in the image is the crowd we are looking for. While I am below 10 meters relative to the object, I am slightly higher than the object itself. I will need to make another move to lower my altitude further.
+</Reasoning>
+<Action>(5, 0, -50)</Action>
+<Reasoning>
+I have successfully found the crowd below 10 meters relative to the drone. I am now in the correct position to confirm my findings.
+</Reasoning>
+<Action>(5, 0, -100)</Action>
+<Reasoning>
+I am now reporting that I have found the crowd below 10 meters relative to the drone. The yellow point in the image is the crowd we were

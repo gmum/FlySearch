@@ -1,0 +1,4 @@
+ <Reasoning>The building is located at coordinates (0, 0), and I need to fly lower to confirm its identification. Since I am at 27 meters above ground level, an altitude adjustment is necessary.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+Response to new data: The building has been identified at coordinates (0, 0). The current altitude is 27 meters above ground level, and I have replied with "FOUND" to confirm the identification.

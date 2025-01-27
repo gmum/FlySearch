@@ -1,0 +1,4 @@
+ <Reasoning>Now that the building is visible, I will fly at the correct altitude to confirm its identity.</Reasoning>
+<Action>(1, 0, -1)</Action>
+<Reasoning>I'm now sure that this is the building. I will stay here to confirm my findings.</Reaction>
+<Action>(1, 0, -1)</Action>

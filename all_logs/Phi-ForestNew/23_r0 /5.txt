@@ -1,0 +1,11 @@
+ <Reasoning>Beginning at the center of the image, I will scan for any large brown mounds. If I can't spot one from this altitude, I will move to the grid point with the next most likely coordinates for a trash pile. </Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>At the center of the grid, there is a spot that could potentially be a trash pile. However, it's too far to confirm at this altitude. I'll move to the next grid point towards the bottom right and descend to get a clearer view. </Reasoning>
+<Action>(3, -3, 0)</Action>
+
+<Reasoning>The spot at the new grid point looks like a large trash pile, with a distinct brown color against the green vegetation. It's the closest candidate for the trash pile we're looking for. </Reasoning>
+<Action>(3, -3, -10)</Action>
+
+<Reasoning>The mound is confirmed to be a trash pile, it's the right size and has no other objects around it. I've found it in the area we've been searching for. </Reasoning>
+<Action>(3, -3, -20)</

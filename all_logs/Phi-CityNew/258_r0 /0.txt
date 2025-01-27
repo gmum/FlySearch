@@ -1,0 +1,16 @@
+ <Reasoning>I am currently at 99 meters altitude, which is higher than the 90 meters limit. I need to lower my altitude to search for the object below the 10 meters limit.</Reasoning>
+<Action>(0, 0, -99)</Action>
+
+<Reasoning>After lowering the altitude, I am now at 0 meters, which is within the search area. I will proceed to look for the object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I am now flying over the yellow point on the grid. This yellow point is a potential candidate for the object in question.</Reasoning>
+<Action>(-10, 0, 0)</Action>
+
+<Reasoning>I am one meter below the yellow point, as it is not possible to be exactly at the point due to the frames of the image. Further search is needed.</Reasoning>
+<Action>(-10, 0, -1)</Action>
+
+<Reasoning>This point is a potential candidate for the object. I will now check if it is the object.</Reasoning>
+<Action>(-10, 0, -2)</Action>
+
+<Reasoning>I cannot see the object at this

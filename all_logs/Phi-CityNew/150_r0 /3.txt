@@ -1,0 +1,17 @@
+ <Reasoning>
+The object seems to be located in the lower right area of the grid. I will move to the coordinates (28, 28) which is in the lower right area of the grid and get as close as possible to the object without confirming it is the object in question.
+</Reasoning>
+<Action>(28, 28, 0)</Action>
+
+<Reasoning>
+The object seems to be located in the lower right area of the grid. I will move to the coordinates (28, 28) which is in the lower right area of the grid and get as close as possible to the object without confirming it is the object in question.
+</Reasoning>
+<Action>(28, 28, 0)</Action>
+
+<Reasoning>
+I did not find the object in the current area. The object appears to be located at the bottom of the grid. Based on the image, the object seems to be a large pile of trash in the background. I will continue moving to the left and try to get closer to the object.
+</Reasoning>
+<Action>(26, 28, -10)</Action>
+
+<Reasoning>
+I found the object in the current area. It appears to be a large pile of trash. I will

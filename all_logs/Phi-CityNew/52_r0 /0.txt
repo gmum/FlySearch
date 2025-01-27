@@ -1,0 +1,13 @@
+ <Reasoning>Starting from (0, 0, 47), I need to move closer to the ground to search for the object. I will go south and slightly west to ensure I am near the yellow point on the grid. I am also preparing to reduce my altitude to be below 10 meters from the object.</Reasoning>
+<Action>(10, -5, 42)</Action>
+
+<Reasoning>I will now go south to get closer to the ground, aiming at the yellow point on the grid. This will help me reduce altitude and search more effectively.</Reasoning>
+<Action>(20, -5, 42)</Action>
+
+<Reasoning>I will continue heading southwest to get closer to the object while also decreasing my altitude. This is the next logical step in my search.</Reasoning>
+<Action>(30, -5, 42)</Action>
+
+<Reasoning>Next, I will go slightly northwest to adjust my position, ensuring I am still heading towards the yellow point. Also, I will continue to decrease my altitude.</Reasoning>
+<Action>(35, -5, 42)</Action>
+
+<Reasoning>Now, I am closer to the yellow point and need to take a more precise approach

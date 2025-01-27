@@ -1,0 +1,7 @@
+ <Reasoning>After making the first move, I'll continue to move to the north to cover more area.</Reasoning>
+<Action>(10, 10, 0)</Action>
+
+<Reasoning>I'm going to change my direction to move west-south-west to cover more area.</Reasoning>
+<Action>(20, 10, 0)</Action>
+
+<Reasoning>I'm going to change my direction to move north-west to cover more area.</Reason

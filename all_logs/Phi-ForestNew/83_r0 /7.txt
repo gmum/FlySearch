@@ -1,0 +1,17 @@
+ <Reasoning>
+    Starting at an altitude of 1 meter above ground level, I will begin moving in a grid pattern, taking into consideration the surrounding terrain and vegetation to optimize the search area. This altitude allows for a detailed search while adhering to the instruction of flying below 10 meters relative to the object when found.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    Following the initial move, I will proceed to the grid points that are nearest to the predicted location of the subject. This ensures that my search is focused and efficient in finding the subject.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    If the subject is not found in the first two grid points, I will continue to move in a grid pattern, scanning each point thoroughly. I will only adjust the altitude when necessary and within the limits provided.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    Upon finding the subject, I will adjust my altitude to be 10 meters below the ground level, as instructed, and then continue to scan the area for any other potential subjects. The

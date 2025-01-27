@@ -1,0 +1,19 @@
+ <Reasoning>At the current altitude, I will move down the grid to the coordinates that show a distinct area that could possibly be the object. I have to be cautious not to hit the building below and to stay within the search area.</Reasoning>
+<Action>(-2, 0, -15)</Action>
+</Reasoning>
+<Action>(-1, 0, -25)</Action>
+</Reasoning>
+<Action>(0, 0, -35)</Action>
+</Reasoning>
+<Action>(-1, 0, -45)</Action>
+</Reasoning>
+<Action>(-2, 0, -55)</Action>
+</Reasoning>
+<Action>(-3, 0, -65)</Action>
+</Reasoning>
+
+<Reasoning>I have observed a distinct area with different colors, which seems promising. I will navigate to this area and check for the object. It's essential to be cautious and not go beyond the altitude limit.</Reasoning>
+<Action>(-4, 0, -75)</Action>
+</Reasoning>
+
+<Reasoning>The color variation is quite pronounced here, and the object might be in that specific area. I

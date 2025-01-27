@@ -1,0 +1,13 @@
+ <Reasoning>The trash pile is likely located in the lower part of the image, possibly near the center. I will begin by descending to a height of 20 meters to get a closer look.</Reasoning>
+<Action>(0, 0, -15)</Action>
+
+<Reasoning>The image seems to be quite dense with vegetation, making it difficult to pinpoint a trash pile. I'll navigate to a location with less foliage to increase the chances of spotting the object.</Reasoning>
+<Action>(10, 0, -15)</Action>
+
+<Reasoning>A spot with trees looks like a potential candidate for the trash pile. It's located in the middle of the image, so I'll head there and get ready to dive down to confirm.</Reasoning>
+<Action>(11, 0, -15)</Action>
+
+<Reasoning>The object is still not clearly visible. I'll head a bit to the right in the hope of finding a clearer spot.</Reasoning>
+<Action>(12, 0, -15)</Action>
+
+<Reasoning>The object is now in my field of view, but it's not definitively a trash pile. I'll continue sc

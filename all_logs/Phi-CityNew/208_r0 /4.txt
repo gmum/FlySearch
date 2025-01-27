@@ -1,0 +1,19 @@
+ <Reasoning>I'm in a dangerous situation, the traffic signal is too close, and I need to move away immediately.</Reasoning>
+<Action>(1, 0, -1)</Action>
+
+<Reasoning>I've moved away from the traffic signal, but I need to be at a safe distance before I can continue.</Reasoning>
+<Action>(2, 0, -2)</Action>
+
+<Reasoning>I'm now safe from immediate danger, but I must continue to monitor the situation closely.</Reasoning>
+<Action>(3, 0, -3)</Action>
+
+<Reasoning>The traffic signal is still too close. I need to adjust my altitude to avoid it.</Reasoning>
+<Action>(4, 1, -4)</Action>
+
+<Reasoning>I've moved to a safer altitude, but I must remain vigilant to ensure a safe flight path.</Reasoning>
+<Action>(5, 2, -5)</Action>
+
+<Reasoning>The traffic signal is no longer in my path. It's important to maintain a safe distance from it.</Reasoning>
+<Action>(6, 3, 0)</Action>
+
+<Reasoning>I'm still at a safe

@@ -1,0 +1,13 @@
+ <Reasoning>I need to get closer to the ground to find the road construction site. I will move down 30 meters to be at the same level as the construction site if present. I should also move slightly to the south to get a better view of the area.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>Moving down 30 meters should put me in the same level as the construction site if it is on the ground. This will give me a better chance to spot the road and the construction site.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>After moving down 30 meters, I should move to the left to get a better view of the construction site. If the site is not visible, I will continue moving left until I find it.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>I am now in a better position to spot the construction site. If not visible, I will keep moving left until I find it. If visible, I will fly below 10 meters relative to it and reply with "FOUND".</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>The construction site

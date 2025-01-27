@@ -1,0 +1,6 @@
+ <Reasoning>
+The objective is to find the trash pile, and the coordinates given are within a search area. Moving closer to the coordinates will increase the likelihood of identifying the trash pile if it is within the search area. After moving closer, I will check if the coordinates are within my field of view and if the object is 10 meters below the drone.
+
+</Reasoning>
+
+<Action>(2, 0, -15)</Action>

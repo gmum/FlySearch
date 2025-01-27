@@ -1,0 +1,13 @@
+ <Reasoning>I have flown too close to something and would have hit it. I need to stop and take a different approach to find the road construction site.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that I have avoided a collision, I will start again and move lower to increase my chances of finding the construction site.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>I will also move slightly to the left to get a better view of the area.</Reasoning>
+<Action>(-30, -20, 0)</Action>
+
+<Reasoning>I am now in a better position to spot the construction site. If not visible, I will keep moving left until I find it. If visible, I will fly below 10 meters relative to it and reply with "FOUND".</Reasoning>
+<Action>(-30, -20, 0)</Action>
+
+<Reasoning>The construction site is

@@ -1,0 +1,2 @@
+ <Action>(0, 0, -0)</Action>
+<Reasoning>The trash pile should be in view now. The drone will move to (0, 0, -0) meters, which should bring it 10 meters closer to the object, potentially within the search area, depending on the object's visibility.</Reasoning>

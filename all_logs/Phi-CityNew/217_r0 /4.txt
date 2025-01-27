@@ -1,0 +1,11 @@
+ <Reasoning>I have no indication that the anomaly is close, so I'll start with a broad search. The coordinates (57, 28) could indicate a nearby structure or an anomaly area. I'll start by flying towards this point.</Reasoning>
+<Action>(57,28,0)</Action>
+
+<Reasoning>Since (57,28) is not near the anomaly, I will continue my search in the general area. Moving slightly to the left and downwards to (57,0) will provide a new viewpoint.</Reasoning>
+<Action>(57,0,0)</Action>
+
+<Reasoning>Searching in a broader direction, I'll head towards (57,28) as it's the closest to the previous areas I've been looking in. This spot might have a high-rise structure that could contain the anomaly.</Reasoning>
+<Action>(57,28,0)</Action>
+
+<Reasoning>I'll continue my search in the area around (57,28) since it's the next closest point to the area where the anomaly was initially found.</Reasoning>
+<Action>(57,28,0)</Action>

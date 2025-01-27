@@ -1,0 +1,13 @@
+ <Reasoning>Since I am already at 61 meters altitude and looking for the object, which seems to be around that height, I will not need to move lower. I will continue scanning the area at my current altitude to confirm the object's location.</Reasoning>
+<Action>(20, 0)</Action>
+
+<Reasoning>After a closer inspection, the object appears to be located near the coordinates (20, 0) on the grid. I will move to that spot to confirm it is the object and maintain my altitude.</Reasoning>
+<Action>(20, 0)</Action>
+
+<Reasoning>The object seems to be right next to the previous spot I've been focusing on. I will move closer to confirm if it is the same, and maintain a 10 meters lower altitude.</Reasoning>
+<Action>(20, 0)</Action>
+
+<Reasoning>Upon further examination, the object appears to be located at the center of the image. I will move there and then lower the drone to confirm if it is indeed the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object is finally located at the coordinates (0, 0). I have confirmed it is

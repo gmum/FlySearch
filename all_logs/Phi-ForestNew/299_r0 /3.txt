@@ -1,0 +1,11 @@
+ <Reasoning>I will move 5 meters north and 6 meters west to get closer to the potential object.</Reasoning>
+<Action>(-3, 2, 0)</Action>
+
+<Reasoning>I am now getting closer to the object. I will fly slightly to the northeast to get a better view of the object. I must be careful about the altitude and not go above 120 meters.</Reasoning>
+<Action>(-2, 1, -30)</Action>
+
+<Reasoning>I am almost at the object. I will now fly slightly to the north to get a better view of the object while ensuring that the object is within the drone's field of view.</Reasoning>
+<Action>(-2, 0, -20)</Action>
+
+<Reasoning>The object seems to be located in the area where the drone is flying. I will now fly below 10 meters relative to it and reply with "FOUND". I must ensure that the object is within the drone's field of view.</Reasoning>
+<Action>(-2, -1, -30)</Action>

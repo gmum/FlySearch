@@ -1,0 +1,7 @@
+ <Reasoning>Starting at the drone's position, I will move towards the coordinates with a higher x value to cover more area and to find the object.</Reasoning>
+<Action>(0, 1, -10)</Action>
+
+<Reasoning>Moving in the direction of (6, 12) will bring me to a new area with a yellow spot, which could be the object.</Reasoning>
+<Action>(0, 1, -9)</Action>
+
+<Reasoning>Later, I will reevaluate

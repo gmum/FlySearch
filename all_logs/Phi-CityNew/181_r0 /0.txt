@@ -1,0 +1,2 @@
+ <Reasoning>Starting from the center of the drone's field of view, I will move to the grid point (0, -3, 0) to begin my search, which is a slight northward turn. This move keeps me within the confines of the search area and allows me to be close to the ground for better object detection.</Reasoning>
+<Action>(0, -3, 0)</Action>

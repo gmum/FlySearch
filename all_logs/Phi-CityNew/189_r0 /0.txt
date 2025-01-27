@@ -1,0 +1,2 @@
+ <Reasoning>I need to fly lower to get a better view of the ground and search for a crowd. Since the current altitude is 35 meters, I should fly 35 meters down to 0 meters, which is the required altitude for a search.</Reasoning>
+<Action>(-35, 0, 0)</Action>

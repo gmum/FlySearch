@@ -1,0 +1,11 @@
+ <Reasoning>Upon reaching a grid point which is too close to the object, I immediately initiate an emergency stop to prevent any potential damage to the drone or the building below.</Reasoning>
+    <Action>Emergency stop</Action>
+
+    <Reasoning>Once the emergency stop is activated, I will assess the situation and determine the next course of action, which could involve moving to a safer location in the grid or retrieving the drone if possible.</Reasoning>
+    <Action>Assess situation</Action>
+
+    <Reasoning>If the emergency stop goes well, I will then continue searching for the object using the updated coordinates and altitude restrictions to avoid a similar incident in the future.</Reasoning>
+    <Action>Continue search</Action>
+
+    <Reasoning>If the emergency stop was not successful, I will need to evaluate whether I can safely return to the starting position or if I need to abort the mission and return the drone to a safe location.</Reasoning>
+    <Action>Return to safe position or abort</Action>

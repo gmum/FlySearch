@@ -1,0 +1,2 @@
+<Reasoning>Now that I have descended to 61 meters, I will start a systematic search in a grid pattern. I will move 20 units to the east, then 20 units to the south, and repeat this pattern until I cover the entire search area. If I find the trash pile, I will fly below 10 meters relative to it and reply with "FOUND". I will also ensure that I am centered on the object when I reply with "FOUND".</Reasoning>
+<Action>(20, 0, 0)</Action>

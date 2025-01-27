@@ -1,0 +1,2 @@
+<Reasoning>Based on the grid, I will first move to the center of the image to get a better view of the surrounding area. If I don't find the object, I will then move in a spiral pattern, decreasing my altitude with each move, to cover the entire search area.</Reasoning>
+<Action>(0, 0, 0)</Action>

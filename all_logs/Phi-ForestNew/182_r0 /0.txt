@@ -1,0 +1,14 @@
+ <Reasoning>The grid overlay on the image suggests that there are points of interest I need to investigate. I will follow the grid to move the drone in the most efficient manner while searching for the person.</Reasoning>
+<Action>(10, 0, -32)</Action>
+
+<Reasoning>The object seems to be near the center of the grid, slightly to the right, so I will move towards it while ensuring I maintain an altitude close to the ground.</Reasoning>
+<Action>(8, 0, -32)</Action>
+
+<Reasoning>The object is now in the field of view, and I am 6 meters below it. I will circle around to get a better look.</Reasoning>
+<Action>(11, 0, -32)</Action>
+
+<Reasoning>The object is not in the field of view now. I will make a slight adjustment in the y-direction to search in the area where the object might be located.</Reasoning>
+<Action>(10, -1, -32)</Action>
+
+<Reasoning>The object seems to be located at the edge of the grid. I will proceed with the next step knowing that if the object is there, it should be within the frame of view.</Reasoning>
+<Action>(

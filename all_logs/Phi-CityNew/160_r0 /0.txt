@@ -1,0 +1,14 @@
+ <Reasoning>I will start by moving closer to the large trash pile, which seems to be located near the center of the image. I will adjust my altitude and heading accordingly to reach it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am flying lower to get a closer look and confirm if the trash pile is the object in question.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>The object in question is not the large trash pile. It seems to be a smaller pile, located slightly to the right, but still within my field of view. I will adjust my position to get a closer look.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I am still not over the trash pile, but it is getting closer. I will continue to adjust my position to get a better view of the object.</Reasoning>
+<Action>(5, 0, -40)</Action>
+
+<Reasoning>I am at the right location, but still not at the desired altitude. I will continue to adjust my altitude to get closer to the object.</Reasoning>
+<Action>(5, 0, -

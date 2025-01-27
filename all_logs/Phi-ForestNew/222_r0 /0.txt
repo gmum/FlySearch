@@ -1,0 +1,11 @@
+ <Reasoning>I'll start by going to the coordinates (0, 0) to center the drone on the area. I should be 47 meters above ground level, so I need to move down 47 meters to be at the same level as the object. This will help me ensure I can see the object clearly.</Reasoning>
+<Action>(0, 0, -47)</Action>
+
+<Reasoning>After reaching the ground, I will move to the coordinates (8, 8) to start scanning for the object. I need to be 10 meters below the object, so I need to move down 10 meters from the ground.</Reasoning>
+<Action>(8, 8, -10)</Action>
+
+<Reasoning>I will then move to the coordinates (10, 10) to get a closer look at the object. I am now 10 meters below the object, which should be closer than 10 meters since it's an anomaly.</Reasoning>
+<Action>(10, 10, 0)</Action>
+
+
+<Reasoning>I've scanned the coordinates but haven't found the object yet. I will now move to the coordinates (12, 12) to continue the search while maintaining a safe distance from

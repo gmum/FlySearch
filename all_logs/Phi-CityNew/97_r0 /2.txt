@@ -1,0 +1,10 @@
+ <Reasoning>With the current altitude, I am in a position to make a careful search for the white sport car without risking a collision with the ground. I should move in a manner that maximizes my field of view while staying vigilant.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>I will now begin my search, moving around the area to ensure I cover as much ground as possible. I will adjust my movements to keep the car in my field of view.</Reasoning>
+<Action>(10, 10)</Action>
+<Reasoning>The car appears to be in the right area. I will move slightly to the right to ensure I am directly facing it. I will also adjust my altitude to be as low as possible without risking a collision.</Reasoning>
+<Action>(8, 8)</Action>
+<Reasoning>The car is now directly in my field of view. I will continue to monitor closely while maintaining a stable position to ensure it remains visible.</Reasoning>
+<Action>(8, 8)</Action>
+<Reasoning>The car is within a reasonable distance and visibility range. I will adjust my position to maintain a steady view and confirm its identification as a white sport car.</Reasoning>
+<Action>(8, 

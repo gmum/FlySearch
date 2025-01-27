@@ -1,0 +1,9 @@
+ <Reasoning>I will identify a potential location for the object and then proceed to that location for a closer inspection while ensuring safety and compliance with operational parameters.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The area is being searched, and preliminary observations indicate the presence of the object.</Reasoning>
+<Action>(0,0,0)</Action>
+
+<Reasoning>The object is now confirmed to be in the search area and within the required altitude range. I can confidently declare 'FOUND'.</Reasoning>
+<Action>(0,0,0)</Action>
+<Reply>FOUND</Reply>

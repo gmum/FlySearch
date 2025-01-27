@@ -1,0 +1,11 @@
+ <Reasoning>I'll start by ascending to get an overview and look for any distinctive shapes or features that could hint at the building's location. The building might be located towards the bottom of the map, where the terrain has less vegetation.</Reasoning>
+<Action>(30, 22, 0)</Action>
+
+<Reasoning>Now that the area is in sight and I can identify the terrain's shape, I'll begin my descent to closely inspect where the building is likely to be. I can follow the descending slope to the target area.</Reasoning>
+<Action>(25, 22, 0)</Action>
+
+<Reasoning>As I'm lowering, the building starts to become visible. I'll continue my descent to get as close as possible to the building before making my move.</Reasoning>
+<Action>(20, 22, 0)</Action>
+
+<Reasoning>The building is clearly visible now, and I'm on target. I'll make my move to confirm that I am at the correct coordinates of the building.</Reasoning>
+<Action>(0, 22, 0

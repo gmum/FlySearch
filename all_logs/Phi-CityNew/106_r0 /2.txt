@@ -1,0 +1,18 @@
+ <Reasoning>
+With the assumption of the initial coordinates, I am still unsure of the exact location of the road construction site. Therefore, I need to continue my search from a lower altitude.
+</Reasoning>
+
+<Action>(-10, -10, -10)</Action>
+
+<Reasoning>
+By moving further down, I aim to scan the ground more thoroughly in an attempt to spot any indicators of construction.
+</Reasoning>
+
+<Action>(-15, -15, -10)</Action>
+
+<Reasoning>
+Having moved further down, I need to maintain a lower altitude to ensure I'm observing the ground closely for any signs of construction.
+</Reasoning>
+
+<Action>(-20, -15, -10)</Action>
+

@@ -1,0 +1,66 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n\nBased on the image, the drone appears to be flying over a land area with trees and other vegetation. The coordinates on the grid are overlaid on the image, and it seems that the drone is parked currently at the coordinates (48, 48). Since there is no object of interest detected at these coordinates, the drone needs to explore the area further.\n\nThe drone should move towards the (0, 48) coordinates, as it is the closest in the north direction. This move is to ensure that the drone covers as much area as possible without going too far away from the parked position.\n\nOnce the drone is at the (0, 48) coordinates, it should continue to fly to the (24, 48) coordinates. This is a significant move in the east direction and will allow the drone to scan a considerable portion of the eastern area.\n\n<Action>(0, 48, 0)</Action>\n\n</Reasoning>\n\nAfter the drone lands at (24, 48), it should fly towards the (0, 0, 0) coordinates. This will ensure that the drone is at a lower altitude and closer to the ground.\n\n<Action>(24, 0, 0)</Action>\n\nSince the coordinates do"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n\nThe drone is flying over a land area with trees and other vegetation, and the coordinates on the grid are displayed on the image. The drone is parked at the coordinates (48, 48). Since there is no object of interest detected at these coordinates, the drone needs to explore the area further.\n\nThe drone should move towards the (0, 47) coordinates, as it is the closest in the north direction. This move will ensure that the drone covers as much area as possible without going too far away from the parked position.\n\nAfter the drone lands at (0, 47), it should fly to the (24, 47) coordinates. This is a significant move in the east direction and will cover a considerable portion of the eastern area.\n\n<Action>(0, 47, 0)</Action>\n\nOnce the drone is at the (24, 47) coordinates, it should move down to the (0, 24) coordinates. This will ensure that the drone is at a lower altitude and closer to the ground.\n\n<Action>(24, 0, 0)</Action>\n\nSince the coordinates do"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 70 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n\nThe drone is flying over a land area with trees and other vegetation, and the coordinates on the grid are displayed on the image. The drone is parked at the coordinates (47, 47). Since there is no object of interest detected at these coordinates, the drone needs to explore the area further.\n\nThe drone should move towards the (0, 47) coordinates, as it is the closest in the north direction. This move will ensure that the drone covers as much area as possible without going too far away from the parked position.\n\nAfter the drone lands at (0, 47), it should fly to the (23, 47) coordinates. This is a significant move in the east direction and will cover a considerable portion of the eastern area.\n\n<Action>(0, 47, 0)</Action>\n\nOnce the drone is at the (23, 47) coordinates, it should move down to the (0, 23) coordinates. This will ensure that the drone is at a lower altitude and closer to the ground.\n\n<Action>(23, 0, 0)</Action>\n\nSince the coordinates do"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 69 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n\nThe drone is flying over a land area with trees and other vegetation, and the coordinates on the grid are displayed on the image. The drone is parked at the coordinates (46, 46). Since there is no object of interest detected at these coordinates, the drone needs to explore the area further.\n\nThe drone should move towards the (0, 46) coordinates, as it is the closest in the north direction. This move will ensure that the drone covers as much area as possible without going too far away from the parked position.\n\nAfter the drone lands at (0, 46), it should fly to the (23, 46) coordinates. This is a significant move in the east direction and will cover a considerable portion of the eastern area.\n\n<Action>(0, 46, 0)</Action>\n\nOnce the drone is at the (23, 46) coordinates, it should move down to the (0, 23) coordinates. This will ensure that the drone is at a lower altitude and closer to the ground.\n\n<Action>(23, 0, 0)</Action>\n\nSince the coordinates do"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 68 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\n\nThe drone is flying over a land area with"
+    ]
+]

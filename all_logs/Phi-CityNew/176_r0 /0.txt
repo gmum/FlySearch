@@ -1,0 +1,16 @@
+ <Reasoning>The objective is to find a fire. I will fly down to ensure that I am at least 10 meters above any potential fire source if the fire is at or below ground level.</Reasoning>
+<Action>(0, 0, -52)</Action>
+
+<Reasoning>The object in question is not yet in the drone's field of vision. I will move slightly up to better position the drone.</Reasoning>
+<Action>(5, 0, -29)</Action>
+
+<Reasoning>The object is still not in the drone's view. I will move up and then to the right to improve the field of view and search for the fire.</Reasoning>
+<Action>(10, 0, -29)</Action>
+
+<Reasoning>The object is now visible and appears to be the fire. I will fly below the object to ensure I am close enough to report a possible fire source.</Reasoning>
+<Action>(1, 0, -35)</Action>
+
+<Reasoning>The object is still visible. I will fly down a little more to ensure I am close to the object before making the final move.</Reasoning>
+<Action>(0, 0, -42)</Action>
+
+<Reasoning>

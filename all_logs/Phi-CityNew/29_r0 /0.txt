@@ -1,0 +1,4 @@
+ <Reasoning>
+    I'm starting at z=35 meters, which is above the drone's optimal altitude for spotting an object. I need to descend to 10 meters or less to ensure the object is within my field of view and to minimize altitude when I find the object.
+    </Reasoning>
+    <Action>(0, 0, -25)</Action>

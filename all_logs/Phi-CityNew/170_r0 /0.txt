@@ -1,0 +1,27 @@
+ <Reasoning>
+The object is not clearly visible in the image, but I can see a building structure that might be a candidate. I will fly lower to get a clearer view.
+<Action>(0, 0, -50)</Action>
+</Reasoning>
+
+<Reasoning>
+I can now see the object more clearly. It appears to be a large group of people. I will fly even lower for a better view.
+<Action>(0, 0, -100)</Action>
+</Reasoning>
+
+<Reasoning>
+The object is still not clearly visible. I will move slightly to the east to get a better angle.
+<Action>(5, -5, -100)</Action>
+</Reasoning>
+
+<Reasoning>
+I can see the object now. It is a large group of people. I will fly even lower to ensure I am within the 10-meter limit.
+<Action>(0, 0, -5)</Action>
+</Reasoning>
+
+<Reasoning>
+The object is still not clearly visible. I will move slightly to the right to get a better view.
+<Action>(5, 0, -5)</Action>
+</Reasoning>
+
+<Reasoning>
+The object is still not clearly visible

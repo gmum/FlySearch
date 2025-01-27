@@ -1,0 +1,17 @@
+ 
+<Reasoning>I need to lower the altitude to get a closer view of the ground. It's important to get a sense of the terrain and identify the object directly.</Reasoning>
+<Action>(10, 0, -30)</Action>
+
+<Reasoning>The object is to the northwest of the current position. I'll head in that direction while descending to get closer.</Reasoning>
+<Action>(25, 0, -20)</Action>
+
+<Reasoning>The object is getting closer, but still not directly above me. A movement here would bring it into view.</Reasoning>
+<Action>(25, 10, -10)</Action>
+
+<Reasoning>I'm close to the object, but it's slightly to the south. I'll move north to get the best angle.</Reasoning>
+<Action>(26, 10, -10)</Action>
+
+<Reasoning>The object is directly above me. I'm ready to confirm its presence.</Reasoning>
+<Action>(26, 10, -10)</Action>
+<Action>(26, 10, -10)</Action>
+<Action>(26, 10, -10

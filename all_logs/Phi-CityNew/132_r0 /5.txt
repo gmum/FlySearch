@@ -1,0 +1,14 @@
+ <Action space>
+    <Action>(5, 0, -80)</Action>
+</Action space>
+
+<Reasoning>
+    I've already made one move and then realized it was a mistake. I am 24 meters below the object, and if I don't stop, I will hit it. To stop, I need to go up 26 meters.
+</Reasoning>
+
+<Action space>
+    <Action>(26, 0, 28)</Action>
+</Action space>
+
+<Reasoning>
+    I am now at a safe altitude. I can continue my search from above the object.

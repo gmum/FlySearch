@@ -1,0 +1,17 @@
+<Reasoning>Let's start by moving towards the center of the image to get a better view of the surroundings.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>From here, I will move slightly to the north and west to check if there's any anomaly.</Reasoning>
+<Action>(-10, 10, 0)</Action>
+
+<Reasoning>Now, I will move slightly to the south and east to continue the search.</Reasoning>
+<Action>(10, -10, 0)</Action>
+
+<Reasoning>Let's go a bit lower to get a closer look at the potential anomaly.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Since I'm now below 10 meters above the object and it's in my field of view, I can confirm that this is the anomaly.</Reasoning>
+<Found>FOUND</Found>

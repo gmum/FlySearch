@@ -1,0 +1,28 @@
+ 
+<Action>(10, 0, -30)</Action>
+<Reasoning>
+This green point might be the building I am looking for. It is close to my current altitude and I want to get closer to check. I'm moving south to head towards the building.
+</Reasoning>
+
+<Action>(5, 0, -15)</Action>
+<Reasoning>
+I'm now 10 meters below the object and in perfect view. It's the building I am searching for.
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+<Reasoning>
+I'm now 5 meters below the object, in the best possible view to confirm it's the building.
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+<Reasoning>
+I found the building! I'm staying in this spot to confirm it is the building.
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+<Reasoning>
+I found the building! I'm staying in this spot to confirm it is the building.
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+<

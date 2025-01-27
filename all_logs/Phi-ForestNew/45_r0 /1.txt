@@ -1,0 +1,10 @@
+ <Reasoning>The coordinates of the drone are not provided, but the closest point to the fire visible in the image is at (0, -18). I will fly to this point and then lower the altitude to check if it is the fire.</Reasoning>
+<Action>(0, -18, -10)</Action>
+
+<Reasoning>Since I can't target the exact point but need to be close to where the fire might be, I will move slightly further south and then lower the altitude to check for the fire.</Reasoning>
+<Action>(-1, -17, -10)</Action>
+
+<Reasoning>The fire is visible in the image; I have successfully located it. Now, I will fly below 10 meters to confirm the object is the fire.</Reasoning>
+<Action>(-1, -18, -10)</Action>
+
+<Reasoning>The coordinates of the drone are not provided, but the closest point to the fire visible in

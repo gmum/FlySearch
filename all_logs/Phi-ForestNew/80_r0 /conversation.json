@@ -1,0 +1,82 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 94 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>If the object is at the coordinates (0, 0, 0), I will start the search by flying towards it and then move down to scan the area more closely. I will continue searching systematically, changing altitude and moving across the grid as necessary to cover the area thoroughly.</Reasoning>\n<Action>(0, 0, -30)</Action>\n\n<Reasoning>After reviewing the area at this lower altitude, if I still have not located the object, I will climb back to a higher altitude to get a broader view and continue the search.</Reasoning>\n<Action>(0, 0, 30)</Action>\n\n<Reasoning>If the object is not found, I will move to the coordinates (31, 0, 0) to search a new area and then repeat the process of lowering to search and then climbing back to cover more ground.</Reasoning>\n<Action>(31, 0, -30)</Action>\n\n<Reasoning>I will continue this methodical pattern of descending to the object's vicinity and ascending to cover more ground until the object is found or I exhaust the allowed number of moves.</Reasoning>\n<Action>(31, 0, -30)</Action>\n\n<Reasoning"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 64 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the new coordinates, I will start from (43, 21, -60) and descend towards the object, checking the area as I go. I will keep moving to different points systematically to ensure a thorough search.</Reasoning>\n<Action>(-3, -2, -50)</Action>\n\n<Reasoning>After some time, if I haven't found the object, I'll head to (0, 0, -60) to scan that area and then return to the last point to continue searching methodically.</Reasoning>\n<Action>(0, 0, -20)</Action>\n\n<Reasoning>If no object is visible at the coordinates (0, 0, -60), I will proceed to (43, 43, -60) and continue the search in the same fashion.</Reasoning>\n<Action>(43, 43, -40)</Action>\n\n<Reasoning>I will keep this pattern of descending to the object and climbing back up to cover more area until I find the person or run out of altitude to change.</Reasoning>\n<Action>(43, 43, -40)</Action>\n\n<Reasoning>As I continue to search, I will ensure to communicate"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 14 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting from (5, 5, 0) I will descend to (0, 5, -10) and manually move the drone over the coordinates to check for the person.</Reasoning>\n<Action>(0, 5, -10)</Action>\n\n<Reasoning>If the object isn't visible at the coordinates (0, 5, -10), I will climb back to an altitude of 14 meters to reassess and search the area systematically for a broader view.</Reasoning>\n<Action>(5, 5, -3)</Action>\n\n<Reasoning>I will continue this process of scanning, lowering, and climbing until the person is spotted or all possible locations are exhausted. The found object must be in my field of view and be 10 meters or less below the drone when I declare a successful search.</Reasoning>\n<Action>(5, 5, -10)</Action>\n\n<Reasoning>For the next move, I will begin a search from (9, 5, -10) and adjust the altitude as needed to cover more ground while staying within the search limits.</Reasoning>\n<Action>(9, 5, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will begin the search from the coordinates (1, 1, 0) and methodically move to nearby coordinates to scan for the person.</Reasoning>\n<Action>(1, 1, -2)</Action>\n\n<Reasoning>If the object isn't found at the coordinates (1, 1, -2), I will move to the coordinates (1, 1, 2) and continue the search, keeping the altitude low to allow for detailed inspection.</Reasoning>\n<Action>(1, 1, 2)</Action>\n\n<Reasoning>I will repeat this process, adjusting the location for each subsequent move to ensure a thorough search while maintaining an altitude that allows for optimal field of view.</Reasoning>\n<Action>(1, 1, -2)</Action>\n\n<Reasoning>I will continue this process, adjusting the altitude and area searched based on the location of the object until found or the search limit is reached. The drone must be within the vicinity of the object when stating it's found.</Reasoning>\n<Action>(1, 1, 2)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 2 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting from the coordinates (1, 0, 0), I will lower the drone to (0, 0, -10) and then move across the coordinates to carefully inspect each area for the object.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>If the object isn't visible at the coordinates (0, 0, -10), I will climb to the coordinates (1, 0, 2) and continue the search systematically.</Reasoning>\n<Action>(1, 0, 2)</Action>\n\n<Reasoning>I will repeat this process, making adjustments as needed based on the object's location to ensure a thorough search while staying within the specified altitude limits.</Reasoning>\n<Action>(0, 0, -10)</Action>\n\n<Reasoning>I will continue to scan the area, adjusting my location on the grid as necessary to gather more information about the object's whereabouts while keeping my altitude as low as possible.</Reasoning>\n<Action>(1, 0, 2)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I have identified a potential obstacle at the coordinates (0, 0, 0). To avoid any collision and ensure safety, I will halt the search and perform a rapid climb to a safe altitude to assess the situation and determine the next course of action.</Reasoning>\n<Action\n    >(1, 0, 10)</Action>\n</Reasoning>\n\n<Reasoning>Once I have a better view of the surroundings, I will determine the safest route to continue the search, possibly altering my search grid based on the new information received.</Reasoning>\n<Action\n    >(1, 0, 10)</Action>\n</Reasoning>\n\n<Reasoning>After reevaluating the situation and ensuring it's safe to proceed, I will make a decision on whether to continue the search or abort the mission.</Reasoning>\n<Action\n    >(1, 0, 10)</Action>\n</Reasoning>\n\n<Reasoning>I will communicate the status to the ground control and follow their instructions for the next steps in the mission.</Reasoning>\n<Action\n    >(1, 0, 10)</Action>\n</Reasoning>\n\n<Reasoning>I will monitor the drone"
+    ]
+]

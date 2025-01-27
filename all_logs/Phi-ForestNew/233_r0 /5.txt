@@ -1,0 +1,23 @@
+ <Action space>
+    <Action>(5, 0, -3)</Action>
+</Action space>
+
+<Reasoning>
+    Following the coordinates (5,0), I am making a gentle turn to the left, which will broaden my search area around the object.
+</Reasoning>
+
+<Action space>
+    <Action>(5,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    I am adjusting my position to be directly over the center of the object for a closer view.
+</Reasoning>
+
+<Action space>
+    <Action>(5,0,2)</Action>
+</Action space>
+
+<Reasoning>
+    I am making a more definite move in the left direction while remaining at the same altitude for a better perspective of the object.
+</Reasoning

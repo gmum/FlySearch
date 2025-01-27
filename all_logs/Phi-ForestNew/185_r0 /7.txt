@@ -1,0 +1,19 @@
+ <Reasoning>
+The drone is at a comfortable altitude for scanning the ground below. I will continue the search from this altitude.
+</Reasoning>
+<Action>(5, 0, 0)</Action>
+
+<Reasoning>
+This coordinate is in the grassy area, it might be the object in question. I will lower my altitude to check for the object.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>
+The object might be in the water, judging by the green coloration. I will move to the coordinates on the map and check for the object.
+</Reasoning>
+<Action>(-5, 0, -20)</Action>
+
+<Reasoning>
+The object might be in the tree, judging by the green coloration. I will move to the coordinates on the map and check for the object.
+</Reasoning>
+<Action>(-5, 0,

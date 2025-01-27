@@ -1,0 +1,17 @@
+ <Reasoning>
+    The object might be the yellow point. I need to move closer to check.
+</Reasoning>
+<Action>(4, 0, 30)</Action>
+
+<Reasoning>
+    The object might be the yellow point. I need to move closer to check.
+</Reasoning>
+<Action>(-2, 0, 10)</Action>
+
+<Reasoning>
+    The object might be the yellow point. I have found it.
+</Reasoning>
+<Action>(-2, 0, -10)</Action>
+
+<Reasoning>
+    I have found the road construction site. It was at most 10 meters below the drone.

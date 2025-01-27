@@ -1,0 +1,11 @@
+ <Reasoning>
+I will make a series of moves to the left and downwards to scan the area. This should help me find the object if it is located in the left half of the image. If I am unable to find it, I will continue to make moves to scan the entire area.
+<Action>(-6, -10, -30)</Action>
+
+<Reasoning>
+I will make another move to the left to cover a larger area. This should help me locate the object if it is located in the left half of the image.
+<Action>(-7, -10, -20)</Action>
+
+<Reasoning>
+I will make a final move to the left to scan the entire area. This should help me find the object if it is located in the left half of the image. If I am unable to find it, I will make another move to the left to scan the entire area.
+<Action>(-8, -10, -10)</Action

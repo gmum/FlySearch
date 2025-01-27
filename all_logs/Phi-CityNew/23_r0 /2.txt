@@ -1,0 +1,2 @@
+ <Reasoning>I can't be lower than 10 meters, but since the specified location is not found, I need to move left to check another section.</Reasoning>
+<Action>(-1, 0, -10)</Action>

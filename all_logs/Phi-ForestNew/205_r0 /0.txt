@@ -1,0 +1,13 @@
+ <Reasoning>The object I'm searching for must be the yellow point in the image. It is located in the lower left quadrant and stands out because it is different from the surrounding greenery. Since I need to be 10 meters or lower above the object to find it, I must move closer. I'll start by descending to the coordinates where the yellow object is currently visible and then adjust my altitude to find it.</Reasoning>
+
+<Action>(-61, -31, -30)</Action>
+
+<Reasoning>Now I'm closer to the yellow point, but I need to be 10 meters or lower. I'll continue moving south, then slightly north to get under the yellow point.</Reasoning>
+
+<Action>(10, 0, -20)</Action>
+
+<Reasoning>After moving south, I'll need to ascend slightly to avoid detection. Let's go north while keeping an eye on the yellow point to see if it's still in my line of sight.</Reasoning>
+
+<Action>(0, 31, -20)</Action>
+
+<Reasoning>The yellow point is still visible, and I'm at an altitude that's 10 meters below it. Time to make the final move to confirm it's the

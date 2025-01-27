@@ -1,0 +1,35 @@
+ <Action space>
+    <Action>(5, 0, -10)</Action>
+</Action space>
+
+<Reasoning>
+    The coordinates you are given are (5,0), which means I am moving a bit to the west from my current position and 10 meters down since I am not given a z-value and it is safe to take the first step down.
+</Reasoning>
+
+<Action space>
+    <Action>(5,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    Now I am centered on the grid and 10 meters down from the object to find.
+</Reasoning>
+
+<Action space>
+    <Action>(5,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    I am staying centered on the object to have a clear view and check for anomalies.
+</Reasoning>
+
+<Action space>
+    <Action>(5,0,5)</Action>
+</Action space>
+
+<Reasoning>
+    I am moving slightly to the right and 5 meters up to maintain my position and check for more details of the object.
+</Reasoning>
+
+<Action space>
+    <Action>(5,0,5)</Action>
+</Action space

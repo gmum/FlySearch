@@ -1,0 +1,16 @@
+ <Reasoning>I am starting my search around the center of the image to cover as much area as possible. The object might be anywhere, so I will need to scan the area systematically.</Reasoning>
+<Action>(28, 28, 0)</Action>
+
+<Reasoning>The object is not within the field of view yet. I will move to the right and lower to increase the chances of finding it.</Reasoning>
+<Action>(28, 28, -10)</Action>
+
+<Reasoning>The object is still not visible. Moving further right might reveal some clues.</Reasoning>
+<Action>(28, 28, -20)</Action>
+
+<Reasoning>Still no sign of the object. I will continue scanning the area.</Reasoning>
+<Action>(28, 28, -30)</Action>
+
+<Reasoning>A yellow truck is visible in the image. If it's the object we're looking for, I will need to move lower.</Reasoning>
+<Action>(28, 28, -40)</Action>
+
+<Reasoning>The truck is closer to the ground now. I will verify if it's the correct object.</Reasoning

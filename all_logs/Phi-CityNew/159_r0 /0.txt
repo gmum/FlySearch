@@ -1,0 +1,10 @@
+ <Reasoning>I need to lower the drone to get closer to the ground as the object is a white truck on the ground. I will move in the direction of the coordinates (0, -30) to descend while being centered on the truck.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>I am now looking for the white truck on the ground. The next step is to move closer to the coords (0, -30) to ensure I am centered on it.</Reasoning>
+<Action>(0, -30, -10)</Action>
+
+<Reasoning>I am centering the drone on the truck. I will now move to the coordinates (0, -20) to get closer.</Reasoning>
+<Action>(0, -20, -10)</Action>
+
+<Reasoning>I am still not sure if this is the truck. I will move to the coordinates (0, -10) to get a better view and check if it is the white truck.

@@ -1,0 +1,14 @@
+ <Reasoning>The yellow point might be the construction site. I need to get closer to ensure it's the right place. If it's not the object in question, I will continue the search. I will also slightly go to the right to cover more ground.</Reasoning>
+<Action>(0, 0, -15)</Action>
+
+<Reasoning>The yellow point is still visible and confirmed in the area. It's possible that it is the construction site.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The yellow point remains the construction site and within my field of view and correct altitude range.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I found the object, it is the construction site, at the expected altitude and in my field of view. </Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The construction site is still the yellow point and recognized and confirmed at the correct altitude and location. </Reasoning>
+<Action>(0, 0, -10)</Action>

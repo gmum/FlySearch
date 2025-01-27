@@ -1,0 +1,6 @@
+ <Reasoning>With a current altitude of 29 meters, I need to find a way to get closer to the object. The yellow point on the grid seems to be the most promising direction to take.</Reasoning>
+<Action>(-20, 0, -20)</Action>
+<Reasoning>Moving downward will bring me closer to the object, which appears to be the yellow point on the grid.</Reasoning>
+<Action>(-25, 0, -20)</Action>
+<Reasoning>I am now at a lower altitude and closer to the object. I will make another move to ensure I am within the altitude limit and continue to look for the fire.</Reasoning>
+<Action>(-25, 0, -19)</Action>

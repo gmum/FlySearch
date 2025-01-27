@@ -1,0 +1,20 @@
+ <Reasoning>Starting examination below the lowest coordinates to maintain a safe altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Looking for patterns or landmarks to better identify the trash pile.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object seems to be in the lower middle part of the image.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object is not visible in the image, keeping the drone consistently low to the ground.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object might be at the lower-left part of the image, moving slightly to the right to investigate.</Reasoning>
+<Action>(0, 10, -10)</Action>
+
+<Reasoning>The object is still not clearly visible; continuing the search in the same area.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object seems to be in the upper-middle part of the image, visible now.</Reasoning>
+<Action>(0,

@@ -1,0 +1,11 @@
+ <Reasoning>Starting at a higher altitude, I will descend first to get a better view of the ground, then proceed with a lower altitude to find the object more easily. I will also keep an eye out for any potential obstacles.</Reasoning>
+<Action>(29, 40, -8)</Action>
+<Reasoning>I will continue moving downward while keeping an eye on the grid for the trash pile location.</Reasoning>
+<Action>(25, 38, -12)</Action>
+<Reasoning>The object seems to be located at this coordinate. I will move closer and then check if it's the trash pile.</Reasoning>
+<Action>(22, 36, -18)</Action>
+<Reasoning>The object is not the trash pile. I will continue to move downward for a better angle of view.</Reasoning>
+<Action>(20, 34, -24)</Action>
+<Reasoning>The object is not the trash pile. I will lower the altitude to get a better view of the ground and see if the object is in my field of view.</Reasoning>
+<Action>(18, 32, -30)</Action>
+<Reasoning>

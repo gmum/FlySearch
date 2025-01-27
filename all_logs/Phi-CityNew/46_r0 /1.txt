@@ -1,0 +1,5 @@
+ <Reasoning>Currently, I am flying at a height of 40 meters, which is still too high compared to the grass-like areas I am searching for. To get a closer view, I should make a drastic descent of 21 meters to 2 meters above the ground, while ensuring that my altitude is not above 10 meters above the ground for the final spotting of the trash pile.</Reasoning>
+<Action>(-21, 0, -21)</Action>
+<Reasoning>After the initial descent, I will proceed to move slightly northeast to ensure that I am covering a wider area, which may increase the probability of spotting the large trash pile within the given field of view.</Reasoning>
+<Action>(0, 5, -16)</Action>
+<Reasoning>If the trash pile is not directly visible, I will perform another descent to get closer to the ground while continuing to scan the area. A lower altitude will mean a larger field of view, which is crucial for finding the trash pile.</Reason

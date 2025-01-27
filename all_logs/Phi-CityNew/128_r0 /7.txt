@@ -1,0 +1,29 @@
+ <Action>(-37, -1, -1)</Action>
+<Reasoning>
+I am flying slightly lower to ensure that I am not missing any potential signs of a fire.
+</Reasoning>
+
+<Action>(-37, 0, 0)</Action>
+<Reasoning>
+I am ensuring that I am within 10 meters altitude relative to the potential fire.
+</Reasoning>
+
+<Action>(-37, 0, 1)</Action>
+<Reasoning>
+I am flying above the potential fire to ensure that I am not missing it.
+</Reasoning>
+
+<Action>(-37, -1, 1)</Action>
+<Reasoning>
+I am ensuring that I am still within 10 meters altitude relative to the yellowish smoke sign.
+</Reasoning>
+
+<Action>(-37, 0, 2)</Action>
+<Reasoning>
+I am trying to ensure safety by flying higher and looking for more indications of the fire.
+</Reasoning>
+
+<Action>(-37, -1, 2)</Action>
+<Reasoning>
+I am ensuring that I am still within 10 meters altitude relative to the yellowish smoke sign.
+</

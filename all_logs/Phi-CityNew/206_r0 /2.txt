@@ -1,0 +1,5 @@
+ <Reasoning>I am at a lower altitude, but I need to get closer to the ground to see the object more clearly.</Reasoning>
+<Action>(-0,0,-4)</Action>
+
+<Reasoning>I am searching for an object that doesn't match the environment. I need to be on the ground.</Reasoning>
+<Action>(0, 0, -4)</Action>

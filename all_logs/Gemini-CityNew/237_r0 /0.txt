@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I need to find the anomaly. I don't see anything obvious right now. I will move to the center of the image (0,0) to check for anomalies there, and will go down in altitude.</Reasoning>
+<Action>(0, 0, -20)</Action>
+```

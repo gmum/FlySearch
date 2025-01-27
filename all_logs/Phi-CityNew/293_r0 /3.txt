@@ -1,0 +1,15 @@
+ <Reasoning>I have flown too close and would have hit the object if I didn't stop the UAV and take action. I need to quickly analyze the situation and find a safer position to continue the search.</Reasoning>
+<Action>(-27, 0, 0)</Action>
+
+<Reasoning>I have decided to move to the leftmost coordinate on the grid that is closest to the UAV's current position. This will allow me to scan the area without putting the UAV in danger.</Reasoning>
+<Action>(-27, 0, 0)</Action>
+
+<Reasoning>I will now move diagonally to the bottom right to cover more area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have scanned the coordinates above the yellow mark and have not found the object. I will now move diagonally to the bottom right to cover more area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have scanned the coordinates below the yellow mark and have not found the object. I will now move diagonally to the bottom right to cover more area.</Reasoning>
+<Action>(0, 0, 0)</Action>
+

@@ -1,0 +1,7 @@
+ <Reasoning>Starting from the initial point (11, 23, 34), I need to begin my search in the area that I can possibly see on the map. Scanning the grid, I will start by moving VERTICALLY downwards to the point (0, 23, 34) and THEN GO TO THE RIGHT by 11 units to point (0, 0, 34), and then continue to move VERTICALLY down to point (0, -11, 34).</Reasoning>
+<Action>(0, 0, 34)</Action>
+
+<Reasoning>Next, I will move UP by 11 units to point (0, 12, 34) and then proceed to move DOWN by 11 units to point (0, -0, 34), which is the center of my area. Now, I will move VERTICALLY down to point (0, -11, 34), which is in my view.</Reasoning>
+<Action>(0, -11, 34)</Action>
+
+<Reasoning>After this, I will check the YELLOW spot on the map which might be the trash pile. If it's not the object, I will keep searching by

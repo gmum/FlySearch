@@ -1,0 +1,13 @@
+ <Reasoning>As I am already at the optimal altitude for the search, I will move to the next point directly above the grid point (-0.5, 1.5) to continue the search process.</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>Upon reaching the new location above (-0.5, 1.5), I will perform a detailed inspection of the area below this point, looking for any signs of fire. If there is no fire visible, I will continue the search process.</Reasoning>
+
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>If no fire is detected at the current grid point, I will make another move to the next grid point that I can reach from my current location to maintain the search process while staying within the 10-meter radius requirement.</Reasoning>
+
+<Action>(0.5, 0.5, -1)</Action>
+
+<Reasoning>The search process continues above the grid point (-0.5, 1.5). I will carefully examine the area below it for signs of fire. If no fire is detected, I will move to the next grid point that I can reach from my current location to maintain the search process while ensuring I remain within the 10-meter

@@ -1,0 +1,5 @@
+ <Reasoning>The object, which is the only yellow point, is located at the bottom edge of my current view. Since my altitude is 1 meter, moving slightly northward will help me get a clear view of it without risking collision with the ground.</Reasoning>
+<Action>(0, 13, -10)</Action>
+
+<Reasoning>To get closer to the object and to ensure the UAV is within 10 meters of it, I must move further north and lower the altitude by 10 meters. This will help me confirm the object is the anomaly.</Reasoning>
+<Action>(0, 13, -20)</Action>

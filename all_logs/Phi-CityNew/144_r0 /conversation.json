@@ -1,0 +1,58 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since the objective is to fly below 10 meters above the object, I will begin by descending to a lower altitude while ensuring that I do not exceed the altitude limit of 120 meters or move outside of my view. The starting coordinates suggest that the drone is on the left side of the image, so I will move slightly to the right to get a wider view of the area.</Reasoning>\n\n<Action>(5, 0, -30)</Action>\n\n<Reasoning>Moving to the right will allow me to cover a larger area and increase the chances of spotting the object. Since I am descending, I am making good progress towards the objective. Now, I will continue to scan the area for the object of interest.</Reasoning>\n\n<Action>(10, 0, -25)</Action>\n\n<Reasoning>Further rightward movement will provide an even broader view. This should help in spotting the object more easily, if it is indeed to the right in the image.</Reasoning>\n\n<Action>(15, 0, -35)</Action>\n\n<Reasoning>Since I am confident that the object is not in the immediate left section, as per the current view, I will now focus on the right section to find the object."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude, I am able to scan a reasonable area. Since I am not yet at the 10-meter limit, I will continue to descend to ensure the best chance of finding the object.</Reasoning>\n\n<Action>(0, 0, -20)</Action>\n\n<Reasoning>Now that I am at a lower altitude, I will focus on scanning for the object. Moving slightly to the right will help me cover new ground and increase the likelihood of spotting the object.</Reasoning>\n\n<Action>(0, 0, -30)</Action>\n\n<Reasoning>Moving to the right will provide a wider view of the area, which increases the chances of spotting the object. I will continue to scan the area while staying within the 10-meter altitude limit.</Reasoning>\n\n<Action>(0, 0, -35)</Action>\n\n<Reasoning>As a final move, I will move further to the right to get a broader view of the area. This should help me find the object if it is present in the area.</Reasoning>\n\n<Action>(0, 0, -40)</Action>\n\n<Reasoning>I have now completed all possible moves within my altitude limit."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>With the current altitude, I will proceed to scan the area systematically for the object, ensuring I remain within the altitude limit.</Reasoning>\n\n<Action>(2, 0, -18)</Action>\n\n<Reasoning>I will start by moving to the right to expand my area of view and scan for the object thoroughly.</Reasoning>\n\n<Action>(2, 0, -28)</Action>\n\n<Reasoning>I will continue scanning the area while ensuring I am within the altitude limit to remain safe and avoid any potential hazards.</Reasoning>\n\n<Action>(2, 0, -38)</Action>\n\n<Reasoning>I will proceed to the right to cover a larger area and increase the chances of spotting the object. I will also remain vigilant to ensure safety.</Reasoning>\n\n<Action>(2, 0, -48)</Action>\n\n<Reasoning>I have completed all possible moves within my altitude limit."
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Since I am above the 1-meter altitude limit, I cannot continue searching for the object. I must initiate an emergency stop to prevent the UAV from colliding with an obstacle."
+    ]
+]

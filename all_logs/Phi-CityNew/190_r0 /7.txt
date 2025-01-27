@@ -1,0 +1,15 @@
+ <Reasoning>The large object has caught my attention, and I need to make a quick decision. I will elevate to a safe altitude while keeping an eye on the object for potential fire.</Reasoning>
+<Action>(0, -1, -20)</Action>
+<Action>(-1, -1, -20)</Action>
+<Action>(-2, -1, -20)</Action>
+<Action>(-3, -1, -20)</Action>
+<Action>(-4, -1, -20)</Action>
+<Action>(-5, -1, -20)</Action>
+
+<Reasoning>After regaining altitude, I will make a series of moves to ensure both safety and visibility. I will pay close attention to the ground to spot the fire accurately.</Reasoning>
+<Action>(-1, -2, -15)</Action>
+<Action>(-2, -2, -15)</Action>
+<Action>(-3, -2, -15)</Action>
+<Action>(-3, -3, -15)</Action>
+<Action>(-4, -3, -15)</Action>
+<Action

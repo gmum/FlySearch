@@ -1,0 +1,4 @@
+<Reasoning>Now that I have moved slightly west and lowered my altitude, I have spotted a fire on the street at coordinates (-9, 5). I need to fly below 10 meters relative to the fire and reply with "FOUND". I will move towards the fire while lowering my altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+FOUND

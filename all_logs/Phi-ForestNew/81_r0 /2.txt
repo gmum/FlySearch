@@ -1,0 +1,48 @@
+ With the current altitude being 12 meters, drone needs to decrease its altitude to better find the building, though it must ensure the drone remains within the search area's bounds.
+
+
+<Reasoning>
+
+    We're aiming to get closer to the building at the center of the image. Reducing altitude is necessary, yet the drone must stay within a confined area for safety and to not miss the target.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -3)
+
+</Action>
+
+
+<Reasoning>
+
+    A reduction of 1 meter in altitude is more significant than a previous descending order, as it provides a larger change in altitude which could lead to an earlier identification of the building.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -10)
+
+</Action>
+
+
+<Reasoning>
+
+    By going lower another 10 meters, the drone should be able to confirm the presence of the building and center itself over the structure.
+
+</Reasoning>
+
+
+<Action>
+
+    (-1, 0, -20)
+
+</Action>
+
+
+<Reasoning>
+
+    An altitude of -20 meters is

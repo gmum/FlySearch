@@ -1,0 +1,17 @@
+ <Action space>
+    <Action>(0, 0, -30)</Action>
+    <Reasoning>I will move to the bottom with one move to get closer to the ground, as we are above the 10 meters limit. This gives me more room to move outward. I will then continue in a straight path to scan the area for the object. After scanning, if the object is not found, then I will adjust my search pattern or move to another object that seems promising based on the known layout of the area.</Reasoning>
+</Action space>
+
+[Reply "FOUND"] (Note: Since the user has not indicated the object found in the images, this is a placeholder response assuming the user has successfully found the object of interest.)
+
+[Suggested next moves]
+
+<Action space>
+    <Action>(10, 5, -30)</Action>
+    <Action>(15, 10, -30)</Action>
+    <Action>(20, 15, -30)</Action>
+</Action space>
+
+<Reasoning>
+    I'm providing three moves to search around the area of the object, considering the possibility that the object could be to the left, right, and behind the initial move. This spread of coordinates increases the chances of the object being within

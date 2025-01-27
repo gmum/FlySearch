@@ -1,0 +1,13 @@
+ <Reasoning>First, I will assess the current location of the drone to determine an initial move. Based on the coordinates visible on the map, I can see a yellow point, and judging by the grid, it seems like we are in the bottom left area of the image. I will move towards this potential object.</Reasoning>
+
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>After moving to the yellow point, I will check the coordinates to see if the object is within my view and if it's at most 10 meters below the drone. If it's the right object and in the required position, I will reply with "FOUND". If not, I will continue to search in the area.</Reasoning>
+
+<Action>(7, 0, -40)</Action>
+
+<Reasoning>Since I have not found the object, I will move slightly northeast to cover more ground in the search area. This will allow me to scan for the object from a wider perspective without moving too far away from the area I've been investigating.</Reasoning>
+
+<Action>(8, 0, -43)</Action>
+
+<Reasoning>The search area seems wide, and the object's coordinates are hard to gauge. I will take a step back to give me a

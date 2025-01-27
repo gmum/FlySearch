@@ -1,0 +1,13 @@
+ <Reasoning>Based on the given coordinates, I will start flying towards the mentioned object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I need to fly to a point in the image that is more visible and closer to the object in question.</Reasoning>
+<Action>(10, -10, -10)</Action>
+
+<Reasoning>I'll move further south to investigate the area with more detail.</Reasoning>
+<Action>(-10, -10, -10)</Action>
+
+<Reasoning>Finally, I will fly to a point where the object should be visible above the image.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Response>FOUND</Response>

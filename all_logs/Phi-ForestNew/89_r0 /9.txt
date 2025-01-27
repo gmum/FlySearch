@@ -1,0 +1,22 @@
+ <Reasoning>
+    It's important to maintain a safe altitude while also keeping an eye out for the campsite.
+    </Reasoning>
+    <Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    Following the yellow object's trail, which could lead to the campsite.
+    </Reasoning>
+    <Action>(0, -5, -1)</Action>
+
+<Reasoning>
+    A comprehensive left turn to ensure a thorough search of the area.
+    </Reasoning>
+    <Action>(0, -10, -1)</Action>
+
+<Reasoning>
+    Moving down to increase the search area while adhering to altitude limits.
+    </Reasoning>
+    <Action>(0, -15, -1)</Action>
+
+<Reasoning>
+    Continuing to follow

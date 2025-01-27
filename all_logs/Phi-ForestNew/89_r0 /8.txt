@@ -1,0 +1,22 @@
+ <Reasoning>
+    I am committed to scanning the area for any signs of the campsite while staying within safe boundaries.
+    </Reasoning>
+    <Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    Moving left to follow the yellow object's trail, which might indicate the presence of a campsite.
+    </Reasoning>
+    <Action>(0, -5, -1)</Action>
+
+<Reasoning>
+    Making a full left turn to keep the search going in the right direction.
+    </Reasoning>
+    <Action>(0, -10, -1)</Action>
+
+<Reasoning>
+    Moving down to increase the search area without exceeding the altitude limit.
+    </Reasoning>
+    <Action>(0, -15, -1)</Action>
+
+<Reasoning>
+    Continuing to follow

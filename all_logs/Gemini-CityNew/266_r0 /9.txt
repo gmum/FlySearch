@@ -1,0 +1,2 @@
+<Reasoning>I am at (0,0), and I need to get to the anomaly at (0,-12). I will try moving to (0, -12) and descending by 15 meters. That should get me closer. After that, I should be able to reply with FOUND.</Reasoning>
+<Action>(0, -12, -15)</Action>

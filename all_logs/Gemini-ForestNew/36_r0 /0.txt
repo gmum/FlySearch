@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I don't see the person in the image. I will move towards the center of the image, (0,0) to start my search and I will go lower to get a closer look.</Reasoning>
+<Action>(0, 0, -30)</Action>
+```

@@ -1,0 +1,11 @@
+ <Reasoning>I have flown too close to an object and would have hit it. I will increase my altitude to avoid a collision.</Reasoning>
+<Action>(30, 40, 33)</Action>
+<Reasoning>I will continue to move downward to get a better view of the ground and the object that is causing the emergency stop.</Reasoning>
+<Action>(27, 38, 37)</Action>
+<Reasoning>The object is not the trash pile. I will continue to move downward while keeping an eye on the grid for the trash pile location.</Reasoning>
+<Action>(24, 36, 40)</Action>
+<Reasoning>I will move up in altitude to avoid collision and then proceed to continue my search for the trash pile.</Reasoning>
+<Action>(30, 34, 43)</Action>
+<Reasoning>I will move downward again to get a better view of the ground and the object that is causing the emergency stop.</Reasoning>
+<Action>(27, 32, 47)</Action>
+<Reasoning>I am now at a safe altitude and can continue my search for the trash pile</Reason

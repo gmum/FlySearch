@@ -1,0 +1,13 @@
+ <Reasoning>Based on the grid and the coordinates that are outlined, it seems likely that the object does not fit in with the surrounding environment. I need to make a strategic move to this point to make it the focal point of my search.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Reasoning>By moving to this spot, I'm positioning the drone in a way that allows me to see the object more clearly and better assess its distance and altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After scanning the area, I'm confident that the object in question is not this yellow point. I'll continue the search by heading to the next point on the grid.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>The object is now within my field of view. It's likely that it's not this point, but I'll continue to search in the vicinity to be certain.</Reasoning>
+<Action>(25, 0, -10)</Action>
+
+<Reasoning>I am now closer to the object than ever. I will immediately check this yellow point to confirm whether it's the anomaly we

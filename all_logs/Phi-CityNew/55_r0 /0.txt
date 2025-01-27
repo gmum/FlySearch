@@ -1,0 +1,14 @@
+ <Reasoning>I need to fly closer to the ground to check for the fire, which is likely to be at or near the ground level. The object I am searching for appears to be at or near the 0, -47 coordinates on the grid. To get closer, I will move in the southern direction.</Reasoning>
+<Action>(0, -0, -10)</Action>
+
+<Reasoning>I have successfully located the fire at the coordinates (0, -47). I need to lower my altitude to 0 meters to confirm the presence of the fire.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The object is now within my field of view, and I am 0 meters above it. The coordinates are (0, -47), which is the location of the fire.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have successfully located the fire and confirmed that it is at the location coordinates (0, -47). The task is complete.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I must now return to my starting altitude and maintain a safe distance from the structure.</Reasoning>
+<Action>(0, 

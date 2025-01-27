@@ -1,0 +1,24 @@
+ <Reasoning>
+As per the initial instructions, I will ascertain the location of the road construction site by moving closer to the ground to ensure I'm at most 10 meters below the object in question.
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+Since the coordinates are not clear, I am starting with the assumption that there is a road construction site at the coordinates (13, 13) as given. I need to verify if this is the correct location by moving down to be closer to it.
+</Reasoning>
+
+<Action>(-10, -10, -10)</Action>
+
+<Reasoning>
+Now that I am flying lower, I need to scan the ground for any signs of construction. It is necessary to take as many steps as possible towards the structure from different directions to identify it.
+</Reasoning>
+
+<Action>(-15, -15, -10)</Action>
+
+<Reasoning>
+I am now closer to the ground. By moving further down, I can get an even closer look at the surroundings, searching for any construction-related indicators.
+</Reasoning>
+
+<Action>(-20, -15, -10)</Action>
+

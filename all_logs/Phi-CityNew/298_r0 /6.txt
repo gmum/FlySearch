@@ -1,0 +1,8 @@
+ <Reasoning>I will move closer to the ground to get a better view of the area and look for any anomalies.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+<Reasoning>The yellow object on the ground is not the object I am looking for. I will continue to move further south to get a better view of the area.</Reasoning>
+<Action>(-2, 0, -5)</Action>
+<Reasoning>I have spotted a yellow object that matches the description of the anomaly. I will fly closer to it to get a better view and confirm if it is the object I am looking for.</Reasoning>
+<Action>(-2, -1, -5)</Action>
+<Reasoning>The yellow object on the ground is not the object I am looking for. I will continue to move further south to get a better view of the area.</Reasoning>
+<Action>(-2, -1, -5)</Action>

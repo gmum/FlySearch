@@ -1,0 +1,11 @@
+ <Reasoning>I will start by flying down to a lower altitude to enhance my chances of spotting the building. If I get closer, I will move in a direction that seems promising for finding the building.</Reasoning>
+<Action>(-5, 0, -30)</Action>
+<Reasoning>Now that I am lower in altitude, I will move in the direction that seems most likely to lead to the building based on the visible terrain.</Reasoning>
+<Action>(-3, 0, -30)</Action>
+<Reasoning>The building seems still not in my view. I will descend further to get a better angle.</Reasoning>
+<Action>(-2, 0, -30)</Action>
+<Reasoning>The building is now visible. I will fly directly above it to check if it's within my field of view at the specified altitude.</Reasoning>
+<Action>(-2, 0, 0)</Action>
+<Reasoning>All the way down, I will make sure the building is in my view.</Reasoning>
+<Action>(-2, 0, -10)</Action>
+<Reasoning>Now I can confirm that I am on top of the building, as indicated by the structure in my field of view.</

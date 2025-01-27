@@ -1,0 +1,17 @@
+ <Reasoning>The object might be in the upper left region of the map, around (14, 20).</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The object might be in the upper right region of the map, around (0, 20).</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The object might be in the lower left region of the map, around (20, 0).</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The object might be in the lower right region of the map, around (20, 0).</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The object might be in the upper right region of the map, around (0, 14).</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>The object might be in the lower left region of the map, around (20, 14).</Reasoning>
+<Action>(10, 0, -10)</Action>

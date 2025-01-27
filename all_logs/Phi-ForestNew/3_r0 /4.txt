@@ -1,0 +1,27 @@
+ <Action space>
+    <Action>(-31, -31, -0)</Action>
+</Action space>
+<Reasoning>
+    I am choosing the center of the grid as my starting point, and as my altitude decreases, I am ensuring that my field of view increases.
+</Reasoning>
+
+<Action space>
+    <Action>(-31, -26, -6)</Action>
+</Action space>
+<Reasoning>
+    Moving downward allows me to include more of the ground in my field of view, increasing the likelihood of detecting any signs of the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-31, -21, -12)</Action>
+</Action space>
+<Reasoning>
+    As I continue to descend, I am optimizing my search area for the campsite, as I might spot it at lower altitudes.
+</Reasoning>
+
+<Action space>
+    <Action>(-31, -16, -18)</Action>
+</Action space>
+<Reasoning>
+    I am now in a lower altitude which allows me to explore a bigger area of the map and potentially spot any signs of the campsite.
+</Reasoning>

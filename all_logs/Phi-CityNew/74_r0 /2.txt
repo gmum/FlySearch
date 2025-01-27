@@ -1,0 +1,14 @@
+ <Reasoning>
+I am currently situated above the ground and the yellow point that seems to be the crowd. I need to move lower to get a closer look. However, I am at a distance that is too far away. To get closer, I will make a move to the north and decrease my altitude to get closer to the ground.
+</Reasoning>
+<Action>(-26, 0, -30)</Action>
+<Reasoning>
+After making the move, I am now closer to the ground and centered on the yellow point. I can confirm that the yellow point in the image is the crowd we were searching for. While I am below 10 meters relative to the object, I am slightly higher than the object itself. I will need to make another move to lower my altitude further.
+</Reasoning>
+<Action>(-26, 0, -60)</Action>
+<Reasoning>
+I have successfully found the crowd below 10 meters relative to the drone. I am now in the correct position to confirm my findings.
+</Reasoning>
+<Action>(-26, 0, -90)</Action>
+<Reasoning>
+I am now reporting that I have found the crowd below 10 meters relative to the drone. The yellow point in the image is the crowd we were

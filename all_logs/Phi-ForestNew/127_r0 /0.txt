@@ -1,0 +1,13 @@
+ <Reasoning>My priority is to get closer to the potential forest fire for a better assessment. The yellow point is within my field of view, and I will move closer to it while maintaining the drone's safety within the view range.</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>The yellow point seems to be the object of interest. I am moving closer to it and lowering my altitude to assess it better.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The bright spot is likely the forest fire. I am now at the appropriate altitude and centered on the fire.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I have located the fire and am now at the correct altitude to confirm its presence. I will not be moving further.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+Result: FOUND

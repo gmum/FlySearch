@@ -1,0 +1,4 @@
+<Reasoning>From the current viewpoint, I see a white car parked at the coordinates (-7, 4). It appears to be the object we are looking for. I will adjust my altitude to ensure I am within 10 meters of the car.</Reasoning>
+<Reasoning>(Simultaneously, I will center the drone on the car to ensure it is in my field of view.)</Reasoning>
+<Action>(0, 0, -1)</Action>
+FOUND

@@ -1,0 +1,11 @@
+ <Reasoning>
+    I'll begin my search from the center coordinates and move to (0, 0) for a wider view.
+</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    Now, I'll ascend slightly to (0, -1) to see if the anomaly is in the vicinity.
+</Reasoning>
+<Action>(0, -1, -1)</Action>
+
+<Reason

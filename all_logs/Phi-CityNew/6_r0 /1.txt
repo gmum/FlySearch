@@ -1,0 +1,13 @@
+ <Reasoning>I need to make a move to descend closer to the ground. Since I am already above 10 meters, I will move down in the direction that seems to be the closest to the object, which appears to be to the left of the current view.</Reasoning>
+<Action>(-40, -10, 36)</Action>
+
+<Reasoning>The object appears to be at a distance that makes it difficult to identify. I will continue descending slightly to the left to get a better view.</Reasoning>
+<Action>(-45, -10, 35)</Action>
+
+<Reasoning>I can now see the object, which seems to be a large trash pile. I need to move closer to confirm its presence below 10 meters and respond accordingly.</Reasoning>
+<Action>(-40, -10, 33)</Action>
+
+<Reasoning>The large trash pile is clearly visible below me. I must now confirm its presence to satisfy the search criteria. I will fly down to be sure if it's within my view.</Reasoning>
+<Action>(-40, -10, 32)</Action>
+
+<Reasoning>Now that I'm below the large trash pile, I will secure my position

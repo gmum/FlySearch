@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+        The coordinates at (14, 14) have a noticeable intensity along the bottom edge of the image. It is possible that this is the object we need to find. The object could be at a lower altitude than the drone, so I will decrease my altitude to 0 meters to confirm.
+    </Reasoning>
+    <Action>(0, 0, 62)</Action>
+</Response>

@@ -1,0 +1,29 @@
+ <Reasoning>
+I'll start by moving to a grid point closer to the potential fire location. Since I can't tell if the object is in the first image, I need to be thorough.
+</Reasoning>
+<Action>
+((0, 0, -5))
+</Action>
+
+<Reasoning>
+After assessing the first image, I believe the object might be the yellowish area towards the center. Since my current altitude is 87 meters, I need to fly lower to have a better chance of spotting it.
+</Reasoning>
+<Action>
+((0, 0, -10))
+</Action>
+
+<Reasoning>
+I think I am getting closer to the object; however, it's still not sure if it is the fire. If I move down a little more, I might get a clearer view and confirm if I have found the fire.
+</Reasoning>
+<Action>
+((-1, 0, -20))
+</Action>
+
+<Reasoning>
+The object is not clearly visible. It could be the fire, so I need to move down to have a better view and find the fire.
+</Reasoning>
+<Action>
+((-2, 0, -30))
+</Action>
+
+<Reasoning>

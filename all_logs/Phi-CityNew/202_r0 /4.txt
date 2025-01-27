@@ -1,0 +1,17 @@
+ <Reasoning>
+I am starting my search at a height of 100 meters above the ground level, which is within my operational limits. I will need to lower my altitude to find the object. I'll begin by moving down 15 meters.
+</Reasoning>
+<Action>(-85, 0, 60)</Action>
+
+<Reasoning>
+I've moved down 15 meters, which should allow me to be closer to the possible ground level of the object if it is indeed below this altitude. Next, I need to make a decision based on what I can see from this altitude.
+</Reasoning>
+<Action>(-85, 0, 45)</Action>
+
+<Reasoning>
+The image from this altitude is clearer, and I can see a yellow point, which might be the object I'm looking for. To be closer to it, I need to lower my altitude further. I'll make another move down 5 meters and adjust my horizontal position to center the drone over the point.
+</Reasoning>
+<Action>(-90, 0, 35)</Action>
+
+<Reasoning>
+Same as before, I need to ensure the object is within my field of view and that I'm 10 meters

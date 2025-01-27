@@ -1,0 +1,10 @@
+ <Reasoning>To begin the search, I need to move closer to the ground. The coordinates (0, 0) seem to be the closest point to the ground in the grid, so I will head there while maintaining an altitude of 77 meters.</Reasoning>
+<Action>(0, 0, 77)</Action>
+
+<Reasoning>Upon reaching (0, 0), I will check around this area to find any indicators of the person or object. If I don't see anything, I'll move to the (26, 0) point to get a broader view of the terrain.</Reasoning>
+<Action>(26, 0, 77)</Action>
+
+<Reasoning>I will continue to scan the surroundings at (26, 0) for any signs of the object. If no object is detected, I'll proceed to the (51, 0) point to cover more area.</Reasoning>
+<Action>(51, 0, 77)</Action>
+
+<Reasoning>At (51, 0), I will assess the area for the object. If it's still not visible, I will move to (26, 51) to look in a different direction while maintaining an altitude of 77

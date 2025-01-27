@@ -1,0 +1,8 @@
+<Reasoning>I have found the red pickup truck on the road. I will move to the center of the image and fly slightly higher to get a better view of the surroundings.</Reasoning>
+<Action>(0, 0, 5)</Action>
+
+<Reasoning>Now that I have a better view, I will fly lower to get closer to the red pickup truck.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>At this altitude, I can confirm that the red pickup truck is the object in question. I will stay at this altitude and reply with "FOUND".</Reasoning>
+FOUND

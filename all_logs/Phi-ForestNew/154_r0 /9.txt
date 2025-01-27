@@ -1,0 +1,8 @@
+ <Reasoning>My current altitude is low, so it's important to make precise movements to spot the trash pile. I need to adjust my altitude while keeping within the altitude constraints.</Reasoning>
+<Action>(-2, 0, -1)</Action>
+
+<Reasoning>By making precise movements, I can cover the area and find the trash pile. It's important to stay within the altitude limits while scanning the area.</Reasoning>
+<Action>(-2, 0, -1)</Action>
+
+<Reasoning>The trash pile might be closer than I think. I need to move to a spot that could provide a better view and potentially spot the trash pile.</Reasoning>
+<Action>(-2, 0, -1)</Action>

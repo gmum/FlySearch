@@ -1,0 +1,21 @@
+ <Reasoning>I am standing between the buildings, so I need to move up towards them. I will look for the trash pile while moving up to a higher altitude.</Reasoning>
+
+<Action>(0, 0, 16)</Action>
+
+<Reasoning>I am now at the edge of the image where there is a clearer space. The trash pile might be nearby, so I will move down slightly for a better view.</Reasoning>
+
+<Action>(0, -3, 16)</Action>
+
+<Reasoning>I am moving closer to the ground, now looking in the area where the trash pile might be. I will continue to move downwards and scan the area.</Reasoning>
+
+<Action>(-5, -3, 16)</Action>
+
+<Reasoning>The trash pile seems to be in the lower left corner of the image. I am moving downwards to get a closer view.</Reasoning>
+
+<Action>(-5, -3, 16)</Action>
+
+<Reasoning>I am flying over the trash pile now. The object is within my field of view.</Reasoning>
+
+<Action>(-5, -1, 16)</Action>
+
+<Reasoning>

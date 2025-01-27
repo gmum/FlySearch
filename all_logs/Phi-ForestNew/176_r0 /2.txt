@@ -1,0 +1,10 @@
+ <Reasoning>My altitude is still higher than I would like. I must descend the drone to get closer to the person. The person seems to be near the (11, 11) location where there is a mix of grassy and green areas. I will move in this direction to be closer to the person.</Reasoning>
+<Action>(11, 11, 0)</Action>
+
+
+<Reasoning>I am now closer to the person but still not at the correct altitude. The person appears to be slightly to the right of the center of the image. I will move further to the right and decrease my altitude to get closer for a better view.</Reasoning>
+<Action>(11.1, 11, -5)</Action>
+
+
+<Reasoning>I am closer to the person now, in a region with a mix of open land and trees. I need to adjust my altitude to ensure the person is within my field of view. The person seems to be near the area with yellowish vegetation.</Reasoning>
+<Action>(11.05, 11, -5)</Action>

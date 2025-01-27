@@ -1,0 +1,13 @@
+ <Reasoning>The object seems to be located at grid (0, 0), which is on the ground level. I need to be closer to it, so I will move down to (0, 0, -20) to be 20 meters below the object.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>The object is still not in my field of view, I will move to (0, 20, -20) which is closer to the object.</Reasoning>
+<Action>(0, 20, -20)</Action>
+
+<Reasoning>I am not quite close enough to the object, I need to go a bit lower to 10 meters, I will move to (0, 50, -10) to do so.</Reasoning>
+<Action>(0, 50, -10)</Action>
+
+<Reasoning>I can now see the object and I am 10 meters below it, I will fly to (50, 10, -10) to get a better view of it.</Reasoning>
+<Action>(50, 10, -10)</Action>
+
+<Reasoning>The object is located at grid (51, 1),

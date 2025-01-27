@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see some construction equipment at (0,5). I need to get closer to verify, so I will lower my altitude by 10m. I will also stay at x=0 and y=5 to be centered.</Reasoning>
+<Action>(0, 5, -10)</Action>
+```

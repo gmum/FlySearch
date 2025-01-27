@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+After moving, I am more centered on the yellow point, which is likely to be the object you are searching for. I will now check if I am within 10 meters below the drone relative to the object.
+    </Reasoning>
+    <Action>(3, 0, -15)</Action>
+</Response>

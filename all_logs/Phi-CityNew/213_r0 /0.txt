@@ -1,0 +1,11 @@
+ <Reasoning>The object in question is likely to be on the ground, given the grid overlay and the coordinates. I need to move down to 10 meters, and given the constraints, I am also maximizing the chances of finding the object. I will start by moving south to find a more promising area.</Reasoning>
+<Action>(-1, 0, 23)</Action>
+
+<Reasoning>Upon closer inspection, I can see the object at the coordinates (0, 22). It is located on the ground, and I am now 11 meters below it. I have to move closer to verify if it's the object in question.</Reasoning>
+<Action>(0, 21, 23)</Action>
+
+<Reasoning>The object appears to be a yellow structure, and it's confirmed to be the object of interest. I am now 10 meters below the object, which satisfies the altitude requirement.</Reasoning>
+<Action>(0, 22, 22)</Action>
+
+<Reasoning>Since the object is on the ground and I am below it, there is no need for further movement. I have found the object that doesn't fit in with the rest of the environment.</Reasoning>
+<Action>(0, 22, 

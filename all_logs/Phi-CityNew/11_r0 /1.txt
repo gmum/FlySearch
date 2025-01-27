@@ -1,0 +1,16 @@
+ <Reasoning>The truck is not visible from this altitude. I will move lower to increase the chances of finding it.</Reasoning>
+<Action>(28, 28, -30)</Action>
+
+<Reasoning>I am now closer to the ground, but the truck is still not visible. I will continue scanning.</Reasoning>
+<Action>(28, 28, -40)</Action>
+
+<Reasoning>The truck is now visible in the image. I will verify if it's the correct object.</Reasoning>
+<Action>(28, 28, -50)</Action>
+
+<Reasoning>The truck is within the field of view and is the object we were looking for. I will now lower the drone to confirm.</Reasoning>
+<Action>(28, 28, -60)</Action>
+
+<Reasoning>The truck is still visible. I will ensure it is below 10 meters relative to the drone before declaring it found.</Reasoning>
+<Action>(28, 28, -70)</Action>
+
+<Reasoning>The truck is now below 10 meters below the drone. I can now reply with 'FOUND' to indicate that

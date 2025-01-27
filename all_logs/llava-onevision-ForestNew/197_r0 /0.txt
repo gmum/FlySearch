@@ -1,0 +1,7 @@
+<Reasoning>I will start by moving slightly to the north and lowering my altitude to get a better view of the area. I will continue to search for the campsite by moving in a grid pattern, checking each point on the grid for the object.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>I have moved to the next point on the grid and I can see the campsite below me. I will move directly above the campsite and lower my altitude to ensure I am within 10 meters of the object.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+FOUND

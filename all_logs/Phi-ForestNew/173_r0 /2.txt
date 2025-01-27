@@ -1,0 +1,13 @@
+ <Reasoning>I'll stay in the center at (0, 0) for a moment, and then I'll go slightly to the northeast to cover more ground and find a good vantage point to search for the campsite.</Reasoning>
+<Action>(1, 0, -5)</Action>
+
+<Reasoning>Turning north to explore the north-east direction. I'm checking the coordinates (25, 25) as it is close to the central point and might be a good spot for the campsite.</Reasoning>
+<Action>(5, 25, -5)</Action>
+
+<Reasoning>The coordinates (25, 36) are towards the northeast and the surrounding trees appear more spread out. I'm going to follow this direction to see if the campsite is located in this area.</Reasoning>
+<Action>(10, 36, -5)</Action>
+
+<Reasoning>The coordinates (29, 36) are further northeast and seem to have less tree coverage, making it a good candidate for the campsite. I'll get closer for a better examination.</Reasoning>
+<Action>(15, 36, -5)</Action>
+
+<Reasoning>From the coordinates (

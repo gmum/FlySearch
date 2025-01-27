@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+        As an object, I don't have altitude, but considering my current location, I am not below the truck which is at (22, 22). To find it, I need to move closer. I will continue to move downwards and to the right.
+    </Reasoning>
+    <Action>(20, 6, -30)</Action>
+</Response>

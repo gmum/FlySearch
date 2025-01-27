@@ -1,0 +1,11 @@
+ <Reasoning>I will first move in the direction that is located 12 meters south from the current point. Then, I will move 4 meters north and 5 meters west to get closer to the object. I must pay attention to the altitude and not go above 120 meters. I need to be cautious about the 400x400m search area and the 9 moves limitation.</Reasoning>
+<Action>(10, -8, 12)</Action>
+
+<Reasoning>The object seems to be in the area where the drone is flying. I will now fly lower to check for the object.</Reasoning>
+<Action>(5, -8, -30)</Action>
+
+<Reasoning>I am heading towards the north-west direction. I will continue to move towards the object while maintaining the 10 meters or lower altitude. I must be careful not to move beyond the search area and keep track of the altitude.</Reasoning>
+<Action>(2, -8, -30)</Action>
+
+<Reasoning>I am now flying very close to the object. I must ensure that the object is within the drone's field of view. I will try to fly slightly to the east to get a better view.</Reasoning>
+<Action>(

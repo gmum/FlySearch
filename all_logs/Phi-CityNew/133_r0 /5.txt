@@ -1,0 +1,7 @@
+ <Reasoning>I am too close to the ground now and would have hit the ground. I need to ascend to a safe altitude.</Reasoning>
+
+<Action>(0, 0, 20)</Action>
+
+<Reasoning>I am now at a higher altitude, avoiding the ground.</Reasoning>
+
+<Action>(0, 0, 20)</Action>

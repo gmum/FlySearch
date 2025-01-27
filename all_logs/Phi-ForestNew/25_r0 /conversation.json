@@ -1,0 +1,130 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a campsite.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAs I am tasked with finding a campsite, I will focus on the areas with signs of human activity, such as clearings or structures. The coordinates in the image are scattered, but a green rectangular area might indicate a campsite. To get a closer look, I need to adjust my altitude and position accordingly. The coordinates (0, 0) seem to be the starting point, and I will check the area around there.\n</Reasoning>\n\n<Action>(0, 0, -20)</Action>\n<Reasoning>\nBy moving 20 meters down from the starting coordinates, I will be in a lower altitude, which increases the likelihood of spotting a campsite. I am centered around the (0,0) grid point, which seems to be a promising area to start my search.\n</Reasoning>\n\n<Action>(0, -10, -20)</Action>\n<Reasoning>\nNavigating 10 meters south of my previous position should help in covering more ground as this area might contain campsite signs. The movement is centered around the grid point (0,0) which should lead me to relevant features.\n</Reasoning>\n\n<Action>(0, -20, -20)</Action>\n<Reasoning>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 12 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nI will start by descending to gain a closer perspective of the area where the rectangular and square objects are located. They could potentially be part of the campsite. The coordinates (0, 0) seem to be a good reference point to begin my search.\n</Reasoning>\n\n<Action>(0, 0, -10)</Action>\n<Reasoning>\nI am now 10 meters lower than my starting altitude, which should give me a better view of the ground below, increasing the chances of spotting a campsite.\n</Reasoning>\n\n<Action>(0, -10, -10)</Action>\n<Reasoning>\nMoving 10 meters south should allow me to cover more ground and potentially identify campsite features that are not immediately visible. The coordinates (0, 0) remain centered around for a systematic search.\n</Reasoning>\n\n<Action>(0, -20, -10)</Action>\n<Reasoning>\nDescending further to 20 meters below the ground level will help in conducting a thorough search for any signs of a campsite. The area around the (0, 0) coordinate grid point is likely to have relevant features given the green rectangular and square objects.\n</Reasoning>\n\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 2 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nWith the altitude at 2 meters, I will need to focus on lower ground features. The coordinates (0, 0) provide a strong starting point, especially given the presence of a large green area that could be a campsite.\n</Reasoning>\n\n<Action>(0, 0, -5)</Action>\n<Reasoning>\nBy descending to 5 meters below ground level, I will have a clearer view of the terrain and any potential campsite indicators directly below the starting point.\n</Reasoning>\n\n<Action>(0, -5, -5)</Action>\n<Reasoning>\nA movement to 5 meters south will allow me to cover more ground in the search for campsite signs, staying centered around the (0,0) coordinate grid point.\n</Reasoning>\n\n<Action>(0, -10, -5)</Action>\n<Reasoning>\nDescending another 10 meters will place me at a lower altitude, increasing the likelihood of spotting a campsite directly below the starting coordinates. This search is focused on the green area around the coordinates (0,0).\n</Reasoning>\n\n"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAs the elevation is too low, I need to quickly execute an emergency maneuver to avoid contact with the terrain. I'll ascend slightly to maintain control of the UAV while preventing any damage.\n</Reasoning>\n\n<Action>(0, 0, -1)</Action>\n<Reasoning>\nMoving 1 meter up from the current altitude will provide some buffer space to avoid the terrain. It's a safety measure to prevent a collision while I reassess the situation.\n</Reasoning>\n\n<Action>(0, 0, 0)</Action>\n<Reasoning>\nI will adjust my altitude to 0 meters above ground level, which should provide a stable flight position while I perform an emergency maneuver to ensure the UAV can safely continue its mission.\n</Reasoning>\n\n<Action>(0, 0, 1)</Action>\n<Reasoning>\n|"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nWith the altitude at 1 meter, I am at risk of hitting the terrain. I need to ascend to a safe distance to recover control of the UAV and prevent any potential damage.\n</Reasoning>\n\n<Action>(0, 0, 1)</Action>\n<Reasoning>\nMoving 1 meter up from the current altitude will create a safe distance between the UAV and the ground, allowing me to maintain control and avoid collision.\n</Reasoning>\n\n<Action>(0, 0, 2)</Action>\n<Reasoning>\nI will increase my altitude to 2 meters to ensure there is enough clearance above the ground to recover and assess the situation before continuing the mission.\n</Reasoning>\n\n<Action>(0, 0, 3)</Action>\n<Reasoning>\nThe additional 1-meter ascent will further increase the safety cushion, giving me ample space to maneuver the UAV safely. I can now focus on stabilizing the UAV and planning the next steps.\n</Reasoning>\n\n<Action>(0, 0, 4)</Action>\n<Reasoning>\nFinally, ascending to 4 meters will give me the best chance of recovery without risking damage to the UAV or"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 2 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nGiven the current altitude, I am at a critical point where the risk of collision is high. I need to move to a safer altitude to recover control and ensure the UAV's operational integrity.\n</Reasoning>\n\n<Action>(0, 0, 1)</Action>\n<Reasoning>\nI am moving up by 1 meter to increase the safety margin and prevent a collision with the ground.\n</Reasoning>\n\n<Action>(0, 0, 2)</Action>\n<Reasoning>\nI further ascend to 2 meters to create additional distance from the terrain, which will help in stabilizing the drone and preventing damage.\n</Reasoning>\n\n<Action>(0, 0, 3)</Action>\n<Reasoning>\nI continue ascending by 1 meter to establish an even greater safety buffer above the ground.\n</Reasoning>\n\n<Action>(0, 0, 4)</Action>\n<Reasoning>\nThe final ascent to 4 meters will ensure maximum safety for the UAV and its payload, as well as for any potential data collection that may have been compromised by the emergency."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 3 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAt 3 meters, I must carefully navigate to avoid any obstacles and ensure the UAV remains operational. I will make minor adjustments to my altitude to maintain a safe distance from the terrain.\n</Reasoning>\n\n<Action>(0, 0, 2)</Action>\n<Reasoning>\nDescending 1 meter will increase my visibility and give me more time to react to the terrain.\n</Reasoning>\n\n<Action>(0, -1, 2)</Action>\n<Reasoning>\nA move to (-1, 2) will bring me closer to the large green area, which could be a campsite. I am still centered around the (0,0) grid point for systematic searching.\n</Reasoning>\n\n<Action>(0, -2, 2)</Action>\n<Reasoning>\nThe next move to (-2, 2) will allow me to get even closer to the potential campsite area, which is more likely to contain signs of human activity.\n</Reasoning>\n\n<Action>(0, -3, 2)</Action>\n<Reasoning>\nA final descent to (-3, 2) will bring me into the lower altitude range, increasing my chances of spotting the campsite. Being centered around"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAt this altitude, I am able to cover a wider area of interest. I will systematically move through the coordinates around the (0,0) grid point to find the campsite.\n</Reasoning>\n\n<Action>(0, 0, 5)</Action>\n<Reasoning>\nDescending to 5 meters will give me a better view of the green area that might be the campsite.\n</Reasoning>\n\n<Action>(0, -5, 5)</Action>\n<Reasoning>\nA move 5 meters south will expand my search area, increasing the chances of spotting signs of a campsite.\n</Reasoning>\n\n<Action>(0, -10, 5)</Action>\n<Reasoning>\nContinuing to descend as I move east will help in scanning for campsite indicators. The coordinates (0,0) provide a central point around which to systematically search.\n</Reasoning>\n\n<Action>(0, -15, 5)</Action>\n<Reasoning>\nDescending further to 5 meters below ground level will allow me to cover a larger area and increase the likelihood of finding the campsite.\n</Reasoning>\n\n<Action>(0, -20,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAt this altitude, I have a good vantage point to search for the campsite. I need to move around the coordinates to survey the terrain effectively.\n</Reasoning>\n\n<Action>(0, 0, 10)</Action>\n<Reasoning>\nDescending to 10 meters below ground level will allow me to view the ground directly and assess potential campsite features.\n</Reasoning>\n\n<Action>(0, -10, 10)</Action>\n<Reasoning>\nA move 10 meters south will increase the area covered and improve the likelihood of spotting the campsite.\n</Reasoning>\n\n<Action>(0, -20, 10)</Action>\n<Reasoning>\nContinuing to descent as I move east will enable a thorough search for campsite indicators in the green area around the (0,0) grid point.\n</Reasoning>\n\n<Action>(0, -30, 10)</Action>\n<Reasoning>\nDescending further to 10 meters below ground level will provide the best chance of sighting the campsite or related signs.\n</Reasoning>\n\n<Action>(0, -40, 10)</Action>\n<"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>\nAt this altitude, I have a wide view of the terrain, but I need to focus on identifying the campsite. I will adjust my position to ensure I am looking in the right direction.\n</Reasoning>\n\n<Action>(0, 0, 20)</Action>\n<Reasoning>\nSince I am at the highest altitude, I need to descend to 20 meters below the ground to improve visibility and spot any campsite signs.\n</Reasoning>\n\n<Action>(0, -10, 20)</Action>\n<Reasoning>\nMoving 10 meters south from the starting point will allow me to cover a broader area and potentially find the campsite.\n</Reasoning>\n\n<Action>(0, -20, 20)</Action>\n<Reasoning>\nDescending further to 20 meters below ground level increases my chances of spotting the campsite or any relevant signs.\n</Reasoning>\n\n<Action>(0, -30, 20)</Action>\n<Reasoning>\nFinally, a move to 20 meters below ground level will provide the best opportunity to identify the campsite or indications of its presence."
+    ]
+]

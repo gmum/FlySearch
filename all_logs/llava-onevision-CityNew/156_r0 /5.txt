@@ -1,0 +1,7 @@
+<Reasoning>It appears that I have flown too close to the edge of the roof and would have hit it. I will now move back to a safe distance and continue my search for the large trash pile.</Reasoning>
+<Action>(0, 0, 20)</Action>
+
+<Reasoning>I have moved back to a safe distance and I can see the large trash pile in the center of the roof. I will now fly below 10 meters relative to the object and reply with "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+FOUND

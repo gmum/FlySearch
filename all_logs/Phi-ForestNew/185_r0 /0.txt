@@ -1,0 +1,24 @@
+ <Reasoning>
+This coordinate seems to be in the region of interest. I will take a closer look and then lower my altitude to ensure it is the object in question.
+</Reasoning>
+<Action>(0, 0, -50)</Action>
+
+<Reasoning>
+This coordinate is in the grassy area and might be the object. I will lower my altitude to confirm if it's the object.
+</Reasoning>
+<Action>(0, 0, -70)</Action>
+
+<Reasoning>
+I am closer to the tree now, it is less likely to be the object in question. Moving to the coordinates indicated on the map might help.
+</Reasoning>
+<Action>(-5, 0, -90)</Action>
+
+<Reasoning>
+This coordinate appears to be in the grassy area, similar to the first coordinate. I will lower my altitude to check for the object.
+</Reasoning>
+<Action>(-5, 0, -110)</Action>
+
+<Reasoning>
+The object might be in the water, judging by the green coloration. I will move to the coordinates on the map and check for the object.
+</Reasoning>
+<Action>(-25, 0, -1

@@ -1,0 +1,10 @@
+ <Reasoning>
+    Based on the coordinates given, the trash pile is located at the coordinates (0, 0, -10). I need to move closer to the pile and fly lower to get a closer view.
+    </Reasoning>
+    <Action>(-25, 0, -40)</Action>
+</Reasoning>
+<Reasoning>
+    Based on the coordinates given, the trash pile is located at the coordinates (0, 0, -10). I'm already at -40 meters and still need to move closer to the pile.
+    </Reasoning>
+<Action>(0, 0, -45)</Action>
+</Reasoning>

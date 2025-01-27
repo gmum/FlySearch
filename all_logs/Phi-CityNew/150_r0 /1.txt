@@ -1,0 +1,12 @@
+ <Reasoning>
+I will start by moving as close as possible to the object in question. Since I don't know exactly what the object is, I need to scan the area thoroughly. Based on the image, the object seems to be located around the center of the grid. I will move to the coordinates (0, 0, 0) which is at the center of the grid and get as close as possible to the object without confirming it is the object in question.
+</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>
+Now that I am at the center, I will scan the surrounding area for any large piles of trash. The grid overlay should make it easier to spot the object quickly. Given the size of the grid and the location of the object in the center, I should be able to spot the object within 2-3 moves.
+</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>
+I did not find the object in the current area. The object appears to be located to the left of the drone. Based on the image, the object seems to be a large pile of trash in the background. I will continue moving to the left and try to get closer to the object. The next coordinates should be (-1, 0,

@@ -1,0 +1,11 @@
+ <Reasoning>Starting from the center coordinates (0, 0), I'll move north-west to cover the area quickly.</Reasoning>
+<Action>(-5, 5, -5)</Action>
+
+<Reasoning>Moving to coordinates (-5, 0), I'll have a wider view to search for the campsite.</Reasoning>
+<Action>(0, 5, -5)</Action>
+
+<Reasoning>The coordinates (-5, 2) are to the north-west and could be a good spot for the campsite. I'll move down to get a closer look.</Reasoning>
+<Action>(0, 2, -5)</Action>
+
+<Reasoning>The coordinates (-4, 0) are further north-west. If the campsite is not found at (-4, 0), it should be in the area around (-5, 0).</Reasoning>
+<Action>(-5, 0, -5)</Action>

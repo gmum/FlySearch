@@ -1,0 +1,13 @@
+ <Reasoning>I have found a potential crowd in the image. There are many people gathered around the area marked with the coordinates (20, 10).</Reasoning>
+<Action>(-20, 10, -5)</Action>
+
+<Reasoning>I have located the object and it is within my field of view. The crowd is clearly visible and I am able to distinguish individual people. I am flying below 10 meters relative to the object.</Reasoning>
+<Action>(-20, 10, -10)</Action>
+
+<Reasoning>The object is still within my field of view, but I need to move further to ensure I am centered on the object. I will move to the coordinates (25, 12) and maintain an altitude of 9 meters below the object.</Reasoning>
+<Action>(-20, 10, -10)</Action>
+
+<Reasoning>The object is no longer in my field of view. I will continue the search in the area with the highest concentration of points, which appears to be around coordinates (15, 15).</Reasoning>
+<Action>(15, 15, -10)</Action>
+
+<Reasoning>I have found the object! It is located at coordinates (

@@ -1,0 +1,16 @@
+ <Reasoning>I need to get closer to the ground to find the object, which appears to be in the lower half of the image. However, I need to be careful not to go too low or hit any obstacles.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now flying at 10 meters below the ground level. I should scan the lower part of the image for the object.</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>I have spotted the object in the lower left corner of the image. I am flying directly towards it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The object is below 10 meters, but it's not perfectly centered. I need to adjust my altitude to get a better view.</Reasoning>
+<Action>(0, 0, 5)</Action>
+
+<Reasoning>I am now flying above the object. I will perform a final scan to ensure it's the correct target.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The object is visible and centered in my view. I will respond with "FOUND

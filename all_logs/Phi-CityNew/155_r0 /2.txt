@@ -1,0 +1,13 @@
+ <Reasoning>I will start by moving towards the bottom right corner of the grid, which covers the upper left area of the image. This will be my initial search area given my current altitude.</Reasoning>
+    <Action>(25, 25, -2)</Action>
+
+    <Reasoning>The object may be spread across multiple buildings, so I will need to expand my search. I will move towards the middle of the grid to cover more ground.</Reasoning>
+    <Action>(20, 25, -5)</Action>
+
+    <Reasoning>To further increase my chances of finding the object, I should now move towards the lower left area of the grid, which covers the right side of the image.</Reasoning>
+    <Action>(15, 25, -3)</Action>
+
+    <Reasoning>I am now closer to the lower right area of the grid. The object might be in the upper portion of the grid, so I will move slightly upwards and to the left to cover that area.</Reasoning>
+    <Action>(10, 25, -1)</Action>
+
+    <Reasoning>As I am closer to the right side of the grid, I will also move towards the upper right corner to ensure I am not missing the object.</Reason

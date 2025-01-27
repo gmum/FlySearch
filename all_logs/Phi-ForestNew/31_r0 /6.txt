@@ -1,0 +1,11 @@
+ <Reasoning>The large grey object might be the rock that could potentially be the trash pile in disguise. Since I cannot move out of bounds or change altitude, I will refine my approach to scanning the area systematically without compromising the drone's safety.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>A cautious approach is necessary to avoid unintended flying near hazards and to perform a thorough search within the allowed altitude range.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The strategy is to utilize the remaining operational altitude to its fullest, ensuring that all potential areas are thoroughly scanned without risking the drone.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The drone should remain within the limits of the visible area to prevent any risks related to flying outside the designated zone.</Reasoning>
+<Action>(0, 0, -1)</Action>

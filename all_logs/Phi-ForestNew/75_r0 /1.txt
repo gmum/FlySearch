@@ -1,0 +1,14 @@
+ <Reasoning>I have started my search from a safe altitude. I need to move closer to the ground level and the area with the yellow point to start my search for the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now closer to the area of interest. I need to explore the northeast to find the object in the grid.</Reasoning>
+<Action>(2, 1, -5)</Action>
+
+<Reasoning>I am still unsure of the object's location. It might be the structure directly surrounding the yellow point. I need to get closer to confirm.</Reasoning>
+<Action>(-1, 1, -10)</Action>
+
+<Reasoning>I have failed to locate the object in the grid. It seems it was not the structure I was looking for. I need to return to a safe altitude and choose another direction to follow the instructions.</Reasoning>
+<Action>(0, 0, -4)</Action>
+
+<Reasoning>I am now at a safe altitude. I need to move in a direction to cover the area that I have not yet explored, while keeping an eye out for the object in question.</Reasoning>
+<Action>(2, 1, -5)</

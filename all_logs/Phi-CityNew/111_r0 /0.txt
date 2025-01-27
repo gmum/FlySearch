@@ -1,0 +1,18 @@
+ <Response>
+    <Reasoning>The object might be in the area with the concentration of points at the coordinates (28, 56), (0, 56), and (28, 0).</Reasoning>
+    <Action Inline="false">
+        <Action>(-56, 56)</Action>
+        <Action>(-28, 56)</Action>
+        <Action>(-28, -28)</Action>
+        <Action>(-56, -28)</Action>
+        <Action>(-56, 56)</Action>
+        <Action>(0, 56)</Action>
+        <Action>(0, 28)</Action>
+        <Action>(28, 56)</Action>
+        <Action>(28, 0)</Action>
+        <Action>(56, 0)</Action>
+    </Action>
+    <Response>
+        <Reasoning>I have moved to the coordinates (-56, 56) to get closer to the object. It is important to stay within the search area of 400x400 meters.</Reasoning>
+        <Action Inline="false">
+            <Action>(-56, 56)</Action>

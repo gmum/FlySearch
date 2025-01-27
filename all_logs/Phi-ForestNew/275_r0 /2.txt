@@ -1,0 +1,7 @@
+ <Response>
+    <Reasoning>
+        The anomaly I'm searching for is at the coordinates (0, -19). All other points have positive values for both x and y, but this one stands out due to its negative y value, indicating it's below the reference plane.
+    </Reasoning>
+    <Action>(0, -5, -10)</Action>
+    <Action>(0, -10, -10)</Action>
+</Response>

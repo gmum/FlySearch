@@ -1,0 +1,7 @@
+ <Reasoning>Since the task is to search for a large trash pile, the object must be at least relatively large, so it's likely to be noticeable from a distance. I need to fly to a location where I can get a better view of the ground and look for the object. To do this, I'll move to the center of the image where I can see the large building in the top left. Once I'm at the center, I'll check for the object.<Action>(0, 0, 0)</Action>
+
+<Reasoning>By moving to the center, I can cover the area where the object may be hidden. Since the image shows a large building, I'm assuming that the object is somewhere around that structure, and I need to get a better view of it from a lower altitude. By moving to the center of the image, I will have a good vantage point to search for the trash pile.<Action>(0, 0, -20)</Action>
+
+<Reasoning>Using the grid coordinates, I will move to the location that I believe is closest to the object based on the image. I'll move to the coordinates (-16, 0, 0) to be closer to the large building.<Action>(-16, 0, 0)</Action>
+
+<Reasoning>The

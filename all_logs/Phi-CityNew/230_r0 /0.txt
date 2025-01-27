@@ -1,0 +1,27 @@
+ <Reasoning>
+    The grid indicates that there are several points of interest, but none are at a location that would be 10 meters below the drone's current position.
+    </Reasoning>
+
+    <Action>(6, 0, -50)</Action>
+
+    <Reasoning>
+    Moving to the point (6, 0, -50) will bring the drone to a lower altitude while staying within the area that is visible in the image.
+    </Reasoning>
+
+    <Action>(4, 0, -40)</Action>
+
+    <Reasoning>
+    The drone should move towards a point that is likely to be the object of interest while maintaining a close distance.
+    </Reasoning>
+
+    <Action>(4, 0, -10)</Action>
+
+    <Reasoning>
+    This point is closer to the center of the visible area and might be the object that doesn't fit in with the environment.
+    </Reasoning>
+
+    <Action>(4, 0, -0)</Action>
+
+    <Reasoning>
+    Moving to the center of the image and at the lowest altitude will help to locate the object from a ground perspective.
+    </Reasoning>

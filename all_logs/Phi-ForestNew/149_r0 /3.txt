@@ -1,0 +1,8 @@
+ <Reasoning>I am at a safe altitude to ensure I can observe the object below me.</Reasoning>
+<Action>(5, 0, -2)</Action>
+
+<Reasoning>I am exactly below the object, ready to confirm its presence.</Reasoning>
+<Action>(5, 0, -2)</Action>
+<Action>(5, 0, -2)</Action>
+<Action>(5, 0, -2)</Action>
+<Action>(5, 0, -2)

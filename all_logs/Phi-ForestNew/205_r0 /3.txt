@@ -1,0 +1,21 @@
+ <Reasoning>The yellow object is located in the lower left quadrant, and I have four moves left to position myself correctly. I'll start by moving south and then adjusting my altitude.</Reasoning>
+
+<Action>(-41, -21, 0)</Action>
+
+<Reasoning>I've reached the yellow point, but I am not low enough yet. I'll continue to move south and then adjust my altitude.</Reasoning>
+
+<Action>(-51, -21, 0)</Action>
+
+<Reasoning>The yellow point is now visible. I'll make some observations to determine the best direction for my next move.</Reasoning>
+
+<Action>Survey</Action>
+
+<Reasoning>After surveying, I realize the yellow point is in the lower left quadrant. I'll make a move to the southwest and then adjust my altitude.</Reasoning>
+
+<Action>(-61, -11, 0)</Action>
+
+<Reasoning>I'm at the required altitude. I can confirm the presence of the object and reply with "FOUND."</Reasoning>
+
+<Action>FOUND</Action>
+
+<Reasoning>The yellow point is in the lower left quadrant, and my

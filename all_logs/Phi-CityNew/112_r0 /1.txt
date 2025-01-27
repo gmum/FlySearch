@@ -1,0 +1,10 @@
+ <Reasoning>I need to move south to get closer to the object. The object might be around the grid (10, 20). Moving to the grid (0, 20) should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(15, 20, -30)</Action>
+<Reasoning>I need to move further south to get closer to the object. The object might be around the grid (0, 10). Moving to the grid (-10, 10) should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(20, 10, -40)</Action>
+<Reasoning>I need to move to the grid (0, 5) to get closer to the object. The object might be around the grid (-5, 0). Moving to the grid (5, 0) should help me to get closer and lower my altitude.</Reasoning>
+
+<Action>(25, 0, -50)</Action>
+<Reasoning>I need to move further east to get closer to the object. The object might be around the grid (5, 0). Moving to the grid (5, 0) should help me to get closer and lower my altitude.</Re

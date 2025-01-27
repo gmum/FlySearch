@@ -1,0 +1,13 @@
+ <Reasoning>I'm starting my search for a road construction site. The grid is overlaid on the image, which should guide me in the right direction. Based on the image, there's a yellow square-like structure which might be the site, but first, I need to adjust my altitude to be closer to the ground.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I've lowered my altitude to explore further. Let's look for any signs of construction like machinery, barriers, or altered road conditions.</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>I can't see much below the yellow structure, but there's a black rectangular area that could be useful. It's not the construction site yet, so I need to lower further.</Reasoning>
+<Action>(5, 0, -15)</Action>
+
+<Reasoning>The black area is still not the construction site. However, I'm getting closer to the ground level. I need to be at most 10 meters below the drone when I claim to have found the site.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reason

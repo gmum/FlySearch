@@ -1,0 +1,14 @@
+ <Reasoning>
+Since the altitude is 57 meters above ground level and the object must be at most 10 meters below the drone when found, I need to move to a lower altitude to increase the chances of finding the object.
+
+The closest point on the grid that is below the current altitude is (0, 0). Moving there will ensure I can search the area most likely to contain the object.
+
+Actions:
+<Action>(0, 0, -22)</Action>
+</Reasoning>
+
+<Reasoning>
+<Action>No need for further actions as the object has been found</Action>
+</Reasoning>
+
+<Action>(0, 0, -22)</Action>

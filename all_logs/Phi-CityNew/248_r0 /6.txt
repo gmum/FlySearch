@@ -1,0 +1,2 @@
+ <Reasoning>I'm below the object and at a safe altitude. I should now determine if it's an anomaly. If it's not, I'll move left to scan for another anomaly. If I find the correct object, I will reply with "FOUND" to complete the task.</Reasoning>
+<Action>(0, -1, 0)</Action>

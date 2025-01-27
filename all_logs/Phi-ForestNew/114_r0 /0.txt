@@ -1,0 +1,6 @@
+ <Reasoning>
+    Given my current altitude, I should focus on the lower part of the grid to find the object quickly. I'll prioritize moving downward and stay within the limits of the search area.
+</Reasoning>
+<Action>
+    (-3, -30, 0)
+</Action>

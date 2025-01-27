@@ -1,0 +1,13 @@
+ <Reasoning>Starting at the coordinates (0, 0) and due to the nature of the task, I will begin my search in the central part of the image where the most change is expected. As I move, I will look for any irregularities or distinct elements that differ from the surrounding environment. </Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Moving slightly to the right seems to be the way to locate the object in question. The display shows some greenery which might be part of the expected environment.</Reasoning>
+<Action>(3, 12, 0)</Action>
+
+<Reasoning>The bright yellow spot has caught my attention. Since it's an anomaly compared to the surrounding area, it's probably the object I'm looking for. </Reasoning>
+<Action>(3, 12, -10)</Action>
+
+<Reasoning>The object is within the field of view and responding to the instruction, it is at most 10 meters below the drone. </Reasoning>
+<Action>(3, 12, -10)</Action>
+
+<Reasoning>The object is found. I should reply with "FOUND" as instructed, because it's within the required altitude range.

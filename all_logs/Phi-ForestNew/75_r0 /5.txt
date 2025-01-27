@@ -1,0 +1,14 @@
+ <Reasoning>I am starting my search from a safe altitude. I need to move closer to the ground level and to the area marked with a yellow point to begin my search for the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now at a lower altitude and near the yellow point. I need to focus my search on the area immediately surrounding it to find the object.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The yellow point is now clear, but I am still unsure of the object's location. I need to move closer to confirm if it is the object in question.</Reasoning>
+<Action>(0, 0, -15)</Action>
+
+<Reasoning>I have found the object in the grid. It is the structure directly surrounding the yellow point. I need to ensure I am below 10 meters above it to replicate the drone's altitude.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>Now that I have found the object, I am answering the command as instructed.</Reasoning>
+<Action>FOUND</Action>

@@ -1,0 +1,9 @@
+ <Reasoning>
+Based on the image provided, it appears there are several points of interest that could potentially be the trash pile. However, without seeing the object directly, I will need to use the coordinates given to guide the drone. The coordinates that seem to be closest to the object in question at this moment are (21, 21). Since I am currently at 31 meters altitude above ground level, I need to fly down to be closer to the ground to verify the object's identity.
+
+To achieve this, I will initiate a descent to the point (10, 21) and then to the point (0, 21) to ensure the drone's altitude is 0 meters and the object is within my field of view.
+
+<Reasoning>
+Performing this action should allow me to approach the object from the ground directly, providing a clear view and confirming if it is indeed the trash pile. If the object is not at the coordinates (0, 21), I will continue to fly downward in a circuitous manner, checking the nearby coordinates (10, 21), (21, 21), (10, 20), and (0, 21) until I find the correct location of the trash pile.
+
+<Action>(10, 21,

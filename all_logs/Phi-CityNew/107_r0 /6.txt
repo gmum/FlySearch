@@ -1,0 +1,11 @@
+ <Reasoning>I have flown too close to something and would have hit it. I need to take immediate action to avoid a collision and to ensure the safety of the drone and its surroundings.</Reasoning>
+<Action>(-1, 0, -7)</Action>
+
+<Reasoning>I have emergency stopped and moved to a safe altitude to avoid a collision with an unseen obstacle.</Reasoning>
+<Action>(-1, 0, -7)</Action>
+
+<Reasoning>I have moved further back to a safe distance from the unseen obstacle. I will now check my surroundings for any other potential danger.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have moved forward to search for the large trash pile while remaining cautious of my surroundings. I will continue to remain cautious and ensure the safety of my drone and the surroundings.</Reasoning>
+<Action>(0, 0, -13)</Action>

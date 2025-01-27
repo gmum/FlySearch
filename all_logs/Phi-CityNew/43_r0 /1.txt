@@ -1,0 +1,7 @@
+ <Reasoning>I have flown too close to a building and would have collided with it.</Reasoning>
+<Action>(10, 2, 0)</Action>
+
+<Reasoning>I will adjust my altitude to avoid any further collisions.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>I need to carefully continue my search for the road construction site while maintaining a safe altitude.</Reason

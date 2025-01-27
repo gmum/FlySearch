@@ -1,0 +1,10 @@
+<Reasoning>Let's start by checking the coordinates with the highest probability of containing the anomaly, which are (0, 0). We will move to these coordinates and slightly go down to 50 meters to get a better view.</Reasoning>
+<Action>(0, 0, -6)</Action>
+
+<Reasoning>Now that we are at the coordinates (0, 0) at an altitude of 50 meters, we can see if there is an anomaly here. If not, we will move to the next set of coordinates with a high probability of containing the anomaly, which are (37, 37).</Reasoning>
+<Action>(37, 37, 0)</Action>
+
+<Reasoning>We have moved to the coordinates (37, 37) and are now at an altitude of 50 meters. We can see that there is an anomaly here, which is the airplane. We will now move below 10 meters relative to the airplane and reply with "FOUND".</Reasoning>
+<Action>(0, 0, -40)</Action>
+
+FOUND

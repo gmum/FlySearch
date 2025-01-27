@@ -1,0 +1,3 @@
+ <Reasoning>Starting the search at the drone's current location, the closest point is (43, 43, 0) which is 10 meters below the drone. I need to move closer to the potential object while ensuring I remain within the search area and do not exceed the altitude limit.</Reasoning>
+
+<Action>(5, 0, -30)</Action>

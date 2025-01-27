@@ -1,0 +1,7 @@
+ <Reasoning>I am at 2 meters altitude, which is too low. I need to immediately return to a safe altitude to avoid hitting the ground or any obstacles.</Reasoning>
+<Action>(2, 0, 0)</Action>
+
+<Reasoning>I am at a safe altitude now. I will continue to search for the object at a safe distance from the ground.</Reasoning>
+<Action>(2, 0, 0)</Action>
+
+<Reasoning>I am at the edge of the image. I will move to a safe spot before proceeding further.

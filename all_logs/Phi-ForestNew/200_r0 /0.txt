@@ -1,0 +1,22 @@
+ <Action>
+    <Reasoning>Starting at a high altitude, I need to descend towards potential campsite signatures on the ground. I am not yet at the ground level, so I must move downwards.</Reasoning>
+    <Action>(-34, 6, -4)</Action>
+</Action>
+
+<Action>
+    <Reasoning>After the first move, I am still too high. As I descend, I will keep an eye out for any campsite signs or anything that resembles a campsite.</Reasoning>
+    <Action>(-34, 3, -11)</Action>
+</Action>
+
+<Action>
+    <Reasoning>Still too high, but closer to the ground level, I need to be more precise in descending towards the potential campsite.</Reasoning>
+    <Action>(-33, 2, -15)</Action>
+</Action>
+
+<Action>
+    <Reasoning>I am closer to the ground, but still not in the focus area. I'll continue to descend and simultaneously scan for the campsite.</Reasoning>
+    <Action>(-32, 1, -18)</Action>
+</Action>
+
+<Action>
+    <Reasoning>

@@ -1,0 +1,16 @@
+<Reasoning>Since I am not sure where the object is, I will start by moving to the center of the grid to have a wider view of the area. Then, I will gradually decrease my altitude to get a better look at the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that I am at the center of the grid, I will start decreasing my altitude to get a better view of the ground. I will move down 10 meters at a time.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After moving down 10 meters, I will check if I can see the object. If not, I will continue to decrease my altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After moving down another 10 meters, I will check if I can see the object. If not, I will continue to decrease my altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After moving down another 10 meters, I will check if I can see the object. If not, I will continue to decrease my altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After moving down another 10 meters, I will check if I can see the object. If not, I

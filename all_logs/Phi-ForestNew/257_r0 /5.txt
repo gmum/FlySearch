@@ -1,0 +1,32 @@
+ <Reasoning>
+    I need to adjust my altitude to minimize the search area and improve the chance of finding the object.
+</Reasoning>
+<Action>
+    (0, 0, -5)
+</Action>
+<Reasoning>
+    Moving 5 meters down allows me to cover the forest floor more thoroughly.
+</Reasoning>
+<Action>
+    (0, 0, -5)
+</Action>
+<Reasoning>
+    Adjusting my altitude to -5 meters will give me a better view of the potential anomaly.
+</Reasoning>
+<Action>
+    (5, 0, -5)
+</Action>
+<Reasoning>
+    Moving 5 meters to the right will help me explore different areas of the forest and increase the probability of spotting the object.
+</Reasoning>
+<Action>
+    (5, 0, -5)
+</Action>
+<Reasoning>
+    By adjusting my position to the right and lowering my altitude, I can have a wider view of the forest floor.
+</Reasoning>
+<Action>
+    (5, -5, -5)
+</Action>
+<Reasoning>
+    Moving 5 meters further to the right and lowering another meter will

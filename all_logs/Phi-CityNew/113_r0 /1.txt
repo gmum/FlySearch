@@ -1,0 +1,14 @@
+ <Reasoning>I am still higher than the car, so I need to lower my altitude further.</Reasoning>
+    <Action>(-5, -5, -5)</Action>
+
+    <Reasoning>I am now closer to the car and below its current view, which increases my chances of finding it. I should continue to scan the area to ensure I don't miss it.</Reasoning>
+    <Action>(-5, -5, -5)</Action>
+
+    <Reasoning>The car is not visible in the current field of view, but based on the coordinates given, it is likely to be in one of the lower left quadrants. I should move towards that area.</Reasoning>
+    <Action>(-5, -10, -10)</Action>
+
+    <Reasoning>I am now closer to the lower left quadrant where the coordinates suggest the car might be. I will continue to scan the area.</Reasoning>
+    <Action>(-5, -10, -10)</Action>
+
+    <Reasoning>I found the car at coordinates (35, 35), but it is not visible in my current view. I will move left to scan the area where the coordinates suggest the car might be.</Reasoning>
+    <Action>(-1

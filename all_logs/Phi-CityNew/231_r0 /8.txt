@@ -1,0 +1,6 @@
+ <Action space>
+    <Action>(0, -10, -30)</Action>
+    <Reasoning>I must prioritize the UAV's safety. An emergency stop is required to avoid a collision. After assessing the situation, I will decide on the next move based on the best course of action to recover the situation.</Reasoning>
+</Action space>
+
+[Reply "EMERGENCY STOP"]

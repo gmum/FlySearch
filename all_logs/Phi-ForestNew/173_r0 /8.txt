@@ -1,0 +1,11 @@
+ <Reasoning>Since I'm closest to the ground, I'll carefully move to see if the campsite is located in the clearing.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The coordinates (0, 0) are already clear. I'll proceed to check the coordinates (1, 0) for any signs of the campsite.</Reasoning>
+<Action>(1, 0, -5)</Action>
+
+<Reasoning>The coordinates (1, 1) are nearby and could potentially be the campsite.</Reasoning>
+<Action>(1, 1, -5)</Action>
+
+<Reasoning>If the campsite is not found at (1, 1), it should be in the vicinity of these coordinates.</Reasoning>
+<Action>(1, 0, -5)</Action>

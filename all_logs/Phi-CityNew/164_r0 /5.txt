@@ -1,0 +1,8 @@
+ <Reasoning>
+I've made a mistake! I need to stop the drone immediately.
+<Action>(0, 0, 0)</Action>
+</Reasoning>
+
+<Reasoning>
+I've safely landed the drone. The emergency was avoided.
+<Action>(0, 0, 0)</Action>

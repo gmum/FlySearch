@@ -1,0 +1,27 @@
+ <Reasoning>
+    Staying within known coordinates reduces the risk of flying into unsafe areas.
+    </Reasoning>
+    <Action>(0, 0, -1)</Action>
+
+<Reasoning>
+    Moving left to explore the green area.
+    </Reasoning>
+    <Action>(0, -5, -1)</Action>
+
+<Reasoning>
+    Full left turn to get a better angle on the green area.
+    </Reasoning>
+    <Action>(0, -10, -1)</Action>
+
+<Reasoning>
+    Moving down to cover more ground safely.
+    </Reasoning>
+    <Action>(0, -15, -1)</Action>
+
+<Reasoning>
+    Adjusting altitude and position to follow the yellow objects' trail.
+    </Reasoning>
+    <Action>(0, -15, -1)</Action>
+
+<Reasoning>
+    Continuing to follow

@@ -1,0 +1,22 @@
+ <Reasoning>
+The image appears to be an aerial view of a landscape with various points marked with coordinates. Since I am instructed to fly below 10 meters relative to the object in question, I will start by analyzing the spatial distribution of the marked points, looking for any that stands out as an anomaly or potentially the object of interest.
+
+Based on the image, I have identified a point marked with coordinates (31, 16) that seems to be quite prominent and distinct from the others, possibly indicating an area of interest.
+
+<Action>(0, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>
+After flying to the point (31, 16), I will fly closer to it to ensure it is indeed the object of interest.
+
+<Action>(1, 0, -5)</Action>
+</Reasoning>
+
+<Reasoning>
+The object at the location (31, 16) has characteristics that suggest it may be the anomaly we are looking for. It stands out against the surrounding environment and is not immediately adjacent to any other marked points.
+
+<Action>(0, 0, -10)</Action>
+</Reasoning>
+
+<Reasoning>
+The object at (31, 16) matches the criteria for

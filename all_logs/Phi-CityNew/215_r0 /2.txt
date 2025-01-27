@@ -1,0 +1,6 @@
+ <Reasoning>The anomaly is the red point among the green points.</Reasoning>
+<Action>(0, 0, -1)</Action>
+<Reasoning>I am getting closer to verify the object as the anomaly.</Reasoning>
+<Action>(0, 0, -5)</Action>
+<Reasoning>The red point is confirmed to be the anomaly, based on its color and isolated nature.</Reasoning>
+<Action>(0, 0, -5)</Action>

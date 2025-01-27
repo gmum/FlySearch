@@ -1,0 +1,13 @@
+ <Reasoning>The object might be at coordinates (22,22). I move to coordinates (22,22) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>
+<Action>(22,22,0)</Action>
+
+<Reasoning>The object is not at (22,22), so I move to (22,11) and slightly down to (22, 11) to continue the search, considering the object's possible location.</Reasoning>
+<Action>(22,22,-1)</Action>
+
+<Reasoning>I'm not finding the object at (22,11), so I move to (22, 11) and slightly down to (22,10) to further explore the area.</Reasoning>
+<Action>(22,11,0)</Action>
+
+<Reasoning>The object is not found at (22,11), so I move to (22,11) and slightly down to (22,10) to continue the search, keeping in mind the potential proximity of the object.</Reasoning>
+<Action>(22,11,-1)</Action>
+
+<Reason

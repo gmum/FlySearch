@@ -1,0 +1,18 @@
+ <Reasoning>This point stands out below the others and seems to be closer to the ground than its neighbors, which might indicate the presence of fire.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>After moving down, I am centered on the object and still above 10 meters altitude. It is time to look for fire.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I am still on the object, ensuring visibility for the next move. It's time to fly a bit lower.</Reasoning>
+<Action>(7, 0, -50)</Action>
+
+<Reasoning>I am now directly below the object and 7 meters below the required altitude. It seems like there could be fire here.</Reasoning>
+<Action>(7, 0, -50)</Action>
+
+<Reasoning>No fire visible. Moving to another point below to check.</Reasoning>
+<Action>(8, 0, -70)</Action>
+
+<Reasoning>I am still below the object and closer to the ground. No signs of fire yet.</Reasoning>
+<Action>(8, 0, -70)</Action>
+

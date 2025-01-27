@@ -1,0 +1,10 @@
+ <Action space>
+    To move the drone to the center of the city block, which appears to be the object of interest, the best coordinates would be around (0, 0), which should be 9 meters below the drone's current height of 59 meters.
+    Therefore, the action to take would be:
+    <Action>(0, 0, -50)</Action>
+</Action space>
+
+<Reasoning>
+    The city block appears to be the object of interest, and it seems to be centrally located. I need to get closer to it to confirm that it is the object I'm looking for. To do that, I will move to the coordinates (0, 0) with an altitude of 59-79 meters above the ground, which is 9 meters below the drone's current altitude.
+</Reasoning>
+</Controls>

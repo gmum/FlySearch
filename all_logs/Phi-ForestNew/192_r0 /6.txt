@@ -1,0 +1,17 @@
+ <Reasoning>I have made a mistake and have flown too close to an object. I must stop and avoid any further risks.</Reasoning>
+
+<Action>(0, -1, 0)</Action>
+
+<Reasoning>I will maintain my altitude and move slightly to the left to center on the last known location of the person.</Reasoning>
+
+<Action>(0, -15, -15)</Action>
+
+<Reasoning>Since I have a clear view of the ground, I will stay directly above this area to ensure that I am within the search area and not attempting to fly out of bounds.</Reasoning>
+
+<Action>(0, -15, -15)</Action>
+
+<Reasoning>I am in a safe position within the search area. I will now scan the area for any signs of the person.</Reasoning>
+
+<Action>(0, -15, -15)</Action>
+
+<Reasoning>I have completed my search and found the person in the last image."

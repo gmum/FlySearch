@@ -1,0 +1,14 @@
+ <Reasoning>The object seems to be located at grid (26, 51), which is on the ground level. I need to be closer to it, so I will move to (26, 51, -20) to be 20 meters below the object.</Reasoning>
+<Action>(26, 51, -20)</Action>
+
+<Reasoning>The object is still not in my field of view, I will move to (26, 51, -50) to get a better view of it.</Reasoning>
+<Action>(26, 51, -50)</Action>
+
+<Reasoning>I can now see the object and it is located at grid (26, 51), at ground level, so I will stay at (26, 51).</Reasoning>
+<Action>(26, 51)</Action>
+
+<Reasoning>The object is located at grid (26, 51), I am already at the correct coordinates.</Reasoning>
+<Action>(26, 51)</Action>
+
+<Reasoning>I have found the object, I will stay above it as I was already at the correct coordinates.</Reasoning>
+<Action>(26, 51

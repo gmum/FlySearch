@@ -1,0 +1,39 @@
+ <Reasoning>
+    I'm going to move to a position where I can see a street level view. This might help me spot the object in question.
+    </Reasoning>
+
+<Action>
+    (0, 0, 0)
+</Action>
+
+<Reasoning>
+    From here, I can see a road next to the building. If the object is on the ground, I might be able to spot it now.
+    </Reasoning>
+
+<Action>
+    (0, 0, 0)
+</Action>
+
+
+<Reasoning>
+    I will move to a position where I can see closer to the street level view.
+    </Reasoning>
+
+<Action>
+    (0, -15, 0)
+</Action>
+
+<Reasoning>
+    This coordinates will bring me 15 meters closer to the ground, making it easier to spot the object.
+    </Reasoning>
+
+<Action>
+    (0, -30, 0)
+</Action>
+
+<Reasoning>
+    I am now 30 meters below the highest point of the street level view, increasing my chances of finding the object.
+    </Reasoning>
+
+<Action>
+    (0, -45, 0

@@ -1,0 +1,15 @@
+ <Reasoning>I will move directly towards the grid point closest to me, ensuring the altitude does not exceed the limit and I am still in the field of view.</Reasoning>
+
+<Action>(0, 0, 1)</Action>
+
+<Reasoning>Now that I am at ground level, I will calculate a move that will bring the object into the drone's field of view.</Reasoning>
+
+<Action>(1, 0, -1)</Action>
+
+<Reasoning>I am now closer to the ground and within the view of the object, but not in the center.</Reasoning>
+
+<Action>(1, -1, -2)</Action>
+
+<Reasoning>The object is now within the drone's field of view and 1 meter below ground level.</Reasoning>
+
+<Action>(1, -1, -2)</Action>

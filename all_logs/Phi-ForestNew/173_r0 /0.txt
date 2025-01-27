@@ -1,0 +1,10 @@
+ <Reasoning>The coordinates (0, 0) seem to be centrally located on the grid, which might be a good starting point for the search. As the coordinates have no specific direction or distance from the starting point, I'll perform a small step in all directions to cover the area and remain in the center. The coordinates (0, 0) seem to be a good initial position for a focused search.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Moving slightly north-east from the initial position, I see a point with coordinates (0, 36), which is touching the tree borders. This point is distinct and might be the campsite we are searching for.</Reasoning>
+<Action>(0, 36, -10)</Action>
+
+<Reasoning>The land looks more open from this point. I will proceed with a larger movement in the north direction to cover more ground. I'll check the coordinates (18, 36) to see if it's the campsite we're looking for.</Reasoning>
+<Action>(5, 36, -10)</Action>
+
+<Reasoning>Moving further north, I see a point with coordinates (0, 60), which seems to be a clearing

@@ -1,0 +1,20 @@
+ <Action space>
+    <Action>(-17, -17, -14)</Action>
+</Action space>
+<Reasoning>
+    I am moving to the coordinates that are approximately in the center of the grid to minimize the search area and maximize visibility.
+</Reasoning>
+
+<Action space>
+    <Action>(-17, -17, -18)</Action>
+</Action space>
+<Reasoning>
+    Moving downward further increases the area of the map that I am able to survey, which is crucial for spotting the campsite.
+</Reasoning>
+
+<Action space>
+    <Action>(-17, -17, -24)</Action>
+</Action space>
+<Reasoning>
+    By lowering my altitude to -24 meters, I am giving myself the best chance of seeing the campsite as it is a common location for such structures.
+</Reasoning>

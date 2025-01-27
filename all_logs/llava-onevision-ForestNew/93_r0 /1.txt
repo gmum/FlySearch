@@ -1,0 +1,2 @@
+<Reasoning>From this altitude, I can see a potential campsite at the location (29, 15) on the grid. To confirm that this is indeed the campsite, I will move towards this location and slightly increase my altitude to get a better view. If it is the campsite, I will then lower the drone to the required 10 meters or less to confirm the find.</Reasoning>
+<Action>(29, 15, -10)</Action>

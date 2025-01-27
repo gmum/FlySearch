@@ -1,0 +1,2 @@
+<Reasoning>I am now above (0, 18). I need to descend to be less than 10 meters above the object, which is at (0,0). I will descend by 45 meters to be at approximately 8 meters above the building.</Reasoning>
+<Action>(0, 0, -45)</Action>

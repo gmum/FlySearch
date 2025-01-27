@@ -1,0 +1,13 @@
+ <Reasoning>With the drone already at a low altitude, the next move should be to assess the area with potential signs of a fire. The coordinates provided should be used to make a strategic move to the most promising area.</Reasoning>
+<Action>(-38, -29, -30)</Action>
+
+<Reasoning>The coordinates align with a patch of lighter green which could be indicative of either a different vegetation type or the edge of a forested area. This could be a fire's boundary or a suspected area that might not be immediately obvious.</Reasoning>
+<Action>(-38, -29, -30)</Action>
+
+<Reasoning>Upon closer inspection at the coordinates, there is a significant bright area, suggesting the possibility of a fire. Adjusting altitude for a closer view is necessary.</Reasoning>
+<Action>(-38, -29, -58)</Action>
+
+<Reasoning>The fire is located at the point with coordinates (0,0). The drone is now at the same level as the fire, allowing for an accurate assessment of its size and spread.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>A fire assessment confirms that the

@@ -1,0 +1,2 @@
+ <Action>(-10, 0, -20)</Action>
+<Reasoning>I'm going to move the drone 10 meters to the left and 20 meters down to ensure we are as close to the coordinates (0, 0, -20) as possible to start the search for the object. This movement aligns with the coordinates of the first point marked (0, 0, 0), which is within the view of the drone and is likely the starting point for locating the anomaly.</Reasoning>

@@ -1,0 +1,11 @@
+ <Reasoning>I'm starting at the central point (0, 0) to efficiently cover the area. First move is down to make sure I'm not too high up. The coordinates (0, 0) are in the center of the grid, which should provide a good overview of the area.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>From the new position, I can see a point with coordinates (29, 29), which is close to several other points. It's surrounded by trees and might be a good potential campsite.</Reasoning>
+<Action>(29, 29, -5)</Action>
+
+<Reasoning>I'll move to the north-east direction to examine another potential campsite. The coordinates (29, 36) are surrounded by greenery and could possibly be the campsite.</Reasoning>
+<Action>(30, 29, -5)</Action>
+
+<Reasoning>The point (29, 42) is clear of trees and has a distinct shape that could indicate a campsite. I'll move down to get closer for a better view and confirm if it's the campsite.</Reasoning>
+<Action>(30, 42,

@@ -1,0 +1,20 @@
+ <Reasoning>
+    I suspect the yellow point might be the location of the large trash pile. In order to get closer to it, I will decrease my altitude. Since I am under 10 meters above the object, I can proceed to reply with "FOUND".
+</Reasoning>
+<Action>(3, 0, -78)</Action>
+<Reasoning>
+    I will decrease my altitude even further to ensure that I am closest to the object while still maintaining a safe distance. 
+</Reasoning>
+<Action>(3, 0, -102)</Action>
+<Reasoning>
+    I will move north to get a better view of the large trash pile and confirm its location.
+</Reasoning>
+<Action>(3, 10, -102)</Action>
+<Reasoning>
+    I will move slightly east to check for any other large trash piles in the area.
+</Reasoning>
+<Action>(3, 16, -102)</Action>
+<Reasoning>
+    I am still not in the correct location, so I will move further north to get a better view of the large trash pile.
+</Reasoning>
+<Action>(16, 16, -10

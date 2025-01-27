@@ -1,0 +1,4 @@
+ <Reasoning>
+    The coordinates given for the current viewpoint are (0, 0), which is exactly at the starting altitude. I need to decrease my altitude to get closer to the ground.
+</Reasoning>
+<Action>(0, 0, -9)</Action>

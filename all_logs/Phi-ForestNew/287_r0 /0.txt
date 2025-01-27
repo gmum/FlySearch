@@ -1,0 +1,11 @@
+ <Reasoning>I will initially move to the center of the image, then look for the yellow point that stands out from the rest of the greenery. If it is the object we are looking for, I will fly lower to check it up close.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now, I am centered on the yellow point. It looks like the object we are looking for. I will adjust my altitude to 10 meters below the object to verify.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>It appears to be the object we were looking for. I will stay below it to confirm and make my first move.</Reasoning>
+<Action>(0, 0, -0)</Action>
+
+<Reasoning>I am looking more closely now. The object appears to be consistent with what we need. I will make my next move to investigate further.</Reasoning>
+<Action>(0, 0, 0)</Action>

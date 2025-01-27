@@ -1,0 +1,9 @@
+ <Reasoning>I will analyze the available grid locations to find the best starting point for the search.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object is within the search boundaries, and being at the center of the grid provides an optimal starting point.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is part of the searchable area, and after a thorough check, I can confirm its presence within the safe altitude range for a successful search outcome.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

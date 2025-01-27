@@ -1,0 +1,17 @@
+ <Reasoning>I need to get closer to the ground to see if I can locate the person. To do this, I will decrease my altitude. I will also be cautious to avoid moving out of my field of view.</Reasoning>
+
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>After taking the previous action, I will continue to move down to see if the object is in my field of view. The coordinates will change to (6, 0, -20).</Reasoning>
+
+<Action>(6, 0, -20)</Action>
+
+<Reasoning>It's hard to determine the location of the person at this altitude. I will move further down to get a better view. I need to be in the drone's center of vision for the person to be in my field of view.</Reasoning>
+
+<Action>(6, 0, -25)</Action>
+
+<Reasoning>I can see the person now. I need to ensure that I am directly over them to locate them. This means I will need to move horizontally to center my view on them. I will move slightly to the left to get a better view.</Reasoning>
+
+<Action>(6, -1, -25)</Action>
+
+<

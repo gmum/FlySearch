@@ -1,0 +1,13 @@
+ <Reasoning>The drone is initially flying above the ground, and the task is to find a building. The coordinates suggest that the building is located at the center of the grid. To proceed, I need to descend to a lower altitude while ensuring the object is in the field of vision.</Reasoning>
+<Action>(0, 0, -12)</Action>
+
+Following that, since the building's coordinates seem to be at (0, 0), I should move to the center of the grid where the drone would be most visible.
+<Action>(0, 0, 0)</Action>
+
+Next, I need to make sure the building is indeed below the drone to claim it as found.
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>As I am now in the middle of the grid with the potential object at the center, I will proceed to move to the coordinates where the object is closest. If the coordinates are (0, 0) when the object is at (0, 0), I will move there to ensure the object is in the center of the drone's field of view.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The building should be at (0, 0) as per the given

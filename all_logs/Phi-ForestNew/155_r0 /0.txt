@@ -1,0 +1,2 @@
+ <Reasoning>The object in question appears to be at (0, 0), which is around 67 meters away. To get the object into my field of view, I need to fly 67 meters down. To ensure I am 10 meters below the object and in the center of its field of view, I will decrease my altitude by 7 meters.</Reasoning>
+<Action>(0, 0, -7)</Action>

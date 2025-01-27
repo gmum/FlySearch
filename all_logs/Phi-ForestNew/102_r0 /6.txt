@@ -1,0 +1,2 @@
+ <Reasoning>The image shows the forest fire at the coordinates (1, 0) on the grid overlay. I am at 1 meter above ground level, but I need to move the drone lower to be 10 meters above or below the object to meet the criteria for finding the forest fire within the field of view.</Reasoning>
+<Action>(0, 0, -1)</Action>

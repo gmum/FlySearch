@@ -1,0 +1,16 @@
+ <Reasoning>Considering the object might be located at the center of the image, I will move to the coordinates (0, -1, 0). This should bring me closer to the ground and center my search.</Reasoning>
+<Action>(0, -1, 0)</Action>
+
+<Reasoning>The object seems to be at the top of a hill. I will now move in a direction that takes me closer to the ground without exceeding the altitude limit.</Reasoning>
+<Action>(0, -2, 0)</Action>
+
+<Reasoning>The object might be located at the center bottom of the image. I will move downward to get a closer view.</Reasoning>
+<Action>(0, -3, 0)</Action>
+
+<Reasoning>The object appears to be in the lower left quadrant of the image. I will continue to move down to get a closer view.</Reasoning>
+<Action>(-1, -3, 0)</Action>
+
+<Reasoning>The object seems to be located in front of the rocky area. I will now move down to get a closer view.</Reasoning>
+<Action>(-1, -4, 0)</Action>
+
+<Reasoning>The object seems to be located at the bottom right

@@ -1,0 +1,5 @@
+ <Reasoning>Adjusting the altitude is necessary to ensure the drone's position is optimal for locating the fire. Given the current altitude, a lower altitude will help in finding the fire more accurately.</Reasoning>
+<Action>(-38, -38, -30)</Action>
+
+<Reasoning>The coordinates are now closer to the area with potential fire signs. The altitude must be reduced to ensure close and accurate inspection of the fire.</Reasoning>
+<Action>(-38, -38, -58)</Action>

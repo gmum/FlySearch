@@ -1,0 +1,16 @@
+ <Reasoning>I will try to move towards the object by following the direction indicated by the grid coordinates. Upon reaching closer to the coordinates, I will assess the surroundings to confirm if it is the trash pile.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>Upon arriving closer, I will check if the object is a trash pile. If it's not, I will move further indicated by the coordinates on the grid.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I am now closer and can better assess if it's the trash pile. I will take another move closer to it.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I am now even closer to the object. I will ensure I am directly above the object to confirm it is the trash pile.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I confirm the object is a trash pile. I will now fly lower to 10 meters to give a clearer view.</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reason

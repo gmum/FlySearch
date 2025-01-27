@@ -1,0 +1,13 @@
+ <Reasoning>
+I have found the trash pile. I will report that I have found the trash pile and ensure that I maintain a safe altitude.
+
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+The trash pile is not within my field of view. I will need to plan my next move to ensure that it is within the search area. By doing so, I will be able to find the trash pile within the allotted number of moves.
+
+</Reasoning>
+
+<Action>(0, 0, -10)</Action>

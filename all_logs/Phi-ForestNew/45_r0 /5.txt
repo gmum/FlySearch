@@ -1,0 +1,13 @@
+ <Reasoning>The coordinates of the drone are not provided. The closest coordinates to the fire visible in the image are (7, 7). However, we cannot be certain it is the fire without approaching, but we'll go to this location and then lower if possible.</Reasoning>
+<Action>(7, 7, -10)</Action>
+
+<Reasoning>The fire is visible in the image, but I am not certain it is the fire. There are also other fires nearby, but I will fly to the coordinates (7, 7) and then lower the altitude to check for it.</Reasoning>
+<Action>(7, 7, -10)</Action>
+
+<Reasoning>The coordinates of the drone are not provided. However, I can see the fire is around the coordinates (7, 7). I will fly to this point and then lower the altitude to check if it is the fire.</Reasoning>
+<Action>(7, 7, -10)</Action>
+
+<Reasoning>The fire is visible in the image; I have successfully located it. Now, I will fly below 10 meters to confirm the object is the fire.</Reasoning>
+<Action>(7, 7, -10)</Action>
+
+<Reasoning>The coordinates of

@@ -1,0 +1,13 @@
+ <Reasoning>I need to continue my search in a safe altitude where I can maneuver without risking a collision.</Reasoning>
+<Action>(0, 1, 1)</Action>
+
+<Reasoning>I should now look for a point that is 10 meters or less below my current altitude to increase my chances of finding the object more easily.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Reasoning>I've found a point that is below my current altitude. I need to fly to that point to find the object. This will also make it easier to locate the object if it's in the immediate vicinity.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>I've arrived at a point that is below my current altitude. It's possible that the object is within my field of view at this point, so I'll look around to see if I can spot it.</Reasoning>
+<Action>(0, 0, -4)</Action>
+
+<Reasoning>I can see the object, so I should fly further down to confirm that I am indeed at the correct location and avoid any potential collisions.

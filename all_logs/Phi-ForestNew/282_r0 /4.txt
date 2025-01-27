@@ -1,0 +1,2 @@
+ <Reasoning>An emergency situation has occurred, and the drone is at 1 meter above ground level. It is not possible to fly below this altitude as it could cause a collision. I need to find a safe place to hover or return to the last known safe location where I can assess the situation and decide the next course of action.</Reasoning>
+<Action>(0, 0, 0)</Action>

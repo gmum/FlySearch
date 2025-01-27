@@ -1,0 +1,2 @@
+<Reasoning>I see a large group of people at coordinates (15, 0). I need to go lower to confirm it is the crowd I am looking for and then report "FOUND" once I am lower than 10 meters relative to it.</Reasoning>
+<Action>(15, 0, -38)</Action>

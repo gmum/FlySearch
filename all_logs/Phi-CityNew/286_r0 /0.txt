@@ -1,0 +1,17 @@
+ <Reasoning>Given the coordinates, I can see a yellow area in the middle of the grid which could potentially be the object I'm looking for. I decided to move closer to it to examine it more closely. Keeping in mind the limitations, I chose a move that brings me within 10 meters of this area.</Reasoning>
+<Action>(5, 0, -20)</Action>
+</Reasoning>
+<Action>(4, 0, -30)</Action>
+</Reasoning>
+<Action>(3, 0, -40)</Action>
+</Reasoning>
+<Action>(2, 0, -50)</Action>
+</Reasoning>
+<Action>(1, 0, -60)</Action>
+</Reasoning>
+
+<Reasoning>The area is still not clear enough, and the grid shows multiple points of interest. I will now make a decision based on the available coordinates that might give me more information or the object in question.</Reasoning>
+<Action>(-1, 0, -70)</Action>
+</Reasoning>
+
+<Reasoning>This area is distinct, and it appears to be a road within the buildings, but I believe the object could be on the opposite side. I will now fly over there and

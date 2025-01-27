@@ -1,0 +1,10 @@
+ <Reasoning>I'm closer to the search area now. I'll move in a direction where the object might be located effectively.</Reasoning>
+<Action>(0, 0, -0)</Action>
+
+<Reasoning>The object is visible. I will circle around to confirm its presence.</Reasoning>
+<Action>(0, -1, -0)</Action>
+
+<Reasoning>The object is not clearly visible in the field of view yet. I'll adjust the altitude slightly to maximize the view before moving in the desired direction.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The object is now in the field of view. I am 1 meter below it. I

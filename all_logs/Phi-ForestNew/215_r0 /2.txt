@@ -1,0 +1,10 @@
+ <Reasoning>Starting at the center of the image, the anomaly is not immediately visible. It appears to be located towards the bottom left of the image, so I will move north to get a better view and see if my suspicion is correct.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The object is not visible from this position. I will move to the center of the field of view, which is approximately (27, 27), to have a better chance of detecting it.</Reasoning>
+<Action>(27, 27, 0)</Action>
+
+<Reasoning>The object is clearly visible from this position. It is located at (27, 27), but there is still a considerable distance. I will move closer to get a better view before confirming that I've found the anomaly.</Reasoning>
+<Action>(27, 27, -9)</Action>
+
+<Reasoning>The object appears to be in the distance. I need to fly further south to cover more area

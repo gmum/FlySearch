@@ -1,0 +1,7 @@
+ <Reasoning>I cannot continue as I am at ground level and have collided with an obstacle. I will initiate an emergency protocol to assess damage and try to regain control of the drone.</Reasoning>
+<Action>Emergency Stop</Action>
+
+<Reasoning>The drone is at ground level and has collided with an obstacle. I will initiate emergency protocols to stabilize the drone and reassess the situation.</Reasoning>
+<Action>Initiate Emergency Protocols</Action>
+
+<Reasoning>The drone's altitude is at

@@ -1,0 +1,10 @@
+ <Reasoning>Since the maximum altitude is 120 meters, I have plenty of height to search the area. The object seems to be at some distance, it's better to move closer while being careful not to exceed the altitude limit. I'll start by moving towards the center of the grid to cover more area.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>The trash pile might be located in the center of the image. I will adjust my altitude to get as close as possible to the pile without violating the altitude constraints.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I cannot see the object in the image, but I can see surrounding areas. It's time to carefully scan the area around the center to find the trash pile. I'll need to utilize the z-axis to adjust my altitude.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Since there's no clear indication of the location of the trash pile, I will move to a new spot with a good view. Moving to (4, 4) should increase my chances of spotting the trash pile.</Reasoning

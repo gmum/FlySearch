@@ -1,0 +1,5 @@
+ <Reasoning>I'm at the lowest altitude and need to confirm my sighting of the object. I'll move slightly to the right to ensure it's in my field of view before I reply with 'FOUND'.</Reasoning>
+<Action>(0, 1, 0)</Action>
+
+<Reasoning>I've located the object at (1, 1), and it's definitely within my field of view. I will reply with 'FOUND' to indicate I've found the object.</Reasoning>
+<Action>FOUND</Action>

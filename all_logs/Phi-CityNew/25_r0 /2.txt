@@ -1,0 +1,16 @@
+ <Reasoning>The fire might be located along the harbor wall, especially around the coordinates (58, 58). I need to go lower to investigate.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I'm focusing on the harbor wall at (58, 58). The spot might be the fire.</Reasoning>
+<Action>(-2, 0, -10)</Action>
+
+<Reasoning>I'm checking the area around the coordinates (29, 58). It's possible the fire is there.</Reasoning>
+<Action>(-2, 0, -10)</Action>
+
+<Reasoning>I found a potential fire spot near the coordinates (29, 58). Now I'm checking lower.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I'm still investigating around the coordinates (58, 58). I need to fly lower to find the fire.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I found the fire near the coordinates (58, 58). I'm confirming it's the

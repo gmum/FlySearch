@@ -1,0 +1,11 @@
+<Reasoning>I have moved slightly to the north and have lowered my altitude to check the area below me. If I find the object, I will report it. If not, I will continue to adjust my position and altitude to find it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have moved slightly to the west and have lowered my altitude to check the area below me. If I find the object, I will report it. If not, I will continue to adjust my position and altitude to find it.</Reasoning>
+<Action>(-20, 0, 0)</Action>
+
+<Reasoning>I have moved slightly to the south and have lowered my altitude to check the area below me. If I find the object, I will report it. If not, I will continue to adjust my position and altitude to find it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After moving slightly to the south and lowering my altitude, I have found the object. I am now centered on it and below 10 meters above it.</Reasoning>
+FOUND

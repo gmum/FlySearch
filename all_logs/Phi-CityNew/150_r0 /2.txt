@@ -1,0 +1,14 @@
+ <Reasoning>
+I will continue to move to the left and scan for the object. Since the object seems to be located to the left of the drone, I should be able to spot it within 2-3 moves.
+</Reasoning>
+<Action>(-1, 0, -10)</Action>
+
+<Reasoning>
+I found the object in the current area. It appears to be a large pile of trash. I will move closer to the object to confirm if it is the one I am searching for.
+</Reasoning>
+<Action>(-2, 0, -10)</Action>
+
+<Reasoning>
+I am now below 10 meters from the object. I confirm that it is the large pile of trash I have been searching for.
+</Reasoning>
+<Action>FOUND</Action>

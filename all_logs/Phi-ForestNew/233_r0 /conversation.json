@@ -1,0 +1,114 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 82 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(5, 0, -10)</Action>\n</Action space>\n\n<Reasoning>\n    The coordinates you are given are (5,0), which means I am moving a bit to the west from my current position and 10 meters down since I am not given a z-value and it is safe to take the first step down.\n</Reasoning>\n\n<Action space>\n    <Action>(5,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    Now I am centered on the grid and 10 meters down from the object to find.\n</Reasoning>\n\n<Action space>\n    <Action>(5,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am staying centered on the object to have a clear view and check for anomalies.\n</Reasoning>\n\n<Action space>\n    <Action>(5,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    I am moving slightly to the right and 5 meters up to maintain my position and check for more details of the object.\n</Reasoning>\n\n<Action space>\n    <Action>(5,0,5)</Action>\n</Action space"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(1, 0, -10)</Action>\n</Action space>\n\n<Reasoning>\n    As the coordinates are (1,0), I am moving slightly to the east to maintain a balanced approach towards the object.\n</Reasoning>\n\n<Action space>\n    <Action>(1,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    Now I am level with the object.\n</Reasoning>\n\n<Action space>\n    <Action>(1,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    Staying level ensures I maintain a clear view of the object in question.\n</Reasoning>\n\n<Action space>\n    <Action>(1,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    I am slightly moving to the right and 5 meters up to ensure I am not only looking at the object but also checking for any potential slopes or inclines.\n</Reasoning>\n\n<Action space>\n    <Action>(1,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    This latest movement should put me in a good angle to observe the object for any irregularities or"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 62 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(2, 0, -8)</Action>\n</Action space>\n\n<Reasoning>\n    Following the coordinates (2,0), I am making a gentle turn to the right to explore the area around the object.\n</Reasoning>\n\n<Action space>\n    <Action>(2,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am adjusting my position to be directly over the central part of the object for a closer view.\n</Reasoning>\n\n<Action space>\n    <Action>(2,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    I am moving slightly right and upwards to better examine the details of the object.\n</Reasoning>\n\n<Action space>\n    <Action>(2,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    This position allows me to assess the object from a different angle, ensuring a thorough search.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 54 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(3, 0, -6)</Action>\n</Action space>\n\n<Reasoning>\n    The coordinates (3,0) are guiding me to move slightly to the left, providing a broad coverage of the area around the object.\n</Reasoning>\n\n<Action space>\n    <Action>(3,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    This is to ensure I am over the center of the object.\n</Reasoning>\n\n<Action space>\n    <Action>(3,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    I am making a more defined move in the right direction to get a closer look.\n</Reasoning>\n\n<Action space>\n    <Action>(3,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    I am maintaining my focus on the object, adjusting my position for a clearer view.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 48 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(4, 0, -4)</Action>\n</Action space>\n\n<Reasoning>\n    Following the coordinates (4,0), I am moving slightly to the right, which allows me to search the area at a gradient that is perpendicular to the object.\n</Reasoning>\n\n<Action space>\n    <Action>(4,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am adjusting my position to be directly over the center of the object for a closer view.\n</Reasoning>\n\n<Action space>\n    <Action>(4,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    I am moving slightly right and upwards to ensure I am examining the object from different angles, which might help in identifying any peculiarities.\n</Reasoning>\n\n<Action space>\n    <Action>(4,0,5)</Action>\n</Action space>\n\n<Reasoning>\n    This position will provide a better vantage point for observing the object and confirming if it's the anomaly we're searching for.\n</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 44 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(5, 0, -3)</Action>\n</Action space>\n\n<Reasoning>\n    Following the coordinates (5,0), I am making a gentle turn to the left, which will broaden my search area around the object.\n</Reasoning>\n\n<Action space>\n    <Action>(5,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am adjusting my position to be directly over the center of the object for a closer view.\n</Reasoning>\n\n<Action space>\n    <Action>(5,0,2)</Action>\n</Action space>\n\n<Reasoning>\n    I am making a more definite move in the left direction while remaining at the same altitude for a better perspective of the object.\n</Reasoning"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 41 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(6, 0, -2)</Action>\n</Action space>\n\n<Reasoning>\n    The coordinates (6,0) are guiding me to move slightly to the left, providing a broader coverage around the object.\n</Reasoning>\n\n<Action space>\n    <Action>(6,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am adjusting my position to be directly over the center of the object for a closer view.\n</Reasoning>\n\n<Action space>\n    <Action>(6,0,1)</Action>\n</Action space>\n\n<Reasoning>\n    I am making a slight right turn while staying level to examine the object at a different angle.\n</Reasoning>\n\n<Action space>\n    <Action>(6,0,1)</Action>\n</Action space>\n\n<Reasoning>\n    This position will allow me to get a clearer view of the object from a different angle."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 39 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(7, 0, -1)</Action>\n</Action space>\n\n<Reasoning>\n    Following the coordinates (7,0), I am making a gentle left turn, which will help me get a more comprehensive view of the area around the object.\n</Reasoning>\n\n<Action space>\n    <Action>(7,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am adjusting my position to be directly over the center of the object for a closer view.\n</Reasoning>\n\n<Action space>\n    <Action>(7,0,1)</Action>\n</Action space>\n\n<Reasoning>\n    I am making a slight right turn while staying level to examine the object from a different angle.\n</Reasoning>\n\n<Action space>\n    <Action>(7,0,1)</Action>\n</Action space>\n\n<Reasoning>\n    This position will allow me to get a clearer view of the object from a different angle."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action space>\n    <Action>(8, 0, -0.5)</Action>\n</Action space>\n\n<Reasoning>\n    Following the coordinates (8,0), I am making a gentle right turn, widening my search area around the object.\n</Reasoning>\n\n<Action space>\n    <Action>(8,0,0)</Action>\n</Action space>\n\n<Reasoning>\n    I am adjusting my position to be directly over the center of the object for a closer view.\n</Reasoning>\n\n<Action space>\n    <Action>(8,0,0.5)</Action>\n</Action space>\n\n<Reasoning>\n    I am making a slight right turn while remaining at the same altitude to ensure I am closely examining the object from different angles.\n</Reasoning>"
+    ]
+]

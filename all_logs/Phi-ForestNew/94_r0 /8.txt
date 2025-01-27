@@ -1,0 +1,12 @@
+ <Reasoning>Given the current altitude of 10 meters above ground level, my next action is to continue searching the area for the person by moving in different directions and keeping an eye on the coordinates for any sign of the person.</Reasoning>
+<Action>(0, 1, 0)</Action>
+<Reasoning>Moving slightly to the northwest may lead me to areas not yet searched, increasing the chances of spotting the person.</Reasoning>
+<Action>(1, 1, 0)</Action>
+<Reasoning>I will maintain the altitude and continue to scan the area as I am still in the search for the person.</Reasoning>
+<Action>(1, 1, 0)</Action>
+<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>
+<Action>(1, 1, 0)</Action>
+<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>
+<Action>(1, 1, 0)</Action>
+<Reasoning>I will maintain the altitude and coverage of the area as I am still in the search for the person.</Reasoning>
+<Action>(1

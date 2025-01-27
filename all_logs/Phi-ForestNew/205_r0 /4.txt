@@ -1,0 +1,17 @@
+ <Reasoning>The yellow object is located in the lower left quadrant. I need to be 10 meters or lower to confirm it. Let's start by moving south and then adjusting my altitude.</Reasoning>
+
+<Action>(-41, -31, 0)</Action>
+
+<Reasoning>I've reached the yellow point, but my altitude is still too high. I'll continue to move south and then adjust my altitude.</Reasoning>
+
+<Action>(-51, -31, 0)</Action>
+
+<Reasoning>The yellow point is now in my sight, but my altitude is too high. I'll need to make a few more adjustments to get it right.</Reasoning>
+
+<Action>(-51, -21, 0)</Action>
+
+<Reasoning>I'm now at the correct altitude. I can confirm the presence of the object and reply with "FOUND."</Reasoning>
+
+<Action>FOUND</Action>
+
+<Reasoning>The yellow point is in the lower left quadrant, and my

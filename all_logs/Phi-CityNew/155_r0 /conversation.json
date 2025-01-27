@@ -1,0 +1,82 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 72 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "    \n\n    <Reasoning>Starting at the center of the image, I should move closer to the object in question and lower my altitude. Since the object is somewhere in the middle of the image, I will move towards the left side of the grid to increase my chances of finding it.</Reasoning>\n    <Action>(5, 0, -30)</Action>\n\n    <Reasoning>After making the first move, I need to continue searching for the object. The object might be towards the upper left part of the grid, so I should move towards that direction while keeping the altitude low.</Reasoning>\n    <Action>(8, 0, -10)</Action>\n\n    <Reasoning>I should continue my search in the upper left area of the grid. Now, I am closer to the object and still below the altitude of 10 meters. If the object is indeed the yellow point, I will reply with \"FOUND\".</Reasoning>\n    <Action>(10, 0, -5)</Action>\n\n    <Reasoning>The object might be slightly to the right of the yellow point. I should move slightly left and keep my altitude low to increase my chances of seeing it.</Reasoning>\n    <Action>(9, 0, -5)</Action>\n\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting at the center of the image, I should move towards the upper right corner of the grid to cover more ground while still being below 10 meters above the object.</Reasoning>\n    <Action>(14, 28, -5)</Action>\n\n    <Reasoning>The object might be located in the upper right corner of the grid. I will continue moving upwards and to the right while keeping my altitude low.</Reasoning>\n    <Action>(14, 28, -10)</Action>\n\n    <Reasoning>I am now close to the top of the grid, which covers the lower right area. The object might be in this region. I need to move down slightly and to the left to see if it's there.</Reasoning>\n    <Action>(13, 28, -3)</Action>\n\n    <Reasoning>I should now move slightly up and to the left to get closer to the right edge of the grid, where the object might be. I will also be significantly lower since the altitude above ground level is 42 meters.</Reasoning>\n    <Action>(12, 28, -8)</Action>\n\n    <Reasoning>The object might be harder to see now since I am deeper in the grid. Therefore"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I will start by moving towards the bottom right corner of the grid, which covers the upper left area of the image. This will be my initial search area given my current altitude.</Reasoning>\n    <Action>(25, 25, -2)</Action>\n\n    <Reasoning>The object may be spread across multiple buildings, so I will need to expand my search. I will move towards the middle of the grid to cover more ground.</Reasoning>\n    <Action>(20, 25, -5)</Action>\n\n    <Reasoning>To further increase my chances of finding the object, I should now move towards the lower left area of the grid, which covers the right side of the image.</Reasoning>\n    <Action>(15, 25, -3)</Action>\n\n    <Reasoning>I am now closer to the lower right area of the grid. The object might be in the upper portion of the grid, so I will move slightly upwards and to the left to cover that area.</Reasoning>\n    <Action>(10, 25, -1)</Action>\n\n    <Reasoning>As I am closer to the right side of the grid, I will also move towards the upper right corner to ensure I am not missing the object.</Reason"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting at the center of the image, I will move towards the lower left corner of the grid to cover the bottom right area of the image, which is my initial search area given my current altitude and the requirement to be below 10 meters above the object.</Reasoning>\n    <Action>(25, 25, -2)</Action>\n\n    <Reasoning>The object might be in the center of the grid, so I will move towards the middle of the grid while still being below 10 meters above.</Reasoning>\n    <Action>(20, 25, -5)</Action>\n\n    <Reasoning>To be more thorough, I will now move towards the lower right area of the grid, which covers the upper left corner of the image.</Reasoning>\n    <Action>(15, 25, -3)</Action>\n\n    <Reasoning>As I am closer to the left edge of the grid, I will also move slightly upwards to ensure I am not missing the object.</Reasoning>\n    <Action>(10, 25, -1)</Action>\n\n    <Reasoning>I am now closer to the left side of the grid and the upper right corner. The object might be in the upper left area of the grid, so I will"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Starting at the center of the image, I will move towards the lower right corner of the grid to cover the upper left area of the image, which is my initial search area given my current altitude and the requirement to be below 10 meters above the object.</Reasoning>\n    <Action>(25, 25, -2)</Action>\n\n    <Reasoning>The object might be in the middle of the grid, so I will move towards the center of the grid while still being below 10 meters above.</Reasoning>\n    <Action>(20, 25, -5)</Action>\n\n    <Reasoning>To be more thorough, I will now move towards the lower left area of the grid, which covers the upper right corner of the image, ensuring I am not missing the object.</Reasoning>\n    <Action>(15, 25, -3)</Action>\n\n    <Reasoning>As I am closer to the left edge of the grid, I will also move slightly upwards to ensure I am not missing the object.</Reasoning>\n    <Action>(10, 25, -1)</Action>\n\n    <Reasoning>I am now closer to the left side of the grid and the upper right corner. The object might be in the upper"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Upon reaching a grid point which is too close to the object, I immediately initiate an emergency stop to prevent any potential damage to the drone or the building below.</Reasoning>\n    <Action>Emergency stop</Action>\n\n    <Reasoning>Once the emergency stop is activated, I will assess the situation and determine the next course of action, which could involve moving to a safer location in the grid or retrieving the drone if possible.</Reasoning>\n    <Action>Assess situation</Action>\n\n    <Reasoning>If the emergency stop goes well, I will then continue searching for the object using the updated coordinates and altitude restrictions to avoid a similar incident in the future.</Reasoning>\n    <Action>Continue search</Action>\n\n    <Reasoning>If the emergency stop was not successful, I will need to evaluate whether I can safely return to the starting position or if I need to abort the mission and return the drone to a safe location.</Reasoning>\n    <Action>Return to safe position or abort</Action>"
+    ]
+]

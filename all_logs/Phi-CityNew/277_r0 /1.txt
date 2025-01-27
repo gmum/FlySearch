@@ -1,0 +1,5 @@
+ <Reasoning>I need to further descend to get closer to the object. I will move in the direction of the blue point on the grid, which might be the object in question. It's important to be at most 10 meters below the drone when I reply with "FOUND".
+
+<Action>(0, 0, -25)</Action>
+
+After this move, I will assess if the object is indeed the one I am looking for. If it is, I will reply with "FOUND". If it is not, I will continue the search for the correct object.

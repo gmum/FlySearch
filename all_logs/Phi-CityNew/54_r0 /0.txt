@@ -1,0 +1,4 @@
+ <Reasoning>
+I need to fly lower to get closer to the object. I can't just fly straight down, I need to be careful not to fly too low or I might hit something. I'll start by going down 5 meters to see if I can get a better view of the ground.
+</Reasoning>
+<Action>(5, 0, -5)</Action>

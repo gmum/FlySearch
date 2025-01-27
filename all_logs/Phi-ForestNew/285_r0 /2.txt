@@ -1,0 +1,2 @@
+ <Reasoning>Having already investigated the area around (0,0), I will now look for the next point with a significant color difference to continue the search for the object. I will fly to (5,0) as it appears to be an outlier with its distinct brown color, which is a stark contrast to the surrounding green. This is the area where the object is likely to be based on the previous analysis and is below the altitude limit, ensuring safety.</Reasoning>
+    <Action>(5, 0, -15)</Action>

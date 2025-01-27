@@ -1,0 +1,10 @@
+<Reasoning>I see a cluster of trees in the center of the image which might be hiding the trash pile. I will move towards the center and slightly to the right to get a better view.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Now that I am closer to the ground, I can see more details. I will move slightly to the right to get a better view of the area.</Reasoning>
+<Action>(5, 0, 0)</Action>
+
+<Reasoning>As I moved to the right, I can now see a trash pile on the ground. I will move slightly down to get below 10 meters altitude.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+FOUND.

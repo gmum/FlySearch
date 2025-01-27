@@ -1,0 +1,11 @@
+ <Reasoning>Given that my current altitude is 14 meters, I will make a move that positions me within the most probable area of the object, which appears to be around (5,5) based on the grid.</Reasoning>
+<Action>(5, 5, 0)</Action>
+
+<Reasoning>Having moved to (5,5), I will now check the area around (5,9) as the object seems to be nearby.</Reasoning>
+<Action>(5, 9, 0)</Action>
+
+<Reasoning>The object is not in the area of (5,9), so I will move slightly to (5,5) to be closer to the center of the grid where the object might be.</Reasoning>
+<Action>(5, 5, 0)</Action>
+
+<Reasoning>I will now move to the center of the grid to ensure I've covered as much area as possible. This move will be in the direction of (0,0) to be at the exact center.</Reasoning>
+<Action>(0, 0, 0)</Action>

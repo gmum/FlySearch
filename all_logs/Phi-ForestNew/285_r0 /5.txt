@@ -1,0 +1,2 @@
+ <Reasoning>The next step involves flying to (0,6) as it appears to be the next closest point to ground level that stands out from the surrounding environment, indicating it may be the object of interest. I will ensure to be below 10 meters to confirm if it is what we are looking for. If not, I will proceed to inspect the point and then return to fly to (0,3) to check if there is another point of interest at (0,3). I will continue this process until I find the object that does not blend in with the environment.</Reasoning>
+    <Action>(0, 6, -7)</Action>

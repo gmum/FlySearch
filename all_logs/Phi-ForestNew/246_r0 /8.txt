@@ -1,0 +1,10 @@
+ <Reasoning>The object might be at coordinates (9,19). I move to coordinates (9,19) to explore that area, being cautious of the drone's altitude and the potential proximity to the object.</Reasoning>
+<Action>(9,19,0)</Action>
+
+<Reasoning>The object isn't at (9,19), so I move to (9,19) and slightly down to (9,18) to continue the search, being cautious of the object.</Reasoning>
+<Action>(9,19,-1)</Action>
+
+<Reasoning>The object is still not found at (9,18). I move to (9,18) and slightly down to (9,17) to further explore the area, considering the potential proximity to the object.</Reasoning>
+<Action>(9,18,0)</Action>
+
+<Reasoning>The object isn't found at (9,17). I move to (9,17) and slightly down to (9,16) to continue the search while being careful of the object.</Reason

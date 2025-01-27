@@ -1,0 +1,14 @@
+ <Reasoning>I need to move closer to the yellow point to get a better view of it.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>The yellow point is not the object we are looking for. I will now move slightly to the right to investigate other areas.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning>I am not seeing the object. I will move further to the right and slightly up to get a different perspective.</Reasoning>
+<Action>(10, 5, 5)</Action>
+
+<Reasoning>The cross-shaped object is not the one we are looking for. I'll move further to the right above it to investigate other areas.</Reasoning>
+<Action>(15, 5, 5)</Action>
+
+<Reasoning>I'm still not finding the object. I'll adjust my search pattern and move to the center of the image again to start the search anew.</Reasoning>
+<Action>(0, 0, 0)</Action>

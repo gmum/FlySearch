@@ -1,0 +1,27 @@
+ <Reasoning>
+    The drone must move to a position that is within the field of view and closer to the ground, but it should not go below -10 meters to avoid hitting the ground or obstacles.
+    </Reasoning>
+
+    <Action>(4, -6, -2)</Action>
+
+    <Reasoning>
+    This move brings the drone closer to the ground while staying within the visible area and avoiding unnecessary risk of collision.
+    </Reasoning>
+
+    <Action>(4, -6, 0)</Action>
+
+    <Reasoning>
+    Moving to the center will maximize the area covered, and being close to the ground allows for better visibility of potential objects on the ground.
+    </Reasoning>
+
+    <Action>(4, -6, 2)</Action>
+
+    <Reasoning>
+    The drone adjusts its altitude to remain observable and to assess the ground properly.
+    </Reasoning>
+
+    <Action>(4, -6, 4)</Action>
+
+    <Reasoning>
+    Adjusting altitude further ensures the drone stays within the image frame to accurately search for the anomaly.
+    </Reasoning>

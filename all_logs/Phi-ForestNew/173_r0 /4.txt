@@ -1,0 +1,11 @@
+ <Reasoning>I'm starting from coordinates (0, 0), which is in the center of the grid. Moving to the northeast, the coordinates (17, 17) seem to be in a more open area with less tree cover.</Reasoning>
+<Action>(5, 17, -5)</Action>
+
+<Reasoning>Next, I'll check the coordinates (17, 25) to see if the campsite is in this clear area.</Reasoning>
+<Action>(10, 17, -5)</Action>
+
+<Reasoning>The coordinates (17, 25) are further northeast. This might be close to the campsite based on the surrounding environment.</Reasoning>
+<Action>(15, 25, -5)</Action>
+
+<Reasoning>Finally, I'll check coordinates (22, 25) which are in the far northeast. If the campsite is not found here, it should be in the vicinity.</Reasoning>
+<Action>(20, 25, -5)</Action>

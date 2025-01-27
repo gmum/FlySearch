@@ -1,0 +1,4 @@
+ <Reasoning>
+    Given the coordinates and the altitude, I need to move closer to the target area to verify if the object is an anomaly. Since my current altitude is 36 meters, I will lower myself to 24 meters to meet the visual requirement of being below 10 meters.
+</Reasoning>
+<Action>(5, 0, -12)</Action>

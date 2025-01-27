@@ -1,0 +1,10 @@
+ <Reasoning>Starting with an altitude of 61 meters, I will move inversely proportional to my altitude to ensure I get closer to potential objects on the ground. Since I need to be below 10 meters to find the trash pile, I will decrease my altitude. My first move will be to decrease my altitude to 50 meters which should bring me closer to ground level.</Reasoning>
+<Action>(0, 0, 11)</Action>
+
+<Reasoning>After decreasing my altitude to 50 meters, I will adjust my position to be closer to potential trash pile locations. I will move to the coordinates (0, 0, 0), which should be at ground level and in the field of view if the object is nearby.</Reasoning>
+<Action>(0, 0, -11)</Action>
+
+<Reasoning>Moving closer to ground level, I will move further down to find the trash pile. I will decrease my altitude to 10 meters to be sure I am at or near ground level.</Reasoning>
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>After I am at or near ground level, I will perform a visual scan of the area to locate the trash pile. The

@@ -1,0 +1,11 @@
+ <Reasoning>The large grey object might be the rock that could potentially be the trash pile in disguise. Moving closer will help to confirm this.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>This move also allows me to look at the surrounding area for more context, which is important for identifying the trash pile.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>This move will broaden my search area, as it moves me outward and downward, which might reveal if the trash pile is closer to the object than I previously believed.</Reasoning>
+<Action>(0, 1, -1)</Action>
+
+<Reasoning>The change in altitude will change my view and potentially bring the object into view if it is indeed the rock.</Reasoning>
+<Action>(0, 1, -1)</Action>

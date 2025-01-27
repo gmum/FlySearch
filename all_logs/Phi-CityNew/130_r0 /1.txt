@@ -1,0 +1,13 @@
+ <Reasoning>I am starting my search for the fire from a higher altitude. I will focus on finding the coordinates with higher z-values to indicate the presence of a fire. If I cannot find the fire at first, I will adjust my altitude as needed to get closer. I will move one step at a time while avoiding areas that are not relevant to the search.</Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning>I am moving closer to a potential fire source at a lower z value. If I cannot locate the fire, I will move to the next coordinate with a lower z value.</Reasoning>
+<Action>(15, 0, -10)</Action>
+
+<Reasoning>I am now at a lower altitude and closer to the potential fire source. I will move one more step to verify if it is the fire.</Reasoning>
+<Action>(20, 0, -10)</Action>
+
+<Reasoning>I have found a fire source at a lower z value. I need to move down to a lower altitude to check if it is the fire.</Reasoning>
+<Action>(20, 0, -5)</Action>
+
+<Reasoning>I am now at a lower altitude and very close to the potential

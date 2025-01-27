@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I see a road construction site at approximately (0, 0). I need to get closer to confirm and be at most 10 meters above it. I will move to (0,0) and descend to 5 meters above the ground.</Reasoning>
+<Action>(0, 0, -70)</Action>
+```

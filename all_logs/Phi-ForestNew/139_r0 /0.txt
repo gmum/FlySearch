@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+        I will start by moving closer to the object, so I need to decrease my altitude. I should move in the direction of one of the coordinates given in the grid that is closest to the object.
+    </Reasoning>
+    <Action>(0, 0, 2)</Action>
+</Response>

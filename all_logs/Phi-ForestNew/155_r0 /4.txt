@@ -1,0 +1,2 @@
+ <Reasoning>The object I'm searching for seems to be at (0, 0), which is roughly 11 meters away. To get the object into the drone's field of view, I need to descend 11 meters. Since I am required to be 10 meters below the object, I will make this change to my altitude.</Reasoning>
+<Action>(0, 0, -11)</Action>

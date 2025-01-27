@@ -1,0 +1,2 @@
+<Reasoning>I am at (0,0), need to get to anomaly at (0, -12), and then descend. I will move to (0, -12) and descend by 9 meters. This should be enough to get closer to the object without hitting anything.</Reasoning>
+<Action>(0, -12, -9)</Action>

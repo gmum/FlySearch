@@ -1,0 +1,4 @@
+```xml
+<Reasoning>I need to start the search. I will move to the center of the image, at (0,0). I will also start descending to get closer to the ground level.</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

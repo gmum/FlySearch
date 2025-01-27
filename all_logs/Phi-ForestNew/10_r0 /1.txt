@@ -1,0 +1,17 @@
+ <Reasoning>I will analyze the coordinates to determine the trash pile's location and adjust my altitude to approach it.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>Upon closer inspection, if the object does not appear to be a trash pile, I will move further in the grid direction.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>I will continue moving closer and adjust my altitude to ensure I can confirm the object's identity.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>The object is identified as the trash pile. I will now lower my altitude further to get a better view.</Reasoning>
+<Action>(-1, 0, -20)</Action>
+
+<Reasoning>I am directly above the trash pile now. I will fly lower to 10 meters relative to it.</Reasoning>
+<Action>(-1, 0, -10)</Action>
+
+<Reasoning>I have confirmed the object is a trash pile. I will hover at this altitude to stay centered on it.</Reasoning>
+<Action

@@ -1,0 +1,2 @@
+ <Reasoning>The image shows a large area with a grid system. There are several points marked which could possibly be the object of interest. Given the altitude, the object is not at the drone's level, and I need to get closer. Considering the coordinates on the grid, moving towards the center of the grid appears to be the most promising spot to find the object. Start by decreasing altitude to get a better angle and then proceed to the center for the most thorough search.</Reasoning>
+<Action>(5, 0, -30)</Action>

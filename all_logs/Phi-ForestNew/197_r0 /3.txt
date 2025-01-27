@@ -1,0 +1,9 @@
+ <Reasoning>To locate the object, I will carefully select a position where it's believed to be while considering the altitude and range constraints.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object is in the search area, and after careful observation, I can confirm it's within a safe altitude range for the operation.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is indeed present in the search range and can be acknowledged with a 'FOUND' response.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

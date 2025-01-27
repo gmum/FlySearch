@@ -1,0 +1,2 @@
+<Reasoning>I see a building at coordinates (28,0). I will move there and go lower than 10 meters to check if that is the object in question. It looks like a building so it is likely to be the object.</Reasoning>
+<Action>(28, 0, -75)</Action>

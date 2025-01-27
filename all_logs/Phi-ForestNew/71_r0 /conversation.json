@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a forest fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 94 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to fly lower to investigate the area around the point marked (0, 0) since it is far below my current altitude.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 63 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a lower height than my current position. I need to go lower to investigate the area around the point marked (-42, -21).</Reasoning>\n<Action>(-42, -21, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a very low height relative to my current position. I need to move even lower to investigate the area around the point marked (-21, -1).</Reasoning>\n<Action>(-21, -1, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>Now that the fire is within my reach at such a low height, I can confirm if it is the forest fire I am looking for.</Reasoning>\n<Action>(-1, -1, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I have identified the forest fire and need to maintain a safe altitude to investigate further.</Reasoning>\n<Action>(0, 0, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a higher altitude than my current position. I need to go higher to investigate the area around the point marked (6, 6).</Reasoning>\n<Action>(6, 6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a higher altitude than my current position. I need to go higher to investigate the area around the point marked (5, 5).</Reasoning>\n<Action>(5, 5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a higher altitude than my current position. I need to go higher to investigate the area around the point marked (2, 5).</Reasoning>\n<Action>(2, 5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a higher altitude than my current position. I need to go higher to investigate the area around the point marked (0, 4).</Reasoning>\n<Action>(0, 4, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>The fire is located at a higher altitude than my current position. I need to go higher to investigate the area around the point marked (2, 3).</Reasoning>\n<Action>(2, 3, 0)</Action>"
+    ]
+]

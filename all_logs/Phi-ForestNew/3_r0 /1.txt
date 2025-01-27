@@ -1,0 +1,26 @@
+ <Action space>
+    <Action>(0, 0, -1)</Action>
+</Action space>
+<Reasoning>
+    I am starting my search by moving to the center of the grid, which may be the most logical place to begin my search for any signs of the campsite. Given that my altitude is just above the ground, I am ensuring that my field of view includes a large portion of the landscape.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 0, -3)</Action>
+</Action space>
+<Reasoning>
+    Moving downward again increases the likelihood of detecting the campsite, as it places me closer to the ground where campsites are usually found.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 0, -6)</Action>
+</Action space>
+<Reasoning>
+    Continuing the descent allows me to increase the area in my view where I might spot signs of the campsite, such as structures or paths.
+</Reasoning>
+
+<Action space>
+    <Action>(0, 0, -9)</Action>
+</Action space>
+<Reasoning>
+    Further downward descent is intended to cover more of the ground and increase the probability of spot

@@ -1,0 +1,16 @@
+ <Reasoning>The current grid overlay suggests that there are some points of interest that need to be investigated. Moving the drone towards these points can help in locating the person.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>The object is now slightly to the left. The altitude is fine, and the object should be within the field of view.</Reasoning>
+<Action>(10, -5, -10)</Action>
+
+<Reasoning>If the person is at a higher altitude, I should make a slight adjustment to scan the area more effectively.</Reasoning>
+<Action>(10, 0, -15)</Action>
+
+<Reasoning>The object is not in the field of view now. I will make a slight adjustment in the y-direction to search in the area where the person might be located.</Reasoning>
+<Action>(10, -2, -15)</Action>
+
+<Reasoning>The object is in the field of view now, and I am 4 meters below it. I will circle around to get a better look.</Reasoning>
+<Action>(8, 0, -11)</Action>
+
+<Reasoning>I am now 6 meters below the

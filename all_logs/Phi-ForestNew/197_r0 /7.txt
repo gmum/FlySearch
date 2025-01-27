@@ -1,0 +1,9 @@
+ <Reasoning>I will assess the search area and identify coordinates where the object is potentially located.</Reasoning>
+<Action>(10,10,0)</Action>
+
+<Reasoning>The object's presence is confirmed based on the visual cues. The drone's altitude and positioning are safe for the search.</Reasoning>
+<Action>(3,0,0)</Action>
+
+<Reasoning>The object is confirmed to be within the search range. I can respond with 'FOUND'.</Reasoning>
+<Action>(5,0,0)</Action>
+<Reply>FOUND</Reply>

@@ -1,0 +1,4 @@
+ <Reasoning>The drone is at its lowest altitude, and the building should be at (0, 0). I need to move to the center to ensure visibility.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Now that the building is confirmed to be at (0, 0), the task

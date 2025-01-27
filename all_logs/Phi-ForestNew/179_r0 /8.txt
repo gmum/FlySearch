@@ -1,0 +1,4 @@
+ <Action>(2, -3, 3)</Action>
+<Reasoning>I am still waiting for the object to appear in the image. If it doesn't, I will have to wait and hope it shows up at a lower altitude. If not, I must abandon the search and leave the area.</Reasoning>
+
+I will continue to monitor the coordinates and reply with "FOUND" once the object is found at most 10 meters below the drone. If the object has not appeared within the remaining altitude limit, I will reply with "NOT FOUND" and exit the search area.

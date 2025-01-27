@@ -1,0 +1,15 @@
+ <Reasoning>I will make a slight adjustment to my altitude to ensure I remain in view of the object while preparing for the next move.</Reasoning>
+
+<Action>(0, 0, 1.75)</Action>
+
+<Reasoning>The object is now in the drone's field of view after adjusting my altitude.</Reasoning>
+
+<Action>(1, 0, -2)</Action>
+
+<Reasoning>I am now within the field of view and at the correct altitude for the next move.</Reasoning>
+
+<Action>(1, -1, -2)</Action>
+
+<Reasoning>The object is now directly beneath the drone for a confirmation.</Reasoning>
+
+<Action>(1, -1, -2)</Action>

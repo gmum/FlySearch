@@ -1,0 +1,19 @@
+ Let's start the search.
+
+<Reasoning>Since I cannot see the object, I will start at the coordinates where the grid lines are closest to the coordinates of the unknown object, which are (0,0). I'll fly lower to check the area immediately below it to see if the object is there.</Reasoning>
+
+<Action>(-5, -10, 0)</Action>
+
+<Reasoning>I will continue to fly lower to increase the likelihood of finding the object or, at least, to get closer to areas that might be more likely to contain it.</Reasoning>
+
+<Action>(-10, -15, 0)</Action>
+
+<Reasoning>I will continue to fly lower as the coordinates of the object don't seem to be directly below or near the current position of the drone.</Reasoning>
+
+<Action>(-15, -20, 0)</Action>
+
+<Reasoning>I still don't see the object and need to search more carefully. I'll try to fly to the coordinates (0,0) to see if there's a chance to find it there.</Reasoning>
+
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>I am at the coordinates (0,0),

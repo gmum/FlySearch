@@ -1,0 +1,94 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a white sport car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 47 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(20, 20, -10)</Action>\n<Reasoning>I need to get closer to the object. The object might be around the intersection of the grid (10, 10). Moving closer should help me to lower my altitude and find the object.</Reasoning>\n\n<Action>(40, 40, -20)</Action>\n<Reasoning>I need to move further south to the center of the grid to avoid the buildings on the sides. Being at the center should help me to get closer to the object.</Reasoning>\n\n<Action>(50, 50, -30)</Action>\n<Reasoning>I should move west to get closer to the object. The object might be around the grid (25, 25). Moving there should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(80, 80, -40)</Action>\n<Reasoning>I need to move north to avoid the intersection of the grid (25, -25). The object might be around grid (10, -25). Moving there should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(90, 90, -40)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to move south to get closer to the object. The object might be around the grid (10, 20). Moving to the grid (0, 20) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(15, 20, -30)</Action>\n<Reasoning>I need to move further south to get closer to the object. The object might be around the grid (0, 10). Moving to the grid (-10, 10) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(20, 10, -40)</Action>\n<Reasoning>I need to move to the grid (0, 5) to get closer to the object. The object might be around the grid (-5, 0). Moving to the grid (5, 0) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(25, 0, -50)</Action>\n<Reasoning>I need to move further east to get closer to the object. The object might be around the grid (5, 0). Moving to the grid (5, 0) should help me to get closer and lower my altitude.</Re"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to move north to avoid the buildings. The object might be around the grid (-5, 5). Moving to the grid (-5, 5) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(-5, 5, -40)</Action>\n<Reasoning>I need to move further north to get closer to the object. The object might be around the grid (-10, 5). Moving to the grid (-10, 5) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(-10, 5, -50)</Action>\n<Reasoning>I need to move even further north to get closer to the object. The object might be around the grid (-15, 5). Moving to the grid (-15, 5) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(-15, 5, -60)</Action>\n<Reasoning>I need to move further north to get closer to the object. The object might be around the grid (-20, 5). Moving to the grid (-20, 5) should help me to get closer and lower my altitude.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to move to the grid (0, 0) to avoiding the building. The object might be around the grid (0, 0). Moving to the grid (0, 0) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(0, 0, -40)</Action>\n<Reasoning>I need to move to the grid (-10, 0) to get closer to the object. The object might be around the grid (-10, 0). Moving to the grid (-10, 0) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(-10, 0, -50)</Action>\n<Reasoning>I need to move to the grid (-15, 0) to get closer to the object. The object might be around the grid (-15, 0). Moving to the grid (-15, 0) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(-15, 0, -60)</Action>\n<Reasoning>I need to move to the grid (-20, 0) to get closer to the object. The object might be around the grid (-20, 0). Moving"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to move to the grid (0, 0) to avoid the building. The object might be around the grid (0, 0). Moving to the grid (0, 0) should help me to get closer and lower my altitude.</Reasoning>\n\n<Action>(0, 0, -40)</Action>\n<Reasoning>I need to move to the grid (-10, 0) to get closer to the object. The object might be around the grid (-10, 0). Moving to the grid (-10, 0) should help me to get closer and lower my altitude.</Reason"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Reasoning>I need to move to the grid (0, 0) to avoid the building. The object might be around the grid (0, 0). Moving to the grid (0, 0) should help me to get closer and lower my altitude.</Reason"
+    ]
+]

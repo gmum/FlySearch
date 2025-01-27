@@ -1,0 +1,14 @@
+ <Reasoning>
+I've lost control of the UAV due to the proximity to the ground. As a safety measure, I am issuing an emergency stop command to prevent any collision.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+I am issuing the command to halt all actions and ensure that the UAV does not continue to decrease in altitude or move to a location that poses a risk of collision.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+I am ceasing all movements and preparing to assess the situation to determine the cause of the loss of control and to prevent any potential hazards.
+</Reasoning>
+<Action>(0, 0, -10)</Action>

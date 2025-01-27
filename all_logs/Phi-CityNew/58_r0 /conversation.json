@@ -1,0 +1,170 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 50 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, -10)</Action>\n\n    <Reasoning>I will move to the bottom center of the grid to get closer to the ground and maximize my chances of finding the object. If I don't find the object, I'll continue to search in a grid pattern, moving closer in each iteration to the area where the object might be. This method will help me cover the area efficiently, as it allows me to fine-tune my search location while ensuring I'm as close to the ground as possible.</Reasoning>\n\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -10, -10)</Action>\n\n    <Reasoning>I will move to the bottom left of the grid, making the drone as close to the ground as possible. This altitude allows me to cover more ground and increases the likelihood of finding the object or fire if it's on the ground. By flying at this lower altitude, I maintain a safe clearance from the ground while maximizing my search area."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -20, -20)</Action>\n\n    <Reasoning>I will descend to the bottom of the grid to ensure a thorough search. Being at the bottom helps cover more area and gives me a better vantage point to spot the object or fire. This lower altitude keeps the drone at a safe distance from the ground, reducing the risk of collision."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -30, -30)</Action>\n\n    <Reasoning>I will descend to the very bottom of the grid to have the lowest possible altitude. This allows me to search the area most effectively while maintaining a safe distance from the ground. By doing so, I can cover a larger area and have a better chance of finding the object or fire.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -1, -1)</Action>\n\n    <Reasoning>I will move just one meter down the grid to stay within the safe boundaries of the last image. This small adjustment ensures that I remain within the known area, reducing the risk of the drone flying out of bounds and into unknown territories. It also allows me to maintain a safe distance from the ground while still lowering the altitude to improve the chances of finding the object.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -2, -2)</Action>\n\n    <Reasoning>I will move two meters down the grid to keep the drone within the limits of the last seen image. This small adjustment ensures that I remain within the known area and reduces the risk of flying out of bounds, while also allowing me to search at a lower altitude for the object.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -1, -1)</Action>\n\n    <Reasoning>I will move one meter down the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -2, -2)</Action>\n\n    <Reasoning>I will move two meters down the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 3 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -3, -3)</Action>\n\n    <Reasoning>I will move three meters down the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -10, -10)</Action>\n\n    <Reasoning>I will move 10 meters back in the grid to ensure a safe distance from whatever obstructed my path. This emergency stop prevents collision and allows for a reassessment of the situation before continuing the search.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -5, -5)</Action>\n\n    <Reasoning>I will move five meters back the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -3, -3)</Action>\n\n    <Reasoning>I will move three meters back the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>\n\n    <Reasoning>This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -2, -2)</Action>\n\n    <Reasoning>I will move two meters back the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>   \n"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, -1, -1)</Action>\n\n    <Reasoning>I will move one meter back the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        " <Action>(0, 0, 0)</Action>\n\n    <Reasoning>I will move to the center of the grid to be as close to the object as possible. This is crucial because I am at my lowest altitude and need to maximize the chances of spotting the object or fire.</Reasoning>"
+    ]
+]

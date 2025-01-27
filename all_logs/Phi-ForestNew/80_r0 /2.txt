@@ -1,0 +1,11 @@
+ <Reasoning>Starting from (5, 5, 0) I will descend to (0, 5, -10) and manually move the drone over the coordinates to check for the person.</Reasoning>
+<Action>(0, 5, -10)</Action>
+
+<Reasoning>If the object isn't visible at the coordinates (0, 5, -10), I will climb back to an altitude of 14 meters to reassess and search the area systematically for a broader view.</Reasoning>
+<Action>(5, 5, -3)</Action>
+
+<Reasoning>I will continue this process of scanning, lowering, and climbing until the person is spotted or all possible locations are exhausted. The found object must be in my field of view and be 10 meters or less below the drone when I declare a successful search.</Reasoning>
+<Action>(5, 5, -10)</Action>
+
+<Reasoning>For the next move, I will begin a search from (9, 5, -10) and adjust the altitude as needed to cover more ground while staying within the search limits.</Reasoning>
+<Action>(9, 5, -10)</Action>

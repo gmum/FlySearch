@@ -1,0 +1,2 @@
+ <Action>(0, -1, -1.5)</Action>
+<Reasoning>To avoid the emergency stop, I'm flying to coordinates (0, -1, -1.5), which is slightly below the (0, -1, -2) position, to ensure the drone remains within the bounds of the previous image and maintains a safe distance from the terrain. This position allows for a safer continuation of the search, ensuring the drone's operational integrity.</Reasoning>

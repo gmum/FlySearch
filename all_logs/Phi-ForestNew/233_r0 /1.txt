@@ -1,0 +1,38 @@
+ <Action space>
+    <Action>(1, 0, -10)</Action>
+</Action space>
+
+<Reasoning>
+    As the coordinates are (1,0), I am moving slightly to the east to maintain a balanced approach towards the object.
+</Reasoning>
+
+<Action space>
+    <Action>(1,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    Now I am level with the object.
+</Reasoning>
+
+<Action space>
+    <Action>(1,0,0)</Action>
+</Action space>
+
+<Reasoning>
+    Staying level ensures I maintain a clear view of the object in question.
+</Reasoning>
+
+<Action space>
+    <Action>(1,0,5)</Action>
+</Action space>
+
+<Reasoning>
+    I am slightly moving to the right and 5 meters up to ensure I am not only looking at the object but also checking for any potential slopes or inclines.
+</Reasoning>
+
+<Action space>
+    <Action>(1,0,5)</Action>
+</Action space>
+
+<Reasoning>
+    This latest movement should put me in a good angle to observe the object for any irregularities or

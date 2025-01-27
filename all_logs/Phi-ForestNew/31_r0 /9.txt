@@ -1,0 +1,8 @@
+ <Reasoning>The large grey object may be the rock that could potentially be the trash pile. The drone should ensure it doesn't go outside the visible grid to maintain a safe search area and avoid potential obstacles.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>A systematic approach to search the immediate area around the rock formation is essential for a thorough investigation.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>Staying within the operational altitude limits and the bounds of the last image ensures the drone's safety and completes the mission objectives effectively.</Reasoning>
+<Action>(0, 0, -1)</Action>

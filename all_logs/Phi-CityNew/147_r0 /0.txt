@@ -1,0 +1,24 @@
+ <Reasoning>
+    I am starting at the top of the grid (0,0) and there is a crowd visible below. I should move closer to the ground to find the crowd. I will move to the bottom of the grid (-22,0) and see if the crowd is located there.
+</Reasoning>
+<Action>(-22,0)</Action>
+
+<Reasoning>
+    The crowd is not at the bottom of the grid, it is on the road with the vehicles. I will move down and to the right to find the crowd.
+</Reasoning>
+<Action>(-21,-11)</Action>
+
+<Reasoning>
+    I am moving closer to the ground but still not at the correct location. I will continue moving down and to the right.
+</Reasoning>
+<Action>(-22,-11)</Action>
+
+<Reasoning>
+    The crowd is visible and closer to the bottom of the grid. I am moving closer to the ground to find the crowd.
+</Reasoning>
+<Action>(-22, -11)</Action>
+
+<Reasoning>
+    The crowd is visible and I am moving closer to the ground. I will continue moving down to find the crowd.
+</Reasoning>
+<Action>(-21

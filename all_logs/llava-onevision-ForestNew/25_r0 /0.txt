@@ -1,0 +1,8 @@
+<Reasoning>Given the grid coordinates and the objective to find the campsite, I will start by moving towards the center of the grid to have a better chance of spotting the object from a central position. I will descend to an altitude of 10 meters to improve visibility and search efficiency.</Reasoning>
+<Action>(0, 0, -22)</Action>
+
+<Reasoning>Now that I have reached the center and an altitude of 10 meters, I will observe the surroundings. If the campsite is not visible, I will perform a systematic search by moving in a spiral pattern starting from the center. I will adjust my altitude and position as needed to maintain a clear view of the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>The campsite is now in my field of view, and I am centered on it at an altitude of 10 meters or less. I am ready to confirm the location.</Reasoning>
+FOUND

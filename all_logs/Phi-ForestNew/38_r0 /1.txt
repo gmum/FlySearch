@@ -1,0 +1,11 @@
+ <Reasoning>I need to stop immediately. I have flown too low and there is a risk of hitting something on the ground.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I must halt the drone as it is in a dangerous position.</Reasoning>
+<Action>(1, 0, 0)</Action>
+
+<Reasoning>I will ascend to a safe altitude to avoid any potential obstacles.</Reasoning>
+<Action>(0, 0, 400)</Action>
+
+<Reasoning>As the situation is not under control, I will halt the drone a safe distance above the ground.</Reasoning>
+<Action>(0, 0, 500)</Action>

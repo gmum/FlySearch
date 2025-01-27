@@ -1,0 +1,6 @@
+ <Response>
+    <Reasoning>
+        I am at (5, 0) meters above ground level and I am close to the coordinates (0, 0) and (0, 1). I should move closer to these coordinates to be closer to the object.
+    </Reasoning>
+    <Action>(0, 0, -4)</Action>
+</Response>

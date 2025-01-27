@@ -1,0 +1,3 @@
+ <Action>(0, -3, -3)</Action>
+
+    <Reasoning>I will move three meters down the grid to ensure the drone remains within the safe boundaries of the last image. This adjustment helps in minimizing the risk of flying out of bounds while still allowing me to search at a lower altitude for the object or fire.</Reasoning>

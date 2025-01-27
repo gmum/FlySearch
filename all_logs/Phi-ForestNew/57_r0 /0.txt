@@ -1,0 +1,16 @@
+ <Reasoning>This is the starting point, I'll fly northwest to get closer to the ground and have a broader view of the area.</Reasoning>
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning>I've moved to a lower altitude, now I'll try to find the trash pile in the bigger area.</Reasoning>
+<Action>(-5, 0, 0)</Action>
+
+<Reasoning>Moving slightly south-west, I hope to be closer to where the trash pile might be. If it's not close, I'll keep looking.</Reasoning>
+<Action>(-4, 0, 0)</Action>
+
+<Reasoning>Still not close to anything in the ground view. I'll try moving to the area that looks like it could be a trash pile.</Reasoning>
+<Action>(-4, -1, 0)</Action>
+
+<Reasoning>The object is definitely not visible from this angle. I'll move slightly north to see if it's there.</Reasoning>
+<Action>(-4, -1, 0)</Action>
+
+<Reasoning>The object is still not visible. I'll try to get closer to

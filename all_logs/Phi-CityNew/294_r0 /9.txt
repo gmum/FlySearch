@@ -1,0 +1,8 @@
+ <Reasoning>I have identified that I am too close to a building and risk hitting it, hence I will need to abort the mission.</Reasoning>
+<Action>(18, 0, 0)</Action>
+
+<Reasoning>Activating the emergency stop will ensure that I am not in danger of hitting the building.</Reasoning>
+<Action>Emergency stop activated</Action>
+
+<Reasoning>However, since I can't risk flying further, I will report the incident and wait for instructions from a ground control.</Reasoning>
+<Action>Reporting emergency situation</Action>

@@ -1,0 +1,25 @@
+ <Reasoning>
+I am starting my search for the large trash pile from 68 meters above ground level. I will try to fly to the coordinates (0, 0) to get a better view of the ground.
+<Action>(0, 0, -28)</Action></Reasoning>
+
+<Reasoning>
+Now I am at ground level, I will move slightly to the north to get a broader view of the area.
+<Action>(5, 0, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move to the left to cover more ground and look for the trash pile.
+<Action>(-5, 0, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move down slightly to get closer to the ground level.
+<Action>(-5, -1, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move to the right to cover more ground and look for the trash pile.
+<Action>(0, -1, 0)</Action></Reasoning>
+
+<Reasoning>
+I will move down slightly to get closer to the ground level.
+<Action>(0, -1, -2)</Action></Reasoning>
+
+<Reason

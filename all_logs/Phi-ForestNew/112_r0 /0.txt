@@ -1,0 +1,16 @@
+ <Reasoning>I need to get closer to the ground to check for the person. I also need to ensure that the area I am moving to is within my field of view.</Reasoning>
+<Action>(0, -30, 0)</Action>
+
+<Reasoning>I need to move north to get closer to the person, and also to ensure that the area I am moving to is within my field of view.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>I am now in the area where the person might be. I need to move slightly north to get closer to them, and ensure that I am below 10 meters relative to them.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I am now close enough to the person, and below 10 meters relative to them. I will reply with "FOUND" if the person is in my field of view.</Reasoning>
+<Action></Action>
+
+<Reasoning>The person is not in my field of view at the moment. I will continue to move north and slightly east to get closer to them.</Reasoning>
+<Action>(0, 10, 0)</Action>
+
+<Reasoning>The person is now in

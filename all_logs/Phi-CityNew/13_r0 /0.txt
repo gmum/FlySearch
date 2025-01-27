@@ -1,0 +1,13 @@
+ <Reasoning>I need to get closer to the ground to find the fire. Based on the coordinates given, I will move to the yellow point, which is the closest to the ground, at a height of 10 meters below the drone's current altitude.</Reasoning>
+<Action>(5, 0, -29)</Action>
+
+<Reasoning>After confirming the yellow point is not the fire, I will move to the next closest point to the ground, at a height of 10 meters below the drone's current altitude.</Reasoning>
+<Action>(10, 0, -29)</Action>
+
+<Reasoning>After confirming the next point is not the fire, I will move to the closest point to the ground, at a height of 10 meters below the drone's current altitude.</Reasoning>
+<Action>(15, 0, -29)</Action>
+
+<Reasoning>After confirming the third point is not the fire, I will move to the closest point to the ground, at a height of 10 meters below the drone's current altitude.</Reasoning>
+<Action>(20, 0, -29)</Action>
+
+<Reasoning>After confirming the fourth point is not the fire

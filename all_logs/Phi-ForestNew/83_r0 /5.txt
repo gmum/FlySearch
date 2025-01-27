@@ -1,0 +1,17 @@
+ <Reasoning>
+    With the UAV at 1 meter above ground level, it is crucial to maintain the lowest possible altitude while still ensuring visibility of the ground. This altitude optimizes the search area and increases the likelihood of detecting the subject.
+    </Reasoning>
+    <Action>(-1, 0, -1)</Action>
+
+    <Reasoning>
+    I will move across the grid in a structured manner, ensuring that each point is thoroughly scanned for the subject. Since the subject must be within 10 meters below the drone when found, I must stay as low to the ground as possible while respecting the altitude constraints.
+    </Reasoning>
+    <Action>(-2, 0, -1)</Action>
+
+    <Reasoning>
+    If the subject is not detected at the current point, I will move to the next closest point that is potentially within the search area. This will ensure a comprehensive search within the given parameters.
+    </Reasoning>
+    <Action>(-3, 0, -1)</Action>
+
+    <Reasoning>
+    Upon locating the subject, I will decrease my altitude to be 10 meters below ground level, as instructed, and then return to scanning the area for any other possible subjects. I

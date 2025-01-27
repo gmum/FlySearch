@@ -1,0 +1,17 @@
+ <Reasoning>I will move in the direction indicated by the coordinates to approach the trash pile quickly.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>Upon arrival, I will assess if the object is the trash pile. If not, I will proceed to the next coordinates.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>The object is the trash pile. I will now fly lower to 10 meters to confirm.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>I am directly above the trash pile. I will hover at this altitude to maintain focus.</Reasoning>
+<Action>(-1, 0, -30)</Action>
+
+<Reasoning>I have confirmed the object as the trash pile. I will now lower my altitude even further to ensure a clear view.</Reasoning>
+<Action>(-1, 0, -20)</Action>
+
+<Reasoning>I am directly above the trash pile, and it is confirmed. I will now hover at this altitude to ensure clarity.</Reasoning>
+<Action)(-1

@@ -1,0 +1,2 @@
+<Reasoning>I am currently looking at rocks, and I am already at a low altitude. This is not the animal I saw before. I need to go back to the location of the animal, which was at approximately (-20, 0) in the first image. I have since moved, so I need to move back relative to my current position. Thus, I need to go to my previous x and y (-20,0) which is now my center and then go down.</Reasoning>
+<Action>(20, 0, 0)</Action>

@@ -1,0 +1,16 @@
+<Reasoning>
+    I will start by moving towards the center of the image to get a better view of the area. I will also descend slightly to get closer to the ground.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I have moved towards the center and descended. Now I will move slightly to the right to check if there is anything in that direction.
+</Reasoning>
+<Action>(0, 10, 0)</Action>
+
+<Reasoning>
+    I have moved to the right and I can see a large trash pile on the ground. I will descend further to get below 10 meters above the object.
+</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+FOUND

@@ -1,0 +1,2 @@
+ <Action>(-20, 0, -15)</Action>
+<Reasoning>I suspect the trash pile may be the yellow point on the grid. It is far enough from the drone's current position that I need to get closer. By moving to (0, 0, -15) meters, the drone will be 30 meters closer to the point, which should be within the search area.</Reasoning>

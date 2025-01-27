@@ -1,0 +1,6 @@
+ <Reasoning>Since the building is not immediately visible from this altitude, I will fly to a higher position to gain a better view.</Reasoning>
+<Action>(2, 2, -1)</Action>
+<Reasoning>The building is now visible. I will fly down to get a closer look.</Reasoning>
+<Action>(3, 2, -1)</Action>
+<Reasoning>The building is in my view. I will confirm its identity before proceeding.</Reasoning>
+<Action>(3, 2, -1)</Action>

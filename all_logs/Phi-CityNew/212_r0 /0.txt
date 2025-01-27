@@ -1,0 +1,22 @@
+ <Reasoning>
+    The objective is to find an object that doesn't fit with the rest of the environment. The object may not be visible in the first image, so it is important to perform a careful search. I will start by moving closer to the image to get a better view of the surroundings.
+</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning>
+    The object may be located somewhere within the image. I will now move closer to the image, while keeping in mind that the maximum altitude cannot exceed 120 meters.
+</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Reasoning>
+    The object may still not be visible in this view. I will continue to move closer to the image to get a better view of the surroundings.
+</Reasoning>
+<Action>(10, 0, -15)</Action>
+
+<Reasoning>
+    The object may still not be visible in this view. I will continue to move closer to the image while making sure not to exceed the altitude limit.
+</Reasoning>
+<Action>(15, 0, -20)</Action>
+
+<Reasoning>
+    The object may still not be visible in this view

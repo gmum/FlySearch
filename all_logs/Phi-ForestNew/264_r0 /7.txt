@@ -1,0 +1,10 @@
+ <Reasoning>I will start flying towards the coordinates given.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Hopefully the object is just out of the viewable area.</Reasoning>
+<Action>(0, -10, -10)</Action>
+
+<Reasoning>I will fly even lower to better understand the surroundings.</Reasoning>
+<Action>(0, -20, -10)</Action>
+
+<Response>FOUND</Response>

@@ -1,0 +1,2 @@
+ <Reasoning>I need to get closer to the object. The object could be anywhere in this image, so I will try to find it by moving in grid coordinates. I will move to the (10, 10) grid point as a starting move, since it is surrounded by areas with more green, which suggests vegetation. This will bring me closer to the object. Then I will continue moving in a grid pattern, searching for the object. </Reasoning>
+<Action>(10, 10, 0)</Action>

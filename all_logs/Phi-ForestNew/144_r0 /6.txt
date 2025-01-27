@@ -1,0 +1,22 @@
+ <Reasoning>I need to move up to avoid the obstacle.</Reasoning>
+<Action>(0, 1, 0)</Action>
+
+<Reasoning>I will move further north to avoid the obstacle.</Reasoning>
+<Action>(0, 4, 0)</Action>
+
+<Reasoning>I am now at a safe altitude. I need to continue my search for the fire.</Reasoning>
+<Action>(0, 4, -30)</Action>
+
+<Reasoning>I will move further north to stay clear of the obstacle.</Reasoning>
+<Action>(0, 4, -60)</Action>
+
+<Reasoning>I am still not at the correct position. I need to move further north.</Reasoning>
+<Action>(0, 4, -90)</Action>
+
+<Reasoning>I am now at a safe altitude. I need to continue my search for the fire.</Reasoning>
+<Action>(0, 4, -120)</Action>
+
+<Reasoning>I need to move further north to cover more ground.</Reasoning>
+<Action>(0, 4, -150)</Action>
+
+<Reasoning>The object appears to be further

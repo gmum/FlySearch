@@ -1,0 +1,9 @@
+ <Reasoning>Upon initial analysis of the image, it appears to be a grid-like pattern overlaying a cityscape. First, I will determine the current coordinates of the drone. Based on the image, the drone's starting point appears to be the center of the grid, which is (0, 0, 0). However, due to the nature of the image, it's difficult to precisely determine the starting altitude. Assuming the drone starts at a standard altitude, I'll take an educated guess that it is at least 90 meters above the ground level to begin my search. I'll also assume the grid is 100x100 meters in size for this exercise, as the exact coordinates aren't clearly defined in the image.</Reasoning>
+
+    <Action>(-30, 30, 90)</Action>
+
+    <Reasoning>I will start my search in the bottom left quadrant of the grid, as it is the area with the most open space and likely less obstructions that could hide the anomaly. The object I'm searching for is not immediately apparent, so I will move left, then down to explore different sections of the grid.</Reasoning>
+
+    <Action>(-60, 0, 90)</Action>
+
+    <Reasoning>As

@@ -1,0 +1,10 @@
+ <Reasoning>Given that my current altitude is 68 meters above ground level, I need to adjust my altitude to be as close to 10 meters below the drone's center of vision while staying within the search area. A safe altitude to maintain is slightly above 58 meters to avoid any obstacles.</Reasoning>
+<Action>(58, 0)</Action>
+
+<Reasoning>I am now at the optimal altitude for locating the trash pile. I will remain in this position and search for the object within my field of view.</Reasoning>
+<Action>(58, 0)</Action>
+
+<Reasoning>The trash pile is not clearly visible from this position. I will adjust my altitude slightly to see if the trash pile is located in a different spot.</Reasoning>
+<Action>(58, 0)</Action>
+
+<Reasoning>The trash pile is still not clearly visible. I will continue to search
