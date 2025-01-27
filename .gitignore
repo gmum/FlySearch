@@ -3,9 +3,10 @@ open_detection/__pycache__
 misc/__pycache__
 misc/config.py
 __pycache__/
-all_logs
 env
 **/__pycache__/
 *.xml
 *.iml
 .idea/
+*.jpg
+*.png

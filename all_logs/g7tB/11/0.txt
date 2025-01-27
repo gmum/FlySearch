@@ -1,4 +1,0 @@
-For the first action, I am going to fly downward to check if there is a yellow pickup truck. Also, I will slightly go north because the yellow vehicle might be on the north side rather than on the south side.
-
-<Reasoning>This yellow point might be a vehicle. I need to go lower to check for that. If it's not the vehicle in question, I will continue the search. I will also slightly go to the north.</Reasoning>
-<Action>(5, 0, -30)</Action>
