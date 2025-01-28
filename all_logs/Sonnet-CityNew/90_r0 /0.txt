@@ -1,0 +1,2 @@
+<Reasoning>I can see a white vehicle on the road that appears to be a truck. It's located near coordinates (11, 11). I need to move to that position and decrease my altitude to get below 10 meters to confirm it's the target vehicle.</Reasoning>
+<Action>(11, 11, -26)</Action>

@@ -1,0 +1,4 @@
+<Reasoning>
+I can see someone near coordinate (-9, 9) in the upper left portion of the image. I need to move directly to that position and lower my altitude just a bit more to get under 10 meters while keeping the person in view. I'll descend 5 more meters to be at about 9 meters altitude, which will meet the requirement of being below 10 meters while maintaining visual contact.
+</Reasoning>
+<Action>(-9, 9, -5)</Action>

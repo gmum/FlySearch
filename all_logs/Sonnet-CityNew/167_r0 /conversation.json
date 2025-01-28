@@ -1,0 +1,174 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a police car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see parts of what appears to be a parking area or road system. Since I'm looking for a police car, I should systematically search the visible area. I'll start by moving towards the center-right portion of the image (24, 24) where there seems to be better visibility of the ground, and I'll descend to get a better view of any vehicles that might be present.\n</Reasoning>\n<Action>(24, 24, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 41 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can now see more details of the parking area. I notice what might be a police car in the upper right portion of the image, near coordinates (27, 14). I'll move in that direction and continue descending to get a better confirmation and get closer to the required altitude of less than 10 meters.\n</Reasoning>\n<Action>(27, 14, -31)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see several parking spots, but the police car I thought I saw earlier isn't visible from this position. I need to move back towards the previous area where I spotted what looked like a police car. I'll move slightly upward to get a better view while staying under 10 meters, and move towards the right side of the parking area.\n</Reasoning>\n<Action>(6, 3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see what appears to be a black vehicle in the parking spots, but I need to explore more of the area to find the police car. I'll move to the right side of the current view while maintaining my current altitude, which is good at 9 meters (below the required 10 meters).\n</Reasoning>\n<Action>(6, 6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see a vehicle in the upper left portion of the image, but it's not clearly a police car. I need to continue my search. I'll move towards the north while maintaining my current altitude to explore more of the area.\n</Reasoning>\n<Action>(6, 27, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI apologize for suggesting a dangerous move. You're right - I should only move within the visible boundaries of the current image. I'll make a smaller move upward while staying within the visible area, maintaining my current safe altitude of 9 meters.\n</Reasoning>\n<Action>(3, 6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see a silver/white vehicle in the upper portion of the image, but it's not a police car. I need to explore more of the area. Let me move towards the upper left where I can see part of another vehicle, while maintaining my current safe altitude.\n</Reasoning>\n<Action>(-6, 6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see a yellow vehicle and a silver vehicle, but still no police car. Let me move further to the left side where I can see part of another vehicle, while maintaining my current safe altitude of 9 meters.\n</Reasoning>\n<Action>(-6, 3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nThis area appears to be mostly empty with some trees and shadows. The police car must be in another direction. Since I've explored the left side, let me move back towards the right where there were more vehicles, while maintaining my current altitude.\n</Reasoning>\n<Action>(6, 3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see the yellow vehicle and silver vehicle again, but I've now used 9 moves and haven't found the police car in any of the areas I've searched. Since I've reached the maximum number of allowed moves and haven't located the police car, I must conclude this search attempt was unsuccessful.\n</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI apologize, but I have used all 9 allowed moves and have not successfully located the police car in any of the areas I searched. I explored various parts of the parking area and saw several vehicles including a yellow car and a silver car, but no police car was found within my search area. The search was unsuccessful despite maintaining the correct altitude of under 10 meters.\n</Reasoning>\n<Action>Search terminated - maximum moves reached</Action>"
+    ]
+]

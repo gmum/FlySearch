@@ -1,0 +1,166 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 65 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this altitude of 65 meters, I can see a general overview of the area but need to conduct a systematic search. I notice some variations in the terrain and potential objects, but need to get lower to identify them clearly. I'll start by moving to the center position (0,0) and reducing altitude to get a better view of the area.\n</Reasoning>\n<Action>(0, 0, -35)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this lower altitude of 30 meters, I can see more detail. I notice what appears to be some scattered debris or potential trash pile near the coordinates (-10, -10). I'll move in that direction and lower the altitude further to get a better look.\n</Reasoning>\n<Action>(-10, -10, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to continue my search as I don't see the trash pile clearly in this area. I notice some vegetation but no clear signs of trash. Let's move to check the eastern section and maintain this lower altitude which gives good visibility.\n</Reasoning>\n<Action>(7, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nStill no clear sign of the trash pile in this area. I should check the southern section of the search area. I'll move towards (0, -7) while maintaining this good observation altitude of 10 meters.\n</Reasoning>\n<Action>(0, -7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI'm currently too close to the tree canopy and the view is mostly obscured by leaves. I should gain some altitude to get a better overview and then move to check the western section of the search area.\n</Reasoning>\n<Action>(-7, 0, 20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this higher vantage point, I can see what appears to be some scattered debris or a potential trash pile near (-20, -10). I'll move in that direction and lower the altitude to get a better look and confirm if this is our target.\n</Reasoning>\n<Action>(-20, -10, -22)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see some debris near (-3, -3) but need to get a better view of that area. I'll move slightly in that direction while maintaining this good low altitude to confirm if this is the trash pile we're looking for.\n</Reasoning>\n<Action>(-3, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can now clearly see what appears to be a yellow trash pile near (3, 0). I am already at a good altitude of 8 meters, which is below the required 10 meters. I'll move directly above it to center it in my field of view.\n</Reasoning>\n<Action>(3, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see the yellow trash pile clearly at (-5, 0). I'm currently at 8 meters altitude which is perfect as it's below the required 10 meters. I'll move to center directly above it for the final position.\n</Reasoning>\n<Action>(-5, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI now have the yellow trash pile clearly in my field of view and I'm at the perfect altitude of 8 meters, which is below the required 10 meters. The target is centered in the image and clearly visible.\n</Reasoning>\nFOUND"
+    ]
+]

@@ -1,0 +1,2 @@
+<Reasoning>I can see an intersection from above, but no clear crowd visible yet. Given the urban environment, I should perform a systematic search starting with moving to a central position and lowering altitude to get a better view. I'll move to coordinates (0,0) which is the center point and reduce altitude by 20 meters to improve visibility while maintaining safe height for initial search.</Reasoning>
+<Action>(0, 0, -20)</Action>

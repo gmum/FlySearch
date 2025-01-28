@@ -1,0 +1,2 @@
+<Reasoning>I can see the forest fire in the bottom-right corner of the image, around coordinates (26, -26). I need to move closer to it and reduce my altitude to get below 10 meters above it. I'll move directly to those coordinates and descend by 30 meters to get closer to my target altitude.</Reasoning>
+<Action>(26, -26, -30)</Action>

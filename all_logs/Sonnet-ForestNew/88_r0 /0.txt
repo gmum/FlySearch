@@ -1,0 +1,4 @@
+<Reasoning>
+I need to start a systematic search pattern to find the person. Given the current altitude of 57 meters, I should first decrease the altitude to get a better view while moving towards the center of the grid. I'll move to coordinate (0,0) which is the center point and reduce altitude by 30 meters to get a clearer view of the area.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

@@ -1,0 +1,3 @@
+<Reasoning>
+I'm looking at an urban environment from a high altitude (95m). I notice several buildings and what appears to be a street or alleyway between them. To effectively search for anomalies, I should first lower my altitude to get a better view of the area. I'll move to the center coordinates (0, 0) and descend by 40 meters to get a clearer view while maintaining enough height to still see a good portion of the area.</Reasoning>
+<Action>(0, 0, -40)</Action>

@@ -1,0 +1,9 @@
+<Reasoning>
+From this height, I can see a forested area but no clear sign of a trash pile. I need to:
+1. Lower my altitude to get a better view
+2. Stay within the visible grid
+3. Move systematically to search for the trash pile
+
+I'll start by moving to the center (0, 0) and reducing altitude by 30 meters to get a clearer view of the area. This will put me at 42 meters above ground level, which should give me a better perspective while maintaining enough height to continue searching effectively.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

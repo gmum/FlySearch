@@ -1,0 +1,2 @@
+<Reasoning>I'm currently at a high altitude with a view of an urban area with buildings and streets. I don't see any large trash pile from this position. I should systematically search the area by first moving towards the east side (positive x direction) while lowering my altitude to get a better view of the ground level. I'll move to coordinates (19, 0) and descend by 20 meters to get a clearer view.</Reasoning>
+<Action>(19, 0, -20)</Action>

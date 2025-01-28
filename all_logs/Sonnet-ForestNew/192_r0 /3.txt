@@ -1,0 +1,5 @@
+<Reasoning>
+I can see a person near coordinates (0, -3). I am already at a good altitude of 8 meters, which is below our target of 10 meters, and I need to center directly over the person. Moving to these coordinates while maintaining the current altitude will put me in the perfect position.
+</Reasoning>
+<Action>(0, -3, 0)</Action>
+FOUND

@@ -1,0 +1,2 @@
+<Reasoning>I've made multiple attempts but keep getting emergency stops. The environment appears to be very constrained with obstacles. Even though I can see the yellow taxi clearly, I haven't been able to get closer than 19 meters safely. At this point, I've used up my moves and haven't been able to get below 10 meters as required, so I cannot declare FOUND since I haven't met the altitude requirement.</Reasoning>
+<Action>(0, 0, 0)</Action>

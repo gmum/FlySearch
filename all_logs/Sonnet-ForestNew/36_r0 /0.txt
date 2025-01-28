@@ -1,0 +1,4 @@
+<Reasoning>
+From my current position at 86 meters altitude, I need to conduct a systematic search of the area. I notice some patches of different vegetation and colors throughout the image. I'll start by moving to a central position and reducing altitude to get a better view. I'll move to coordinates (0, 0) which is in the center of the grid, and reduce altitude by 40 meters to get a closer look while maintaining enough height to still have a good field of view.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

@@ -1,0 +1,4 @@
+<Reasoning>
+From this aerial view at 76 meters, I need to conduct a systematic search for the fire. I notice what appears to be the roof of a building in the center of the image. I should descend to get a better view of the area while moving slightly towards the center where there's better visibility. I'll reduce altitude by 30 meters and move towards coordinate (0, 0) which gives me a central vantage point.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

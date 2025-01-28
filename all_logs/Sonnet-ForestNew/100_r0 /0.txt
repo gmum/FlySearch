@@ -1,0 +1,4 @@
+<Reasoning>
+I can see a small dark object that could be a campsite near coordinates (15, 15). I'll move closer to that location and reduce altitude to get a better view. Since I need to be below 10 meters to confirm the target, I'll descend by 40 meters, bringing me to 5 meters above ground level.
+</Reasoning>
+<Action>(15, 15, -40)</Action>

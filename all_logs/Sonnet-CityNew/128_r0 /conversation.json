@@ -1,0 +1,186 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 81 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to systematically search for any signs of fire in this urban environment. I notice what appears to be a highway or major road with parking lots and buildings nearby. Since I'm starting at 81 meters, I should first lower my altitude to get a better view while moving to a central position. I'll move towards the center coordinates (0, 0) and descend by 30 meters to get a better view of the area.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 51 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this lower altitude, I can see the area more clearly. I notice what might be some smoke or disturbance in the lower left portion of the image. I should investigate that area and lower my altitude further to get a better look. I'll move towards that area (around -34, -34) and descend another 30 meters.</Reasoning>\n<Action>(-34, -34, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can now see what appears to be smoke or fire in the lower left portion of the image more clearly. I'll move closer to that spot and descend further to get within 10 meters of it. Moving to (-14, -14) and descending by 12 meters should put me at a good position to confirm if this is the fire we're looking for.</Reasoning>\n<Action>(-14, -14, -12)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe maneuver. I notice there are power lines or infrastructure in the area that I need to be careful of. I can see what appears to be smoke or fire in the lower portion of the image. I'll make a more careful approach by moving to (-7, -13) and descending by just 11 meters to stay safe while getting closer to investigate.</Reasoning>\n<Action>(-7, -13, -11)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to be much more cautious due to the power lines in the area. Given the infrastructure constraints, I should maintain a safer altitude and position. I can see the potential fire/smoke area, but I need to approach it from a different angle. Let me move to (0, -13) while maintaining the current altitude to get a better view while staying clear of the power lines.</Reasoning>\n<Action>(0, -13, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to completely rethink my approach. The power lines are creating a significant hazard in this area. Instead of trying to get closer to the smoke/fire area which is blocked by power lines, I should try moving to a safer position on the other side. Let me move to (7, -7) while maintaining altitude, which should give me a view from the road side while staying clear of the infrastructure.</Reasoning>\n<Action>(7, -7, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to be even more cautious. The power lines are making it very difficult to approach the area of interest. Given the safety constraints, I should first gain some altitude to get a better overview and then try to reposition. I'll move up 20 meters while staying at my current position to better assess the situation.</Reasoning>\n<Action>(0, 0, 20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Now that I'm at a higher altitude, I can see the power line layout better. The smoke/fire appears to be visible in the lower portion of the image. I'll try approaching from a different angle by moving to (13, -27) which should give me a clearer view from the road side while staying above the power lines.</Reasoning>\n<Action>(13, -27, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this position, I can see the smoke/fire area more clearly, and I've managed to avoid the power lines. I'm now at a safer vantage point but still need to get closer while maintaining safety. I'll descend carefully to get within 10 meters of the fire while staying at these coordinates, which should give me a clear view while avoiding the infrastructure.</Reasoning>\n<Action>(13, -27, -31)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize, but I seem to be too constrained by the infrastructure to safely reach the fire while maintaining the required altitude and safety parameters. The combination of power lines, buildings, and other structures is making it impossible to get within 10 meters of the fire without risking collision. I should report that the area is too hazardous for close drone inspection and recommend alternative methods for fire assessment.</Reasoning>\n<Action>(0, 0, 20)</Action>"
+    ]
+]

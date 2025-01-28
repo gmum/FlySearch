@@ -1,0 +1,4 @@
+<Reasoning>
+I can now see a person near coordinate (-3, -3). I'm already at a good altitude of 8 meters, which is perfect for our requirements of being below 10 meters. I'll move to center directly over their position while maintaining this altitude.
+</Reasoning>
+<Action>(0, -3, 0)</Action>

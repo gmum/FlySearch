@@ -1,0 +1,5 @@
+<Reasoning>There's a gathering of people with umbrellas centered around coordinates (0, 0). I'm already at the optimal altitude of 9 meters, so I just need to move to center directly over this group while maintaining the same height.</Reasoning>
+
+<Action>(0, 0, 0)</Action>
+
+FOUND

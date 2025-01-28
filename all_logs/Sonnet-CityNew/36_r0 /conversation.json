@@ -1,0 +1,178 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a crowd.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 60 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can see an intersection from a high vantage point. Since I'm looking for a crowd and don't see any obvious gatherings from this height, I should:\n1. Move lower to get a better view\n2. Stay near the center intersection as it's a likely gathering point\n3. Maintain a position that allows me to scan in all directions\n\nI'll descend to 30 meters while staying near the center to get a better view of the street level.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this lower altitude, I can see the intersection more clearly, but still no clear sign of a crowd. I should:\n1. Continue descending to get an even better view of street level\n2. Move slightly south as there appears to be more open space in that direction\n3. Get closer to about 15 meters to have a better view while maintaining enough height to scan the area\n\nI'll move south and continue descending to better observe any potential gatherings.</Reasoning>\n<Action>(0, -10, -15)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I'm now at a good height to spot crowds, but I need to continue my search. I notice:\n1. The southern area I moved to doesn't show any crowds\n2. I should check the northern area as it's not fully visible from my current position\n3. While maintaining this workable altitude, I'll move north to continue the search\n\nI'll move north to explore that section of the intersection.</Reasoning>\n<Action>(0, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to continue my systematic search. From this position:\n1. I still don't see any crowds in this northern section\n2. I haven't checked the eastern side of the intersection yet\n3. This height is good for spotting crowds, so I'll maintain it\n\nI'll move east to explore that section while maintaining my current altitude.</Reasoning>\n<Action>(10, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe move. I notice I'm too close to the ceiling structure. I should:\n1. Move back to a safer position\n2. Continue my search but with more attention to obstacles\n3. Consider checking the western side of the intersection since I haven't explored there yet\n\nI'll move west to a safer position while maintaining my current altitude.</Reasoning>\n<Action>(-10, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see I'm in a covered area with a low ceiling. For safety:\n1. I need to descend to get away from the ceiling structure\n2. I should maintain my current horizontal position until I'm at a safer height\n3. A height of about 5 meters would give me enough clearance from both ground and ceiling\n\nI'll descend in place to achieve safer clearance from obstacles.</Reasoning>\n<Action>(0, 10, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I appear to be in a dangerous position under a covered structure. I need to:\n1. Return to open air immediately\n2. Move back to my previous safer position\n3. Return to the intersection area where I had better visibility\n\nI'll move back south to get out from under the covered structure.</Reasoning>\n<Action>(0, -10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Now I'm back in a safer position. I still need to search for the crowd. I notice:\n1. I've checked north (which had a covered structure)\n2. I haven't thoroughly checked the western side yet\n3. I should maintain this safer altitude while moving west\n\nI'll move west to continue my search pattern.</Reasoning>\n<Action>(-10, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I'm now on the western side of the intersection. I can see:\n1. No crowds visible in this section either\n2. I've now checked all four main directions from the intersection\n3. I should descend further to get a closer look at street level, as I might be missing something from this height\n\nI'll maintain my current position but descend to get a closer view of the street.</Reasoning>\n<Action>(-10, 0, -8)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>At this lower altitude, I can see more detail of the street level, but:\n1. Still no sign of any crowds\n2. I've now systematically searched the intersection from multiple angles and heights\n3. I may need to expand my search radius to find the crowd\n\nSince I've nearly used all my allowed moves and haven't found the crowd in the immediate intersection area, I should make one final check of the southern area at this lower altitude.</Reasoning>\n<Action>(0, -5, 0)</Action>"
+    ]
+]

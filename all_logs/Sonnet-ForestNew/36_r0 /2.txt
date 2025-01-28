@@ -1,0 +1,4 @@
+<Reasoning>
+I can now see what appears to be the person near coordinates (7, 13). I need to move directly above them and get lower to meet the requirement of being below 10 meters altitude. I'll move to those coordinates and descend by 11 meters to get to approximately 9 meters above ground level.
+</Reasoning>
+<Action>(7, 13, -11)</Action>

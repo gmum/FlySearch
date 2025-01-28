@@ -1,0 +1,4 @@
+<Reasoning>I can see a crowd of people gathered near coordinates (0, 15). I need to move closer to that location and reduce altitude to get below 10 meters from them. I'll move to those coordinates and descend by 37 meters to get to approximately 9 meters above them.</Reasoning>
+<Action>(0, 15, -37)</Action>
+
+FOUND

@@ -1,0 +1,4 @@
+<Reasoning>
+I need to start by scanning the visible area systematically. The image shows a forested area with some clearings. Since my current altitude is 37 meters, I should first descend to get a better view while moving towards the center of the visible area. I'll move to (0, 0) coordinates and reduce altitude by 20 meters to get a clearer view of the central area.</Reasoning>
+
+<Action>(0, 0, -20)</Action>

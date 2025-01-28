@@ -1,0 +1,5 @@
+<Reasoning>I can clearly see a forest fire in the image near the center coordinates. The fire appears to be active with visible flames and smoke. I need to position the drone directly above it and lower the altitude to below 10 meters to meet the mission requirements. I'll move to (0, 0) coordinates where the fire is centered and simultaneously decrease altitude to 8 meters for a close but safe observation.</Reasoning>
+
+<Action>(0, 0, -45)</Action>
+
+FOUND

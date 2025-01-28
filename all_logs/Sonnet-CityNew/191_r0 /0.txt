@@ -1,0 +1,4 @@
+<Reasoning>
+I see a parking lot area from above. Since I need to search for a fire and I currently have a fairly wide view at 53 meters altitude, I should first do a systematic scan of the area. I'll start by moving closer to the center point (0,0) and reducing altitude to get a better view. This will give me a good central position to continue the search while getting closer to potential targets.</Reasoning>
+
+<Action>(0, 0, -20)</Action>

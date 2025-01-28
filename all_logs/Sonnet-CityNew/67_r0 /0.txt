@@ -1,0 +1,2 @@
+<Reasoning>I can see a road in the image, but I need to search for signs of construction. I'll move towards the right side of the image (65, 0) where I can see some different road patterns and lower my altitude to get a better view. This will help me identify any construction activity while maintaining a safe distance for now.</Reasoning>
+<Action>(65, 0, -30)</Action>

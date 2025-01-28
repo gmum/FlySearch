@@ -1,0 +1,194 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a blue sport car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can see several cars in the parking lot. I notice there's a blue car in the upper row. To get a better view and confirm if it's the target vehicle, I should move closer to that area and lower my altitude. I'll move towards the coordinates near the blue car I spotted and descend to get a clearer view.</Reasoning>\n<Action>(0, 25, -28)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>From this closer view, I don't see the blue sports car in this section. I need to explore more of the parking lot. I'll move back to get a wider view and then search another area. I'll increase altitude slightly to get a better overview while moving to a different section.</Reasoning>\n<Action>(-12, 12, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe command. You're right. I should only move within the visible grid from my current position. Looking at the grid overlay in the current image, I'll move within these safe bounds. I'll move to the edge of my current visible area and adjust my altitude slightly to get a better view of the surrounding area.</Reasoning>\n<Action>(-6, 6, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 19 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Still no sign of the blue sports car in this section. I need to explore more of the parking lot systematically. I see I can move to the right side of the current view, which appears to have more parked cars. I'll also reduce my altitude again to get a better look at the vehicles.</Reasoning>\n<Action>(13, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to be more careful with my movements. From this position, I can see a small section of the parking lot, but no blue sports car. I should move in a safer manner and explore other areas. I'll move up slightly for safety and then move towards the edge of my current visible area.</Reasoning>\n<Action>(7, 7, 5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>This area appears to be empty. I need to continue my systematic search. Based on what I've seen so far, I haven't checked the leftmost part of the original parking area thoroughly. I'll move back towards that direction while maintaining a safe altitude.</Reasoning>\n<Action>(-10, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Still no sign of the blue sports car in this area. I need to return to where I first spotted the blue car in the initial view. I'll move back towards the original parking area where there were more cars visible. I'll keep the same altitude for now as it provides a good balance between overview and detail.</Reasoning>\n<Action>(0, -10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can see part of the parking area where cars are located at the bottom of the image. I need to move towards that area where I initially saw the blue car. I'll move in that direction and lower my altitude slightly to get a better view of the vehicles.</Reasoning>\n<Action>(0, -25, -6)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe command. You're right - I should only move within the visible grid from my current position. Looking at the grid overlay, I'll move to the edge of my current visible area in a safe manner, staying within the coordinates I can see.</Reasoning>\n<Action>(0, -10, -6)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see I'm back in a similar area as before, but still no blue sports car in view. Since I've explored several areas and considering my remaining moves, I should try one last area. I'll move towards the right side of the parking lot where we haven't thoroughly searched yet, maintaining this lower altitude for good visibility.</Reasoning>\n<Action>(6, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe movement. Given that this is my last move and I haven't found the blue sports car in any of the areas we've searched, I should move to a safer position and get a slightly higher view to ensure better visibility while staying within safe bounds.</Reasoning>\n<Action>(0, 6, 5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have now exhausted all my allowed moves and was unable to locate the blue sports car. My movements were not optimal, and I should have maintained better tracking of where I first spotted the blue car. Additionally, I encountered several safety stops due to getting too close to objects. For safety reasons and since I'm out of moves, I must conclude the search without finding the target vehicle.</Reasoning>"
+    ]
+]

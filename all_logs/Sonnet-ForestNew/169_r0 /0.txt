@@ -1,0 +1,4 @@
+<Reasoning>
+From this altitude of 91 meters, I can see a general overview of the area. There appears to be some structures or objects in the central region of the image. To get a better look, I should move closer to the center coordinates (0,0) and reduce altitude significantly to get a clearer view of any potential buildings or structures. I'll descend by 40 meters to get a better look while maintaining enough height to keep a good field of view.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

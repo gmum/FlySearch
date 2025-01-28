@@ -1,0 +1,5 @@
+<Reasoning>I can now clearly see the forest fire, with bright orange flames visible near coordinates (0, 0). I need to descend to get below 10 meters while maintaining my position over the center of the fire. I'll descend 25 meters to get to approximately 4 meters above the fire.</Reasoning>
+
+<Action>(0, 0, -25)</Action>
+
+FOUND

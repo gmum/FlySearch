@@ -1,0 +1,2 @@
+<Reasoning>I can see a yellow object near coordinates (0, 5). From my current altitude of 8 meters, which is already below the required 10 meters, I'll move directly to those coordinates to center the target in my field of view while maintaining the same altitude.</Reasoning>
+<Action>(0, 5, 0)</Action>

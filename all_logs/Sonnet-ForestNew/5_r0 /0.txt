@@ -1,0 +1,4 @@
+<Reasoning>
+I need to conduct a systematic search of the area to find the person. From this altitude (44m), it's difficult to spot someone clearly, so I should lower my altitude while moving to scan the area. I notice there's a clearing in the center of the image around (0, 0) which would be a good place to start the search. I'll move there and decrease altitude significantly to get a better view.
+</Reasoning>
+<Action>(0, 0, -24)</Action>

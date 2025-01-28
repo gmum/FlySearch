@@ -1,0 +1,4 @@
+<Reasoning>
+From this altitude of 82 meters, I can see a general overview of the area. I notice there's mostly natural vegetation and trees scattered around. To conduct an effective search, I should first move to a lower altitude to get a better view of potential anomalies while maintaining a good field of view. I'll move towards the center coordinates (0, 0) and reduce altitude by 40 meters to get a closer look.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

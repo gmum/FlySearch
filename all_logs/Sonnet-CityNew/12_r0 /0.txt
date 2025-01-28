@@ -1,0 +1,2 @@
+<Reasoning>I can see an urban environment with tall buildings and streets from a high altitude. Since I need to find a crowd and my current altitude is quite high at 62 meters, I should first descend to get a better view. I see some movement near the center of the image (0, 0), so I'll maintain my horizontal position but decrease my altitude significantly to get a closer look.</Reasoning>
+<Action>(0, 0, -40)</Action>

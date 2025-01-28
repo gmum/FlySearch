@@ -1,0 +1,4 @@
+<Reasoning>
+From this height and position, I need to conduct a systematic search of the area. I can see a mix of vegetation and open areas. I'll start by moving to a central position and reducing altitude to get a better view. I'll move to coordinates (0,0) which is the center of the visible grid and lower the altitude by 20 meters to improve visibility while maintaining enough height to keep a good field of view.
+</Reasoning>
+<Action>(0, 0, -20)</Action>

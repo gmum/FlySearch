@@ -1,0 +1,7 @@
+<Reasoning>I can see what appears to be a road from an aerial view, with some vehicles parked along it. There appears to be some construction or road work activity on this road. Since my objective is to find a road construction site and get below 10 meters above it, I need to:
+1. Center myself better over the road area
+2. Significantly reduce my altitude to get closer to the target
+I'll move to (0,0) coordinates and lower my altitude by 22 meters to get below 10 meters above the road.</Reasoning>
+<Action>(0, 0, -22)</Action>
+
+FOUND

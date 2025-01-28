@@ -1,0 +1,4 @@
+<Reasoning>
+I need to conduct a systematic search of the area. The image shows a forested area with some clearings. Since I'm at 62 meters, I need to get lower to have a better view of potential objects on the ground. I'll start by moving to a central position and descending to get a better view of the area. I'll move to coordinates (0, 0) which is the center of the grid and descend by 30 meters to get a better view while maintaining enough height to continue the search effectively.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

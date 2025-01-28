@@ -1,0 +1,178 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a large trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 82 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can see what appears to be an area with some objects near the dock/port area. To get a better view and begin my search, I'll move towards the center-right area where there seems to be some activity and reduce altitude significantly to get a clearer view of any potential trash piles. I'll aim for coordinates (27, 0) and reduce height by 50 meters to get closer to the ground.</Reasoning>\n<Action>(27, 0, -50)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can see some objects near the dock area, but I need to move slightly to the left where I see some yellow equipment and what could be the trash pile. I'll move to (-21, -11) coordinates where there seems to be more activity and reduce altitude further to get a better view of what appears to be the target area.</Reasoning>\n<Action>(-21, -11, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 12 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see what appears to be a parking lot area, but I need to move back towards where I saw the potential trash pile near the yellow equipment. I'll move back towards the previous area and adjust slightly to get a better view of that location. I'll move to (-8, -8) to get back to that area while maintaining a low altitude.</Reasoning>\n<Action>(-8, -8, -3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to move further south where I previously spotted the yellow equipment and potential trash pile. I'll move to (-6, -6) coordinates to get back to that area while maintaining this low altitude which is good for detailed observation.</Reasoning>\n<Action>(-6, -6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to continue moving south as I still haven't reached the area with the yellow equipment and trash pile I spotted earlier. I'll move further south to (-6, -20) while maintaining this good low altitude.</Reasoning>\n<Action>(-6, -20, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe command. You're right - I should only move within the visible grid to ensure safe operation. Looking at the current grid, I can see coordinates from (-6,-6) to (6,6). I'll move to (-6, -6) which is the furthest safe point in the southern direction within our current view.</Reasoning>\n<Action>(-6, -6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>It seems I need to adjust my search strategy as I'm currently in a parking lot area. Let me move back towards the dock area where I initially saw more activity. I'll move to (6, -6) to get closer to the waterfront while maintaining this good low altitude.</Reasoning>\n<Action>(6, -6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see a yellow vehicle in the bottom-left corner of the image, which matches what I spotted earlier. I should move towards that direction as it might be near the trash pile I'm looking for. I'll move to (-6, -6) to get a better view of that area while maintaining this optimal low altitude.</Reasoning>\n<Action>(-6, -6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to reconsider my search strategy. While I've found the yellow vehicle, I don't see the trash pile I'm looking for in this area. Let me move back up towards the northern area of the dock where there seemed to be more activity and potential debris. I'll move to (-6, 6) while maintaining this good low altitude.</Reasoning>\n<Action>(-6, 6, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for the unsafe command. Given the emergency stop warning, I should first gain some altitude to maintain safer clearance before making any directional moves. I'll increase altitude by 20 meters while staying in the same horizontal position to ensure safe operations.</Reasoning>\n<Action>(0, 0, 20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Now that I have a better view from this higher altitude, I can see more of the area. I notice some yellow vehicles along the right side of the image. I'll move towards (19, 19) where there appears to be more activity and potential debris, and then reduce altitude to get a better look.</Reasoning>\n<Action>(19, 19, -15)</Action>"
+    ]
+]

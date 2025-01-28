@@ -1,0 +1,4 @@
+<Reasoning>
+I can see a relatively open area that I need to search for the trash pile. Given my starting altitude of 63 meters, I should first descend to get a better view while also moving to scan a different area. I'll move towards (21, 21) and descend by 30 meters to get a better view of the central area of the search space.
+</Reasoning>
+<Action>(21, 21, -30)</Action>

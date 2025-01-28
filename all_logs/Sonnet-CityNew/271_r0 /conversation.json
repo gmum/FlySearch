@@ -1,0 +1,198 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 99 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this high altitude of 99 meters, I can see an overview of the area which appears to be an urban environment with buildings. I notice what looks like a rooftop with light-colored or beige material that stands out from the darker buildings around it. I need to descend to get a better look at the area, particularly focusing on the eastern side where this different-colored rooftop is located. I'll move slightly towards the east and descend to get a better view of any potential anomalies.\n</Reasoning>\n<Action>(33, 0, -50)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see I'm over what appears to be a beige/brown rooftop surface. I need to be more careful with my descent to avoid collisions. I can now see more detail of the rooftop, and I should look for any anomalies. I'll move towards the center of this rooftop area and descend more gradually this time to get a better look at any potential objects that might be out of place.\n</Reasoning>\n<Action>(0, 20, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nNow I have a clearer view of the rooftop surface, which appears to be covered in gravel or similar material. I need to maintain a safe altitude while searching for any anomalies. Looking at the surface, I should continue my systematic search but with a more conservative descent. I'll move slightly to examine a different section of the roof while gradually decreasing altitude.\n</Reasoning>\n<Action>(19, 19, -15)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI notice there appears to be something near the center of the image that looks different from the regular gravel pattern. I need to be very careful with my descent now, as I've had several emergency stops. I'll make a smaller movement and a more gentle descent to investigate what appears to be an anomaly in the gravel pattern.\n</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI keep getting emergency stops, which suggests I need to be much more conservative with my altitude changes. The gravel rooftop appears to have some kind of linear feature or seam running through it. Since I'm still quite high at 58 meters, I'll try a very minimal descent this time while staying in the same horizontal position to continue examining this area.\n</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI seem to be unable to descend any further at this location, suggesting there might be some invisible obstacle or safety restriction. Let me try moving to a slightly different position horizontally while maintaining the same altitude, to see if I can find a safer approach path or a better viewing angle of the area.\n</Reasoning>\n<Action>(19, -19, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI now see a clear contrast between two different colored areas of the rooftop - one light and one dark. This stark difference could be what I'm looking for, or it could help identify where the anomaly might be. Let me try moving to a position where I can get a better view of where these two areas meet, while maintaining the current altitude since descending has been problematic.\n</Reasoning>\n<Action>(19, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI keep getting emergency stops which suggests there might be invisible safety boundaries or restrictions I can't see. Since I'm still at 58 meters and haven't been able to descend or move effectively, let me try moving to a completely different area of the rooftop to see if I can find a safer approach path or spot the anomaly from a different angle.\n</Reasoning>\n<Action>(-19, -19, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI've made multiple attempts to move and descend but keep getting emergency stops. I've also noticed the stark contrast between light and dark areas of the gravel rooftop and some linear features. Since I've used 9 moves already and haven't been able to effectively search or get closer to any potential anomalies, I need to conclude this attempt. I wasn't able to get below 10 meters or definitively identify the anomaly, so I cannot declare \"FOUND\".\n</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI've exhausted my allowed moves and was unable to successfully get closer to the rooftop or identify any clear anomaly. The emergency stops suggest there might have been safety restrictions or invisible obstacles preventing closer inspection. Without being able to get below 10 meters as required or clearly identify an anomaly, I cannot declare \"FOUND\". The mission was unsuccessful.\n</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ]
+]

@@ -1,0 +1,4 @@
+<Reasoning>
+I need to start a systematic search of the area. I notice this is a grassy area with some trees and vegetation. Since I'm currently at 47 meters altitude, which is too high to spot a person clearly, I should lower my altitude while moving to a position that gives me a good view of the central area. I'll move to position (0, 0) and decrease my altitude by 30 meters to get a better view at 17 meters above ground.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

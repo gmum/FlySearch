@@ -1,0 +1,142 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a building.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 53 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see what appears to be a grey building or structure in the lower left quadrant of the image, around coordinates (-35, -35). Since I need to be below 10 meters to properly identify it, I'll move to those coordinates and significantly reduce altitude to about 8 meters to ensure I'm below the 10-meter requirement while maintaining a safe height.\n</Reasoning>\n<Action>(-35, -35, -45)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see we're now very close to what appears to be a large tree trunk. This doesn't seem to be the building we were looking for. I should move back towards the building I spotted earlier, but maintain this low altitude. I'll adjust my position slightly to (-30, -30) to get closer to where I saw the building.\n</Reasoning>\n<Action>(-30, -30, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI apologize for the unsafe command. You're right - I should only move within the visible grid from my current position, which is limited to the coordinates shown in the current image (ranging from -5 to 5 in both x and y directions). Let me move to the edge of my current visible area in the direction of where I believe the building was, which would be towards (-5, -5).\n</Reasoning>\n<Action>(-5, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to continue moving in the direction of where I first spotted the building (which was in the lower left area of our first view). From my current position, I'll move to (-4, -4) to continue in that general direction while staying within the visible bounds of the current image.\n</Reasoning>\n<Action>(-4, -4, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to continue moving towards where I initially saw the building in the lower left area. From my current position, I'll move to (-3, -3) while maintaining this low altitude, which keeps me within the safe visible bounds of the current image.\n</Reasoning>\n<Action>(-3, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 4 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI'm still progressing towards where I initially saw the building. From my current position, I'll continue moving towards (-3, -3) while maintaining this low altitude. This keeps me within the safe visible bounds of the current image and continues our path towards the target building's last known position.\n</Reasoning>\n<Action>(-3, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 3 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see what appears to be the edge or corner of a structure at the bottom of the image. To get a better view of it while maintaining our safe low altitude, I'll move to (-2, -2) to center more over what might be our target building.\n</Reasoning>\n<Action>(-2, -2, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 2 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can now see what appears to be the concrete or stone structure more clearly. Since I'm already at a good altitude of 2 meters (well below the required 10 meters) and I can see the building in my field of view, I should center myself over it. I'll move slightly to (-1, -1) to get a better central position over the structure.\n</Reasoning>\n<Action>(-1, -1, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI now have a clear view of what appears to be the stone/concrete structure, I'm centered over it, and I'm at an extremely low altitude of 1 meter, which is well below the required 10 meters. The building is clearly in my field of view, and I'm properly positioned.\n</Reasoning>\nFOUND"
+    ]
+]

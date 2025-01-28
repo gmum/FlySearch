@@ -1,0 +1,202 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 95 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI'm looking at an urban environment from a high altitude (95m). I notice several buildings and what appears to be a street or alleyway between them. To effectively search for anomalies, I should first lower my altitude to get a better view of the area. I'll move to the center coordinates (0, 0) and descend by 40 meters to get a clearer view while maintaining enough height to still see a good portion of the area.</Reasoning>\n<Action>(0, 0, -40)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see I need to be more careful with my movements. I notice what appears to be a ladder or some kind of structure in the lower portion of the image. I'll move to position (0, -25) to get a better view of that area, and descend by a smaller amount of 20 meters this time to maintain safe clearance while getting a closer look.</Reasoning>\n<Action>(0, -25, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to be more strategic. I can see a ladder in the alleyway between the buildings, which could be the anomalous object. However, I need to be careful with my descent due to the buildings. Let me move to position (25, -25) to get a better angle on the alley area, and make a smaller altitude adjustment of -15 meters to maintain safe clearance.</Reasoning>\n<Action>(25, -25, -15)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to change my approach. Given the tall buildings and narrow alley, I should stay at a safer altitude and position myself better first. I can see what appears to be a ladder in the alley, but I need to be careful about my movements. Let me move to position (25, 0) without changing altitude to get a better view down the alley from a safer position.</Reasoning>\n<Action>(25, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to rethink my strategy. The buildings are creating a narrow corridor that limits my movement options. I can see a ladder or similar structure in the alley below, but I need to maintain a safe distance from the buildings. Let me move to position (49, 0) to get a view from the outer edge of the area while maintaining current altitude.</Reasoning>\n<Action>(49, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI've been too aggressive with my movements. Looking at the image again, I can see what appears to be a ladder in the alley, but the buildings are creating a challenging environment for navigation. Let me first move to position (0, 49) to get a view from a different angle while maintaining the current altitude. This should give me a safer perspective to plan my next move.</Reasoning>\n<Action>(0, 49, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to be much more cautious. From my current position at 74 meters, I can see the ladder in the alley below, but I've been having trouble navigating safely. Let me try moving to (0, 25) - a position that should give me a clearer view of the ladder area while staying at the current altitude. This should help me better assess how to safely get closer to the target.</Reasoning>\n<Action>(0, 25, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI've been making this too complicated. I can clearly see the ladder in the alley from my current position, but I need to get closer to it vertically while staying safe. Since moving horizontally keeps causing safety issues, I should stay in my current horizontal position and simply reduce altitude to get closer to the target. I'll descend by 65 meters, which should put me at about 9 meters above the ladder while maintaining my current horizontal position.</Reasoning>\n<Action>(0, 0, -65)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to revise my strategy one final time. The buildings and narrow alley are making it difficult to navigate safely. I can see the ladder, and I'm in a good position above it. Let me try a more modest descent of -30 meters, which should still keep me at a safe distance from obstacles while getting closer to my target.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 74 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI apologize, but it seems I've reached my maximum number of allowed moves (9) and have been unable to safely reach the target position. The narrow urban environment with tall buildings has made it particularly challenging to navigate safely to get within 10 meters of the ladder while maintaining a clear view. I should have been more conservative with my initial movements and planned a better approach strategy.</Reasoning>"
+    ]
+]

@@ -1,0 +1,7 @@
+<Reasoning>
+From this aerial view, I can see the rooftops of several buildings forming what appears to be an urban courtyard or alley. Since I'm looking for a large trash pile and need to get a better view of the ground level, I should:
+1. Move to a more central position to get a better view of the area
+2. Reduce altitude to see ground-level details better
+I'll move towards coordinate (0,0) which is roughly the center, and lower the altitude by 30 meters to get a better view.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

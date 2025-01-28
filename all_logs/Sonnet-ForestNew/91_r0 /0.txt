@@ -1,0 +1,4 @@
+<Reasoning>
+I can see several areas with vegetation and what appears to be clearings in this aerial view. Since I'm looking for a campsite, I should focus on clearer areas that would be suitable for camping. I notice a slightly darker spot near the center of the image. I'll move closer to that area and reduce altitude to get a better view. I'll aim for coordinates (0, 0) which is the center of the grid, and reduce height by 40 meters to see more detail.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

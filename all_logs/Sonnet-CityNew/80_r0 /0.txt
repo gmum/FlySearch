@@ -1,0 +1,2 @@
+<Reasoning>I can see what appears to be a crowd of people gathered on the street in the middle of the image, near coordinates (20, 20). I need to move closer to that location and reduce altitude to get a better view and meet the requirement of being below 10 meters.</Reasoning>
+<Action>(20, 20, -50)</Action>

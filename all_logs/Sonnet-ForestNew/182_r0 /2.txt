@@ -1,0 +1,4 @@
+<Reasoning>
+I can see a person near coordinates (0, 3). Since I'm already at 8 meters altitude, which is perfect (below 10 meters as required), and I can clearly see the target, I'll move to center directly over them. This position will give me a clear view while maintaining the appropriate altitude.
+</Reasoning>
+<Action>(0, 3, 0)</Action>

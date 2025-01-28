@@ -1,0 +1,4 @@
+<Reasoning>
+I can see a mix of trees and open grassy areas in the image. The target could be in any of these areas, but it would be easier to spot in the open areas first. I notice there's a clearing near the center of the image around coordinates (0, 0). I'll move there and lower my altitude significantly to get a better view of this area.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

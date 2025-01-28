@@ -1,0 +1,4 @@
+<Reasoning>
+Based on the aerial image, I need to conduct a systematic search for the fire. The image shows a waterfront area with roads and structures. Since the starting altitude is 50 meters, I should first move to a central position and lower my altitude to get a better view of the area. I'll move towards the center point (0, 0) and reduce altitude by 20 meters to start a more detailed search.</Reasoning>
+
+<Action>(0, 0, -20)</Action>

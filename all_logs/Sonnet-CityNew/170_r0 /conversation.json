@@ -1,0 +1,174 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a crowd.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 55 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can see this is an urban environment with tall buildings and streets. Since I'm looking for a crowd and currently at 55 meters altitude, I should first get lower to have a better view of the street level where people would be. I notice there's better lighting and what appears to be a crosswalk area around coordinate (18, 0). I'll move there and descend to about 25 meters to get a better view while still maintaining enough height to scan the area.</Reasoning>\n<Action>(18, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 25 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I can now see the intersection more clearly at 25 meters. I notice there's a well-lit crosswalk intersection, but I still need to get lower to properly spot any crowds. I'll maintain my horizontal position near the intersection but descend further to about 15 meters to get a better view of the street level.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>At 15 meters, I have a better view of the intersection, but I still don't see any crowds. I notice that I can see more details in the positive y direction (north). I'll move slightly north and continue descending to get an even closer look at the street level, aiming for about 8 meters altitude which will put me safely under the 10-meter requirement while maintaining visibility.</Reasoning>\n<Action>(0, 5, -7)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I'm now at a good altitude (8 meters, which is below 10 meters), but I still don't see any crowds. I notice there's more area to explore in the positive y direction (north). I'll maintain my current altitude while moving further north to continue the search.</Reasoning>\n<Action>(0, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I apologize for my previous unsafe command. You're right - I should only move within the visible bounds of my last image to ensure safety. Looking at the grid, I can see that (0, 5) is the safest northern point that's still within my visible range. I'll maintain my current safe altitude of 8 meters and move to that position.</Reasoning>\n<Action>(0, 3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I still don't see any crowds in this area. Let me check the southern direction while maintaining my safe altitude of 8 meters. I'll move to (0, -3) which is within my visible range to explore that section of the intersection.</Reasoning>\n<Action>(0, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I still don't see any crowds in this area. Let me explore the eastern side of the intersection where there seems to be more lighting. I'll move to (3, 0) while maintaining my current safe altitude of 8 meters.</Reasoning>\n<Action>(3, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I still don't see any crowds from this position. Let me check the western side of the intersection. I'll move to (-3, 0) while maintaining my safe altitude of 8 meters to explore that darker section of the street.</Reasoning>\n<Action>(-3, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I still haven't located any crowds in this intersection area. Let me check the southwestern corner which I haven't explored yet. I'll move to (-3, -3) while maintaining my current safe altitude of 8 meters.</Reasoning>\n<Action>(-3, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I've now systematically searched the intersection area at a safe altitude below 10 meters, but I haven't found any crowds. I notice there might be some movement near (-5, -5), but I should remain within safe bounds. Since this is my last available move and I haven't found any definitive crowds, I'll check the southeastern corner of the intersection.</Reasoning>\n<Action>(3, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>After systematically exploring the intersection from all safe angles while maintaining an altitude below 10 meters, I have not been able to locate any crowds. I have checked all cardinal directions and corners within my visible range, but no crowds are present in this area.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ]
+]

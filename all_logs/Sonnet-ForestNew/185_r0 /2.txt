@@ -1,0 +1,4 @@
+<Reasoning>
+I can now see what appears to be a person near coordinates (0, 0). Since I'm already at 15 meters altitude, I need to descend a bit more to get below 10 meters while staying centered on the target. I'll move back to (0, 0) and descend by 7 meters to get to approximately 8 meters altitude.</Reasoning>
+
+<Action>(0, 0, -7)</Action>

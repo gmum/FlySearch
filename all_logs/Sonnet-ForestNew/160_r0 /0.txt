@@ -1,0 +1,4 @@
+<Reasoning>
+I need to start a systematic search pattern to find the person. From this altitude, I should scan the area while gradually decreasing height to get a better view. I notice some open areas in the center of the image where a person might be easier to spot. I'll move to the center coordinates and reduce altitude by 30 meters to get a better view.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

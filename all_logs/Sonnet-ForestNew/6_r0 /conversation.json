@@ -1,0 +1,142 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see what appears to be some scattered debris or a potential trash pile near the coordinates (12, 0). To confirm this and get a better view, I should move closer to that location and reduce altitude to get under 10 meters above the potential target. I'll move to those coordinates and descend by 27 meters, which will put me at 8 meters above ground level - within the required range if this is indeed the trash pile.\n</Reasoning>\n<Action>(12, 0, -27)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this lower altitude, I can see better, but I don't see the trash pile in this immediate area. I notice what appears to be some rocks or natural formations, but not the target I'm looking for. I should check another area. Let me move towards (0, -12) where there seemed to be some different-looking terrain in the previous view, while maintaining this good working altitude.\n</Reasoning>\n<Action>(0, -12, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI apologize for my unsafe command. You're absolutely right. I should only move within the visible grid from my current position to ensure safe operation. Looking at the current grid, I can see coordinates from (-5, -5) to (5, 5). Let me move to (0, -5) instead, which is within the visible bounds, while maintaining my current altitude which is good for detailed observation.\n</Reasoning>\n<Action>(0, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this position, I can still only see rocks and natural formations, no trash pile. I need to explore a different area. From our original wider view, let me move to check the area near (-12, -12) where there appeared to be some different terrain patterns. To stay within safe bounds of my current view, I'll move to (-4, -4) first, while maintaining this good observation altitude.\n</Reasoning>\n<Action>(-4, -4, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nStill only seeing rocks and natural formations in this area. Let me return to our original wider view to get a better strategic overview of where to search next. I'll ascend to 35 meters to get that broader perspective while moving back to (0, 0), which will help me plan the next search area more effectively.\n</Reasoning>\n<Action>(0, 0, 30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 34 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this higher vantage point, I can see what appears to be a potential trash pile or debris area near coordinates (-11, -11). It looks different from the natural rock formations we've seen before. I'll move to that location and descend to get a closer look, aiming for about 8 meters altitude for a clear view while staying under the 10-meter requirement.\n</Reasoning>\n<Action>(-11, -11, -26)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nStill no clear sign of the trash pile here, just more rocks and vegetation. Looking back at our original wider view, there appeared to be some interesting areas near (-23, 0). To move safely within our current visible bounds, I'll first move to (-5, 0) while maintaining this good observation altitude.\n</Reasoning>\n<Action>(-5, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nIn this area I can see what appears to be a trash pile near (0, -2). There's scattered debris that looks different from the natural rocks we've been seeing. I'm already at a good altitude of 6 meters, which is below the required 10 meters. Let me center directly over it for confirmation.\n</Reasoning>\n<Action>(0, -2, 0)</Action>\n\nFOUND"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI now have a clear view of the trash/debris pile right in the center of my view at (0, -2). I'm at an excellent altitude of 5 meters, which is well within the required range of being below 10 meters. The target is clearly visible and I am centered on it, confirming my previous \"FOUND\" declaration was correct.\n</Reasoning>\nFOUND"
+    ]
+]

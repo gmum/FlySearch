@@ -1,0 +1,4 @@
+<Reasoning>
+I can see someone standing near the (-9, 0) coordinate. I need to center on their position and get to the correct altitude - I'm currently at 13 meters which is still a bit too high. I'll move to their position and lower slightly to get under 10 meters as required.
+</Reasoning>
+<Action>(-9, 0, -5)</Action>

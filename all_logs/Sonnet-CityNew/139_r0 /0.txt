@@ -1,0 +1,2 @@
+<Reasoning>I can see we're looking down at a street from 40 meters height. I need to conduct a systematic search for a crowd. From this view, I can see some cars but no clear gathering of people. I should scan the area by moving towards (0,0) and lowering my altitude to get a better view of the street level.</Reasoning>
+<Action>(0, 0, -20)</Action>

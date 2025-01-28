@@ -1,0 +1,5 @@
+<Reasoning>
+I can see a person at coordinates (3, 0). I am at an excellent altitude of 5 meters, which is well below our target of 10 meters. I'll move directly above the person while maintaining this altitude to get centered over them.
+</Reasoning>
+<Action>(3, 0, 0)</Action>
+FOUND

@@ -1,0 +1,5 @@
+<Reasoning>
+I can now see the person near (0, -3). I need to center exactly on their position. My current altitude of 8 meters is perfect as it's well below the required 10-meter threshold.
+</Reasoning>
+<Action>(0, -3, 0)</Action>
+FOUND

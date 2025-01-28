@@ -1,0 +1,4 @@
+<Reasoning>
+I can now clearly see a blue tent/campsite in the image. I'm currently at 9 meters altitude which is within our required range (below 10 meters), and the campsite is in my field of view. I need to center myself better on the target, so I'll move slightly to position (3, 6) while maintaining the same altitude.
+</Reasoning>
+<Action>(3, 6, 0)</Action>

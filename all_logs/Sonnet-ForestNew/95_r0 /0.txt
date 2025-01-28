@@ -1,0 +1,2 @@
+<Reasoning>I can see a building structure in the center of the image around coordinate (0, 0). Since I need to get closer and lower to confirm this is the target building, I will move to that position and descend to about 8 meters above it to ensure I'm within the 10-meter requirement while maintaining a safe distance.</Reasoning>
+<Action>(0, 0, -50)</Action>

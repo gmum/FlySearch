@@ -1,0 +1,2 @@
+<Reasoning>I can see a small building in the image, located near coordinates (0, -22). Since I'm currently at 33 meters altitude and need to get below 10 meters while keeping the building in view, I'll move to position myself directly above the building and descend to approximately 8 meters altitude. This will ensure I'm both centered on the target and at an appropriate height.</Reasoning>
+<Action>(0, -22, -25)</Action>

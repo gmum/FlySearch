@@ -1,0 +1,4 @@
+<Reasoning>
+From my current position at 80 meters altitude, I need to conduct a systematic search pattern. The image shows a forested area with some clearings. I'll start by moving to a central position and reducing altitude to get a better view of the ground. I'll move to coordinates (0, 0) which is the center of the grid, and descend by 40 meters to get a clearer view while maintaining enough height to continue the search effectively.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

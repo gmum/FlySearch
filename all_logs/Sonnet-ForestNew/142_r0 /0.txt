@@ -1,0 +1,4 @@
+<Reasoning>
+I need to conduct a systematic search for the campsite. From this altitude of 74 meters, I can see a general overview of the area, but I need to get lower to spot details better. I notice there's varying terrain with some rocky areas and vegetation. I'll start by moving to the center of the grid (0, 0) and reducing altitude significantly to get a better view of the area.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

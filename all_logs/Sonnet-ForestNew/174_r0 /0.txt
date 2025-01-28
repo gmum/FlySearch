@@ -1,0 +1,4 @@
+<Reasoning>
+From this altitude of 86 meters, I can see a wide area but it's too high to spot a person clearly. I should first descend to get a better view while maintaining a central position. I'll move to coordinate (0, 0) which is in the center and descend by 40 meters to get a better view at 46 meters altitude. This will give me a clearer view while still maintaining good coverage of the search area.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

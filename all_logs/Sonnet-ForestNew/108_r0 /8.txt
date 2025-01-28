@@ -1,0 +1,4 @@
+<Reasoning>
+We've now searched several key areas but haven't located the target. I notice there's an area with some distinctive coloring near (5, -5) in the lower right portion that we haven't investigated yet. Since this is our last available move, let's check this final area while maintaining our current optimal altitude of 8 meters.
+</Reasoning>
+<Action>(5, -5, 0)</Action>

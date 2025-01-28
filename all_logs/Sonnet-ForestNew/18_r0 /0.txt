@@ -1,0 +1,4 @@
+<Reasoning>
+From this height and initial position, I can see a large area but need to search systematically for the trash pile. I notice some variations in the terrain, but I need to get lower to better identify potential objects. I'll start by moving to the center-right portion of the image (31, 0) and descending by 40 meters to get a better view while maintaining enough height to still survey a good area.
+</Reasoning>
+<Action>(31, 0, -40)</Action>

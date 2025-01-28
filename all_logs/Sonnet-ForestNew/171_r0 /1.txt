@@ -1,0 +1,4 @@
+<Reasoning>
+From this lower altitude, I can see a person lying down in the center of the image near coordinates (0, 0). I need to move slightly closer to ensure I'm centered on the target and get just a bit lower to be well under 10 meters, ensuring I meet the requirements while keeping the target in view.
+</Reasoning>
+<Action>(0, 0, -8)</Action>

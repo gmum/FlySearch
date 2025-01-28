@@ -1,0 +1,4 @@
+<Reasoning>
+I can see what appears to be a building with a brown/gray roof near the center of the image, around coordinates (0, 0). Since I need to be below 10 meters to complete the task, and I'm currently at 82 meters, I'll move to the building's location and descend significantly to get a closer look. I'll go down by 75 meters to get to approximately 7 meters above the building.
+</Reasoning>
+<Action>(0, 0, -75)</Action>

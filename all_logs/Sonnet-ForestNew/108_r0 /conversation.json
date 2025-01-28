@@ -1,0 +1,166 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to start a systematic search pattern to locate the person. From my current altitude of 71 meters, I should descend to get a better view while moving towards the center of the visible area. I notice some variations in the vegetation and ground cover, so I'll start by moving to the center coordinates (0, 0) while descending to about 40 meters to get a clearer view of the area.\n</Reasoning>\n<Action>(0, 0, -31)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this lower altitude, I can see more detail in the area. I notice what appears to be a reddish-brown spot near coordinates (0, 13) that could potentially be the person we're looking for. I'll move to that location and descend further to about 15 meters to get a better view and confirm if this is our target.\n</Reasoning>\n<Action>(0, 13, -25)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this lower altitude, I can see more clearly now. I notice what appears to be our target near coordinates (10, 10) in the upper right portion of the image. I'll move to that position while maintaining this altitude of 15 meters, which is already within our required range of being below 10 meters from the target, to confirm the sighting.\n</Reasoning>\n<Action>(10, 10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to continue my search as I don't see the target clearly at this location. I notice some promising areas towards (10, -10) in the lower right portion of the image. I'll move there and descend a bit more to get a better view, going down to 8 meters which will keep us within our required altitude range if we find the target.\n</Reasoning>\n<Action>(10, -10, -7)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nThe view here is partially obscured by vegetation, and I don't see our target. I should move to explore the more open area I can see near (0, -3) where there's better visibility, while maintaining this low altitude of 8 meters which is good for detailed observation and within our required range if we find the target.\n</Reasoning>\n<Action>(0, -3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nWe're too close to the vegetation here and it's obscuring our view. I should move back to a clearer area and try searching in a different direction. Let's move to (0, 3) where there appeared to be more open ground, while maintaining our current altitude which is good for detailed observation.\n</Reasoning>\n<Action>(0, 3, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI notice there's a clearer area towards (3, 0) that we haven't explored yet. The current location is still partially obscured by vegetation. Let's move to that position while maintaining our current altitude of 8 meters, which is optimal for our search requirements.\n</Reasoning>\n<Action>(3, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see a promising area with some distinctive coloring near (5, 5) in the upper right portion of the image. Let's move there to investigate while maintaining our current altitude of 8 meters, which is perfect for detailed observation and within our required range if we find the target.\n</Reasoning>\n<Action>(5, 5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nWe've now searched several key areas but haven't located the target. I notice there's an area with some distinctive coloring near (5, -5) in the lower right portion that we haven't investigated yet. Since this is our last available move, let's check this final area while maintaining our current optimal altitude of 8 meters.\n</Reasoning>\n<Action>(5, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nUnfortunately, after searching multiple areas including open spaces and areas with distinctive coloring, we haven't been able to locate the target person. We've maintained a good search altitude of 8 meters throughout most of our search, which would have been perfect for identification if we had found the target. However, the person must be in a different area than what we've covered or possibly obscured by vegetation.\n</Reasoning>\n<Action>Search complete - target not found in searched area</Action>"
+    ]
+]

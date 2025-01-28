@@ -1,0 +1,4 @@
+<Reasoning>
+I see what appears to be an airplane on the ground, which is likely not the anomaly I'm looking for since it's a clear man-made object. From this altitude and position, I need to conduct a systematic search. I'll start by moving to a central position and reducing altitude to get a better view of the area. I'll move to coordinates (0,0) which is directly above my current position, and lower my altitude by 20 meters to get a better view while maintaining enough height to continue searching effectively.
+</Reasoning>
+<Action>(0, 0, -20)</Action>

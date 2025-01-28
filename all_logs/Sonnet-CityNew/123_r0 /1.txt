@@ -1,0 +1,2 @@
+<Reasoning>I can see some road work or construction activity near coordinate (0,0). Since I'm already at 10 meters altitude, which is just at our maximum allowed height, I'll move slightly lower to ensure we're safely under 10 meters while staying centered over the construction area.</Reasoning>
+<Action>(0, 0, -2)</Action>

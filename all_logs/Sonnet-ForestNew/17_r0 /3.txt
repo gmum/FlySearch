@@ -1,0 +1,4 @@
+<Reasoning>
+I can now see someone through the forest canopy near coordinates (0, -3). I am currently at 8 meters altitude, which is perfect as it's below 10 meters. I'll make one final move to center exactly over the person's position without changing altitude.
+</Reasoning>
+<Action>(0, -3, 0)</Action>

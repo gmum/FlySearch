@@ -1,0 +1,4 @@
+<Reasoning>
+I can see what appears to be a dark object near the center of the image, around coordinates (0, 20). To properly inspect this potential anomaly, I should move closer to that location and reduce altitude to get a better view. I'll move to those coordinates and descend by 30 meters to get a clearer look.
+</Reasoning>
+<Action>(0, 20, -30)</Action>

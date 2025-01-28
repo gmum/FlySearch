@@ -1,0 +1,4 @@
+<Reasoning>
+I can now clearly see the forest fire near coordinates (0, 11). The fire appears bright orange and active. I need to move closer to those coordinates and descend further to get within 10 meters of the fire while keeping it in my field of view. I'll move to (0, 11) and descend 25 meters, which will put me at 7 meters above ground level - well within our target range of below 10 meters.
+</Reasoning>
+<Action>(0, 11, -25)</Action>

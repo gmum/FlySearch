@@ -1,0 +1,4 @@
+<Reasoning>
+I need to perform a systematic search pattern to find the person. From this height, I can see a good portion of the area but need to get lower to spot any details. I'll start by moving towards the center of the visible area and descending to get a better view. Moving to coordinate (0,0) which is the center point, and descending by 30 meters to get a better view while maintaining enough height to still survey the area effectively.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

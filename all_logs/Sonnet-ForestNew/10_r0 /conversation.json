@@ -1,0 +1,166 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "Image 1:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see scattered vegetation and terrain, but no clear trash pile from this height. I need to:\n1. Lower my altitude to get a better view\n2. Move towards the center of the grid initially to have a good vantage point\n3. Maintain enough height to still have a good field of view for searching\n\nI'll move to coordinate (0, 0) which is the center point and lower my altitude by about 40 meters to get a better view while still maintaining good coverage area.</Reasoning>\n\n<Action>(0, 0, -40)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 2:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 56 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI notice what appears to be a darker area in the northwest quadrant of the image, around coordinates (37, 19). This could potentially be the trash pile we're looking for. I should:\n1. Move closer to that location\n2. Lower my altitude further to get a better view\n3. Position myself directly above the suspicious area\n\nI'll move to (37, 19) and descend another 40 meters to get a clearer view of this area.</Reasoning>\n\n<Action>(37, 19, -40)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 3:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nFrom this lower altitude, I can see I was mistaken about the previous dark area - it was likely just vegetation. I need to continue my systematic search. I notice this is a different section of the area with smaller grid coordinates. At this low altitude (15m), I should be able to clearly see a trash pile if it's in view. I'll move to the center of this new grid section and stay at this height since it gives good visibility while being under 10m from ground objects.</Reasoning>\n\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 4:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 14 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI notice what appears to be a darker spot near coordinates (-9, -9) in the lower left section of the image. It looks different from the vegetation patterns we've seen. Since I'm already at a good altitude (14m), I'll move to investigate that area while maintaining this height. This altitude is perfect as it's below our 10m requirement for identifying the target.</Reasoning>\n\n<Action>(-9, -9, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 5:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 13 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI see I was mistaken about the previous spot - it was just more vegetation. I notice there's a pattern of vegetation and natural terrain, but no clear trash pile yet. Since we're systematically searching, I'll move to investigate the northeastern quadrant of our search area while maintaining this good altitude (13m which is perfect for our requirements). I'll head towards (9, 4) where there seems to be some different coloration that needs investigation.</Reasoning>\n\n<Action>(9, 4, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 6:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 12 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI need to be systematic in my search. I notice something unusual near coordinates (-8, 0) in the western part of the image - there appears to be a darker patch that looks different from the natural vegetation patterns we've been seeing. Since we're already at a good altitude (12m, which is below our 10m requirement for identification), I'll move to investigate that area while maintaining this height.</Reasoning>\n\n<Action>(-8, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 7:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can see that what I thought might be the trash pile was actually just more vegetation. I notice a different kind of patch or disturbance near (-7, -4) in the southwestern portion of the image. Since we're at 11m altitude, which is still slightly higher than ideal for our target identification (needs to be under 10m), I'll move to that location and descend slightly to get under the 10m requirement.</Reasoning>\n\n<Action>(-7, -4, -2)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 8:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI notice there's something that looks different from the natural vegetation near (-5, -5) in the southwestern area - it appears to have a different texture and color pattern than the surrounding vegetation. We're now at 8 meters altitude, which is perfect for our requirements (below 10m). I'll move to investigate this area while maintaining this height.</Reasoning>\n\n<Action>(-5, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 9:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI notice a distinct patch near coordinates (-5, -2) that appears different from the natural vegetation patterns - it has a more irregular, artificial appearance that could be a trash pile. We're at 7 meters altitude which is excellent for identification (well below our 10m requirement). I'll move directly over this suspicious area for final confirmation.</Reasoning>\n\n<Action>(-5, -2, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Image 10:"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>\nI can now see that what I thought might be a trash pile was just another patch of natural vegetation. I notice a distinctly different colored and textured area near coordinates (4, -2) in the southeastern portion of the image. At 6 meters altitude, we're in perfect position for identification (well below our 10m requirement). Let me move to center over this suspicious area for final confirmation.</Reasoning>\n\n<Action>(4, -2, 0)</Action>"
+    ]
+]

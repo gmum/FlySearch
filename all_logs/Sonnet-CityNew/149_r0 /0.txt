@@ -1,0 +1,2 @@
+<Reasoning>I can see a yellow vehicle in the center of the image at around coordinates (0, 13). I need to move closer to verify what's around that area and lower my altitude to get a better view. I'll position myself directly above that location while reducing altitude significantly to get a clearer view.</Reasoning>
+<Action>(0, 13, -30)</Action>

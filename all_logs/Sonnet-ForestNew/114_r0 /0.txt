@@ -1,0 +1,4 @@
+<Reasoning>
+I need to start a systematic search for the campsite. From this height (95m), it's difficult to spot small details, so I should first lower my altitude to get a better view. I notice the image shows a mix of vegetation and clearings. I'll start by moving to the center position (0,0) and lowering my altitude by 50 meters to get a better view while maintaining enough height to continue searching effectively.
+</Reasoning>
+<Action>(0, 0, -50)</Action>

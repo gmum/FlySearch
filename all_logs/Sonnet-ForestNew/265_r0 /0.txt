@@ -1,0 +1,4 @@
+<Reasoning>
+From this altitude of 61 meters, I can see a general overview of the area. I notice some vegetation patterns and what appears to be a small yellow/bright patch in the eastern part of the image (around coordinates (41, 0)). This could potentially be our anomaly. I'll move closer to that area and reduce altitude to get a better look.
+</Reasoning>
+<Action>(41, 0, -30)</Action>

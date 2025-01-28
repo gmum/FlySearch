@@ -1,0 +1,4 @@
+<Reasoning>
+I can now see a person on the ground near coordinates (0, -3). I am at 10 meters altitude which is just at the maximum allowed height. I should center directly over them and descend slightly to ensure I'm below 10 meters while keeping them in view.
+</Reasoning>
+<Action>(0, -3, -2)</Action>

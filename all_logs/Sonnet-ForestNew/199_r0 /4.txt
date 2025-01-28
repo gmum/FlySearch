@@ -1,0 +1,4 @@
+<Reasoning>
+I'm still progressing towards where I initially saw the building. From my current position, I'll continue moving towards (-3, -3) while maintaining this low altitude. This keeps me within the safe visible bounds of the current image and continues our path towards the target building's last known position.
+</Reasoning>
+<Action>(-3, -3, 0)</Action>

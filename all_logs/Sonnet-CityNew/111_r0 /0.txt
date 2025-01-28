@@ -1,0 +1,4 @@
+<Reasoning>
+From this aerial view at 84 meters, I need to conduct a systematic search for the fire. I notice some buildings and urban infrastructure, but no immediate signs of fire. I should first move to a central position and lower my altitude to get a better view. I'll move to coordinates (0,0) which is in the center of the grid and reduce altitude by 40 meters to get a clearer view of the area.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

@@ -1,0 +1,4 @@
+<Reasoning>
+I need to conduct a systematic search of the area. From this altitude, I can see a good portion of the terrain, but it's too high to spot a person clearly. I'll start by moving to a central position and reducing altitude to get a better view. I'll move to coordinates (0, 0) which is the center of the grid, and descend by 40 meters to get a clearer view while still maintaining enough height to scan the area effectively.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

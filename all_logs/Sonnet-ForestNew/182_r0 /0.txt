@@ -1,0 +1,4 @@
+<Reasoning>
+I need to start a systematic search for the person. Given the current altitude of 48 meters, I should first lower the altitude to get a better view while moving to a position that allows me to scan more of the area. I'll move to the center point (0, 0) and reduce altitude by 20 meters to get a clearer view of the surroundings. This will still give me enough height to maintain a good field of view while getting closer to the target altitude of less than 10 meters.
+</Reasoning>
+<Action>(0, 0, -20)</Action>

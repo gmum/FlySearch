@@ -1,0 +1,8 @@
+<Reasoning>
+I can see a large aircraft in the image which appears to be the anomaly, since it's clearly not a natural part of this forested/grassy environment. I need to get closer to it and lower my altitude to be less than 10 meters above it. I'll position myself directly above the center of the aircraft and decrease my altitude significantly.
+
+The aircraft appears to be centered around coordinates (0, 0), so I'll maintain those coordinates but reduce my altitude by 38 meters. This should put me approximately 8 meters above the aircraft, which meets the requirement of being below 10 meters while still maintaining a safe distance.
+</Reasoning>
+<Action>(0, 0, -38)</Action>
+
+FOUND

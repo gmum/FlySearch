@@ -1,0 +1,4 @@
+<Reasoning>
+I can see a mix of vegetation and open areas in this aerial view. Given the relatively high altitude (93m), I should start by descending to get a better view while moving to a central area. I'll focus on the center coordinates (0,0) first while reducing altitude by 40 meters. This will give me a better vantage point to spot any potential objects while maintaining enough height to keep a good field of view.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

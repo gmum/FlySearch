@@ -1,0 +1,4 @@
+<Reasoning>
+From this high vantage point (89m), I can see several streets and buildings in an urban environment. To effectively search for an anomaly, I should first move to a lower altitude to get a better view of potential objects that might stand out. I'll aim for the central area (0,0) and descend by 40 meters to get a clearer view while maintaining enough height to still survey the area effectively.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

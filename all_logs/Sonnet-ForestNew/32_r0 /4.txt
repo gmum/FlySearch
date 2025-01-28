@@ -1,0 +1,5 @@
+<Reasoning>The forest fire is visible in the lower right portion of the image. At 1 meter altitude, I'm at a perfect height, well below the 10-meter requirement. I need to move slightly to the right to center on the fire. I'll move to coordinates (1, 0) while maintaining this optimal altitude.</Reasoning>
+
+<Action>(1, 0, 0)</Action>
+
+FOUND

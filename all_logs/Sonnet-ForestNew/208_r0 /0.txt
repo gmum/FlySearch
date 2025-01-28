@@ -1,0 +1,4 @@
+<Reasoning>
+From this altitude and initial position, I need to conduct a systematic search for any anomalies in the environment. The image shows mostly natural vegetation and terrain. To get a better view of the area, I should first move to a central position and lower my altitude to see more details. I'll move towards the center point (0, 0) and reduce altitude by 30 meters to get a clearer view of the area.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

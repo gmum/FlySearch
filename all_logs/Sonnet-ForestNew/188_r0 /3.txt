@@ -1,0 +1,2 @@
+<Reasoning>I can now clearly see the forest fire with visible flames and smoke in the image, centered around coordinates (0, 13). I need to move to that position and decrease altitude to get below 10 meters as per the objective.</Reasoning>
+<Action>(0, 13, -30)</Action>

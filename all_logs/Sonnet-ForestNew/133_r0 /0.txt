@@ -1,0 +1,5 @@
+<Reasoning>
+I can see a building directly below the drone at coordinates (0, 0). Since it's clearly visible and I need to get closer to it while maintaining it in my field of view, I'll descend by 52 meters to get to approximately 8 meters above it. This will put me well within the required 10-meter height requirement while keeping the building centered in my view.
+</Reasoning>
+<Action>(0, 0, -52)</Action>
+FOUND

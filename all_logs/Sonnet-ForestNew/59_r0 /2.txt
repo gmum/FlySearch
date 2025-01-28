@@ -1,0 +1,2 @@
+<Reasoning>I can see what appears to be a person near the coordinate (0, 0). Since I'm already at 18 meters altitude, I need to move to center over them and descend slightly to ensure I'm within 10 meters while keeping them in view. I'll move to (0, 0) and descend by 9 meters, which will put me at 9 meters altitude - well within our target range of below 10 meters.</Reasoning>
+<Action>(0, 0, -9)</Action>

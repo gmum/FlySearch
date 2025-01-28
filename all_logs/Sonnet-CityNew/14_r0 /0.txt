@@ -1,0 +1,2 @@
+<Reasoning>I can see a city environment with buildings and streets from a high altitude. Since I need to search for a fire, I should first try to get a better overview of the area by moving to a central position and lowering my altitude. I'll move towards the center coordinates (0,0) and descend by 25 meters to get a better view while maintaining enough height to continue the search effectively.</Reasoning>
+<Action>(0, 0, -25)</Action>

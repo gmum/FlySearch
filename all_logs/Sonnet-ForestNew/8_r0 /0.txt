@@ -1,0 +1,8 @@
+<Reasoning>
+From this altitude of 54 meters, I need to perform a systematic search. I can see a relatively open area with grass and some vegetation. Since I need to find a person and get below 10 meters above them, I should:
+1. First descend to get a better view while staying roughly in the center
+2. Then perform a methodical search pattern if needed
+
+I'll start by moving to the center coordinates (0,0) and descending by 30 meters to get a better view at 24 meters altitude.
+</Reasoning>
+<Action>(0, 0, -30)</Action>

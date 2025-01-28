@@ -1,0 +1,2 @@
+<Reasoning>I can clearly see the forest fire in the bottom left portion of the image. Since I need to be below 10 meters above the object and centered on it, I'll move to coordinates (-10, -10) which appears to be near the center of the fire, and simultaneously decrease altitude to 8 meters to get a closer view while staying safe.</Reasoning>
+<Action>(-10, -10, -21)</Action>
