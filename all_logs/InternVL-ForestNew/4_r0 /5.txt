@@ -1,0 +1,3 @@
+<Reasoning>The object is likely at the coordinate (0, 0) as indicated by the blue dot. I am already centered over it, so I will descend to ensure I am within 10 meters of the object.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action>

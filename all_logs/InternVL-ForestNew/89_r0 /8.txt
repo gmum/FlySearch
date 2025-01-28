@@ -1,0 +1,6 @@
+<Reasoning>The object is near the center of the image, slightly repositioned towards the lower-left. I should move closer to this area.</Reasoning>
+<Action>(13, 13, -10)</Action> 
+<Reasoning>I am now centered on the object and descending to confirm its location.</Reasoning>
+<Action>(13, 13, -10)</Action> 
+<Action>(13, 13, 0)</Action> 
+<Action>FOUND</Action>

@@ -1,0 +1,2 @@
+<Reasoning>I need to start my search by examining the point at (0, 0) since it is in the center of the grid. This point might be the object I am looking for, and examining it first makes sense as it is likely to be a good starting point for my search.</Reasoning>
+<Action>(0, 0, -10)</Action>

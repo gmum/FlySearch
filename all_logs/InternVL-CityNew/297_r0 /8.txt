@@ -1,0 +1,12 @@
+<Reasoning>I need to move to the left to continue searching. I will move to (-1, 0, -5)</Reasoning>
+<Action>(-1, 0, -5)</Action> 
+<Reasoning>I need to move slightly north to continue the search. I will move to (0, 2, -5)</Reasoning>
+<Action>(0, 2, -5)</Action> 
+<Reasoning>I need to move to an area closer to the bottom of the image to continue the search. I will move to (0, 0, -5)</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The yellow car might be the object in question. I will move closer to it. I will move to (0, 14, -5)</Reasoning>
+<Action>(0, 14, -5)</Action> 
+<Reasoning>The object is within view and closer to me. I am now above it by 10 meters. I will move directly below it. I will move to (0, 3, -5)</Reasoning>
+<Action>(0, 3, -5)</Action> 
+<Reasoning>I am directly above the object and below 10 meters, so I have found it.</Reasoning>
+<Action>FOUND</Action>

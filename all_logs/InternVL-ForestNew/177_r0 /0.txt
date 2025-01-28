@@ -1,0 +1,2 @@
+<Reasoning>The object appears to be located at the center of the grid, which is at coordinates (0, 0). The coordinates around this point are (0, 0) and (-0.0, 0.0), indicating that the object is very close to the center of the grid. I will move slightly towards the center to confirm if this is the location of the fire and then adjust my altitude accordingly.</Reasoning>
+<Action>(0, 0, -30)</Action>

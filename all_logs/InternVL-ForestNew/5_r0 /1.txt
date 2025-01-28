@@ -1,0 +1,2 @@
+<Reasoning>I need to get closer to the object represented by the coordinate (0, 1, 0) to confirm if it's the missing person. Since the last coordinate was (0, 0, 0), moving to (0, 1, -1) will help me stay below 10 meters and closer to this specific point.</Reasoning>
+<Action>(0, 1, -1)</Action>

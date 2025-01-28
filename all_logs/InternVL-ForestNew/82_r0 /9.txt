@@ -1,0 +1,3 @@
+<Reasoning>The building is now centered on the (0, 0) grid point, which is directly below the drone. I need to stay at this altitude to confirm it's the building.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Reasoning>FOUND</Reasoning>

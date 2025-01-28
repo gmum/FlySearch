@@ -1,0 +1,3 @@
+<Reasoning>The object is at coordinates (0, 0), which is directly below my current position. Since I am already very close, I will slightly descend to confirm it is the anomaly and to ensure I am within 10 meters above it.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+<Action>FOUND</Action>

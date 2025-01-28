@@ -1,0 +1,3 @@
+<Reasoning>The fire is centered around (0, 0), which is within my field of view. To get closer, I will move downward to (0, 0) to ensure I am right above the fire and can get a detailed inspection to confirm it as the object of interest.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action>

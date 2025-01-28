@@ -1,0 +1,8 @@
+<Reasoning>The object is located near coordinates (0, 0). I need to continue lowering my altitude to ensure I am close enough to identify it as the anomaly.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+
+<Reasoning>I have reached an altitude of 0 meters, and the object is very close to me. I need to ensure I am within 10 meters of the object before declaring "FOUND".</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning>The object is directly below me, and I am now within 10 meters. I will declare "FOUND" to complete the task.</Reasoning>
+<Action>FOUND</Action>

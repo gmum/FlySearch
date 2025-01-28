@@ -1,0 +1,2 @@
+<Reasoning>The object could be located at (0, 0) since it's in the center of the grid and has coordinates (0, 0, 0). It might be the person we are searching for. I will move closer to this point and check if it's the object. If it's not, I will continue the search.</Reasoning>
+<Action>(0, 0, -5)</Action>

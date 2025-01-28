@@ -1,0 +1,2 @@
+<Reasoning>I'm starting my search at a height of 36 meters. The coordinates labeled (12, 0) and (0, 12) on the grid are potential areas to check, as they might contain a police car. I will move towards the area between these coordinates to begin the search. This allows me to focus on the central part of the grid, where vehicles are more likely to be found.</Reasoning>
+<Action>(12, 0, -30)</Action>

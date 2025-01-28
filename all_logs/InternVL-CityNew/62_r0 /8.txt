@@ -1,0 +1,3 @@
+<Reasoning>I am now centered over the coordinates (0, 0), which is the likely location of the object. Since I'm already at a low altitude, I will move downward to ensure I am within 10 meters of the object and centered on it.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

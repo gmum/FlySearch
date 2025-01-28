@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a black pickup truck.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 83 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The black pickup truck is likely located in the bottom-left section of the image, which corresponds to the coordinates (55, -55). To begin the search, I will move towards this area to narrow down the search zone.\n\nPlease note that the current coordinates (0, 0) indicate the top-center of the image, so I will move west and south to reach the lower-left section.</Reasoning>\n<Action>(-55, -55, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 83 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have moved towards the bottom-left section of the grid, but the black pickup truck is not in view. To continue the search, I will move slightly towards the east to cover more area in the lower-left section.</Reasoning>\n<Action>(-28, -55, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 83 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have moved towards the bottom-left section of the grid, but the black pickup truck is still not in view. To continue the search, I will move slightly towards the north to cover more area in the lower-left section.</Reasoning>\n<Action>(-55, -28, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 83 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The black pickup truck is now visible in the center of the image, located at (0, 0). To proceed, I will lower the drone to ensure I am 10 meters or less above the object.</Reasoning>\n<Action>(0, 0, -10)</Action> \n<Reasoning>FOUND</Reasoning>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The black pickup truck is not visible in the current view. To continue the search, I will move towards coordinates (24, 0) since it is a logical location based on the previous findings.</Reasoning>\n<Action>(24, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The black pickup truck is located at (0, 24) in the image. To approach the truck, I will move slightly south to adjust my position above it and ensure I am centered on it.</Reasoning>\n<Action>(0, 24, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest appears to be in the lower-left part of the image, likely near coordinates (24, -24), based on the previous grid positions. To confirm this, I will move slightly north and west to get closer and ensure I am centered on the object.</Reasoning>\n<Action>(0, -24, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to search further to find the black pickup truck. Moving north towards coordinates (0, 49) will allow me to cover more area and potentially spot the truck if it is in that direction.</Reasoning>\n<Action>(0, 49, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have moved north to coordinates (0, 49) but the black pickup truck is still not visible. To continue the search, I will move slightly south to adjust my position and cover more area.</Reasoning>\n<Action>(0, 34, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 73 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The black pickup truck is now visible near coordinates (0, 24). To approach the truck, I will move slightly south to adjust my position above it and ensure I am centered on it.</Reasoning>\n<Action>(0, 24, -10)</Action> \n<Reasoning>FOUND</Reasoning>"
+    ]
+]

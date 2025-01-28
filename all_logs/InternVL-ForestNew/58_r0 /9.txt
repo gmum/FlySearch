@@ -1,0 +1,12 @@
+<Reasoning>I should move to the (0, 0) coordinate and slightly descend, as it is a logical next step to check this area for the object.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I should move to the (0, 7) coordinate and slightly descend, as it is a logical next step to check this area for the object.</Reasoning>
+<Action>(0, 7, -5)</Action> 
+<Reasoning>I should move to the (7, 7) coordinate and slightly descend, as it is a logical next step to check this area for the object.</Reasoning>
+<Action>(7, 7, -5)</Action> 
+<Reasoning>I should move to the (7, 0) coordinate and slightly descend, as it is a logical next step to check this area for the object.</Reasoning>
+<Action>(7, 0, -5)</Action> 
+<Reasoning>I should move to the (4, 0) coordinate and slightly descend, as it is a logical next step to check this area for the object.</Reasoning>
+<Action>(4, 0, -5)</Action> 
+<Reasoning>I should move to the (0, 4) coordinate and slightly descend, as it is a logical next step to check this area for the object.</Reasoning>
+<Action

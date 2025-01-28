@@ -1,0 +1,2 @@
+<Reasoning>The fire appears to be located at (0, 23), which is directly in front of the drone's current position. However, I need to move closer to confirm the location and ensure I am within 10 meters of the object when I "FOUND". Moving slightly east will help me get a better view of the coordinates (0, 23).</Reasoning>
+<Action>(2, 23, 0)</Action>

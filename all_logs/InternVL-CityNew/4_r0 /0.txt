@@ -1,0 +1,2 @@
+<Reasoning>The image shows a road with a construction site indicated by coordinates. To find the construction site, I should start by scanning the area with visible coordinates. I will move towards the area with coordinates (21, 0), which seems to be directly below the construction site as it is on the road. I will make sure not to overshoot the search area and stay within the limits of 400x400 meters.</Reasoning>
+<Action>(21, 0, -9)</Action>

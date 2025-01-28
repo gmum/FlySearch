@@ -1,0 +1,2 @@
+<Reasoning>I will start by targeting the bottom-right corner of the image, around (-33, 16), since it is the nearest grid point to the bright spots on the street which might indicate a fire. I will move slightly north to center on the object.</Reasoning>
+<Action>(33, 16, 0)</Action>

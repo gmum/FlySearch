@@ -1,0 +1,3 @@
+<Reasoning>The area (0, 0) appears to be the densest spot on the grid, suggesting the presence of the object. Given the proximity, I will now lower my altitude to be exactly above it, as my current position is below the 10-meter threshold.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Action>FOUND</Action>

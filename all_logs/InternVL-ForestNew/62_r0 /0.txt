@@ -1,0 +1,2 @@
+<Reasoning>I need to begin the search towards the top left of the image since that's where the first significant grid point is located. The initial point of interest is (30, 30) with coordinates (60, 60). Moving slightly down and to the right should help me cover the area more thoroughly.</Reasoning>
+<Action>(30, 30, -10)</Action>

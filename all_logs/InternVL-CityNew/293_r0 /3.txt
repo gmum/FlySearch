@@ -1,0 +1,9 @@
+<Reasoning>I am now centered on the yellow object at (0, 27). This object appears to be a parked car, which is not the anomaly I am searching for. I will continue my search by moving closer to the yellow object at (17, 0).</Reasoning>
+<Action>(17, 0, -10)</Action> 
+<Reasoning>I am now centered on the yellow object at (17, 0). This object is also a parked car, not the anomaly. I will move to the next point of interest, the yellow object at (0, -17).</Reasoning>
+<Action>(0, -17, -10)</Action> 
+<Reasoning>I am now centered on the yellow object at (0, -17). This object is another parked car, not the anomaly. I will move to the final point of interest, the black object at (0, -8).</Reasoning>
+<Action>(0, -8, -10)</Action> 
+<Reasoning>I am now centered on the black object at (0, -8). This object is a parked car, not the anomaly. I have exhausted all potential points of interest without finding an anomaly.</Reasoning>
+<Action>(0, 8, 0)</Action> 
+<Reasoning>I am now centered on the black object at (0, 8). This object is also

@@ -1,0 +1,2 @@
+<Reasoning>The object of interest could be located at (0, 30) or (30, 0), as these are the points that differ most from the surrounding grid values. I will start by examining the area around (0, 30) to investigate this potential anomaly further.</Reasoning>
+<Action>(0, 30, -10)</Action>

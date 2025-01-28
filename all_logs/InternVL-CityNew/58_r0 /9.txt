@@ -1,0 +1,2 @@
+<Reasoning>I am maintaining altitude over coordinates (0, 0) where the object is located. I need to ensure I stay within 10 meters, so I will hover at this altitude to meet the criteria for "FOUND" and keep the object in my field of vision.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>The object is near the center of the image, where the coordinates (0, 0) are located. I need to move closer to this point to verify if it's the fire. Flying slightly south will help me center the object in my field of view.</Reasoning>
+<Action>(0, 0, -10)</Action>

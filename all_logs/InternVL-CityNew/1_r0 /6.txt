@@ -1,0 +1,4 @@
+<Reasoning>I am approaching the highlighted point (0, 0) which might be the trash pile. I need to descend further to ensure I'm within 10 meters for confirmation.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUN</Action> 
+<Action><Reasoning>I have descended to 10 meters above ground level and am centered on the trash pile. The object is within the objective range.</Reasoning><Action>(0, 0, 0)</Action></Reasoning>

@@ -1,0 +1,6 @@
+<Reasoning>I am now in a narrower road section, focusing on the area around (0, 0). The amount of debris and the condition of the road suggest a potential anomaly. I will move directly above (0, 0) to inspect the area closely.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I see an object in the construction zone that stands out from the rest—it appears to be a piece of construction equipment or material. This might be the anomaly.</Reasoning>
+<Action>(0, 0, 5)</Action>
+<Reasoning>I have found an object that doesn't fit with the rest of the environment. It is near coordinates (0, 0), and I am centered on it. I am at 10 meters above the ground.</Reasoning>
+<Action>FOUND</Action>

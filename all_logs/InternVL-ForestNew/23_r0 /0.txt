@@ -1,0 +1,2 @@
+<Reasoning>I should maximize my chances of finding the trash pile by starting close to the center of the grid where there is a higher density of coordinates, especially those above 0.0. Moving up to (0, 0) makes sense as it is centrally located and could potentially be the location of the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action>

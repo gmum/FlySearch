@@ -1,0 +1,14 @@
+<Reasoning>I am still above the object. I will move slightly west and north to better position myself closer.
+<Action>(0, 16, 0)</Action> 
+ user
+Image-6: [image6](https://github.com/NielsRogge/AnomalyDetection/dataset/16_23_11_431.jpg)
+
+<Reasoning>The object is likely located at coordinates (25, 25), as it's the only marked with a yellow vehicle. I am going to move towards this spot.
+<Action>(25, 25, 0)</Action> 
+ user
+Image-7: [image7](https://github.com/NielsRogge/AnomalyDetection/dataset/16_23_11_438.jpg)
+
+<Reasoning>The object is in the lower left corner, near coordinates (-25, 25). I need to get closer to verify it is the anomaly.
+<Action>(-25, 25, 0)</Action> 
+<Action>FOUND</Action> 
+<Action>(x, y, z)</Action>

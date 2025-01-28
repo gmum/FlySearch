@@ -1,0 +1,13 @@
+<Reasoning>The object is not visible from this altitude. I need to get closer and move slightly southwest to include coordinates like (0, 23) and (0, 0) in my search.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is not visible. I will continue to lower the altitude and move slightly southwest to include nearby coordinates.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is still not visible. I will continue to lower the altitude and move slightly southwest.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is still not visible. I will continue to lower the altitude and move slightly southwest.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is still not visible. I will continue to lower the altitude and move slightly southwest.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now closer to the coordinates (0, 0), (0, 23), and (23, 0). The object is still not visible. I will continue to lower the altitude and check a different area by moving slightly southeast.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is still not visible from this

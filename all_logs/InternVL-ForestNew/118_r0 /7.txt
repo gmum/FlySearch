@@ -1,0 +1,4 @@
+<Reasoning>The object is at (0.0, 0.0), and I am already very close. To ensure I am within the 10-meter limit, I should verify the altitude.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

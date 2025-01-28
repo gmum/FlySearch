@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 80 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) indicate a possible location of the object. Given that this is directly in front of the current position, it is advisable to approach this area first before deciding to move elsewhere. I will move towards these coordinates to investigate further.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 75 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) maintain the focus on the same general area as the previous move, which is necessary for a thorough search. I'm slightly lowering my altitude to focus more closely on the grid center, as this might indicate a more precise location of the object. If this area is not the object, I will then move to (25, 25) for further investigation.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 65 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) now indicate a location closer to the grid's center, which seems to be a logical next step given the previous findings. I will move slightly lower to concentrate on this area and ensure a thorough search. If this area doesn't yield the object, I will then investigate coordinates (22, 22).</Reasoning>\n<Action>(0, 0, -15)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 50 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) are still within the same general area as before, which is appropriate for a detailed search in this location. I'll slightly lower my altitude to focus more closely on this spot, as it might be a potential area for the object. If this spot isn't the object, I'll move to coordinates (17, 17) next.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) are the same as the last coordinate checked, suggesting that the object might be nearby, or this is the object itself. I will move directly to this point to confirm if it's the object and to ensure I'm at the correct altitude.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 35 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) are still the same as the previous move, suggesting a meticulous search around a specific area that could contain the object. I will move closer to this spot to ensure I'm accurately evaluating the terrain and grid points. If this area doesn't yield the object, I will then proceed to coordinates (12, 12).</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 25 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) are the same as the last checked location, which suggests that the object might be nearby or that this is the object itself. I will hover closely at this point to verify if it is the object and to ensure the altitude is correct for confirming it.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>FOUND</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Given that the previous grid point (0, 0) did not yield the object, I will now move to coordinates (8, 8) to systematically search the area. This provides a new perspective to evaluate for the object, ensuring a thorough search.</Reasoning>\n<Action>(8, 8, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) are the same as the previous coordinates, indicating that I'm still in the same general area for a thorough search. I will move slightly lower to focus on this spot to ensure I am not missing anything that might be the object.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (0, 0) are the same as the previous ones, indicating I'm still searching in the same area. I will move slightly lower to focus on this spot to ensure I have a clear view of the ground and can identify any potential object nearby.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ]
+]

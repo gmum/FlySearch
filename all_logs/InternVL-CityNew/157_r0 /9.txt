@@ -1,0 +1,3 @@
+<Reasoning>The trash pile is located at (0, 0), and I need to get directly above it. Flying to (0, 0, -7) will bring me closer to the trash pile and allow me to check if it's the correct object.</Reasoning>
+<Action>(0, 0, -7)</Action> 
+<Action>FOUND</Action>

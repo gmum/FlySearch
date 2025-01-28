@@ -1,0 +1,17 @@
+<Reasoning>The fire is at the coordinate (0, 0), which is directly below the drone's current position. I should move slightly down to be closer to the fire and confirm if it's the object.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>(0, 0, -1)</Action> 
+<Action>FOUND</Action>

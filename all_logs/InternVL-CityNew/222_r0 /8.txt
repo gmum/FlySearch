@@ -1,0 +1,8 @@
+<Reasoning>I am focusing on the area around (0, 0) and moving slightly west to see the construction zone there. Maintaining a safe altitude is crucial.</Reasoning>
+<Action>(0, 0, -30)</Action> 
+<Reasoning>The construction area around (0, 0) and (10, 0) shows potential activity or debris that could be the anomaly. I need to get closer to inspect.</Reasoning>
+<Action>(10, 0, 5)</Action> 
+<Reasoning>I am now closer to the area near (10, 0) and observing for any anomalies. There might be a piece of equipment or material that stands out.</Reasoning>
+<Action>(10, 0, -5)</Action> 
+<Reasoning>I've found an object that does not fit the typical environment, suggesting it could be the anomaly. I am now at 10 meters above the ground level.</Reasoning>
+<Action>FOUND</Action>

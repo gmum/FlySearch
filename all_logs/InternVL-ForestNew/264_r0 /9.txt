@@ -1,0 +1,8 @@
+<Reasoning>I have flown down to the coordinates (-29, 0) which is marked with a star, indicating it might be the object of interest. I am now centered on this coordinate and will confirm if it is the target object.</Reasoning>
+<Action>(-29, 0, 0)</Action> 
+<Reasoning>I am now very close to the coordinates (-29, 0), which is marked with a star. I will confirm if it is the target object by flying below 10 meters relative to it.</Reasoning>
+<Action>(-29, 0, -5)</Action> 
+<Action>(-29, 0, -10)</Action> 
+<Reasoning>The coordinates (-29, 0) are now in my field of view with a star mark, indicating it might be the anomaly. I am within 10 meters of it and centered on it.</Reasoning>
+<Action>(-29, 0, -10)</Action> 
+<Action>FOUND</Action>

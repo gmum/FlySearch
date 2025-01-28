@@ -1,0 +1,3 @@
+<Reasoning>I am currently centered above the crowd at (0, 0) and at the required altitude of 10 meters. I need to verify if the altitude is exactly 10 meters and if I am centered correctly on the crowd. I will slightly decrease my altitude to 9 meters to confirm these conditions and ensure I am following the search criteria.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Action>FOUND</Action>

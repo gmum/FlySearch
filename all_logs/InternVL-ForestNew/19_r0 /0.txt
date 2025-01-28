@@ -1,0 +1,2 @@
+<Reasoning>I should start my search at the coordinates (0, 0) because it is the closest point on the grid to my current position, which allows me to cover the largest area efficiently while maintaining altitude and avoiding boundaries. This is a strategic starting point to begin my search for the building.</Reasoning>
+<Action>(0, 0, 0)</Action>

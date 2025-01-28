@@ -1,0 +1,3 @@
+<Reasoning>I am descending towards the center of the grid (0, 0) for further inspection. The blue tent is visible at (0, 0), indicating the campsite. I need to ensure I am at most 10 meters above it to declare "FOUND".</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

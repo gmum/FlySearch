@@ -1,0 +1,14 @@
+<Reasoning>The object is not at (0, -41), so I will move to (21, -41) to continue the search.
+<Action>(21, -41, 0)</Action> 
+<Reasoning>The object is not at (21, -41), so I will move to (-21, -41) to continue the search.
+<Action>(-21, -41, 0)</Action> 
+<Reasoning>The object is not at (-21, -41), so I will move to (0, -41) to continue the search.
+<Action>(0, -41, 0)</Action> 
+<Reasoning>The object is not at (0, -41), so I will move to (0, 0) to continue the search.
+<Action>(0, 0, 0)</Action> 
+<Reasoning>The object is not at (0, 0), so I will move to (21, 0) to continue the search.
+<Action>(21, 0, 0)</Action> 
+<Action>FOUND</Action> 
+
+<Reasoning>I found the yellow taxi at coordinates (21, 0) in the center of the image. I am now flying below 10 meters relative to it.
+<Action>FOUND</Action>

@@ -1,0 +1,5 @@
+<Reasoning>The object is still at (0, 0) and appears to be the satellite dish. It is directly below me, so I should move slightly down to confirm I'm within 10 meters or less.
+<Action>(0, 0, -3)</Action> 
+<Reasoning>I am now centered on the satellite dish. It is clearly visible and I am within 10 meters of it, confirming it as the anomaly.
+<Action>(0, 0, -3)</Action> 
+<Action>FOUND</Action>

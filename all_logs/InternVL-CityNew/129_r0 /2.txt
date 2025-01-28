@@ -1,0 +1,2 @@
+<Reasoning>The coordinates (0, 0) are directly below, but I need to center the drone over that point. Moving slightly south and west will help me focus on the rooftops around the intersection of x=0 and y=0.</Reasoning>
+<Action>(0, 0, -10)</Action> 

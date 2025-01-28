@@ -1,0 +1,10 @@
+<Reasoning>I am now directly above the object, which is located at coordinates (0, 0). Moving slightly below will help confirm if it is indeed the anomaly.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+<Reasoning>I am now directly above the object, which is located at coordinates (0, 0). Moving slightly below will help confirm if it is indeed the anomaly.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+<Reasoning>I am now directly above the object, which is located at coordinates (0, 0). Moving slightly below will help confirm if it is indeed the anomaly.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+<Reasoning>The object is directly below me at coordinates (0, 0). I am now within 10 meters of the object, centered on it.</Reasoning>
+<Action>(0, 0, -0)</Action>
+<Reasoning>I have reached the correct position and altitude to confirm the object. It is indeed an anomaly in the environment.</Reasoning>
+<Action>FOUND</Action>

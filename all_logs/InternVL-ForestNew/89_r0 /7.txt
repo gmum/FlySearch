@@ -1,0 +1,7 @@
+<Reasoning>The object is near the center, slightly offset to the lower-right of the center. I need to move to this area to confirm if it's the target.</Reasoning>
+<Action>(16, 33, -10)</Action> 
+<Reasoning>I am now centered on the object and descending to confirm its location.</Reasoning>
+<Action>(16, 33, -10)</Action> 
+<Action>(16, 33, 0)</Action> 
+<Action>(16, 33, 0)</Action> 
+<Action>FOUND</Action>

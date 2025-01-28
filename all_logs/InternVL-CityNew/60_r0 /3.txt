@@ -1,0 +1,21 @@
+<Reasoning>I am now near the coordinates (22, 22), which is marked on the grid. I need to move further down to a lower altitude to get closer to the ground and investigate more closely.</Reasoning>
+<Action>(22, 22, -10)</Action> 
+Image-5: ​
+
+Your current altitude is 45 meters above ground level.
+<Reasoning>The coordinates (22, 22) are marked on the grid. Moving towards these coordinates will help me investigate this area more closely for the black truck.</Reasoning>
+<Action>(22, 22, -10)</Action> 
+Image-6: ​
+
+Your current altitude is 40 meters above ground level.
+<Reasoning>I am now near the coordinates (19, 19), which is marked. I need to move further down to a lower altitude to get closer to the ground and investigate more closely.</Reasoning>
+<Action>(19, 19, -10)</Action> 
+Image-7: ​
+
+Your current altitude is 34 meters above ground level.
+<Reasoning>The coordinates (19, 0) are marked on the grid. Moving towards these coordinates will help me investigate this area more closely for the black truck.</Reasoning>
+<Action>(19, 0, -10)</Action> 
+Image-8: ​
+
+Your current altitude is 29 meters above ground level.
+<Reasoning>The coordinates (0

@@ -1,0 +1,3 @@
+<Reasoning>I am now positioned closely to the object at (0, 0), but I need to ensure I am below 10 meters altitude. Since I am currently at 20 meters, I will move slightly down to ensure I am within the target altitude range.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action>

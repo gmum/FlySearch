@@ -1,0 +1,4 @@
+<Reasoning>The building is located at (0, 0). I will move slightly south towards (0, -1) to get closer and lower my altitude to 0 meters to continue the search.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Reasoning>I have reached the building and am now within 1 meter of it. The object is centered in my field of view.</Reasoning>
+<Action>FOUND</Action>

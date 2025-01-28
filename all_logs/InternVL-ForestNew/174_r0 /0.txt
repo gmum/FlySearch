@@ -1,0 +1,3 @@
+<Action>(0, 0, -30)</Action>
+
+<Reasoning>The coordinates (0, 0) are the ones directly below the starting point, suggesting the object might be located there. Lowering altitude will help narrow down the search area and provide better visibility. This approach prioritizes checking the initial point of interest without exceeding the maximum height limit. If this is not the correct location, subsequent moves can still be made within the viewable grid. </Reasoning>

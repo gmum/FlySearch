@@ -1,0 +1,7 @@
+<Reasoning>Based on the grid, the object is likely near the coordinates (0, 0) since it is marked on the grid. Flying closer to this area will help me get a better view and verify if the object is the road construction site. This approach ensures I am focused on a potential location and within the search area.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am now flying closer to the coordinates (0, 0) where the object is marked. This will help me get a better view and confirm if this is the area of road construction. Being directly above the potential construction site will provide a clearer perspective on any ongoing work.</Reasoning>
+<Action>(0, 0, -15)</Action> 
+<Reasoning>The object is now within my field of vision and appears to be closer. I will verify if it is the road construction site by ensuring I am at most 10 meters above it.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

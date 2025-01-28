@@ -1,0 +1,18 @@
+<Reasoning>I am currently hovering directly above the tank, which is at coordinates (11, 0). To ensure I am within 10 meters of the object and confirm it is the building, I need to lower my altitude further. This will help ensure I am close enough to accurately identify the object.</Reasoning>
+<Action>(11, 0, -10)</Action> 
+<Action>(11, 0, -25)</Action> 
+<Action>(11, 0, -10)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 0)</Action> 
+<Action>(11, 0, 

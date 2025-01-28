@@ -1,0 +1,11 @@
+<Reasoning>I took an emergency stop and need to determine my next move carefully to avoid obstacles.</Reasoning>
+<Action>(1, 0, 20)</Action> 
+<Reasoning>I'm now at a higher altitude, observing the area around (0, 0) and (1, 0). There's no immediate object of interest, so I'll move to the area near (0, -1).</Reasoning>
+<Action>(0, -1, -5)</Action> 
+<Reasoning>I am hovering near (0, -1) and observing the area closely. There might be an object in the construction zone that requires further inspection.</Reasoning>
+<Action>(0, -1, 5)</Action> 
+<Reasoning>The road around (0, -1) looks typical, but I will recheck the construction area directly above (0, 0) to ensure no anomaly is missed.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I am centered on the construction zone near (0, 0), and there appears to be an anomaly—construction materials or debris that stand out.</Reasoning>
+<Action>(0, 0, 5)</Action>
+<Reasoning>I have found an object that does not fit the typical environment, suggesting it could be the anomaly. I am at 10 meters above the ground

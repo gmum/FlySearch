@@ -1,0 +1,2 @@
+<Reasoning>I am starting my search from the center of the grid. The coordinates (11, 0) are directly below the tank, so I will start there to check if it's the building. Since I need to get closer to the object, I'll move directly towards it without changing altitude yet.</Reasoning>
+<Action>(11, 0, 0)</Action>

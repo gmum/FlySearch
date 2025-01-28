@@ -1,0 +1,3 @@
+<Reasoning>The blue object is at (0, 0). I need to move to this point to center the drone over it and lower the altitude to confirm if it's the campsite.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Reasoning>FOUND</Reasoning>

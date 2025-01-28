@@ -1,0 +1,3 @@
+<Reasoning>I am hovering at a safe altitude above the object on the ground. The task is to find a campsite, and since I am very close to the ground and the object is visible, it is likely the campsite. Therefore, I will declare that the search is complete.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>(FOUND)</Action>

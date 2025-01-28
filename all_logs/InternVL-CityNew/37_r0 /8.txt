@@ -1,0 +1,4 @@
+<Reasoning>I need to quickly lift up to avoid a collision with the vehicle below.</Reasoning>
+<Action>(0, 0, 60)</Action> 
+<Reasoning>I am now positioned above the vehicle, confirming no construction below. I will continue searching for potential construction sites.</Reasoning>
+<Action>(0, 0, 0)</Action>

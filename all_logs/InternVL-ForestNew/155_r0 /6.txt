@@ -1,0 +1,2 @@
+<Reasoning>The fire is located at coordinates (0, 0). I need to get closer and verify that it is the correct object. By moving downwards and slightly towards the center of the grid, I can ensure I am within the required altitude range and centered on the fire.</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,3 @@
+<Reasoning>The object could potentially be located at (0, 0) since it's in the center of the grid and has coordinates (0, 0, 0). It might also be at (30, 0), given that it's in the middle row and appears significant. I need to move closer to these points to further investigate if they are the location of the object.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>(30, 0, -5)</Action>

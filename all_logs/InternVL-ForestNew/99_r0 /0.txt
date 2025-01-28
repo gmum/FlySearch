@@ -1,0 +1,2 @@
+<Reasoning>The object is located at the point labeled (0, 0). I need to move towards this point to get closer to the object and potentially find it. I will fly towards (0, 0) at a low altitude to ensure I'm below 10 meters when I reach it.</Reasoning>
+<Action>(0, 0, -20)</Action>

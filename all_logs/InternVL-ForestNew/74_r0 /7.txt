@@ -1,0 +1,2 @@
+<Reasoning>I centered the drone over coordinates around (0, 13) and need to get closer while maintaining a low altitude to ensure I'm below 10 meters above the object, which appears to be the campsite.</Reasoning>
+<Action>(0, 13, -10)</Action>

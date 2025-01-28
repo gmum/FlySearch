@@ -1,0 +1,8 @@
+<Reasoning>I am focusing on the road near (0, 0) and moving slightly east to observe the intersection area there, maintaining a safe altitude.</Reasoning>
+<Action>(7, 0, 10)</Action> 
+<Reasoning>I am now observing the area around (7, 0) and the road intersection. There are no immediate indications of an anomaly, so I will continue moving to (0, 0).</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now centered on the construction zone near (0, 0), and there is an anomaly—possibly construction materials or debris. I need to investigate this closer.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning>I have found an object that does not fit the environment, suggesting it could be the anomaly. I am now at 10 meters above the ground level.</Reasoning>
+<Action>FOUND</Action>

@@ -1,0 +1,4 @@
+<Reasoning>The object is located at coordinates (13, 13), which is indicated by the coordinates (13, 13) with a dot and a "X" marker. I need to adjust my position to be directly above this coordinate, moving south and west to stay centered on it. The current altitude of 40 meters is above 10 meters, so I will also need to descend to ensure I am within the required altitude limit.
+
+I will move to the coordinates (13, 13) while descending to 10 meters or below.</Reasoning>
+<Action>(13, 13, -10)</Action>

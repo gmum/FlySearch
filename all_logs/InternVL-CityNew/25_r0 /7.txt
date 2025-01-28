@@ -1,0 +1,12 @@
+<Reasoning>I am now above point (0, 28, 0), which is near the water area. To ensure I am below 10 meters, I will lower to 8 meters above this point. This will provide a closer view and allow me to check for any signs of a fire.</Reasoning>
+<Action>(0, 28, -5)</Action> 
+<Reasoning>I am now at 8 meters above point (0, 28, 0). This is directly above the potential fire location. I have lowered to this altitude to ensure I am below 10 meters and can begin assessing for any fire activity.</Reasoning>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>(0, 28, -2)</Action>
+<Action>FOUND</Action>

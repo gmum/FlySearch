@@ -1,0 +1,2 @@
+<Reasoning>I am starting my search in the center of the image, which initially places me at coordinates (0, 0) on the grid. My current altitude is 84 meters. To ensure comprehensive coverage of the search area, I will begin by moving to the southwest part of the grid, where there is a dense concentration of buildings. This area is likely to contain both the fire and the desired object. By moving to (0, -28), I will be closer to potential targets and better positioned to adjust my altitude and search more effectively.</Reasoning>
+<Action>(0, -28, 0)</Action>

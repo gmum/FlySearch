@@ -1,0 +1,4 @@
+<Reasoning>The water turbine is on the construction site, which is indicated by the grid point (16, 32). I need to get closer and lower to confirm if it's the construction site, but I must ensure it's in my field of view and I am 10 meters above it or closer.</Reasoning>
+<Action>(16, 32, -10)</Action> 
+<Action>(16, 32, 0)</Action> 
+<Action>(16, 32, 0)</Action>

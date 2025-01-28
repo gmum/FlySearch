@@ -1,0 +1,2 @@
+<Reasoning>I am starting my search from the top left corner of the image, which corresponds to the (0, 0) coordinate. The first point to investigate is (27, 27). This point is in the upper right corner and seems like a logical place to begin my search.</Reasoning>
+<Action>(27, 27, -10)</Action>

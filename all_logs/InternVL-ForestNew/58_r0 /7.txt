@@ -1,0 +1,12 @@
+<Reasoning>The object may be located at (0, 1) or nearby, as suggested by the previous images. I should move towards this coordinate and slightly descend to check the area.</Reasoning>
+<Action>(0, 1, -5)</Action> 
+<Reasoning>I am now approaching the possible location of the object. I should move to the (1, 1) coordinate and slightly descend to narrow down the search further.</Reasoning>
+<Action>(1, 1, -5)</Action> 
+<Reasoning>I am closer to the object and need to adjust my position slightly to the north to ensure I am centered above it.</Reasoning>
+<Action>(1, 1, -5)</Action> 
+<Reasoning>I am now more centered above the object. I will move towards the (1, 0) coordinate and slightly descend to confirm the location.</Reasoning>
+<Action>(1, 0, -5)</Action> 
+<Reasoning>I am very close to the object. I will move to the (0, 0) coordinate and slightly descend to directly above it.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I am directly above the object and within the search area. I will confirm the object and proceed with "FOUND".</Reasoning>
+<Action>FOUND</Action>

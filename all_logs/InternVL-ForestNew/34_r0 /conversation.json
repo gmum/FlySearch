@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a building.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest is located at the center of the grid. It is currently at coordinates (0, 0) and altitude (0, 0) in the image, suggesting it might be the small building or structure visible in the center. To begin the search, I will move directly towards this point to ensure the object is in my field of view and initiate the search process. This initial move will not change altitude, keeping it safe and controlled.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest is located at coordinates (12, 12) in the image, which is the same as the one identified in the previous image. The coordinates suggest that the object might be the small structure near the center of the grid. Since I am already on the right track, I will move slightly upwards to fine-tune my position and get a better view of the object.</Reasoning>\n<Action>(12, 12, 5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>By inspecting the current coordinates, it appears the object of interest is once again at coordinates (0, 0), likely the structure in the center of the grid. It is important to move closer and descend to ensure an accurate location lock. This maneuver will help me center on the object and get a better view for confirmation.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have identified the object of interest at coordinates (0, 0) and altitude (0, 0) in the images. The object appears to be the small structure in the center of the grid. To ensure I am directly above it, I will move to coordinates (0, 0) without changing altitude. This will allow me to get a clear view and confirm the object's position without overshooting or undershooting.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 32 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest is consistently located at coordinates (0, 0) across the images, indicating it is the small building in the center of the grid. Given its proximity and the repeated coordinates, I will maintain a low altitude to hover directly above it and confirm its position. This will ensure precise targeting and readiness to descend further if needed.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Upon inspecting the grid, it is confirmed that the object of interest is at coordinates (0, 0), as seen in the previous images. It is important to hover directly above it to ensure precise targeting. I will move slightly upwards to maintain altitude and position above the object, ready to adjust if necessary.</Reasoning>\n<Action>(0, 0, -3)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 24 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest is consistently located at coordinates (0, 0) across the images, suggesting it is the small building in the center of the grid. Given its repeated location and the need to be directly above it, I will move slightly upwards to maintain altitude and position above the object, ensuring precise targeting.</Reasoning>\n<Action>(0, 0, 5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest is consistently located at coordinates (0, 0) across the images, suggesting it is the small building in the center of the grid. Given its repeated location and the need to be directly above it, I will move slightly upwards to maintain altitude and position above the object, ensuring precise targeting.</Reasoning>\n<Action>(0, 0, 5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 34 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>Based on the grid, the object of interest is consistently located at coordinates (0, 0) across the images, suggesting it is the small building in the center of the grid. I will move slightly upwards to ensure I am directly above it and ready to adjust if necessary. This will help me maintain a clear view and precise targeting.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object of interest is consistently located at coordinates (0, 0) across the images, suggesting it is the small building in the center of the grid. I will move slightly upwards to ensure I am directly above it and ready to adjust if necessary, maintaining a clear view and precise targeting.</Reasoning>\n<Action>(0, 0, -3)</Action>"
+    ]
+]

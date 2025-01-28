@@ -1,0 +1,2 @@
+<Reasoning>The center of the building is near (18, 0). I need to move in that direction to get closer to the object. At the same time, I need to lower my altitude to better identify it. Since the building might be small, lowering the altitude will increase the likelihood of spotting it. I will move 18 meters in that direction and descend to 40 meters.</Reasoning>
+<Action>(18, 0, -13)</Action>

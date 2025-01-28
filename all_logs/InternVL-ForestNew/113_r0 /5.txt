@@ -1,0 +1,3 @@
+<Reasoning>The fire is located at the bottom center of the image, near coordinates (0, 0). Since I'm already within 10 meters and the fire is visible, I will confirm it's the fire and ensure I'm within the required altitude range for "FOUND".</Reasoning>
+<Action>(0, 0, -1)</Action>
+<Action>FOUND</Action>

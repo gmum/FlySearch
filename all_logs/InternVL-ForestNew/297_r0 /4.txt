@@ -1,0 +1,4 @@
+<Reasoning>I am centered over the object at coordinates (0, 0). Moving directly downward to (0, 0, -10) will bring me closer to the object, allowing for a more detailed inspection. Maintaining altitude close to the ground ensures I stay within the 10-meter limit for "FOUND".
+
+I will move directly down to be closer to the object.</Reasoning>
+<Action>(0, 0, -10)</Action>

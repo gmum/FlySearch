@@ -1,0 +1,10 @@
+<Reasoning>The object is not visible in this grid, so continuing the search is necessary. Moving slightly east towards (0, 0) might bring me closer to the potential location of the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am still not seeing the object, so continuing the search is necessary. Moving slightly east towards (0, 0) might bring me closer to the potential location of the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am still not seeing the object, so continuing the search is necessary. Moving slightly east towards (0, 0) might bring me closer to the potential location of the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>The object is now visible in the grid, and it is located at (47, 0). I will descend to 10 meters above the object to confirm its identity.</Reasoning>
+<Action>(47, 0, -10)</Action> 
+<Reasoning>The object is indeed a large trash pile, and I am now 10 meters above it. Confirming the find.</Reasoning>
+<Action>FOUND</Action>

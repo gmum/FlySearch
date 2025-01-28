@@ -1,0 +1,7 @@
+<Reasoning>The object is likely to be around the point (0, 0) or (0, -2), as it appears to have visible trash. My current altitude is 5 meters, and I should move closer to confirm if it is the trash pile. Since the object is directly below me, I'll move slightly to the southeast to ensure I have a clear view of it.</Reasoning>
+<Action>(0, -2, -5)</Action> 
+<Reasoning>I am above the object, so I need to descend to confirm it is the trash pile. I will also move slightly north to ensure I am directly above it.</Reasoning>
+<Action>(0, -2, -5)</Action> 
+<Reasoning>I am still above the object, so I need to descend further to confirm it is the trash pile. Descending to a low altitude will help me verify if it's the correct location.</Reasoning>
+<Action>(0, -2, -5)</Action> 
+<Action>FOUND</Action>

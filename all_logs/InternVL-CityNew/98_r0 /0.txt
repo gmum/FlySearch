@@ -1,0 +1,2 @@
+<Reasoning>The object appears to be at coordinates (20, 20) on the grid. I need to move towards this location and descend to check if it matches the criteria. I will start by moving north to get closer to this point.</Reasoning>
+<Action>(20, 20, -10)</Action>

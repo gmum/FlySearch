@@ -1,0 +1,2 @@
+<Reasoning>I am currently at coordinates (0, 0) and I need to confirm the building’s location. Moving closer to the grid point (0, 0) will help me verify if it's the building. I will also decrease altitude to ensure I'm below 10 meters if it is.</Reasoning>
+<Action>(0, 0, -10)</Action>

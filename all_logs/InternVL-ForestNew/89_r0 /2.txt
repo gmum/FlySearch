@@ -1,0 +1,9 @@
+<Reasoning>I am now centered on (0, 0) with a clear view of the object. I should descend to confirm it's the correct location.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am close to the object. I should continue descending to ensure I am below 10 meters.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am below 10 meters and centered on the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am directly over the object and confirmed it's the right location.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

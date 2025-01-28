@@ -1,0 +1,2 @@
+<Reasoning>The center of the grid in the current image is at (0, 0). This position does not correspond to any particular point in the images, so it is not useful for focusing the search. I need to choose a starting point that is more likely to be near the object. The point (21, 0) is in the lower left corner and has a significant number of coordinates, indicating it might be a starting point to explore. I will start by flying slightly south and west to approach this area.</Reasoning>
+<Action>(21, 0, -5)</Action>

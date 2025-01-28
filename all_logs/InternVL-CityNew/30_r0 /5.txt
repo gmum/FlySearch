@@ -1,0 +1,2 @@
+<Reasoning>I should move to the nearest point labeled "FOUND" to ensure I am within 10 meters of the object. This point is at (0, 0) and is directly below me, indicating it's a garbage pile. I will adjust altitude to be slightly above it.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>The building is centered on the (0, 0) grid point. I need to move slightly south to center the building in my view and lower to confirm it is the target while maintaining the required altitude range.</Reasoning>
+<Action>(0, 0, -10)</Action>

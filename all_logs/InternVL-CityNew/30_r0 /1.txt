@@ -1,0 +1,2 @@
+<Reasoning>I need to move towards the point where x = 0 and y = 0 on the grid to continue the search in the central area. This will help me cover more of the grid systematically. I will decrease the altitude to 60 meters to ensure I have some margin for maneuvering.</Reasoning>
+<Action>(0, 0, -8)</Action>

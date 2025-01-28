@@ -1,0 +1,5 @@
+<Reasoning>The object is ahead in the center of the image. I will hover there to ensure I am 10 meters below it.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+
+<Reasoning>I have found the object below and centered in my field of view. I am hovering 10 meters below it.</Reasoning>
+<Action>FOUND</Action>

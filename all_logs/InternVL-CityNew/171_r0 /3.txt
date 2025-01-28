@@ -1,0 +1,4 @@
+<Reasoning>The object is near the coordinates (0, 0) based on the grid. Flying closer to this area will help me get a better view and check for any signs of road construction. This move will help me verify if the object is the road construction site and ensure I am within the search area.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I might have missed the object previously. By flying back to the coordinates (0, 0), I can recheck this area and ensure I did not overlook any signs of construction, such as equipment or workers.</Reasoning>
+<Action>(0, 0, 0)</Action>

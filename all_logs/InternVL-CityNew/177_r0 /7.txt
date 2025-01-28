@@ -1,0 +1,10 @@
+The white truck is located near (0, 0).
+
+<Reasoning>The grid points indicate the truck is close to the center of the grid, and it is now clearly visible in the image. I need to stay at or below 10 meters to confirm its presence.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+
+<Reasoning>I am now very close to the truck and need to ensure I am below 10 meters to clearly identify it.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+
+<Reasoning>I have confirmed the white truck is visible and directly above it, so I will announce having found the object.</Reasoning>
+FOUND

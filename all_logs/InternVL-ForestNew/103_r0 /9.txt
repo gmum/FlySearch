@@ -1,0 +1,6 @@
+<Reasoning>The blue dot is located at (-3, 3) in the grid, suggesting it could be the campsite. I need to move towards it, adjusting my altitude to ensure I'm close to the ground and within the field of view.</Reasoning>
+<Action>(-3, 3, 0)</Action> 
+<Action>(-3, 3, -3)</Action> 
+<Action>(-3, 3, -1)</Action> 
+<Action>(-3, 3, 0)</Action>
+<Action>FOUND</Action>

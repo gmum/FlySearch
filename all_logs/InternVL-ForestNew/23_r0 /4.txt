@@ -1,0 +1,4 @@
+<Reasoning>I am now very close to the coordinates (0, 0), which may indicate the presence of the trash pile. Lowering my altitude will help me confirm if this is the correct location.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>FOUND</Reasoning>
+<Action>(0, 0, -5)</Action>

@@ -1,0 +1,20 @@
+### Reasoning
+I need to descend to confirm if the building is the target without overshooting.
+
+### Action
+<Action>(0, 0, -7)</Action> 
+### Reasoning
+I am descending to ensure I am centered on the building and within the specified distance.
+
+### Action
+<Action>(0, 0, -9)</Action> 
+### Reasoning
+I am now directly above the building. I will verify if I'm within the required distance before proceeding with "FOUND."
+
+### Action
+<Action>(0, 0, -4)</Action> 
+### Reasoning
+Confirming I am within the required distance and centered on the building.
+
+### Action
+<Action>FOUND</Action>

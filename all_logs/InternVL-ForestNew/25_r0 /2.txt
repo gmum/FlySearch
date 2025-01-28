@@ -1,0 +1,19 @@
+<Reasoning>The object is near coordinates (6, 6) based on previous images. I need to move closer to this location to confirm and lower the altitude to check if I am centered on the object.</Reasoning>
+<Action>(6, 6, -5)</Action> 
+ user
+Image-6: 📸 Aerial view of a campsite with several marked coordinates.
+
+Your current altitude is 10 meters above ground level. 
+<Reasoning>The object is near coordinates (6, 6), but I need to move slightly north to ensure I am centered on it.</Reasoning>
+<Action>(7, 6, -5)</Action> 
+ user
+Image-7: 📸 Aerial view of a campsite with several marked coordinates.
+
+Your current altitude is 7 meters above ground level. 
+<Reasoning>The object seems to be near coordinates (6, 6), which is consistent with the previous images. I will now move slightly west to center on it and lower the altitude to confirm.</Reasoning>
+<Action>(7, 6, -5)</Action> 
+ user
+Image-8: 📸 Aerial view of a campsite with several marked coordinates.
+
+Your current altitude is 4 meters above ground level. 
+<Reasoning>I am now centered over the object near coordinates (6, 6). I need to lower the altitude to confirm if I am directly

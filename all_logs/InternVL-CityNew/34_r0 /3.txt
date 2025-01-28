@@ -1,0 +1,5 @@
+<Reasoning>The intersection is still clear and within my field of view. With my current altitude being just 30 meters, I am now within a range where I can clearly see and inspect the area in detail. Given the clear view and the proximity to the intersection, it is probable that the construction site is directly here. I will confirm this by getting even closer to the intersection.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now very close to the intersection, maintaining a low altitude to ensure I can closely inspect the area for any signs of construction. The details of the street and sidewalk are now very clear, and I am within 10 meters of the ground, ensuring I am at or below the specified altitude for finding the construction site.</Reasoning>
+<Action>(0, 0, -5)</Action>
+<Action>FOUND</Action>

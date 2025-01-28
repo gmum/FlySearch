@@ -1,0 +1,10 @@
+<Reasoning>The blue dot is located at (0, 47) in the grid, suggesting it could be the campsite. I will move towards it, lowering to 60 meters to confirm its proximity and ensure it's within the field of view.</Reasoning>
+<Action>(0, 47, -10)</Action> 
+<Action>(0, 47, -3)</Action> 
+<Action>(0, 47, -1)</Action> 
+<Action>(0, 47, -1)</Action> 
+<Action>(0, 47, -1)</Action> 
+<Action>(0, 47, -1)</Action> 
+<Action>(0, 47, -1)</Action> 
+<Action>(0, 47, 0)</Action>
+<Action>FOUND</Action>

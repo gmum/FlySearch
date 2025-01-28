@@ -1,0 +1,3 @@
+<Reasoning>The building is likely located near the center of the grid, where coordinates (0, 0) are specified. Starting from my current position, moving forward toward (0, 0) seems logical. I will decrease altitude slightly to ensure precision and control during the search.
+
+<Action>(0, 0, -20)</Action>

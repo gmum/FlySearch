@@ -1,0 +1,2 @@
+<Reasoning>The object of interest is consistently located at coordinates (0, 0) across the images, indicating it is the small building in the center of the grid. Given its proximity and the repeated coordinates, I will maintain a low altitude to hover directly above it and confirm its position. This will ensure precise targeting and readiness to descend further if needed.</Reasoning>
+<Action>(0, 0, -5)</Action>

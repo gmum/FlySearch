@@ -1,0 +1,2 @@
+<Reasoning>I need to start the search by evaluating the center points of the grid. The center points (0, 0) and (0, 26) seem like logical starting points since they are in the middle of the grid and might have a higher likelihood of containing the object. I'll begin by moving to the point (0, 26) to check the area around it.</Reasoning>
+<Action>(0, 26, -10)</Action>

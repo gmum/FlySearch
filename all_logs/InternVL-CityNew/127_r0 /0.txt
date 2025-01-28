@@ -1,0 +1,2 @@
+<Reasoning>The object might be near (0, 0), as it is the central point of the grid. I need to check this area more closely to determine if it's the fire. I'll start by moving slightly south and descending to focus on this region.</Reasoning>
+<Action>(0, 0, -30)</Action>

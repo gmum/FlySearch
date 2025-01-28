@@ -1,0 +1,5 @@
+<Reasoning>I am now centered over the smoke, which indicates the fire location. To confirm and get closer, I will descend towards this spot.</Reasoning>
+<Action>(0, 7, -10)</Action> 
+<Reasoning>I am above the fire, and it is confirmed to be at coordinates (0, 7). I will lower the altitude to ensure I am below 10 meters for the FOUND response.</Reasoning>
+<Action>(0, 7, -3)</Action>
+<Action>FOUND</Action>

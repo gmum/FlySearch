@@ -1,0 +1,4 @@
+<Reasoning>The object is centered at (0, 0) on the grid, which corresponds to the coordinates marked (0, 0) on the map. It is under a tree, making it distinguishing from the surrounding area. I will move downward to confirm its location and ensure I am below 10 meters.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I am now centered on the object and confirmed that it is located directly beneath a tree, with my altitude below 10 meters, fulfilling the objective.</Reasoning>

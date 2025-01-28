@@ -1,0 +1,3 @@
+<Reasoning>The object has moved to coordinates (0, 0) from my previous position. I will move towards (0, 0) while lowering to a height of 10 meters to ensure I am below the object and confirm it is the target.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action>

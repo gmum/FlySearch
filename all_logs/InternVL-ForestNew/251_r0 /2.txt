@@ -1,0 +1,4 @@
+I am now near the point (0, 13) at an altitude of 20 meters. I need to continue searching for anomalies.
+
+<Reasoning>The point (0, 13) is currently in my view, and I need to move closer to it to check if it contains an anomaly.</Reasoning>
+<Action>(0, 13, -10)</Action>

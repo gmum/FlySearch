@@ -1,0 +1,2 @@
+<Reasoning>The object in question must be within a 400x400m grid, starting from the center of the image. Looking at the middle point, it contains mostly '0' values with a few at the boundaries. To start the search, I'll move to this area to investigate further.</Reasoning>
+<Action>(0, 0, -3)</Action>

@@ -1,0 +1,3 @@
+<Reasoning>The object is now closer to the coordinate (18, 0) on the grid, indicating it is directly below and in front of me. Given my current altitude of 54 meters, I will move closer to this location to better assess the situation and prepare to lower my altitude if necessary to ensure I am within 10 meters of the object.</Reasoning>
+<Action>(18, 0, -10)</Action> 
+<Action>FOUND</Action>

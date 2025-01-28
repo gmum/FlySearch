@@ -1,0 +1,2 @@
+<Reasoning>The building is located at the coordinates (0, 0) in the center of the image. To ensure I am below 10 meters from the building, I will descend to a height of 99 meters. This will bring me close to the required altitude while keeping the building centered in my field of view.</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,3 @@
+<Reasoning>I have found the object. It is located at coordinates (0, 0), at the same level as my current position. To ensure I am below 10 meters above it, I will move down to (0, 0, -10).</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Action>FOUND</Action>

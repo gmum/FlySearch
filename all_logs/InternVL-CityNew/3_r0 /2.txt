@@ -1,0 +1,4 @@
+<Reasoning>I'm now very close to the center of the image, near the coordinates (0, 0). I will lower the altitude further to get close to the ground and check for the object.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I have found the fire. The object is located at the center of the image, and I am currently at an altitude of less than 10 meters above it, fulfilling the objective.</Reasoning>

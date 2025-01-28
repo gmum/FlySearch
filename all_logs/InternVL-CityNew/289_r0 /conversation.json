@@ -1,0 +1,158 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 60 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object that doesn't fit in with the rest of the environment is likely an anomaly in the grid pattern. The intersection of the roads, usually marked by a different texture or pattern, is a potential candidate. I need to move closer to this intersection to investigate further.</Reasoning>\n<Action>(0, 0, -20)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am now centered over the crosswalk, which is where the anomaly is likely located. The crosswalk has a different texture and pattern compared to the surrounding patterns, making it a strong candidate for the anomaly.</Reasoning>\n<Action>(0, 0, -10)</Action> \n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk area still appears to be the anomaly due to its distinct texture and pattern, which is not consistent with the surroundings. I need to move slightly south to better position myself for a closer inspection.</Reasoning>\n<Action>(0, -10, -10)</Action> \n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I see the crosswalk still appears to be the anomaly area, but I need to get closer and lower to confirm it's the object of interest. Moving slightly north and getting lower will position me directly above the crosswalk for a better inspection.</Reasoning>\n<Action>(-10, 0, -10)</Action> \n \n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk appears to be the anomaly due to its distinct pattern, which stands out from the surrounding areas. I need to get even closer and lower to confirm it's the object in question. Moving slightly north and getting lower will help me get a clearer view.</Reasoning>\n<Action>(0, 0, -10)</Action> \n<Action>(0, 0, -5)</Action>\n<Action>(0, 0, -5)</Action>\n<Action>(0, 0, -3)</Action>\n<Action>(0, 0, -2)</Action>\n<Action>(0, 0, -1)</Action>\nFOUND"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk is no longer visible in the image, indicating it is no longer the anomaly. The focus has shifted, and the ground texture appears uniform. I need to adjust my search strategy to find a new area of interest.</Reasoning>\n<Action>(-7, -7, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I need to adjust my search to a new area, potentially the edges of the previous image where the crosswalk was visible. Moving northeast will allow me to cover different parts of the area without leaving the last visible grid.</Reasoning>\n<Action>(7, 7, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will adjust the movement to stay within the last visible grid by checking the center of the crosswalk area in the previous image. This will help in continuing the search without straying out of bounds.</Reasoning>\n<Action>(0, 0, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk area still seems to be the anomaly, and I need to move closer and lower to confirm. Adjusting my position to directly above the crosswalk will allow for a better inspection.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk is no longer visible, and the texture appears uniform. I need to adjust my search to a new area, potentially the edges of the previous image, to continue the search effectively.</Reasoning>\n<Action>(7, 0, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>To continue the search within the last visible grid, I will move slightly west to cover a potentially new area of interest while staying within bounds.</Reasoning>\n<Action>(0, 0, 10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk area is still the anomaly, and I need to move closer and lower to confirm it. Adjusting my position directly above the central crosswalk area will allow for a better inspection.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 0 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crosswalk is still the anomaly, and I need to move closer and lower to confirm. Moving slightly north will position me directly above the crosswalk for a clearer inspection.</Reasoning>\n<Action>(0, 7, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the last glimpse."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>To stay within bounds and continue searching effectively, I will adjust my movement to the nearest section of the crosswalk visible in the last image.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ]
+]

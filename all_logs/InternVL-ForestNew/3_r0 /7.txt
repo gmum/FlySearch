@@ -1,0 +1,9 @@
+<Reasoning>The object is still visible from this altitude. I need to ensure I am not hovering or flying into it.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>The object is still visible from this altitude. I will remain at this altitude to ensure I am not hovering or flying into it.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>The object is still visible from this altitude. I will continue to hover at this altitude to ensure I do not fly into it.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>The object is still visible</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>(FOUND)</Action>

@@ -1,0 +1,4 @@
+<Reasoning>The object is centered at coordinates (0, 0). Moving east to (0, 4) should position me directly over the object, allowing for a close inspection. This adjustment helps ensure that I am centered on the object and within the 10-meter limit for "FOUND".
+
+I will move east to align directly above the object.</Reasoning>
+<Action>(0, 4, 0)</Action>

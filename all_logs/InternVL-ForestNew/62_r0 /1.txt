@@ -1,0 +1,2 @@
+<Reasoning>I need to move closer to the area around (0, 27) and (27, 27) which have coordinates (0, 27) and (27, 27). These points are slightly above the center of the grid, suggesting they might be near the object. Moving slightly upwards and to the right should help narrow down the search area.</Reasoning>
+<Action>(0, 27, -10)</Action>

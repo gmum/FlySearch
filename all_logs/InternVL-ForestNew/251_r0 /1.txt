@@ -1,0 +1,4 @@
+Great, I'm now at the coordinates (0, 0) with a lower altitude. I need to continue my search for any anomalies.
+
+<Reasoning>The yellow-marked point at (0, 20) is currently in my view. I need to move closer to this point and lower the altitude to see if it contains an anomaly.</Reasoning>
+<Action>(0, 20, -10)</Action>

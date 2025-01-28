@@ -1,0 +1,2 @@
+<Reasoning>The trash pile is near (-29, 29), but moving too close to (-29, 0) is not possible due to the search area's bounds. I'll adjust to (0, 29) to stay within bounds and confirm the location.</Reasoning>
+<Action>(0, 29, 0)</Action>

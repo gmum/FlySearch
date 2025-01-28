@@ -1,0 +1,3 @@
+<Reasoning>I am now centered on the densest cluster of people, which is at (0, 0). Lowering the altitude will help me confirm if I am within the required 10 meters to check for the crowd. This ensures I am directly above the object when I reply with "FOUND".</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

@@ -1,0 +1,10 @@
+<Reasoning>The coordinates (0, 0) are still above the trash pile, possibly closer to the ground as I descend. Descending further will help confirm the position.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+Your current altitude is 3 meters above ground level. <Action>(0, 0, -1)</Action> 
+Your current altitude is 2 meters above ground level. <Action>(0, 0, -1)</Action> 
+Your current altitude is 1 meter above ground level. <Action>(0, 0, -1)</Action> 
+Your current altitude is 0 meters above ground level. <Action>(0, 0, -1)</Action> 
+
+I am now directly above the trash pile. 
+
+<Action>FOUND</Action>

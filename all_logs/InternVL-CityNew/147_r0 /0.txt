@@ -1,0 +1,4 @@
+<Reasoning>The grid overlays in the images indicate the points that will be in the drone's field of view if it moves in certain directions. The coordinates on the grid correspond to the specific location that will be centered in the drone's view. The group of people is located at the point (0, 0) in the grid overlay, which suggests that this is the point where the crowd is likely to be. The current altitude is 33 meters, which is above the target altitude of 10 meters or less.
+
+To find the crowd, I need to descend towards the ground level and center on the point (0, 0). I will start by moving directly down to the point (0, 0) to get closer to the crowd.</Reasoning>
+<Action>(0, 0, -33)</Action>

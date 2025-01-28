@@ -1,0 +1,2 @@
+<Reasoning>The white sport car is located at coordinates (-15, 15) relative to the drone's starting position. To get closer and ensure it is in view, I will move towards this location while lowering the altitude.</Reasoning>
+<Action>(15, 15, -30)</Action>

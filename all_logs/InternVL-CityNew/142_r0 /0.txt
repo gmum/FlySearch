@@ -1,0 +1,7 @@
+<Reasoning>The yellow point (-12, 0) is the most central object on the grid, and it's also the lowest point visible relative to the current position. I should head towards this point to assess if it could be the trash pile.
+
+Given the information, I need to decrease altitude to ensure I stay below 10 meters above the object if it is indeed the target. This approach keeps me within safe altitude limits and focused on the potential location of the trash pile.
+
+I will move to the point (-12, 0, 0) to center on the yellow object and check if it is the trash pile. If not, I will continue searching.
+
+<Action>(-12, 0, -30)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>The object could be at (0, 25) since the values (0, 25, 0) are distinct and located at a grid point that looks different from the surrounding values. I will move closer to this area to inspect it further.</Reasoning>
+<Action>(0, 25, -5)</Action>

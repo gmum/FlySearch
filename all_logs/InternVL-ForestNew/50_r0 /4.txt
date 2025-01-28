@@ -1,0 +1,4 @@
+<Reasoning>I am centered on the coordinates (0,0,0), which suggests this is the location of the building. To confirm, I need to lower my altitude and ensure I am within 10 meters above it.</Reasoning>
+<Action>(0, 0, -20)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

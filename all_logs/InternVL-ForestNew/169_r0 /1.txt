@@ -1,0 +1,2 @@
+<Reasoning>The grid's center at <(0, 0)> is a logical choice to start the search, especially since the building might be located at this point. Moving slightly south and descending to a lower altitude will better focus on the grid center.</Reasoning>
+<Action>(0, 0, -30)</Action>

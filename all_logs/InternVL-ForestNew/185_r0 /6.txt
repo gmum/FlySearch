@@ -1,0 +1,3 @@
+<Reasoning>The object is at the coordinates (0, 0), which is directly below my current position. Since I'm already at the correct altitude, I can confirm the object's presence and proceed to land.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Action>FOUND</Action>

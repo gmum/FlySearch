@@ -1,0 +1,9 @@
+<Reasoning>I am now centered over point (0, -9, -5), which shows a concentration of trash pile points. Moving slightly west to point (-9, -9, -5) will help me continue my search efficiently.</Reasoning>
+<Action>(-9, -9, -5)</Action> 
+<Reasoning>I am centered over point (-9, -9, -5) and moving slightly south to point (-9, -19, -5). This position still shows a concentration of trash pile points, suggesting I am on the right path.</Reasoning>
+<Action>(-9, -19, -5)</Action> 
+<Reasoning>The area directly below this position shows a concentration of trash pile points, indicating I am still on the right track. Moving slightly west to point (-9, -19, -5) will allow me to continue my search efficiently.</Reasoning>
+<Action>(-9, -19, -5)</Action> 
+<Reasoning>I am currently centered over point (-9, -19, -5), and the trash pile is directly below this position, indicating I have found the object.</Reasoning>
+<Action>(-9, -19, -3)</Action>
+<Reasoning>I have found the trash pile. Now I need to be at most 10 meters above it, which means descending from an altitude of 23 meters, so I'll adjust to a height

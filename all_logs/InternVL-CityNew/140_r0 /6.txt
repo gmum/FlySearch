@@ -1,0 +1,4 @@
+<Reasoning>The object appears to be located near the coordinates (0, 0), based on the updated grid. I need to move closer to this area to verify if it's the fire. I will adjust slightly east to head towards the object and lower the altitude for a closer inspection.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>FOUND</Reasoning>
+<Action>(0, 0, -5)</Action>

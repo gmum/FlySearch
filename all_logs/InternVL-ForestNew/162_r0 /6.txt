@@ -1,0 +1,9 @@
+<Reasoning>I need to move southwest to the point (0, -11, 0) to continue my search for the trash pile. This move will allow me to cover a broader area and increase the probability of locating the object.</Reasoning>
+<Action>(0, -11, -5)</Action> 
+<Reasoning>I am now centered over point (0, -11, 0), which shows a concentration of trash pile points. This indicates that I am in the correct area, and moving slightly west will help cover this area more thoroughly.</Reasoning>
+<Action>(-11, -11, -5)</Action> 
+<Reasoning>I am centered over point (-11, -11, 0) and moving slightly south to point (-11, -22, 0). This move will allow me to continue my search efficiently.</Reasoning>
+<Action>(-11, -22, -5)</Action> 
+<Reasoning>I am centered over point (-11, -22, 0) and moving towards point (-11, -22, -5). This position still shows a concentration of trash pile points, indicating I am on the right track.</Reasoning>
+<Action>(-11, -22, -5)</Action> 
+<Reasoning>The area directly below the current position shows a concentration of trash pile points, suggesting I am still on the right path. Moving slightly south to point (-11,

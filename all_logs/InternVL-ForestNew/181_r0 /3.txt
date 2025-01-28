@@ -1,0 +1,11 @@
+<Reasoning>The object is above the point (0, 0). I need to move north and lower to ensure I am centered directly above it and below 10 meters for identification.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action>
+<Action>FOUND</Action>

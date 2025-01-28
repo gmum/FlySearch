@@ -1,0 +1,8 @@
+<Reasoning>I am currently focusing on the area around (0, 0) and observing the roads. The construction site is still the area of interest, but I need to ensure there is no anomaly along the streets. I will move slightly south to check the roads and sidewalks there, staying close to the ground at 10 meters.</Reasoning>
+<Action>(0, 0, -20)</Action> 
+<Reasoning>The area around (0, 0) still has construction activity, but I will check the street near (8, 9) next since it's not far and might have the anomaly. I will move slightly up to maintain a height of 10 meters.</Reasoning>
+<Action>(8, 9, 10)</Action> 
+<Reasoning>The area around (8, 9) seems clear, but I'll continue checking the construction zone at (0, 0) next to ensure no anomaly is missed. I will adjust my position to stay at 10 meters above the ground.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The construction zone around (0, 0) shows activity but no clear anomaly. The streets around (8, 9) also appear typical. I will move to the area around (8, 8) to continue the search, staying low at 10 meters.</Reasoning>
+<Action>(8,

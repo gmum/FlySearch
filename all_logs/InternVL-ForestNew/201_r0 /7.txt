@@ -1,0 +1,3 @@
+<Reasoning>The anomaly seems to be at the coordinates (0, 0) in the zoomed-in view. The coordinates around this point have higher value anomalies. This area should be investigated further.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>FOUND</Reasoning>

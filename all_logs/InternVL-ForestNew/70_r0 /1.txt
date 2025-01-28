@@ -1,0 +1,2 @@
+<Reasoning>The building is located at coordinates (18, 18). Since we are currently above the building and need to get below 10 meters, I will move towards this area to check if it is the object in question.</Reasoning>
+<Action>(18, 18, -10)</Action>

@@ -1,0 +1,4 @@
+<Reasoning>The blue object near (0, 0) is now very close, and it looks like a potential campsite. I will lower my altitude to confirm it.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I am now below 10 meters relative to the object, which is a blue object near (0, 0). The object is in my field of view, and I am centered on it.</Reasoning>

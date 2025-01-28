@@ -1,0 +1,11 @@
+<Reasoning>I took the emergency stop and might have missed something. I will move upward and to the right to re-enter the search area around (0, 0) while ensuring a safe altitude.</Reasoning>
+<Action>(1, 2, 10)</Action> 
+<Reasoning>I am now at a higher altitude, hovering around (0, 0) and observing the area. There is no immediate object of interest visible, so I'll continue searching around (0, 0).</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The object of interest is still not visible, so I need to be cautious near the construction area around (0, 0). I'll move upward to maintain a safe distance and continue the search.</Reasoning>
+<Action>(0, 0, 5)</Action> 
+<Reasoning>The area around (0, 0) is clear, but there might be an anomaly in the construction materials or debris. I will recheck the area directly above (0, 0).</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The object looks like a piece of construction equipment or material near coordinates (0, 1), and I need to inspect it closely to confirm.</Reasoning>
+<Action>(0, 1, 5)</Action>
+<Reasoning>I have found

@@ -1,0 +1,12 @@
+<Reasoning>I'm directly above the trash pile, which is located at (0, 0). To ensure I'm below 10 meters for the "FOUND" command, I'll adjust my altitude downward while maintaining my position to ensure I am centered on the trash pile.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

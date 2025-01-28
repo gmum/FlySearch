@@ -1,0 +1,6 @@
+<Reasoning>The object is at (21, 0), so I will move to (0, 0) to get closer.
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action> 
+
+<Reasoning>I found the yellow taxi at coordinates (21, 0) in the center of the image. I am now flying below 10 meters relative to it.
+<Action>FOUND</Action>

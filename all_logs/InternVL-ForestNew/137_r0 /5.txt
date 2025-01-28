@@ -1,0 +1,14 @@
+<Reasoning>I'm currently over coordinates (16, 16) and need to move slightly to (32, 16) to continue the search. This area is likely to be where the object is located, given the concentration of points.</Reasoning>
+<Action>(32, 16, 0)</Action> 
+<Action>(32, 16, -10)</Action> 
+<Action>(32, 0, -10)</Action> 
+<Action>(32, 32, -10)</Action> 
+<Action>(0, 32, -10)</Action> 
+<Action>(0, 16, -10)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(16, 0, -10)</Action> 
+<Action>(16, 16, -10)</Action> 
+<Action>(32, 16, 0)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I've reached the center of the coordinates where the object was located. I am now 10 meters below the object, and it's in my field of view, so I found the person.</Reasoning>

@@ -1,0 +1,19 @@
+<Reasoning>The trash pile might be at (0, 28). I need to move lower towards it and then center on it if it is the object.</Reasoning>
+<Action>(0, 28, -10)</Action> 
+ user
+Image-5: 
+
+
+
+
+Your current altitude is 32 meters above ground level. 
+<Reasoning>The trash pile is likely at (0, 28). I need to move closer and verify it, and then ensure I'm below 10 meters before confirming.</Reasoning>
+<Action>(0, 28, -10)</Action> 
+ userImage-6: 
+
+Your current altitude is 22 meters above ground level. 
+<Reasoning>The trash pile is likely at (0, 28). I need to move closer and verify it, and then ensure I'm below 10 meters before confirming.</Reasoning>
+<Action>(0, 28, -10)</Action> 
+User: Found!
+<Action>(0, 28, 0)</Action>
+

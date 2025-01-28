@@ -1,0 +1,166 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a police car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 71 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will start by moving towards the point (24, 24) since it is one of the coordinates given for a potential police car. This location is midway across the grid and might be a logical spot to begin the search. I will aim for an altitude of 61 meters to start the detailed search.</Reasoning>\n<Action>(24, 24, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently centered at (24, 24) and will move towards (0, 24) to narrow down the search area and get closer to potential police car locations. I will maintain an altitude of 51 meters to keep a closer view of the ground.</Reasoning>\n<Action>(-24, 24, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will move towards the point (0, 20) to continue narrowing down the search area and get closer to potential police car locations. Maintaining an altitude of 41 meters will allow me to keep a detailed view of the ground.</Reasoning>\n<Action>(-24, 20, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will head towards the point (20, 20) next to continue narrowing down the search area for a police car. Maintaining an altitude of 41 meters will keep me close to the ground and allow for a detailed search.</Reasoning>\n<Action>(-24, 20, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will now move towards the point (0, 20) to continue narrowing down the search area. Maintaining an altitude of 41 meters will help me get a closer view of potential police car locations.</Reasoning>\n<Action>(-24, 20, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will now head towards the point (0, 41) to continue narrowing down the search area. Maintaining an altitude of 41 meters will allow me to keep a detailed view of the ground.</Reasoning>\n<Action>(-24, 41, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will now head towards the point (20, 41) to continue narrowing down the search area for a police car. Maintaining an altitude of 41 meters will help me get a closer view of potential locations.</Reasoning>\n<Action>(-24, 41, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will now head towards the point (20, 41) to continue narrowing down the search area for a police car. Maintaining an altitude of 41 meters will help me get a closer view of potential locations.</Reasoning>\n<Action>(-24, 41, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will adjust my path to ensure I stay within the search area. Moving towards (0, 41) will allow me to continue narrowing down the area without flying out of bounds. I will maintain an altitude of 41 meters.</Reasoning>\n<Action>(0, 41, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will adjust to head towards (41, 41) to continue narrowing down the search area. This will keep me within bounds and allow me to maintain a detailed view of potential locations.</Reasoning>\n<Action>(17, 41, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will adjust to head towards (41, 24) to continue narrowing down the search area while staying within the 200-meter boundary. Maintaining an altitude of 41 meters will help me get a detailed view of potential locations.</Reasoning>\n<Action>(17, 24, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will adjust to head towards (41, 0) to continue narrowing down the search area while staying within the 200-meter boundary. Maintaining an altitude of 41 meters will help me get a detailed view of potential locations.</Reasoning>\n<Action>(17, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will now head towards (0, 41) to continue narrowing down the search area for a police car. Maintaining an altitude of 41 meters will help me get a closer view of potential locations.</Reasoning>\n<Action>(-17, 41, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 200 meters from the starting point in any axis."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will adjust my path to head towards (41, 0) to continue narrowing down the search area while staying within the 200-meter boundary. Maintaining an altitude of 41 meters will help me get a detailed view of potential police car locations.</Reasoning>\n<Action>(17, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 61 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I will now head towards (41, 0) to continue narrowing down the search area for a police car. Maintaining an altitude of 41 meters will help me get a closer view of potential locations.</Reasoning>\n<Action>(34, 0, 0)</Action>"
+    ]
+]

@@ -1,0 +1,2 @@
+<Reasoning>The coordinates at (0, 0) indicate an anomaly since they have a non-zero height (0, 0, 0) compared to the surrounding points, which have coordinates like (0, 1, 0) or (1, 0, 0). This suggests an object is slightly elevated. I need to move directly to this point to investigate further.</Reasoning>
+<Action>(0, 0, 0)</Action>

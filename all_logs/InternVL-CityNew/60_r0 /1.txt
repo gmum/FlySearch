@@ -1,0 +1,19 @@
+<Reasoning>The coordinates (51, 51) and (29, 51) are marked on the grid, indicating potential locations for the black truck. To narrow down the search, I will move towards the coordinates (51, 51) next, as it is in a different section of the grid and might lead me closer to the object.</Reasoning>
+<Action>(51, 51, -10)</Action> 
+user
+Image-3: ​​
+
+Your current altitude is 68 meters above ground level.
+<Reasoning>The coordinates (26, 51) are marked on the grid. This location appears closer to where I should be heading for the search. I will move towards these coordinates to further investigate.</Reasoning>
+<Action>(26, 51, -10)</Action> 
+user
+Image-4: ​​
+
+Your current altitude is 60 meters above ground level.
+<Reasoning>The coordinates (26, 51) are still within my vicinity, but I need to adjust slightly to stay on track. Moving towards (51, 51) will help me center on the marked coordinates and search more effectively.</Reasoning>
+<Action>(51, 51, -10)</Action> 
+user
+Image-5: ​​
+
+Your current altitude is 56 meters above ground level.
+<Reasoning>I am now closer to the coordinates (51, 51), which are marked and potentially indicate the presence

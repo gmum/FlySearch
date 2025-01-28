@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>My initial plan is to start the search by moving towards the center of the image, which is currently denoted by the set of coordinates (0, 0). This central location might provide a good starting point for identifying any anomalies. Since the object's exact location isn't specified, starting here will help me systematically cover the entire grid.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently over the coordinates (0, 0, 0), which is the center of the grid. To gather more information about the area, I will now move slightly to the east. This will help me cover more ground and potentially find the anomaly. The coordinates (10, 0, 0) will put me just east of the center, allowing for a broader view.</Reasoning>\n<Action>(10, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The coordinates (10, 0, 0) suggest I am moving east from the center. However, this movement does not seem to reveal any anomalies or specific objects that stand out. Since the object could be in any direction, I will adjust my strategy and move south to cover more of the grid. Moving to (0, -10, 0) will take me directly south, which might help in identifying the anomaly if it exists in that area.</Reasoning>\n<Action>(0, -10, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 97 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have now moved south and am directly over the object, which is located at (0, 32, 0). This is a significant observation, as I am centered on the object. My next step is to descend to verify if it is the anomaly and to confirm its characteristics from a closer altitude.</Reasoning>\n<Action>(0, 32, -10)</Action> \n<Action>FOUND</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 87 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently over the object at coordinates (0, 32, 0), just confirmed as an anomaly. To ensure I am below 10 meters as specified, I will descend from my current altitude of 87 meters to 87 - 10 = 77 meters, which is still within the acceptable range. This will allow me to inspect the object closely without exceeding the altitude limit.</Reasoning>\n<Action>(0, 32, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 76 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently over the object at coordinates (0, 32, 0), which I have identified as an anomaly. To ensure I am within the required 10 meters of altitude, I will slightly descend to 76 - 10 = 66 meters. This descent will allow me to inspect the object closely while maintaining the altitude constraint.</Reasoning>\n<Action>(0, 32, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 65 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently over the object at coordinates (0, 0, 0), which is confirmed as an anomaly. To ensure I am within the required 10 meters, I will slightly descend to 65 - 10 = 55 meters. This adjustment will allow me to inspect the object closely while maintaining the altitude constraint.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 54 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am directly over the object at coordinates (0, 18, 0), which has been identified as an anomaly. To ensure I am within the required 10 meters, I will slightly descend to 54 - 10 = 44 meters. This descent will allow me to inspect the object closely while maintaining the altitude constraint.</Reasoning>\n<Action>(0, 18, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 43 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am centered on the object at coordinates (0, 0, 0), which is confirmed as an anomaly. To ensure I am within the required 10 meters, I will slightly descend to 43 - 10 = 33 meters. This adjustment will allow me to inspect the object closely while maintaining the altitude constraint.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 33 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am directly over the object at coordinates (0, 11, 0), which has been identified as an anomaly. To ensure I am within the required 10 meters, I will slightly descend to 33 - 10 = 23 meters. This descent will allow me to inspect the object closely while maintaining the altitude constraint.</Reasoning>\n<Action>(0, 11, -10)</Action>"
+    ]
+]

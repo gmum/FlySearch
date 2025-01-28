@@ -1,0 +1,4 @@
+<Reasoning>The object might be located at (0, 0) since it is in the center of the grid and has coordinates (0, 0, 0). I need to move closer to this point to inspect if it is the location of the object.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>(4, 0, -5)</Action> 
+<Action>(7, 0, -5)</Action>

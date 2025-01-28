@@ -1,0 +1,4 @@
+<Reasoning>The yellow point at (0, 23) is not visible in the current image, which suggests it might not be the object. I need to move to the new yellow point at (0, 18) to continue the search.</Reasoning>
+<Action>(0, 18, -15)</Action> 
+ user
+Image-4: forest[[0, 0, 999, 999]]

@@ -1,0 +1,2 @@
+<Reasoning>I am currently positioned above the grid coordinates (0,0), and I need to search for the object. The coordinates (23,0) are suggested as potentially being in the center of the object. I should move towards this point to narrow down the search area.</Reasoning>
+<Action>(23, 0, 0)</Action>

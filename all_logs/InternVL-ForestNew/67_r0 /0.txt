@@ -1,0 +1,4 @@
+To start the search, I will move towards the center of the grid where the coordinates (0, 0) are located. This initial move will help me cover a broad area and potentially align with the approximate location of the trash pile.
+
+<Reasoning>I am starting the search at the center of the grid. Moving towards (0, 0) will help me cover a broad area and potentially align with the approximate location of the trash pile.</Reasoning>
+<Action>(0, 0, 0)</Action>

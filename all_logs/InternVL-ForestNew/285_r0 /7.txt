@@ -1,0 +1,6 @@
+<Reasoning>I am currently at the same coordinates as before, which is close to the anomaly. I will fly slightly lower to confirm the object's presence.</Reasoning>
+<Action>(0, 0, -2)</Action> 
+<Reasoning>I am now very close to the (0, 0) coordinate, which seems to be the anomaly. I will fly slightly higher to confirm if I am at the correct altitude.</Reasoning>
+<Action>(0, 0, 5)</Action> 
+<Reasoning>I am hovering just above the anomaly. The object is clearly visible and centered in my field of view.</Reasoning>
+<Action>FOUND</Action>

@@ -1,0 +1,4 @@
+<Reasoning>The truck is still visible, and I am above it. I will fly up a bit to increase altitude and then move in the correct direction.</Reasoning>
+<Action>(0, 0, 10)</Action> 
+<Reasoning>The object is further down the road, so I need to move in that direction to get closer.</Reasoning>
+<Action>(0, -26, 0)</Action>

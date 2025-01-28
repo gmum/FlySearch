@@ -1,0 +1,6 @@
+<Reasoning>The object is now slightly north of the center in the image. I will move a bit north to get closer and confirm its position.</Reasoning>
+<Action>(0, 5, 0)</Action> 
+<Reasoning>The object is now directly under the center in the image. I will move directly down to get closer and confirm its position.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I have found the object. It is at position (0, 0) and I am flying below 10 meters above it.</Reasoning>
+<Action>FOUND</Action> 

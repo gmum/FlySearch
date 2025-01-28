@@ -1,0 +1,2 @@
+<Reasoning>I need to start by narrowing down the area where the person might be located. The coordinates (0, 0) and (31, 0) have a height of 0 meters, which is the closest to the ground on the grid. It is logical to check these areas first. I will move towards (0, 0) to see if it is within my field of view and closer to the ground.</Reasoning>
+<Action>(0, 0, -30)</Action>

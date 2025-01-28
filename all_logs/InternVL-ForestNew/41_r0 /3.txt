@@ -1,0 +1,2 @@
+<Reasoning>I need to center on the coordinates (0, 0) to be directly above the possible object location and move down to a lower altitude to search that area. If the object is not there, I will continue the search.</Reasoning>
+<Action>(0, 0, -10)</Action>

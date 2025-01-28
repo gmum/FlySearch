@@ -1,0 +1,4 @@
+<Reasoning>The object is located at (0.0, 0.0), which is directly below my current position. I need to verify the height to ensure I am within the 10-meter limit.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

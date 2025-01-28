@@ -1,0 +1,4 @@
+<Reasoning>I'm approaching the object at (0, 0). I will now move slightly lower to ensure I am directly above it and confirm the object.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>FOUND</Reasoning>
+<Action>(0, 0, -5)</Action>

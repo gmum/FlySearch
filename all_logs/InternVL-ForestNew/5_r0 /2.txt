@@ -1,0 +1,3 @@
+<Reasoning>The red dot, which represents the object, is now at the coordinate (0, 0, 0). To confirm if this is the missing person, I need to move to this exact location, which is directly above it. This means I should move to (0, 0, 0) to check if I am close enough and centered on the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

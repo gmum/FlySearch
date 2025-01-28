@@ -1,0 +1,2 @@
+<Reasoning>I am currently at a very low altitude and exploring the area around (0, 0). However, I need to confirm if the object is indeed at (0, 0) and not just at (0, -1) or (-1, 0), as these points are also close by. I will move slightly to the north ((0, 1)) to check above (0, 0) and to the east ((1, 0)) to verify the crowd's location.</Reasoning>
+<Action>(0, 1, 0)</Action>

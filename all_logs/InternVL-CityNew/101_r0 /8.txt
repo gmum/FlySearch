@@ -1,0 +1,5 @@
+<Reasoning>The center of the image (0, 0) is at the crosswalk, which might be a good location to search for a large trash pile as there is often more activity in such areas. I will move slightly down to ensure I'm close enough to inspect.
+<Action>(0, 0, -5)</Action> 
+
+<Reasoning>I am now over the crosswalk, which is a likely place for a large trash pile. The drone should be flying at a low altitude, ideally below 10 meters, to thoroughly inspect this area.
+<Action>FOUND</Action>

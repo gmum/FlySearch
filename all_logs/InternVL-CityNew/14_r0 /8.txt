@@ -1,0 +1,2 @@
+<Reasoning>I need to move to the coordinates (30, 30) to center my view on the point marked as (0, 0) which is likely the object of interest. This will bring me to a grid that is more central and allows for a detailed search from this position.</Reasoning>
+<Action>(0, 30, -10)</Action>

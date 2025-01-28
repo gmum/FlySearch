@@ -1,0 +1,4 @@
+<Reasoning>The building is at coordinates (0, 0) in the current image. I need to move closer to this location and continue the search.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I have reached the building, and I am now below 10 meters above it, confirming its location at coordinates (0, 0).</Reasoning>

@@ -1,0 +1,4 @@
+<Reasoning>The object is slightly to the right of the center, near (10, 10). I need to move closer to this area.</Reasoning>
+<Action>(10, 10, -10)</Action> 
+<Action>(10, 10, 0)</Action> 
+<Action>FOUND</Action>

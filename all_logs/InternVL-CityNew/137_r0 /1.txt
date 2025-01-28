@@ -1,0 +1,2 @@
+<Reasoning>I have moved closer to the object at coordinates (0, 0) and now I am directly above it. The object is a police car, and I am within the specified altitude limit. I will now lower my altitude to 10 meters or below to confirm the identification.</Reasoning>
+<Action>(0, 0, -2)</Action>

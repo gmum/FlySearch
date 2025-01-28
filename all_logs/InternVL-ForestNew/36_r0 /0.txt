@@ -1,0 +1,2 @@
+<Reasoning>I am starting my search from the center of the image, which is around the coordinates (0, 0). I need to move slightly south and down to narrow down the search area. I will start by moving to (0, 0) with a small altitude descent to get closer to the ground.</Reasoning>
+<Action>(0, 0, -10)</Action>

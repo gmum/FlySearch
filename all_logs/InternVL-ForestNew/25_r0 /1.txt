@@ -1,0 +1,19 @@
+<Reasoning>The object appears to be near coordinates (0, 0) from the previous image. I will move closer to this location to confirm if it's the target.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+ user
+Image-3: 📸 Aerial view of a campsite with several marked coordinates.
+
+Your current altitude is 17 meters above ground level. 
+<Reasoning>The object is likely located near the coordinates (0, 0), but I need to confirm this visually. I'll move closer to this point to ensure I am centered on the object.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+ user
+Image-4: 📸 Aerial view of a campsite with several marked coordinates.
+
+Your current altitude is 12 meters above ground level. 
+<Reasoning>The object seems to be near coordinates (0, 1). I need to move slightly west and lower the altitude to ensure I am centered on the object.</Reasoning>
+<Action>(1, 1, -5)</Action> 
+ user
+Image-5: 📸 Aerial view of a campsite with several marked coordinates.
+
+Your current altitude is 7 meters above ground level. 
+<Reasoning>The object is near coordinates (0, 1) as indicated in the previous images. I will move slightly south to center on it and lower

@@ -1,0 +1,8 @@
+<Reasoning>I should center on the (0, 0) coordinate to investigate further. This point seems to be the location of the anomaly.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I am now centered on the (0, 0) coordinate, which appears to be the anomaly. I need to fly closer to confirm.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now directly above the anomaly, as it is the large leaf directly below me. I need to confirm if I am at the correct altitude.</Reasoning>
+<Action>(0, 0, 5)</Action> 
+<Reasoning>I am now at approximately the correct altitude for the object. I will hover slightly to confirm and then report the findings.</Reasoning>
+<Action>FOUND</Action>

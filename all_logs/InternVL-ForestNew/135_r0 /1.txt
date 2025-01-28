@@ -1,0 +1,17 @@
+<Reasoning>I have moved north towards the coordinates (32, 65) as previously instructed and am now closer to the potential fire location. To move closer and begin the search, I should continue heading towards the coordinates (-5, 65), which is directly north of my current position.</Reasoning>
+<Action>(-5, 65, -5)</Action> 
+user
+Image-3: [image](https://i.imgur.com/9z3h5mN.jpg) 
+
+Your current altitude is 91 meters above ground level. 
+```
+```
+<Reasoning>The object is now at coordinates (-5, 65). To move closer and begin the search for the object, I will move east to the coordinates (-5, 61). This direction brings me closer to the potential fire location and ensures I am in the correct position to start the search.</Reasoning>
+<Action>(-5, 61, -5)</Action> 
+```
+``` 
+Image-4: [image](https://i.imgur.com/xT4TQuD.jpg) 
+
+Your current altitude is 91 meters above ground level.
+```
+<Reasoning>I have moved east towards the coordinates (-5, 61) as previously instructed and am now closer to the potential fire location. To move even closer and begin the search, I should continue heading towards the coordinates (-5, 65), which is directly east of my current position

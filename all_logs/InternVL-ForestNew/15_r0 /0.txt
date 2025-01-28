@@ -1,0 +1,3 @@
+<Reasoning>The coordinates with negative values for z indicate the position is below the ground level, so these points are not likely to be the trash pile. I should start by checking the areas with zero z-values as they are at ground level, which is a logical starting point for a trash pile. I will head towards (0, 0, 0) first to check it out.
+
+<Action>(0, 0, -12)</Action>

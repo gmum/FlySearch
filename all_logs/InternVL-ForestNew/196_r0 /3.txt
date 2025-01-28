@@ -1,0 +1,2 @@
+<Reasoning>The flames and smoke are concentrated around the coordinates (0, 0), which is the central brightest point. I need to move closer to this area to ensure I am within 10 meters of the object when I find it. This movement will help me to better assess if I am close enough to declare "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action>

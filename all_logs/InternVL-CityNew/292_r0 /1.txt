@@ -1,0 +1,14 @@
+<Reasoning>I encountered an obstacle while moving towards (-25, 25). To avoid a collision and realign my course, I will move slightly upward and east.
+<Action>(0, 0, 10)</Action> 
+ user
+Image-3: [image3](https://github.com/NielsRogge/AnomalyDetection/dataset/raw/master/images/mav_00156_2023_07_24_15_21_46_022.jpg)
+
+<Reasoning>I am above the object now. I will move towards the coordinates (-12, 25) to investigate further.
+<Action>(-12, 25, 0)</Action> 
+ user
+Image-4: [image4](https://github.com/NielsRogge/AnomalyDetection/dataset/raw/master/images/mav_00156_2023_07_24_15_22_13_086.jpg)
+
+<Reasoning>The object is located in the lower right corner, near coordinates (25, 25). I need to get closer to verify it is the anomaly.
+<Action>(25, 25, 0)</Action> 
+ user
+Image-5: [image5](https://github.com/NielsRogge/AnomalyDetection/dataset/raw/master/images/mav_00156_2023_07_24_15_23_11_421.jpg

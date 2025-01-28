@@ -1,0 +1,2 @@
+<Reasoning>The fire is located at coordinates (0, 0). I need to move directly above the fire to verify that it is the correct object and ensure I am within the required altitude range. Since I am currently above the fire, I will descend slightly to get closer and confirm my position.</Reasoning>
+<Action>(0, 0, -10)</Action>

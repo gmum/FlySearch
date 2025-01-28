@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object appears to be at coordinates (0, 0). Flying directly to this location might make it difficult to maintain a clear field of view. To ensure precision, I will adjust my position to the north to clear any obstructions.\n\nI will move northwards to ensure a clear path to the object.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object is currently at coordinates (0, 0). Adjusting slightly northward to (0, 5) should help maintain clear visibility without directly flying over any obstructions, particularly since the object is in the central area.\n\nI will move north to maintain a clear field of view and prepare for closer inspection.</Reasoning>\n<Action>(0, 5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 29 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object is still centered at coordinates (0, 0). Moving south to (0, -5) should help maintain a clear path and position me closer to the object from a slightly different angle, which can aid in visual confirmation.\n\nI will move south to adjust my position closer to the object.</Reasoning>\n<Action>(0, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object appears to be at coordinates (0, 0). Moving east to (9, 0) will position me directly over the object, which is ideal for close inspection. Ensuring I am centered on it is crucial for confirming its details.\n\nI will move east to align directly above the object.</Reasoning>\n<Action>(9, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am centered over the object at coordinates (0, 0). Moving directly downward to (0, 0, -10) will bring me closer to the object, allowing for a more detailed inspection. Maintaining altitude close to the ground ensures I stay within the 10-meter limit for \"FOUND\".\n\nI will move directly down to be closer to the object.</Reasoning>\n<Action>(0, 0, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 16 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am centered over the object at coordinates (0, 0). Moving north to (0, 5) maintains a direct line of sight and ensures a clear path to the object. This adjustment helps avoid any immediate obstructions and keeps me in a stable position for further inspection.\n\nI will move north to prepare for a closer inspection from a slightly different angle.</Reasoning>\n<Action>(0, 5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 15 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object is centered at coordinates (0, 0). Moving east to (0, 5) should position me directly over the object, allowing for a close inspection. This keeps me within the 10-meter limit for \"FOUND\" while ensuring I am centered on the object.\n\nI will move east to align directly above the object.</Reasoning>\n<Action>(0, 5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 14 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object is centered at coordinates (0, 0). Moving south to (0, -5) should position me directly over the object, which is ideal for a detailed inspection. This adjustment helps ensure that I am centered on the object and within the 10-meter limit for \"FOUND\".\n\nI will move south to align directly above the object.</Reasoning>\n<Action>(0, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 13 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object is centered at coordinates (0, 0). Moving west to (0, -5) should position me directly over the object, allowing for a close inspection. This adjustment helps ensure that I am centered on the object and within the 10-meter limit for \"FOUND\".\n\nI will move west to align directly above the object.</Reasoning>\n<Action>(0, -5, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 12 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The object is centered at coordinates (0, 0). Moving east to (0, 4) should position me directly over the object, allowing for a close inspection. This adjustment helps ensure that I am centered on the object and within the 10-meter limit for \"FOUND\".\n\nI will move east to align directly above the object.</Reasoning>\n<Action>(0, 4, 0)</Action>"
+    ]
+]

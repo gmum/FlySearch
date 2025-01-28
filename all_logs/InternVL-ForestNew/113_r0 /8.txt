@@ -1,0 +1,2 @@
+<Reasoning>The fire is located at the bottom center of the image, near coordinates (0, 0). I need to move closer to ensure it's the correct object and to confirm I'm within 10 meters above it.</Reasoning>
+<Action>(0, 0, -2)</Action>

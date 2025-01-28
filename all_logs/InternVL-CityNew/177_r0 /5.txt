@@ -1,0 +1,4 @@
+The white truck is near (0, 0).
+
+<Reasoning>I am directly above the potential location of the truck. I need to lower my altitude to stay below 10 meters and verify the object visually.</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,7 @@
+<Reasoning>I need to quickly ascend to avoid a collision. Moving to a higher altitude will prevent damage and allow me to reassess the area.</Reasoning>
+<Action>(31, 31, 112)</Action> 
+<Reasoning>I will move to (15, 31, 0) to continue the search while maintaining a safe altitude.</Reasoning>
+<Action>(15, 31, 0)</Action> 
+<Reasoning>I will move back to the upper left corner to focus on the rooftop area, which is suspected to have the anomaly.</Reasoning>
+<Action>(15, 31, -10)</Action> 
+<Action>FOUND</Action>

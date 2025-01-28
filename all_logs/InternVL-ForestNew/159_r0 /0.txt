@@ -1,0 +1,2 @@
+<Reasoning>Based on the coordinates and the visible fire, it appears that the fire is centered at the coordinates (0, 0). I need to move towards this point to get closer to the object.</Reasoning>
+<Action>(0, 0, -10)</Action>

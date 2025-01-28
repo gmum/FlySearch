@@ -1,0 +1,13 @@
+<Reasoning>I've hit an obstacle, so I need to ascend immediately to avoid damage.</Reasoning>
+<Action>(0, 0, 10)</Action> 
+<Reasoning>I need to ascend to a safe altitude to ensure the drone is not damaged and can continue the search safely.</Reasoning>
+<Action>(0, 0, 10)</Action> 
+<Reasoning>The object is near coordinates (0, 0). I will move slightly south to center on it and lower the altitude to confirm.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The object is near coordinates (0, 0), and I need to move slightly south to center on it and lower the altitude to confirm.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The object is near coordinates (0, 0), but I need to move slightly west to center on it and lower the altitude to confirm.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The object is near coordinates (0, 0), and I need to move slightly east to center on it and lower the altitude to confirm.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>The object is near coordinates (0, 0), and I need to move slightly north to center on

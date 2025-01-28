@@ -1,0 +1,7 @@
+<Reasoning>The red mark is still in view, but I need to adjust my position to be closer and centered on it. Moving north and west will help me align better with the fire's location.</Reasoning>
+<Action>(0, -5, 0)</Action> 
+<Reasoning>The red mark is still in view, but I need to adjust my position to be closer and centered on it. Moving north and west will help me align better with the fire's location.</Reasoning>
+<Action>(0, -10, 0)</Action> 
+<Reasoning>I am now centered on the red mark, indicating the fire. To ensure I am below 10 meters above the object, I will descend to the appropriate altitude.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action>

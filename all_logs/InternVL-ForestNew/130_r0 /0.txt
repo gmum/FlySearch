@@ -1,0 +1,2 @@
+<Reasoning>The building is located at the center of the grid. Initially, I need to move towards it while maintaining a decent altitude to avoid obstacles in the vegetation. I will fly 30 meters east, aiming to center myself above the building.</Reasoning>
+<Action>(0, 30, 0)</Action>

@@ -1,0 +1,8 @@
+<Reasoning>The object appears to be centered around (0, 0). I should move closer to this point to confirm it is the correct location.</Reasoning>
+<Action>(0, 0, -15)</Action> 
+<Reasoning>The object is most likely located around (0, 0), and I am close to the target area.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am at the exact coordinates of the object and have confirmed its position.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

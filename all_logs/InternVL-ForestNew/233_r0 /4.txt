@@ -1,0 +1,3 @@
+<Reasoning>The airplane is directly beneath me at coordinate (26, 26). Since I am already within 10 meters of it, I will lower to 77 meters for a final check and ensure I am directly below the airplane.</Reasoning>
+<Action>(26, 26, -1)</Action> 
+<Action>FOUND</Action>

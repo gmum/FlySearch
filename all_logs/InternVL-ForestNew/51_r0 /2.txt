@@ -1,0 +1,4 @@
+<Reasoning>I am not centered on the building in my current position. To ensure I am directly above the building, I will move to the coordinates (0, 0), which seems to be above the building.
+
+Moving to (0, 0) will help me center the building in my field of view and get closer to the required altitude of 10 meters below it.</Reasoning>
+<Action>(0, 0, -8)</Action>

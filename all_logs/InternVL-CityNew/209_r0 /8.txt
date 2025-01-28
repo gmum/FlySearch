@@ -1,0 +1,2 @@
+<Reasoning>I need to move directly towards the object with coordinates (0, 37) as it is distinct from the other points, which are clustered around (18, 18). Investigating this point could help identify an anomaly.</Reasoning>
+<Action>(0, 37, -10)</Action>

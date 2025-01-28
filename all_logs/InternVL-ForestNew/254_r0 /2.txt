@@ -1,0 +1,2 @@
+<Reasoning>I am now centered over point (0, 0) on the grid. The object should be in the same area as my current position, so I should move downward to search the area closer to the ground.</Reasoning>
+<Action>(0, 0, -30)</Action>

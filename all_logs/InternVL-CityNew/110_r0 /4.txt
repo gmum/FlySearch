@@ -1,0 +1,3 @@
+<Reasoning>The black truck is now near the center of the image at point (0, 0). I'll move directly downward to (0, 0, -10) to ensure I'm flying just below the truck, within 10 meters to confirm it's the one I'm looking for.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action>

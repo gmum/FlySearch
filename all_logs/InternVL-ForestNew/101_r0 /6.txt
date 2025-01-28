@@ -1,0 +1,3 @@
+<Reasoning>The trash pile is on the ground at coordinates (0, 0). I need to ensure I'm at or below 10 meters to confirm its presence.</Reasoning>
+<Action>(0, 0, -20)</Action> 
+<Action>FOUND</Action>

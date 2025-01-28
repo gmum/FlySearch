@@ -1,0 +1,11 @@
+<Reasoning>I am now at a lower altitude and centered around the street level. The object is most likely near the intersection of the grid coordinates (0, 0). I need to move slightly south to better center myself on this area.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now at a lower altitude and centered around the street level. The object is most likely near the intersection of the grid coordinates (0, 0). I need to move slightly east to better center myself on this area.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0), and I am currently centered on this area but need to move slightly north to ensure I am directly above it.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0). I need to move directly west to center myself over this area.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0), and I need to move slightly east to ensure I am directly above it.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now at

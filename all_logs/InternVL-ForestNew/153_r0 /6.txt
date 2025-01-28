@@ -1,0 +1,9 @@
+<Reasoning>I need to stay at (0, 0) to ensure I am directly over the object and within the 10-meter limit. Descending to 0 meters will ensure I am close enough to the object and directly centered on it.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I'm hovering directly above the object, centered at (0, 0), with an altitude of 11 meters. I need to stay here to ensure I am within the 10-meter limit and closely inspect the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I'm hovering directly above the object, centered at (0, 0), maintaining an altitude of 11 meters. I need to stay at this altitude to ensure I am within the 10-meter limit and closely inspect the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I'm hovering directly above the object, centered at (0, 0), maintaining an altitude of 11 meters. I need to stay at this altitude to ensure I am within the 10-meter limit and closely inspect the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I'm hovering directly above the object, centered at (0, 0), maintaining

@@ -1,0 +1,7 @@
+<Reasoning>I can now clearly see the rooftop at (-24, 0) and it appears to have a fire. Lowering altitude will help confirm the presence of fire and allow me to get closer to the object.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now at a lower altitude and can confirm that the rooftop at (-24, 0) has a fire. I will proceed to lower altitude further to ensure I am within 10 meters of the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>I am now close enough to the fire. I will proceed to lower altitude to 10 meters to ensure I am within the required range.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Action>FOUND</Action>

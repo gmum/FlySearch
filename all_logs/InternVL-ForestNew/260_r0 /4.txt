@@ -1,0 +1,5 @@
+<Reasoning>I am now at the coordinates (0, 0) and close to the anomaly. I need to lower my altitude further to ensure I am directly above the object and confirm it is the anomaly.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I am directly above the anomaly at coordinates (0, 0). Since the object is marked with a blue dot, this confirms it as the anomaly. I will now hover at this location to verify and ensure I am below 10 meters as instructed.</Reasoning>
+<Action>(0, 0, -5)</Action>
+<Action>FOUND</Action>

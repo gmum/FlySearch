@@ -1,0 +1,4 @@
+<Reasoning>The object appears to be centered at (0, 0) on the grid. I am currently at a higher altitude than necessary. Now that I have found the object, I will move downward to ensure I am below 10 meters before confirming.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I am now centered on the object and below 10 meters. I have located the anomaly.</Reasoning>

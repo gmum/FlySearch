@@ -1,0 +1,17 @@
+<Reasoning>I need to move closer to the coordinates (0, 0) to center over the target area. Moving slightly west will help me align the drone with the intersection of x=0 and y=0 for a detailed search.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, 0)</Action> 
+
+<Reasoning>The coordinates (0, 0) are directly below, so I need to move closer to center over that point. Moving slightly west will help me focus on the rooftops around the intersection of x=0 and y=0.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>(0, 0, -10)</Action> 
+
+<Reasoning>I'm now centered over the coordinates (0, 0) and need to lower to get a close look at the rooftops for the trash pile.</Reasoning>
+<Action

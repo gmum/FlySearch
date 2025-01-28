@@ -1,0 +1,4 @@
+<Reasoning>I need to move to point (0, 0, -3) to ensure I am directly over the trash pile, as indicated by its coordinates. This will allow me to stay below 10 meters above the object once I reach it.</Reasoning>
+<Action>(0, 0, -3)</Action> 
+<Reasoning>I am now centered over point (0, 0, -3), and the trash pile is directly below this position. I am within 10 meters of the object, which meets the objective requirements.</Reasoning>
+<Action>FOUND</Action>

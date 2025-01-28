@@ -1,0 +1,15 @@
+### Reasoning
+The target is now directly below me and in the center of my field of view. I need to descend further to confirm if the building is indeed the target.
+
+### Action
+<Action>(0, 0, -5)</Action> 
+### Reasoning
+The target is directly beneath me and in my field of view. I need to descend carefully to confirm it’s the building.
+
+### Action
+<Action>(0, 0, -10)</Action> 
+### Reasoning
+I am now a meter above the building, confirming it's the target. Proceeding as instructed, I will now reply "FOUND."
+
+### Action
+<Action>FOUND</Action>

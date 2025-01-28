@@ -1,0 +1,14 @@
+<Reasoning>The object is located at (0, 0), and I need to move closer to this area. Being higher will help me get a better view of the surroundings and possibly spot the object. I will first move slightly north to improve visibility and then descend to a lower altitude.
+<Action>(0, 0, -10)</Action> 
+<Action>(0, 0, -30)</Action> 
+<Action>(0, 0, -60)</Action> 
+<Action>(0, 0, -90)</Action> 
+<Action>(0, 0, -100)</Action> 
+<Action>(0, 0, -110)</Action> 
+<Action>(0, 0, -120)</Action> 
+<Action>(0, 0, -130)</Action> 
+<Action>(0, 0, -140)</Action> 
+<Action>(0, 0, -150)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>I have descended to a height where I am directly over the object and can confirm its position. It is located at (0, 0), and I am now below 10 meters relative to it.
+<Action>(0, 0, -10)</Action>

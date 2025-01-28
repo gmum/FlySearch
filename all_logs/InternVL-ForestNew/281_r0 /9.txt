@@ -1,0 +1,2 @@
+<Reasoning>The coordinates (0, 0) are still a potential location for the object, and the highest point on the grid is at y=0, aligning with the coordinates. I'll move towards (0, 0) to confirm it's the object.</Reasoning>
+<Action>(0, 0, -1)</Action>

@@ -1,0 +1,10 @@
+<Reasoning>The object is most likely near the intersection of the grid coordinates (0, 0), given its consistent presence around this point across images. I need to ensure I am directly above it.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0). I am currently centered on this area and need to hover directly above it to confirm and ensure I am no more than 10 meters above it.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0). I am currently centered on this area and need to hover directly above it to confirm and ensure I am no more than 10 meters above it.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0). I am currently centered on this area and need to hover directly above it to confirm and ensure I am no more than 10 meters above it.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Action>FOUND</Action> 
+<Reasoning>The object is near the intersection of the grid coordinates (0, 0), and I am directly above it, ensuring I am no more than 10 meters above it.</Reason

@@ -1,0 +1,3 @@
+<Reasoning>The object is still at (0, 0), and I am now directly above it. I will move slightly down to ensure I am within 10 meters or less.
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

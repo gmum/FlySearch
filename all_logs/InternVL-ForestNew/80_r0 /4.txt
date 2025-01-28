@@ -1,0 +1,2 @@
+<Reasoning>I am currently flying over coordinates (0, 0), which has a height of 0 meters. Since I am already at the ground level, I need to continue descending to ensure I am within 10 meters of the ground. This will allow me to thoroughly examine the area directly underneath me and check for the person.</Reasoning>
+<Action>(0, 0, -10)</Action>

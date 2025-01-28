@@ -1,0 +1,5 @@
+<Reasoning>I'm now closer to the area indicated by the coordinates (0, 0) and (0, -25). The yellow object is still visible and located near (0, 25), which is still in my field of view. I need to move further towards the yellow object to ensure I am below 10 meters when I find it.
+
+I will move to the coordinates (0, 25) to get closer to the yellow object.
+</Reasoning>
+<Action>(0, 25, 0)</Action>

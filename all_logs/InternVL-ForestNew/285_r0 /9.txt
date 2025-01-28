@@ -1,0 +1,7 @@
+<Reasoning>The coordinates are clustered around (0, 0), which suggests the presence of the anomaly. I will center on this point to investigate further.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am now centered on the (0, 0) coordinate, which appears to be the anomaly. I need to fly lower to confirm.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now very close to the anomaly, as it is directly below me. I need to hover to confirm if I am at the correct altitude.</Reasoning>
+<Action>(0, 0, 5)</Action> 
+<Action>FOUND</Action>

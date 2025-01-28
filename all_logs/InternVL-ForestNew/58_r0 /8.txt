@@ -1,0 +1,4 @@
+<Reasoning>I have flown too close to the ground and need to immediately ascend to avoid a collision.</Reasoning>
+<Action>(0, 0, 10)</Action> 
+<Reasoning>I have increased the altitude to 11 meters to ensure I am safely above the ground.</Reasoning>
+<Action>FOUND</Action>

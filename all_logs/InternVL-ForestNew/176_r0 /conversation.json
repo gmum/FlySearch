@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a person.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 63 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The center of the grid in the current image is at (0, 0). This position does not correspond to any particular point in the images, so it is not useful for focusing the search. I need to choose a starting point that is more likely to be near the object. The point (21, 0) is in the lower left corner and has a significant number of coordinates, indicating it might be a starting point to explore. I will start by flying slightly south and west to approach this area.</Reasoning>\n<Action>(21, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 58 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current position is approximately (21, 0), which corresponds to the lower left corner of the grid in the previous image. This area has a significant density of coordinates, suggesting it might contain the object. To proceed, I will move slightly south to approach this area and then adjust my altitude to investigate further.</Reasoning>\n<Action>(21, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 53 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current position is approximately (18, 0), which corresponds to the center of the grid in the previous image. This point is also a significant area with many coordinates, indicating it might contain the object. I will move slightly south to approach this area and then adjust my altitude to investigate further.</Reasoning>\n<Action>(18, 0, -5)</Action> \n<Action>(18, 0, 0)</Action> \n<Action>(18, 0, -5)</Action> \n<Action>(18, 0, 0)</Action> \n<Action>(18, 0, -5)</Action> \n<Action>(18, 0, 0)</Action> \n<Action>(18, 0, -10)</Action>\n<Action>(18, 0, 0)</Action>\n<Action>(18, 0, -5)</Action> \n<Action>(18, 0, 0)</Action> \n<Action>(18, 0, -9)</Action>\n<Action>(18, 0, 0)</Action>\n<Action>(18, 0, -10)</Action>\n<Action>(18, 0, 0)</Action>\n<Action>(18, 0, -10)</Action>\n<Action>(18, 0, 0)</Action>\n<Action>(18, 0, -11)</Action>\n<Action>(18,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 48 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current position is approximately (0, 0), which corresponds to the center of the grid and an area with multiple coordinates. This location has a higher concentration of points, suggesting it might contain the object. I will move slightly north to approach this area and then adjust my altitude to investigate further.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -9)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action>\n<Action>(0, 0, -10)</Action>\n<Action>("
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 43 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am now centered over the point (0, 0) and have descended to approximately 15 meters, but the object is not in view. Continuing to move north will likely bring me closer to the potential object area. I will proceed to this area to increase the chances of locating the object.</Reasoning>\n<Action>(0, 0, -7)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am centered over (0, 0) and have descended to approximately 5 meters, but the object is not in view. Given the object might be at one of these coordinates, moving north will likely bring me closer to the potential object area. I will proceed to this area to increase the chances of locating the object.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am centered over (0, 0) and have descended to approximately 5 meters, but the object is not in view. Given the object might be at one of these coordinates, moving further north will likely bring me closer to the potential object area. I will proceed to this area to increase the chances of locating the object.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0,"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 26 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current position is approximately (0, 0), which corresponds to the center of the grid and an area with multiple coordinates, indicating it might contain the object. I will move slightly north to approach this area and then adjust my altitude to investigate further.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current position is approximately (0, 0), which corresponds to the center of the grid and an area with multiple coordinates, indicating it might contain the object. I will move slightly north to approach this area and then adjust my altitude to investigate further.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 16 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The current position is approximately (0, 0), which corresponds to the center of the grid and an area with multiple coordinates, indicating it might contain the object. I will move slightly north to approach this area and then adjust my altitude to investigate further.</Reasoning>\n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action> \n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -5)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0)</Action> \n<Action>(0, 0, -10)</Action>\n<Action>(0, 0, 0"
+    ]
+]

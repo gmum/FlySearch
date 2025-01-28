@@ -1,0 +1,2 @@
+<Reasoning>I need to lower my altitude and center on the point (0.0) to find the object. Currently at 12 meters, I should move to (0, 0) and descend to 10 meters to check for the object.</Reasoning>
+<Action>(0, 0, -2)</Action>

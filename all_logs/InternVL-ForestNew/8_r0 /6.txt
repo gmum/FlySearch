@@ -1,0 +1,3 @@
+<Reasoning>The object appears to be at the coordinate (0, 0), which is very close to the current position. Moving slightly to the right to get closer to this point seems logical to determine if this is the location of the person. Since I am already close, maintaining a low altitude will ensure I stay within 10 meters of the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

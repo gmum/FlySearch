@@ -1,0 +1,2 @@
+<Reasoning>I am starting the search from the top-left corner of the grid, moving towards the center. This area appears to have some scattered items, which might suggest the presence of a trash pile. Moving directly south towards (-22, 0) seems logical as it places me over a central point.</Reasoning>
+<Action>(0, 0, -5)</Action>

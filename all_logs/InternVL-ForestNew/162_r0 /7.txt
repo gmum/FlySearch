@@ -1,0 +1,9 @@
+<Reasoning>I am centered over point (0, 0, 0), which has a concentration of trash pile points. Moving slightly west to point (0, -9, 0) will ensure that I cover a broader area and increase my chances of locating the trash pile.</Reasoning>
+<Action>(0, -9, -5)</Action> 
+<Reasoning>I am now centered over point (9, -9, 0), which shows a concentration of trash pile points. This indicates that I am in a viable area, and moving slightly south will help me continue my search effectively.</Reasoning>
+<Action>(9, -9, -5)</Action> 
+<Reasoning>I am centered over point (9, -19, 0) and moving slightly south to point (9, -19, -5). This position still shows a concentration of trash pile points, suggesting I am still on the right path.</Reasoning>
+<Action>(9, -19, -5)</Action> 
+<Reasoning>The area directly below this position shows a concentration of trash pile points, indicating I am on the right track. Moving slightly west to point (9, -19, -5) will allow me to continue my search efficiently.</Reasoning>
+<Action>(9, -19, -5)</Action> 
+<Reasoning>I am currently centered over point (9, -19, -5), and the

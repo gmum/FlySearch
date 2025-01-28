@@ -1,0 +1,4 @@
+<Reasoning>The trash pile might be at (0, 4). I need to move closer and verify it, and then ensure I'm below 10 meters before confirming.</Reasoning>
+<Action>(0, 4, -10)</Action> 
+User: Found!
+<Action>(0, 4, 0)</Action>

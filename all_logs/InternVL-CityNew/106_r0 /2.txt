@@ -1,0 +1,4 @@
+<Reasoning>The object is in view and closer to the center. To lower and move directly over it, I will go to the point (0, 0) and decrease the altitude to 0 meters.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Action>FOUND</Action> 
+

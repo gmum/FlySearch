@@ -1,0 +1,5 @@
+<Reasoning>The fire is now centered at coordinates (0, -0.14), and I am at (0, 0), so I need to move slightly north and east to get closer to the object.</Reasoning>
+<Action>(2, 2, -10)</Action> 
+<Reasoning>I have found the fire. I am now within 10 meters of the object and need to ensure I am below 10 meters before I can reply with "FOUND".</Reasoning>
+<Action>(0, 0, -3)</Action>
+<Action>FOUND</Action>

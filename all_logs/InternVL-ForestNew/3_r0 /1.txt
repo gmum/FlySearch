@@ -1,0 +1,11 @@
+<Reasoning>I need to get closer to the coordinates (0, 0) and (0, 15) to check if they might contain the campsite. I will move slightly south to include these coordinates in my search.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now closer to the (0, 0) and (0, 15) coordinates. The object is not visible from this altitude. I will lower the altitude further to check the region more closely.</Reasoning>
+<Action>(0, 0, -20)</Action> 
+<Reasoning>The object is still not visible. I will continue to lower the altitude and move slightly southwest to include nearby coordinates.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now closer to the coordinates (0, 0), (0, 15), and (15, 0). The object is still not visible. I will continue to lower the altitude and move slightly southwest.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The object is still not visible. I will continue to lower the altitude and move slightly southwest.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>I am now closer to the coordinates (0, 0), (0, 15),

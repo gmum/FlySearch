@@ -1,0 +1,2 @@
+<Reasoning>I need to move to a position closer to the object, which is likely at the bottom-center of the image. The coordinate (0, 0) is a good choice as it is near the center and within the search area. I will move to (0, 0, -10) to get closer and focus on the object.</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,3 @@
+<Reasoning>The object is at coordinates (0, 0), and I am already positioned very close. To ensure I am directly above and close to the object, I will maintain my current altitude and position to confirm it's my target.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

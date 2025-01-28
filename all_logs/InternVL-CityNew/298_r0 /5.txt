@@ -1,0 +1,3 @@
+<Reasoning>The object is located at coordinates (0, 0) on the ground, which seems to be a small circular object. Since I am directly above it, I will fly below 10 meters to confirm its presence.</Reasoning>
+<Action>(0, 0, -5)</Action>
+<Action>FOUND</Action>

@@ -1,0 +1,2 @@
+<Reasoning>I need to initiate the search by examining the central part of the grid to determine if the building is there. The coordinates (0, 0) are given as the center, so moving towards this location will help in identifying the building's presence.</Reasoning>
+<Action>(0, 0, -30)</Action>

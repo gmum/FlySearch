@@ -1,0 +1,13 @@
+<Reasoning>I have moved eastwards towards the coordinates (-5, 61) as previously instructed and am now closer to the potential fire location. To continue moving closer to the object at coordinates (-5, 65), I will slightly adjust my path to (-5, 61), which is directly east of my current position. This adjustment will help me maintain a straight trajectory towards the fire location.</Reasoning>
+<Action>(-5, 61, -5)</Action> 
+```
+```
+<Reasoning>I have moved east towards the coordinates (-5, 61) as previously instructed and am now closer to the potential fire location. To move closer to the object at coordinates (-5, 65), I will adjust my path slightly to (-5, 57), which is directly east of my current position. This adjustment will help me maintain a straight trajectory towards the fire location</Reasoning>
+<Action>(-5, 57, -5)</Action> 
+```
+``` 
+Image-5: [image](https://i.imgur.com/3cJr9uD.jpg) 
+
+Your current altitude is 81 meters above ground level.
+```
+<Reasoning>I have moved east towards the coordinates (-5, 57) as previously instructed and am now closer to the potential fire location. To get even closer to the object at coordinates (-5, 65), I will move directly to (-5, 65), which

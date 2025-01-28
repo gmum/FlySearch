@@ -1,0 +1,2 @@
+<Reasoning>I am currently at coordinates (0, 0) and the building is also at (0, 0). The drone needs to be at a lower altitude to confirm it's the building and get closer. I will move down to 10 meters above the ground.</Reasoning>
+<Action>(0, 0, -23)</Action>

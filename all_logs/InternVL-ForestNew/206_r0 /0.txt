@@ -1,0 +1,2 @@
+<Reasoning>I need to start the search by examining the center of the grid where the object might be located. This area has multiple coordinates with values centered around (0, 0), suggesting it could be where the object is situated. I will move closer to this area while maintaining altitude.</Reasoning>
+<Action>(0, 0, 0)</Action>

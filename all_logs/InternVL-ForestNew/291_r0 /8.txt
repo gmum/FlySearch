@@ -1,0 +1,10 @@
+<Reasoning>The object at '(0, 0)' is still the point of interest. Moving directly north will bring me closer to it, allowing me to verify the anomaly more closely and ensure I am centered on it for a detailed inspection.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Reasoning>The object at '(0, 0)' remains the point of interest. Moving directly north will bring me closer to it, allowing me to verify the anomaly more closely and ensure I am centered on it for a detailed inspection.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>(0, 0, 0)</Action>
+<Reasoning>The object at '(0, 0)' is still the point of interest. Moving directly north will bring me closer to it, allowing me to verify the anomaly more closely and ensure I am centered on it for a detailed inspection.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>(0, 0, -2)</Action>
+<Reasoning>I am now directly above the object at '(0, 0)', which remains the point of interest. Since I am already centered on it, I will lower to a height of 10 meters to verify the anomaly more closely and ensure I am centered on it for a detailed inspection.</Reasoning>
+<Action>(0, 0, -

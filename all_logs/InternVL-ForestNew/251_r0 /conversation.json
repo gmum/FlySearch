@@ -1,0 +1,130 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding an object that doesn't fit in with the rest of the environment (an anomaly).\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 90 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "To start the search, I need to land the drone at a lower altitude where I can better navigate the area. \n\n<Reasoning>I need to descend closer to the ground to ensure I can effectively search the area for any anomalies. Starting with a closer altitude will help me cover the area more thoroughly initially.</Reasoning>\n<Action>(0, 0, -60)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "Great, I'm now at the coordinates (0, 0) with a lower altitude. I need to continue my search for any anomalies.\n\n<Reasoning>The yellow-marked point at (0, 20) is currently in my view. I need to move closer to this point and lower the altitude to see if it contains an anomaly.</Reasoning>\n<Action>(0, 20, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I am now near the point (0, 13) at an altitude of 20 meters. I need to continue searching for anomalies.\n\n<Reasoning>The point (0, 13) is currently in my view, and I need to move closer to it to check if it contains an anomaly.</Reasoning>\n<Action>(0, 13, -10)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I am now closer to the point (0, 7) at an altitude of 10 meters. I need to continue checking if this area contains an anomaly.\n\n<Reasoning>The point (0, 7) is currently in my view, and I need to move slightly closer to it to check if it contains an anomaly.</Reasoning>\n<Action>(0, 7, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I am now at the coordinates (0, 0) at an altitude of 5 meters. I need to continue searching for an anomaly in this area.\n\n<Reasoning>The point (0, 0) is currently in my view, and I need to move slightly closer to check if it contains an anomaly.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I am now near the point (0, 0) at an altitude of 1 meter. I need to continue checking for any anomalies.\n\n<Reasoning>The point (0, 0) is very close, and I need to move slightly lower to ensure I am focusing on this point to check for any anomalies.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I need to reposition after an emergency stop due to flying too close to something.\n\n<Reasoning>I must move away from the current point (0, 0) which is in my view to avoid hitting an obstacle.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I need to move away from the current point (0, 0) to ensure I am not too close to the vegetation.\n\n<Reasoning>I need to move upward and eastward to avoid potential collision with the foliage.</Reasoning>\n<Action>(1, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I need to move upward slightly to maintain a safe distance from the foliage.\n\n<Reasoning>I need to ensure I am not too close to the vegetation, so moving upward will help me avoid potential collisions.</Reasoning>\n<Action>(0, 1, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "I need to descend slightly to find a proper point to continue the search.\n\n<Reasoning>I need to move closer to the ground to continue searching for any anomalies in the area.</Reasoning>\n<Action>(-1, 0, -5)</Action>"
+    ]
+]

@@ -1,0 +1,2 @@
+<Reasoning>The object that I am looking for, the fire, is located at coordinates (0, 0). I need to get closer to this area and verify that it is the correct object. By moving downwards, I can ensure I am within the required altitude range and centered on the fire.</Reasoning>
+<Action>(0, 0, -20)</Action>

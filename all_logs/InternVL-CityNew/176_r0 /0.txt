@@ -1,0 +1,2 @@
+<Reasoning>This drone's current position is (17, 17) with an altitude of (0, 0), suggesting it's already at ground level. The coordinates (0, 0) have a dense concentration of markings and boxes, which seems like a likely spot for the fire. I will slightly adjust down to ensure I'm below 10 meters when over the marked area.</Reasoning>
+<Action>(0, 0, -1)</Action>

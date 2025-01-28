@@ -1,0 +1,2 @@
+<Reasoning>Based on the previous image, the object appeared near coordinates (0, 0) on the grid. Moving towards this point will bring the drone closer and provide a better view to determine if this is the object I am looking for.</Reasoning>
+<Action>(0, 0, -20)</Action>

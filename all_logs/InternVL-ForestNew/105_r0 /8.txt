@@ -1,0 +1,15 @@
+### Reasoning
+I need to ensure I am directly above the building and within the required distance before confirming it.
+
+### Action
+<Action>(0, 0, -3)</Action> 
+### Reasoning
+I am descending to confirm I am within the required distance and centered on the building.
+
+### Action
+<Action>(0, 0, -2)</Action> 
+### Reasoning
+I am now directly above the building. I will proceed with "FOUND."
+
+### Action
+<Action>FOUND</Action>

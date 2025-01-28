@@ -1,0 +1,2 @@
+<Reasoning>I am currently at coordinates (0, 0) and I need to start the search by moving towards the center of the grid, where the building is likely to be. Since the building is at (0, 0) with a height of 0, I will move down to reduce my altitude and explore the area around the building.</Reasoning>
+<Action>(0, 0, -40)</Action>

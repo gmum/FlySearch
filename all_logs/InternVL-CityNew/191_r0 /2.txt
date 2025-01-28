@@ -1,0 +1,18 @@
+<Reasoning>The coordinates (-16, 0) are now in my field of view, which might indicate the object's location. I will move slightly to the left to focus on this area and gather more details.</Reasoning>
+<Action>(-16, 0, 0)</Action> 
+user
+Image-4: 📸
+
+Your current altitude is 48 meters above ground level. 
+<Action>(-32, 0, 0)</Action> 
+Your current altitude is 47 meters above ground level. 
+<Action>(-16, 0, 0)</Action>
+<Action>(-1, 0, 0)</Action>
+Your current altitude is 46 meters above ground level. 
+<Action>(-1, 0, -5)</Action>
+<Reasoning>The object is now visible in the lower left quadrant of my field of view. Given this position, I suspect it could be the fire source. I need to move lower to get closer and inspect it more closely.</Reasoning>
+<Action>(-1, 0, -5)</Action>
+<Action>(-1, 0, -5)</Action>
+<Action>(-1, 0, -5)</Action>
+<Action>(-1, 0, -5)</Action>
+<Reasoning>The object is directly below me, and I am within 10 meters as required. I will now hover and inspect it

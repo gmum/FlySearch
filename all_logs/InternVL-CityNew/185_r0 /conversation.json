@@ -1,0 +1,134 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a police car.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 36 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I'm starting my search at a height of 36 meters. The coordinates labeled (12, 0) and (0, 12) on the grid are potential areas to check, as they might contain a police car. I will move towards the area between these coordinates to begin the search. This allows me to focus on the central part of the grid, where vehicles are more likely to be found.</Reasoning>\n<Action>(12, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The police car is located at coordinates (0, 0). I need to move closer to this point to verify if it is the object in question. Adopting a downward approach will allow me to get closer to the car and ensure I am within the required distance of 10 meters above the object when I confirm its identity.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I appear to have flown too close to the object and need to adjust my position to avoid collision. I will ascend slightly to ensure my altitude is safe and continue searching for the police car.</Reasoning>\n<Action>(0, 0, 30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The white car is located at coordinates (0, 0). I need to move closer to this point to verify if it is the object in question. Adopting a downward approach will allow me to get closer to the car and ensure I am within the required distance of 10 meters above the object when I confirm its identity.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The police car is located at coordinates (0, 0). I need to move closer to this point to verify if it is the object in question. Maintaining a slight downward approach will allow me to get closer to the car and ensure I am within the required distance of 10 meters above the object when I confirm its identity.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ],
+    [
+        "Role.USER",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I've apparently come too close to an obstacle. I must now ascend to ensure safety and avoid collision, then continue my search for the police car without endangering the drone's integrity.</Reasoning>\n<Action>(0, 0, 30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The police car is located at coordinates (0, 0). I need to move closer to this point to verify if it is the object in question. Descending will allow me to get closer to the car and confirm its identity, staying within the required distance of 10 meters above the object.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I'm currently at a low altitude and need to adjust to avoid collision with an obstacle. Ascending will help me reassess the situation safely and continue the search for the police car.</Reasoning>\n<Action>(0, 0, 30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 31 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The police car is located at coordinates (0, 0). I need to descend towards this point to verify if it is the object in question, ensuring I stay within the required distance of 10 meters above the object.</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I believe the police car is located at coordinates (0, 0). I need to move closer to this point to confirm if it is the object in question. By slightly descending, I can get closer to the car and ensure I am within the required distance of 10 meters above it.</Reasoning>\n<Action>(0, 0, -5)</Action>"
+    ]
+]

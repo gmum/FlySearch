@@ -1,0 +1,8 @@
+<Reasoning>I need to move slightly to the right to center on the (0, 0) coordinate, as it appears to be the location of the anomaly.</Reasoning>
+<Action>(1, 0, 0)</Action> 
+<Reasoning>I am now centered on the (0, 0) coordinate, which seems to indicate the anomaly. I need to fly closer to confirm if it is the object.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>The anomaly is indeed the large cluster of leaves directly below. I will fly slightly higher to confirm if I am at the correct altitude.</Reasoning>
+<Action>(0, 0, 10)</Action> 
+<Reasoning>I am now hovering just below the anomaly at approximately 10 meters above it. The object is clearly visible and centered in my field of view.</Reasoning>
+<Action>FOUND</Action>

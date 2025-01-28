@@ -1,0 +1,2 @@
+<Reasoning>The anomaly is at (0, 17) which is directly above a person walking on the sidewalk. This person is the only one walking and is distinguishable from the grid, suggesting they might be the anomaly. I need to hover above this point to verify.</Reasoning>
+<Action>(0, 17, -10)</Action> 

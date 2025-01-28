@@ -1,0 +1,7 @@
+<Reasoning>The potential campsite is located at (0, 0). I need to move closer and lower to verify if it matches the coordinates given in the context.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+
+<Reasoning>I have reached the coordinates (0, 0). The object is within the search area and appears to be the campsite. I am now lower than 10 meters for a final check.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Action>FOUND</Action>

@@ -1,0 +1,2 @@
+<Reasoning>The object might be located towards the center of the grid where the text "(0, 0)" is marked. I need to move towards this point to inspect it closely. I will slightly descend to check for the object and avoid flying too high above it.</Reasoning>
+<Action>(0, 0, -10)</Action>

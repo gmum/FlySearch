@@ -1,0 +1,2 @@
+<Reasoning>My initial plan is to start the search by moving towards the center of the image, which is currently denoted by the set of coordinates (0, 0). This central location might provide a good starting point for identifying any anomalies. Since the object's exact location isn't specified, starting here will help me systematically cover the entire grid.</Reasoning>
+<Action>(0, 0, 0)</Action>

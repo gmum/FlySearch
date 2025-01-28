@@ -1,0 +1,2 @@
+<Reasoning>I see a shadow of a person, which indicates an anomaly. The shadow is located at coordinates (0, 0) on the ground. I need to descend to be directly above the shadow to confirm it's the object I'm looking for. </Reasoning>
+<Action>(0, 0, -20)</Action>

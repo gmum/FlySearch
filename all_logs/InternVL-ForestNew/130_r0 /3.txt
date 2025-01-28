@@ -1,0 +1,3 @@
+<Reasoning>The building is directly under me, and I need to be sure to be precisely above it to avoid obstacles. Moving slightly north will help in centering it further and decreasing altitude to ensure I'm below 10 meters.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

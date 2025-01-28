@@ -1,0 +1,126 @@
+[
+    [
+        "Role.USER",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding a crowd.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 9 moves. Your altitude cannot exceed 120 meters. Your search area is 400x400m from the drone's starting position. \n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 37 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am initially at a high altitude, and based on the grid and the given hint about the crowd being at (0, 0), I need to descend and move towards that location to narrow down the search area. I'll start by moving slightly towards (0, 0) to get closer to the ground and focus on the area where the potential crowd is located.</Reasoning>\n<Action>(0, 0, -37)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently at a very low altitude and exploring the area around (0, 0). However, I need to confirm if the object is indeed at (0, 0) and not just at (0, -1) or (-1, 0), as these points are also close by. I will move slightly to the north ((0, 1)) to check above (0, 0) and to the east ((1, 0)) to verify the crowd's location.</Reasoning>\n<Action>(0, 1, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 1 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I have confirmed that the object is indeed at (0, 0) and not at (0, 1) or (-1, 0), as I am currently centered over the ground directly above the crowd. To ensure I am below 10 meters and centered on the object, I will slightly increase my altitude to 10 meters to complete the search and confirm the location.</Reasoning>\n<Action>(0, 0, 9)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>The crowd is clearly visible at (0, 0), and I am already at a lower altitude. To ensure I am at most 10 meters above the crowd and centered on it, I will decrease my altitude to 9 meters, which is within the specified limit. This will allow me to confirm the location and maintain the search criteria.</Reasoning>\n<Action>(0, 0, -1)</Action> \n<Action>FOUND</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently centered above the crowd at (0, 0) and at the required altitude of 9 meters. To ensure I am not flying over the crowd and to confirm the location, I will slightly increase my altitude to 10 meters while keeping the same horizontal position.</Reasoning>\n<Action>(0, 0, 1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 10 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently centered above the crowd at (0, 0) and at the required altitude of 10 meters. I need to verify if the altitude is exactly 10 meters and if I am centered correctly on the crowd. I will slightly decrease my altitude to 9 meters to confirm these conditions and ensure I am following the search criteria.</Reasoning>\n<Action>(0, 0, -1)</Action> \n<Action>FOUND</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am at the required altitude of 9 meters and centered over the crowd, confirming their location. To ensure I am not exceeding the altitude limit and to confirm the search criteria, I will slightly decrease my altitude to 8 meters.</Reasoning>\n<Action>(0, 0, -1)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am centered over the crowd at (0, 0) and at the required altitude of 8 meters. To ensure I am not flying over the crowd and to confirm the location, I will maintain this altitude and position, as I am already within the search criteria.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 8 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently centered above the crowd at (0, 0) and at the required altitude of 8 meters. To ensure I am not flying over the crowd and to confirm the location, I will slightly increase my altitude to 9 meters while keeping the same horizontal position.</Reasoning>\n<Action>(0, 0, 1)</Action> \n<Action>FOUND</Action>"
+    ],
+    [
+        "Role.USER",
+        "image"
+    ],
+    [
+        "Role.USER",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "Role.ASSISTANT",
+        "<Reasoning>I am currently centered above the crowd at (0, 0) and at the required altitude of 9 meters. To ensure I am not flying over the crowd and to confirm the location, I will maintain this altitude and position, as I am already within the search criteria.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ]
+]

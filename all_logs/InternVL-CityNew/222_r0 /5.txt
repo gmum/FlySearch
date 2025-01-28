@@ -1,0 +1,9 @@
+<Reasoning>I am observing the area around (0, 0) and (8, 8), where there is a construction zone and vehicles, possibly indicating an anomaly. I will move slightly south to get a better view of the construction site.</Reasoning>
+<Action>(0, 0, -50)</Action> 
+<Reasoning>The construction area around (0, 0) and (8, 8) shows activity, but I need to ensure no anomaly is missed. I'll move slightly up to keep a safe altitude and continue searching.</Reasoning>
+<Action>(8, 8, 5)</Action>
+<Reasoning>The area around (0, 0) and (8, 8) does not immediately show an anomaly, but I'll adjust to get closer to (8, 0) next. I'll optimize my position for a closer inspection.</Reasoning>
+<Action>(8, 0, -20)</Action> 
+<Reasoning>I am now focusing on the area near (8, 0) and observing vehicles and construction elements. I'll analyze the road and sidewalks closer to ensure no anomaly is missed.</Reasoning>
+<Action>(8, 0, 5)</Action> 
+<Reasoning>The area around (8, 8) shows typical street activity, but I need to check the construction near (0, 0) more closely. I'll adjust

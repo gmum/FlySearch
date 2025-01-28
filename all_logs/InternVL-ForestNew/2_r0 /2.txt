@@ -1,0 +1,2 @@
+<Reasoning>The new location of the fire is at coordinate (0, 16), which I need to move towards. Flying north to this point will help me center the object for closer inspection.</Reasoning>
+<Action>(0, 16, -10)</Action>

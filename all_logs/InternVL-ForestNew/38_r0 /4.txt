@@ -1,0 +1,4 @@
+<Reasoning>The object is still located at (0, 0, 0) on the grid, and I am currently 1 meter above it. To confirm it is the building and ensure I am within the desired altitude range, I will move to this point and descend to 0 meters above the object.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Reasoning>I am now directly over the object, which is the building. I am at 0 meters above the building, confirming its identity and ensuring I am within the desired altitude range.</Reasoning>
+<Action>FOUND</Action>

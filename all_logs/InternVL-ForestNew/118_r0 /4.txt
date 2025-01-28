@@ -1,0 +1,4 @@
+<Reasoning>The coordinates (0.0, 0.0) are the closest to the object, which is at (0.0, 0.0). I need to get closer to ensure I can identify the object properly.</Reasoning>
+<Action>(0, 0, -25)</Action> 
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

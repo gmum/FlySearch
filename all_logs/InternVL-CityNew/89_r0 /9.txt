@@ -1,0 +1,2 @@
+<Reasoning>The smoke is centered near the text "(0, 0)" on the grid, indicating the object is in close proximity. I need to maintain a low altitude closer to this point to ensure it's the source of the fire and to confirm it's the correct location.</Reasoning>
+<Action>(0, 0, -5)</Action>

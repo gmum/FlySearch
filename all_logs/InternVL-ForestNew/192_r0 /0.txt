@@ -1,0 +1,2 @@
+<Reasoning>I will start by flying to the point that is nearest to me, (0, 0). This will allow me to begin my search within the grid and cover a broad area initially. The coordinates (0, 0) are at around the center of the image, which seems like a good starting point.</Reasoning>
+<Action>(0, 0, -50)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>The object is at (0, 0), and I am descending towards it. I need to ensure I am close enough to declare "FOUND". I will continue descending to stay within field of view and meet the altitude requirement.</Reasoning>
+<Action>(0, 0, -5)</Action>

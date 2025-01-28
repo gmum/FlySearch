@@ -1,0 +1,3 @@
+<Reasoning>The crowd is clearly visible at (0, 0), and I am already at a lower altitude. To ensure I am at most 10 meters above the crowd and centered on it, I will decrease my altitude to 9 meters, which is within the specified limit. This will allow me to confirm the location and maintain the search criteria.</Reasoning>
+<Action>(0, 0, -1)</Action> 
+<Action>FOUND</Action>

@@ -1,0 +1,4 @@
+<Reasoning>The blue object is still visible near (0, 0), and I need to lower further to ensure I am within 10 meters above it. This will help confirm if it's the campsite.</Reasoning>
+<Action>(0, 0, -10)</Action> 
+<Reasoning>FOUND</Reasoning>
+<Action>(0, 0, 0)</Action>

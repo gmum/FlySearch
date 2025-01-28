@@ -1,0 +1,3 @@
+<Reasoning>The object remains at (0, 0), and I am now closer to it. I will continue to move towards it while maintaining an altitude that allows me to stay within the limits and keep the object in view.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>FOUND</Action>

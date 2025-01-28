@@ -1,0 +1,2 @@
+<Reasoning>I have reached the coordinates (0, 21). The next logical move is to check the coordinates (0, 0) again. However, I need to descend to ensure I am within 10 meters of the ground if the object is found there.</Reasoning>
+<Action>(0, 0, -30)</Action>

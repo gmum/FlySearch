@@ -1,0 +1,9 @@
+<Reasoning>The coordinate (0, 18, -10) is near a possible trash pile. I should move lower to check for it.</Reasoning>
+<Action>(0, 18, -10)</Action> 
+ user
+Image-4: 	
+
+
+Your current altitude is 50 meters above ground level.
+<Reasoning>The trash pile might be at (0, 18). I need to move lower to verify if it's the object, and then center on it if it is.</Reasoning>
+<Action>(0, 18, -10)</Action> 

@@ -1,0 +1,7 @@
+<Reasoning>I am currently over an area with scattered coordinates around (12, 12). Moving to this area might reveal the trash pile's location. Descending will help in identifying it.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I am moving towards an area with scattered coordinates around (12, 12), which might indicate the trash pile's location. Descending further will help in identifying it.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Action>(0, 0, -10)</Action>
+<Action>FOUND</Action> 
+<Reasoning>I have descended closer to the coordinates around (12, 12), which suggests a potential trash pile location. The altitude is now 8 meters above the ground, within proximity to verify the find.</Reasoning>

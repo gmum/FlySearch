@@ -1,0 +1,2 @@
+<Reasoning>The object of interest is located at the center of the grid. It is currently at coordinates (0, 0) and altitude (0, 0) in the image, suggesting it might be the small building or structure visible in the center. To begin the search, I will move directly towards this point to ensure the object is in my field of view and initiate the search process. This initial move will not change altitude, keeping it safe and controlled.</Reasoning>
+<Action>(0, 0, 0)</Action>

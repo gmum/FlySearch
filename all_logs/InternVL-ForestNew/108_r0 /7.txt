@@ -1,0 +1,5 @@
+<Reasoning>I suspect the object might be around coordinates (1, 1) or (0, 1) since they have a value of 0.00, which could signify a potential location.
+<Action>(1, 1, -10)</Action> 
+<Action>(0, 1, -10)</Action> 
+<Action>(0, 1, 2)</Action> 
+<Action>FOUND</Action>

@@ -1,0 +1,5 @@
+<Reasoning>The object is at (0, 0), and I am currently not directly above it. I will move slightly west to adjust my position.
+<Action>(0, 0, 0)</Action> 
+<Reasoning>I am now directly above the object. It is time to move down to ensure I am within 10 meters or less.
+<Action>(0, 0, -8)</Action> 
+<Action>FOUND</Action>

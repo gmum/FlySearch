@@ -1,0 +1,2 @@
+<Reasoning>The object is probably near the edges of the grid where there is less density. I'll move closer to the center grid cell (0, 0) to ensure I have a clear view of the entire search area and lower the altitude to get closer to the ground level.</Reasoning>
+<Action>(0, 0, -10)</Action>

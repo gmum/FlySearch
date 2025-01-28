@@ -1,0 +1,3 @@
+<Reasoning>The trash pile is located at coordinates (0, 0), and I am already centered over it. Maintaining a low altitude of 0 meters ensures I am below 10 meters above the object.</Reasoning>
+<Action>(0, 0, 0)</Action> 
+<Action>FOUND</Action>

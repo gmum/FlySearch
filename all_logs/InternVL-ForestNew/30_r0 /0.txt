@@ -1,0 +1,2 @@
+<Reasoning>The object is likely at coordinates (0, 0), which is in the center of the grid. I will start the search by moving towards this point and descending to check for the object. This location seems to be a potential spot for the person based on the coordinates provided.</Reasoning>
+<Action>(0, 0, -10)</Action>

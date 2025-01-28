@@ -1,0 +1,3 @@
+<Reasoning>The object is located at (0, 10), and I need to move closer to this area. Being higher will help me get a better view of the surroundings and possibly spot the object. I will first move slightly east to improve visibility and then descend to a lower altitude.
+<Action>(10, 10, -10)</Action> 
+<Action>(0, 10, -30)</Action>

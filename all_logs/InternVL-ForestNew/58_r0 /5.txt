@@ -1,0 +1,6 @@
+<Reasoning>The object seems to be located at (0, 0) or very close to it, based on the previous images. I should move to this coordinate and slightly descend to confirm the location.</Reasoning>
+<Action>(0, 0, -5)</Action> 
+<Reasoning>I am very close to the possible location of the object, so I will descend a bit more to ensure I am directly above it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>I am now directly above the object and at the desired altitude, ready to proceed with the next steps.</Reasoning>
+<Action>FOUND</Action>

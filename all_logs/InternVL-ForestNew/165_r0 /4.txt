@@ -1,0 +1,2 @@
+<Reasoning>I moved lower to point (0, 0, 0) to start a downward search and now need to move to a lower altitude to scan downward properly. I will move to (18, 18) to begin the search process closer to the ground.</Reasoning>
+<Action>(0, 0, -10)</Action>
