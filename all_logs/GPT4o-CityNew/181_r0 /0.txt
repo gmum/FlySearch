@@ -1,0 +1,4 @@
+<Reasoning>
+There is a crowd visible near the coordinates (-26, 0). I will move the drone to center on this point and lower the altitude to get closer to the crowd.
+</Reasoning>
+<Action>(-26, 0, -70)</Action>

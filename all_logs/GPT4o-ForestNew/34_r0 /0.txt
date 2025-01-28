@@ -1,0 +1,2 @@
+<Reasoning>The building is visible near the coordinates (-12, 12). I need to center the drone's vision on it and reduce the altitude to be below 10 meters above it.</Reasoning>
+<Action>(-12, 12, -28)</Action>

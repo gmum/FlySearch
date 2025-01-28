@@ -1,0 +1,4 @@
+<Reasoning>
+The building is visible in the grid at (-30, 30). To better inspect it, I need to lower the altitude and move closer. I will move to the coordinates centered on the building and decrease altitude by 80 meters to get below the required height.
+</Reasoning>
+<Action>(-30, 30, -80)</Action>

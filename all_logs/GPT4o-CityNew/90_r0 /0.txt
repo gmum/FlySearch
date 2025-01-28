@@ -1,0 +1,2 @@
+<Reasoning>The white truck is visible at coordinates (11, 11). I will move to center above it and decrease altitude to get closer, ensuring I'm below 10 meters above it.</Reasoning>
+<Action>(11, 11, -25)</Action>

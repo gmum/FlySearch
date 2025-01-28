@@ -1,0 +1,4 @@
+<Reasoning>
+The fire appears to be centered at coordinates (0, 0). I need to move directly over it and decrease altitude to ensure I am 10 meters or closer above the fire.
+</Reasoning>
+<Action>(0, 0, -44)</Action>

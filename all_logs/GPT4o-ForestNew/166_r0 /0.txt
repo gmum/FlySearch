@@ -1,0 +1,2 @@
+<Reasoning>The building appears to be located at the coordinates (-13, 0). I will move the drone to center on this location and also decrease the altitude to get a closer view, aiming to be below 10 meters relative to the object.</Reasoning>
+<Action>(-13, 0, -32)</Action>

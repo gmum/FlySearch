@@ -1,0 +1,4 @@
+<Reasoning>
+The fire is visible in the bottom left quadrant of the image. I need to move towards the center of the fire and decrease altitude to get closer. I'll head towards (-10, -10) and decrease altitude by 20 meters to get closer to the fire.
+</Reasoning>
+<Action>(-10, -10, -20)</Action>

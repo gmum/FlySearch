@@ -1,0 +1,2 @@
+<Reasoning>I can see a person in the middle of the image. I will move directly to the coordinates (0, 0) and decrease altitude to get within 10 meters above the person.</Reasoning>
+<Action>(0, 0, -18)</Action>

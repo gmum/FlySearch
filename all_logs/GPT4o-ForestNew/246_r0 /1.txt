@@ -1,0 +1,2 @@
+<Reasoning>There is a circular object at the center of the image at coordinates (0, 0). This stands out from the rest of the environment and could be the anomaly. I will move directly over it and decrease altitude to get a closer look.</Reasoning>
+<Action>(0, 0, -20)</Action>

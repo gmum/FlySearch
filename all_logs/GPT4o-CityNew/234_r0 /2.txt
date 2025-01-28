@@ -1,0 +1,4 @@
+<Reasoning>
+I have a view of the road with vehicles and pedestrians. The yellow object at (23, 23) still seems unusual compared to the surroundings. I will move toward it and descend further to get within 10 meters.
+</Reasoning>
+<Action>(23, 23, -25)</Action>

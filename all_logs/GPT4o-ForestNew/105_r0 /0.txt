@@ -1,0 +1,4 @@
+<Reasoning>
+The building I need to locate is directly below the drone at coordinates (0, 0). I will descend to get within the required 10 meters of altitude above the building.
+</Reasoning>
+<Action>(0, 0, -90)</Action>

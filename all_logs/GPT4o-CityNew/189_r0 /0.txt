@@ -1,0 +1,4 @@
+<Reasoning>
+There appears to be a crowd located at approximately (12, 23). I will center the drone over this point and decrease my altitude to ensure I'm within 10 meters above the crowd.
+</Reasoning>
+<Action>(12, 23, -26)</Action>

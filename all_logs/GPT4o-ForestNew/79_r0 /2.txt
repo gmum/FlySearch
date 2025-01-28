@@ -1,0 +1,2 @@
+<Reasoning>The trash pile appears to be at coordinates (0, -6). I will center the drone above it and lower the altitude to ensure I am within 10 meters to confirm.</Reasoning>
+<Action>(0, -6, -10)</Action>

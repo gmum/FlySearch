@@ -1,0 +1,2 @@
+<Reasoning>The object that appears different from the rest of the environment is located at coordinates (0, 13). I need to move the drone to be directly above it and lower the altitude to get within 10 meters above it.</Reasoning>
+<Action>(0, 13, -32)</Action>

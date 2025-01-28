@@ -1,0 +1,4 @@
+<Reasoning>
+The building appears to be located at the (17, 0) coordinates. I need to move the drone to the east towards the building and decrease the altitude to get closer to it.
+</Reasoning>
+<Action>(17, 0, -30)</Action>

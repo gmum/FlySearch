@@ -1,0 +1,2 @@
+<Reasoning>There is a large trash pile located near the center of the grid at coordinates (22, 22). I need to move closer to the ground to ensure I'm within 10 meters of it and centered on the pile.</Reasoning>
+<Action>(22, 22, -55)</Action>

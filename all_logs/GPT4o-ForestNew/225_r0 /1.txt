@@ -1,0 +1,2 @@
+<Reasoning>The object of interest seems to be closer to the coordinates (0, 0) in this view. I will move the drone to center on this location and decrease the altitude to ensure I'm within 10 meters above the object.</Reasoning>
+<Action>(0, 0, -9)</Action>

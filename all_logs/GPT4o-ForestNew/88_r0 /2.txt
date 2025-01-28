@@ -1,0 +1,2 @@
+<Reasoning>I have located a person in the image close to (7, 7). I will move to center the drone above this point while maintaining the altitude below 10 meters to ensure they are in view.</Reasoning>
+<Action>(7, 7, -2)</Action>

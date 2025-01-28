@@ -1,0 +1,2 @@
+<Reasoning>The object might be in the center near (0, 0). I need to lower the altitude to improve detection. I'll move to the center for a clearer view and descend closer to the ground.</Reasoning>
+<Action>(0, 0, -30)</Action>

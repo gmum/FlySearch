@@ -1,0 +1,4 @@
+<Reasoning>
+The building is visible at the coordinates (0, -14). I need to move directly over it and descend to ensure I am below 10 meters above it.
+</Reasoning>
+<Action>(0, -14, -34)</Action>

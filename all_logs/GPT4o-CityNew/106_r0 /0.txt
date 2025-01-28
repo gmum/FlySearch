@@ -1,0 +1,4 @@
+<Reasoning>
+The road construction site might be located where there's visible disruption on the road. At coordinates (10, 0), there seems to be some activity that could indicate a construction site. I will move to center on that area and lower the altitude to get a closer look.
+</Reasoning>
+<Action>(10, 0, -10)</Action>

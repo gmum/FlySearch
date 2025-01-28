@@ -1,0 +1,4 @@
+<Reasoning>
+The building appears to be centered around the coordinates (18, -18). I will move the drone to these coordinates and decrease the altitude by 46 meters to be 8 meters above the building, which is within the acceptable range.
+</Reasoning>
+<Action>(18, -18, -46)</Action>

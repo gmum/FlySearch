@@ -1,0 +1,4 @@
+<Reasoning>
+There is a group of people visible on the street below. I will descend and center the drone to confirm if it's the crowd. I will move to (0, 0) and descend by 44 meters to get within 10 meters above.
+</Reasoning>
+<Action>(0, 0, -44)</Action>

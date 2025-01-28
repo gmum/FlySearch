@@ -1,0 +1,4 @@
+<Reasoning>
+I see a building at coordinates (0, 27). I need to get closer to ensure it's the correct target and be below 10 meters. First, I'll move directly above it and reduce altitude.
+</Reasoning>
+<Action>(0, 27, -72)</Action>

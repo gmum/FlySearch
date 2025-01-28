@@ -1,0 +1,2 @@
+<Reasoning>The fire is visible at the center of the grid, at coordinates (0, -25). I need to descend in altitude to get below 10 meters above it and confirm the fire.</Reasoning>
+<Action>(0, -25, -67)</Action>

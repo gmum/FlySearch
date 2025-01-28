@@ -1,0 +1,2 @@
+<Reasoning>A person-like figure is visible near the (9, 0) coordinate. I will move to center the drone's view on this location and decrease altitude to check if it's the target.</Reasoning>
+<Action>(9, 0, -10)</Action>

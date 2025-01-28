@@ -1,0 +1,2 @@
+<Reasoning>The object that appears to be a fire is located at coordinate (0, 11). I will move to center the drone's view over this point and lower the altitude to ensure I'm within 10 meters above it.</Reasoning>
+<Action>(0, 11, -23)</Action>

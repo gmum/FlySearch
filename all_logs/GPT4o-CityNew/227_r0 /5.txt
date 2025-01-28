@@ -1,0 +1,4 @@
+<Reasoning>
+I need to avoid the central area due to obstacles. I will move to the top right at (19, 19) for a clearer view and maintain altitude to avoid collisions.
+</Reasoning>
+<Action>(19, 19, 0)</Action>

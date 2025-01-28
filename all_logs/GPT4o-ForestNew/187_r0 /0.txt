@@ -1,0 +1,4 @@
+<Reasoning>
+The building is visible in the center of the image at coordinates (0, 0). I need to descend to below 10 meters to get closer to the building and ensure it is centered in the field of view.
+</Reasoning>
+<Action>(0, 0, -89)</Action>

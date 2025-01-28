@@ -1,0 +1,4 @@
+<Reasoning>
+The building appears to be located at the center of the grid (0, 0). I am currently at 54 meters altitude and need to descend to below 10 meters to ensure the building is in my field of view.
+</Reasoning>
+<Action>(0, 0, -45)</Action>

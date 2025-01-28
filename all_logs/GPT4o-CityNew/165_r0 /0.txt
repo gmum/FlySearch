@@ -1,0 +1,2 @@
+<Reasoning>The road in the center of the image is visible from this height, but I need to get closer to identify a construction site. I will move towards the center of the image at (0, 0) and descend to improve visibility.</Reasoning>
+<Action>(0, 0, -30)</Action>

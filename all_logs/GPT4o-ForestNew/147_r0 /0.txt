@@ -1,0 +1,4 @@
+<Reasoning>
+The building is visible in the field of view, slightly off to the northeast at coordinates (23, 23). I will move the drone to center it over the building and descend to get closer to the object.
+</Reasoning>
+<Action>(23, 23, -60)</Action>

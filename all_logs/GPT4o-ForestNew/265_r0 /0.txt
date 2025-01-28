@@ -1,0 +1,4 @@
+<Reasoning>
+There's a dark shape near the center of the grid at (-20, 20) that looks different from the rest of the vegetation. I will move the drone to center this area in my view and descend to get a closer look.
+</Reasoning>
+<Action>(-20, 20, -20)</Action>

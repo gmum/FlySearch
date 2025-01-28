@@ -1,0 +1,2 @@
+<Reasoning>The building is visible in the center of the image, located at coordinates (0, 0). I need to descend to get closer and ensure I'm below 10 meters above the building.</Reasoning>
+<Action>(0, 0, -50)</Action>

@@ -1,0 +1,4 @@
+<Reasoning>
+The building is visible in the image at approximately (-33, 0). I need to move the drone to center it over the building and lower the altitude to get below 10 meters. I'll move towards the west and decrease altitude.
+</Reasoning>
+<Action>(-33, 0, -41)</Action>

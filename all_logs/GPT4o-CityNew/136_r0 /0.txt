@@ -1,0 +1,4 @@
+<Reasoning>
+I can see a yellow point at coordinates (21, 21) which may indicate the presence of a fire. I will move towards it and decrease my altitude to get a closer look.
+</Reasoning>
+<Action>(21, 21, -20)</Action>

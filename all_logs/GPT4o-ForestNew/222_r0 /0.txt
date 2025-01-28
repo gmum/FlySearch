@@ -1,0 +1,4 @@
+<Reasoning>
+The airplane is likely the anomaly in this environment. I will center the UAV over the middle of the airplane and decrease altitude to ensure I'm below 10 meters.
+</Reasoning>
+<Action>(0, 0, -40)</Action>

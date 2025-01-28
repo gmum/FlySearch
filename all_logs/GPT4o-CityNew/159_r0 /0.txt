@@ -1,0 +1,2 @@
+<Reasoning>The white truck seems to be located at the coordinates (12, 12) on the grid. I will move the drone to center on this location and decrease altitude to get closer.</Reasoning>
+<Action>(12, 12, -25)</Action>

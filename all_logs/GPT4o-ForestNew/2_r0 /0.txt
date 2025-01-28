@@ -1,0 +1,4 @@
+<Reasoning>
+The fire is visible at coordinates (0, 23). I will fly to that location and reduce my altitude to ensure I am within 10 meters above it to confirm its presence.
+</Reasoning>
+<Action>(0, 23, -61)</Action>

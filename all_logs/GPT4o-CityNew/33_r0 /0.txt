@@ -1,0 +1,2 @@
+<Reasoning>The crowd seems to be located at approximately (-14, 14) on the grid. I need to center the drone over this point and descend to get below 10 meters above the crowd.</Reasoning>
+<Action>(-14, 14, -32)</Action>

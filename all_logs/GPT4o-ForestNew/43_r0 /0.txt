@@ -1,0 +1,2 @@
+<Reasoning>The building is visible in the center-bottom of the image. I need to decrease altitude to be below 10 meters above it. Moving to the center of the grid should give me a better view and position over the building.</Reasoning>
+<Action>(0, -10, -21)</Action>
