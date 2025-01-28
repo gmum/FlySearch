@@ -1,0 +1,3 @@
+<Reasoning> Flying at 34 meters, the object of interest is likely to be in the vicinity of the yellow points (x, y, z) close to (10, 10), given the grid overlay. To safely search below 10 meters, I will move down and slightly north, staying within the search area and the drone's capabilities.
+</Reasoning>
+<Action>(10, 10, -20)</Action>

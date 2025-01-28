@@ -1,0 +1,4 @@
+<Reasoning> Flying at an altitude of 66 meters, I need to descend to below 10 meters to be sure I'm close enough to the object to find it. I'll move slightly to the east to clear any obstacles and center myself on the object.</Reasoning>
+<Action>(4, 0, -20)</Action>
+
+<Reasoning> After descending and centering on the object, I can confirm that this is the campsite. I am now below 10 meters relative to the object.</Found>

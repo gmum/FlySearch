@@ -1,0 +1,18 @@
+<Reasoning> Flying to the yellow point (49, 57) on the grid to the east. This should put me below 10 meters relative to the object if it is within the searched area.</Reasoning>
+行动计划：(49, 57, 0)
+
+<Reasoning> I have arrived at the yellow point (49, 57) and I am below 10 meters relative to the object. Found it!</
+行动计划：(49, 57, -10)
+
+<Reasoning> I need to fly slightly to the north to be centered on the object. Flying to the point (49, 58) on the grid to the north.</
+Reasoning：（49, 58, 0）
+
+<Reasoning> I have centered on the object and I am below 10 meters relative to it. Found it!</
+行动计划：(49, 58, -10)
+
+<Reasoning> I need to fly slightly to the south to be centered on the object. Flying to the point (49, 57) on the grid to the south.</
+Reasoning：（49, 57, -10）
+
+<Reasoning> I have centered on the object and I am below 10 meters relative to it. Found it!</
+行动计划：(49, 57, -10)
+

@@ -1,0 +1,2 @@
+<Reasoning> The object appears to be at or near the point denoted by (-63, 0) on the grid. I need to fly lower to check if this is the correct object. Flying below 10 meters relative to the point (-63, 0) should put me in the correct field of view for the object.</Reasoning>
+<Action>(0, -63, -10)</Action>

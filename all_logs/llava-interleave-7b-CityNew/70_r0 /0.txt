@@ -1,0 +1,10 @@
+<Reasoning>Drifting slightly to the west in search of the object.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning> nearing the center point of the image, now checking the easternmost point of the object.</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>Found the object! Flying below 10 meters now.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>True</Found>

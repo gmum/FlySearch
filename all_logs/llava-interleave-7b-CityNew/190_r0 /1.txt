@@ -1,0 +1,7 @@
+<Reasoning>This is the current yellow point. I need to fly lower to check if this is the object.</Reasoning>
+行动(-5,0,-10)
+
+<Reasoning> Flying lower, but still within the search area and within the drone's capabilities. I think I've found the object.</
+Action(-5,0,-10)
+
+<Found>True</Found>

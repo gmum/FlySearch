@@ -1,0 +1,2 @@
+<Reasoning> I am currently flying at an altitude of 74 meters. I will move to the coordinates (0, 0, -10) to approach the object below 10 meters. If the object isn't found at this altitude, I will continue searching. If it is found, I will fly below 10 meters to ensure the object is within my field of view and I am centered on it.</Reasoning>
+<Action>(0, 0, -10)</Action>

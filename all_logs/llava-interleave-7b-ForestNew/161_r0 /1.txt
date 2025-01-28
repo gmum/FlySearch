@@ -1,0 +1,26 @@
+<Reasoning>Drifting slightly to the north to maintain a centered view on the grid.</Reasoning>
+.Action>(0, 0, -1)</Action>
+
+<Reasoning> flying slightly lower to maintain a centered view on the grid and to get closer to potential object.</Reasoning>
+.Action>(0, -1, -10)</Action>
+
+<Reasoning> continuing the search, flying slightly lower to the south to remain centered.</Reasoning>
+.Action>(-5, -1, -20)</Action>
+
+<Reasoning> flying slightly lower to the east to remain centered.</Reasoning>
+.Action>(5, -5, -25)</
+```kotlin
+<Reasoning> flying slightly lower to the south to remain centered.</Reasoning>
+(Action>(-10, -5, -30)</Action>
+
+<Reasoning> flying slightly lower to the west to remain centered.</Reasoning>
+.Action>(-15, -5, -35)</Action>
+
+<Reasoning> flying slightly lower to the south to remain centered.</Reasoning>
+.Action>(-20, -5, -40)</Action>
+
+<Reasoning> flying slightly lower to the east to remain centered.</Reasoning>
+.Action>(-25, -5, -45)</Action>
+
+<Reasoning> flying slightly lower to the south to remain centered.</Reasoning>
+.Action>(-30, -5, -50)</Action

@@ -1,0 +1,8 @@
+<Reasoning>
+I have found the object at the point (12, 0). However, I need to fly closer to ensure I am within 10 meters of it. I will adjust my altitude and position to get closer.
+</Reasoning>
+.Action>(12, 0, -20)</Action>
+<Reasoning>
+I have flown closer to the object and I am now within 10 meters. I can confirm that this is the object.
+</Reasoning>
+ACTIONFound>true</ActionFound>

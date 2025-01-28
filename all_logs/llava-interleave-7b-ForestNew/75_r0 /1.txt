@@ -1,0 +1,8 @@
+<Reasoning>We have found the object. However, we are still above 10 meters relative to it. We should continue our search to get below 10 meters.</Reasoning>
+
+<Action>(0, 0, -20)</Action>
+
+<Reasoning>We are now below 10 meters and centered on the object. According to the coordinates, we are 8.5 meters above the object, which is acceptable for a found response.</Reasoning>
+Action:(0, 0, -10)</Action>
+
+<Found>Found! The object is at or below 10 meters.</Found>

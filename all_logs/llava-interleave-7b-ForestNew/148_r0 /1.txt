@@ -1,0 +1,7 @@
+<Reasoning> I have descended to 10 meters below the grid center and I believe I am centered on the object. Flying slightly lower and remaining within the search area.</Reasoning>
+行动 (-3, 0, -10)
+
+<Reasoning> I have found the object at 10 meters below the grid center. Flying below 10 meters to confirm if I have found the correct object.</Reasoning>
+行动 (-2, 0, -20)
+
+<Found> Found the object at 10 meters below the grid center.</Found>

@@ -1,0 +1,2 @@
+<Reasoning>Based on the coordinates provided and the height of the drone, I need to move below 10 meters to search for the object. I will fly to the point (0, 0, -10) to get closer to the object. If that is not the object, I will continue the search. Otherwise, if it is the object, I will fly just below 10 meters and reply with "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>Let's continue the search below 10 meters and to the north. We should look at the points around (-5, 0, -10), (-5, 0, 0), (-5, 0, 10), (0, -5, -10), (0, -5, 0), (0, -5, 10), (5, -5, -10), (5, -5, 0), (5, -5, 10), (10, -5, -10), (10, -5, 0), (10, -5, 10) to cover a good area. If we find an anomaly below 10 meters, we can adjust our position accordingly. If not, we'll continue searching to the north.</Reasoning>
+.Action>(0, -5, -10)</Action>

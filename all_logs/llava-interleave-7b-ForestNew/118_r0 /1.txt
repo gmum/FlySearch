@@ -1,0 +1,13 @@
+<Reasoning>Drone is currently 82 meters above ground level. The object of interest is likely to be below or near the center of the grid, considering the grid is 400x400 meters from the drone's starting position. I will move slightly to the north to clear the drone's current altitude and then begin a search below 10 meters and within the grid's boundaries.</Reasoning>
+行动(-5,  0, -20)
+```less
+ <Action>(-5,  0, -20)</Action>
+```
+現在的海拔是 67 米。
+
+<Reasoning>Drone is currently 67 meters above ground level. I have found an object that is likely the person of interest, flying slightly lower than 10 meters and keeping a reasonable altitude. I will fly below 10 meters relative to it and reply with "FOUND".</
+Reasoning>
+<Action>(0, 0, -10)</
+```less
+ <Action>(0, 0, -10)</
+```

@@ -1,0 +1,8 @@
+<Reasoning> scanning the area around the marked point (0, 0) which is likely the location of the building.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning> Flying lower to check for the building at or near the marked point (0, 0), considering the starting altitude of 60 meters.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> The drone is now below 10 meters above the marked point (0, 0), which is the building. Found it.</Reasoning>
+<Action>(0, 0, 0)</Action>

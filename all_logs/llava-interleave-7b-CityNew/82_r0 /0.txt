@@ -1,0 +1,10 @@
+<Reasoning>This point (20, 10) seems to be the closest object of interest that is within my field of view and is below 10 meters. I will fly there to investigate.</Reasoning>
+<Action>(20, 10, -10)</Action>
+
+<Reasoning> Flying to (20, 10) did not result in the object being below 10 meters. Let's try a slightly east approach to see if that makes a difference.</Reasoning>
+<Action>(20, 10, -10)</Action>
+
+<Reasoning> I have arrived at (20, 10) and the object is indeed below 10 meters. I will fly just below it to confirm.</Reasoning>
+<Action>(20, 10, -05)</Action>
+
+<Found>

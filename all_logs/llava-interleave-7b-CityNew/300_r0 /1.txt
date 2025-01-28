@@ -1,0 +1,10 @@
+<Reasoning> I have flown below 10 meters and there is an object at approximately the coordinates (x, y) on the grid, which appears to be the one of interest. I will fly closer to it and verify if it is the anomaly.</Reasoning>
+(Action)(0, 0, -5)</Action>
+
+<Reasoning> I have flown closer to the object and it appears to be the anomaly based on its dimensions and the surrounding environment. I will fly below 10 meters to confirm.</Reasoning>
+(Action)(0, 0, -10)</Action>
+
+<Reasoning> The object has been confirmed as the anomaly. I will fly below 10 meters to ensure the search is complete.</Reasoning>
+(Action)(0, 0, -10)</Action>
+
+<Found>

@@ -1,0 +1,13 @@
+<Reasoning>Based on the overlaid grid and the points marked, it appears that the object of interest may be located around the (10, 10) area on the grid, or slightly to the north. To conduct a thorough search, I will move below 10 meters relative to the object and then adjust my position if necessary.</Reasoning>
+<Action>(10, 10, -10)</Action>
+
+<Reasoning>Upon further inspection, it appears that the object is indeed within 10 meters of the drone. I will fly below 10 meters to confirm the object's identity.</Reasoning>
+<Action>(10, 10, 0)</Action>
+
+<Reasoning>Found it! I am now below 10 meters relative to the object. I will continue my search to ensure it is the correct object and not merely a similar one.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>With a more thorough search, it has been confirmed that the object is indeed the one I am looking for. I will now fly away from the object.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Found>OBJECT FOUND</Found>

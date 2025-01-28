@@ -1,0 +1,2 @@
+<Reasoning>Based on the coordinates provided and the current altitude, I need to fly lower to search for the object. I will start my search by descending 10 meters below the current altitude, checking the area around the center point (0,0) on the grid.</Reasoning>
+<Action>(0,0,-10)</Action>

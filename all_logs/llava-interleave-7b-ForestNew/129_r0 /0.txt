@@ -1,0 +1,16 @@
+<Reasoning>Drifting towards the yellow point (52, 63) on the grid, this appears to be the object of interest. Flying below 10 meters and centered on it.</Reasoning>
+<Action>(52, 63, -10)</Action>
+<Reasoning>Found the object at (52, 63). Flying below 10 meters.</Reasoning>
+<Action>(52, 63, -20)</Action>
+<Reasoning>Drifting slightly to the north to maintain center.</Reasoning>
+<Action>(52, 63, -30)</Action>
+<Reasoning>Continuing to the north to keep center.</Reasoning>
+<Action>(52, 63, -40)</Action>
+<Reasoning> nearing the limit of my search area (400x400m). Staying centered.</Reasoning>
+<Action>(52, 63, -50)</Action>
+<Reasoning>Within the search area and centered. Found the object.</Reasoning>
+<Action>(52, 63, -60)</Action>
+<Reasoning>Drifting slightly to the south to keep center.</Reasoning>
+<Action>(52, 63, -60)</Action>
+<Reasoning>Found and staying centered.</Reasoning>
+<Action>(52, 63

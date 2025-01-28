@@ -1,0 +1,13 @@
+<Reasoning> Flying at my current altitude (57 meters) above the object may not yield the best results. I should adjust my altitude to be closer to the ground to search more thoroughly. Flying below 10 meters relative to the object is crucial for this task to be considered successful.</Reasoning>
+
+<Action>(0, 0, -90)</Action>
+
+<Reasoning> I have descended to a lower altitude (90 meters) and I am now flying closer to the ground to search for the object. I need to be cautious and not go into the boundaries of my field of view or exceed my allowed altitude limit (120 meters). Flying slightly to the north should provide a better angle to search the area more efficiently.</Reasoning>
+
+<Action>(0, 0, -90)</Action>
+
+<Reasoning> I have adjusted my altitude and direction to search more thoroughly. I am flying at a lower altitude (80 meters) and slightly to the north to cover more ground in the search. I need to remain vigilant and not exceed my allowed altitude limit (120 meters) or get off-bounds.</Reasoning>
+
+<Action>(0, 0, -80)</Action>
+
+<Reasoning> I have found an object below 10 meters relative to the drone. It appears to be the trash pile based on its proximity and location within the search area. Flying slightly to the south will give me a better angle

@@ -1,0 +1,6 @@
+<Reasoning> I have revised my trajectory to maintain a safer altitude while searching for the object. Despite not being directly centered on the object based on the grid, I am attempting to approach it from below 10 meters to ensure the object is within my field of view when I reply with "FOUND". I will continue my search within this smaller grid.</Reasoning>
+ …. (-4, 0, -10)</
+```kotlin
+<Reasoning> I have found the object, and it appears to be at a height of approximately 10 meters or lower. I am now in a position to confirm whether it is indeed the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+```

@@ -1,0 +1,5 @@
+<Reasoning>Based on the image and the coordinates provided, I believe the object of interest may be located at (30, 30, 30) on the grid, which is 30 meters below the drone's current altitude. To investigate this potential anomaly, I will fly the drone below 10 meters relative to the object, which is at (30, 30, 30) on the grid.</Reasoning>
+<Action>(30, 30, -20)</Action>
+<Reasoning>Upon further examination, it appears that the object is indeed at (30, 30, 30) on the grid. Flying below 10 meters relative to the object confirms that it is the anomaly.</Reasoning>
+<Action>(30, 30, -10)</Action>
+<Found>

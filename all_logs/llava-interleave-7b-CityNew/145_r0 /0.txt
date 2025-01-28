@@ -1,0 +1,11 @@
+<Reasoning> I have arrived at the area designated as (10, 10) on the grid and I am below 10 meters in altitude relative to the object. I will now search for the object.</Reasoning>
+<Action>(10, 10, -10)</Action>
+<Reasoning> I have found the object at (10, 10) and I am below 10 meters in altitude relative to it. I will now fly below 10 meters to confirm the object.</Action>
+<Action>(10, 10, -20)</Action>
+<Reasoning> The object has been confirmed at (10, 10) and I am below 10 meters in altitude relative to it. I will now fly to the north slightly.</Action>
+<Action>(10, 12, 0)</Action>
+<Reasoning> I have flown slightly to the north and I am centered on the object at (10, 11). I am below 10 meters in altitude relative to the object.</Action>
+<Action>(10, 11, 0)</Action>
+<Reasoning> I have confirmed that the object at (10, 11) is the green pickup truck. I will now fly slightly to the west to maintain center.</Action>
+<Action>(10, 11, -5)</Action>
+<

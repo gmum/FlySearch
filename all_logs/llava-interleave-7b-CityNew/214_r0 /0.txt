@@ -1,0 +1,22 @@
+<Reasoning>This area looks like it has the most variation in height, so it's a good place to start searching. I'll fly down to around the same level as the yellow point, then continue my search.</Reasoning>
+<Action>(40, 0, 0)</Action>
+
+<Reasoning> flying down to street level, checking around the yellow point closer to the road. if not the object, will continue the search to the north.</Reasoning>
+<Action>(30, 0, -20)</Action>
+
+<Reasoning> flying slightly to the north to search around the yellow point from a different angle.</Reasoning>
+<Action>(35, 0, -15)</Action>
+
+<Reasoning> flying down to street level and slightly to the right to continue the search.</Reasoning>
+<Action>(40, 5, 0)</Action>
+
+<Reasoning> flying down to street level and slightly to the left to continue the search.</Reasoning>
+<Action>(35, 5, 0)</Action>
+
+<Reasoning> flying down to street level and slightly to the right to continue the search.</Reasoning>
+<Action>(30, 5, 0)</Action>
+
+<Reasoning> flying down to street level and slightly to the left to continue the search.</Reasoning>
+<Action>(25, 5, 0)</Action>
+
+<Reasoning> flying down

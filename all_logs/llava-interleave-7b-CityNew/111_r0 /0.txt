@@ -1,0 +1,16 @@
+<Reasoning>This area seems to be lower than the current altitude, so it's a good area to search. Flying below 10 meters is crucial for this task.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Continuing the search, flying slightly to the north should cover a reasonable area without getting too high or too close to obstacles.</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>Keeping an eye on the lower areas, flying just a bit more north should encompass the area without overshooting the search bounds.</Action>(2, 0, -10)</
+Reasoning>This point is quite close to the drone's center of vision and seems to be at a lower altitude than previous points. It's a good candidate for the object.</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>Satisfied with the search at this point, flying below 10 meters and centered on the point (2, 0, -10), I can confidently say "FOUND".</Reasoning>
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>Staying centered and below 10 meters, I'll continue to monitor the area to ensure there are no other objects or changes in the environment.</Reasoning>
+<Action>(1, 0, -5)</Action>
+

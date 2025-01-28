@@ -1,0 +1,8 @@
+<Reasoning>I am currently above 10 meters above the object, and I have a clear view of the area below. I will fly below 10 meters and search for the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have descended below 10 meters and I can see the object in the center of the grid. I will fly directly to it.</Reasoning>
+<Action>(300, 0, 0)</Action>
+
+<Reasoning>Found it! I am now below 10 meters and centered on the object.</Reasoning>
+<Action>(0, 0, 0)</Action>

@@ -1,0 +1,5 @@
+<Reasoning>You've found a potential green pickup truck at (10, 20). Flying below 10 meters and centered on the object should confirm it's the right one.</Reasoning>
+<Action>(10, 20, -10)</Action>
+<Reasoning> flying below 10 meters and centered on the object confirms it's the right one.</Reasoning>
+<Action>(10, 20, -10)</Action>
+<Found>

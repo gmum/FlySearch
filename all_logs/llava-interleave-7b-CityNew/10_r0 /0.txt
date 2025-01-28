@@ -1,0 +1,2 @@
+<Reasoning> I am currently at an altitude of 81 meters. I need to fly below 10 meters to begin my search. I will move in the (-10, 0, -10) direction, which should place me below the drone's center of vision and closer to the object.</Reasoning>
+<Action>(-10, 0, -10)</Action>

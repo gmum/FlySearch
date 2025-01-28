@@ -1,0 +1,2 @@
+<Reasoning> I have arrived at the (10, 10) point on the grid, but I am not able to see the object below 10 meters. I need to move closer to the object. I will check the area below and to the left of this point.</Reasoning>
+<Action>(10, 10, -20)</Action>

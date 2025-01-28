@@ -1,0 +1,7 @@
+<Reasoning>We have arrived at an altitude where the point at (-24, 0, 0) seems to be quite close to the center of the drone's field of view. I will move closer to investigate if this is the object.</Reasoning>
+行动(-24, 0, -10)
+
+<Reasoning>Based on the proximity to the center of the drone's field of view, I believe this could be the object. I will fly below 10 meters to confirm.</Reasoning>
+行动(-24, 0, -10)
+
+<Found>Found it! The object is at or below 10 meters below the drone.</Found>

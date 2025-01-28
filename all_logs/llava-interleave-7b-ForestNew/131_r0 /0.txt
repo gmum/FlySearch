@@ -1,0 +1,7 @@
+<Reasoning>This point at (22, 13) appears to be quite close to the center of the image and might be the object. I am moving closer to check if it's the object.</Reasoning>
+<Action>(22, 13, -20)</Action>
+
+<Reasoning>Object found at (22, 13). Flying below 10 meters now.</Reasoning>
+<Action>(22, 13, -10)</Action>
+
+<Found>

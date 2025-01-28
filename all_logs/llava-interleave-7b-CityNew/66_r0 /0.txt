@@ -1,0 +1,2 @@
+<Reasoning>This drone is currently at a height of 57 meters. To search for the object, I will fly below 10 meters, then check if the object is within 10 meters of the drone. If not, I will adjust the drone's position slightly to the north.</Reasoning>
+<Action>(0, 0, -10)</Action>

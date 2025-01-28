@@ -1,0 +1,7 @@
+<Reasoning> I have flown below 10 meters and I am currently centered on the object. I will fly back up to 10 meters to confirm the object.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Reasoning> I have confirmed that the object is the one I am currently centered on. I will fly back below 10 meters to reply with "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found> The object was at most 10 meters below the drone when the "FOUND" response was provided.</Found>

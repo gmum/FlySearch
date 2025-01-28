@@ -1,0 +1,5 @@
+<Reasoning>This point (10, 10) seems to be the object of interest. I am now flying below 10 meters to it.</ Reasoning>
+<Action>(10, 10, 0)</Action>
+<Reasoning>I have arrived at the object and am now below 10 meters. I can confirm that this is the object I was looking for.</ Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found>

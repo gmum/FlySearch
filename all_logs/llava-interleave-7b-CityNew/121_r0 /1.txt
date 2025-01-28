@@ -1,0 +1,8 @@
+<Reasoning> I have descended to 10 meters below the center point of the grid and I am now searching for the object. I will fly slightly to the south to maintain a below-10-meter position relative to the object. </Reasoning>
+行动(-5, 0, -10)
+
+<Reasoning> This yellow point might be the object in question. I need to go slightly to the south to maintain a below-10-meter position relative to the object. If it's not the object in question, I will continue the search. I will also slightly go to the north. </Reasoning>
+行动(0, -5, -10)
+
+<Reasoning> The object appears to be at a similar altitude and position to the first point. However, I need to be more precise and confirm if this is the correct object. I will descend to slightly lower than 10 meters below the center point and then check if this is the object. If it is not, I will continue the search. </
+Found>

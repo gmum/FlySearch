@@ -1,0 +1,9 @@
+<Reasoning>This appears to be the area where the anomaly might be. I will fly below 10 meters and search around this zone.</Reasoning>
+<Action>(45, 0, -10)</Action>
+<Reasoning> flying lower to the area we are looking at </Reasoning>
+<Action>(40, 0, -20)</Action>
+<Reasoning> looking around the area to find the anomaly </Reasoning>
+<Action>(45, 0, -10)</Action>
+<Reasoning> Object found! Flying below 10 meters now.</Reasoning>
+<Action>(20, 0, -10)</Action>
+<Found>True</Found>

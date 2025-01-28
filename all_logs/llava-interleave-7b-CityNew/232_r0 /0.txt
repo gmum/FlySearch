@@ -1,0 +1,2 @@
+<Reasoning>Given the current altitude above the object, I need to move closer to the object to perform a proper search. Flying below 10 meters will likely be necessary to find the anomaly. I will approach the area near the yellow point, which is currently the highest point of interest near the object.</ Reasoning>
+<Action>(0, 0, -10)</Action>

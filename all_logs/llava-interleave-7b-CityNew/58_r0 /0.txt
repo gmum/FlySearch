@@ -1,0 +1,2 @@
+<Reasoning> It appears that the yellow points of interest are the ones closest to the drone's current position. I need to move closer to check if any of them are the object. I will fly below 10 meters and check the ones that are within my search area.</Reasoning>
+<Action>(0, 0, -10)</Action>

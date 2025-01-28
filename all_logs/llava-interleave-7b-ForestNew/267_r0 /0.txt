@@ -1,0 +1,4 @@
+<Reasoning>
+We need to search for an anomaly below 10 meters. Flying below 10 meters and checking the yellow point at (25,0) could be the anomaly. If it's not the anomaly, I'll continue searching.
+</Reasoning>
+<Action>(25, 0, -10)</Action>

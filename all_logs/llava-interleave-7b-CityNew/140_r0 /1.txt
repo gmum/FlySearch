@@ -1,0 +1,11 @@
+<Reasoning>
+    I have moved below 10 meters relative to the object and I am now centered on it. I will fly back down to 10 meters or less to confirm the object.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>
+    I have confirmed that the object is indeed the one I am currently centered on. I will now fly back up to 10 meters or less to ensure I am still below it and I have found the object.
+</Reasoning>
+Action>(0, 0, 10)</Action>
+
+<Found>

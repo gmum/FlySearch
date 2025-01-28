@@ -1,0 +1,4 @@
+<Reasoning> I have flown below 10 meters and I believe I have found the object. The point at (-44, -44) is significantly lower than the rest and it aligns with the coordinates given for the object to be found. I will fly below this point to confirm.</Reasoning>
+<Action>(-44, -44, -10)</Action>
+<Reasoning> The drone is now below 10 meters and I have confirmed that the object at (-44, -44) is the one I am looking for.</Reasoning>
+<Found>

@@ -1,0 +1,16 @@
+<Reasoning> Flying at a higher altitude (above 10 meters) to search a larger area. Flying below 10 meters is not sufficient to confirm the location of the object.</Reasoning>
+.Action>(0, 0, -20)</Action>
+
+<Reasoning> Flying to the grid point (5, 0) to search the area around that point. At this altitude, the drone is within the search area.</Reasoning>
+.Action>(5, 0, -10)</Action>
+
+<Reasoning> Getting closer to the point of interest. Flying to the point (5, 0, -5) to check if the object is at this lower altitude.</Reasoning>
+.Action>(5, 0, -5)</Action>
+
+<Reasoning> Found the object! Flying below 10 meters to confirm the object is within the search area and closer to the drone.</Reasoning>
+.Action>(0, 0, -10)</Action>
+
+<Found> Yes, the object was found at or below 10 meters. Flying even closer to confirm the object is within the search area and closer to the drone.</Found>
+Action>(0, 0, -5)</Action>
+
+<Found> The object was found at or below 10 meters. The drone is within the search area and closer to the object. </Found>

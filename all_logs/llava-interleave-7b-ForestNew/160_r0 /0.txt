@@ -1,0 +1,10 @@
+<Reasoning>It appears that the object of interest is near the point (26, 26) on the grid, which is approximately 26 meters above ground level. I will fly to that location while maintaining an altitude below 10 meters to ensure I am centered on the object and close to it.</Reasoning>
+<Action>(26, 26, -10)</Action>
+
+<Reasoning>I have now arrived at the point (26, 26) and I am within 10 meters of the object. Based on the coordinates provided, it is likely the object I am searching for. I will now fly below 10 meters to confirm that it is indeed the object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Reasoning>Found it! I am below 10 meters from the object and it appears to be the correct point. I will now fly back to a safe altitude and report my findings.</Reasoning>
+<Action>(0, 0, 70)</Action>
+
+<Found>Found it!</Found>

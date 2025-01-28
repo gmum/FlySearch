@@ -1,0 +1,13 @@
+<Reasoning>This area of the image shows a cluster of points around the center, with several of them being quite close together. It is difficult to determine with certainty which of these points is the object of interest without a clearer image or additional context. I will fly below 10 meters and reevaluate the situation.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> flying below 10 meters, I can see a cluster of points around the center, but it's hard to pinpoint one specifically. Let's continue the search with a slight northward movement.</Reasoning>
+<Action>(0, 1, -10)</Action>
+
+<Reasoning> I have flown slightly north and there appears to be a clearer area of points around the center with less clustering. I will fly to the center of this cluster to get a better look.</Reasoning>
+<Action>(21.21, 21.21, 0)</Action>
+
+<Reasoning> I am now at the center of the cluster and I can see that one of the points is slightly below the center line. This point has the lowest altitude among the ones I can see. I will fly to this point to get a closer look.</Reasoning>
+<Action>(21.21, 21.21, 0)</Action>
+
+<Reasoning> I have arrived at the point with the lowest altitude. It

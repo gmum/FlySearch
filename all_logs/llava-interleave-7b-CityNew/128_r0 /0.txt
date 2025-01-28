@@ -1,0 +1,2 @@
+<Reasoning>This point at (37, 27) seems to be quite close to the drone's center of vision. Flying to this point will likely place the object within the drone's field of view and flying slightly below (to account for any height difference) should keep the drone below 10 meters relative to the object.</Reasoning>
+<Action>(37, 27, -5)</Action>

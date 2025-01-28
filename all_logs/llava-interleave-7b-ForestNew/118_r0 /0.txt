@@ -1,0 +1,2 @@
+<Reasoning>Drone is currently 93 meters above ground level. The object of interest is likely to be below or near the center of the grid, considering the grid is 400x400 meters from the drone's starting position. I will move slightly to the north to clear the drone's current altitude and then begin a search below 10 meters and within the grid's boundaries.</Reasoning>
+<Action>(0, 0, -10)</Action>

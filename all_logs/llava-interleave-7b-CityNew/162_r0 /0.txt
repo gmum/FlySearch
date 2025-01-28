@@ -1,0 +1,4 @@
+<Reasoning>
+I have arrived at the place denoted as (10, 10) on the grid. To check if this is the object, I need to fly lower. I will fly below 10 meters and search for any point that is within 10 meters of my current position.
+</Reasoning>
+<Action>(10, 10, -10)</Action>

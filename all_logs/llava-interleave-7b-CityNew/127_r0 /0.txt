@@ -1,0 +1,5 @@
+<Reasoning>This point seems to be quite close to the object in question. I'm going to move closer for a more thorough check.</Reasoning>
+<Action>(0, -10, -20)</Action>
+
+<Reasoning>Found it! I'm now below 10 meters relative to the object.</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,5 @@
+<Reasoning>This looks like we're getting close to the object now. I need to fly just below 10 meters to ensure we're centered and to check if this is the object we're looking for.</Reasoning>
+<Action>(3, 0, -5)</Action>
+
+<Reasoning>We're now below 10 meters and centered on the object. Found it!</Reasoning>
+<Action>(0, 0, 0)</Action>

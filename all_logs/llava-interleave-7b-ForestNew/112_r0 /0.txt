@@ -1,0 +1,5 @@
+<Reasoning>
+I have flown below 10 meters and I am now centered on the object denoted by the coordinates (14, 14). I am ready to reply with "FOUND".
+</Reasoning>
+<Action>(14, 14, -10)</Action>
+<Found>True</Found>

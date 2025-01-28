@@ -1,0 +1,7 @@
+<Reasoning>It seems the object is not immediately nearby. I will search a bit to the north and see if I can locate it.</Reasoning>
+行动(-10, 0, 0)
+
+<Reasoning>After searching to the north, I have found the object. It is now below 10 meters and centered on the object.</Reasoning>
+行动(10, 0, 0)
+
+<Found>TRUE</Found>

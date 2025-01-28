@@ -1,0 +1,4 @@
+<Reasoning>After taking into account the coordinates and altitude restrictions, I will search for the object at a lower altitude, below 10 meters. I will update the <Action> tag with the new coordinates as I go lower, keeping the drone centered and within the search area.</Reasoning>
+行动计划(-20, -20, -10)
+<Reasoning>Further lowering the altitude, I have found the object at approximately (-20, -20). I will now fly to this location while keeping below 10 meters and reply with "FOUND" once I'm close enough to the object.</Reasoning>
+<Found>(-20, -20, 40)</Found>

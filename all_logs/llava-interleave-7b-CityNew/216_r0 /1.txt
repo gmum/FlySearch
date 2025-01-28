@@ -1,0 +1,8 @@
+<Reasoning>It appears that the yellow points are the ones of interest. I need to move closer to check if they are the anomaly. Flying below 10 meters in these coordinates will provide a good starting point for the search.</Reasoning>
+(Action)(0, -10, 0)</Action>
+
+<Reasoning>After flying below 10 meters, I'm now centered on one of the yellow points. I will continue the search by moving slightly to the north.</Reasoning>
+(Action)(0, 5, 0)</Action>
+
+<Reasoning>I have found the anomaly. It is the object near the point (16, 16) on the grid. I am flying below 10 meters relative to it.</Reasoning>
+<Found>(16, 16, 0)</Found>

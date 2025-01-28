@@ -1,0 +1,5 @@
+<Reasoning>Given the grid and the coordinates provided, this point is quite close to the object in question. I'll fly closer for a more thorough check.</Reasoning>
+<Action>(0, -10, -20)</Action>
+
+<Reasoning>Found it! I'm now below 10 meters relative to the object.</Reasoning>
+行动计划：将飞行高度降低到10米以下，以便在搜索区域（400x400m）内确认对象。

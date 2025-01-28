@@ -1,0 +1,11 @@
+<Reasoning> Flying at an altitude of 38 meters above the object, the yellow point marked as (25, 25) on the grid is the closest point that is 10 meters or below. To verify if this is the object, I will descend to a lower altitude.
+
+<Action>(0, -50, -10)</Action>
+
+<Reasoning> I have descended to a lower altitude of 28 meters and found that the yellow point (25, 25) is still the closest point that is 10 meters or below. It appears to be the object.
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> Flying below 10 meters and centered on the object, I can now reply with "FOUND".
+
+<Found>

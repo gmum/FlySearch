@@ -1,0 +1,8 @@
+<Reasoning>This is an aerial view of the area. Let's fly below 10 meters and search for the object.</Reasoning>
+ tụng <Action>(0, 0, -10)</Action>
+< Reasoning >I have flown 10 meters below and centered on the drone. I do not see a black truck here. I will continue the search.</Reasoning>
+< Action>(5, 0, -30)</Action>
+< Reasoning > flying above and slightly to the north to search the area  </ Reasoning>
+< Action>(0, 0, -10)</Action>
+< Reasoning > I have found the black truck. I am now below 10 meters and centered on it.</Reasoning>
+<Found>

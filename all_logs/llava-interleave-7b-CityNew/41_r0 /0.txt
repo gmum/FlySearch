@@ -1,0 +1,2 @@
+<Reasoning>This drone is currently 54 meters above ground level. In order to search for the object, I will first fly below 10 meters and then move in smaller increments to get closer to the object. I will also be mindful of staying within the bounds of my search area and not going outside of my field of view. If I find the object, I will fly below 10 meters relative to it.</Reasoning>
+<Action>(0, 0, -10)</Action>

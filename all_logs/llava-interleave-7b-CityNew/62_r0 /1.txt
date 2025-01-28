@@ -1,0 +1,6 @@
+<Reasoning>Mainly searching to the right to avoid the body of water and to the left to stay centered and below 10 meters.</Reasoning>
+除去当前海拔 (38 米), x 和 y 坐标为 0, z 坡度为 -10 米，即 <Action>(0, 0, -10)</Action>
+<Reasoning>Drifting to the right to find the yellow taxi, ensuring I stay below 10 meters and centered on the object.</Reasoning>
+(ActionEvent)(2, 0, -10)</
+
+search

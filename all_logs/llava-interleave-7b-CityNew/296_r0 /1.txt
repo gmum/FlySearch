@@ -1,0 +1,5 @@
+<Reasoning> I have arrived at the yellow points and I see one that is below 10 meters. I'll fly to that point and check if it's the anomaly.</Reasoning>
+<Action>(24, 0, -10)</Action>
+
+<Reasoning> The object is at or near the point (24, 0). It's below 10 meters and within my field of view. I'll fly below 10 meters and report "FOUND".</Reasoning>
+行动(-24, 0, -10)

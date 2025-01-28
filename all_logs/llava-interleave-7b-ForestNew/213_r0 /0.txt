@@ -1,0 +1,2 @@
+<Reasoning>You've flown 69 meters above ground level, and you're tasked to find an anomaly below 10 meters in altitude relative to your current position. Let's start by flying downward and to the south to search for the anomaly. We'll be keeping an eye on the grid lines to ensure we stay within our search area and keep our altitude below 10 meters.</Reasoning>
+<Action>(0, -10, -10)</Action>

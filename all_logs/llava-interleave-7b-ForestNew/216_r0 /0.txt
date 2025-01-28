@@ -1,0 +1,4 @@
+<Reasoning> I have descended to a lower altitude and I see a point that doesn't fit with the rest of the environment. Flying below 10 meters relative to this point should confirm its identity. I will now fly to a lower altitude to confirm the object. </Reasoning>
+<Action>(10, 10, 0)</Action>
+<Reasoning> I have flown below 10 meters and I can confirm that the object is the one I was looking for. I am now ready to report my findings. </Reasoning>
+<Found>

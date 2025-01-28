@@ -1,0 +1,2 @@
+<Reasoning> Based on the coordinates provided, the object of interest is at a point slightly below (10, 10) on the grid. To check if this is the correct object, I need to fly below 10 meters relative to it. I will fly to the point (5, 0, -30) to get closer to the object.</Reasoning>
+<Action>(5, 0, -30)</Action>

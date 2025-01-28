@@ -1,0 +1,7 @@
+<Reasoning> I have flown below 10 meters and I believe I am centered on the object. I will now confirm by flying closer and replying with "FOUND" when I have confirmed the object is in my field of view and within 10 meters of altitude.</Reasoning>
+行动(-7,0,-10)
+
+<Reasoning> I have confirmed the object is the one I was looking for. It is centered in my field of view and within 10 meters of altitude.</Reasoning>
+行动(-7,0,-10)
+
+<Found>True</Found>

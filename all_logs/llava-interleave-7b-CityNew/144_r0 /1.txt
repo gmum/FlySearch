@@ -1,0 +1,5 @@
+<Reasoning>We have already confirmed the object's location and are now 10 meters above it or closer. It is now time to fly away to avoid any potential risk of collision or interference.</ Reasoning>
+.Action>(0, 0, 10)</Action>
+
+<Reasoning>We have successfully flown away from the object without coming into close proximity. The search is complete.</Reasoning>
+<Found>OBJECT FOUND</Found>

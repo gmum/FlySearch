@@ -1,0 +1,4 @@
+<Reasoning>This area looks like it might have the object we're looking for. Flying below 10 meters in this direction should give us a good look at it. If it's not here, we'll need to keep searching.</Reasoning>
+<Action>(45, 0, -10)</Action>
+
+<Reasoning>We've successfully flown below 10 meters and found the object. It's in our field of view and we're centered on it.</Found>

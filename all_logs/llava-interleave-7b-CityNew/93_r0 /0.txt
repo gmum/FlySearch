@@ -1,0 +1,21 @@
+<Reasoning>This image shows a complex urban landscape with numerous objects. I will perform a thorough search below 10 meters and to the sides to find the fire. I will also adjust my altitude and direction as needed to remain within the search area and keep the object within my field of view.</Reasoning>
+
+<Action>(0, -10, -5)</Action>  <!-- Move slightly to the south -->
+
+<Reasoning>Continuing the search below 10 meters and to the south. I have not found the fire yet.</Reasoning>
+
+<Action>(5, -10, -5)</Action>  <!-- Move slightly to the southeast -->
+
+<Reasoning>Search continues below 10 meters and to the southeast. I have not found the fire yet.</Reasoning>
+
+<Action>(5, 0, -5)</Action>  <!-- Move slightly to the south -->
+
+<Reasoning>Search below 10 meters and to the south. I have not found the fire yet.</Reasoning>
+
+<Action>(-5, 0, -5)</Action>  <!-- Move slightly to the southeast -->
+
+<Reasoning>Search below 10 meters and to the southeast. I have not found the fire yet.</Reasoning>
+
+<Action>(-5, -10, -5)</Action>  <!-- Move slightly to the south -->
+
+<Reasoning>Search below 10 meters and to the south. I have not found

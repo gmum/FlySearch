@@ -1,0 +1,13 @@
+<Reasoning>If we look at the map, we can see a yellow point that might be the police car we're looking for. However, we should be cautious as we don't know for certain if this is the correct object. To proceed with the search, I'll fly lower and to the north to get a better look at the point and to check if it's the police car.</Reasoning>
+
+<Action>(0, -5, -10)</Action>
+
+<Reasoning>After flying lower and to the north, I'm now at a better position to evaluate if this is the police car. However, I still can't confirm if this is the correct object with absolute certainty. I'll continue the search slightly to the east to see if there's any movement or another point of interest nearby.</Reasoning>
+
+<Action>(1, 0, -5)</Action>
+
+<Reasoning>Upon further evaluation, I've found another yellow point to the east. This could potentially be the police car. Let's move closer to investigate and confirm if this is the correct object.</Reasoning>
+
+<Action>(2, 0, -10)</Action>
+
+<Reasoning>Now that I'm much closer to the potential police car, I can confirm that this is indeed the object we've been looking for. I am below 10 meters relative to it, and I can see that it's the police car. I will now fly below 10 meters

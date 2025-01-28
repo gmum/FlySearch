@@ -1,0 +1,2 @@
+<Reasoning>Looking at the coordinates and the current altitude, I am checking the point at (-49, 49) on the grid. This point is within my field of view and appears to be close to the current altitude. I will move in this direction to get below 10 meters above the object.</Reasoning>
+(ActionEvent>(0, -49, -10)</Action>

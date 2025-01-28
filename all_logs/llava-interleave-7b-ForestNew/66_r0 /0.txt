@@ -1,0 +1,2 @@
+<Reasoning>Based on the overlaid grid and the coordinates provided, I need to move closer to the object, but I should also be aware of remaining altitude constraints. Flying below 10 meters and staying within the search area of 400x400m from the starting position are crucial for a successful search.</Reasoning>
+<Action>(30, 0, -50)</Action>

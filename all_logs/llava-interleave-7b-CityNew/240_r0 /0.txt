@@ -1,0 +1,7 @@
+<Reasoning>This point seems to be the object of interest, given its isolated position and the fact that it is the lowest point in the image. I will fly down to investigate.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> flying down to the lowest point of the object, now I will check if this is the object by hovering and checking the coordinates.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>(0, 0, -10)</Found>

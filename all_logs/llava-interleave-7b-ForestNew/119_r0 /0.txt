@@ -1,0 +1,2 @@
+<Reasoning> Flying at an altitude of 71 meters is not optimal for finding an object. I should descend to a lower altitude to search for the object. Flying below 10 meters relative to the object would be ideal. I will also need to scan the area to ensure the object is within my field of view before I declare "FOUND". Keep in mind that I should remain within the bounds of my search area (400x400 meters) and not move outside my current view.</Reasoning>
+<Action>(0, 0, -50)</Action>

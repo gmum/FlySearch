@@ -1,0 +1,7 @@
+<Reasoning> Flying at an altitude of 71 meters above ground level does not provide a clear view of the object. I will proceed to lower the UAV and search around the area.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning> Flying below 10 meters now, still no clear object in view. I will search to the north and slightly east to cover more ground.</Reasoning>
+<Action>(5, 0, -30)</Action>
+<Reasoning> Lowered the UAV below 10 meters and found the object to the northeast. It appears to be the police car.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found> The object has been found below 10 meters and to the northeast.</Found>

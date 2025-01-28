@@ -1,0 +1,11 @@
+<Reasoning> Flying below 10 meters and checking the yellow points seems to be the best approach. I'll start my search below 10 meters and to the north.</Reasoning>
+<Action>(0, -10, 0)</Action>
+
+<Reasoning> I've arrived below 10 meters and I'm now facing the yellow points. Let's check if any of them are the object we're looking for.</Reasoning>
+<Action>(5, 0, -5)</Action>
+
+<Reasoning> I've found an object that fits the description. It's at a lower altitude than the others and seems to be centered in my field of view. I'll fly below 10 meters to confirm.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> Found it! I'm now below 10 meters and centered on the object. I can reply with "FOUND".</Reasoning>
+<Found>True</Found>

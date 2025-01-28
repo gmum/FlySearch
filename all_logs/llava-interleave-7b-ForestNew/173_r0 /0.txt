@@ -1,0 +1,2 @@
+<Reasoning>Drifting to the west (x, y, z) will place the drone closer to the center of the image, where the object might be. Flying below 10 meters in this direction will give us a better view of the ground and may lead us to the object.</Reasoning>
+<Action>(0, -20, -10)</Action>

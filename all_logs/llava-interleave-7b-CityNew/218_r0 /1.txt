@@ -1,0 +1,11 @@
+<Reasoning>I have flown below 10 meters and I found an anomaly at the coordinates (17, 21). This appears to be the object I am looking for. I am now below 10 meters relative to it and I can confirm that this is the object.</Reasoning>
+<Action>(17, 21, -10)</Action>
+<Reasoning>Found the object at (17, 21). I am now flying slightly to the south to maintain a close center position.</Reasoning>
+<Action>(17, 21, -5)</Action>
+<Reasoning>Staying centered on the object at (17, 21). I will fly to the object's coordinates to confirm that this is the anomaly.</Reasoning>
+<Action>(17, 21, 0)</Action>
+<Reasoning>Centered on the object at (17, 21). I will now fly slightly to the north to cover more ground.</Reasoning>
+<Action>(17, 21, 5)</Action>
+<Reasoning>Continuing to search slightly to the north. I am keeping a close center position on the object at (17, 21).</Reasoning>
+<Action>(17, 21, 10)</Action>
+<Reasoning>Staying centered on the object at (17, 21). I

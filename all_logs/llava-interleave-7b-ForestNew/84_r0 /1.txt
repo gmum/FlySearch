@@ -1,0 +1,11 @@
+<Reasoning>I'm currently 65 meters above ground level. To find the object, I need to fly below 10 meters and search in the vicinity of the marked points on the grid. I should also be mindful of staying within my field of view and not moving too far off course.</Reasoning>
+行动(-3, 0, -10)  <!-- Move down 10 meters and to the east -->
+
+<Reasoning>After moving down 10 meters and to the east, I should search the area around the marked points on the grid. I need to stay within my field of view and not move too far off course.</Reasoning>
+行动(-3, 0, -10)  <!-- Move down 10 meters and to the east -->
+
+<Reasoning>Since I'm at the point (-3, 0) and I haven't found the object yet, I should continue searching in the nearby vicinity of the marked points on the grid. I need to stay within my field of view and not move too far off course.</Reasoning>
+行动(-3, 0, -5)  <!-- Move down 5 meters and to the east -->
+
+<Reasoning>After moving down 5 meters and to the east, I should search the area around the marked points on the grid. I need to stay within my field of view and not move too far off course.</Reasoning>
+行动(-3, 0, -

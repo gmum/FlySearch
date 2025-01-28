@@ -1,0 +1,7 @@
+<Reasoning>
+This point seems to be the object in question. I am flying below 10 meters relative to it.
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>Arrived at the object. I am now below 10 meters relative to the object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Found>

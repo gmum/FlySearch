@@ -1,0 +1,2 @@
+<Reasoning> Flying at 10 meters below the center point (32, 32) seems like a good starting point for the search. However, I must also consider staying within the search area (400x400m from the starting position) and not going above my altitude limit (120 meters). I will proceed with the search at a slightly lower altitude than the center point to cover a larger area and account for any potential obstructions or variations in the terrain.</Reasoning>
+<Action>(31, 31, -5)</Action>

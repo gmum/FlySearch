@@ -1,0 +1,26 @@
+<Reasoning>This seems to be the area of interest. Flying below 10 meters and centered on the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Flying slightly to the north to be centered on the object.</Reasoning>
+<Action>(1, 0, -10)</Action>
+
+<Reasoning>Flying slightly to the east to be centered on the object.</Reasoning>
+<Action>(1, 1, -10)</Action>
+
+<Reasoning> flying slightly to the north to be centered on the object.</Reasoning>
+<Action>(2, 1, -10)</Action>
+
+<Reasoning>Flying slightly to the west to be centered on the object.</Reasoning>
+<Action>(1, 2, -10)</Action>
+
+<Reasoning>Flying slightly to the north to be centered on the object.</Reasoning>
+<Action>(2, 2, -10)</Action>
+
+<Reasoning>Flying slightly to the east to be centered on the object.</Reasoning>
+<Action>(3, 2, -10)</Action>
+
+<Reasoning>Flying slightly to the north to be centered on the object.</Reasoning>
+<Action>(4, 2, -10)</Action>
+
+<Reasoning>You've flown below 10 meters and centered on the object. Found it.</Reasoning>
+<Action>(0,

@@ -1,0 +1,2 @@
+<Reasoning>It appears that the object of interest is at a lower altitude than the rest of the environment. Flying below 10 meters and staying centered on the object should locate it. I will search in this area.</Reasoning>
+<Action>(0, 0, -10)</Action>

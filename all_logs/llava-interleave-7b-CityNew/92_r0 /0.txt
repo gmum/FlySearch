@@ -1,0 +1,13 @@
+<Reasoning>This point at (29, 29) on the grid is slightly lower than the current altitude, and it's within the search area. I will fly to this point to check if the object is at or near this height.</Reasoning>
+<Action>(29, 29, -20)</Action>
+
+<Reasoning>Based on the current position and the search area, I will move slightly to the east to (30, 29) to continue the search.</Reasoning>
+<Action>(30, 29, -20)</Action>
+
+<Reasoning>This point at (31, 29) on the grid is lower than the current altitude and within the search area. I will fly to this point to check if the object is at or near this height.</Reasoning>
+<Action>(31, 29, -20)</Action>
+
+<Reasoning>This point at (32, 29) on the grid is lower than the current altitude and within the search area. I will fly to this point to check if the object is at or near this height.</Reasoning>
+<Action>(32, 29, -20)</Action>
+
+<Reasoning>This point at (33, 29) on the grid is lower than the current altitude and within the search area. I will fly to this point to check if the object is at or near

@@ -1,0 +1,5 @@
+<Reasoning>We need to maintain a close search and adjust our altitude and direction to stay below 10 meters relative to the object. I will move slightly to the south to continue the search.</Reasoning>
+(ActionEvent)(-3, 0, -10)</Action>
+
+<Reasoning>Continuing the search, I have found the yellow point to be the object in question. I am now below 10 meters relative to the object and can report "FOUND".</Reasoning>
+行动(-3, 0, -10)

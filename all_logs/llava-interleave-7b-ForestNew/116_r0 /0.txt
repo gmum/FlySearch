@@ -1,0 +1,2 @@
+<Reasoning>Based on the coordinates and the object of interest, the drone should fly to the point (10, 10) to get below 10 meters relative to the object. However, given the limitations in movement and altitude, I will search a region around that point to find the object.</Reasoning>
+<Action>(10, 10, -10)</Action>

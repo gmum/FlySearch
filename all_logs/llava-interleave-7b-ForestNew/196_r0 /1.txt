@@ -1,0 +1,12 @@
+<Reasoning>This is the area of interest. Flying below 10 meters now.</
+Reasoning>
+Action>(0, 0, -10)</Action>
+<Reasoning> Staying below 10 meters for confirmation.</Reasoning>
+Action>(0, 0, 0)</Action>
+<Found></Found>
+<Reasoning> Found it. Flying exactly below 10 meters.</Reasoning>
+Action>(0, 0, -10)</
+Action>
+<Reasoning> Staying below 10 meters for confirmation.</
+Action>
+<Found></Found>

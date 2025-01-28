@@ -1,0 +1,3 @@
+<Reasoning> Flying at 62 meters above ground level is too high to be able to find the object at most 10 meters below the drone. I need to descend to a lower altitude to search for the object.
+</Reasoning>
+<Action>(0, 0, -50)</Action>

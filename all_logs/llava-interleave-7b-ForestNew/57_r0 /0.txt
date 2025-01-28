@@ -1,0 +1,1 @@
+<Reasoning>Based on the coordinates provided and the coordinates of the drone, I should be able to find the object below 10 meters. I will fly to the nearest yellow point on the grid, then adjust my altitude and position to be below 10 meters relative to the object. If I don't find the object at that height, I will continue searching. <Action>(10, 10, -20)</Action></Reasoning>

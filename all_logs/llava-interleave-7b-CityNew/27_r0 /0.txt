@@ -1,0 +1,7 @@
+<Reasoning>This is the object in question. I have descended to an altitude below 10 meters relative to it. I will now fly back to 10 meters above it to confirm.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Reasoning>Found the object. Flying back to 10 meters above.</Reasoning>
+<Action>(0, 0, 10)</Action>
+
+<Found>True</Found>

@@ -1,0 +1,2 @@
+<Reasoning> Flying at a higher altitude of 61 meters above the ground level is not ideal for finding the object. I need to fly closer to the ground to search for the object. Flying below 10 meters relative to the object is crucial for this task. The object should be in my field of view when I reply with "FOUND". I will search a 400x400 meters area centered around the drone's position.</Reasoning>
+<Action>(0, 0, -90)</Action>

@@ -1,0 +1,6 @@
+<Reasoning> Flying to the yellow points seems to be a good starting point. I'll move closer to them and check their altitude to see if any are below 10 meters.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning> The object appears to be at or near the point (24, 0). It's below 10 meters and within my field of view. I'll fly below 10 meters and report "FOUND".</Reasoning>
+<Action>(24, 0, -10)</Action>
+<Found>true</Found>

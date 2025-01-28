@@ -1,0 +1,15 @@
+<Reasoning>This appears to be the area of dense tree coverage where the object is likely to be. I will search closer to the ground, staying within the bounds of the search area.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning> flying closer to the ground, still within the search area and slightly to the north</
+<Action>(5, 0, -20)</Action>
+
+<Reasoning> flying even closer to the ground, staying within the bounds and slightly to the north</
+<Action>(5, 0, -15)</Action>
+
+<Reasoning> flying even closer, staying within the bounds and slightly to the north</
+<Action>(5, 0, -10)</Action>
+
+<Reasoning> Found the object at an altitude of 9 meters below the drone, staying within the bounds and centered on the object</
+<Action>(0, 0, -10)</Action>
+<Found>

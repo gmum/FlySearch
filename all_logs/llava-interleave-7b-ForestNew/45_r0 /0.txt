@@ -1,0 +1,2 @@
+<Reasoning> Flying at 66 meters, I need to find a location below 10 meters to the object. I see some points close to the center of the image that are within my search area. Let's approach the (-44, -44) coordinate, which is slightly above the center and below the drone's current altitude.</Reasoning>
+<Action>(-44, -44, -6)</Action>

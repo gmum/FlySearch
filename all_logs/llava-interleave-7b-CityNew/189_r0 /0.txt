@@ -1,0 +1,2 @@
+<Reasoning>Based on the points laid out, I should be looking for a location around the center of the grid, close to the object but not directly above. Flying slightly below 10 meters would be ideal. I will move in a direction that aligns with the center of the grid and search for an object below 10 meters.</Reasoning>
+<Action>(0, 0, -10)</Action>

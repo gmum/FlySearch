@@ -1,0 +1,12 @@
+<Reasoning>There are several points marked with (-14, -14) that might be the object of interest. I will fly below 10 meters and to the north to investigate. If the object is not there, I will continue searching.</Reasoning>
+<Action>(0, -15, -10)</Action>
+
+<Reasoning> flying to the north a bit more, I see two (-14, -14) points that might be the object. I will fly closer to check. </Reasoning>
+<Action>(0, -15, -20)</Action>
+
+<Reasoning> I have arrived at the (-14, -14) point and I am below 10 meters. I will now fly to a slightly lower altitude to get a better view and confirm if this is the object.</Action>(0, -15, -25)
+
+<Reasoning> Based on the current perspective, this (-14, -14) point appears to be the object. I will fly below 10 meters to confirm. </Reasoning>
+<Action>(0, -20, -10)</Action>
+
+<Found>Found the object at (-14, -14), below 10 meters.</Found>

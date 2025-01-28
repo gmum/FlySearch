@@ -1,0 +1,2 @@
+<Reasoning> I have arrived at the place denoted as (10, 10) on the grid, and I am currently 39 meters above ground level. I need to move closer to the object in question. Flying below 10 meters relative to the object would be ideal. </Reasoning>
+<Action>(10, 10, -10)</Action>

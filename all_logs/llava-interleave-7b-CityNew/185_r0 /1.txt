@@ -1,0 +1,8 @@
+<Reasoning>Continuing the search, I need to move further below the drone's current altitude of 26 meters to increase the chances of finding the object. Flying below 10 meters will give us the best chance of being close to the object. I will proceed with a move below 10 meters in the center of the image.</Reasoning>
+Action(-9, 0, -20)</
+```arduino
+<Reasoning>After moving below 10 meters, I am now centered with the object (indicated by the yellow point). I will fly below 10 meters to ensure we are close enough to the object to report our finding.</
+````
+```Reasoning>Found the object at 10 meters below the drone.</
+````
+<Found>Found the object at 10 meters below the drone.</Found>

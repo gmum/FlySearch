@@ -1,0 +1,10 @@
+<Reasoning> I am currently centered on the object at (10, 11) and I am below 10 meters in altitude relative to the object. I will now fly slightly to the south to maintain center.</
+Action>(10, 11, -5)</Action>
+<Reasoning> I have flown slightly to the south and I am centered on the object at (10, 11) with an altitude below 10 meters relative to the object.</
+Action>(10, 11, 0)</Action>
+<Reasoning> I have confirmed that the object at (10, 11) is the green pickup truck and I am below 10 meters in altitude relative to it. I will now fly slightly to the east to maintain center.</
+Action>(10, 11, 5)</Action>
+<Reasoning> I have flown slightly to the east and I am centered on the object at (10, 11) with an altitude below 10 meters relative to the object.</
+Action>(10, 11, 0)</Action>
+<Reasoning> I have confirmed that the object at (10, 11) is the green pickup truck and I am below 10 meters in altitude relative to it. I will now fly slightly to the north to maintain center.</
+Action>(10, 11, 5

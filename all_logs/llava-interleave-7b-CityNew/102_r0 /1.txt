@@ -1,0 +1,5 @@
+<Reasoning> Flying higher to get a better view of the area. There's no object at 10 meters or below.</Reasoning>
+行动(-4, 0, -10)
+
+<Reasoning> Flying lower and centered on the object. Found the object.</
+ <Action>(0, 0, -10)</Action>

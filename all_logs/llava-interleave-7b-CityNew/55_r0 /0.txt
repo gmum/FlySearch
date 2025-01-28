@@ -1,0 +1,7 @@
+<Reasoning>This point appears to be quite close to the center of the drone's vision. I will move slightly to the south to get below 10 meters relative to it.</ Reasoning>
+.Action>(5, -5, -10)</Action>
+
+<Reasoning>Found it! I am now below 10 meters relative to the object. I will fly slightly north to ensure I'm centered on it.</Reasoning>
+.Action>(3, 0, 0)</Action>
+
+<Found>(3, 0, 0)</Found>

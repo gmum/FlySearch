@@ -1,0 +1,5 @@
+<Reasoning>You've provided an image showing a grid with various points and their corresponding coordinates and altitudes. However, you haven't provided any coordinates or altitudes for the object you're trying to find. To assist you, please provide the coordinates and altitude of the object you're searching for, or provide the coordinates and altitude of the point you believe to be the object based on the image.</Reasoning>
+
+Action: (-5, 0, -10)
+
+Note: This action is centered around (-5, 0, -10) which is approximately 10 meters below the drone's current altitude and seems to be a reasonable starting point for the search. The reasoning for this action is based on the assumption that the object might be near the center of the grid, and it provides a good starting point for a search below 10 meters while keeping the drone within the specified search area and altitude limits. However, this is just an assumption, and the actual object could be at a different location or altitude. Please adjust your search accordingly.

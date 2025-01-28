@@ -1,0 +1,5 @@
+<Reasoning>You are currently 76 meters above the object. To fly below 10 meters, I will move slightly to the south and then turn to face the object.</Reasoning>
+(Action)(0, -10, -5)</Action>
+<Reasoning>Now that I am below 10 meters, I believe I have found the object. I will fly slightly to the north to center the object in my view.</Reasoning>
+(Action)(5, 0, -20)</Action>
+<Found>

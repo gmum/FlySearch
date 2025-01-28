@@ -1,0 +1,14 @@
+<Reasoning>Drifting closer to the center of the image to search for the object. Flying slightly lower to get closer to the ground.</Reasoning>
+行动(-32, 32, -10)
+
+<Reasoning>Flying slightly to the north to adjust the drone's position.</Reasoning>
+行动(0, 0, 10)
+
+<Reasoning>Drifting closer to the center of the image to search for the object. Flying slightly lower to get closer to the ground.</Reasoning>
+行动(-5, 30, -20)
+
+<Reasoning> flying slightly lower to get even closer to the ground. </Reasoning>
+行动(-5, 30, -30)
+
+<Reasoning>Found the object at (32, 32, -10). Flying just below 10 meters to ensure close proximity.</Reasoning>
+<Action>(0, 0, -10)</Action>

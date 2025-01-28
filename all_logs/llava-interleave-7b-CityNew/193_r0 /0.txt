@@ -1,0 +1,14 @@
+<Reasoning>Drifting to the left to search for the object. Flying a bit lower to get closer to potential object.</Reasoning>
+<Action>(0, -5, -10)</Action>
+
+<Reasoning>Continuing the search, trying to find the object. Flying slightly higher to have a better view of the area.</Reasoning>
+<Action>(5, 0, -20)</Action>
+
+<Reasoning>We're getting closer to the object now.Flying just below 10 meters to ensure we're centered and can check if this is the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>We've found the object! Flying just below 10 meters.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+< Reasoning>Found it! Now we can confirm if it's the correct object and proceed with any necessary actions.</Reasoning>
+<Found>Yes</Found>

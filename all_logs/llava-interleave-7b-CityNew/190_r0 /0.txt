@@ -1,0 +1,6 @@
+<Reasoning>This is the current yellow point, which seems to be above the object we're looking for. I need to fly lower to check if this is the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> flying lower, but still within the search area and within the drone's capabilities. I think I've found the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found>True</Found>

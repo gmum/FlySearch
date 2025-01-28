@@ -1,0 +1,2 @@
+<Reasoning> I have flown below 10 meters and I believe I am centered on the object. I am going to fly slightly higher and then reply with "FOUND" if I can still get below 10 meters and if I am centered on the object.</Reasoning>
+.Action>(5, 0, -5)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>It looks like the search area is 400x400 meters from my current position, and I am currently 97 meters above ground level. I need to fly below 10 meters to search for the object. I will move slightly to the north to have a wider search area and then descend to 10 meters below to start the search.</Reasoning>
+<Action>(0, 0, -10)</Action>

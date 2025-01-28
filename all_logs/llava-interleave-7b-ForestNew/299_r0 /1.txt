@@ -1,0 +1,7 @@
+<Reasoning>We're close to the object but still need to search a bit more to be sure. Flying just slightly higher to maintain a centered approach.</Reasoning>
+(Action)(0, 0, -5)</Action>
+
+<Reasoning>Flying slightly higher and maintaining a centered approach. I've found the object at a similar altitude but a bit more centered on the drone's field of view. I'm still below 10 meters and centered on it. Found it.</
+Reasoning>
+(Action)(0, 0, -10)</Action>
+<Found>True</Found>

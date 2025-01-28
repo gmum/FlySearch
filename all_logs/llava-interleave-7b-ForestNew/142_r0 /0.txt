@@ -1,0 +1,10 @@
+<Reasoning>This looks like a reasonable starting point, but I'll need to move slightly to the north to clear any obstacles and get a better view of the ground below.</Reasoning>
+<Action>(0, 0, -30)</Action>
+
+<Reasoning> flying lower to the ground, checking for the object
+</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+< Reasoning > found the object, flying below 10 meters
+</Reasoning>
+<Found>

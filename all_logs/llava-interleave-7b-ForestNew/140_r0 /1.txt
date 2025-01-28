@@ -1,0 +1,10 @@
+<Reasoning> I have flown below 10 meters and I am centered on the object. I am now checking the object's height above/below me.</
+Reasoning>
+Action>(-1, -1, 0)</
+Action>
+
+<Reasoning> I have found the object and it is below 10 meters. I will fly to the object's location.</
+Action>(13, 13, 0)</
+Action>
+
+<Found>

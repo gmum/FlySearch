@@ -1,0 +1,2 @@
+<Reasoning> Flying at an altitude of 80 meters above ground level (AGL) is quite high. I need to descend to a lower altitude to perform a more accurate search for the object. I will fly below 10 meters above the object and then reply with "FOUND" when I'm centered on or close to the object.</Reasoning>
+<Action>(0, 0, -10)</Action>

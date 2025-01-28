@@ -1,0 +1,3 @@
+<Reasoning> Flying below 10 meters and checking the yellow points seems to be the most sensible approach. I will fly to the nearest yellow point and then check the others. If I find the object below 10 meters, I will reply with "FOUND". </Reasoning>
+
+<Action>(10, 0, -20)</Action>

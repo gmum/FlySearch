@@ -1,0 +1,26 @@
+<Reasoning>Drifting slightly to the north to maintain a centered view on the grid.</Reasoning>
+<Action>(0, 0, -1)</Action>
+
+<Reasoning> flying slightly lower to maintain a centered view on the grid and to get closer to potential object.</Reasoning>
+<Action>(0, -1, -10)</Action>
+
+<Reasoning> continuing the search, flying slightly lower to the south to remain centered.</Reasoning>
+<Action>(0, -10, -20)</Action>
+
+<Reasoning> flying slightly lower to the east to remain centered.</Reasoning>
+<Action>(5, -5, -15)</Action>
+
+<Reasoning> flying slightly lower to the south to remain centered.</Reasoning>
+<Action>(0, -20, -30)</Action>
+
+<Reasoning> flying slightly lower to the west to remain centered.</Reasoning>
+<Action>(-5, -20, -35)</Action>
+
+<Reasoning> flying slightly lower to the south to remain centered.</Reasoning>
+<Action>(-10, -20, -45)</Action>
+
+<Reasoning> flying slightly lower to the west to remain centered.</Reasoning>
+<Action>(-15, -20, -55)</Action>
+
+<Reasoning> flying slightly lower to the south to remain centered.</Reasoning>
+<Action>(-20, -

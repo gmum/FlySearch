@@ -1,0 +1,3 @@
+<Reasoning> I have flown below 10 meters and I can see the object. It is centered with the (20, 20) point on the grid and it's slightly below the 10-meter mark. I will fly slightly to the north to get a better angle and then reply with "FOUND".</Reasoning>
+.Action>(20, 20, -5)</Action>
+<Found>True</Found>

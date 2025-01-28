@@ -1,0 +1,5 @@
+<Reasoning>Drifting north, I found a point that doesn't fit with the rest of the environment. Flying below 10 meters and centered on this point should be sufficient to find the anomaly.</Reasoning>
+<Action>(35, 35, -10)</Action>
+<Reasoning>Found it! The object is at approximately (35, 35) below the drone. I'll fly the final 10 meters to confirm.</Reasoning>
+<Action>(35, 35, -10)</Action>
+<Found>true</Found>

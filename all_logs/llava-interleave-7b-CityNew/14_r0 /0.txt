@@ -1,0 +1,6 @@
+<Reasoning>Based on the coordinates provided and the drone's current altitude, I need to move below 10 meters to continue the search. I will move slightly to the north to stay within the search area and remain centered on the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> flying below 10 meters and slightly to the north I found the yellow point to be the object in question. I am now below 10 meters relative to the object and can report "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found>true</Found>

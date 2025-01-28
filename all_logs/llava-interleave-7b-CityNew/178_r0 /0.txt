@@ -1,0 +1,7 @@
+<Reasoning>This point seems to be quite close to the object in question. I will fly to it and check if it's the right one.</Reasoning>
+<Action>(10, 10, 0)</Action>
+
+<Reasoning>Based on the visual inspection, this appears to be the object. I am now below 10 meters relative to it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>

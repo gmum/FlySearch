@@ -1,0 +1,2 @@
+<Reasoning>Based on the provided coordinates, the object of interest might be the one at (5, 0, 0) or (5, 0, -30) on the grid, considering the minimum altitude of 10 meters below the drone. I will fly down to a minimum of 10 meters and continue the search.</Reasoning>
+<Action>(0, 0, -10)</Action>

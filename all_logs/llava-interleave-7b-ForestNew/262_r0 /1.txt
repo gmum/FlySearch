@@ -1,0 +1,6 @@
+<Reasoning>It appears that the (-14, -14) point is no longer in the center of the view. I will fly to this point and check if it's the object. If it's not the object, I will continue the search. </Reasoning>
+\Action>(0, -15, -10)</Action>
+
+<Reasoning> I have arrived at the (-14, -14) point and I am below 10 meters. I will fly to a slightly lower altitude to get a better view and confirm if this is the object.</Action>(0, -20, -10)</Action>
+
+<Found>Found the object at (-14, -14), below 10 meters.</Found>

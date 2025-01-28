@@ -1,0 +1,2 @@
+<Reasoning>Based on the coordinates provided and the current altitude, I need to move below 10 meters to search for the object. I will also slightly to the north to cover more area. Flying below 10 meters and centered on the object should allow me to find it.</Reasoning>
+<Action>(0, 0, -10)</Action>

@@ -1,0 +1,13 @@
+<Reasoning>Upon closer inspection of the coordinates and the current altitude, I have found the object at (25, 13) on the grid. Flying slightly below 10 meters relative to the object and centered on it would be the best approach to confirm the object's identity.</Reasoning>
+行动计划：(25, 13, -5)
+
+<Reasoning>With the object located at (25, 13), I will fly slightly below 10 meters to the object while maintaining centered alignment to confirm the object's identity.</Reasoning>
+行动：(25, 13, -5)
+
+<Reasoning>Given the new position, I will fly slightly below 10 meters to the object while maintaining centered alignment to confirm the object's identity. I am now at the correct altitude and centered on the object.</Reasoning>
+行动：(25, 13, -5)
+
+<Reasoning>With the object located at (25, 13) and properly centered, I can confirm that this is the object I've been looking for. Flying below 10 meters and centered on the object confirms the find.</Reasoning>
+行动：(25, 13, -5)
+
+<Found>Found the object at (25, 13) centered on it and below 10 meters.</Found>

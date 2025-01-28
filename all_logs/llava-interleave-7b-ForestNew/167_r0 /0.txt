@@ -1,0 +1,2 @@
+<Reasoning> Flying to the center point (144, 144) on the grid, which should give me an average height above the object if it's within the search area. I'm flying below 10 meters now, but I don't see a person. I'll continue the search at a slightly higher altitude to cover more ground.</Reasoning>
+<Action>(144, 144, 5)</Action>

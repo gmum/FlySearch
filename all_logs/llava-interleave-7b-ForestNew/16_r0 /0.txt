@@ -1,0 +1,5 @@
+<Reasoning> Flying to the yellow point (51, 53) on the grid to the north. This should put me below 10 meters relative to the object if it is within the searched area.</Reasoning>
+<Action>(51, 53, 0)</Action>
+
+<Reasoning> I have arrived at the yellow point (51, 53) and I am below 10 meters relative to the object. Found it!</Reasoning>
+<Action>(51, 53, -10)</Action>

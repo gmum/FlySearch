@@ -1,0 +1,3 @@
+<Reasoning> With an altitude of 14 meters, the search area is more constrained, and the object of interest might be closer to the yellow points (x, y, z) near (10, 10). I will move below 10 meters and slightly north to stay within the search area and drone's capabilities.
+</Reasoning>
+Action>(10, 10, -30)</Action>

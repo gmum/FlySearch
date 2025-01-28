@@ -1,0 +1,2 @@
+<Reasoning> I have arrived at an altitude below 10 meters relative to the object of interest. I will now confirm that this is the object by flying just above it at a minimum altitude of 10 meters before replying with "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action> <Found> The object has been found. Flying just above it at a minimum of 10 meters.

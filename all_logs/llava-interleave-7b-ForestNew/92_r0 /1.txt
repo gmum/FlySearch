@@ -1,0 +1,7 @@
+<Reasoning>This image does not provide enough information to determine the object's location. I will search a grid below the current altitude (10 meters) and to the north (to the drone's starting position) for a suitable point to investigate. I will limit the search area to 400x400 meters from the drone's starting position.</Reasoning>
+Action>(0, -10, -10)</Action>
+
+<Reasoning>I have arrived at the selected point and I can confirm that the object is indeed below 10 meters. I will fly below 10 meters to confirm the object's location.</Reasoning>
+Action>(0, 0, -10)</Action>
+
+<Found>Found the object at (0, 0, -10) below 10 meters.</Found>

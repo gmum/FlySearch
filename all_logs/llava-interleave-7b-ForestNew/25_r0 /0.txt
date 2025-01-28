@@ -1,0 +1,13 @@
+<Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the south.</Reasoning>
+<Action>(0, -10, -20)</Action>
+
+<Reasoning> flying lower now at (10, -10) checking for the object. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning>I have found the object at (10, 0) and I'm below 10 meters now. Found it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I'm staying at (0, 0, -10) to confirm I have the object in view and I'm close to it (9 meters or less).</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>

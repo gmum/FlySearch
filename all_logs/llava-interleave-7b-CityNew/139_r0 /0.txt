@@ -1,0 +1,2 @@
+<Reasoning> Flying to the center point (13, 13) on the grid, which is 10 meters below the drone's current altitude. This should put the drone below 10 meters above the object if it is within the search area.</Reasoning>
+<Action>(13, 13, -10)</Action>

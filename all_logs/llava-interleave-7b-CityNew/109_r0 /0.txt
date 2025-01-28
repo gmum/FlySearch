@@ -1,0 +1,2 @@
+<Reasoning>Based on the image and the coordinates provided, it appears that the object of interest might be near the center vertical axis (the z-axis) of the grid, around the point (30, 30). To get below 10 meters, I need to move slightly to the north (x-axis) and go down (y-axis). However, I should also be mindful of remaining within my field of view and not going outside the search area of 400x400m from the drone's starting position.</Reasoning>
+<Action>(30, 20, -10)</Action>

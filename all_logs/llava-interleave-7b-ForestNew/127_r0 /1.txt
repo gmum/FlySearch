@@ -1,0 +1,11 @@
+<Reasoning>Given the current altitude of 72 meters and the search area of 400x400 meters from the starting position, it seems we have a good amount of space to search without being too close to the object. I will fly to the center point (5, 5, 0) and then slightly to the north to cover more ground and be prepared to adjust my course if necessary.</Reasoning>
+	Action>(5, 5, -5)</Action>
+
+<Reasoning>Continuing my search, I have arrived at the center point (5, 5, 0) and I am now slightly to the north. I will continue my search in this direction while staying below 10 meters relative to the object.</Reasoning>
+Action>(5, 5, -5)</Action>
+
+<Reasoning>Upon further examination, I have found a cluster of points around the center point (5, 5, 0) which suggests this is the object. Flying slightly lower to get a better view of the area.</Reasoning>
+Action>(5, 5, -10)</Action>
+
+<Reasoning>Found it! The object is at (5, 5, 0) and I am now below 10 meters relative to it. I can confirm this is the object.</Reasoning>
+Action>(0, 0, 0)</Action>

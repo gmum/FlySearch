@@ -1,0 +1,3 @@
+<Reasoning> The object of interest appears to be at a lower altitude than the surrounding area. Flying below 10 meters and staying within the search area should yield the desired result. Flying to the object (x=8, y=0, z=-10) should place the drone at a suitable height for a closer inspection.</ Reasoning>
+<Action>(8, 0, -10)</Action>
+<Found>

@@ -1,0 +1,2 @@
+<Reasoning> Flying at an altitude of 54 meters above ground level is not optimal for searching an object at ground level or close to the ground. I will adjust my altitude to below 10 meters to search the area and then fly to the coordinates with the lowest altitude below 10 meters to verify if I have found the object.</Reasoning>
+<Action>(0, 0, -90)</Action>

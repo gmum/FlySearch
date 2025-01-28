@@ -1,0 +1,4 @@
+<Reasoning>This appears to be an aerial view of a street intersection with a white pickup truck. The object of interest is located near the center of the grid, and it's within the search area. In order to confirm the object's identity and confirm its location, I will move closer and below the object.</Reasoning>
+<Action>(30, 0, -50)</Action>
+<Reasoning>Approaching the intersection with lower altitude confirms the presence of the white pickup truck. Please confirm the object's location and identity with the 'FOUND' response.</Reasoning>
+<Found>Found the object at 9 meters below the drone.</Found>

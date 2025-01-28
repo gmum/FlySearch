@@ -1,0 +1,9 @@
+<Reasoning>Based on the image and the coordinates provided, the object of interest is at a lower altitude than the drone. I need to approach the area below the drone to investigate. Flying below 10 meters and staying centered on the object should yield the result. I'll also fly slightly north to avoid getting too close to the object and to search a bit more area.</Reasoning>
+<Action>(0, -10, -5)</Action>
+
+<Reasoning>Flying slightly lower and maintaining a centered approach. I've found the object at approximately the center point of the drone's field of view. Flying just below 10 meters.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>This appears to be the object of interest. I'm now below 10 meters and centered on it. Found it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found>True</Found>

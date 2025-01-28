@@ -1,0 +1,5 @@
+<Reasoning>This is the center point (11, 11), but I don't have a clear view of the object here. I'll move slightly to the north to get a better angle. Flying below 10 meters here should give me a good view of the object.</Reasoning>
+<Action>(11, 11, -10)</Action>
+
+<Reasoning>Found it! I'm below 10 meters and centered on the object. I can see it clearly now.</Reasoning>
+<Action>(0, 0, 0)</Action>

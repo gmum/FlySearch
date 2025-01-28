@@ -1,0 +1,10 @@
+<Reasoning>This image does not provide enough information to confidently identify the object. I will continue the search by moving slightly to the east to cover more ground.</Reasoning>
+<Action>(1, 0, -3)</Action>
+
+<Reasoning>After moving slightly to the east, I still don't see the object. I will continue the search by moving slightly to the south to cover more ground.</Reasoning>
+<Action>(1, -1, -3)</Action>
+
+<Reasoning>You can see the object now in the lower-left corner of the image. I am flying below 10 meters relative to it and I can confirm that this is the object. Found it!</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>true</Found>

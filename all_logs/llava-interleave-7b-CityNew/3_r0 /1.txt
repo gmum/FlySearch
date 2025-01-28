@@ -1,0 +1,3 @@
+<Reasoning> I have flown to the nearest yellow point and I am now below 10 meters relative to it. I will continue the search in this area. I have found the object at (10, 0, -10), which is below 10 meters from the drone. I will now fly slightly to the north to confirm if I have found the object. </Reasoning>
+
+Action: (10, 1, -5)

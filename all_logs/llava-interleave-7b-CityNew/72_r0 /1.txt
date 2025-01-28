@@ -1,0 +1,11 @@
+<Reasoning> Flying below 10 meters and centered on the object is crucial for this task. I will search a grid of 400x400 meters around my current position, with an altitude of at most 10 meters below the drone when I reply with "FOUND". If I don't find the object within this search area, I'll continue searching until I've checked all 400x400 meters around me or I've exceeded my maximum of 9 moves or my maximum altitude of 120 meters.</Reasoning>
+
+(ActionEvent> (5, -5, -10)</Action>
+
+<Reasoning> After flying to (5, -5, -10), I'm now below 10 meters and centered on the object. I will continue searching the next grid square (0, -5, -10). If the object isn't at this point, I'll fly to (0, -5, -10) and adjust my position based on the search result.</Reasoning>
+
+Action> (0, -5, -10)</Action>
+
+<Reasoning> I have centered myself on the object and am now flying to (0, -5, -10). I will continue my search here. If I don't find the object, I'll fly to (5, -5, -10) and adjust my position based on the search result.</Reasoning>
+
+Action>

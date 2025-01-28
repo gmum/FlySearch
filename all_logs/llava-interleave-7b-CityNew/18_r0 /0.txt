@@ -1,0 +1,14 @@
+<Reasoning>This image does not provide a clear view of the object to be found. I will search the area below and to the sides of my current position.</Reasoning>
+<Action>(0, -20, -10)</Action>
+
+<Reasoning> Flying a bit lower to the left in search of the object.</Reasoning>
+<Action>(0, -15, -10)</Action>
+
+<Reasoning> Moving slightly to the right in search of the object.</Reasoning>
+<Action>(0, -10, -10)</Action>
+
+<Reasoning> Drifting slightly to the left in search of the object.</
+```vbnet
+Reasoning: I have found an object below and within a acceptable distance from the current position. Flying below 10 meters to confirm the object.
+Action: (0, 0, -10)
+```

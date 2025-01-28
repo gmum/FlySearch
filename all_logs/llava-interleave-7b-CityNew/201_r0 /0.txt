@@ -1,0 +1,2 @@
+<Reasoning> Flying to the center of the grid above the object at (0, 0) and then descending to below 10 meters to search for the object. I must also account for staying within the search area limits of 400x400m from the starting position.</Reasoning>
+<Action>(0, 0, -10)</Action>

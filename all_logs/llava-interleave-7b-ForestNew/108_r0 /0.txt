@@ -1,0 +1,2 @@
+<Reasoning> Flying to the center of the grid will give us an idea of where to look for the object. We should aim to fly below 10 meters above the object and then adjust our position based on the findings. Flying slightly higher than 10 meters will give us some margin of error.</ Reasoning>
+<Action>(200, 200, -10)</Action>

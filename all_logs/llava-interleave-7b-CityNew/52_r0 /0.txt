@@ -1,0 +1,7 @@
+<Reasoning> I have descended to a lower altitude, but I do not see any signs of fire or a yellow point that could be the object. I will continue the search slightly to the south.</Reasoning>
+<Action>(0, -10, -5)</Action>
+
+<Reasoning> I have found a yellow point that could be the object. Flying below 10 meters, I will check if it's the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found> The object was at or below 10 meters below the drone when the "FOUND" response was given.</Found>

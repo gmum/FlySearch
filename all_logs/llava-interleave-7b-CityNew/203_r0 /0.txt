@@ -1,0 +1,7 @@
+<Reasoning>I'm currently above the object, and I need to fly closer for a more accurate search. I'll descend to around 5-6 meters to ensure I'm centered and I have enough room to maneuver.</Reasoning>
+<Action>(0, 0, -5)</Action>
+
+<Reasoning> flying closer to the object, I'm now below 10 meters and I believe I've found the object. I will fly slightly to the north to maintain a centered view.</Reasoning>
+<Action>(0, 0, -2)</Action>
+
+<Found>

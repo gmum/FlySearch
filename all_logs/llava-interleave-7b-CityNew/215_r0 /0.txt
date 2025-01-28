@@ -1,0 +1,7 @@
+<Reasoning> I have flown below 10 meters and I can see the object in the center of the view. I will now fly slightly above it to get a better position before confirming the find.</Reasoning>
+<Action>(0, 0, 5)</Action>
+
+<Reasoning> I have flown to a slightly better position above the object and I can confirm that this is the object. I will fly below 10 meters to the object and reply with "FOUND".</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+Found.

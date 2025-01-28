@@ -1,0 +1,3 @@
+<Reasoning> Flying at an altitude of 97 meters, I am now approaching the (-65, -65) point on the grid, which, when translated to the drone's coordinate system, suggests an altitude of approximately -65 meters (negative sign indicates below the drone's current position). As this point is within the search area and below 10 meters, I believe this is the object in question. Flying below 10 meters relative to it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found> The object has been found. Flying below 10 meters.</Found>

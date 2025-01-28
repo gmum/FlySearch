@@ -1,0 +1,21 @@
+<Reasoning>A search of the area above 10 meters and below 10 meters, considering the current altitude and the search area.</
+```less
+Action>(-5, 0, -10)</Action>
+```
+<Reasoning> flying lower to the area around the coordinates (-5, 0), checking for the object.</
+```less
+Action>(-5, 0, 0)</Action>
+```
+<Reasoning> flying even lower to the area around the coordinates (-5, 0), checking for the object.</
+```less
+Action>(-5, 0, 5)</Action>
+```
+<Reasoning> flying to the area around the coordinates (-5, 0), checking for the object. Flying just below 10 meters.</
+```less
+Action>(-5, 0, -5)</Action>
+```
+<Reasoning>Found the object at (-5, 0), below 10 meters.</
+```less
+Action>(-5, 0, -10)</Action>
+```
+</Reasoning>

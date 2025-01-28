@@ -1,0 +1,10 @@
+<Reasoning> Flying slightly higher to better position for the search. I don't want to be too close to the object since that would not be a safe distance.</
+.vx
+ <Action>(0, 0, -5)</Action>
+
+<Reasoning>Found the object. Flying back to 10 meters above.</
+
+.DateField
+<number>-123,21</number>
+Action>
+<Found>True</Found>

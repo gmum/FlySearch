@@ -1,0 +1,7 @@
+<Reasoning>This yellow point appears to be the object in question. I need to get lower to check for confirmation. Flying below 10 meters would be ideal.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Having descended below 10 meters, I can confirm that this is the object. I will now fly slightly to the north to maintain a clear view.</Reasoning>
+<Action>(1, 0, 0)</Action>
+
+<Found>(5, 0, -10)</Found>

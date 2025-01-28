@@ -1,0 +1,13 @@
+<Reasoning> I have arrived at the place denoted as (55, 0, -10) on the grid, which is below 10 meters and within my field of view. I believe this might be the object in question. I will fly below 10 meters from here to confirm. </Reasoning>
+行动计划：(55, 0, -10)
+
+<Reasoning> I have flown below 10 meters and I can confirm that this is the object. I am now at the correct altitude and close to the object. I will reply with "FOUND". </Reasoning>
+行动：[Found]
+
+<Reasoning> I have arrived at the place denoted as (55, 0, -10) on the grid, which is below 10 meters and within my field of view. I believe this might be the object in question. I will fly slightly to the north to continue the search. </Reasoning>
+行动计划：(55, 0, -20)
+
+<Reasoning> I have arrived at the place denoted as (57, 0, -20) on the grid, which is below 10 meters and within my field of view. I believe this might be the object in question. I will fly below 10 meters from here to confirm. </Reasoning>
+行动计划：(57, 0, -10)
+
+<Reasoning>

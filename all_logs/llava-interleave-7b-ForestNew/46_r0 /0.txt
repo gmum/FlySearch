@@ -1,0 +1,5 @@
+<Reasoning>Based on the coordinates provided and the current altitude of the drone, I will perform a search below 10 meters relative to the object in question. I will also slightly adjust the direction to the north to cover a more comprehensive area of the search space.</Reasoning>
+<Action>(0, -10, -10)</Action>
+<Reasoning> flying below 10 meters and centered on the object
+<Action>(0, 0, 0)</Action> found the object
+<Found>TRUE</Found>

@@ -1,0 +1,4 @@
+<Reasoning>
+This point (17, 17) on the grid might be the object. I need to fly below 10 meters to check if this is the object.
+</Reasoning>
+<Action>(17, 17, -10)</Action>

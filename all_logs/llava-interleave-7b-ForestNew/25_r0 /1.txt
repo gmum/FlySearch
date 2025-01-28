@@ -1,0 +1,10 @@
+<Reasoning>I'm currently at an altitude of 12 meters. Let's lower to around 8-10 meters to search for the object more closely. I will also slightly go to the south to have a better view of the ground.</
+ <Action>(-2, -10, -8)</Action>
+
+<Reasoning>I have found the object at (0, -8) and I'm below 10 meters now. Found it.</
+行动计划：(0, -8, -10)
+
+<Reasoning> Flying at (0, -8, -10) to confirm I have the object in view and I'm close to it (9 meters or less).</
+Reasoning>
+
+<Found>

@@ -1,0 +1,2 @@
+<Reasoning> Flying to the place denoted as (54, 0) on the grid, which is slightly to the west of the current object of interest, (54, 0). I need to go lower to check for the object. If it's not the object in question, I will continue the search. I will also slightly go to the west.</Reasoning>
+(ActionEvent)(54, 0, -20)</Action> Found. Flying below 10 meters relative to the object found.

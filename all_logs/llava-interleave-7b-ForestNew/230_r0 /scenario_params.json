@@ -1,0 +1,19 @@
+{
+    "object_coords": "(19758.739007785993, 28159.66190596081, 0.5966648693687634)",
+    "object_type": "ObjectType.ANOMALY",
+    "drone_rel_coords": "(0.0, 0.0, 35.0)",
+    "seed": "822683796",
+    "forest_live_trees_density": "0.19703671652354107",
+    "forest_dead_trees_density": "0.021892968502615674",
+    "forest_stones": "0.003780997027453803",
+    "forest_cliffs": "0",
+    "sun_y": "-14.49986753946338",
+    "sun_z": "135.97053153113038",
+    "regenerate_forest": "True",
+    "set_object": "True",
+    "cansee_restarts": "0",
+    "object_id": "Actor_UAID_08BFB8191750043702_1942904279",
+    "passed_object_name": "an object that doesn't fit in with the rest of the environment (an anomaly)",
+    "drop": "False",
+    "i": "230"
+}

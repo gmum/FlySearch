@@ -1,0 +1,7 @@
+<Reasoning>This is an aerial view of the area. I will search for an anomaly below 10 meters from the drone's position. I have identified a cluster of points that seem to deviate from the rest of the environment. Flying below 10 meters in this area should provide a good starting point for the search.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Continuing the search below 10 meters, I have found an object that appears to be an anomaly. It is in the center of the drone's field of view and is approximately 10 meters below the drone.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>

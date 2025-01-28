@@ -1,0 +1,7 @@
+<Reasoning>Upon further investigation of the area around the point (12.23, 0, 0), I have found several other points of interest marked with an altitude of 12.23. It appears that the object may be near one of these points. I will continue my search by flying to the point (10, 0, -10) to get a better view of the area.</Reasoning>
+ QAction>(10, 0, -10)</Action>
+
+<Reasoning>After flying to the point (10, 0, -10), I am now in a better position to investigate the points of interest marked with an altitude of 12.23. I will continue my search by flying to the point (12.23, 0, 0) to get a closer look at the object.</Action>
+(Action)(12.23, 0, 0)</Action>
+
+<Reasoning>Upon arriving at the point (12.23, 0, 0), I have confirmed that the object is indeed present. The altitude difference is minimal, and I am now below 10 meters relative to the object.</Found>

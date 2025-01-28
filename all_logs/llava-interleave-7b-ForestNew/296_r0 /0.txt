@@ -1,0 +1,26 @@
+<Reasoning>This aircraft appears to be the anomaly. I am now flying below 10 meters relative to it.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning> flying below 10 meters to the north</
+ reasons>
+<Action>(2, 0, 0)</Action>
+<Reasoning> flying slightly to the north to be centered on the object</
+ reasons>
+<Action>(0, 0, -10)</
+Action>
+<Reasoning> flying below 10 meters to the south</
+Reasoning>
+<Action>(-5, 0, 0)</
+Action>
+<Reasoning> flying slightly to the south to be centered on the object</
+Reasoning>
+<Action>(0, 0, -10)</
+Action>
+<Reasoning> flying below 10 meters to the north to be centered on the object</
+Reasoning>
+<Action>(0, 0, -10)</
+Action>
+<Reasoning> found the object at 10 meters below the drone</
+Reasoning>
+<Action>(0, 0, 0)</
+Action>
+<Found>Found the object at 10 meters below the drone</Found>

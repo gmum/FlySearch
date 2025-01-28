@@ -1,0 +1,16 @@
+<Reasoning>We're close to the object, but let's take a step back to have a better view and to avoid getting too close to it. Flying slightly to the north to search for any other potential obstacles.</Reasoning>
+
+<Reasoning>We need to go slightly lower to get a better view of the area and to be closer to the object. Flying just below 10 meters to ensure we're centered and can check if this is the object.</Reasoning>
+Action (-5, 0, -10)
+
+<Reasoning>Continuing the search, trying to find the object. Flying slightly higher to have a better view of the area.</Reasoning>
+Action (5, 0, -20)
+
+<Reasoning>We've found the object! Flying just below 10 meters.</Reasoning>
+Action (0, 0, -10)
+
+<Found>Yes</Found>
+
+<Reasoning>Object found! Now we can confirm if it's the correct object and proceed with any necessary actions.</Reasoning>
+
+<Found>Yes</Found>

@@ -1,0 +1,4 @@
+<Reasoning>
+This point (25, 25) seems to be quite close to the center of the drone's view. Flying to this point will place the drone below 10 meters above the object (if it is indeed the object). I will fly to this point to get a better sense of the object's location.
+</Reasoning>
+<Action>(25, 25, 0)</Action>

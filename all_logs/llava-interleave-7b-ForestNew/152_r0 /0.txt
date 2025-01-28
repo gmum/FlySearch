@@ -1,0 +1,6 @@
+<Reasoning>This appears to be the correct point based on the coordinates provided. I will fly to this location and then lower to check for the object.</Reasoning>
+<Action>(45, 0, -20)</Action>
+<Reasoning> flying to the correct point
+<Action>(5, 0, -10)</Action>
+<Reasoning> flying below 10 meters
+<Found>

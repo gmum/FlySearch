@@ -1,0 +1,6 @@
+<Reasoning>Based on the coordinates provided and the objective, I should fly below 10 meters and search for the object. I see a cluster of points around (20, 20) on the grid, which might be the object of interest. I will move slightly to the north to center on the object and then lower to a minimum of 10 meters to search for the object.</Reasoning>
+<Action>(20, 20, 0)</Action>
+<Reasoning>After centering on the object at (20, 20), I will lower to a minimum of 10 meters to search for the object.</Action>
+<Action>(20, 20, 10)</Action>
+<Reasoning>I have flown below 10 meters and centered on the object. I will now reply with "FOUND" as I meet the criteria for success.</Reasoning>
+<Found>

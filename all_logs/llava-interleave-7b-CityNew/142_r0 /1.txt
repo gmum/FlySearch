@@ -1,0 +1,10 @@
+<Reasoning> It seems the object has been found, but there's a close proximity to something. Flying slightly to the north to clear the obstacle. </Reasoning>
+(Action)(0, 0, -1)</Action>
+
+<Reasoning> Continuing the search to the north to avoid the obstacle. Flying slightly lower to get a better view of the area. </Reasoning>
+(Action)(0, 0, -2)</Action>
+
+<Reasoning> Found the object! Flying below 10 meters to confirm the object. </Reasoning>
+(Action)(0, 0, -10)</Action>
+
+<Found> True</Found>

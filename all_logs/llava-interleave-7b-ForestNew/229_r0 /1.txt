@@ -1,0 +1,13 @@
+<Reasoning>As I'm already quite close to the anomaly, I'm going to search for any possible variations or discrepancies that might indicate the presence of the anomaly. I'll scan this area more closely to ensure there are no hidden anomalies.</Reasoning>
+.Action>(0, 0, -40)</Action>
+
+<Reasoning>After scanning this area, I found a variation in the points that doesn't match the rest. This point here seems to be the anomaly. I am now directly below it and preparing to fly up to a slightly higher altitude to get a better view.</Reasoning>
+.Action>(0, 0, -50)</Action>
+
+<Reasoning>At this higher altitude, I can confirm that this is the anomaly. It is centered below the drone and does not match the surrounding points. I will fly back down to confirm that it is the anomaly.</Reasoning>
+\Action>(0, 0, -60)</Action>
+
+<Reasoning> Flying back down, I can confirm that this is indeed the anomaly. It is centered below the drone and does not match the surrounding points. I will fly below 10 meters to ensure it is the anomaly.</Reasoning>
+Action>(0, 0, -70)</Action>
+
+<Found>

@@ -1,0 +1,11 @@
+<Reasoning> Flying to the center of the grid, I see several points that might be the object. However, none of them are directly below 10 meters, so I'll search a bit lower. I'll also look to the north to see if there are any points that are closer to the ground. </Reasoning>
+
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> I've found a point that is closer to the ground. Flying slightly lower and to the north, I believe this is the object. </Reasoning>
+
+<Action>(0, 0, -2)</Action>
+
+<Reasoning> Found it! I'm now below 10 meters relative to the object. I will fly closer to confirm that this is indeed the anomaly. </Reasoning>
+
+<Found>

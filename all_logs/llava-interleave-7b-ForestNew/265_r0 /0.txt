@@ -1,0 +1,10 @@
+<Reasoning>It appears that the object of interest might be at or near the point (20, 20), which is at a height of 0 meters relative to the drone. I will fly below 10 meters to investigate this potential object.</Reasoning>
+<Action>(20, 20, -10)</Action>
+
+<Reasoning>Upon further inspection, the object appears to be at or near the point (20, 20), and the altitude is indeed 0 meters relative to the drone. I will now fly slightly to the north to maintain a close distance.</Reasoning>
+<Action>(20, 20, 0)</Action>
+
+<Reasoning>I am now centered on the object and flying slightly above it. I will descend to below 10 meters.</Reasoning>
+<Action>(20, 20, -10)</Action>
+
+<Found>

@@ -1,0 +1,7 @@
+<Reasoning>You've passed the 10-meter mark (10.10, 10.10), but I still need to search a bit lower. Flying closer to the ground is essential here.</Reasoning>
+<Action>(10.10, 10.10, -5)</Action>
+
+<Reasoning>Found it! We're below 10 meters now (10.20, 10.10). The red object is indeed the one.</Reasoning>
+<Action>(10.20, 10.10, 0)</Action>
+
+<Found>Found it! Below 10 meters.</Found>

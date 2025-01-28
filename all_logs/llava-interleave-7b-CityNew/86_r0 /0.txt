@@ -1,0 +1,7 @@
+<Reasoning>This point seems to be quite close to the center of the image and might be the object. I am going to fly below this point to check for the object. If it's not the object, I will continue the search.</Reasoning>
+<Action>(0, -6, -10)</Action>
+<Reasoning> flying below the center point and closer to the ground, but still within the search area
+<Action>(0, 0, -10)</Action>
+<Reasoning> Found the object. Flying below 10 meters
+<Action>(0, 0, -10)</Action>
+<Found>True</Found>

@@ -1,0 +1,6 @@
+<Reasoning> It appears that the object of interest may be at the intersection or near the intersection, given the points around the area marked with negative values. I will search below 10 meters in a grid around the point of interest. If I don't find the object within this vicinity, I will expand my search area.</ Reasoning>
+<Action>(0, -10, -10)</Action>
+<Reasoning> I have descended below 10 meters and I can see that the object is not at the negative 10 meters mark on the grid. I will continue my search with a slightly higher altitude to cover more of the area.</ Reasoning>
+<Action>(0, 0, -20)</Action>
+<Reasoning> I have descended to slightly below 10 meters and I found the object. It appears to be centered within my field of view and I am below 10 meters relative to it. I will now reply with "FOUND".</ Reasoning>
+<Found>true</Found>

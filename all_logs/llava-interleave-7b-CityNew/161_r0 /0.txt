@@ -1,0 +1,7 @@
+<Reasoning>Based on the points marked, the yellow ones seem to be the most likely to be the object of interest. I will move below 10 meters to check if any of them are the object. I will start with the point closest to my current position.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>I have moved below 10 meters and I can see the yellow point. This is the object I've been looking for. I will now fly to slightly above 10 meters to confirm my findings.</Reasoning>
+<Action>(0, 0, 5)</Action>
+
+<Found>Found it! The object is at or below 10 meters.</Found>

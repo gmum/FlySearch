@@ -1,0 +1,7 @@
+<Reasoning>This point seems to be quite close to the center of the image and might be the object we're looking for. I'm flying below 10 meters in this direction to investigate. If this isn't the object, I'll continue the search.</Reasoning>
+<Action>(0, -3, -10)</Action>
+
+<Reasoning>This point is quite close to the object (if it is the object) and I'm below 10 meters. I can confirm this is the object.</Reasoning>
+<Action>(0, 0, 0)</Action>
+
+<Found>

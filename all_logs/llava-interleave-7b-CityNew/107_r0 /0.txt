@@ -1,0 +1,9 @@
+<Reasoning>You're currently at a height of 92 meters. I need to descend closer to the ground to search for the object. I'll move slightly to the west to have a better angle and search a bit lower.</Reasoning>
+<Action>(0, -10, -10)</Action>
+
+<Reasoning>Continuing my search, I have descended slightly and I am now at a lower altitude. I'll check the immediate vicinity for the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>Found it! The object is at a height of approximately 10 meters below the drone when I replied with "FOUND". I am now flying just below 10 meters to ensure the object is in the center of the drone's field of view.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found>

@@ -1,0 +1,9 @@
+<Reasoning> The object appears to be near the center point (10, 10), slightly to the north. I will descend to a lower altitude to check if this is the correct object.</Reasoning>
+Action>(10, 10, -30)</Action>
+
+<Reasoning> I have descended to a lower altitude and the object is still at the center point (10, 10). I will continue my search in this area.</Reasoning>
+Action>(10, 10, -20)</Action>
+
+<Reasoning> I have arrived at the center point (10, 10) and I am able to confirm that the object is the one I have been looking for. It is below 10 meters and within my field of view. I will now reply with "FOUND".</Reasoning>
+Action>(10, 10, 0)</Action>
+<Found>True</Found>

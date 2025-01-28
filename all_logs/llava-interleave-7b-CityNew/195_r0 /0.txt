@@ -1,0 +1,8 @@
+<Reasoning> I have flown below 10 meters and I can see the object denoted by the yellow points. I will now fly slightly to the north to get centered on the object.</Reasoning>
+<Action>(5, 0, -30)</Action>
+< Reasoning> The object is within my field of view and I am now below 10 meters relative to it. I will reply with "FOUND".</
+
+
+<Reasoning> The object has been found. I am now flying slightly above and to the north to maintain a center position on the object.</
+Action>(5, 0, 5)</
+Action> FOUND

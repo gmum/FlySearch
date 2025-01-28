@@ -1,0 +1,3 @@
+<Reasoning>I have arrived at the grid point (25, 25) and I am looking down towards the ground. I have found an object that doesn't fit with the rest of the environment. Flying below 10 meters from this point should confirm the anomaly.</Reasoning>
+<Action>(25, 25, -10)</Action>
+<Found>

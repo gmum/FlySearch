@@ -1,0 +1,8 @@
+<Reasoning>This point at (30, 30) seems to be quite close to the center line, so it could be the object. I'm going to approach it to a lower altitude.</
+Action>(30, 30, -30)</Action>
+
+<Reasoning> Flying at this altitude, the object doesn't appear to be here. Let's try a lower altitude to be more precise.</
+Action>(30, 30, -50)</Action>
+
+<Reasoning> Flying at this altitude, the object appears to be the one. I'm now below 10 meters relative to the object.</
+Found>

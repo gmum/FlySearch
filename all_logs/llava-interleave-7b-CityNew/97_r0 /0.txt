@@ -1,0 +1,15 @@
+<Reasoning>
+Looking at the coordinates grid, I am currently centered above the yellow point, which is likely the object of interest. To ensure I am at a minimum of 10 meters below the object when I reply with "FOUND", I will move down to a height of around 35 meters (accounting for some margin of error).
+
+My first action will be to move down to a height of 35 meters.
+<Action>(0, 0, -35)</Action>
+</Reasoning>
+
+<Action>(-5, 0, -20)</Action>
+
+<Reasoning>
+I have descended to approximately 25 meters above the object, and I am now centered with it within my field of view. I will fly below 10 meters to ensure I am in the optimal position to report "FOUND".
+<Action>(0, 0, -10)</Action>
+</Reasoning>
+
+<Found>

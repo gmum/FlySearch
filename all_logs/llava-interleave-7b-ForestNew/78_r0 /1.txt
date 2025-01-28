@@ -1,0 +1,8 @@
+<Reasoning>We've already searched the area at a lower altitude. Let's continue the search slightly to the south.</
+Doctrine: (5, -5, -10)
+<Reasoning> Flying slightly to the south while staying below 10 meters and centered on the object</
+Action>(5, -5, -10)</Action>
+
+<Reasoning> Found the object at an altitude of 9 meters below the drone, staying within the bounds and centered on the object</
+Action>(0, 0, -10)</Action>
+<Found>

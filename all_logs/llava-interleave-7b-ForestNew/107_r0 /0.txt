@@ -1,0 +1,8 @@
+<Reasoning>This point at (61,61) seems to be quite close to the center of the image and could be the object we're looking for. I'm going to move closer to check.</Reasoning>
+<Action>(61,61, -20)</Action>
+
+<Reasoning> flying closer to the point at (61,61), I still don't see the object. This point at (53,53) might be the one. I'll fly there to check.</Reasoning>
+<Action>(53,53, -10)</Action>
+
+<Reasoning> Flying to (53,53), I have checked the area and the object appears to be at (53,53). I'm now below 10 meters relative to it.</Reasoning>
+<Found>

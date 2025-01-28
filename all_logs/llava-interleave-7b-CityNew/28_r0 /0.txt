@@ -1,0 +1,4 @@
+<Reasoning>This is an aerial view of the area. I will start by flying below 10 meters and then adjust my path as necessary to search for the object. I will keep an eye on the yellow points, which seem to be the most likely to be the object based on their proximity to the center of the grid.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning>After flying below 10 meters, I have checked the yellow points and I believe I have found the object at (10, 10). I am now flying slightly to the north to get a better view and to ensure I am centered on the object.</Action>

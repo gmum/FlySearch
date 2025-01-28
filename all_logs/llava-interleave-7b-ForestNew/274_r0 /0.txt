@@ -1,0 +1,14 @@
+<Reasoning>This aircraft appears to be the anomaly in the environment. I am now flying below 10 meters relative to it.</Reasoning>
+<Action>(0, -10, -10)</Action>
+<Reasoning>Found the object at 10 meters below the aircraft.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning> flying above and centered on the object.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning> Flying above and centered on the object.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning> Flying above and centered on the object.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning> Flying above and centered on the object.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning> Found the object at 10 meters above and centered on it.</Reasoning>
+<Action>(0, 0, 10)</Action>

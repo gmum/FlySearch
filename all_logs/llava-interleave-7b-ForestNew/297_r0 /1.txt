@@ -1,0 +1,10 @@
+<Reasoning>In the given image, I notice a significant gap in the distribution of points, particularly in the area around the yellow anomaly at (21,10). This gap could potentially be the object of interest if it is indeed the anomaly. I will fly closer to investigate.</Reasoning>
+.Action>(21,10, -20)</Action>
+
+<Reasoning>Upon further investigation, the gap does not seem to be the anomaly. The distribution of points appears more uniform now. I will continue the search, keeping an eye out for any other anomaly.</Reasoning>
+.Action>(21,10, -5)</Action>
+
+<Reasoning>After checking the anomaly at (21,10), I have determined that it is the object in question. I am now below 10 meters relative to it.</Reasoning>
+.Action>(21,10, 0)</Action>
+
+<Reasoning>I have found the object in question. Flying below 10 meters and centered on it.</Found>

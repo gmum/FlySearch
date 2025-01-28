@@ -1,0 +1,5 @@
+<Reasoning>It appears that the yellow points might be anomalies given their significantly lower altitudes compared to the surrounding environment. I will search a region below 10 meters to find the anomaly.</Reasoning>
+<Action>(0, -10, -10)</Action>
+<Reasoning> Flying below 10 meters, I have found an object (denoted by the yellow point) that appears to be an anomaly. The object is centered within my field of view and I am below 10 meters relative to it.</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Found>true</Found>

@@ -1,0 +1,14 @@
+<Reasoning>This point at (12, 24) seems to be quite close to the yellow point of interest. I will fly to it to check if it is the object.</Reasoning>
+<Action>(12, 24, -10)</Action>
+
+<Reasoning>If this point at (12, 24) is not the object, I will continue to the next point at (13, 24) for a closer inspection.</Reasoning>
+<Action>(13, 24, -5)</Action>
+
+<Reasoning>I have checked the points at (12, 24), (13, 24), and (12, 25) and none of them are the object. I will continue to the next point at (12, 26) for a closer inspection.</Reasoning>
+<Action>(12, 26, -10)</Action>
+
+<Reasoning>This point at (12, 26) is quite close to the yellow point of interest. I will fly to it to check if it is the object.</Reasoning>
+<Action>(12, 26, -5)</Action>
+
+<Reasoning> flying below 10 meters now, object found at (12, 26)</
+Reasoning>This is the object. I will fly below 10 meters to confirm and reply with "FOUND

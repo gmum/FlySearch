@@ -1,0 +1,7 @@
+<Reasoning>This point (19, 19) seems to be quite close to the center of the drone's field of view. I will fly to it to get a better look and confirm if it is the object we're looking for.</Reasoning>
+<Action>(19, 19, 0)</Action>
+
+<Reasoning>I have arrived at the point (19, 19) and the object appears to be close by. Below 10 meters in height, I will confirm if this is the object.</Reasoning>
+<Action>(19, 19, -10)</Action>
+
+<Found>I have found the object at or below 10 meters. It is in my field of view and I am within the 10-meter limit.</Found>

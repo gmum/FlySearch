@@ -1,0 +1,2 @@
+<Reasoning>Given the current altitude and the coordinates provided, I believe the object of interest may be located at (30, 30, 30) on the grid, which is 30 meters below the drone's current altitude. To investigate this potential anomaly, I will fly the drone below 10 meters relative to the object, which is at (30, 30, 30) on the grid.</Reasoning>
+行动计划：(30, 30, -20)

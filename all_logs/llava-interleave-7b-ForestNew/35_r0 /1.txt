@@ -1,0 +1,13 @@
+<Reasoning>Drifting slightly to the north (west) to get a better view of the area below.</
+Reasoning>Flying slightly lower to get even closer to the point of interest.</
+Reasoning>Altering altitude to get a better view of the area and get closer to the point of interest.</
+Action>(0, 0, -5)</
+Reasoning>Flying slightly higher to maintain a clear view of the area and get closer to the point of interest.</
+Action>(0, 0, 0)</
+Reasoning>Flying below 10 meters to the object.</
+Action>(0, 0, -10)</
+Reasoning>Found the object at (0, 0, -10); staying below 10 meters.</
+Action>(0, 0, -10)</
+Reasoning>Found the object at (0, 0, -10); staying below 10 meters.</
+Formatting>FOUND</
+Formatting>

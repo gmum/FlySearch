@@ -1,0 +1,7 @@
+<Reasoning>Drifted a bit to the west. Need to check the yellow points near the west side of the intersection.</Reasoning>
+<Action>(-10, 0, -30)</Action>
+
+<Reasoning>Found it! The yellow point is the object. Flying below 10 meters now.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Found>Found it! Below 10 meters and centered.</Found>

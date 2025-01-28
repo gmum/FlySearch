@@ -1,0 +1,9 @@
+<Reasoning> Flying to the center of the grid, I have identified a point that does not fit with the rest of the environment. I am now below 10 meters relative to this point. I will fly slightly to the north to confirm that this is the anomaly before replying with "FOUND.</Reasoning>
+
+(ActionEvent)(5, 0, -10)</Action>
+
+<Reasoning> I have confirmed that this is the object in question. I am now below 10 meters relative to it.</Reasoning>
+
+Action>(5, 0, -10)</Action>
+
+<Found> Yes, the object was at most 10 meters below the drone when I replied with "FOUND". It is in the drone's center of vision and I am centered on it.</Found>

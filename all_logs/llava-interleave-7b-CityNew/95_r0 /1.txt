@@ -1,0 +1,5 @@
+<Reasoning> Flying slightly above 10 meters and centered on the object should confirm it's the right one.</Reasoning>
+(Action)(10, 20, -5)</Action>
+<Reasoning> flying slightly above 10 meters and centered on the object confirms it's the right one.</Reasoning>
+Action>(10, 20, -5)</Action>
+<Found>

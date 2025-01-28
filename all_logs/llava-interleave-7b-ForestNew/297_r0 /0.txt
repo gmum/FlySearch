@@ -1,0 +1,7 @@
+<Reasoning>It appears that the yellow point at (21,10) could be the anomaly. I will move closer to check for the anomaly.</Reasoning>
+<Action>(21,10, -5)</Action>
+
+<Reasoning>After checking the anomaly at (21,10), I have determined that it is the object in question. I am now below 10 meters relative to it.</Reasoning>
+<Action>(21,10, 0)</Action>
+
+<Reasoning>I have found the object in question. Flying below 10 meters and centered on it.</Found>

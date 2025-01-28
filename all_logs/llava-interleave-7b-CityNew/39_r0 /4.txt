@@ -1,0 +1,6 @@
+<Reasoning> I have flown below 10 meters and I am centered on the object. I can confirm that this is the object based on the points at this lower altitude. I will now reply with "FOUND".</
+```less
+
+if <Action>(-1, -10, -10)</Action> <抚摸>Found</抚摸>
+else <Action>(1, -10, -10)</Action>
+```

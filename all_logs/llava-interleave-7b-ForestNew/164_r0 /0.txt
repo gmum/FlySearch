@@ -1,0 +1,2 @@
+<Reasoning> Flying to the center point (29, 29) on the grid, which is approximately 88 meters above ground level (AGL), and then moving slightly to the north (to the point (30, 29)) to maintain a below-10-meter height relative to the object if it is at that point, should place the drone below 10 meters above the object. If the object isn't at that point, I'll continue the search.</Reasoning>
+<Action>(30, 29, -10)</Action>

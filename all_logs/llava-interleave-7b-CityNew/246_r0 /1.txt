@@ -1,0 +1,2 @@
+<Reasoning>This search algorithm appears to be looking for anomalies in a dataset of points given the grid lines and annotations. I will search for an anomaly below 10 meters and try to get as close as possible to the object if found. I will be looking for a significant point that doesn't fit the norm.</Reasoning>
+.Action>(10, 10, -10)</Action>

@@ -1,0 +1,2 @@
+<Reasoning>Drifting to the west (x, y, z) seems to be the best approach to check if the object is within the next 10 meters. Flying slightly lower (z) will increase the chances of finding the object.</Reasoning>
+<Action>(0, -10, -5)</Action>

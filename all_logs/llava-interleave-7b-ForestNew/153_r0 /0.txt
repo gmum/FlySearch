@@ -1,0 +1,11 @@
+<Reasoning>Scanning the area for the trash pile. Flying lower to the ground to search for the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning> descended to 51 meters above ground level. continue searching for the object.</Reasoning>
+<Action>(5, 0, -20)</Action>
+<Reasoning>Flying slightly to the north to cover more ground. Keep descending to search for the object.</Reasoning>
+<Action>(5, 5, -30)</Action>
+<Reasoning>Flying even lower to the ground to narrow down the search area.</Reasoning>
+<Action>(3, 0, -40)</Action>
+<Reasoning>Found the object at an altitude of around 35 meters. Flying below 10 meters to confirm.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Found>Found the object at an altitude of 10 meters below the drone.</Found>

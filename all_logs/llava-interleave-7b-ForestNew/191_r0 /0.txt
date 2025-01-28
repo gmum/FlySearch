@@ -1,0 +1,5 @@
+<Reasoning> Let's search for the object. Flying slightly lower and to the north seems like a good starting point. I'll adjust the altitude and direction to stay within the search area and keep a close eye on the object.</Reasoning>
+<Action>(0, -10, -5)</Action>
+
+<Reasoning> I've descended to a lower altitude and moved slightly to the north. Now I'm at 10 meters below the object and centered on it. Found it! </Reasoning>
+<Action>(0, 0, -10)</Action>

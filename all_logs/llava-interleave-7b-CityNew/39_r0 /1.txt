@@ -1,0 +1,7 @@
+<Reasoning> I have checked the points at a lower altitude (around -10 meters) and there doesn't seem to be an object at that level. However, considering the points slightly above (-1, -10) and to the north (+1, -10), I might have found the object. I'll fly below 10 meters to confirm and then reply with "FOUND" if I am centered on the object or continue searching if not.</Reasoning>
+Action>(-1, -10, -10)</
+```less
+
+if <Action>(-1, -10, -10)</Action> <抚摸>Found</抚摸>
+else <Action>(1, -10, -10)</Action>
+```

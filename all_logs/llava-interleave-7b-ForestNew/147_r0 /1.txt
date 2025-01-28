@@ -1,0 +1,9 @@
+<Reasoning> Flying at 58 meters, I'll continue my search for the object. I've found an area that is within my field of view and is below 10 meters from the current altitude. I believe this is the object.</Reasoning>
+Action>(0, 0, -10)</
+Action>
+
+<Reasoning> Found it! Below 10 meters now. I'll maintain this position for the search to be complete.</
+Action>(0, 0, 0)</
+Action>
+
+<Found> Found the object at 10 meters below.</Found>

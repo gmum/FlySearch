@@ -1,0 +1,9 @@
+<Reasoning> Flying slightly lower to get closer to the object and search in that area.</
+NUMBER
+ <Action>(0, 0, -5)</Action>
+
+<Reasoning>Found the object. Flying back to 10 meters above.</
+
+NUMBER
+Action>
+<Found>True</Found>

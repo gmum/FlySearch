@@ -1,0 +1,5 @@
+<Reasoning> I have descended to a height of 10 meters below the object (x, y, z) = (-25, -25, -10). However, I am now considering an adjusted descent to (-20, -20, -5) to ensure a closer center of gravity and better alignment with the object.</Reasoning>
+<Action>(-20, -20, -5)</Action>
+
+<Reasoning> I have found the object at (-20, -20, -5) and am now flying below 10 meters relative to it. I will reply with "FOUND".</Reasoning>
+<Action>(0, 0, 0)</Action>

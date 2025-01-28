@@ -1,0 +1,4 @@
+<Reasoning>Continuing the search for the object. Flying to (26, 0, -10) to be closer to the potential object at (30, 0, 0). Altitude is lower than 10 meters but slightly higher than the object. Searching for a more suitable altitude.</Reasoning>
+.Action>(26, 0, -20)</Action>
+<Reasoning>Flying to (26, 0, -20) where the drone is closer to the potential object at (30, 0, 0). The altitude is lower than 10 meters and the object is in the drone's field of view.</Action>
+<Found>

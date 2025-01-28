@@ -1,0 +1,2 @@
+<Reasoning> Flying at an altitude of 88 meters, I have identified a point (x, y, z) that is within my field of view and is 10 meters or lower relative to the object of interest. I will now fly to this point to ensure the altitude is correct and within the search area.</Reasoning>
+<Action>(x, y, 10)</Action>

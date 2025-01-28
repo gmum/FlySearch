@@ -1,0 +1,20 @@
+<Reasoning>This point (5, 5) seems to be quite close to the object based on the grid lines. I'll move here and get a better angle to check if this is the object.</Reasoning>
+行动(-5,5,-10)
+
+<Reasoning>Found it! I'm below 10 meters and centered on the object. I can see it clearly now.</Reasoning>
+行动(0,0,0)
+
+<Reasoning>We're now quite close to the object, but let's take a step to the north to get a better view and to ensure we're centered on it.</Reasoning>
+行动(1,0,-5)
+
+<Reasoning>We're now centered and I have a good view of the object. Let's fly slightly up to a safer altitude.</Reasoning>
+Action(-2,0,20)
+
+<Reasoning>We're at a safe altitude and centered on the object. Let's reply with "FOUND".</Reasoning>
+Action(0,0,0)
+
+<Reasoning>We've found the object and are now at a safe altitude. We can reply with "FOUND".</Reasoning>
+Action(0,0,0)
+
+<Reasoning>We've found the object and are now at a safe altitude. We can reply with "FOUND".</Reasoning>
+Action(0,0,0)

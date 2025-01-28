@@ -1,0 +1,15 @@
+<Reasoning>This appears to be the area of interest. Flying below 10 meters and centered on the object should yield a positive result. I will proceed with a closer inspection.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>Descending to a lower altitude for a better view of the object.</Reasoning>
+<Action>(12, 10, -20)</Action>
+<Reasoning>Continuing the search for the object. Staying below 10 meters and centered on the object.</Reasoning>
+<Action>(5, 0, -5)</Action>
+<Reasoning>Object found! Flying below 10 meters and centered.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning>Found the object at an altitude of 0 meters (or below 10 meters) and centered.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning>Repeating the altitude to confirm the object's position.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning>Confirming the object's position at an altitude of 0 meters (or below 10 meters) and centered.</Reasoning>
+<Action>(0, 0, 10)</Action>
+<Reasoning>Providing the final move to confirm the object's position.</

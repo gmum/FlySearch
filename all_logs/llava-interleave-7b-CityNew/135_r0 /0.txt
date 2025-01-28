@@ -1,0 +1,5 @@
+<Reasoning> Flying at a lower altitude, I have found a crowd that appears to be the object in question. The drone is now below 10 meters relative to the object.</Reasoning>
+<Action>(0, 0, -10)</Action>
+<Reasoning> flying slightly higher to center the object in the drone's field of view</Reasoning>
+<Action>(0, 0, 0)</Action>
+<Found>

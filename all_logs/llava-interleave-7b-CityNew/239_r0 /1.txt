@@ -1,0 +1,8 @@
+<Reasoning>This area seems to be the object in question. I am now flying below 10 meters and checking for any anomalies.</
+```less
+Action(-5, 0, -20)
+```
+<Reasoning>Found it! I'm now below 10 meters and centered on the object.</
+```less
+Action(0, 0, 0)
+```

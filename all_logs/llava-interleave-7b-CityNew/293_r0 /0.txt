@@ -1,0 +1,10 @@
+<Reasoning>This is the lowest point I have checked and there's no anomaly here. I will continue the search to the north.</Reasoning>
+<Action>(0, 0, -10)</Action>
+
+<Reasoning> flying higher to the north to search for the anomaly. </Reasoning>
+<Action>(10, 0, -10)</Action>
+
+<Reasoning> I have found an anomaly at (13, 13, 0). It's beneath me and within my field of view. I will fly below 10 meters to confirm and then report the finding.</Reasoning>
+<Action>(13, 13, -10)</Action>
+
+<Found>Found the anomaly at (13, 13, 0). Below 10 meters and within my field of view.</Found>

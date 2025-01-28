@@ -1,0 +1,5 @@
+<Reasoning>Upon further evaluation of the coordinates and the current altitude, I have decided to adjust my search area slightly to the north. It appears that the point at (-58, -58, -30) is not the object of interest based on the provided coordinates. I will now search the area around the point at (-58, -57, -30) on the grid, maintaining a 10-meter lower altitude relative to the drone's current altitude.</Reasoning>
+行动计划：(0, -57, -27)
+
+<Reasoning>This point at (-58, -57, -30) might be the object of interest. I will fly to a lower altitude of 10 meters below the drone's current altitude, which is centered on this point.</Reasoning>
+<Action>(0, -57, -27)</Action>

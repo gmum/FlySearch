@@ -1,0 +1,8 @@
+<Reasoning> Flying to the point (5, 0, -30) to get closer to the potential object. I need to be below 10 meters to be sure I have the correct object.</Reasoning>
+<Action>(5, 0, -30)</Action>
+
+<Reasoning> Flying to the point (5, 0, -30) resulted in an altitude of approximately 15 meters. I am now below 10 meters and have a potential object in view. Flying slightly to the north to keep the object in the center of the drone's field of vision.</Reasoning>
+<Action>(5, 0, -10)</Action>
+
+<Found> Found the object at a height of approximately 10 meters below the drone. Flying slightly to the north to keep the object centered.</Found>
+<Action>(5, 0, -5)</Action>

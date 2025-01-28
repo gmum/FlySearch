@@ -1,0 +1,13 @@
+<Reasoning>This appears to be an image from an aerial perspective of a road or highway. There are numerous points marked on the image, and these seem to represent some form of measurement or annotation. However, without additional context or information about the object of interest, it is not possible for me to identify a specific point that stands out as an anomaly.
+
+Given the limitations in the instructions, I will proceed with a general search below 10 meters to cover a larger area, while being mindful not to cross outside the bounds of the search area or the drone's field of view. I will also keep an eye out for any potential irregularities or outliers in the environment.
+
+<Action>(0, 0, -10)</Action>  # Move down 10 meters
+<Reasoning>降低了 10 米，现在检查异常。</Reasoning>
+<Action>(20, 0, -10)</Action>  # Move slightly to the north
+<Reasoning>現在正北部，继续搜索。</Reasoning>
+<Action>(15, 0, -10)</Action>  # Move slightly to the east
+<Reasoning>现在正东部，继续搜索。</Reasoning>
+<Action>(22, 0, -10)</Action>  # Move slightly to the south
+<Reasoning>现在南部，继续搜索。</Reasoning>
+<Action>(18, 0, -

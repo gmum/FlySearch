@@ -1,0 +1,15 @@
+<Reasoning>Drifting to the left to find the yellow taxi, ensuring I stay below 10 meters and centered on the object.</Reasoning>
+<Action>(0, -30, -10)</Action>
+<Reasoning>Found the yellow taxi. Flying slightly below and to the left to maintain a centered position.</Action>
+<Action>(-5, -5, 0)</Action>
+<Reasoning>Found the object with a clear view below 10 meters. Flying slightly below and to the right to maintain a centered position.</Action>
+<Action>(-2, 0, -5)</Action>
+<Reasoning>Purely for search and safety, ascending to 10 meters to clear the search area and prepare to ascend again.</Action>
+<Action>(0, 0, 10)</Action>
+<Reasoning>Leaving the search area, continuing the search slightly to the north.</Action>
+<Action>(3, 0, 0)</Action>
+<Reasoning>Flying slightly above to navigate around any obstacles or to prepare for another search.</Action>
+<Action>(-2, 0, -5)</Action>
+<Reasoning>Found the yellow taxi again, preparing to descend for a final confirmation.</Action>
+<Action>(-2, -5, 0)</Action>
+<Reasoning>Found the object with a clear view below 10 meters. The search is complete.</Action
