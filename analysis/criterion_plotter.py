@@ -72,6 +72,11 @@ class CriterionPlotter:
             for variable, successes in variable_to_successes.items()
         }
 
+        variable_to_sem = {
+            variable: scipy.stats.sem(successes)
+            for variable, successes in variable_to_successes.items()
+        }
+
         conf_ints = np.transpose(conf_ints)
 
         if ax is not None:
@@ -96,6 +101,7 @@ class CriterionPlotter:
         for cls_name in variable_to_successes.keys():
             mean = variable_to_means[cls_name]
             std = variable_to_std[cls_name]
+            sem = variable_to_sem[cls_name]
             conf_int = variable_to_conf_ints[cls_name]
 
             mean = round(mean, 4)
@@ -107,6 +113,7 @@ class CriterionPlotter:
             name_to_stats[cls_name] = {
                 "mean": mean,
                 "std": std,
+                "sem": sem,
                 "conf_int": conf_int,
                 "n": n,
                 "total_successes": total_successes
