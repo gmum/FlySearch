@@ -112,7 +112,7 @@ class Run:
 
     @property
     def start_position(self):
-        return self.get_coords()[0]
+        return self._convert_tuple_str(self.get_params()["drone_rel_coords"])
 
     @property
     def end_position(self):
