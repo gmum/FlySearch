@@ -29,7 +29,7 @@ which performs the entire evaluation. It has several configurable parameters, su
 * `mimic_run_cls_names` -- Used to specify specific class names to be run during mimic run. Useful in case you need a
   rerun of a specific class. The syntax is `class1,class2,class3`. We recommend setting it to `*` to run all classes.
 * `continue_from` -- runs the benchmark from the specified trajectory number. Useful in case you want to continue a
-  previously interrupted run. Works with mimicing.
+  previously interrupted run. Works with mimicking.
 
 ## Dependencies
 
@@ -66,4 +66,9 @@ The benchmark needs a font to overlay images from the engine with a navigation s
 variable in the `drone.sh` script to the location of a font file in your filesystem. The default one is
 `/usr/share/fonts/google-noto/NotoSerif-Bold.ttf`, which may or may not be present on your machine.
 
-###                              
+### API keys
+
+To use closed-source VLMs, you need to have an API key. To configure them, set appropriate variables in the
+`misc/config.py` file.
+
+
