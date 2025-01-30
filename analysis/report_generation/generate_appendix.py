@@ -32,7 +32,7 @@ def one_glimpse_latex(glimpse_path):
 def illustration_latex(illustration_path):
     return f"""
     \\begin{'{center}'}
-    \includegraphics[width=0.9\linewidth]{'{'}{illustration_path}{'}'}
+    \includegraphics[width=0.7\linewidth]{'{'}{illustration_path}{'}'}
     \\end{'{center}'}
     """
 
@@ -127,7 +127,7 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
         run_visualiser.plot(ax)
 
-        fig.savefig(image_dir / f"{one_run_dir.name}.png", dpi=1200)
+        fig.savefig(image_dir / f"{one_run_dir.name}.pdf")
         # fig.savefig(fig_path / f"{one_run_dir.name}.png")
         plt.close(fig)
 
@@ -135,7 +135,7 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
         print(generate_metadata(run), file=file)
 
-        print(illustration_latex(image_dir / f"{one_run_dir.name}.png"), file=file)
+        print(illustration_latex(image_dir / f"{one_run_dir.name}.pdf"), file=file)
 
         print(preamble(model_name=model_displayname), file=file)
 
@@ -148,7 +148,7 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
                 if speaker == "Role.USER":
                     if speech != "image":
                         if speech.strip().replace("\n", "").replace(" ", "").startswith("<Context>Youarein"):
-                            speech = speech.split("<Objective>")[0].strip() + "..."
+                            speech = speech.split("<Objective>")[0].strip() + r" \texttt{(REST OF THE PROMPT)}"
                         print(re_speaks(speech), file=file)
                     else:
                         print(stage_direction(), file=file)
