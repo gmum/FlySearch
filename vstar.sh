@@ -1,2 +1,0 @@
-#python3 vstar.py --explorer owl --model gpt-4o --experiment_name owl-full-norm-fix --subset attribute
-python3 vstar.py --explorer naive --model gpt-4o --experiment_name owl-naive-owl-easy --subset owl_easy
