@@ -11,15 +11,15 @@ ANOMALY_CATEGORY = ['anomaly']
 
 
 def main():
-    path = pathlib.Path("../all_logs/Qwen2-VL-72B-Forest-anomaly")
+    path = pathlib.Path("../all_logs/MC-0S-C-10G-GPT-AN-CR2")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 
-    if "anomaly" in str(path).lower():
+    if "-an-" in str(path).lower():
         categories = ANOMALY_CATEGORY
-    elif "city" in str(path).lower():
+    elif "-c-" in str(path).lower():
         categories = CITY_CATEGORIES
-    elif "forest" in str(path).lower():
+    elif "-f-" in str(path).lower():
         categories = FOREST_CATEGORIES
     else:
         raise ValueError(f"Path {path} does not contain a valid scenario")

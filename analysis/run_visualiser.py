@@ -12,6 +12,122 @@ class RunVisualiser:
     def __init__(self, run: Run):
         self.run = run
 
+    def plot_tikz(self) -> str:
+        coords = self.run.get_coords()
+
+        x = [coord[0] for coord in coords]
+        y = [coord[1] for coord in coords]
+        z = [coord[2] for coord in coords]
+
+        max_x = max(max(x), 0)
+        max_y = max(max(y), 0)
+        max_z = max(max(z), 0)
+
+        min_x = min(min(x), 0)
+        min_y = min(min(y), 0)
+        min_z = min(min(z), 0)
+
+        end_location = coords[-1]
+        end_x = end_location[0]
+        end_y = end_location[1]
+        end_z = end_location[2]
+
+        max_x = max(max_x, end_x + end_z)
+        max_y = max(max_y, end_y + end_z)
+
+        min_x = min(min_x, end_x - end_z)
+        min_y = min(min_y, end_y - end_z)
+
+        total_max = max(max_x, max_y, max_z)
+        total_min = min(min_x, min_y, min_z)
+
+        margin = 1
+
+        total_max += margin
+        total_min -= margin
+
+        scaling_ratio = 2 / (total_max - total_min)
+
+        def to_tikz_coords(x1, y1, z1):
+            x1 = -1 + scaling_ratio * (x1 - total_min)
+            y1 = -1 + scaling_ratio * (y1 - total_min)
+            z1 = scaling_ratio * z1
+
+            return x1, y1, z1
+
+        for i, ltr in zip(range(len(x) - 1), ascii_uppercase):
+            x_curr = x[i]
+            y_curr = y[i]
+            z_curr = z[i]
+
+            display_coords = (x_curr, y_curr, z_curr)
+
+            x_next = x[i + 1]
+            y_next = y[i + 1]
+            z_next = z[i + 1]
+
+            display = True
+
+            if ((x_curr - x_next) ** 2 + (y_curr - y_next) ** 2 + (z_curr - z_next) ** 2) ** 0.5 < 10:
+                display = False
+
+            if x_curr == x_next and y_curr == y_next and z_curr == z_next:
+                continue
+
+            x_curr, y_curr, z_curr = to_tikz_coords(x_curr, y_curr, z_curr)
+            x_next, y_next, z_next = to_tikz_coords(x_next, y_next, z_next)
+
+            start_coords = (x_curr, y_curr, z_curr)
+            next_coords = (x_next, y_next, z_next)
+
+            if display:
+                print(
+                    f"\draw[flight] {start_coords} node [right] {'{\\tiny \(' + ltr + '.' + str(display_coords) + '\)}'} -- {next_coords} ;")
+            else:
+                print(
+                    f"\draw[flight] {start_coords} node [right] {'{\\tiny \(' + ltr + '.\)}'} -- {next_coords} ;")
+
+        viewcone = [
+            (end_x + end_z, end_y + end_z, 0),
+            (end_x - end_z, end_y + end_z, 0),
+            (end_x - end_z, end_y - end_z, 0),
+            (end_x + end_z, end_y - end_z, 0),
+        ]
+
+        end_x, end_y, end_z = to_tikz_coords(end_x, end_y, end_z)
+
+        print(
+            f"\draw[dist] {end_x, end_y, end_z} node [right] {'{\\tiny \(' + ascii_uppercase[len(x) - 1] + '.' + str(end_location) + '\)}'} -- " + str(
+                to_tikz_coords(0, 0, 0)) + ";")
+
+        viewcone = [to_tikz_coords(*coords) for coords in viewcone]
+
+        for coords in viewcone:
+            print(f"\draw[viewcone] {coords} -- ({end_x, end_y, end_z});")
+
+        # \draw[fill = blue, opacity = 0.2] (1, -1, 0) - - (1, -1, 2) - - (1, 1, 2) - - (1, 1, 0) - - cycle;
+
+        print("\draw[fill = green, opacity = 0.4]", viewcone[0], "--", viewcone[1], "--", viewcone[2], "--",
+              viewcone[3],
+              "-- cycle;")
+
+        # \node[draw=none,shape=circle,fill, inner sep=2pt, color=red] (d1) at (0,0,0){};  % circle
+
+        print(r"\node[draw=none,shape=circle,fill, inner sep=2pt, color=red] (d1) at" + str(
+            to_tikz_coords(0, 0, 0)) + "{};")
+
+        """
+        \draw[axis](0, 0, 0) - - (0, 0, 2)
+        node[right]
+        {\scriptisze \(Z\)};
+        \draw[axis](-1, 0, 0) - - (1, 0, 0)
+        node[right]
+        {\scriptisze \(X\)};
+        \draw[axis](0, -1, 0) - - (0, 1, 0)
+        node[right]
+        {\scriptisze \(Y\)};
+        """
+
     def plot(self, ax: Axes3D):
         coords = self.run.get_coords()
         x = [coord[0] for coord in coords]
@@ -46,16 +162,25 @@ class RunVisualiser:
             dy = y_next - y_curr
             dz = z_next - z_curr
 
-            dx /= 4
-            dy /= 4
-            dz /= 4
+            dx /= 3
+            dy /= 3
+            dz /= 3
 
-            ax.plot([x_curr, x_next], [y_curr, y_next], [z_curr, z_next])
-            ax.quiver(x_middle, y_middle, z_middle, dx, dy, dz, color='b',
-                      normalize=False)
+            x_quiv_start = x_curr * (2 / 3) + x_next * (1 / 3)
+            y_quiv_start = y_curr * (2 / 3) + y_next * (1 / 3)
+            z_quiv_start = z_curr * (2 / 3) + z_next * (1 / 3)
+
+            ax.plot([x_curr, x_next], [y_curr, y_next], [z_curr, z_next], color="black")
+
+            # ax.quiver(x_quiv_start, y_quiv_start, z_quiv_start, dx, dy, dz, color='black',
+            #          normalize=False)
+
+            ax.quiver(x_next, y_next, z_next, dx * 3, dy * 3, dz * 3, color='black', normalize=True, pivot="tip",
+                      arrow_length_ratio=4)
 
             # Annotate current point
-            ax.text(x_curr + 0.3, y_curr, z_curr, f"{ltr}. ({x_curr}, {y_curr}, {z_curr})")
+            ax.text(x_curr + 0.6, y_curr, z_curr, f"{ltr}. ({x_curr}, {y_curr}, {z_curr})")
+            ax.scatter(x_curr, y_curr, z_curr, color='b', s=100)
 
         end_location = coords[-1]
         end_x = end_location[0]
@@ -63,8 +188,11 @@ class RunVisualiser:
         end_z = end_location[2]
 
         # Annotate end point
-        ax.text(end_x + 0.3, end_y, end_z, f"{ascii_uppercase[len(x) - 1]}. ({end_x}, {end_y}, {end_z})")
+        ax.text(end_x + 0.6, end_y, end_z, f"{ascii_uppercase[len(x) - 1]}. ({end_x}, {end_y}, {end_z})")
+        ax.scatter(end_x, end_y, end_z, color='b', s=100)
+
         ax.text(0.3, 0, 0, "(0, 0, 0)")
+        ax.scatter(0, 0, 0, color='r', s=100)
 
         # Dashed line from end location to origin
         ax.plot([end_x, 0], [end_y, 0], [end_z, 0], color='g', linestyle='dashed', label="Distance to object")
@@ -125,7 +253,7 @@ def main():
     base_path = Path("../all_logs/MC-0S-F")
     runs = sorted(os.listdir(base_path), key=lambda x: int(x.split("_")[0]))
 
-    run = Run(base_path / runs[3])
+    run = Run(base_path / runs[4])
 
     visualiser = RunVisualiser(run)
 
@@ -135,6 +263,9 @@ def main():
 
     visualiser.plot(ax)
     plt.show()
+
+    # bad idea
+    # visualiser.plot_tikz()
 
 
 if __name__ == '__main__':
