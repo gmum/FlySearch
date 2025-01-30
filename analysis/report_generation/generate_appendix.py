@@ -5,6 +5,7 @@ import re
 import pathlib
 import shutil
 
+from PIL import Image
 from matplotlib import pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
 
@@ -151,9 +152,12 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
                         print(re_speaks(speech), file=file)
                     else:
                         print(stage_direction(), file=file)
-                        print(one_glimpse_latex(image_dir / f"{one_run_dir.name}_{glimpse_count}.png"), file=file)
-                        shutil.copyfile(one_run_dir / f"{glimpse_count}.png",
-                                        image_dir / f"{one_run_dir.name}_{glimpse_count}.png")
+                        print(one_glimpse_latex(image_dir / f"{one_run_dir.name}_{glimpse_count}.jpg"), file=file)
+                        Image.open(one_run_dir / f"{glimpse_count}.png").save(
+                            image_dir / f"{one_run_dir.name}_{glimpse_count}.jpg")
+
+                        # shutil.copyfile(one_run_dir / f"{glimpse_count}.png",
+                        #                image_dir / f"{one_run_dir.name}_{glimpse_count}.png")
                         glimpse_count += 1
                 else:
                     print(gpt_speaks(speech), file=file)
@@ -165,7 +169,7 @@ def main():
     with open("GPT-4o-City-Success.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
                         lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20)
+                        startfrom=20, overwrite=True)
 
     with open("GPT-4o-City-Failure.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
@@ -174,7 +178,7 @@ def main():
     with open("GPT-4o-Forest-Success.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs"),
                         lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20)
+                        startfrom=20, overwrite=True)
 
     with open("GPT-4o-Forest-Fail.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs"),
@@ -183,7 +187,7 @@ def main():
     with open("Sonnet-City-Success.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs"),
                         lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20)
+                        startfrom=20, overwrite=True)
 
     with open("Sonnet-City-Failure.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs"),
@@ -192,7 +196,7 @@ def main():
     with open("Sonnet-Forest-Success.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs"),
                         lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20)
+                        startfrom=20, overwrite=True)
 
     with open("Sonnet-Forest-Failure.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs"),
