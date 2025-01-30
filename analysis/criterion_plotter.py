@@ -42,7 +42,7 @@ class CriterionPlotter:
                                          threshold=10) -> Dict:
 
         def run_was_successful(run):
-            return run.model_claimed and RunAnalyser(run).maciek_criterion_satisfied(threshold)
+            return run.model_claimed and RunAnalyser(run).success_criterion_satisfied(threshold)
 
         if success_criterion is None:
             success_criterion = run_was_successful

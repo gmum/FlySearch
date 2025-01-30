@@ -13,7 +13,7 @@ def convert_runs_from_dir_to_pandas(directory: pathlib.Path) -> pd.DataFrame:
         analyser = RunAnalyser(run)
 
         to_return["object_visible"] = analyser.object_visible()
-        to_return["macieks_criterion"] = analyser.maciek_criterion_satisfied()
+        to_return["success_criterion"] = analyser.success_criterion_satisfied()
         to_return["drone_within_threshold"] = analyser.drone_within_altitude_threshold(10)
         to_return["model_claimed"] = run.model_claimed
 

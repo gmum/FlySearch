@@ -17,7 +17,7 @@ def main():
     fig, ax = plt.subplots(nrows=2, sharey=True, sharex=True)
     plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax[0])
 
-    another_success_criterion = lambda x: RunAnalyser(x).maciek_criterion_satisfied(10)
+    another_success_criterion = lambda x: RunAnalyser(x).success_criterion_satisfied(10)
     plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax[1],
                                              success_criterion=another_success_criterion)
 

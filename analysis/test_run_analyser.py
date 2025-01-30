@@ -30,7 +30,7 @@ class TestRunAnalyser:
         run_analyser = RunAnalyser(run)
 
         assert run_analyser.drone_within_altitude_threshold(10)
-        assert run_analyser.maciek_criterion_satisfied(10)
+        assert run_analyser.success_criterion_satisfied(10)
 
     def test_object_offset(self):
         run = self.MockRun((-100, 100, 101), (-30000, -5000, -500, -300, 1000, 9500))
@@ -39,7 +39,7 @@ class TestRunAnalyser:
 
         assert run_analyser.object_visible()
         assert run_analyser.drone_within_altitude_threshold(10)
-        assert run_analyser.maciek_criterion_satisfied(10)
+        assert run_analyser.success_criterion_satisfied(10)
 
     def test_euclidean_distance_to_zero(self):
         run = self.MockRun((0, 3, 4), (-1000, -1000, 0, 1000, 1000, 300))

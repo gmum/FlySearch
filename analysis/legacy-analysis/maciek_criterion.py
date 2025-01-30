@@ -7,8 +7,8 @@ from utils import iterate_over_experiment_coords_and_messages_time_series
 from matplotlib import pyplot as plt
 
 
-def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float],
-                                  max_alt_diff=10) -> bool:
+def is_success_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float],
+                                   max_alt_diff=10) -> bool:
     higher_than_object = position[2] > object_position[2]
 
     alt_diff = position[2] - object_position[2]
@@ -32,12 +32,12 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
     return higher_than_object and ok_alt_diff and object_within_view
 
 
-def maciek_criterion_for_timeserie(timeserie, max_alt_diff=10, object_position=(0, 0, 9)):
+def success_criterion_for_timeserie(timeserie, max_alt_diff=10, object_position=(0, 0, 9)):
     messages, coords = timeserie
 
     coord = coords[-1]
 
-    return is_maciek_criterion_satisfied(coord, object_position, max_alt_diff=max_alt_diff)
+    return is_success_criterion_satisfied(coord, object_position, max_alt_diff=max_alt_diff)
 
 
 def trim_time_serie(time_serie, trim_str="FOUND"):
@@ -81,18 +81,18 @@ def get_stats_for_time_series(time_series):
 
     total = len(time_series)
 
-    maciek_criterion_for_claims = sum([maciek_criterion_for_timeserie(claim) for claim in claims])
+    success_criterion_for_claims = sum([success_criterion_for_timeserie(claim) for claim in claims])
 
-    maciek_criterion_for_non_claims = sum([maciek_criterion_for_timeserie(non_claim) for non_claim in non_claims])
+    success_criterion_for_non_claims = sum([success_criterion_for_timeserie(non_claim) for non_claim in non_claims])
 
     return {
         "total": total,
         "claims": len(claims),
-        "maciek_criterion_claim": maciek_criterion_for_claims,
+        "success_criterion_claim": success_criterion_for_claims,
         "non_claims": len(non_claims),
-        "maciek_criterion_non_claim": maciek_criterion_for_non_claims,
-        "claim_and_found_acc": maciek_criterion_for_claims / total,
-        "accidental_finds": maciek_criterion_for_non_claims / total
+        "success_criterion_non_claim": success_criterion_for_non_claims,
+        "claim_and_found_acc": success_criterion_for_claims / total,
+        "accidental_finds": success_criterion_for_non_claims / total
 
     }
 
@@ -177,16 +177,16 @@ def plot_basic_vs_adg():
     plt.show()
 
 
-def plot_maciek_criterion_per_class(ends_and_labels, ax):
+def plot_success_criterion_per_class(ends_and_labels, ax):
     per_class_ends = {}
 
     for end, cls in ends_and_labels:
-        maciek_criterion = is_maciek_criterion_satisfied(end, (0, 0, 0))
+        success_criterion = is_success_criterion_satisfied(end, (0, 0, 0))
 
         if cls not in per_class_ends:
             per_class_ends[cls] = []
 
-        per_class_ends[cls].append(maciek_criterion)
+        per_class_ends[cls].append(success_criterion)
 
     averages = {k: sum(v) / len(v) for k, v in per_class_ends.items()}
     counts = {k: len(v) for k, v in per_class_ends.items()}
@@ -203,7 +203,7 @@ def main():
 
     fig, ax = plt.subplots()
 
-    plot_maciek_criterion_per_class(ends_and_labels, ax)
+    plot_success_criterion_per_class(ends_and_labels, ax)
     plt.show()
 
 

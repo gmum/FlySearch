@@ -95,8 +95,8 @@ def generate_subsection(name):
     return f"\\subsection{'{' + name + '}'}"
 
 
-def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float],
-                                  max_alt_diff=10, object_highest_point=0) -> Tuple[bool, bool, bool]:
+def is_success_criterion_satisfied(position: tuple[float, float, float], object_position: tuple[float, float, float],
+                                   max_alt_diff=10, object_highest_point=0) -> Tuple[bool, bool, bool]:
     higher_than_object = position[2] > object_position[2]
 
     alt_diff = position[2] - object_highest_point
@@ -121,7 +121,7 @@ def is_maciek_criterion_satisfied(position: tuple[float, float, float], object_p
 
 
 def generate_metadata(starting_position, final_position, object_type="UNKNOWN", object_highest_point=0):
-    higher_than_object, object_can_be_seen, maciek_criterion = is_maciek_criterion_satisfied(final_position, (
+    higher_than_object, object_can_be_seen, success_criterion = is_success_criterion_satisfied(final_position, (
         0, 0, 0), object_highest_point=object_highest_point)
 
     return f"""
@@ -131,7 +131,7 @@ def generate_metadata(starting_position, final_position, object_type="UNKNOWN", 
       \item Euclidean distance from (0, 0, 0): {(final_position[0] ** 2 + final_position[1] ** 2 + final_position[2] ** 2) ** 0.5}
       \item Higher than object: {higher_than_object}
       \item Object can be seen: {object_can_be_seen}
-      \item Maciek criterion (with or without claim): {maciek_criterion}
+      \item success criterion (with or without claim): {success_criterion}
       \item Object type: {object_type}
     \end{'{itemize}'}
     """.replace("_", "\\_")

@@ -37,7 +37,7 @@ def main():
         return object_type
 
     def success_criterion(run):
-        return run.model_claimed and RunAnalyser(run).maciek_criterion_satisfied(10)
+        return run.model_claimed and RunAnalyser(run).success_criterion_satisfied(10)
 
     runs_aggregated_per_type = plotter.aggregate_runs_per_function(city_aggregation_function)
 
@@ -54,7 +54,7 @@ def main():
 
     unclaimed_stats = plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax,
                                                                success_criterion=lambda x: RunAnalyser(
-                                                                   x).maciek_criterion_satisfied(10))
+                                                                   x).success_criterion_satisfied(10))
 
     print("UNCLAIMED STATS")
     print(json.dumps(unclaimed_stats, indent=4))

@@ -67,7 +67,7 @@ def generate_metadata(run):
 
     analyser = RunAnalyser(run)
     object_can_be_seen = analyser.object_visible()
-    success = analyser.maciek_criterion_satisfied(10)
+    success = analyser.success_criterion_satisfied(10)
 
     object_type = run.get_params()["passed_object_name"]
 
@@ -168,39 +168,39 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 def main():
     with open("GPT-4o-City-Success.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
+                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
                         startfrom=20, overwrite=True)
 
     with open("GPT-4o-City-Failure.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).maciek_criterion_satisfied(10), file=f, startfrom=20)
+                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
 
     with open("GPT-4o-Forest-Success.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
+                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
                         startfrom=20, overwrite=True)
 
     with open("GPT-4o-Forest-Fail.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).maciek_criterion_satisfied(10), file=f, startfrom=20)
+                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
 
     with open("Sonnet-City-Success.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
+                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
                         startfrom=20, overwrite=True)
 
     with open("Sonnet-City-Failure.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).maciek_criterion_satisfied(10), file=f, startfrom=20)
+                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
 
     with open("Sonnet-Forest-Success.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).maciek_criterion_satisfied(10) and x.model_claimed, file=f,
+                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
                         startfrom=20, overwrite=True)
 
     with open("Sonnet-Forest-Failure.tex", "w") as f:
         generate_report("Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).maciek_criterion_satisfied(10), file=f, startfrom=20)
+                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
 
 
 if __name__ == "__main__":
