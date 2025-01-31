@@ -180,7 +180,7 @@ def main():
     print(conversation.get_latest_message())
 
     conversation.begin_transaction(Role.USER)
-    conversation.add_text_message("SAY SOMETHING SILLY, MAN!")
+    conversation.add_text_message("SAY SOMETHING SILLY!")
     conversation.commit_transaction(send_to_vlm=True)
 
     conversation.begin_transaction(Role.USER)
