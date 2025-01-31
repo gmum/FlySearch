@@ -30,29 +30,7 @@ class DroneExplorer:
         self.xy_bound = 200
 
     def _incontext_step(self):
-        self.conversation.begin_transaction(Role.USER)
-        self.conversation.add_text_message("Your current altitude is 21 meters.")
-        self.conversation.add_image_message(Image.open("/net/people/plgrid/plgdmatuszek/active-visual-gpt/data/2.png"))
-        self.conversation.commit_transaction(send_to_vlm=False)
-
-        self.conversation.begin_transaction(Role.ASSISTANT)
-        self.conversation.add_text_message(
-            "<Comment> I clearly see a yellow pickup truck that I am centered on in both of my axes. I can however adjust my altitude to get even closer to it. Since my altitude is 21 meters, I will adjust it by 10 meters in a calm and professional manner. </Comment> <Action> (0, 0, -10) </Action>")
-        self.conversation.commit_transaction(send_to_vlm=False)
-
-        self.conversation.begin_transaction(Role.USER)
-        self.conversation.add_text_message("Your current altitude is 11 meters.")
-        self.conversation.add_image_message(Image.open("/net/people/plgrid/plgdmatuszek/active-visual-gpt/data/3.png"))
-        self.conversation.commit_transaction(send_to_vlm=False)
-
-        self.conversation.begin_transaction(Role.ASSISTANT)
-        self.conversation.add_text_message(
-            "<Comment> I am now at 11 meters and all I can see is the yellow pickup truck due to my proximity. I have achieved the goal. </Comment> <Action> FOUND </Action>")
-        self.conversation.commit_transaction(send_to_vlm=False)
-
-        self.conversation.begin_transaction(Role.USER)
-        self.conversation.add_text_message("Very vell, let's move on to another example.")
-        self.conversation.commit_transaction(send_to_vlm=False)
+        raise ValueError("Few-shot is currently deprecated!")
 
     def _step(self, rel_position, start_transaction=True, messing_with_us=False) -> tuple[float, float, float]:
 
