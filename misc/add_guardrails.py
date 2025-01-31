@@ -94,8 +94,7 @@ def dot_matrix_two_dimensional_unreal(img: np.ndarray, w_dots, h_dots, pixel_per
         raise ValueError(
             "Please set the FONT_LOCATION environment variable to the path of the font file, so that grid labels can be annotated.")
 
-    font = ImageFont.truetype("/usr/share/fonts/google-noto/NotoSerif-Bold.ttf",
-                              width // 40)  # Adjust font size if needed; default == width // 40
+    font = ImageFont.truetype(font_location, width // 40)  # Adjust font size if needed; default == width // 40
 
     pixels_per_cell_w = width / w_dots
     pixels_per_cell_h = height / h_dots
