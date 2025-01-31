@@ -17,6 +17,6 @@ python3 drone.py \
 --repeats 1 \
 --logdir all_logs \
 --n 200 \
---mimic_run_name forest-template \
+--mimic_run_name Sonnet-ForestNew \
 --mimic_run_cls_names "*" \
 #--continue_from 217
