@@ -29,7 +29,7 @@ class UnrealGuardian:
 def main():
     unreal_guardian = UnrealGuardian(
         pathlib.Path(
-            "/home/dominik/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample")
+            "/home/anonymous/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample")
     )
 
 

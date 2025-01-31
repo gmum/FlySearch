@@ -181,7 +181,7 @@ def main():
         top_p=0.0000000000000000000001
     )
 
-    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/data/sample_images/burger.jpeg")
+    image = Image.open("/home/anonymous/MyStuff/active-visual-gpt/data/sample_images/burger.jpeg")
     image = pil_to_opencv(image)
 
     conversation.begin_transaction(Role.USER)

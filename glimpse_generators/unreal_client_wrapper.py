@@ -72,7 +72,7 @@ def main():
     client = UnrealClientWrapper(
         host="localhost",
         port=9000,
-        unreal_binary_path="/home/dominik/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample",
+        unreal_binary_path="/home/anonymous/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample",
     )
 
     while True:

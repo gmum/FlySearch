@@ -186,7 +186,7 @@ class MimicScenarioMapper:
 
 def main():
     mimic = MimicScenarioMapper(
-        pathlib.Path("/home/dominik/MyStuff/active-visual-gpt/all_logs/forest-template"), "*")
+        pathlib.Path("/home/anonymous/MyStuff/active-visual-gpt/all_logs/forest-template"), "*")
 
     for scenario in mimic.iterate_scenarios():
         print(scenario["i"])

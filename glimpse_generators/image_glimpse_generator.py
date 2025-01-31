@@ -63,7 +63,7 @@ def main():
     from datasets.vstar_bench_dataset import VstarSubBenchDataset
     from misc.cv2_and_numpy import pil_to_opencv
 
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
+    ds = VstarSubBenchDataset("/home/anonymous/vstar_bench/relative_position", transform=pil_to_opencv)
     img, _, _, _ = ds[0]
 
     glimpse_generator = GridImageGlimpseGenerator(img, 5, 5)

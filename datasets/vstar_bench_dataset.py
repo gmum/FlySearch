@@ -83,13 +83,13 @@ class VstarSubBenchDataset(torch.utils.data.Dataset):
 
 
 def main():
-    dataset = VstarBenchDataset("/home/dominik/vstar_bench")
+    dataset = VstarBenchDataset("/home/anonymous/vstar_bench")
     print(len(dataset))
     print(dataset[0])
 
     subsets = ["GPT4V-hard", "OCR", "relative_position", "direct_attributes"]
 
-    subdatasets = [VstarSubBenchDataset(f"/home/dominik/vstar_bench/{s}", transform=torchvision.transforms.ToTensor())
+    subdatasets = [VstarSubBenchDataset(f"/home/anonymous/vstar_bench/{s}", transform=torchvision.transforms.ToTensor())
                    for s in subsets]
 
     for s in subdatasets:

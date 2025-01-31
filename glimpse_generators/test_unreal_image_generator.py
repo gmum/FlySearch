@@ -32,8 +32,8 @@ class TestUnrealImageGenerator:
         test_path.mkdir(exist_ok=True)
 
         client = UnrealClientWrapper(host="localhost", port=9000,
-                                     unreal_binary_path="/home/dominik/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample"
-                                     # unreal_binary_path="/home/dominik/MyStuff/simulator/CitySample/Binaries/Linux/CitySample"
+                                     unreal_binary_path="/home/anonymous/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample"
+                                     # unreal_binary_path="/home/anonymous/MyStuff/simulator/CitySample/Binaries/Linux/CitySample"
                                      )
 
         generator = UnrealGridGlimpseGenerator(splits_w=6, splits_h=6, client=client)

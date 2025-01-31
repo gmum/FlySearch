@@ -75,7 +75,7 @@ def main():
     from cv2_and_numpy import pil_to_opencv
     from image_glimpse_generator import BasicImageGlimpseGenerator
 
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/relative_position", transform=pil_to_opencv)
+    ds = VstarSubBenchDataset("/home/anonymous/vstar_bench/relative_position", transform=pil_to_opencv)
     img, _, _, _ = ds[0]
 
     glimpse_generator = BasicImageGlimpseGenerator(img)

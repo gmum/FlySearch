@@ -99,7 +99,7 @@ def main():
 
     # image = cv2.imread("sample_images/burger.jpeg")
 
-    ds = VstarSubBenchDataset("/home/dominik/vstar_bench/direct_attributes", transform=pil_to_opencv)
+    ds = VstarSubBenchDataset("/home/anonymous/vstar_bench/direct_attributes", transform=pil_to_opencv)
     image, question, options, answer = ds[1]
 
     print("Q:", question)
