@@ -2,8 +2,12 @@ import numpy as np
 import gymnasium as gym
 
 from typing import Optional, Dict, Tuple, List
+
 from glimpse_generators import UnrealClientWrapper, UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
 from misc import pil_to_opencv
+
+from scenarios import get_classes_to_object_classes
+from scenarios.object_classes import BaseObjectClass
 
 
 class DroneCannotSeeTargetException(Exception):
@@ -70,6 +74,8 @@ class BaseFlySearchEnv(gym.Env):
         self.relative_position: Optional[np.ndarray] = None
         self.trajectory: Optional[List[np.ndarray]] = None
         self.started: bool = False
+
+        self.classes_to_ids = get_classes_to_object_classes(self.get_client())
 
     '''
     Resets the environment according to the given seed and options. Should not be overridden by subclasses. It differs from the standard gym reset signature, as seed is passed as an element of the options dictionary. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary. 
@@ -139,3 +145,28 @@ class BaseFlySearchEnv(gym.Env):
         }
 
         return observation, reward, False, False, {}
+
+    # Bunch of utility functions
+
+    def get_bbox(self, object_id: str) -> str:
+        bbox = self.glimpse_generator.client.request(f"vget /object/{object_id}/bounds")
+        return bbox
+
+    def hide_all_movable_objects(self) -> None:
+        for object_class in self.classes_to_ids.values():
+            if isinstance(object_class, BaseObjectClass):
+                object_class.hide_all_objects()
+
+    # Sets the camera in a given location and asks for camera image, ensuring that the map is loaded
+    def load_map(self, x, y, z, drone_rel_x_semi, drone_rel_y_semi, drone_rel_z_semi) -> None:
+        # Asking glimpse generator for a glimpse will effectively load the map in a given location
+        self.glimpse_generator.change_start_position((x, y, z))
+        self.glimpse_generator.reset_camera()
+        self.glimpse_generator.get_camera_image((drone_rel_x_semi, drone_rel_y_semi, drone_rel_z_semi), force_move=True)
+
+    def rel_to_real(self, x, y, z, x_rel, y_rel, z_rel):
+        x_rel *= 100
+        y_rel *= 100
+        z_rel *= 100
+
+        return x + x_rel, y + y_rel, z + z_rel
