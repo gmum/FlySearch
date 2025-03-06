@@ -10,6 +10,10 @@ class DroneCannotSeeTargetException(Exception):
     pass
 
 
+class UnitialisedEnvironmentException(Exception):
+    pass
+
+
 class BaseFlySearchEnv(gym.Env):
     def get_client(self) -> UnrealClientWrapper:
         raise NotImplementedError()
@@ -65,6 +69,7 @@ class BaseFlySearchEnv(gym.Env):
         self.options: Optional[Dict] = None
         self.relative_position: Optional[np.ndarray] = None
         self.trajectory: Optional[List[np.ndarray]] = None
+        self.started: bool = False
 
     '''
     Resets the environment according to the given seed and options. Should not be overridden by subclasses. It differs from the standard gym reset signature, as seed is passed as an element of the options dictionary. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary. 
@@ -92,16 +97,23 @@ class BaseFlySearchEnv(gym.Env):
                                                             force_move=True)
         opencv_image = pil_to_opencv(pil_image)
 
+        altitude = np.array([self.relative_position[2]])
+
+        self.started = True
+
         return {
             "image": opencv_image,
-            "altitude": np.array([self.glimpse_generator.get_relative_from_start()[2]]),
+            "altitude": altitude,
             "collision": 0,
         }, {}  # Observation and empty info
 
     def step(self, action: dict):
+        if not self.started:
+            raise UnitialisedEnvironmentException("Environment must be reset before calling step")
 
         if action["found"] == 1:
             # TODO/NOTE: In future, we may wanna have more semantics for finding the target
+            self.started = False
             return {}, 0.0, True, False, {}  # Empty observation, no reward, terminated, no truncation, empty info
 
         new_ideal_position = self.relative_position + action["coordinate_change"]
