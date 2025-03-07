@@ -1,7 +1,9 @@
 import os
+import numpy as np
+import pathlib
 
 from matplotlib import pyplot as plt
-from scenarios import ForestScenarioMapper
+from scenarios import ForestScenarioMapper, MimicScenarioMapper
 from rl import ForestFlySearchEnv
 
 
@@ -12,35 +14,27 @@ def main():
     os.environ[
         "FONT_LOCATION"] = "/usr/share/fonts/google-noto/NotoSerif-Bold.ttf"
 
-    fsm = ForestScenarioMapper(
-        object_probs={
-            (
-                ForestScenarioMapper.ObjectType.ANOMALY,
-            ): 1.0
-        },
-        x_min=15000,
-        x_max=35000,
-        y_min=15000,
-        y_max=35000,
-        z_min=0,
-        z_max=1,
-        drone_z_rel_min=30 * 100,
-        drone_z_rel_max=35 * 100,
-        seed_min=1,
-        seed_max=1000000000,
-        scenarios_number=1,
+    fsm = MimicScenarioMapper(
+        pathlib.Path("all_logs/forest-template")
     )
-
-    scenario = fsm.create_random_scenario()
 
     env = ForestFlySearchEnv()
 
-    with env:
-        obs, _ = env.reset(seed=None, options=scenario)
-        opencv_image = obs["image"]
-        pil_image = opencv_image[:, :, ::-1].copy()
+    images = []
 
-    plt.imshow(pil_image)
+    with env:
+        for scenario, _ in zip(fsm.iterate_scenarios(), range(4)):
+            obs, _ = env.reset(seed=None, options=scenario)
+            opencv_image = obs["image"]
+            pil_image = opencv_image[:, :, ::-1].copy()
+            images.append(pil_image)
+
+    figs, axs = plt.subplots(nrows=2, ncols=2, figsize=(40, 40))
+
+    for i, ax in enumerate(axs.flat):
+        ax.imshow(images[i])
+        ax.axis("off")
+
     plt.show()
 
 
