@@ -36,7 +36,7 @@ def main():
     env = ForestFlySearchEnv()
 
     with env:
-        obs, _ = env.reset(scenario)
+        obs, _ = env.reset(seed=None, options=scenario)
         opencv_image = obs["image"]
         pil_image = opencv_image[:, :, ::-1].copy()
 
