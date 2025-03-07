@@ -3,6 +3,8 @@ import numpy as np
 import pathlib
 
 from matplotlib import pyplot as plt
+
+from rl.city_fly_search_env import CityFlySearchEnv
 from scenarios import ForestScenarioMapper, MimicScenarioMapper
 from rl import ForestFlySearchEnv
 
@@ -14,6 +16,9 @@ def main():
     os.environ[
         "FONT_LOCATION"] = "/usr/share/fonts/google-noto/NotoSerif-Bold.ttf"
 
+    os.environ[
+        "CITY_BINARY_PATH"] = "/home/dominik/MyStuff/simulator/CitySample/Binaries/Linux/CitySample"
+
     fsm = MimicScenarioMapper(
         pathlib.Path("all_logs/forest-template")
     )
@@ -24,6 +29,28 @@ def main():
 
     with env:
         for scenario, _ in zip(fsm.iterate_scenarios(), range(4)):
+            obs, _ = env.reset(seed=None, options=scenario)
+            opencv_image = obs["image"]
+            pil_image = opencv_image[:, :, ::-1].copy()
+            images.append(pil_image)
+
+    figs, axs = plt.subplots(nrows=2, ncols=2, figsize=(40, 40))
+
+    for i, ax in enumerate(axs.flat):
+        ax.imshow(images[i])
+        ax.axis("off")
+
+    plt.show()
+
+    csm = MimicScenarioMapper(
+        pathlib.Path("all_logs/city-template")
+    )
+    env = CityFlySearchEnv()
+
+    images = []
+
+    with env:
+        for scenario, _ in zip(csm.iterate_scenarios(), range(4)):
             obs, _ = env.reset(seed=None, options=scenario)
             opencv_image = obs["image"]
             pil_image = opencv_image[:, :, ::-1].copy()

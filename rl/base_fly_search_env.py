@@ -162,6 +162,7 @@ class BaseFlySearchEnv(gym.Env):
 
         opencv_image = pil_to_opencv(pil_image)
 
+        self.relative_position = new_real_position
         self.trajectory.append(new_real_position)
 
         reward = self.get_reward()
