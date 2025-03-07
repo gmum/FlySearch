@@ -19,6 +19,14 @@ class GlimpseGeneratorMock:
         return self.camera_image_return
 
 
+class ClientMock:
+    def __init__(self):
+        self.disconnected = False
+
+    def disconnect(self):
+        self.disconnected = True
+
+
 class TrivialExtension(BaseFlySearchEnv):
     def __init__(self):
         super().__init__()
@@ -26,7 +34,7 @@ class TrivialExtension(BaseFlySearchEnv):
         self.configure_called = False
 
     def get_client(self):
-        return None
+        return ClientMock()
 
     def _configure(self, options) -> None:
         self.configure_called = True
@@ -40,13 +48,15 @@ class TrivialExtension(BaseFlySearchEnv):
 class TestBaseFlySearchEnv:
     def test_reset_calls_configure(self):
         env = TrivialExtension()
-        env.reset({"seed": 1})
+        with env:
+            env.reset(None, {"seed": 1})
 
         assert env.configure_called
 
     def test_reset_returns_observation(self):
         env = TrivialExtension()
-        obs, info = env.reset({"seed": 1})
+        with env:
+            obs, info = env.reset(None, {"seed": 1})
 
         assert "image" in obs
         assert "altitude" in obs
@@ -56,7 +66,8 @@ class TestBaseFlySearchEnv:
 
     def test_reset_returns_empty_info(self):
         env = TrivialExtension()
-        obs, info = env.reset({"seed": 1})
+        with env:
+            obs, info = env.reset(None, {"seed": 1})
 
         assert info == {}
 
@@ -64,13 +75,15 @@ class TestBaseFlySearchEnv:
         env = TrivialExtension()
 
         with pytest.raises(ValueError):
-            env.reset({})
+            with env:
+                env.reset(None, {})
 
     def test_step_returns_observation(self):
         env = TrivialExtension()
 
-        env.reset({"seed": 123})
-        obs, reward, done, truncated, info = env.step({"found": 0, "coordinate_change": (1, 1, 1)})
+        with env:
+            env.reset(None, {"seed": 123})
+            obs, reward, done, truncated, info = env.step({"found": 0, "coordinate_change": (1, 1, 1)})
 
         glimpse_generator = env.glimpse_generator
 
@@ -84,10 +97,11 @@ class TestBaseFlySearchEnv:
     def test_step_saves_trajectory_overridden_by_glimpse_gen(self):
         env = TrivialExtension()
 
-        env.reset({"seed": 123})
-        observation_1, *_ = env.step({"found": 0, "coordinate_change": (1, 1, 1)})
-        observation_2, *_ = env.step({"found": 0, "coordinate_change": (1, 5, 8)})
-        observation_3, *_ = env.step({"found": 0, "coordinate_change": (5, 5235, 123)})
+        with env:
+            env.reset(None, {"seed": 123})
+            observation_1, *_ = env.step({"found": 0, "coordinate_change": (1, 1, 1)})
+            observation_2, *_ = env.step({"found": 0, "coordinate_change": (1, 5, 8)})
+            observation_3, *_ = env.step({"found": 0, "coordinate_change": (5, 5235, 123)})
 
         assert np.allclose(env.trajectory[0], np.array([42, 42, 42]))
         assert np.allclose(env.trajectory[1], np.array([42, 42, 42]))
@@ -103,8 +117,9 @@ class TestBaseFlySearchEnv:
     def test_returns_empty_observation_if_found(self):
         env = TrivialExtension()
 
-        env.reset({"seed": 123})
-        obs, reward, done, truncated, info = env.step({"found": 1})
+        with env:
+            env.reset(None, {"seed": 123})
+            obs, reward, done, truncated, info = env.step({"found": 1})
 
         assert obs == {}
         assert reward == 0.0
@@ -115,17 +130,19 @@ class TestBaseFlySearchEnv:
     def test_reset_forces_move(self):
         env = TrivialExtension()
 
-        env.reset({"seed": 123})
+        with env:
+            env.reset(None, {"seed": 123})
 
         assert env.glimpse_generator.force_move_history == [True]
 
     def test_step_does_not_force_move(self):
         env = TrivialExtension()
 
-        env.reset({"seed": 123})
-        env.step({"found": 0, "coordinate_change": (1, 1, 1)})
-        env.reset({"seed": 125})
-        env.step({"found": 0, "coordinate_change": (5, 5, 5)})
+        with env:
+            env.reset(None, {"seed": 123})
+            env.step({"found": 0, "coordinate_change": (1, 1, 1)})
+            env.reset(None, {"seed": 125})
+            env.step({"found": 0, "coordinate_change": (5, 5, 5)})
 
         assert env.glimpse_generator.force_move_history == [True, False, True, False]
 
@@ -133,4 +150,14 @@ class TestBaseFlySearchEnv:
         env = TrivialExtension()
 
         with pytest.raises(UnitialisedEnvironmentException):
-            env.step({"found": 0, "coordinate_change": (1, 1, 1)})
+            with env:
+                env.step({"found": 0, "coordinate_change": (1, 1, 1)})
+
+    def test_calls_disconnect_on_client(self):
+        env = TrivialExtension()
+
+        with env:
+            env.reset(None, {"seed": 123})
+            env.step({"found": 1})
+
+        assert env.client.disconnected

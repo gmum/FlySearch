@@ -68,28 +68,56 @@ class BaseFlySearchEnv(gym.Env):
             }
         )
 
-        self.client: UnrealClientWrapper = self.get_client()
-        self.glimpse_generator: UnrealGlimpseGenerator = self.get_glimpse_generator(client=self.client)
+        self.client: Optional[UnrealClientWrapper] = None
+        self.glimpse_generator: Optional[UnrealGlimpseGenerator] = None
+        self.classes_to_ids: Optional[Dict] = None
+
         self.options: Optional[Dict] = None
         self.relative_position: Optional[np.ndarray] = None
         self.trajectory: Optional[List[np.ndarray]] = None
-        self.started: bool = False
 
-        self.classes_to_ids = get_classes_to_object_classes(self.get_client())
+        self.started: bool = False
+        self.resources_initialized: bool = False
+
+    def __enter__(self):
+        self.client = self.get_client()
+        self.glimpse_generator = self.get_glimpse_generator(client=self.client)
+        self.classes_to_ids = get_classes_to_object_classes(self.client)
+
+        self.resources_initialized = True
+
+        return self
+
+    def __exit__(self, *_, **__):
+        self.client.disconnect()
+        self.resources_initialized = False
+
+        return False
 
     '''
-    Resets the environment according to the given seed and options. Should not be overridden by subclasses. It differs from the standard gym reset signature, as seed is passed as an element of the options dictionary. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary. 
+    Resets the environment according to the given seed and options. Should not be overridden by subclasses. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary. 
     
     Args:
-        options: A dictionary of options to configure the environment. Some of these options should be environment-specific.
+        seed: A seed for the environment. If specified, overrides the seed in the options.
+        options: A dictionary of options to configure the environment. Some of these options should be environment-specific. Must be specified. Default is None only for compatibility with the gymnasium API.
     
     Returns:
         First observation of the environment.
     '''
 
-    def reset(self, options: Dict):
+    def reset(self, seed: Optional[int] = None, options: Dict = None):
+        if options is None:
+            raise ValueError("Options must be specified")
+
+        if seed is not None:
+            options["seed"] = seed
+
         if "seed" not in options:
-            raise ValueError("Seed must be specified in options")
+            raise ValueError("Seed must be specified by options or as a seed argument!")
+
+        if not self.resources_initialized:
+            raise UnitialisedEnvironmentException(
+                "Environment must be entered before calling reset. Use a `with` statement. Otherwise, the simulator itself won't be running.")
 
         super().reset(seed=options["seed"], options=None)
 
