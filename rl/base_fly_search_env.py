@@ -150,6 +150,9 @@ class BaseFlySearchEnv(gym.Env):
             self.started = False
             return {}, 0.0, True, False, {}  # Empty observation, no reward, terminated, no truncation, empty info
 
+        coordinate_change = action["coordinate_change"]
+        coordinate_change[1] = -coordinate_change[1]  # The rest of the code inverts the y axis. Yeah, I know.
+
         new_ideal_position = self.relative_position + action["coordinate_change"]
         pil_image = self.glimpse_generator.get_camera_image(rel_position_m=new_ideal_position.tolist(),
                                                             force_move=False)

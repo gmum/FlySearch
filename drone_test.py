@@ -64,6 +64,38 @@ def main():
 
     plt.show()
 
+    csm = MimicScenarioMapper(
+        pathlib.Path("all_logs/city-template")
+    )
+    env = CityFlySearchEnv()
+
+    images = []
+
+    with env:
+        for scenario, _ in zip(csm.iterate_scenarios(), range(4)):
+            obs, _ = env.reset(seed=None, options=scenario)
+            opencv_image = obs["image"]
+            pil_image = opencv_image[:, :, ::-1].copy()
+            images.append(pil_image)
+
+            obs2, *_ = env.step(
+                {
+                    "found": 0,
+                    "coordinate_change": np.array([0, 20, 0]),
+                })
+
+            opencv_image = obs2["image"]
+            pil_image = opencv_image[:, :, ::-1].copy()
+            images.append(pil_image)
+
+    figs, axs = plt.subplots(nrows=4, ncols=2, figsize=(40, 40))
+
+    for i, ax in enumerate(axs.flat):
+        ax.imshow(images[i])
+        ax.axis("off")
+
+    plt.show()
+
 
 if __name__ == "__main__":
     main()
