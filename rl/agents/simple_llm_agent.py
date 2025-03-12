@@ -43,7 +43,7 @@ class SimpleLLMAgent(BaseAgent):
             self.conversation.add_text_message(
                 "Emergency stop; you've flown too close to something and would have hit it.")
 
-        self.conversation.add_text_message(f"Your current altitude is {altitude.item()} meters above ground level. ")
+        self.conversation.add_text_message(f"Your current altitude is {altitude.item()} meters above ground level.")
         self.conversation.add_image_message(image)
         self.conversation.commit_transaction(send_to_vlm=True)
 
@@ -55,6 +55,9 @@ class SimpleLLMAgent(BaseAgent):
         return self._act(**observation)
 
     def correct_previous_action(self, fail_reason: Dict):
+        if self.uninitialised:
+            raise ValueError("No action to correct")
+
         match fail_reason["reason"]:
             case "too_high":
                 alt_before = fail_reason["alt_before"]
