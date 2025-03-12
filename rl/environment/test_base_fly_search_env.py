@@ -1,7 +1,7 @@
 import pytest
 import numpy as np
 
-from rl import BaseFlySearchEnv, UnitialisedEnvironmentException
+from rl.environment import BaseFlySearchEnv, UnitialisedEnvironmentException
 
 
 class GlimpseGeneratorMock:

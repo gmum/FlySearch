@@ -151,9 +151,15 @@ class BaseFlySearchEnv(gym.Env):
             return {}, 0.0, True, False, {}  # Empty observation, no reward, terminated, no truncation, empty info
 
         coordinate_change = action["coordinate_change"]
+
+        if isinstance(coordinate_change, tuple):
+            if len(coordinate_change) != 3:
+                raise ValueError("Coordinate change must be a tuple of 3 integers.")
+            coordinate_change = np.array(coordinate_change)
+
         coordinate_change[1] = -coordinate_change[1]  # The rest of the code inverts the y axis. Yeah, I know.
 
-        new_ideal_position = self.relative_position + action["coordinate_change"]
+        new_ideal_position = self.relative_position + coordinate_change
         pil_image = self.glimpse_generator.get_camera_image(rel_position_m=new_ideal_position.tolist(),
                                                             force_move=False)
 
