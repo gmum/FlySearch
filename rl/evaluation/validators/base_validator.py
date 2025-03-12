@@ -1,0 +1,2 @@
+class BaseValidator:
+    pass
