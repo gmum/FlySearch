@@ -146,3 +146,32 @@ class TestSimpleLLMAgent:
 
         assert conversation.all_sent
         assert corrected_action == {"coordinate_change": (3, -5, -10)}
+
+    def test_properly_returns_found(self):
+        conversation = ConversationMock()
+        navigator = GridDroneNavigator()
+        image = np.zeros((100, 100, 3), dtype=np.uint8)
+
+        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        conversation.set_returned_message("asdasd<action></action> FOUND!!!!!")
+
+        action = agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+
+        assert action == {"found": 1}
+        assert conversation.all_sent
+
+    def test_can_return_found_for_correction(self):
+        conversation = ConversationMock()
+        navigator = GridDroneNavigator()
+        image = np.zeros((100, 100, 3), dtype=np.uint8)
+
+        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+
+        conversation.set_returned_message("<action>(32, 555, -8)</action>")
+        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+
+        conversation.set_returned_message("f o u n d")
+        action = agent.correct_previous_action({"reason": "too_high", "alt_before": 4, "alt_after": 20, "alt_max": 10})
+
+        assert action == {"found": 1}
+        assert conversation.all_sent
