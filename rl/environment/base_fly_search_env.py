@@ -29,23 +29,22 @@ class BaseFlySearchEnv(gym.Env):
     def get_reward(self) -> float:
         return 0.0
 
-    """
-    Configures the environment with the given options. Should be overridden by sublasses. Should set agent's and target's locations in the engine.
-    
-    If the drone cannot see the target, it should raise DroneCannotSeeTargetException.
-    
-    Args:
-        options: A dictionary of options to configure the environment.
-    
-    Returns:
-        None
-        
-    Throws:
-        DroneCannotSeeTargetException: If the options specify a scenario where the drone cannot see the target. This condition should be checked by the subclass using the game engine.
-    
-    """
-
     def _configure(self, options: Dict) -> None:
+        """
+        Configures the environment with the given options. Should be overridden by sublasses. Should set agent's and target's locations in the engine.
+
+        If the drone cannot see the target, it should raise DroneCannotSeeTargetException.
+
+        Args:
+            options: A dictionary of options to configure the environment.
+
+        Returns:
+            None
+
+        Throws:
+            DroneCannotSeeTargetException: If the options specify a scenario where the drone cannot see the target. This condition should be checked by the subclass using the game engine.
+
+        """
         raise NotImplementedError()
 
     def __init__(self, resolution: int = 500, max_altitude: int = 120):
@@ -94,18 +93,18 @@ class BaseFlySearchEnv(gym.Env):
 
         return False
 
-    '''
-    Resets the environment according to the given seed and options. Should not be overridden by subclasses. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary. 
-    
-    Args:
-        seed: A seed for the environment. If specified, overrides the seed in the options.
-        options: A dictionary of options to configure the environment. Some of these options should be environment-specific. Must be specified. Default is None only for compatibility with the gymnasium API.
-    
-    Returns:
-        First observation of the environment.
-    '''
-
     def reset(self, seed: Optional[int] = None, options: Dict = None):
+        """
+        Resets the environment according to the given seed and options. Should not be overridden by subclasses. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary.
+
+        Args:
+            seed: A seed for the environment. If specified, overrides the seed in the options.
+            options: A dictionary of options to configure the environment. Some of these options should be environment-specific. Must be specified. Default is None only for compatibility with the gymnasium API.
+
+        Returns:
+            First observation of the environment.
+        """
+
         if options is None:
             raise ValueError("Options must be specified")
 
