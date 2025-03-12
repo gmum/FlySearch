@@ -5,7 +5,7 @@ import os
 import math
 
 from enum import Enum
-from typing import Tuple
+from typing import Tuple, Dict, Any
 
 
 class BaseScenarioMapper:
@@ -62,5 +62,10 @@ class BaseScenarioMapper:
                     if subclass not in self.object_type_cls:
                         raise ValueError(f"Invalid object type: {subclass}")
 
-    def create_random_scenario(self, seed: int):
+    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
+        """
+        Creates a random scenario. Should be implemented in the subclass.
+        :param seed: Seed FOR THE ENVIRONMENT. Does NOT affect the values of the scenario.
+        :return: Dictionary with scenario parameters that can be passed to the gymnasium environment.
+        """
         raise NotImplementedError()
