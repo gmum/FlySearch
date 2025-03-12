@@ -1,14 +1,15 @@
 import random
 import pandas as pd
 import os
-
 import math
 
 from enum import Enum
-from typing import Tuple
+from typing import Tuple, Any, Dict
+
+from scenarios import BaseScenarioMapper
 
 
-class CityScenarioMapper:
+class CityScenarioMapper(BaseScenarioMapper):
     class ObjectType(Enum):
         ANOMALY = 0
         POLICE_CAR = 1
@@ -27,52 +28,14 @@ class CityScenarioMapper:
         BLACK_TRUCK = 14
         WHITE_TRUCK = 15
 
-    @staticmethod
-    def sample_value_between(val_min, val_max):
-        return random.uniform(val_min, val_max)
-
-    @staticmethod
-    def sample_object_from_object_probs(object_probs: dict[ObjectType | Tuple, float]):
-        random_value = random.random()
-        cumulative_probability = 0
-
-        for obj_type, probability in object_probs.items():
-            cumulative_probability += probability
-
-            if random_value <= cumulative_probability:
-                if type(obj_type) is tuple:
-                    return random.choice(obj_type)
-
-                return obj_type
-
-    @staticmethod
-    def sample_drone_position(object_x, object_y, drone_z):
-        if drone_z < 0:
-            raise ValueError("Drone height must be positive")
-
-        drone_x_min = object_x - 0.5 * drone_z
-        drone_x_max = object_x + 0.5 * drone_z
-
-        drone_y_min = object_y - 0.5 * drone_z
-        drone_y_max = object_y + 0.5 * drone_z
-
-        drone_x = CityScenarioMapper.sample_value_between(drone_x_min, drone_x_max)
-        drone_y = CityScenarioMapper.sample_value_between(drone_y_min, drone_y_max)
-
-        return drone_x, drone_y
-
     def __init__(self, object_probs: dict[ObjectType | Tuple, float], drone_z_rel_min: float, drone_z_rel_max: float,
-                 scenarios_number: int, seed_min: int, seed_max: int, x_min: float = -math.inf, x_max: float = math.inf,
+                 x_min: float = -math.inf, x_max: float = math.inf,
                  y_min: float = -math.inf,
                  y_max: float = math.inf):
-        self.object_probs = object_probs
+        super().__init__(object_probs, CityScenarioMapper.ObjectType)
 
         self.drone_z_rel_min = drone_z_rel_min
         self.drone_z_rel_max = drone_z_rel_max
-        self.scenarios_number = scenarios_number
-
-        self.seed_min = seed_min
-        self.seed_max = seed_max
 
         possible_location_csv_path = os.getenv("LOCATIONS_CITY_PATH")
 
@@ -91,24 +54,8 @@ class CityScenarioMapper:
 
         self._validate_object_probs()
 
-    def _validate_object_probs(self):
-        total = sum(self.object_probs.values())
-
-        # FIXME
-        if total != 1:
-            raise ValueError(f"Total probability must be 1, but got {total}")
-
-        for obj_type in self.object_probs:
-            if obj_type not in CityScenarioMapper.ObjectType and type(obj_type) is not tuple:
-                raise ValueError(f"Invalid object type: {obj_type}")
-
-            if type(obj_type) is tuple:
-                for subclass in obj_type:
-                    if subclass not in CityScenarioMapper.ObjectType:
-                        raise ValueError(f"Invalid object type: {subclass}")
-
-    def create_random_scenario(self):
-        object_type = CityScenarioMapper.sample_object_from_object_probs(self.object_probs)
+    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
+        object_type = self.sample_object_from_object_probs()
         row = self.possible_locations.sample(n=1).iloc[0]
 
         object_x = row["X"]
@@ -131,8 +78,6 @@ class CityScenarioMapper:
         drone_y = int(drone_y / 100)
         drone_z = int(drone_z / 100)
 
-        seed = int(self.sample_value_between(self.seed_min, self.seed_max))
-
         return {
             "object_coords": (object_x, object_y, object_z),
             "object_rot": (object_rot_p, object_rot_q, object_rot_r),
@@ -143,14 +88,6 @@ class CityScenarioMapper:
             "seed": seed
         }
 
-    def iterate_scenarios(self):
-        seeds = random.sample(range(self.seed_min, self.seed_max), self.scenarios_number)
-
-        for seed in seeds:
-            scenario = self.create_random_scenario()
-            scenario["seed"] = seed
-            yield scenario
-
 
 def main():
     csm = CityScenarioMapper(
@@ -159,13 +96,9 @@ def main():
         },
         drone_z_rel_min=0,
         drone_z_rel_max=10000,
-        scenarios_number=10,
-        seed_max=1000,
-        seed_min=0,
     )
 
-    for params in csm.iterate_scenarios():
-        print(params)
+    print(csm.create_random_scenario(6))
 
 
 if __name__ == "__main__":

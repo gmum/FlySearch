@@ -1,5 +1,4 @@
-from .drone_scenario_mapper import DroneScenarioMapper, YellowTruckScenarioMapper, DroneScenarioMapperWithOffsets
-
+from .base_scenario_mapper import BaseScenarioMapper
 from .forest_scenario_mapper import ForestScenarioMapper
 from .city_scenario_mapper import CityScenarioMapper
 from .scenario_configurator import ScenarioConfigurator
