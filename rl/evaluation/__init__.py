@@ -1,1 +1,2 @@
+from .evaluation_state import EvaluationState
 from .trajectory_evaluator import TrajectoryEvaluator
