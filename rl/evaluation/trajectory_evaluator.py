@@ -1,9 +1,10 @@
 from typing import Callable, List, Dict
 
+from conversation import Conversation
 from rl.evaluation import EvaluationState
 from rl.evaluation.validators import BaseValidator
 from rl.evaluation.loggers import BaseLogger
-from rl.agents import BaseAgent
+from rl.agents import BaseAgent, SimpleLLMAgentFactory, BaseAgentFactory
 from rl.environment import BaseFlySearchEnv, DroneCannotSeeTargetException
 from scenarios import BaseScenarioMapper
 
@@ -13,10 +14,11 @@ class TrajectoryEvaluator:
     Class tasked with performing a single evaluation of the agent in the environment.
     """
 
-    def __init__(self, agent: BaseAgent, environment: BaseFlySearchEnv, max_glimpses: int,
+    def __init__(self, agent_factory: BaseAgentFactory, environment: BaseFlySearchEnv, max_glimpses: int,
                  scenario_mapper: BaseScenarioMapper,
-                 loggers: List[BaseLogger], validators: List[BaseValidator], seed: int, forgiveness: int):
-        self.agent = agent
+                 loggers: List[BaseLogger], validators: List[BaseValidator], seed: int, forgiveness: int,
+                 prompt_factory: Callable[[int, str, int], str]):
+        self.agent_factory = agent_factory
         self.environment = environment
         self.max_glimpses = max_glimpses
         self.scenario_mapper = scenario_mapper
@@ -24,14 +26,19 @@ class TrajectoryEvaluator:
         self.validators = validators
         self.seed = seed
         self.forgiveness = forgiveness
+        self.prompt_factory = prompt_factory
 
         self.first_observation = None
         self.first_info = None
+
+        self.agent = None
+        self.scenario = None
 
         if not self.environment.resources_initialized:
             raise ValueError("Environment resources not initialized. Use `with` statement before using the evaluator.")
 
         self._prepare_environment()
+        self._prepare_agent()
 
     def _prepare_environment(self):
         throws = 0
@@ -46,6 +53,16 @@ class TrajectoryEvaluator:
                 break
 
         scenario["throws"] = throws
+
+        self.scenario = scenario
+
+    def _prepare_agent(self):
+        object_type = self.scenario["object_type"]
+        object_desc = self.scenario_mapper.get_description(object_type)
+
+        search_area_rectangle_length = 400
+        self.agent = self.agent_factory.create_agent(
+            self.prompt_factory(self.max_glimpses, object_desc, search_area_rectangle_length))
 
     def tell_loggers_about_termination(self, termination_info: Dict):
         for logger in self.loggers:
@@ -83,6 +100,7 @@ class TrajectoryEvaluator:
                     info=info,
                     observation_number=glimpse_number,
                     correction_number=fails,
+                    agent_info=self.agent.get_agent_info()
                 )
 
                 self.tell_loggers(evaluation_state)
@@ -96,7 +114,6 @@ class TrajectoryEvaluator:
                 self.tell_loggers_about_termination({"reason": "validation forgiveness ran out"})
                 break
 
-            # Execute these lines at the end
             observation, _, terminated, _, info = self.environment.step(action)
 
             if terminated:

@@ -93,3 +93,8 @@ class SimpleLLMAgent(BaseAgent):
         _, response = self.conversation.get_latest_message()
 
         return self._return_action_from_response(response)
+
+    def get_agent_info(self) -> Dict:
+        return {
+            "conversation_history": self.conversation.get_conversation()
+        }

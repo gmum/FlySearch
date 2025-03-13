@@ -31,3 +31,12 @@ class BaseAgent:
             The corrected action. It overrides the previous action.
         """
         pass
+
+    def get_agent_info(self) -> Dict:
+        """
+        Returns additional information about the agent.
+
+        Returns:
+            Information about the agent.
+        """
+        return {}

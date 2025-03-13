@@ -88,6 +88,12 @@ class CityScenarioMapper(BaseScenarioMapper):
             "seed": seed
         }
 
+    def get_description(self, object_type):
+        if object_type != CityScenarioMapper.ObjectType.ANOMALY:
+            return f"a {super().get_description(object_type)}"
+        else:
+            return "an object that doesn't fit in with the rest of the environment (an anomaly)"
+
 
 def main():
     csm = CityScenarioMapper(

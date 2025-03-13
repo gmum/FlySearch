@@ -69,3 +69,9 @@ class BaseScenarioMapper:
         :return: Dictionary with scenario parameters that can be passed to the gymnasium environment.
         """
         raise NotImplementedError()
+
+    def get_description(self, object_type):
+        if object_type not in self.object_type_cls:
+            raise ValueError(f"Invalid object type: {object_type}")
+
+        return str(object_type.name).replace("_", " ").lower()
