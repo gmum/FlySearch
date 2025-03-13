@@ -91,7 +91,11 @@ class TrajectoryEvaluator:
 
         for glimpse_number in range(self.max_glimpses):
 
-            action = self.agent.sample_action(observation)
+            try:
+                action = self.agent.sample_action(observation)
+            except:
+                self.tell_loggers_about_termination({"reason": "error during agent action sampling"})
+                raise
 
             for fails in range(self.forgiveness):
                 evaluation_state = EvaluationState(
@@ -109,7 +113,11 @@ class TrajectoryEvaluator:
                 if valid:
                     break
 
-                action = self.agent.correct_previous_action(fail_reason=info)
+                try:
+                    action = self.agent.correct_previous_action(fail_reason=info)
+                except:
+                    self.tell_loggers_about_termination({"reason": "environment error"})
+                    raise
             else:
                 self.tell_loggers_about_termination({"reason": "validation forgiveness ran out"})
                 break

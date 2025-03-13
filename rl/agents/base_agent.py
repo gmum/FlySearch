@@ -16,7 +16,7 @@ class BaseAgent:
         Returns:
             The sampled action.
         """
-        pass
+        raise NotImplementedError()
 
     def correct_previous_action(self, fail_reason: Dict) -> Dict:
         """
@@ -30,7 +30,7 @@ class BaseAgent:
         Returns:
             The corrected action. It overrides the previous action.
         """
-        pass
+        raise NotImplementedError()
 
     def get_agent_info(self) -> Dict:
         """

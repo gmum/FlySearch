@@ -1,9 +1,11 @@
 from openai import OpenAI
+
+from conversation import BaseConversationFactory
 from misc.config import GEMINI_AI_KEY
 from conversation.openai_conversation import OpenAIConversation
 
 
-class GeminiFactory:
+class GeminiFactory(BaseConversationFactory):
     def __init__(self, model_name: str):
         self.client = OpenAI(api_key=GEMINI_AI_KEY, base_url='https://generativelanguage.googleapis.com/v1beta/openai/',
                              max_retries=100)

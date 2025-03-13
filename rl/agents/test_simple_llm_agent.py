@@ -45,10 +45,10 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt", navigator)
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
-        action = agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        action = agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
         messages = conversation.messages
 
-        assert action == {"coordinate_change": (32, 555, -8)}
+        assert action == {"coordinate_change": (32, 555, -8), "found": 0}
         assert messages[0] == ("text", "prompt")
         assert messages[1] == ("text", "Your current altitude is 4 meters above ground level.")
         assert messages[2][0] == "image"
@@ -63,8 +63,8 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt123", navigator)
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
-        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
-        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
+        agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
         messages = conversation.messages
 
@@ -91,7 +91,7 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt", navigator)
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
-        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
         conversation.set_returned_message("<action>(3, -5, -10)</action>")
         corrected_action = agent.correct_previous_action(
@@ -103,7 +103,7 @@ class TestSimpleLLMAgent:
 
         assert complaint == "This command would cause you to fly too high. You can't fly higher than 10 meters. Your current altitude is 4 meters, which means that you can only fly 6 meters higher."
         assert conversation.all_sent
-        assert corrected_action == {"coordinate_change": (3, -5, -10)}
+        assert corrected_action == {"coordinate_change": (3, -5, -10), "found": 0}
 
     def test_agent_corrects_previous_action_for_recklessness(self):
         conversation = ConversationMock()
@@ -113,7 +113,7 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt", navigator)
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
-        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
         conversation.set_returned_message("<action>(3, -5, -10)</action>")
         corrected_action = agent.correct_previous_action({"reason": "reckless"})
 
@@ -124,7 +124,7 @@ class TestSimpleLLMAgent:
         assert complaint == "This command would endanger the drone, as you would fly out of bounds of the last seen image, possibly flying into unknown territories, recklessly. Please adjust your command so that you don't fly out of bounds of the previous glimpse."
 
         assert conversation.all_sent
-        assert corrected_action == {"coordinate_change": (3, -5, -10)}
+        assert corrected_action == {"coordinate_change": (3, -5, -10), "found": 0}
 
     def test_agent_corrects_previous_action_for_out_of_bounds(self):
         conversation = ConversationMock()
@@ -134,7 +134,7 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt", navigator)
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
-        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
         conversation.set_returned_message("<action>(3, -5, -10)</action>")
         corrected_action = agent.correct_previous_action({"reason": "out_of_bounds", "xy_bound": 213})
 
@@ -145,7 +145,7 @@ class TestSimpleLLMAgent:
         assert complaint == "This command would cause you to fly out of the search area's bounds. You can't fly further than 213 meters from the starting point in any axis."
 
         assert conversation.all_sent
-        assert corrected_action == {"coordinate_change": (3, -5, -10)}
+        assert corrected_action == {"coordinate_change": (3, -5, -10), "found": 0}
 
     def test_properly_returns_found(self):
         conversation = ConversationMock()
@@ -155,7 +155,7 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt", navigator)
         conversation.set_returned_message("asdasd<action></action> FOUND!!!!!")
 
-        action = agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        action = agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
         assert action == {"found": 1}
         assert conversation.all_sent
@@ -168,7 +168,7 @@ class TestSimpleLLMAgent:
         agent = SimpleLLMAgent(conversation, "prompt", navigator)
 
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
-        agent.act({"image": image, "altitude": np.array([4]), "collision": 0})
+        agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
         conversation.set_returned_message("f o u n d")
         action = agent.correct_previous_action({"reason": "too_high", "alt_before": 4, "alt_after": 20, "alt_max": 10})

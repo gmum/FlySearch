@@ -4,3 +4,6 @@ from .city_scenario_mapper import CityScenarioMapper
 from .scenario_configurator import ScenarioConfigurator
 from .classes_to_ids import get_classes_to_object_classes
 from .mimic_scenario_mapper import MimicScenarioMapper
+
+from .default_forest_scenario_mapper import DefaultForestScenarioMapper
+from .default_forest_anomaly_scenario_mapper import DefaultForestAnomalyScenarioMapper

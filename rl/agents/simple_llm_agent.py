@@ -27,7 +27,8 @@ class SimpleLLMAgent(BaseAgent):
                 raise  # Model's syntax error
 
         return {
-            "coordinate_change": coordinate_change
+            "coordinate_change": coordinate_change,
+            "found": 0
         }
 
     def _act(self, image: np.ndarray, altitude: np.ndarray, collision: int, **_):
@@ -51,7 +52,7 @@ class SimpleLLMAgent(BaseAgent):
 
         return self._return_action_from_response(response)
 
-    def act(self, observation: Dict) -> Dict:
+    def sample_action(self, observation: Dict) -> Dict:
         return self._act(**observation)
 
     def correct_previous_action(self, fail_reason: Dict):
