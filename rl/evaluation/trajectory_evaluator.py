@@ -14,12 +14,11 @@ class TrajectoryEvaluator:
     """
 
     def __init__(self, agent: BaseAgent, environment: BaseFlySearchEnv, max_glimpses: int,
-                 prompt_generator: Callable[[int, str, int], str], scenario_mapper: BaseScenarioMapper,
+                 scenario_mapper: BaseScenarioMapper,
                  loggers: List[BaseLogger], validators: List[BaseValidator], seed: int, forgiveness: int):
         self.agent = agent
         self.environment = environment
         self.max_glimpses = max_glimpses
-        self.prompt_generator = prompt_generator
         self.scenario_mapper = scenario_mapper
         self.loggers = loggers
         self.validators = validators
@@ -90,18 +89,18 @@ class TrajectoryEvaluator:
                 valid, info = self.tell_validators(evaluation_state)
 
                 if valid:
-                    self.tell_loggers_about_termination({"reason": "validation forgiveness ran out"})
                     break
 
                 action = self.agent.correct_previous_action(fail_reason=info)
             else:
+                self.tell_loggers_about_termination({"reason": "validation forgiveness ran out"})
                 break
 
             # Execute these lines at the end
             observation, _, terminated, _, info = self.environment.step(action)
 
             if terminated:
-                self.tell_loggers_about_termination({"reason": "found"})
+                self.tell_loggers_about_termination({"reason": "found claimed"})
                 break
         else:
             self.tell_loggers_about_termination({"reason": "glimpses ran out"})
