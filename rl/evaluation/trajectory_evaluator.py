@@ -104,7 +104,8 @@ class TrajectoryEvaluator:
                     info=info,
                     observation_number=glimpse_number,
                     correction_number=fails,
-                    agent_info=self.agent.get_agent_info()
+                    agent_info=self.agent.get_agent_info(),
+                    scenario=self.scenario
                 )
 
                 self.tell_loggers(evaluation_state)
