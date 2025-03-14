@@ -10,13 +10,16 @@ class ExperimentRunner:
         self.config = config
 
     def _run_single_experiment(self, seed: int, environment: BaseFlySearchEnv):
+        loggers = [logger_factory.get_logger() for logger_factory in self.config.logger_factories]
+        validators = [validator_factory.get_validator() for validator_factory in self.config.validator_factories]
+
         trajectory_evaluator = TrajectoryEvaluator(
             agent_factory=self.config.agent_factory,
             environment=environment,
             max_glimpses=self.config.number_of_glimpses,
             scenario_mapper=self.config.scenario_mapper,
-            loggers=self.config.loggers,
-            validators=self.config.validators,
+            loggers=loggers,
+            validators=validators,
             seed=seed,
             forgiveness=self.config.forgiveness,
             prompt_factory=self.config.prompt_factory
