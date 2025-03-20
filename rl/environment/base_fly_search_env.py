@@ -138,7 +138,7 @@ class BaseFlySearchEnv(gym.Env):
             "image": opencv_image,
             "altitude": altitude,
             "collision": 0,
-        }, {}  # Observation and empty info
+        }, {"real_position": self.relative_position}  # Observation and empty info
 
     def step(self, action: dict):
         if not self.started:
@@ -147,7 +147,8 @@ class BaseFlySearchEnv(gym.Env):
         if action["found"] == 1:
             # TODO/NOTE: In future, we may wanna have more semantics for finding the target
             self.started = False
-            return {}, 0.0, True, False, {}  # Empty observation, no reward, terminated, no truncation, empty info
+            return {}, 0.0, True, False, {
+                "real_position": self.relative_position}  # Empty observation, no reward, terminated, no truncation, info with relative position
 
         coordinate_change = action["coordinate_change"]
 
@@ -181,7 +182,7 @@ class BaseFlySearchEnv(gym.Env):
             "collision": 1 if crash else 0,
         }
 
-        return observation, reward, False, False, {}
+        return observation, reward, False, False, {"real_position": new_real_position}
 
     # Bunch of utility functions
 

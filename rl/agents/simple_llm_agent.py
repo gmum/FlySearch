@@ -21,6 +21,7 @@ class SimpleLLMAgent(BaseAgent):
         except Exception:
             if self.navigator.get_claim(response):
                 return {
+                    "coordinate_change": (0, 0, 0),
                     "found": 1
                 }
             else:

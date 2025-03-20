@@ -157,7 +157,7 @@ class TestSimpleLLMAgent:
 
         action = agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
-        assert action == {"found": 1}
+        assert action == {"found": 1, "coordinate_change": (0, 0, 0)}
         assert conversation.all_sent
 
     def test_can_return_found_for_correction(self):
@@ -173,5 +173,5 @@ class TestSimpleLLMAgent:
         conversation.set_returned_message("f o u n d")
         action = agent.correct_previous_action({"reason": "too_high", "alt_before": 4, "alt_after": 20, "alt_max": 10})
 
-        assert action == {"found": 1}
+        assert action == {"found": 1, "coordinate_change": (0, 0, 0)}
         assert conversation.all_sent

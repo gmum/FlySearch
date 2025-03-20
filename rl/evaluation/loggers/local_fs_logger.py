@@ -9,7 +9,7 @@ from rl.evaluation.loggers import BaseLogger
 class LocalFSLogger(BaseLogger):
     def __init__(self, log_dir: pathlib.Path):
         self.log_dir = log_dir
-        self.log_dir.mkdir(parents=True, exist_ok=True)
+        self.log_dir.mkdir(parents=True, exist_ok=False)
 
     def log(self, evaluation_state: EvaluationState):
         image = evaluation_state.observation["image"]

@@ -64,13 +64,6 @@ class TestBaseFlySearchEnv:
 
         assert obs["altitude"][0] == 42
 
-    def test_reset_returns_empty_info(self):
-        env = TrivialExtension()
-        with env:
-            obs, info = env.reset(None, {"seed": 1})
-
-        assert info == {}
-
     def test_reset_throws_error_if_no_seed(self):
         env = TrivialExtension()
 
@@ -125,7 +118,6 @@ class TestBaseFlySearchEnv:
         assert reward == 0.0
         assert done
         assert not truncated
-        assert info == {}
 
     def test_reset_forces_move(self):
         env = TrivialExtension()

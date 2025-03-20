@@ -109,13 +109,13 @@ class TrajectoryEvaluator:
                 )
 
                 self.tell_loggers(evaluation_state)
-                valid, info = self.tell_validators(evaluation_state)
+                valid, fail_info = self.tell_validators(evaluation_state)
 
                 if valid:
                     break
 
                 try:
-                    action = self.agent.correct_previous_action(fail_reason=info)
+                    action = self.agent.correct_previous_action(fail_reason=fail_info)
                 except:
                     self.tell_loggers_about_termination({"reason": "environment error"})
                     raise
