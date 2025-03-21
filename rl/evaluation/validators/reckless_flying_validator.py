@@ -15,7 +15,7 @@ class RecklessFlyingValidator(BaseValidator):
 
         altitude = previous_position[2]
 
-        if np.max(coord_change[:1]) > altitude:
+        if np.max(coord_change[:2]) > altitude:
             return False, {"reason": "reckless"}
 
         return True, {}

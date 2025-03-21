@@ -6,6 +6,7 @@ from rl.environment import BaseFlySearchEnv, CityFlySearchEnv
 from rl.evaluation.configs import ExperimentConfig
 from rl.evaluation.loggers import WandbLoggerFactory, LocalFSLogger, LocalFSLoggerFactory
 from rl.evaluation.loggers.wandb_logger import WandbLogger
+from rl.evaluation.validators import OutOfBoundsFlightValidatorFactory, AltitudeValidatorFactory
 from rl.evaluation.validators.reckless_flying_validator import RecklessFlyingValidator
 from rl.evaluation.validators.reckless_flying_validator_factory import RecklessFlyingValidatorFactory
 from scenarios import CityScenarioMapper, BaseScenarioMapper
@@ -20,7 +21,9 @@ class BasicConfig(ExperimentConfig):
             scenario_mapper=scenario_mapper,
             logger_factories=[WandbLoggerFactory(project_name="WTLN-RL-T"),
                               LocalFSLoggerFactory(log_dir_prefix=pathlib.Path(f"all_logs/{run_name}"))],
-            validator_factories=[RecklessFlyingValidatorFactory()],
+            validator_factories=[RecklessFlyingValidatorFactory(),
+                                 OutOfBoundsFlightValidatorFactory(search_diameter=200),
+                                 AltitudeValidatorFactory(max_altitude=120)],
             forgiveness=5,
             number_of_runs=number_of_runs,
             number_of_glimpses=10,
