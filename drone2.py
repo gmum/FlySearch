@@ -33,7 +33,7 @@ def main():
     # setattr(environment, "get_glimpse_generator", glimpse_gen_func)
     # scenario_mapper = DefaultCityAnomalyScenarioMapper(drone_alt_min=30, drone_alt_max=35)
     scenario_mapper = MimicScenarioMapper(
-        path=pathlib.Path("run_templates/city-template"), filter_str="*"
+        path=pathlib.Path("run_templates/city-template"), filter_str="*", continue_from=1
     )
 
     # scenario = scenario_mapper.create_random_scenario(seed=3)
@@ -44,10 +44,10 @@ def main():
         environment=environment,
         scenario_mapper=scenario_mapper,
         number_of_runs=1,
-        run_name="TESTREFACTOR12"
+        run_name="TESTREFACTOR22"
     )
 
-    runner = ExperimentRunner(config)
+    runner = ExperimentRunner(config, first_dummy=True)
     runner.run()
 
     exit()

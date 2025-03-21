@@ -24,6 +24,18 @@ class LocalFSLogger(BaseLogger):
         with open(self.log_dir / "conversation.json", "w") as f:
             json.dump(evaluation_state.agent_info["conversation_history"], f)
 
+        def speech_entry_converter(entry):
+            if type(entry[1]) is dict:
+                return entry[0], "image"
+            else:
+                return entry
+
+        simple_conversation = [speech_entry_converter(entry) for entry in
+                               evaluation_state.agent_info["conversation_history"]]
+
+        with open(self.log_dir / "simple_conversation.json", "w") as f:
+            json.dump(simple_conversation, f, indent=4)
+
     def log_termination(self, termination_info):
         with open(self.log_dir / "termination.txt", "w") as f:
             f.write(termination_info["reason"])

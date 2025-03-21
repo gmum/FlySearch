@@ -6,11 +6,17 @@ from rl.evaluation.configs import ExperimentConfig
 
 
 class ExperimentRunner:
-    def __init__(self, config: ExperimentConfig):
+    def __init__(self, config: ExperimentConfig, first_dummy: bool = True):
         self.config = config
+        self.dummy = first_dummy
 
     def _run_single_experiment(self, seed: int, environment: BaseFlySearchEnv):
-        loggers = [logger_factory.get_logger() for logger_factory in self.config.logger_factories]
+        if self.dummy:
+            loggers = []
+            self.dummy = False
+        else:
+            loggers = [logger_factory.get_logger() for logger_factory in self.config.logger_factories]
+
         validators = [validator_factory.get_validator() for validator_factory in self.config.validator_factories]
 
         trajectory_evaluator = TrajectoryEvaluator(
@@ -28,7 +34,8 @@ class ExperimentRunner:
         trajectory_evaluator.evaluate()
 
     def run(self):
-        seeds = random.sample(range(int(1e9)), self.config.number_of_runs)
+        seeds = random.sample(range(int(1e9)),
+                              self.config.number_of_runs + (1 if self.dummy else 0))
 
         with self.config.environment as environment:
             for seed in seeds:
