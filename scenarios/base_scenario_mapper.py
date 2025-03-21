@@ -75,3 +75,6 @@ class BaseScenarioMapper:
             raise ValueError(f"Invalid object type: {object_type}")
 
         return str(object_type.name).replace("_", " ").lower()
+
+    def get_object_type_cls(self):
+        return self.object_type_cls
