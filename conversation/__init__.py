@@ -1,3 +1,4 @@
+from .base_conversation_factory import BaseConversationFactory
 from .abstract_conversation import *
 from .intern_conversation import *
 from .llava_conversation import *

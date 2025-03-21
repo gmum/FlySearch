@@ -32,3 +32,9 @@ class TrivialDroneNavigator(AbstractDroneNavigator):
             return current_position[0], current_position[1], current_position[2] - distance
         else:
             raise ValueError(f'Unknown direction: {direction}')
+
+    def get_diffs(self, response: str) -> tuple[int, int, int]:
+        raise NotImplementedError()
+
+    def get_claim(self, response: str) -> bool:
+        raise NotImplementedError()

@@ -8,10 +8,7 @@ class GridDroneNavigator(AbstractDroneNavigator):
 
     def get_new_position(self, current_position: tuple[int, int, int], response: str, throw_if_reckless=False) -> tuple[
         int, int, int]:
-        action_string = self.response_parser.get_basic_string(response)
-        action_string = tuple(action_string.replace("(", "").replace(")", "").split(","))
-
-        east_diff, north_diff, up_diff = int(action_string[0]), int(action_string[1]), int(action_string[2])
+        east_diff, north_diff, up_diff = self.get_diffs(response)
 
         current_west_east_axis, current_north_south_axis, current_up_down_axis = current_position
 
@@ -31,3 +28,15 @@ class GridDroneNavigator(AbstractDroneNavigator):
         current_up_down_axis += up_diff
 
         return current_west_east_axis, current_north_south_axis, current_up_down_axis
+
+    def get_diffs(self, response: str) -> tuple[int, int, int]:
+        action_string = self.response_parser.get_basic_string(response)
+        action_string = tuple(action_string.replace("(", "").replace(")", "").split(","))
+
+        return int(action_string[0]), int(action_string[1]), int(action_string[2])
+
+    def get_claim(self, response: str) -> bool:
+        response = response.lower()
+        response = response.replace(" ", "")
+
+        return "found" in response

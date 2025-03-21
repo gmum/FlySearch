@@ -1,8 +1,9 @@
 import os
 import pathlib
 import json
+from typing import Dict, Any
 
-from scenarios import CityScenarioMapper, ForestScenarioMapper
+from scenarios import CityScenarioMapper, ForestScenarioMapper, BaseScenarioMapper
 
 
 def is_float(value: str) -> bool:
@@ -118,10 +119,16 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
     raise ValueError(f"Value {value} is not a valid enum")
 
 
-class MimicScenarioMapper:
-    def __init__(self, path: pathlib.Path, filter_str: str = "*"):
+class MimicScenarioMapper(BaseScenarioMapper):
+    def __init__(self, path: pathlib.Path, filter_str: str = "*", continue_from: int = 0):
         self.path = path
         self.white_list = filter_str.strip().split(";")
+        self.continue_from = continue_from
+        self.scenarios = list(self.iterate_scenarios())
+
+        object_type_cls = self.scenarios[0]["object_type"]
+
+        super().__init__({}, type(object_type_cls))
 
     def parse_scenario(self, scenario):
         result = {}
@@ -143,9 +150,12 @@ class MimicScenarioMapper:
 
         return result
 
+    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
+        return self.scenarios.pop(0)
+
     def iterate_scenarios(self, duplicate_first=True):
         entries = os.listdir(self.path)
-        entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))
+        entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))[self.continue_from:]
 
         for entry in entries:
             if not os.path.isdir(self.path / entry):

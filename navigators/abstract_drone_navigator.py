@@ -7,3 +7,9 @@ class AbstractDroneNavigator:
             tuple[
                 float, float, float]:
         pass
+
+    def get_diffs(self, response: str) -> tuple[int, int, int]:
+        pass
+
+    def get_claim(self, response: str) -> bool:
+        pass

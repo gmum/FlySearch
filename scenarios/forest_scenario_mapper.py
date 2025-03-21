@@ -1,10 +1,12 @@
 import random
 
 from enum import Enum
-from typing import Tuple
+from typing import Tuple, Dict, Any
+
+from scenarios import BaseScenarioMapper
 
 
-class ForestScenarioMapper:
+class ForestScenarioMapper(BaseScenarioMapper):
     class ObjectType(Enum):
         FOREST_FIRE = 0
         CAMPSITE = 1
@@ -13,45 +15,9 @@ class ForestScenarioMapper:
         PERSON = 4
         ANOMALY = 5
 
-    @staticmethod
-    def sample_value_between(val_min, val_max):
-        return random.uniform(val_min, val_max)
-
-    @staticmethod
-    def sample_object_from_object_probs(object_probs: dict[ObjectType | Tuple, float]):
-        random_value = random.random()
-        cumulative_probability = 0
-
-        for obj_type, probability in object_probs.items():
-            cumulative_probability += probability
-
-            if random_value <= cumulative_probability:
-                if type(obj_type) is tuple:
-                    return random.choice(obj_type)
-
-                return obj_type
-
-    @staticmethod
-    def sample_drone_position(object_x, object_y, drone_z):
-        if drone_z < 0:
-            raise ValueError("Drone height must be positive")
-
-        drone_x_min = object_x - 0.5 * drone_z
-        drone_x_max = object_x + 0.5 * drone_z
-
-        drone_y_min = object_y - 0.5 * drone_z
-        drone_y_max = object_y + 0.5 * drone_z
-
-        drone_x = ForestScenarioMapper.sample_value_between(drone_x_min, drone_x_max)
-        drone_y = ForestScenarioMapper.sample_value_between(drone_y_min, drone_y_max)
-
-        return drone_x, drone_y
-
     def __init__(self, object_probs: dict[ObjectType | Tuple, float], x_min: float, x_max: float, y_min: float,
-                 y_max: float,
-                 z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float, seed_min: int,
-                 seed_max: int, scenarios_number: int):
-        self.object_probs = object_probs
+                 y_max: float, z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float):
+        super().__init__(object_probs, ForestScenarioMapper.ObjectType)
 
         self.x_min = x_min
         self.x_max = x_max
@@ -61,35 +27,15 @@ class ForestScenarioMapper:
         self.z_max = z_max
         self.drone_z_rel_min = drone_z_rel_min
         self.drone_z_rel_max = drone_z_rel_max
-        self.seed_min = seed_min
-        self.seed_max = seed_max
-        self.scenarios_number = scenarios_number
 
         self._validate_object_probs()
 
-    def _validate_object_probs(self):
-        total = sum(self.object_probs.values())
-
-        # FIXME
-        if total != 1:
-            raise ValueError(f"Total probability must be 1, but got {total}")
-
-        for obj_type in self.object_probs:
-            if obj_type not in ForestScenarioMapper.ObjectType and type(obj_type) is not tuple:
-                raise ValueError(f"Invalid object type: {obj_type}")
-
-            if type(obj_type) is tuple:
-                for subclass in obj_type:
-                    if subclass not in ForestScenarioMapper.ObjectType:
-                        raise ValueError(f"Invalid object type: {subclass}")
-
-    def create_random_scenario(self):
-        seed = int(self.sample_value_between(self.seed_min, self.seed_max))
+    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
         object_x = self.sample_value_between(self.x_min, self.x_max)
         object_y = self.sample_value_between(self.y_min, self.y_max)
         object_z = self.sample_value_between(self.z_min, self.z_max)
 
-        object_type = ForestScenarioMapper.sample_object_from_object_probs(self.object_probs)
+        object_type = self.sample_object_from_object_probs()
 
         drone_z = self.sample_value_between(object_z + self.drone_z_rel_min, object_z + self.drone_z_rel_max)
 
@@ -123,15 +69,11 @@ class ForestScenarioMapper:
             "set_object": True
         }
 
-    def iterate_scenarios(self):
-        # Important! Seeds must be unique due to the way Unreal Engine handles them.
-        # Otherwise, it would cache them and bad things would happen.
-        seeds = random.sample(range(self.seed_min, self.seed_max), self.scenarios_number)
-
-        for seed in seeds:
-            scenario = self.create_random_scenario()
-            scenario["seed"] = seed
-            yield scenario
+    def get_description(self, object_type):
+        if object_type != ForestScenarioMapper.ObjectType.ANOMALY:
+            return f"a {super().get_description(object_type)}"
+        else:
+            return "an object that doesn't fit in with the rest of the environment (an anomaly)"
 
 
 def main():
@@ -144,23 +86,12 @@ def main():
         z_max=1,
         drone_z_rel_min=3000,
         drone_z_rel_max=10000,
-        seed_min=1,
-        seed_max=51,
-        scenarios_number=50,
         object_probs={
-            (ForestScenarioMapper.ObjectType.HELICOPTER,
-             ForestScenarioMapper.ObjectType.PLANE,
-             ForestScenarioMapper.ObjectType.UFO): 0.1,
-            (ForestScenarioMapper.ObjectType.PERSON,
-             ForestScenarioMapper.ObjectType.FIRE,
-             ForestScenarioMapper.ObjectType.TRASH,
-             ForestScenarioMapper.ObjectType.CAMPING,
-             ForestScenarioMapper.ObjectType.BUILDING): 0.9
+            (ForestScenarioMapper.ObjectType.FOREST_FIRE, ForestScenarioMapper.ObjectType.CAMPSITE): 1.0,
         }
     )
 
-    for params in fsm.iterate_scenarios():
-        print(params)
+    print(fsm.create_random_scenario(3))
 
 
 if __name__ == "__main__":

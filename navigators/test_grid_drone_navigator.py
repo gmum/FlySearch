@@ -9,6 +9,7 @@ class TestGridDroneNavigator:
         current_position = (30, 20, 15)
         response = "<Action>(10, -40, -2)</Action>"
         assert navigator.get_new_position(current_position, response) == (40, 60, 13)
+        assert navigator.get_diffs(response) == (10, -40, -2)
 
     def test_throw_if_reckless(self):
         navigator = GridDroneNavigator()
@@ -30,3 +31,13 @@ class TestGridDroneNavigator:
 
         with pytest.raises(RecklessFlyingException):
             navigator.get_new_position(current_position, "<Action>(21, 20, 0)</Action>", throw_if_reckless=True)
+
+    def test_throw_if_no_action(self):
+        navigator = GridDroneNavigator()
+
+        response = "FOUND"
+
+        with pytest.raises(Exception):
+            navigator.get_diffs(response)
+
+        assert navigator.get_claim(response)
