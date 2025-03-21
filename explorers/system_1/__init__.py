@@ -1,1 +1,0 @@
-from .key_object_identifier import KeyObjectIdentifier
