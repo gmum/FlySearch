@@ -23,9 +23,7 @@ class RunnerResolver(BaseArgResolver):
         mapper = accumulator["scenario_mapper"]
 
         config = ExperimentConfig(
-            agent_factory=SimpleLLMAgentFactory(
-                conversation_factory=conversation_factory,
-            ),
+            agent_factory=accumulator["agent_factory"],
             environment=environment,
             scenario_mapper=mapper,
             logger_factories=accumulator["logger_factories"],

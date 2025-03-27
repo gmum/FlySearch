@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 
-from arg_resolvers import ScenarioArgResolver, ConversationFactoryResolver, LoggerFactoryResolver, RunnerResolver, Bus
+from arg_resolvers import ScenarioArgResolver, ConversationFactoryResolver, LoggerFactoryResolver, RunnerResolver, Bus, \
+    AgentFactoryResolver
 
 
 def main():
@@ -10,6 +11,7 @@ def main():
         ScenarioArgResolver(),
         ConversationFactoryResolver(),
         LoggerFactoryResolver(),
+        AgentFactoryResolver(),
         RunnerResolver(),
     ])
 

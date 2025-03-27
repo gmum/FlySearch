@@ -5,15 +5,16 @@ export FONT_LOCATION="/usr/share/fonts/google-noto/NotoSerif-Bold.ttf"
 
 python3 drone.py \
 --scenario_type mimic \
---mimic_run_path run_templates/city-template \
+--mimic_run_path run_templates/taxi-curse \
 --mimic_run_cls_names "*" \
 --continue_from 0 \
 --model gpt-4o \
 --log_on_wandb True \
 --wandb_project_name "WTLN-RF-1" \
 --log_directory "all_logs" \
---run_name "WTLN-CLN-1" \
---dummy_first True \
+--run_name "WTLN-CLN-10" \
+--dummy_first False \
 --forgiveness 5 \
 --glimpses 10 \
---number_of_runs 1
+--number_of_runs 1 \
+--agent "description_llm"

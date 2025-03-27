@@ -46,7 +46,7 @@ class TrajectoryEvaluator:
         while True:
             scenario = self.scenario_mapper.create_random_scenario(seed=self.seed)
             try:
-                self.first_observation, self.first_info = self.environment.reset(seed=self.seed, options=scenario)
+                self.first_observation, self.first_info = self.environment.reset(options=scenario)
             except DroneCannotSeeTargetException:
                 throws += 1
             else:
@@ -62,7 +62,9 @@ class TrajectoryEvaluator:
 
         search_area_rectangle_length = 400
         self.agent = self.agent_factory.create_agent(
-            self.prompt_factory(self.max_glimpses, object_desc, search_area_rectangle_length))
+            self.prompt_factory(self.max_glimpses, object_desc, search_area_rectangle_length),
+            max_glimpses=self.max_glimpses, object_desc=object_desc,
+            search_area_rectangle_length=search_area_rectangle_length)
 
     def tell_loggers_about_termination(self, termination_info: Dict):
         for logger in self.loggers:
