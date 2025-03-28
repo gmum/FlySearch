@@ -27,7 +27,7 @@ class RunnerResolver(BaseArgResolver):
             environment=environment,
             scenario_mapper=mapper,
             logger_factories=accumulator["logger_factories"],
-            validator_factories=[AltitudeValidatorFactory(120), OutOfBoundsFlightValidatorFactory(),
+            validator_factories=[AltitudeValidatorFactory(300), OutOfBoundsFlightValidatorFactory(),
                                  RecklessFlyingValidatorFactory()],
             forgiveness=args.forgiveness,
             number_of_runs=args.number_of_runs,

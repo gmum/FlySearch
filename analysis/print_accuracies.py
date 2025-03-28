@@ -11,7 +11,7 @@ ANOMALY_CATEGORY = ['anomaly']
 
 
 def main():
-    path = pathlib.Path("../all_logs/MC-0S-C-10G-GPT-AN-CR2")
+    path = pathlib.Path("../all_logs/GPT4o-CityNewFS2")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 

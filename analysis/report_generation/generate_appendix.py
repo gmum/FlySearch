@@ -54,7 +54,7 @@ def end_drama():
 
 
 def generate_section(name):
-    return f"\\subsubsection{'{' + name + '}'}"
+    return f"\\section{'{' + name + '}'}"
 
 
 def generate_subsection(name):
@@ -69,11 +69,14 @@ def generate_metadata(run):
     object_can_be_seen = analyser.object_visible()
     success = analyser.success_criterion_satisfied(10)
 
-    object_type = run.get_params()["passed_object_name"]
+    try:
+        object_type = run.get_params()["passed_object_name"]
+    except KeyError:
+        object_type = run.object_type
 
     return f"""
     \\begin{'{itemize}[noitemsep,topsep=0pt]'}
-      \item Staring position: {starting_position}
+      \item Starting position: {starting_position}
       \item End position: {final_position} 
       \item Euclidean distance from the object: {(final_position[0] ** 2 + final_position[1] ** 2 + final_position[2] ** 2) ** 0.5}
       \item Object can be seen: {object_can_be_seen}
@@ -139,13 +142,13 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
         print(preamble(model_name=model_displayname), file=file)
 
-        with open(one_run_dir / "conversation.json") as f:
+        with open(one_run_dir / "simple_conversation.json") as f:
             conversation = json.load(f)
 
             glimpse_count = 0
 
             for speaker, speech in conversation:
-                if speaker == "Role.USER":
+                if speaker == "user":
                     if speech != "image":
                         if speech.strip().replace("\n", "").replace(" ", "").startswith("<Context>Youarein"):
                             speech = speech.split("<Objective>")[0].strip() + r" \texttt{(REST OF THE PROMPT)}"
@@ -166,10 +169,12 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
 
 def main():
-    with open("GPT-4o-City-Success.tex", "w") as f:
-        generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20, overwrite=True)
+    with open("GPT-4o-City-Success-FS2.tex", "w") as f:
+        generate_report("GPT4o", "GPT-4o", "CityNewFS2A3", pathlib.Path("../../all_logs"),
+                        lambda x: True, file=f,
+                        startfrom=0, overwrite=True, n=50)
+
+    exit()
 
     with open("GPT-4o-City-Failure.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),

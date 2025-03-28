@@ -36,7 +36,7 @@ class EnvironmentMock:
         self.return_terminated = False
         self.resources_initialized = True
 
-    def reset(self, seed, options):
+    def reset(self, seed=None, options=None):
         self.configs_passed.append(options)
         if self.throws_on_reset != 0:
             self.throws_on_reset -= 1

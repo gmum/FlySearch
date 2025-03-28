@@ -39,7 +39,7 @@ def xml_found_prompt(glimpses: int, object_name: str, search_area_rectangle_leng
 
     <Limitations>
         You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.
-        You can make at most {glimpses - 1} moves. Your altitude cannot exceed 120 meters. Your search area is {search_area_rectangle_length}x{search_area_rectangle_length}m from the drone's starting position. 
+        You can make at most {glimpses - 1} moves. Your altitude cannot exceed 300 meters. Your search area is {search_area_rectangle_length}x{search_area_rectangle_length}m from the drone's starting position. 
     </Limitations>
 </Controls>
 '''

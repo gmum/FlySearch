@@ -46,28 +46,8 @@ class Run:
 
     @staticmethod
     def _load_comments(path: pathlib.Path) -> List[str]:
-        comments_list = []
-        comments_files = [name for name in os.listdir(path) if name.endswith(".txt")]
-
-        def number_before_dot(name):
-            try:
-                int(name.split('.')[0])
-                return True
-            except ValueError:
-                return False
-
-        comments_files = [name for name in comments_files if number_before_dot(name)]
-
-        def cmp(name):
-            return int(name.split('.')[0])
-
-        comments_files.sort(key=cmp)
-
-        for name in comments_files:
-            with open(path / name) as f:
-                comments_list.append(f.read())
-
-        return comments_list
+        all_comments = json.load(open(path / 'simple_conversation.json'))
+        return [comment for role, comment in all_comments if role == "assistant"]
 
     @staticmethod
     def _load_object_bbox(path: pathlib.Path) -> Tuple:

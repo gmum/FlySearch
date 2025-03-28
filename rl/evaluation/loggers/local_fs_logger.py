@@ -18,7 +18,7 @@ class LocalFSLogger(BaseLogger):
 
         writable_config = {k: str(v) for k, v in evaluation_state.scenario.items()}
 
-        with open(self.log_dir / "config.json", "w") as f:
+        with open(self.log_dir / "scenario_params.json", "w") as f:
             json.dump(writable_config, f)
 
         with open(self.log_dir / "conversation.json", "w") as f:
@@ -35,6 +35,15 @@ class LocalFSLogger(BaseLogger):
 
         with open(self.log_dir / "simple_conversation.json", "w") as f:
             json.dump(simple_conversation, f, indent=4)
+
+        current_coords = evaluation_state.info["real_position"]
+        glimpse_number = evaluation_state.observation_number
+
+        with open(self.log_dir / f"{glimpse_number}_coords.txt", "w") as f:
+            f.write(f"({current_coords[0]}, {current_coords[1]}, {current_coords[2]})")
+
+        with open(self.log_dir / f"object_bbox.txt", "w") as f:
+            f.write(f"{evaluation_state.info['object_bbox']}")
 
     def log_termination(self, termination_info):
         with open(self.log_dir / "termination.txt", "w") as f:

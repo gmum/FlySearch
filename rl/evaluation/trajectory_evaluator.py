@@ -60,6 +60,8 @@ class TrajectoryEvaluator:
         object_type = self.scenario["object_type"]
         object_desc = self.scenario_mapper.get_description(object_type)
 
+        self.scenario["passed_object_name"] = object_desc
+
         search_area_rectangle_length = 400
         self.agent = self.agent_factory.create_agent(
             self.prompt_factory(self.max_glimpses, object_desc, search_area_rectangle_length),

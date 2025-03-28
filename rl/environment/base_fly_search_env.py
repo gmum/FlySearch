@@ -93,6 +93,9 @@ class BaseFlySearchEnv(gym.Env):
 
         return False
 
+    def get_object_bbox(self):
+        return self.client.request(f"vget /object/{self.options["object_id"]}/bounds")
+
     def reset(self, seed: Optional[int] = None, options: Dict = None):
         """
         Resets the environment according to the given seed and options. Should not be overridden by subclasses. Furthermore, dictionary is a mandatory argument. Calls _configure with contents of the `options` dictionary.
@@ -138,7 +141,8 @@ class BaseFlySearchEnv(gym.Env):
             "image": opencv_image,
             "altitude": altitude,
             "collision": 0,
-        }, {"real_position": self.relative_position}  # Observation and empty info
+        }, {"real_position": self.relative_position,
+            "object_bbox": self.get_object_bbox()}
 
     def step(self, action: dict):
         if not self.started:
@@ -148,7 +152,8 @@ class BaseFlySearchEnv(gym.Env):
             # TODO/NOTE: In future, we may wanna have more semantics for finding the target
             self.started = False
             return {}, 0.0, True, False, {
-                "real_position": self.relative_position}  # Empty observation, no reward, terminated, no truncation, info with relative position
+                "real_position": self.relative_position,
+                "object_bbox": self.get_object_bbox()}  # Empty observation, no reward, terminated, no truncation, info with relative position and bbox
 
         coordinate_change = action["coordinate_change"]
 
@@ -182,13 +187,10 @@ class BaseFlySearchEnv(gym.Env):
             "collision": 1 if crash else 0,
         }
 
-        return observation, reward, False, False, {"real_position": new_real_position}
+        return observation, reward, False, False, {"real_position": new_real_position,
+                                                   "object_bbox": self.get_object_bbox()}
 
     # Bunch of utility functions
-
-    def get_bbox(self, object_id: str) -> str:
-        bbox = self.glimpse_generator.client.request(f"vget /object/{object_id}/bounds")
-        return bbox
 
     def hide_all_movable_objects(self) -> None:
         for object_class in self.classes_to_ids.values():
