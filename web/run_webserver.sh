@@ -3,4 +3,4 @@ export FOREST_BINARY_PATH="/home/dominik/MyStuff/simulator-dreamsenv/Linux/Elect
 export LOCATIONS_CITY_PATH="/home/dominik/MyStuff/active-visual-gpt/locations_city.csv"
 export FONT_LOCATION="/usr/share/fonts/google-noto/NotoSerif-Bold.ttf"
 
-uvicorn web:app:app
+uvicorn app:app --port 8000

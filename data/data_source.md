@@ -1,0 +1,1 @@
+https://commons.wikimedia.org/wiki/File:Golden_Retriever_-_Dog_(PSF).png

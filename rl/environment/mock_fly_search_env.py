@@ -1,4 +1,5 @@
 import numpy as np
+import cv2
 
 from glimpse_generators import UnrealClientWrapper, UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
 from rl.environment import BaseFlySearchEnv
@@ -23,7 +24,10 @@ class MockGlimpseGenerator(UnrealGridGlimpseGenerator):
         return 42, 42, 42
 
     def get_camera_image(self, rel_position_m=(0, 0, 0), force_move=False):
-        return np.zeros((512, 512, 3))
+        image = cv2.imread("/home/dominik/MyStuff/active-visual-gpt/data/golden_retriever.png")
+        image = cv2.resize(image, (512, 512))
+
+        return image
 
 
 class MockFlySearchEnv(BaseFlySearchEnv):
