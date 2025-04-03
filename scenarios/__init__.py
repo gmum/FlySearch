@@ -6,3 +6,6 @@ from .mimic_scenario_mapper import MimicScenarioMapper
 
 from .default_forest_scenario_mapper import DefaultForestScenarioMapper
 from .default_forest_anomaly_scenario_mapper import DefaultForestAnomalyScenarioMapper
+
+from .default_city_scenario_mapper import DefaultCityScenarioMapper
+from .default_city_anomaly_scenario_mapper import DefaultCityAnomalyScenarioMapper
