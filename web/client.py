@@ -1,14 +1,12 @@
-# I am bad at PyGame, but ChatGPT is kinda better.
-# This was vibe-coded away.
-
 import pygame
 import requests
 import base64
 import io
+import time
 from PIL import Image
 
 # Constants
-WIDTH, HEIGHT = 1000, 800
+WIDTH, HEIGHT = 800, 600
 API_URL = "http://localhost:8000"
 
 # Pygame setup
@@ -17,28 +15,41 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Agent UI")
 font = pygame.font.Font(None, 36)
 clock = pygame.time.Clock()
-input_box = pygame.Rect(10, HEIGHT - 60, 200, 40)
+input_boxes = [
+    pygame.Rect(10, HEIGHT - 60, 50, 40),
+    pygame.Rect(70, HEIGHT - 60, 50, 40),
+    pygame.Rect(130, HEIGHT - 60, 50, 40)
+]
+current_input = 0
 send_button = pygame.Rect(220, HEIGHT - 60, 100, 40)
 found_button = pygame.Rect(340, HEIGHT - 60, 150, 40)
-instruction_text = "Format: x y z (e.g., 1 0 -1)"
-user_text = ""
+instruction_text = "Enter x, y, z separately"
+user_inputs = ["", "", ""]
+observation = None
 
 
 def get_observation():
+    global observation
     response = requests.get(f"{API_URL}/get_observation").json()
     altitude = response["altitude"]
     collision = response["collision"]
     image_data = base64.b64decode(response["image_b64"])  # Decode image
     image = Image.open(io.BytesIO(image_data))
-    return altitude, collision, pygame.image.fromstring(image.tobytes(), image.size, image.mode)
+    observation = (altitude, collision, pygame.image.fromstring(image.tobytes(), image.size, image.mode))
 
 
 def send_action(found, dx, dy, dz):
     requests.post(f"{API_URL}/move", json={"found": found, "coordinate_change": [dx, dy, dz]})
+    if found:
+        reset_scenario()
+    else:
+        time.sleep(1)  # Wait before requesting a new observation
+        get_observation()
 
 
 def reset_scenario():
     requests.post(f"{API_URL}/generate_new")
+    get_observation()
 
 
 # Initialize scenario on startup
@@ -46,9 +57,9 @@ reset_scenario()
 
 # Main loop
 running = True
-altitude, collision, image = get_observation()
 while running:
     screen.fill((0, 0, 0))
+    altitude, collision, image = observation
 
     # Draw image
     screen.blit(pygame.transform.scale(image, (WIDTH, HEIGHT - 100)), (0, 0))
@@ -56,17 +67,23 @@ while running:
     # Display altitude and collision status
     altitude_text = font.render(f"Altitude: {altitude}", True, (255, 255, 255))
     collision_text = font.render(f"Collision: {collision}", True, (255, 0, 0) if collision else (0, 255, 0))
-    screen.blit(altitude_text, (10, HEIGHT - 90))
-    screen.blit(collision_text, (10, HEIGHT - 130))
+    screen.blit(altitude_text, (10, HEIGHT - 140))
+    screen.blit(collision_text, (10, HEIGHT - 100))
 
-    # Draw input box
-    pygame.draw.rect(screen, (255, 255, 255), input_box, 2)
-    text_surface = font.render(user_text, True, (255, 255, 255))
-    screen.blit(text_surface, (input_box.x + 5, input_box.y + 5))
+    # Draw input boxes
+    for i, box in enumerate(input_boxes):
+        pygame.draw.rect(screen, (255, 255, 255), box, 2)
+        text_surface = font.render(user_inputs[i], True, (255, 255, 255))
+        screen.blit(text_surface, (box.x + 5, box.y + 5))
+
+        # Cursor indication
+        if i == current_input:
+            pygame.draw.line(screen, (255, 255, 255), (box.x + 5 + text_surface.get_width(), box.y + 5),
+                             (box.x + 5 + text_surface.get_width(), box.y + 35))
 
     # Draw instruction text
     instruction_surface = font.render(instruction_text, True, (200, 200, 200))
-    screen.blit(instruction_surface, (10, HEIGHT - 160))
+    screen.blit(instruction_surface, (10, HEIGHT - 180))
 
     # Draw send button
     pygame.draw.rect(screen, (0, 255, 0), send_button)
@@ -85,37 +102,32 @@ while running:
         elif event.type == pygame.KEYDOWN:
             if event.key == pygame.K_RETURN:
                 try:
-                    dx, dy, dz = map(int, user_text.split())
+                    dx, dy, dz = map(int, user_inputs)
                     send_action(False, dx, dy, dz)
-                    user_text = ""
+                    user_inputs = ["", "", ""]
                 except ValueError:
-                    user_text = "Invalid input"
-            elif event.key == pygame.K_SPACE:
-                if not input_box.collidepoint(pygame.mouse.get_pos()):
-                    send_action(True, 0, 0, 0)  # Claim found
-                    reset_scenario()
-                else:
-                    user_text += " "
-            elif event.key == pygame.K_r:
-                reset_scenario()
+                    user_inputs = ["", "", ""]
             elif event.key == pygame.K_BACKSPACE:
-                user_text = user_text[:-1]
-            else:
-                user_text += event.unicode
+                user_inputs[current_input] = user_inputs[current_input][:-1]
+            elif event.key == pygame.K_TAB:
+                current_input = (current_input + 1) % 3
+            elif event.unicode.isdigit() or (event.unicode == "-" and len(user_inputs[current_input]) == 0):
+                user_inputs[current_input] += event.unicode
         elif event.type == pygame.MOUSEBUTTONDOWN:
             if send_button.collidepoint(event.pos):
                 try:
-                    dx, dy, dz = map(int, user_text.split())
+                    dx, dy, dz = map(int, user_inputs)
                     send_action(False, dx, dy, dz)
-                    user_text = ""
+                    user_inputs = ["", "", ""]
                 except ValueError:
-                    user_text = "Invalid input"
+                    user_inputs = ["", "", ""]
             elif found_button.collidepoint(event.pos):
                 send_action(True, 0, 0, 0)  # Claim found
-                reset_scenario()
+            for i, box in enumerate(input_boxes):
+                if box.collidepoint(event.pos):
+                    current_input = i
 
     pygame.display.flip()
-    altitude, collision, image = get_observation()
     clock.tick(10)
 
 pygame.quit()
