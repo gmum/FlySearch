@@ -1,9 +1,6 @@
 import sys
 import cv2
 import base64
-import os
-
-os.environ["LOCATIONS_CITY_PATH"] = "/home/dominik/MyStuff/active-visual-gpt/locations_city.csv"
 
 from typing import Any, Optional
 
