@@ -1,8 +1,9 @@
-import sys
-import cv2
 import base64
+import sys
+from typing import Optional
 
-from typing import Any, Optional
+import cv2
+from fastapi.middleware.cors import CORSMiddleware
 
 sys.path.insert(0, '../')
 
@@ -15,6 +16,14 @@ from scenarios import DefaultCityScenarioMapper
 app = FastAPI()
 env = MockFlySearchEnv()
 csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # yes, I know
 env.__enter__()
@@ -84,3 +93,9 @@ async def generate_new(response: Response):
     global last_observation
 
     last_observation, *_ = env.reset(options=csm.create_random_scenario(seed=0))
+
+
+if __name__ == "__main__":
+    import uvicorn
+
+    uvicorn.run(app, host="0.0.0.0", port=8000)
