@@ -4,7 +4,7 @@
       elevation="1"
     >
       <v-toolbar-title>FlySearch demo</v-toolbar-title>
-      <v-spacer></v-spacer>
+      <v-spacer />
       <v-btn
         variant="outlined"
         color="error"
@@ -16,19 +16,24 @@
     </v-app-bar>
     <v-main>
       <v-container>
-        <v-card v-if="!started" variant="outlined">
+        <v-card
+          v-if="!started"
+          variant="outlined"
+        >
           <v-card-title>Your task</v-card-title>
           <v-card-subtitle>A similar prompt is given to the AI agent</v-card-subtitle>
           <v-card-text>
             <v-list>
               <v-list-item>You are in command of a UAV, tasked with finding a target.</v-list-item>
-              <v-list-item>You should fly BELOW 10 meters above the object and then reply with "FOUND". Being lower
+              <v-list-item>
+                You should fly BELOW 10 meters above the object and then reply with "FOUND". Being lower
                 (closer to
                 the
                 object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is
                 bad.
               </v-list-item>
-              <v-list-item>You may not be able to see the object in the first image, so you need to perform a careful
+              <v-list-item>
+                You may not be able to see the object in the first image, so you need to perform a careful
                 search.
                 Your
                 performance will be evaluated based on whether the object was at most 10 meters below the drone when you
@@ -36,7 +41,8 @@
                 centered on the object.
               </v-list-item>
 
-              <v-list-item>There is a grid overlaid on each image you are presented with. It is meant to (roughly)
+              <v-list-item>
+                There is a grid overlaid on each image you are presented with. It is meant to (roughly)
                 communicate
                 which
                 point will be in drone's center of vision if you move in that direction. Note that height of the drone
@@ -45,7 +51,8 @@
               </v-list-item>
 
 
-              <v-list-item>To move the drone in a certain direction, use the following format: (x, y, z). For example,
+              <v-list-item>
+                To move the drone in a certain direction, use the following format: (x, y, z). For example,
                 if you want
                 to
                 fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with
@@ -53,21 +60,24 @@
                 10, 0).
               </v-list-item>
 
-              <v-list-item>x and y are the coordinates on the grid, and z is the altitude difference. For example, (0,
+              <v-list-item>
+                x and y are the coordinates on the grid, and z is the altitude difference. For example, (0,
                 0, -10)
                 means
                 that you are moving 10 meters down. This is especially important, since you need to get close to the
                 object in question. tag should contain the move you are making.
               </v-list-item>
 
-              <v-list-item>If you find the object, fly below 10 meters relative to it and reply with "FOUND". Remember,
+              <v-list-item>
+                If you find the object, fly below 10 meters relative to it and reply with "FOUND". Remember,
                 it must be in
                 your field of view when you reply with "FOUND" and you must be 10 meters above it or closer. Being too
                 far
                 away is not acceptable.
               </v-list-item>
 
-              <v-list-item> You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit
+              <v-list-item>
+                You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit
                 something which
                 is
                 not ideal.
@@ -76,9 +86,12 @@
               </v-list-item>
             </v-list>
 
-            <v-alert variant="text" color="primary">To start a new game press the button in the top right corner.
+            <v-alert
+              variant="text"
+              color="primary"
+            >
+              To start a new game press the button in the top right corner.
             </v-alert>
-
           </v-card-text>
         </v-card>
         <v-card
@@ -86,7 +99,8 @@
           variant="outlined"
         >
           <v-card-title>Target: {{ target }}</v-card-title>
-          <v-card-subtitle>Move the UAV to locate the target, then click FOUND when the target is visible and altitude
+          <v-card-subtitle>
+            Move the UAV to locate the target, then click FOUND when the target is visible and altitude
             is less than 10m above target
           </v-card-subtitle>
           <v-card-text>
@@ -97,25 +111,32 @@
                 :src="'data:image/jpeg;base64,' + image_b64"
                 class="mb-2"
               >
-                <template v-slot:placeholder>
+                <template #placeholder>
                   <div class="d-flex flex-column align-center justify-center fill-height">
                     <div>
                       <v-progress-circular
                         color="grey"
                         indeterminate
                         size="100"
-                      ></v-progress-circular>
+                      />
                     </div>
                   </div>
                 </template>
               </v-img>
               <div>Current altitude: {{ altitude }}</div>
-              <div>Colided on the last action: {{ collision }}</div>
+              <div :class="collision === true ? 'text-red' : ''">
+                Collided on the last action: {{ collision }}
+              </div>
             </div>
 
             <v-form>
               <v-row>
-                <v-col cols="12" sm="12" md="5" class="text-center">
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="5"
+                  class="text-center"
+                >
                   <div>If the object is visible and the altitude is less than 10m above the target</div>
                   <v-btn
                     variant="outlined"
@@ -127,11 +148,28 @@
                     Found
                   </v-btn>
                 </v-col>
-                <v-col cols="12" sm="12" md="2" class="text-center">
-                  <v-divider vertical class="">Or</v-divider>
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="2"
+                  class="text-center"
+                >
+                  <v-divider
+                    vertical
+                    class=""
+                  >
+                    Or
+                  </v-divider>
                 </v-col>
-                <v-col cols="12" sm="12" md="5" class="text-center">
-                  <div class="text-center">Else, move the UAV closer to the target</div>
+                <v-col
+                  cols="12"
+                  sm="12"
+                  md="5"
+                  class="text-center"
+                >
+                  <div class="text-center">
+                    Else, move the UAV closer to the target
+                  </div>
                   <div class="d-flex flex-row justify-center align-center mt-2">
                     <v-number-input
                       v-model="x"
@@ -140,7 +178,7 @@
                       hide-spin-buttons
                       type="number"
                       label="X"
-                      controlVariant="stacked"
+                      control-variant="stacked"
                       class="mr-2"
                       prcision="0"
                     />
@@ -151,7 +189,7 @@
                       hide-spin-buttons
                       type="number"
                       label="Y"
-                      controlVariant="stacked"
+                      control-variant="stacked"
                       class="mr-2"
                       prcision="0"
                     />
@@ -162,7 +200,7 @@
                       hide-spin-buttons
                       type="number"
                       label="Z"
-                      controlVariant="stacked"
+                      control-variant="stacked"
                       class="mr-2"
                       prcision="0"
                     />
@@ -183,7 +221,10 @@
         </v-card>
       </v-container>
     </v-main>
-    <v-overlay v-model="error" class="align-center justify-center">
+    <v-overlay
+      v-model="error"
+      class="align-center justify-center"
+    >
       <v-alert
         :value="error"
         type="error"
@@ -222,20 +263,20 @@ function cleanStatus() {
 
 function getStatus() {
   axios.get(api_base + '/get_observation')
-    .then((response) => {
-      const current_status = response.data;
-      image_b64.value = current_status.image_b64;
-      collision.value = current_status.collision;
-      altitude.value = current_status.altitude;
-      x.value = 0
-      y.value = 0
-      z.value = 0
-    })
-    .catch((err) => {
-      error.value = true;
-      error_message.value = err.message;
-      console.error(err);
-    });
+      .then((response) => {
+        const current_status = response.data;
+        image_b64.value = current_status.image_b64;
+        collision.value = current_status.collision;
+        altitude.value = current_status.altitude;
+        x.value = 0
+        y.value = 0
+        z.value = 0
+      })
+      .catch((err) => {
+        error.value = true;
+        error_message.value = err.message;
+        console.error(err);
+      });
 }
 
 function resetEnv() {
@@ -243,15 +284,15 @@ function resetEnv() {
   cleanStatus();
   target.value = null;
   axios.post(api_base + '/generate_new')
-    .then(() => {
-      getStatus();
-      target.value = 'TEST';
-    })
-    .catch((err) => {
-      error.value = true;
-      error_message.value = err.message;
-      console.error(err);
-    });
+      .then((response) => {
+        getStatus();
+        target.value = response.data.target;
+      })
+      .catch((err) => {
+        error.value = true;
+        error_message.value = err.message;
+        console.error(err);
+      });
 }
 
 function action(is_done) {
@@ -263,18 +304,18 @@ function action(is_done) {
   };
 
   axios.post(api_base + '/move', request)
-    .then(() => {
-      if (is_done) {
-        resetEnv();
-      } else {
-        getStatus();
-      }
-    })
-    .catch((err) => {
-      error.value = true;
-      error_message.value = err.message;
-      console.error(err);
-    });
+      .then(() => {
+        if (is_done) {
+          resetEnv();
+        } else {
+          getStatus();
+        }
+      })
+      .catch((err) => {
+        error.value = true;
+        error_message.value = err.message;
+        console.error(err);
+      });
 }
 </script>
 

@@ -91,8 +91,12 @@ async def move(action: Action, response: Response):
 @app.post("/generate_new", status_code=201)
 async def generate_new(response: Response):
     global last_observation
+    scenario = csm.create_random_scenario(seed=0)
+    last_observation, *_ = env.reset(options=scenario)
 
-    last_observation, *_ = env.reset(options=csm.create_random_scenario(seed=0))
+    return {
+        'target': csm.get_description(scenario["object_type"]),
+    }
 
 
 if __name__ == "__main__":
