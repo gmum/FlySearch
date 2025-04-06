@@ -36,6 +36,7 @@ async def root():
 
 
 last_observation = None
+move_counter = 0
 
 
 class Observation(BaseModel):
@@ -71,9 +72,17 @@ async def get_observation(response: Response) -> Optional[Observation]:
 @app.post("/move", status_code=200)
 async def move(action: Action, response: Response):
     global last_observation
+    global move_counter
 
     if last_observation is None:
         response.status_code = status.HTTP_409_CONFLICT
+        return
+
+    move_counter += 1
+    moves_left = 10 - move_counter
+
+    if moves_left < 0:
+        response.status_code = status.HTTP_400_BAD_REQUEST
         return
 
     found = action.found
@@ -118,10 +127,15 @@ async def move(action: Action, response: Response):
         else:
             return {"success": False}
 
+    return {
+        "moves_left": moves_left,
+    }
+
 
 @app.post("/generate_new", status_code=201)
 async def generate_new(response: Response):
     global last_observation
+    global move_counter
 
     failed = True
 
@@ -134,8 +148,11 @@ async def generate_new(response: Response):
         except DroneCannotSeeTargetException as e:
             pass
 
+    move_counter = 0
+
     return {
         'target': csm.get_description(scenario["object_type"]),
+        'moves_left': 10
     }
 
 
