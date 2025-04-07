@@ -1,9 +1,14 @@
 import base64
+import pathlib
+import os
 import random
 import sys
+import json
+
 from typing import Optional
 
 import cv2
+import numpy as np
 from fastapi.middleware.cors import CORSMiddleware
 
 sys.path.insert(0, '../')
@@ -15,7 +20,7 @@ from rl.environment import CityFlySearchEnv, MockFlySearchEnv, DroneCannotSeeTar
 from scenarios import DefaultCityScenarioMapper
 
 app = FastAPI()
-env = CityFlySearchEnv()
+env = MockFlySearchEnv()
 csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
 
 app.add_middleware(
@@ -37,6 +42,48 @@ async def root():
 
 last_observation = None
 move_counter = 0
+coordinates = []
+current_scenario = None
+log_path = pathlib.Path(__file__).parent / "trajectories"
+log_path.mkdir(parents=True, exist_ok=True)
+
+
+def log_info_at_finish(object_bbox_str: str):
+    global move_counter
+    global coordinates
+    global log_path
+    global current_scenario
+
+    total_trajectory_count = len(os.listdir(log_path))
+    trajectory_name = f"{total_trajectory_count}_r0"
+    trajectory_path = log_path / trajectory_name
+
+    trajectory_path.mkdir(parents=False, exist_ok=False)
+
+    for i, coordinates in enumerate(coordinates):
+        with open(trajectory_path / f"{i}_coords.txt", "w") as f:
+            f.write(str(tuple(coordinates.tolist())))
+
+        # Compliance with the previous standard for doing things
+        with open(trajectory_path / f"{i}.txt", "w") as f:
+            f.write("")
+
+    with open(trajectory_path / "scenario_params.json", "w") as f:
+        def denumpifier(obj):
+            if isinstance(obj, tuple):
+                return tuple([float(x) for x in obj])
+            else:
+                return obj
+
+        current_scenario = {k: str(denumpifier(v)) for k, v in current_scenario.items()}
+
+        json.dump(current_scenario, f, indent=4)
+
+    with open(trajectory_path / "object_bbox.txt", "w") as f:
+        f.write(object_bbox_str)
+
+    with open(trajectory_path / "conversation.json", "w") as f:
+        json.dump([], f, indent=4)
 
 
 class Observation(BaseModel):
@@ -98,7 +145,10 @@ async def move(action: Action, response: Response):
     last_observation = obs
 
     real_position = info["real_position"]
-    object_bbox = info["object_bbox"].split()
+    coordinates.append(real_position)
+
+    object_bbox_str = info["object_bbox"]
+    object_bbox = object_bbox_str.split()
 
     user_alt = real_position[2]
 
@@ -122,10 +172,15 @@ async def move(action: Action, response: Response):
     object_visible = min_x < 0 and max_x > 0 and min_y < 0 and max_y > 0
 
     if found:
+        log_info_at_finish(object_bbox_str)
+
         if alt_diff_ok and object_visible:
             return {"success": True}
         else:
             return {"success": False}
+
+    if moves_left == 0:
+        log_info_at_finish(object_bbox_str)
 
     return {
         "moves_left": moves_left,
@@ -136,6 +191,8 @@ async def move(action: Action, response: Response):
 async def generate_new(response: Response):
     global last_observation
     global move_counter
+    global coordinates
+    global current_scenario
 
     failed = True
 
@@ -143,12 +200,15 @@ async def generate_new(response: Response):
         try:
             seed = random.randint(0, int(1e12))
             scenario = csm.create_random_scenario(seed)
-            last_observation, *_ = env.reset(options=scenario)
+            current_scenario = scenario
+            last_observation, info = env.reset(options=scenario)
             failed = False
         except DroneCannotSeeTargetException as e:
             pass
 
     move_counter = 0
+    real_coords = info["real_position"]
+    coordinates = [real_coords]
 
     return {
         'target': csm.get_description(scenario["object_type"]),
