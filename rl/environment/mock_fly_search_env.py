@@ -46,7 +46,4 @@ class MockFlySearchEnv(BaseFlySearchEnv):
         return MockGlimpseGenerator()
 
     def get_object_bbox(self):
-        return 'test'
-
-
-
+        return '0.0 0.0 0.0 0.0 0.0 0.0'

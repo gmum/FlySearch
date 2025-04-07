@@ -100,7 +100,10 @@ class Run:
 
     @property
     def model_claimed(self):
-        return "FOUND" in self.comments[-1]
+        try:
+            return "FOUND" in self.comments[-1]
+        except IndexError:
+            return False
 
     @property
     def real_object_coords(self):

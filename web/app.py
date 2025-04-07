@@ -85,6 +85,9 @@ def log_info_at_finish(object_bbox_str: str):
     with open(trajectory_path / "conversation.json", "w") as f:
         json.dump([], f, indent=4)
 
+    with open(trajectory_path / "simple_conversation.json", "w") as f:
+        json.dump([], f, indent=4)
+
 
 class Observation(BaseModel):
     image_b64: str
