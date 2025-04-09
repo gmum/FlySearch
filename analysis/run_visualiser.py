@@ -180,7 +180,6 @@ class RunVisualiser:
         px_per_msq_array = np.zeros((x_len, y_len))
 
         for area in areas:
-            print("Area:", area)
             rpx_per_msq, min_x, max_x, min_y, max_y = area
 
             min_x = int(min_x - min_x_global)
@@ -190,7 +189,16 @@ class RunVisualiser:
 
             px_per_msq_array[min_x:max_x, min_y:max_y] = rpx_per_msq
 
-        sns.heatmap(px_per_msq_array, cbar_kws={'label': 'Root pixels per square meter'}, robust=True, ax=ax)
+        xticklabels = list(range(int(min_x_global), int(max_x_global) + 1))
+        yticklabels = list(range(int(min_y_global), int(max_y_global) + 1))
+
+        xticklabels = [str(x) if x % 10 == 0 else "" for x in xticklabels]
+        yticklabels = [str(y) if y % 10 == 0 else "" for y in yticklabels]
+
+        sns.heatmap(px_per_msq_array, cbar_kws={'label': 'Root pixels per square meter'}, robust=False, ax=ax,
+                    xticklabels=xticklabels, yticklabels=yticklabels)
+
+        ax.set_title("Situation Awareness Chart")
 
     def plot(self, ax: Axes3D):
         coords = self.run.get_coords()
@@ -317,7 +325,7 @@ def main():
     base_path = Path("../all_logs/GPT4o-CityNew")
     runs = sorted(os.listdir(base_path), key=lambda x: int(x.split("_")[0]))
 
-    run = Run(base_path / runs[10])
+    run = Run(base_path / runs[1])
 
     visualiser = RunVisualiser(run)
 
