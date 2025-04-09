@@ -1,4 +1,6 @@
 import numpy as np
+import math
+import seaborn as sns
 
 from string import ascii_uppercase, ascii_lowercase
 from matplotlib import pyplot as plt
@@ -128,6 +130,68 @@ class RunVisualiser:
         {\scriptisze \(Y\)};
         """
 
+    def plot_situation_awareness_chart(self, ax):
+        coords = self.run.get_coords()
+
+        img_px_h = 500
+        img_px_w = 500
+
+        img_px_area = img_px_h * img_px_w
+
+        # This code assumes camera FOV = 90 degrees
+        areas = []
+
+        for (x, y, z) in coords:
+            min_x = x - z
+            max_x = x + z
+
+            min_y = y - z
+            max_y = y + z
+
+            # px_per_msq = math.log((img_px_area / (z * z)), 2)
+            rpx_per_msq = (img_px_area / (z * z)) ** 0.5
+
+            areas.append((rpx_per_msq, min_x, max_x, min_y, max_y))
+
+        areas = sorted(areas, key=lambda x: x[0])
+
+        margin = 10
+
+        min_x_global = min([area[1] for area in areas])
+        max_x_global = max([area[2] for area in areas])
+
+        min_y_global = min([area[3] for area in areas])
+        max_y_global = max([area[4] for area in areas])
+
+        min_x_global -= margin
+        max_x_global += margin
+
+        min_y_global -= margin
+        max_y_global += margin
+
+        x_len = max_x_global - min_x_global
+        y_len = max_y_global - min_y_global
+
+        x_len = int(math.ceil(x_len))
+        y_len = int(math.ceil(y_len))
+
+        # Create a numpy array to hold px_per_msq values
+
+        px_per_msq_array = np.zeros((x_len, y_len))
+
+        for area in areas:
+            print("Area:", area)
+            rpx_per_msq, min_x, max_x, min_y, max_y = area
+
+            min_x = int(min_x - min_x_global)
+            max_x = int(max_x - min_x_global)
+            min_y = int(min_y - min_y_global)
+            max_y = int(max_y - min_y_global)
+
+            px_per_msq_array[min_x:max_x, min_y:max_y] = rpx_per_msq
+
+        sns.heatmap(px_per_msq_array, cbar_kws={'label': 'Root pixels per square meter'}, robust=True, ax=ax)
+
     def plot(self, ax: Axes3D):
         coords = self.run.get_coords()
         x = [coord[0] for coord in coords]
@@ -250,12 +314,17 @@ def main():
     import os
     from pathlib import Path
 
-    base_path = Path("../all_logs/MC-0S-F")
+    base_path = Path("../all_logs/GPT4o-CityNew")
     runs = sorted(os.listdir(base_path), key=lambda x: int(x.split("_")[0]))
 
-    run = Run(base_path / runs[4])
+    run = Run(base_path / runs[10])
 
     visualiser = RunVisualiser(run)
+
+    fig, ax = plt.subplots()
+    visualiser.plot_situation_awareness_chart(ax)
+
+    plt.show()
 
     fig = plt.figure()
     ax = Axes3D(fig)
