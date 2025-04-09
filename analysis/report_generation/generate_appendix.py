@@ -134,21 +134,27 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
         # fig.savefig(fig_path / f"{one_run_dir.name}.png")
         plt.close(fig)
 
+        fig, ax = plt.subplots()
+        run_visualiser.plot_situation_awareness_chart(ax)
+        fig.savefig(image_dir / f"{one_run_dir.name}_sit_awareness.pdf")
+        plt.close(fig)
+
         print(generate_section(f"Example"), file=file)
 
         print(generate_metadata(run), file=file)
 
         print(illustration_latex(image_dir / f"{one_run_dir.name}.pdf"), file=file)
+        print(illustration_latex(image_dir / f"{one_run_dir.name}_sit_awareness.pdf"), file=file)
 
         print(preamble(model_name=model_displayname), file=file)
 
-        with open(one_run_dir / "simple_conversation.json") as f:
+        with open(one_run_dir / "conversation.json") as f:
             conversation = json.load(f)
 
             glimpse_count = 0
 
             for speaker, speech in conversation:
-                if speaker == "user":
+                if "user" in str(speaker).lower():
                     if speech != "image":
                         if speech.strip().replace("\n", "").replace(" ", "").startswith("<Context>Youarein"):
                             speech = speech.split("<Objective>")[0].strip() + r" \texttt{(REST OF THE PROMPT)}"
@@ -169,43 +175,9 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
 
 def main():
-    with open("GPT-4o-City-Success-FS2.tex", "w") as f:
-        generate_report("GPT4o", "GPT-4o", "CityNewFS2A3", pathlib.Path("../../all_logs"),
-                        lambda x: True, file=f,
-                        startfrom=0, overwrite=True, n=50)
-
-    exit()
-
-    with open("GPT-4o-City-Failure.tex", "w") as f:
+    with open("GPT-4o-City.tex", "w") as f:
         generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
-
-    with open("GPT-4o-Forest-Success.tex", "w") as f:
-        generate_report("GPT4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20, overwrite=True)
-
-    with open("GPT-4o-Forest-Fail.tex", "w") as f:
-        generate_report("GPT4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
-
-    with open("Sonnet-City-Success.tex", "w") as f:
-        generate_report("Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20, overwrite=True)
-
-    with open("Sonnet-City-Failure.tex", "w") as f:
-        generate_report("Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
-
-    with open("Sonnet-Forest-Success.tex", "w") as f:
-        generate_report("Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(10) and x.model_claimed, file=f,
-                        startfrom=20, overwrite=True)
-
-    with open("Sonnet-Forest-Failure.tex", "w") as f:
-        generate_report("Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(10), file=f, startfrom=20)
+                        lambda x: True, file=f, startfrom=0, n=200)
 
 
 if __name__ == "__main__":
