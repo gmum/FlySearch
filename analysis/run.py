@@ -46,7 +46,10 @@ class Run:
 
     @staticmethod
     def _load_comments(path: pathlib.Path) -> List[str]:
-        all_comments = json.load(open(path / 'simple_conversation.json'))
+        try:
+            all_comments = json.load(open(path / 'simple_conversation.json'))
+        except FileNotFoundError:
+            all_comments = json.load(open(path / 'conversation.json'))
         return [comment for role, comment in all_comments if role == "assistant"]
 
     @staticmethod
