@@ -20,8 +20,9 @@ from rl.environment import CityFlySearchEnv, MockFlySearchEnv, DroneCannotSeeTar
 from scenarios import DefaultCityScenarioMapper
 
 app = FastAPI()
-env = MockFlySearchEnv()
+env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
 csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
+fs1 = False
 
 app.add_middleware(
     CORSMiddleware,
@@ -43,6 +44,8 @@ async def root():
 last_observation = None
 move_counter = 0
 coordinates = []
+opencv_images = []
+actions = []
 current_scenario = None
 log_path = pathlib.Path(__file__).parent / "trajectories"
 log_path.mkdir(parents=True, exist_ok=True)
@@ -53,6 +56,7 @@ def log_info_at_finish(object_bbox_str: str):
     global coordinates
     global log_path
     global current_scenario
+    global actions
 
     total_trajectory_count = len(os.listdir(log_path))
     trajectory_name = f"{total_trajectory_count}_r0"
@@ -63,10 +67,6 @@ def log_info_at_finish(object_bbox_str: str):
     for i, coordinates in enumerate(coordinates):
         with open(trajectory_path / f"{i}_coords.txt", "w") as f:
             f.write(str(tuple(coordinates.tolist())))
-
-        # Compliance with the previous standard for doing things
-        with open(trajectory_path / f"{i}.txt", "w") as f:
-            f.write("")
 
     with open(trajectory_path / "scenario_params.json", "w") as f:
         def denumpifier(obj):
@@ -82,11 +82,20 @@ def log_info_at_finish(object_bbox_str: str):
     with open(trajectory_path / "object_bbox.txt", "w") as f:
         f.write(object_bbox_str)
 
-    with open(trajectory_path / "conversation.json", "w") as f:
-        json.dump([], f, indent=4)
+    # with open(trajectory_path / "conversation.json", "w") as f:
+    #    json.dump([], f, indent=4)
+
+    simple_conversation = []
+
+    for (found, coord_change) in actions:
+        simple_conversation.append(["user", "image"])
+        simple_conversation.append(["assistant", f"FOUND: {found}, COORD_CHANGE: {coord_change}"])
 
     with open(trajectory_path / "simple_conversation.json", "w") as f:
-        json.dump([], f, indent=4)
+        json.dump(simple_conversation, f, indent=4)
+
+    for i, opencv_image in enumerate(opencv_images):
+        cv2.imwrite(str(trajectory_path / f"{i}.png"), opencv_image)
 
 
 class Observation(BaseModel):
@@ -123,6 +132,7 @@ async def get_observation(response: Response) -> Optional[Observation]:
 async def move(action: Action, response: Response):
     global last_observation
     global move_counter
+    global actions
 
     if last_observation is None:
         response.status_code = status.HTTP_409_CONFLICT
@@ -131,11 +141,12 @@ async def move(action: Action, response: Response):
     move_counter += 1
     moves_left = 10 - move_counter
 
+    found = action.found
+
     if moves_left < 0:
         response.status_code = status.HTTP_400_BAD_REQUEST
         return
 
-    found = action.found
     coordinate_change = action.coordinate_change
 
     action_dict = {
@@ -144,13 +155,24 @@ async def move(action: Action, response: Response):
     }
 
     obs, _, _, _, info = env.step(action_dict)
+    object_bbox_str = info["object_bbox"]
+
+    if moves_left == 0 and not found:
+        log_info_at_finish(object_bbox_str)
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return
+
+    actions.append((found, coordinate_change))
 
     last_observation = obs
 
     real_position = info["real_position"]
     coordinates.append(real_position)
 
-    object_bbox_str = info["object_bbox"]
+    if obs and "image" in obs:
+        opencv_image = obs["image"]
+        opencv_images.append(opencv_image)
+
     object_bbox = object_bbox_str.split()
 
     user_alt = real_position[2]
@@ -172,7 +194,7 @@ async def move(action: Action, response: Response):
     max_y = y + z
     min_y = y - z
 
-    object_visible = min_x < 0 and max_x > 0 and min_y < 0 and max_y > 0
+    object_visible = min_x < 0 < max_x and min_y < 0 < max_y
 
     if found:
         log_info_at_finish(object_bbox_str)
@@ -196,6 +218,9 @@ async def generate_new(response: Response):
     global move_counter
     global coordinates
     global current_scenario
+    global opencv_images
+    global actions
+    global fs1
 
     failed = True
 
@@ -207,11 +232,14 @@ async def generate_new(response: Response):
             last_observation, info = env.reset(options=scenario)
             failed = False
         except DroneCannotSeeTargetException as e:
-            pass
+            if not fs1:
+                raise
 
     move_counter = 0
     real_coords = info["real_position"]
     coordinates = [real_coords]
+    opencv_images = [last_observation["image"]]
+    actions = []
 
     return {
         'target': csm.get_description(scenario["object_type"]),

@@ -10,8 +10,8 @@ from rl.environment import BaseFlySearchEnv
 
 
 class ForestFlySearchEnv(BaseFlySearchEnv):
-    def __init__(self, resolution: int = 500, max_altitude: int = 120):
-        super().__init__(resolution=resolution, max_altitude=max_altitude)
+    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True):
+        super().__init__(resolution=resolution, max_altitude=max_altitude, throw_if_hard_config=throw_if_hard_config)
 
     def get_client(self) -> UnrealClientWrapper:
         forest_binary_path = os.getenv("FOREST_BINARY_PATH")

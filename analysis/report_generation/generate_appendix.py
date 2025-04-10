@@ -87,14 +87,15 @@ def generate_metadata(run):
 
 
 def generate_report(model_name, model_displayname, env_name, path_dir, filter_func, n=2, overwrite=False,
-                    file=sys.stdout, startfrom=0):
-    image_dir = pathlib.Path("images") / f"{model_name}-{env_name}"
+                    file=sys.stdout, startfrom=0, subdir_override=None):
+    subdir = subdir_override if subdir_override else f"{model_name}-{env_name}"
+    image_dir = pathlib.Path("images") / subdir
 
     if overwrite:
         shutil.rmtree(image_dir, ignore_errors=True)
     image_dir.mkdir(parents=True, exist_ok=True)
 
-    run_dir = pathlib.Path(path_dir / f"{model_name}-{env_name}")
+    run_dir = pathlib.Path(path_dir / subdir)
 
     fig_path = pathlib.Path("build/figures")
 
@@ -148,7 +149,7 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
         print(preamble(model_name=model_displayname), file=file)
 
-        with open(one_run_dir / "conversation.json") as f:
+        with open(one_run_dir / "simple_conversation.json") as f:
             conversation = json.load(f)
 
             glimpse_count = 0
@@ -175,9 +176,9 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
 
 def main():
-    with open("GPT-4o-City.tex", "w") as f:
-        generate_report("GPT4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs"),
-                        lambda x: True, file=f, startfrom=0, n=200)
+    with open("Dominik-FS2.tex", "w") as f:
+        generate_report("Dominik", "Dominik", "CityNew", pathlib.Path("../../web"),
+                        lambda x: True, file=f, startfrom=0, n=200, subdir_override="trajectories", overwrite=True)
 
 
 if __name__ == "__main__":

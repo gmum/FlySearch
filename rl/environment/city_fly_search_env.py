@@ -10,8 +10,8 @@ from rl.environment import BaseFlySearchEnv, DroneCannotSeeTargetException
 
 
 class CityFlySearchEnv(BaseFlySearchEnv):
-    def __init__(self, resolution: int = 500, max_altitude: int = 120):
-        super().__init__(resolution=resolution, max_altitude=max_altitude)
+    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True):
+        super().__init__(resolution=resolution, max_altitude=max_altitude, throw_if_hard_config=throw_if_hard_config)
 
     def get_client(self) -> UnrealClientWrapper:
         city_binary_path = os.getenv("CITY_BINARY_PATH")
@@ -43,7 +43,7 @@ class CityFlySearchEnv(BaseFlySearchEnv):
 
             can_see = "true" in self.glimpse_generator.client.request(f"vget /camera/1/cansee {object_id}")
 
-            if not can_see:
+            if not can_see and self.throw_if_hard_config:
                 raise DroneCannotSeeTargetException()
 
             city_generator_class: PCGClass = self.classes_to_ids["CITY"]
