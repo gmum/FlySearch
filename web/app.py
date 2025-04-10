@@ -157,12 +157,12 @@ async def move(action: Action, response: Response):
     obs, _, _, _, info = env.step(action_dict)
     object_bbox_str = info["object_bbox"]
 
+    actions.append((found, coordinate_change))
+
     if moves_left == 0 and not found:
         log_info_at_finish(object_bbox_str)
         response.status_code = status.HTTP_400_BAD_REQUEST
         return
-
-    actions.append((found, coordinate_change))
 
     last_observation = obs
 
