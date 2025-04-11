@@ -41,6 +41,8 @@ async def root():
     return {"message": "Hello World"}
 
 
+object_bbox_str = ""
+consecutive_failures = 0
 last_observation = None
 move_counter = 0
 coordinates = []
@@ -51,12 +53,13 @@ log_path = pathlib.Path(__file__).parent / "trajectories"
 log_path.mkdir(parents=True, exist_ok=True)
 
 
-def log_info_at_finish(object_bbox_str: str):
+def log_info_at_finish():
     global move_counter
     global coordinates
     global log_path
     global current_scenario
     global actions
+    global object_bbox_str
 
     total_trajectory_count = len(os.listdir(log_path))
     trajectory_name = f"{total_trajectory_count}_r0"
@@ -133,10 +136,37 @@ async def move(action: Action, response: Response):
     global last_observation
     global move_counter
     global actions
+    global coordinates
+    global consecutive_failures
 
     if last_observation is None:
         response.status_code = status.HTTP_409_CONFLICT
         return
+
+    current_coords = coordinates[-1]
+    current_coords = np.array(current_coords)
+    new_coords = current_coords + np.array(action.coordinate_change)
+    dronecentric_coords = new_coords - coordinates[0]
+    abs_coords = np.abs(dronecentric_coords)
+
+    x, y = abs_coords[0], abs_coords[1]
+    alt = new_coords[2]
+    
+    if x > 200 or y > 200 or alt > 300:
+        consecutive_failures += 1
+        response.status_code = status.HTTP_400_BAD_REQUEST
+
+        if consecutive_failures > 5:
+            log_info_at_finish()
+
+        if x > 200 or y > 200:
+            return {"error": "Coordinates out of bounds"}
+
+        if alt > 300:
+            response.status_code = status.HTTP_400_BAD_REQUEST
+            return {"error": "Altitude out of bounds"}
+
+    consecutive_failures = 0
 
     move_counter += 1
     moves_left = 10 - move_counter
@@ -155,8 +185,6 @@ async def move(action: Action, response: Response):
     }
 
     obs, _, _, _, info = env.step(action_dict)
-    object_bbox_str = info["object_bbox"]
-
     actions.append((found, coordinate_change))
 
     if moves_left == 0 and not found:
@@ -215,6 +243,7 @@ async def move(action: Action, response: Response):
 @app.post("/generate_new", status_code=201)
 async def generate_new(response: Response):
     global last_observation
+    global object_bbox_str
     global move_counter
     global coordinates
     global current_scenario
@@ -238,6 +267,7 @@ async def generate_new(response: Response):
 
     move_counter = 0
     real_coords = info["real_position"]
+    object_bbox_str = info["object_bbox"]
     coordinates = [real_coords]
     opencv_images = [last_observation["image"]]
     actions = []
