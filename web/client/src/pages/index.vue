@@ -4,7 +4,7 @@
       elevation="1"
     >
       <v-toolbar-title>FlySearch demo</v-toolbar-title>
-      <v-spacer />
+      <v-spacer/>
       <v-btn
         variant="outlined"
         color="error"
@@ -95,7 +95,7 @@
           </v-card-text>
         </v-card>
         <v-card
-          v-if="started"
+          v-if="started && won === null"
           variant="outlined"
         >
           <v-card-title>Target: {{ target }}</v-card-title>
@@ -127,6 +127,7 @@
               <div :class="collision === true ? 'text-red' : ''">
                 Collided on the last action: {{ collision }}
               </div>
+              <div :class="moves_left <= 1 ? 'text-red' : ''">Remaining moves: {{ moves_left }}</div>
             </div>
 
             <v-form>
@@ -171,18 +172,17 @@
                     Else, move the UAV closer to the target
                   </div>
                   <div class="d-flex flex-row justify-center align-center mt-2">
-                    <v-number-input
+                    <v-text-field
                       v-model="x"
                       :disabled="!image_b64"
                       variant="outlined"
-                      hide-spin-buttons
                       type="number"
                       label="X"
                       control-variant="stacked"
                       class="mr-2"
-                      prcision="0"
+                      precision="0"
                     />
-                    <v-number-input
+                    <v-text-field
                       v-model="y"
                       :disabled="!image_b64"
                       variant="outlined"
@@ -191,9 +191,9 @@
                       label="Y"
                       control-variant="stacked"
                       class="mr-2"
-                      prcision="0"
+                      precision="0"
                     />
-                    <v-number-input
+                    <v-text-field
                       v-model="z"
                       :disabled="!image_b64"
                       variant="outlined"
@@ -202,7 +202,7 @@
                       label="Z"
                       control-variant="stacked"
                       class="mr-2"
-                      prcision="0"
+                      precision="0"
                     />
                   </div>
                   <v-btn
@@ -217,6 +217,28 @@
                 </v-col>
               </v-row>
             </v-form>
+          </v-card-text>
+        </v-card>
+        <v-card
+          v-if="won !== null"
+          variant="outlined"
+        >
+          <v-card-title>{{ won ? "You won!" : "You lost!" }}</v-card-title>
+          <v-card-text>
+            <v-alert
+              v-if="won === true"
+              variant="outlined"
+              color="success"
+            >
+              You've found the target. To start a new game press the button in the top right corner.
+            </v-alert>
+            <v-alert
+              v-if="won === false"
+              variant="outlined"
+              color="error"
+            >
+              You've failed to locate the target. To start a new game press the button in the top right corner.
+            </v-alert>
           </v-card-text>
         </v-card>
       </v-container>
@@ -251,6 +273,8 @@ const collision = ref(null);
 const altitude = ref(null);
 const target = ref(null);
 const started = ref(false);
+const won = ref(null);
+const moves_left = ref(null);
 
 const error = ref(false);
 const error_message = ref('');
@@ -263,40 +287,48 @@ function cleanStatus() {
 
 function getStatus() {
   axios.get(api_base + '/get_observation')
-      .then((response) => {
-        const current_status = response.data;
-        image_b64.value = current_status.image_b64;
-        collision.value = current_status.collision;
-        altitude.value = current_status.altitude;
-        x.value = 0
-        y.value = 0
-        z.value = 0
-      })
-      .catch((err) => {
-        error.value = true;
-        error_message.value = err.message;
-        console.error(err);
-      });
+    .then((response) => {
+      const current_status = response.data;
+      image_b64.value = current_status.image_b64;
+      collision.value = current_status.collision;
+      altitude.value = current_status.altitude;
+      x.value = 0
+      y.value = 0
+      z.value = 0
+    })
+    .catch((err) => {
+      error.value = true;
+      error_message.value = err.message;
+      console.error(err);
+    });
 }
 
 function resetEnv() {
   started.value = true;
+  won.value = null;
   cleanStatus();
   target.value = null;
   axios.post(api_base + '/generate_new')
-      .then((response) => {
-        getStatus();
-        target.value = response.data.target;
-      })
-      .catch((err) => {
-        error.value = true;
-        error_message.value = err.message;
-        console.error(err);
-      });
+    .then((response) => {
+      const data = response.data
+      target.value = data.target;
+      moves_left.value = data.moves_left;
+      getStatus();
+    })
+    .catch((err) => {
+      error.value = true;
+      error_message.value = err.message;
+      console.error(err);
+    });
 }
 
 function action(is_done) {
   cleanStatus();
+
+  if (moves_left.value <= 1 && !is_done) {
+    won.value = false;
+    return;
+  }
 
   const request = {
     found: is_done,
@@ -304,18 +336,20 @@ function action(is_done) {
   };
 
   axios.post(api_base + '/move', request)
-      .then(() => {
-        if (is_done) {
-          resetEnv();
-        } else {
-          getStatus();
-        }
-      })
-      .catch((err) => {
-        error.value = true;
-        error_message.value = err.message;
-        console.error(err);
-      });
+    .then((response) => {
+      const data = response.data;
+      if (is_done) {
+        won.value = data.success;
+      } else {
+        moves_left.value = data.moves_left;
+        getStatus();
+      }
+    })
+    .catch((err) => {
+      error.value = true;
+      error_message.value = err.message;
+      console.error(err);
+    });
 }
 </script>
 

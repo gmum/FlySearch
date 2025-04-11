@@ -222,18 +222,19 @@ async def generate_new(response: Response):
     global actions
     global fs1
 
-    failed = True
+    retry = 25
 
-    while failed:
+    while retry > 0:
         try:
             seed = random.randint(0, int(1e12))
             scenario = csm.create_random_scenario(seed)
             current_scenario = scenario
             last_observation, info = env.reset(options=scenario)
-            failed = False
+            break
         except DroneCannotSeeTargetException as e:
-            if not fs1:
-                raise
+            retry -= 1
+            if retry <= 0:
+                raise e
 
     move_counter = 0
     real_coords = info["real_position"]
