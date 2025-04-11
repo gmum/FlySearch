@@ -151,7 +151,7 @@ async def move(action: Action, response: Response):
 
     x, y = abs_coords[0], abs_coords[1]
     alt = new_coords[2]
-    
+
     if x > 200 or y > 200 or alt > 300:
         consecutive_failures += 1
         response.status_code = status.HTTP_400_BAD_REQUEST
@@ -241,7 +241,7 @@ async def move(action: Action, response: Response):
 
 
 @app.post("/generate_new", status_code=201)
-async def generate_new(response: Response):
+async def generate_new(is_fs1: bool, response: Response):
     global last_observation
     global object_bbox_str
     global move_counter
@@ -250,6 +250,16 @@ async def generate_new(response: Response):
     global opencv_images
     global actions
     global fs1
+    global csm
+
+    fs1 = is_fs1
+
+    if fs1:
+        csm = DefaultCityScenarioMapper(drone_alt_min=30, drone_alt_max=100)
+        env.set_throw_if_hard_config(True)
+    else:
+        csm = DefaultCityScenarioMapper(drone_alt_min=200, drone_alt_max=250)
+        env.set_throw_if_hard_config(False)
 
     retry = 25
 

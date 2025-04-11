@@ -79,6 +79,9 @@ class BaseFlySearchEnv(gym.Env):
         self.resources_initialized: bool = False
         self.throw_if_hard_config: bool = throw_if_hard_config
 
+    def set_throw_if_hard_config(self, throw_if_hard_config: bool) -> None:
+        self.throw_if_hard_config = throw_if_hard_config
+
     def __enter__(self):
         self.client = self.get_client()
         self.glimpse_generator = self.get_glimpse_generator(client=self.client)
