@@ -1,10 +1,10 @@
 import base64
-import pathlib
+import json
 import os
+import pathlib
 import random
 import sys
-import json
-
+import time
 from typing import Optional
 
 import cv2
@@ -16,7 +16,7 @@ sys.path.insert(0, '../')
 from fastapi import FastAPI, Response, status
 from pydantic import BaseModel
 
-from rl.environment import CityFlySearchEnv, MockFlySearchEnv, DroneCannotSeeTargetException
+from rl.environment import MockFlySearchEnv, DroneCannotSeeTargetException, CityFlySearchEnv
 from scenarios import DefaultCityScenarioMapper
 
 app = FastAPI()
@@ -51,6 +51,9 @@ actions = []
 current_scenario = None
 log_path = pathlib.Path(__file__).parent / "trajectories"
 log_path.mkdir(parents=True, exist_ok=True)
+current_client_uuid = None
+current_client_name = None
+last_ping = None
 
 
 def log_info_at_finish():
@@ -85,6 +88,9 @@ def log_info_at_finish():
     with open(trajectory_path / "object_bbox.txt", "w") as f:
         f.write(object_bbox_str)
 
+    with open(trajectory_path / "user.txt", "w") as f:
+        f.write(str(current_client_name))
+
     # with open(trajectory_path / "conversation.json", "w") as f:
     #    json.dump([], f, indent=4)
 
@@ -112,12 +118,21 @@ class Action(BaseModel):
     coordinate_change: tuple[int, int, int]
 
 
+class GenerateNewRequest(BaseModel):
+    is_fs1: bool
+
+
 @app.get("/get_observation", status_code=200)
-async def get_observation(response: Response) -> Optional[Observation]:
+async def get_observation(client_uuid: str, response: Response) -> Optional[Observation]:
     global last_observation
+    global current_client_uuid
+
+    if client_uuid != current_client_uuid:
+        response.status_code = status.HTTP_401_UNAUTHORIZED
+        return None
 
     if last_observation is None:
-        response.status_code = status.HTTP_409_CONFLICT
+        response.status_code = status.HTTP_400_BAD_REQUEST
         return None
 
     opencv_image = last_observation["image"]
@@ -132,15 +147,20 @@ async def get_observation(response: Response) -> Optional[Observation]:
 
 
 @app.post("/move", status_code=200)
-async def move(action: Action, response: Response):
+async def move(client_uuid: str, action: Action, response: Response):
     global last_observation
     global move_counter
     global actions
     global coordinates
     global consecutive_failures
+    global current_client_uuid
+
+    if client_uuid != current_client_uuid:
+        response.status_code = status.HTTP_401_UNAUTHORIZED
+        return
 
     if last_observation is None:
-        response.status_code = status.HTTP_409_CONFLICT
+        response.status_code = status.HTTP_400_BAD_REQUEST
         return
 
     current_coords = coordinates[-1]
@@ -153,20 +173,19 @@ async def move(action: Action, response: Response):
     alt = new_coords[2]
 
     if x > 200 or y > 200 or alt > 300:
-        consecutive_failures += 1
+        # consecutive_failures += 1
         response.status_code = status.HTTP_400_BAD_REQUEST
 
-        if consecutive_failures > 5:
-            log_info_at_finish()
+        # if consecutive_failures > 5:
+        #     log_info_at_finish()
 
         if x > 200 or y > 200:
-            return {"error": "Coordinates out of bounds"}
+            return {"user_error": "Coordinates out of bounds"}
 
-        if alt > 300:
-            response.status_code = status.HTTP_400_BAD_REQUEST
-            return {"error": "Altitude out of bounds"}
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return {"user_error": "Altitude out of bounds"}
 
-    consecutive_failures = 0
+    # consecutive_failures = 0
 
     move_counter += 1
     moves_left = 10 - move_counter
@@ -188,7 +207,7 @@ async def move(action: Action, response: Response):
     actions.append((found, coordinate_change))
 
     if moves_left == 0 and not found:
-        log_info_at_finish(object_bbox_str)
+        log_info_at_finish()
         response.status_code = status.HTTP_400_BAD_REQUEST
         return
 
@@ -225,7 +244,7 @@ async def move(action: Action, response: Response):
     object_visible = min_x < 0 < max_x and min_y < 0 < max_y
 
     if found:
-        log_info_at_finish(object_bbox_str)
+        log_info_at_finish()
 
         if alt_diff_ok and object_visible:
             return {"success": True}
@@ -233,7 +252,7 @@ async def move(action: Action, response: Response):
             return {"success": False}
 
     if moves_left == 0:
-        log_info_at_finish(object_bbox_str)
+        log_info_at_finish()
 
     return {
         "moves_left": moves_left,
@@ -241,7 +260,7 @@ async def move(action: Action, response: Response):
 
 
 @app.post("/generate_new", status_code=201)
-async def generate_new(is_fs1: bool, response: Response):
+async def generate_new(client_uuid: str, request: GenerateNewRequest, response: Response):
     global last_observation
     global object_bbox_str
     global move_counter
@@ -251,8 +270,13 @@ async def generate_new(is_fs1: bool, response: Response):
     global actions
     global fs1
     global csm
+    global current_client_uuid
 
-    fs1 = is_fs1
+    if client_uuid != current_client_uuid:
+        response.status_code = status.HTTP_401_UNAUTHORIZED
+        return
+
+    fs1 = request.is_fs1
 
     if fs1:
         csm = DefaultCityScenarioMapper(drone_alt_min=30, drone_alt_max=100)
@@ -286,6 +310,36 @@ async def generate_new(is_fs1: bool, response: Response):
         'target': csm.get_description(scenario["object_type"]),
         'moves_left': 10
     }
+
+
+class PingRequest(BaseModel):
+    client_uuid: str
+    client_name: str
+
+
+@app.post("/ping", status_code=200)
+async def ping(request: PingRequest, response: Response):
+    global current_client_uuid
+    global current_client_name
+    global last_ping
+
+    current_time = time.time()
+
+    if request.client_uuid == current_client_uuid:
+        last_ping = current_time
+        print(f"Keep-alive ping from {request.client_name} ({request.client_uuid})", file=sys.stderr)
+        return
+
+    if last_ping is not None and current_time - last_ping < 5:
+        response.status_code = status.HTTP_409_CONFLICT
+        print(f"Client rejected - server busy: {request.client_name}", file=sys.stderr)
+        return
+
+    current_client_uuid = request.client_uuid
+    current_client_name = request.client_name
+    last_ping = current_time
+    print(f"New client connected: {request.client_name} ({request.client_uuid})", file=sys.stderr)
+    return
 
 
 if __name__ == "__main__":

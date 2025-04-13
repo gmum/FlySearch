@@ -5,13 +5,34 @@
     >
       <v-toolbar-title>FlySearch demo</v-toolbar-title>
       <v-spacer/>
+      <v-text-field
+        v-model="client_name"
+        label="Your name"
+        variant="underlined"
+        class="mr-7 mt-5"
+        density="compact"
+        max-width="250"
+        :disabled="connected"
+      />
+      <v-select
+        v-model="selected_mode"
+        :items="modes"
+        label="Mode"
+        variant="underlined"
+        class="mr-7 mt-5"
+        density="compact"
+        max-width="100"
+      />
       <v-btn
         variant="outlined"
         color="error"
         class="mr-5"
         @click="resetEnv"
+        :loading="connecting"
+        :disabled="!client_name || client_name.length < 3"
       >
-        Start a new game
+        <span v-if="connected">Start a new game</span>
+        <span v-else>Connect to server</span>
       </v-btn>
     </v-app-bar>
     <v-main>
@@ -90,7 +111,7 @@
               variant="text"
               color="primary"
             >
-              To start a new game press the button in the top right corner.
+              To start a new game fill in your username and press the connect button in the top right corner.
             </v-alert>
           </v-card-text>
         </v-card>
@@ -128,6 +149,7 @@
                 Collided on the last action: {{ collision }}
               </div>
               <div :class="moves_left <= 1 ? 'text-red' : ''">Remaining moves: {{ moves_left }}</div>
+              <div :class="status === 'ok' || status === null ? '' : 'text-red'">Status: {{ status }}</div>
             </div>
 
             <v-form>
@@ -264,6 +286,13 @@ import {inject, ref} from "vue";
 const axios = inject('axios');
 
 const api_base = 'http://localhost:8000';
+const modes = ['FS-1', 'FS-2']
+const selected_mode = ref(modes[0]);
+
+const client_uuid = crypto.randomUUID().toString();
+const client_name = ref(null);
+const connected = ref(false);
+const connecting = ref(false);
 
 const x = ref(0);
 const y = ref(0);
@@ -275,6 +304,7 @@ const target = ref(null);
 const started = ref(false);
 const won = ref(null);
 const moves_left = ref(null);
+const status = ref(null);
 
 const error = ref(false);
 const error_message = ref('');
@@ -285,8 +315,38 @@ function cleanStatus() {
   altitude.value = null;
 }
 
+function ping(keepalive = false) {
+  if (!connected.value) {
+    connecting.value = true;
+  }
+
+  axios.post(api_base + '/ping', {
+    'client_uuid': client_uuid,
+    'client_name': client_name.value,
+  })
+    .then(() => {
+      setTimeout(() => ping(keepalive = true), 1000);
+      if (!keepalive) {
+        connecting.value = false;
+        connected.value = true;
+        started.value = true;
+        resetEnv();
+      }
+    })
+    .catch((err) => {
+      if (err.response && err.response.status === 409) {
+        error.value = true;
+        error_message.value = 'Someone else is already using the server. Please try again later.';
+        return;
+      }
+      error.value = true;
+      error_message.value = err.message;
+      console.error(err);
+    });
+}
+
 function getStatus() {
-  axios.get(api_base + '/get_observation')
+  axios.get(api_base + '/get_observation', {params: {'client_uuid': client_uuid}})
     .then((response) => {
       const current_status = response.data;
       image_b64.value = current_status.image_b64;
@@ -304,15 +364,24 @@ function getStatus() {
 }
 
 function resetEnv() {
+  if (!connected.value) {
+    ping()
+    return;
+  }
+
   started.value = true;
   won.value = null;
   cleanStatus();
   target.value = null;
-  axios.post(api_base + '/generate_new')
+  const request = {
+    is_fs1: selected_mode.value === modes[0],
+  };
+  axios.post(api_base + '/generate_new', request, {params: {'client_uuid': client_uuid}})
     .then((response) => {
       const data = response.data
       target.value = data.target;
       moves_left.value = data.moves_left;
+      status.value = 'ok';
       getStatus();
     })
     .catch((err) => {
@@ -335,17 +404,23 @@ function action(is_done) {
     coordinate_change: is_done ? [0, 0, 0] : [x.value, y.value, z.value]
   };
 
-  axios.post(api_base + '/move', request)
+  axios.post(api_base + '/move', request, {params: {'client_uuid': client_uuid}})
     .then((response) => {
       const data = response.data;
       if (is_done) {
         won.value = data.success;
       } else {
         moves_left.value = data.moves_left;
+        status.value = 'ok';
         getStatus();
       }
     })
     .catch((err) => {
+      if (err.response && err.response.data && err.response.data.user_error) {
+        status.value = err.response.data.user_error;
+        getStatus();
+        return;
+      }
       error.value = true;
       error_message.value = err.message;
       console.error(err);
