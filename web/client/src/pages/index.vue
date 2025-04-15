@@ -285,7 +285,7 @@ import {inject, ref} from "vue";
 
 const axios = inject('axios');
 
-const api_base = 'http://localhost:8000';
+const api_base = '/api';
 const modes = ['FS-1', 'FS-2']
 const selected_mode = ref(modes[0]);
 
