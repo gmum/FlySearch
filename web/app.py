@@ -163,34 +163,34 @@ async def move(client_uuid: str, action: Action, response: Response):
         response.status_code = status.HTTP_400_BAD_REQUEST
         return
 
-    current_coords = coordinates[-1]
-    current_coords = np.array(current_coords)
-    new_coords = current_coords + np.array(action.coordinate_change)
-    dronecentric_coords = new_coords - coordinates[0]
-    abs_coords = np.abs(dronecentric_coords)
-
-    x, y = abs_coords[0], abs_coords[1]
-    alt = new_coords[2]
-
-    if x > 200 or y > 200 or alt > 300:
-        # consecutive_failures += 1
-        response.status_code = status.HTTP_400_BAD_REQUEST
-
-        # if consecutive_failures > 5:
-        #     log_info_at_finish()
-
-        if x > 200 or y > 200:
-            return {"user_error": "Coordinates out of bounds"}
-
-        response.status_code = status.HTTP_400_BAD_REQUEST
-        return {"user_error": "Altitude out of bounds"}
-
     # consecutive_failures = 0
 
     move_counter += 1
     moves_left = 10 - move_counter
 
     found = action.found
+
+    if not found:
+        current_coords = coordinates[-1]
+        current_coords = np.array(current_coords)
+        coordinate_change = action.coordinate_change
+        flipped_coordinate_change = (coordinate_change[0], -coordinate_change[1], coordinate_change[
+            2])  # We invert the y axis here. Normally the environment does that for us, but we perform the calculation alongside it, hence requiring us to do this... stuff.
+        new_coords = current_coords + np.array(flipped_coordinate_change)
+        dronecentric_coords = new_coords - coordinates[0]
+        abs_coords = np.abs(dronecentric_coords)
+
+        x, y = abs_coords[0], abs_coords[1]
+        alt = new_coords[2]
+
+        if x > 200 or y > 200 or alt > 300:
+            response.status_code = status.HTTP_400_BAD_REQUEST
+
+            if x > 200 or y > 200:
+                return {"user_error": "Coordinates out of bounds"}
+
+            response.status_code = status.HTTP_400_BAD_REQUEST
+            return {"user_error": "Altitude out of bounds"}
 
     if moves_left < 0:
         response.status_code = status.HTTP_400_BAD_REQUEST
