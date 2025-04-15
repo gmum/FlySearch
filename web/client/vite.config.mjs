@@ -4,6 +4,8 @@ import Vue from '@vitejs/plugin-vue'
 import Vuetify, {transformAssetUrls} from 'vite-plugin-vuetify'
 import ViteFonts from 'unplugin-fonts/vite'
 import VueRouter from 'unplugin-vue-router/vite'
+import basicSsl from '@vitejs/plugin-basic-ssl'
+import httpAuth from './src/plugins/vite-basic-auth.js'
 
 // Utilities
 import {defineConfig} from 'vite'
@@ -32,6 +34,20 @@ export default defineConfig({
                 }],
             },
         }),
+        basicSsl({
+            /** name of certification */
+            name: 'test',
+            /** custom trust domains */
+            domains: ['*'],
+            /** custom certification directory */
+            certDir: '/tmp/cert'
+        }),
+        httpAuth([{
+            username: 'flysearch',
+            password: 'vlmBenchmark2025'
+        }], {
+            realm: 'flysearch',
+        })
     ],
     define: {'process.env': {}},
     resolve: {
@@ -50,6 +66,8 @@ export default defineConfig({
     },
     server: {
         port: 3000,
+
+        https: true,
         allowedHosts: ['*'],
         proxy: {
             '/api': {

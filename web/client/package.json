@@ -11,7 +11,9 @@
   },
   "dependencies": {
     "@mdi/font": "7.4.47",
+    "@vitejs/plugin-basic-ssl": "^1.2.0",
     "axios": "^1.8.4",
+    "basic-auth": "^2.0.1",
     "roboto-fontface": "*",
     "vue": "^3.4.31",
     "vue-axios": "^3.5.2",
