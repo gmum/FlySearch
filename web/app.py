@@ -20,8 +20,8 @@ from rl.environment import MockFlySearchEnv, DroneCannotSeeTargetException, City
 from scenarios import DefaultCityScenarioMapper, MimicScenarioMapper
 
 app = FastAPI()
-env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
-# env = MockFlySearchEnv()
+# env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
+env = MockFlySearchEnv()
 csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
 fs1 = False
 
@@ -187,6 +187,7 @@ async def move(client_uuid: str, action: Action, response: Response):
         alt = new_coords[2]
 
         if x > 200 or y > 200 or alt > 300:
+            move_counter -= 1
             response.status_code = status.HTTP_400_BAD_REQUEST
 
             if x > 200 or y > 200:
