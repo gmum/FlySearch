@@ -78,3 +78,6 @@ class BaseScenarioMapper:
 
     def get_object_type_cls(self):
         return self.object_type_cls
+
+    def empty(self):
+        return False

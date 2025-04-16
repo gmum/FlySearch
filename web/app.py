@@ -17,10 +17,11 @@ from fastapi import FastAPI, Response, status
 from pydantic import BaseModel
 
 from rl.environment import MockFlySearchEnv, DroneCannotSeeTargetException, CityFlySearchEnv
-from scenarios import DefaultCityScenarioMapper
+from scenarios import DefaultCityScenarioMapper, MimicScenarioMapper
 
 app = FastAPI()
 env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
+# env = MockFlySearchEnv()
 csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
 fs1 = False
 
@@ -54,6 +55,8 @@ log_path.mkdir(parents=True, exist_ok=True)
 current_client_uuid = None
 current_client_name = None
 last_ping = None
+fs1_trajectory_config_path = pathlib.Path(__file__).parent / "configs" / "fs1"
+fs2_trajectory_config_path = pathlib.Path(__file__).parent / "configs" / "fs2"
 
 
 def log_info_at_finish():
@@ -166,7 +169,7 @@ async def move(client_uuid: str, action: Action, response: Response):
     # consecutive_failures = 0
 
     move_counter += 1
-    moves_left = 10 - move_counter
+    moves_left = (10 if fs1 else 20) - move_counter
 
     found = action.found
 
@@ -276,14 +279,23 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
         response.status_code = status.HTTP_401_UNAUTHORIZED
         return
 
+    scenario_mapper_needs_change = (fs1 != request.is_fs1)
     fs1 = request.is_fs1
 
     if fs1:
-        csm = DefaultCityScenarioMapper(drone_alt_min=30, drone_alt_max=100)
+        if scenario_mapper_needs_change:
+            csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
+            csm.create_random_scenario(42)
         env.set_throw_if_hard_config(True)
+        if csm.empty():
+            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30)
     else:
-        csm = DefaultCityScenarioMapper(drone_alt_min=200, drone_alt_max=250)
+        if scenario_mapper_needs_change:
+            csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
+            csm.create_random_scenario(42)
         env.set_throw_if_hard_config(False)
+        if csm.empty():
+            csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
 
     retry = 25
 
@@ -306,9 +318,12 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
     opencv_images = [last_observation["image"]]
     actions = []
 
+    print("SEED", scenario["seed"])
+
     return {
+        'last_standardised_scenario': csm.empty(),
         'target': csm.get_description(scenario["object_type"]),
-        'moves_left': 10
+        'moves_left': 10 if fs1 else 20
     }
 
 
@@ -322,6 +337,7 @@ async def ping(request: PingRequest, response: Response):
     global current_client_uuid
     global current_client_name
     global last_ping
+    global csm
 
     current_time = time.time()
 
@@ -339,6 +355,14 @@ async def ping(request: PingRequest, response: Response):
     current_client_name = request.client_name
     last_ping = current_time
     print(f"New client connected: {request.client_name} ({request.client_uuid})", file=sys.stderr)
+
+    if fs1:
+        csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
+        csm.create_random_scenario(42)  # This is to remove the first duplicate. Yes.
+    else:
+        csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
+        csm.create_random_scenario(42)  # ^ As above
+
     return
 
 

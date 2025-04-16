@@ -68,55 +68,53 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
     value = value.strip().removeprefix("ObjectType.").lower()
 
     if scenario == "city":
-        match value:
-            case 'anomaly':
-                return CityScenarioMapper.ObjectType.ANOMALY
-            case 'police_car':
-                return CityScenarioMapper.ObjectType.POLICE_CAR
-            case 'beige_sport_car':
-                return CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR
-            case 'blue_sport_car':
-                return CityScenarioMapper.ObjectType.BLUE_SPORT_CAR
-            case 'red_sport_car':
-                return CityScenarioMapper.ObjectType.RED_SPORT_CAR
-            case 'white_sport_car':
-                return CityScenarioMapper.ObjectType.WHITE_SPORT_CAR
-            case 'road_construction_site':
-                return CityScenarioMapper.ObjectType.ROAD_CONSTRUCTION_SITE
-            case 'fire':
-                return CityScenarioMapper.ObjectType.FIRE
-            case 'black_pickup_truck':
-                return CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK
-            case 'green_pickup_truck':
-                return CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK
-            case 'red_pickup_truck':
-                return CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK
-            case 'white_pickup_truck':
-                return CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK
-            case 'crowd':
-                return CityScenarioMapper.ObjectType.CROWD
-            case 'large_trash_pile':
-                return CityScenarioMapper.ObjectType.LARGE_TRASH_PILE
-            case 'black_truck':
-                return CityScenarioMapper.ObjectType.BLACK_TRUCK
-            case 'white_truck':
-                return CityScenarioMapper.ObjectType.WHITE_TRUCK
-    elif scenario == "forest":
-        match value:
-            case 'forest_fire':
-                return ForestScenarioMapper.ObjectType.FOREST_FIRE
-            case 'campsite':
-                return ForestScenarioMapper.ObjectType.CAMPSITE
-            case 'trash_pile':
-                return ForestScenarioMapper.ObjectType.TRASH_PILE
-            case 'building':
-                return ForestScenarioMapper.ObjectType.BUILDING
-            case 'person':
-                return ForestScenarioMapper.ObjectType.PERSON
-            case 'anomaly':
-                return ForestScenarioMapper.ObjectType.ANOMALY
+        # Fix match because we use this stupid version of Python
 
-    raise ValueError(f"Value {value} is not a valid enum")
+        if value == "anomaly":
+            return CityScenarioMapper.ObjectType.ANOMALY
+        elif value == "police_car":
+            return CityScenarioMapper.ObjectType.POLICE_CAR
+        elif value == "beige_sport_car":
+            return CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR
+        elif value == "blue_sport_car":
+            return CityScenarioMapper.ObjectType.BLUE_SPORT_CAR
+        elif value == "red_sport_car":
+            return CityScenarioMapper.ObjectType.RED_SPORT_CAR
+        elif value == "white_sport_car":
+            return CityScenarioMapper.ObjectType.WHITE_SPORT_CAR
+        elif value == "road_construction_site":
+            return CityScenarioMapper.ObjectType.ROAD_CONSTRUCTION_SITE
+        elif value == "fire":
+            return CityScenarioMapper.ObjectType.FIRE
+        elif value == "black_pickup_truck":
+            return CityScenarioMapper.ObjectType.BLACK_PICKUP_TRUCK
+        elif value == "green_pickup_truck":
+            return CityScenarioMapper.ObjectType.GREEN_PICKUP_TRUCK
+        elif value == "red_pickup_truck":
+            return CityScenarioMapper.ObjectType.RED_PICKUP_TRUCK
+        elif value == "white_pickup_truck":
+            return CityScenarioMapper.ObjectType.WHITE_PICKUP_TRUCK
+        elif value == "crowd":
+            return CityScenarioMapper.ObjectType.CROWD
+        elif value == "large_trash_pile":
+            return CityScenarioMapper.ObjectType.LARGE_TRASH_PILE
+        elif value == "black_truck":
+            return CityScenarioMapper.ObjectType.BLACK_TRUCK
+        elif value == "white_truck":
+            return CityScenarioMapper.ObjectType.WHITE_TRUCK
+    elif scenario == "forest":
+        if value == "forest_fire":
+            return ForestScenarioMapper.ObjectType.FOREST_FIRE
+        elif value == "campsite":
+            return ForestScenarioMapper.ObjectType.CAMPSITE
+        elif value == "trash_pile":
+            return ForestScenarioMapper.ObjectType.TRASH_PILE
+        elif value == "building":
+            return ForestScenarioMapper.ObjectType.BUILDING
+        elif value == "person":
+            return ForestScenarioMapper.ObjectType.PERSON
+        elif value == "anomaly":
+            return ForestScenarioMapper.ObjectType.ANOMALY
 
 
 class MimicScenarioMapper(BaseScenarioMapper):
@@ -153,6 +151,9 @@ class MimicScenarioMapper(BaseScenarioMapper):
     def create_random_scenario(self, seed: int) -> Dict[str, Any]:
         return self.scenarios.pop(0)
 
+    def empty(self):
+        return len(self.scenarios) == 0
+
     def iterate_scenarios(self, duplicate_first=True):
         entries = os.listdir(self.path)
         entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))[self.continue_from:]
@@ -164,7 +165,10 @@ class MimicScenarioMapper(BaseScenarioMapper):
             entry_number = int(entry.split("_")[0])
             scenario = json.load(open(self.path / entry / "scenario_params.json"))
 
-            object_name = scenario["passed_object_name"]
+            try:
+                object_name = scenario["passed_object_name"]
+            except KeyError:
+                object_name = ""
 
             for white_list_item in self.white_list:
                 if white_list_item in object_name or white_list_item == "*":
