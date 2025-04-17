@@ -57,15 +57,18 @@ current_client_name = None
 last_ping = None
 fs1_trajectory_config_path = pathlib.Path(__file__).parent / "configs" / "fs1"
 fs2_trajectory_config_path = pathlib.Path(__file__).parent / "configs" / "fs2"
+logging_for_trajectory_called = True
+complaints = []
 
 
-def log_info_at_finish():
+def log_info_at_finish(suspicious: bool = False):
     global move_counter
     global coordinates
     global log_path
     global current_scenario
     global actions
     global object_bbox_str
+    global logging_for_trajectory_called
 
     total_trajectory_count = len(os.listdir(log_path))
     trajectory_name = f"{total_trajectory_count}_r0"
@@ -106,8 +109,17 @@ def log_info_at_finish():
     with open(trajectory_path / "simple_conversation.json", "w") as f:
         json.dump(simple_conversation, f, indent=4)
 
+    with open(trajectory_path / "complaints.json", "w") as f:
+        json.dump(complaints, f, indent=4)
+
     for i, opencv_image in enumerate(opencv_images):
         cv2.imwrite(str(trajectory_path / f"{i}.png"), opencv_image)
+
+    if suspicious:
+        with open(trajectory_path / "suspicious.txt", "w") as f:
+            f.write("Suspicious trajectory")
+
+    logging_for_trajectory_called = True
 
 
 class Observation(BaseModel):
@@ -271,10 +283,15 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
     global fs1
     global csm
     global current_client_uuid
+    global logging_for_trajectory_called
+    global complaints
 
     if client_uuid != current_client_uuid:
         response.status_code = status.HTTP_401_UNAUTHORIZED
         return
+
+    if not logging_for_trajectory_called:
+        log_info_at_finish(suspicious=True)
 
     scenario_mapper_needs_change = (fs1 != request.is_fs1)
     fs1 = request.is_fs1
@@ -315,7 +332,8 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
     opencv_images = [last_observation["image"]]
     actions = []
 
-    print("SEED", scenario["seed"])
+    logging_for_trajectory_called = False
+    complaints = []
 
     return {
         'last_standardised_scenario': csm.empty(),
@@ -361,6 +379,23 @@ async def ping(request: PingRequest, response: Response):
         csm.create_random_scenario(42)  # ^ As above
 
     return
+
+
+@app.post("/complain", status_code=201)
+async def complain(client_uuid: str, complaint: str, response: Response):
+    global current_client_uuid
+    global last_observation
+    global complaints
+
+    if client_uuid != current_client_uuid:
+        response.status_code = status.HTTP_401_UNAUTHORIZED
+        return
+
+    if last_observation is None:
+        response.status_code = status.HTTP_400_BAD_REQUEST
+        return
+
+    complaints.append(complaint)
 
 
 if __name__ == "__main__":

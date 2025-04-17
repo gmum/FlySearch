@@ -82,6 +82,7 @@ def generate_metadata(run):
       \item Object can be seen: {object_can_be_seen}
       \item Success: {success}
       \item Object type: {object_type}
+      {'\item Username: ' + run.get_username() if run.username_recorded() else ''}
     \end{'{itemize}'}
     """.replace("_", "\\_")
 
@@ -147,7 +148,9 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
         print(illustration_latex(image_dir / f"{one_run_dir.name}.pdf"), file=file)
         print(illustration_latex(image_dir / f"{one_run_dir.name}_sit_awareness.pdf"), file=file)
 
-        print(preamble(model_name=model_displayname), file=file)
+        preamble_name = run.username if run.username_recorded() else model_displayname
+
+        print(preamble(model_name=preamble_name), file=file)
 
         with open(one_run_dir / "simple_conversation.json") as f:
             conversation = json.load(f)
@@ -176,9 +179,10 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
 
 def main():
-    with open("Dominik-FS2.tex", "w") as f:
-        generate_report("Dominik", "Dominik", "CityNew", pathlib.Path("../../web"),
-                        lambda x: True, file=f, startfrom=0, n=200, subdir_override="trajectories", overwrite=True)
+    with open("GPT4o-FS2-H1T.tex", "w") as f:
+        generate_report("Human", "Human", "CityNew", pathlib.Path("../../web/"),
+                        lambda x: True, file=f, startfrom=0, n=200, subdir_override="trajectories",
+                        overwrite=True)
 
 
 if __name__ == "__main__":
