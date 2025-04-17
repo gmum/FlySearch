@@ -20,8 +20,8 @@ from rl.environment import MockFlySearchEnv, DroneCannotSeeTargetException, City
 from scenarios import DefaultCityScenarioMapper, MimicScenarioMapper
 
 app = FastAPI()
-# env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
-env = MockFlySearchEnv()
+env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
+# env = MockFlySearchEnv()
 csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
 fs1 = False
 
@@ -210,11 +210,6 @@ async def move(client_uuid: str, action: Action, response: Response):
     obs, _, _, _, info = env.step(action_dict)
     actions.append((found, coordinate_change))
 
-    if moves_left == 0 and not found:
-        log_info_at_finish()
-        response.status_code = status.HTTP_400_BAD_REQUEST
-        return
-
     last_observation = obs
 
     real_position = info["real_position"]
@@ -231,7 +226,7 @@ async def move(client_uuid: str, action: Action, response: Response):
     # FIXME
     try:
         object_max_z = int(object_bbox[5]) // 100
-        alt_diff_ok = abs(user_alt - object_max_z) <= 10
+        alt_diff_ok = (user_alt - object_max_z <= 10)
     except:
         print("Parsing object bbox failed; assuming max object altitude is 0")
         print("Object bbox:", object_bbox)
@@ -251,15 +246,16 @@ async def move(client_uuid: str, action: Action, response: Response):
         log_info_at_finish()
 
         if alt_diff_ok and object_visible:
-            return {"success": True}
+            return {"success": True, "last_standardised_scenario": csm.empty()}
         else:
-            return {"success": False}
+            return {"success": False, "last_standardised_scenario": csm.empty()}
 
     if moves_left == 0:
         log_info_at_finish()
 
     return {
         "moves_left": moves_left,
+        "last_standardised_scenario": csm.empty(),
     }
 
 
