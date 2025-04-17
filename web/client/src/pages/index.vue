@@ -394,14 +394,13 @@ function resetEnv() {
 function action(is_done) {
   cleanStatus();
 
-  if (moves_left.value <= 1 && !is_done) {
-    won.value = false;
-    return;
-  }
+  const x1 = parseInt(x.value) || 0;
+  const y1 = parseInt(y.value) || 0;
+  const z1 = parseInt(z.value) || 0;
 
   const request = {
     found: is_done,
-    coordinate_change: is_done ? [0, 0, 0] : [x.value, y.value, z.value]
+    coordinate_change: is_done ? [0, 0, 0] : [x1, y1, z1]
   };
 
   axios.post(api_base + '/move', request, {params: {'client_uuid': client_uuid}})
@@ -412,7 +411,12 @@ function action(is_done) {
       } else {
         moves_left.value = data.moves_left;
         status.value = 'ok';
-        getStatus();
+
+        if (moves_left.value === 0) {
+          won.value = false;
+        } else {
+          getStatus();
+        }
       }
     })
     .catch((err) => {
