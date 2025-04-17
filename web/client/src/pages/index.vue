@@ -261,6 +261,15 @@
             >
               You've failed to locate the target. To start a new game press the button in the top right corner.
             </v-alert>
+            <v-alert
+              v-if="last_standardised_scenario === true"
+              variant="outlined"
+              color="primary"
+              class="mt-4"
+            >
+              There are no more benchmark scenarios available. You can still play the game with random scenarios or you
+              can switch to other modes.
+            </v-alert>
           </v-card-text>
         </v-card>
       </v-container>
@@ -305,6 +314,7 @@ const started = ref(false);
 const won = ref(null);
 const moves_left = ref(null);
 const status = ref(null);
+const last_standardised_scenario = ref(false);
 
 const error = ref(false);
 const error_message = ref('');
@@ -371,6 +381,7 @@ function resetEnv() {
 
   started.value = true;
   won.value = null;
+  last_standardised_scenario.value = false;
   cleanStatus();
   target.value = null;
   const request = {
@@ -408,12 +419,14 @@ function action(is_done) {
       const data = response.data;
       if (is_done) {
         won.value = data.success;
+        last_standardised_scenario.value = data.last_standardised_scenario;
       } else {
         moves_left.value = data.moves_left;
         status.value = 'ok';
 
         if (moves_left.value === 0) {
           won.value = false;
+          last_standardised_scenario.value = data.last_standardised_scenario;
         } else {
           getStatus();
         }
