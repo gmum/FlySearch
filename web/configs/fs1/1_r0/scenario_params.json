@@ -1,9 +1,10 @@
 {
-    "object_coords": "(24134.359, 69056.156, 58.161)",
-    "object_rot": "(0.0, 118.033518, 0.0)",
-    "object_type": "ObjectType.FIRE",
-    "drone_rel_coords": "(0.0, 24.0, 57.0)",
+    "object_coords": "(-38683.648, -174936.859, 58.404)",
+    "object_rot": "(0.0, 178.86334, -0.0)",
+    "object_type": "ObjectType.ROAD_CONSTRUCTION_SITE",
+    "drone_rel_coords": "(33.0, 25.0, 69.0)",
     "set_object": "True",
     "regenerate_city": "True",
-    "seed": "737378912086"
+    "seed": "849904482426",
+    "object_id": "BPP_Park_debris_C_C_UAID_08BFB8191750C63E02_2064132821"
 }

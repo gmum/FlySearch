@@ -5,6 +5,30 @@
     ],
     [
         "assistant",
+        "FOUND: False, COORD_CHANGE: (0, 0, -30)"
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "FOUND: False, COORD_CHANGE: (-5, 5, 0)"
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "FOUND: False, COORD_CHANGE: (0, 0, -10)"
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
         "FOUND: True, COORD_CHANGE: (0, 0, 0)"
     ]
 ]

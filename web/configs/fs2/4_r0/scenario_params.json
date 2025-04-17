@@ -1,9 +1,10 @@
 {
-    "object_coords": "(63734.332, -353421.281, 58.235)",
-    "object_rot": "(0.0, -61.847825, 0.0)",
-    "object_type": "ObjectType.FIRE",
-    "drone_rel_coords": "(-12.0, 12.0, 69.0)",
+    "object_coords": "(181864.984, -109507.883, 58.65)",
+    "object_rot": "(0.0, -178.419061, 0.0)",
+    "object_type": "ObjectType.LARGE_TRASH_PILE",
+    "drone_rel_coords": "(-45.0, -38.0, 215.0)",
     "set_object": "True",
     "regenerate_city": "True",
-    "seed": "935937010144"
+    "seed": "659732734427",
+    "object_id": "StaticMeshActor_UAID_08BFB8191750283F02_2033284125"
 }

@@ -1,9 +1,10 @@
 {
-    "object_coords": "(-176532.734, -197713.938, 58.72)",
-    "object_rot": "(0.0, 135.592593, -0.0)",
-    "object_type": "ObjectType.CROWD",
-    "drone_rel_coords": "(22.0, 35.0, 97.0)",
+    "object_coords": "(94234.688, -7873.521, 58.883)",
+    "object_rot": "(0.0, 27.308049, 0.0)",
+    "object_type": "ObjectType.FIRE",
+    "drone_rel_coords": "(99.0, -8.0, 245.0)",
     "set_object": "True",
     "regenerate_city": "True",
-    "seed": "408167111842"
+    "seed": "594530475799",
+    "object_id": "BP_Configuration_13_C_UAID_08BFB8191750E53702_1640163914"
 }

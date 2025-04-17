@@ -1,0 +1,26 @@
+[
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "FOUND: False, COORD_CHANGE: (-27, 27, -60)"
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "FOUND: False, COORD_CHANGE: (-6, 6, -15)"
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "FOUND: True, COORD_CHANGE: (0, 0, 0)"
+    ]
+]
