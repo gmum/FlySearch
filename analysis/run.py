@@ -3,7 +3,7 @@ import os
 import json
 
 from PIL import Image
-from typing import Dict, List, Tuple
+from typing import Dict, List, Tuple, Optional
 
 
 class Run:
@@ -58,12 +58,22 @@ class Run:
             tuple_str = f.read()
             return tuple([float(coord) for coord in tuple_str.split()])
 
+    @staticmethod
+    def _load_username(path: pathlib.Path) -> Optional[str]:
+        try:
+            with open(path / 'user.txt') as f:
+                username = f.read().strip()
+                return username
+        except FileNotFoundError:
+            return None
+
     def __init__(self, path: pathlib.Path):
         self.path = path
         self.params = self._load_params(path)
         self.coords = self._load_coords(path)
         self.comments = self._load_comments(path)
         self.object_bbox = self._load_object_bbox(path)
+        self.username = self._load_username(path)
 
     def get_params(self):
         return self.params
@@ -76,6 +86,12 @@ class Run:
 
     def get_object_bbox(self):
         return self.object_bbox
+
+    def get_username(self):
+        return self.username
+
+    def username_recorded(self):
+        return self.username is not None
 
     def get_images(self) -> List[Image]:
         names = [name for name in os.listdir(self.path) if name.endswith(".png")]
