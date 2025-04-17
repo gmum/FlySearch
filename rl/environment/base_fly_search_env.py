@@ -98,7 +98,7 @@ class BaseFlySearchEnv(gym.Env):
         return False
 
     def get_object_bbox(self):
-        return self.client.request(f"vget /object/{self.options["object_id"]}/bounds")
+        return self.client.request(f"vget /object/{self.options['object_id']}/bounds")
 
     def reset(self, seed: Optional[int] = None, options: Dict = None):
         """
