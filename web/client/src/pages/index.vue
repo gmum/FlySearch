@@ -103,7 +103,7 @@
                 is
                 not ideal.
                 You can make at most 10 moves. Your altitude cannot exceed 300 meters. Your search area is
-                100x100m from the drone's starting position.
+                400x400m from the drone's starting position.
               </v-list-item>
             </v-list>
 
