@@ -2,7 +2,7 @@ from scenarios import ForestScenarioMapper
 
 
 class DefaultForestScenarioMapper(ForestScenarioMapper):
-    def __init__(self, drone_alt_min: int, drone_alt_max: int):
+    def __init__(self, drone_alt_min: int, drone_alt_max: int, alpha: float = 0.5):
         super().__init__(
             x_min=15000,
             x_max=35000,
@@ -18,5 +18,6 @@ class DefaultForestScenarioMapper(ForestScenarioMapper):
                  ForestScenarioMapper.ObjectType.TRASH_PILE,
                  ForestScenarioMapper.ObjectType.CAMPSITE,
                  ForestScenarioMapper.ObjectType.BUILDING): 1.0
-            }
+            },
+            alpha=alpha,
         )

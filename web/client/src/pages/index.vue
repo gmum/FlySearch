@@ -102,8 +102,16 @@
                 something which
                 is
                 not ideal.
-                You can make at most 10 moves. Your altitude cannot exceed 300 meters. Your search area is
-                400x400m from the drone's starting position.
+                You can make a limited number of moves, dependent on the scenario. Your altitude cannot exceed 300
+                meters.
+              </v-list-item>
+
+              <v-list-item>
+                Your search area is defined by your initial altitude, as it is guaranteed that the object of
+                interest is within h meters of the drone's starting position in all movement axes, where h is the
+                drone's starting altitude. For example, if you start at 120 meters, it is guaranteed that the object is
+                within a 240x240m rectangle centered on your initial starting position. This essentially means that if
+                there were no buildings or other obstacles, you could see the object from your starting position.
               </v-list-item>
             </v-list>
 

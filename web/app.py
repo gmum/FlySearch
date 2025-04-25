@@ -59,6 +59,7 @@ fs1_trajectory_config_path = pathlib.Path(__file__).parent / "configs" / "fs1"
 fs2_trajectory_config_path = pathlib.Path(__file__).parent / "configs" / "fs2"
 logging_for_trajectory_called = True
 complaints = []
+max_axis_value = 200
 
 
 def log_info_at_finish(suspicious: bool = False):
@@ -198,11 +199,11 @@ async def move(client_uuid: str, action: Action, response: Response):
         x, y = abs_coords[0], abs_coords[1]
         alt = new_coords[2]
 
-        if x > 200 or y > 200 or alt > 300:
+        if x > max_axis_value or y > max_axis_value or alt > 300:
             move_counter -= 1
             response.status_code = status.HTTP_400_BAD_REQUEST
 
-            if x > 200 or y > 200:
+            if x > max_axis_value or y > max_axis_value:
                 return {"user_error": "Coordinates out of bounds"}
 
             response.status_code = status.HTTP_400_BAD_REQUEST
@@ -285,6 +286,7 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
     global current_client_uuid
     global logging_for_trajectory_called
     global complaints
+    global max_axis_value
 
     if client_uuid != current_client_uuid:
         response.status_code = status.HTTP_401_UNAUTHORIZED
@@ -298,18 +300,22 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
 
     if fs1:
         if scenario_mapper_needs_change:
-            csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
+            # FIXME !!!
+            # csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
+            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5)
             csm.create_random_scenario(42)
         env.set_throw_if_hard_config(True)
         if csm.empty():
-            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30)
+            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5)
     else:
         if scenario_mapper_needs_change:
-            csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
+            # csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
+            # FIXME !!!
+            csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95)
             csm.create_random_scenario(42)
         env.set_throw_if_hard_config(False)
         if csm.empty():
-            csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
+            csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95)
 
     retry = 25
 
@@ -331,6 +337,8 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
     coordinates = [real_coords]
     opencv_images = [last_observation["image"]]
     actions = []
+    altitude = last_observation["altitude"]
+    max_axis_value = altitude
 
     logging_for_trajectory_called = False
     complaints = []
@@ -372,10 +380,14 @@ async def ping(request: PingRequest, response: Response):
     print(f"New client connected: {request.client_name} ({request.client_uuid})", file=sys.stderr)
 
     if fs1:
-        csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
+        # FIXME !!!
+        csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5)
+        # csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
         csm.create_random_scenario(42)  # This is to remove the first duplicate. Yes.
     else:
-        csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
+        # FIXME !!!
+        # csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
+        csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95)
         csm.create_random_scenario(42)  # ^ As above
 
     return

@@ -16,7 +16,8 @@ class ForestScenarioMapper(BaseScenarioMapper):
         ANOMALY = 5
 
     def __init__(self, object_probs: dict[ObjectType | Tuple, float], x_min: float, x_max: float, y_min: float,
-                 y_max: float, z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float):
+                 y_max: float, z_min: float, z_max: float, drone_z_rel_min: float, drone_z_rel_max: float,
+                 alpha: float = 0.5):
         super().__init__(object_probs, ForestScenarioMapper.ObjectType)
 
         self.x_min = x_min
@@ -27,6 +28,7 @@ class ForestScenarioMapper(BaseScenarioMapper):
         self.z_max = z_max
         self.drone_z_rel_min = drone_z_rel_min
         self.drone_z_rel_max = drone_z_rel_max
+        self.alpha = alpha
 
         self._validate_object_probs()
 
@@ -39,7 +41,7 @@ class ForestScenarioMapper(BaseScenarioMapper):
 
         drone_z = self.sample_value_between(object_z + self.drone_z_rel_min, object_z + self.drone_z_rel_max)
 
-        drone_x, drone_y = ForestScenarioMapper.sample_drone_position(object_x, object_y, drone_z)
+        drone_x, drone_y = ForestScenarioMapper.sample_drone_position(object_x, object_y, drone_z, alpha=self.alpha)
 
         drone_x = drone_x - object_x
         drone_y = drone_y - object_y

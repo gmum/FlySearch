@@ -31,11 +31,12 @@ class CityScenarioMapper(BaseScenarioMapper):
     def __init__(self, object_probs: dict[ObjectType | Tuple, float], drone_z_rel_min: float, drone_z_rel_max: float,
                  x_min: float = -math.inf, x_max: float = math.inf,
                  y_min: float = -math.inf,
-                 y_max: float = math.inf):
+                 y_max: float = math.inf, alpha: float = 0.5):
         super().__init__(object_probs, CityScenarioMapper.ObjectType)
 
         self.drone_z_rel_min = drone_z_rel_min
         self.drone_z_rel_max = drone_z_rel_max
+        self.alpha = alpha
 
         possible_location_csv_path = os.getenv("LOCATIONS_CITY_PATH")
 
@@ -69,7 +70,7 @@ class CityScenarioMapper(BaseScenarioMapper):
 
         drone_z = self.sample_value_between(object_z + self.drone_z_rel_min, object_z + self.drone_z_rel_max)
 
-        drone_x, drone_y = CityScenarioMapper.sample_drone_position(object_x, object_y, drone_z)
+        drone_x, drone_y = CityScenarioMapper.sample_drone_position(object_x, object_y, drone_z, alpha=self.alpha)
 
         drone_x = drone_x - object_x
         drone_y = drone_y - object_y

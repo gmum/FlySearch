@@ -31,15 +31,15 @@ class BaseScenarioMapper:
                 return obj_type
 
     @staticmethod
-    def sample_drone_position(object_x, object_y, drone_z):
+    def sample_drone_position(object_x, object_y, drone_z, alpha=0.5):
         if drone_z < 0:
             raise ValueError("Drone height must be positive")
 
-        drone_x_min = object_x - 0.5 * drone_z
-        drone_x_max = object_x + 0.5 * drone_z
+        drone_x_min = object_x - alpha * drone_z
+        drone_x_max = object_x + alpha * drone_z
 
-        drone_y_min = object_y - 0.5 * drone_z
-        drone_y_max = object_y + 0.5 * drone_z
+        drone_y_min = object_y - alpha * drone_z
+        drone_y_max = object_y + alpha * drone_z
 
         drone_x = BaseScenarioMapper.sample_value_between(drone_x_min, drone_x_max)
         drone_y = BaseScenarioMapper.sample_value_between(drone_y_min, drone_y_max)
