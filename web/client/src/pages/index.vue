@@ -27,9 +27,9 @@
         variant="outlined"
         color="error"
         class="mr-5"
-        @click="resetEnv"
         :loading="connecting"
-        :disabled="!client_name || client_name.length < 3"
+        :disabled="!client_name || client_name.length < 3 || (connected && !image_b64)"
+        @click="resetEnv"
       >
         <span v-if="connected">Start a new game</span>
         <span v-else>Connect to server</span>
@@ -153,8 +153,12 @@
               <div :class="collision === true ? 'text-red' : ''">
                 Collided on the last action: {{ collision }}
               </div>
-              <div :class="moves_left <= 1 ? 'text-red' : ''">Remaining moves: {{ moves_left }}</div>
-              <div :class="status === 'ok' || status === null ? '' : 'text-red'">Status: {{ status }}</div>
+              <div :class="moves_left <= 1 ? 'text-red' : ''">
+                Remaining moves: {{ moves_left }}
+              </div>
+              <div :class="status === 'ok' || status === null ? '' : 'text-red'">
+                Status: {{ status }}
+              </div>
             </div>
 
             <v-form>
@@ -279,18 +283,78 @@
         </v-card>
       </v-container>
     </v-main>
-    <v-overlay
+    <v-dialog
       v-model="error"
       class="align-center justify-center"
+      persistent
+      max-width="500"
     >
-      <v-alert
+      <v-card
+        prepend-icon="mdi-alert-circle"
         :value="error"
-        type="error"
         title="Error occurred!"
-        :text="error_message"
         min-width="500"
-      />
-    </v-overlay>
+      >
+        <v-card-text>
+          <div>{{ error_message }}</div>
+          <div class="mt-4">
+            Try to reload the app in 3 minutes or contact the developers if the problem persists.
+          </div>
+        </v-card-text>
+        <v-card-actions>
+          <v-btn
+            variant="text"
+            color="error"
+            @click="reload"
+          >
+            Reload app
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
+    <v-fab
+      app
+      color="surface-variant"
+      extended
+      prepend-icon="mdi-bug"
+      text="Report issue"
+      variant="outlined"
+      :disabled="!connected"
+      @click="report_issue = true"
+    />
+    <v-dialog
+      v-model="report_issue"
+      class="align-center justify-center"
+      max-width="800"
+    >
+      <v-card>
+        <v-toolbar>
+          <v-btn
+            icon="mdi-close"
+            @click="report_issue = false"
+          />
+          <v-toolbar-title>Report an issue</v-toolbar-title>
+        </v-toolbar>
+        <v-card-text>
+          <v-textarea
+            v-model="issue_description"
+            label="Description"
+            variant="outlined"
+            :disabled="report_sending"
+          />
+        </v-card-text>
+        <v-card-actions>
+          <v-btn
+            variant="text"
+            color="primary"
+            :loading="report_sending"
+            @click="send_report"
+          >
+            Send
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
   </v-app>
 </template>
 
@@ -323,6 +387,30 @@ const last_standardised_scenario = ref(false);
 
 const error = ref(false);
 const error_message = ref('');
+const report_issue = ref(false);
+const issue_description = ref('');
+const report_sending = ref(false);
+
+function reload() {
+  window.location.reload();
+}
+
+function send_report() {
+  report_sending.value = true;
+  axios.post(api_base + '/complain', {
+    'report': issue_description.value,
+  }, {params: {'client_uuid': client_uuid}})
+    .then(() => {
+      report_issue.value = false;
+      report_sending.value = false;
+      issue_description.value = '';
+    })
+    .catch((err) => {
+      error.value = true;
+      error_message.value = err.message;
+      console.error(err);
+    });
+}
 
 function cleanStatus() {
   image_b64.value = null;

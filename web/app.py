@@ -393,8 +393,12 @@ async def ping(request: PingRequest, response: Response):
     return
 
 
+class ReportRequest(BaseModel):
+    report: str
+
+
 @app.post("/complain", status_code=201)
-async def complain(client_uuid: str, complaint: str, response: Response):
+async def complain(client_uuid: str, request: ReportRequest, response: Response):
     global current_client_uuid
     global last_observation
     global complaints
@@ -407,7 +411,8 @@ async def complain(client_uuid: str, complaint: str, response: Response):
         response.status_code = status.HTTP_400_BAD_REQUEST
         return
 
-    complaints.append(complaint)
+    print(f"Complaint from {current_client_uuid}: {request.report}", file=sys.stderr)
+    complaints.append(request.report)
 
 
 if __name__ == "__main__":
