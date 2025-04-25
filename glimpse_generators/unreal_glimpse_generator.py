@@ -51,6 +51,19 @@ class UnrealGlimpseGenerator:
     def disconnect(self):
         self.client.disconnect()
 
+    def get_unreal_camera_coordinates(self) -> Tuple[float, float, float]:
+        current = self.client.request('vget /camera/1/location')
+
+        if type(current) == str:
+            current = current.split(" ")
+            assert len(current) == 3
+            current = tuple(map(float, current))
+        elif type(current) != tuple:
+            raise ValueError("Unexpected type for current position received from UnrealCV. Got: ", type(current),
+                             current)
+
+        return current
+
     def get_relative_from_start(self):
         current = self.client.request('vget /camera/1/location')
 
