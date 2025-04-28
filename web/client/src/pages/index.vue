@@ -28,7 +28,7 @@
         color="error"
         class="mr-5"
         :loading="connecting"
-        :disabled="!client_name || client_name.length < 3 || (connected && !image_b64)"
+        :disabled="!client_name || client_name.length < 3"
         @click="resetEnv"
       >
         <span v-if="connected">Start a new game</span>
