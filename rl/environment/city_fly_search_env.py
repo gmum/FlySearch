@@ -57,7 +57,16 @@ class CityFlySearchEnv(BaseFlySearchEnv):
                 in_building = (points_count == 0)
 
                 if in_building:
-                    raise DroneCannotSeeTargetException()
+                    raise DroneCannotSeeTargetException()  # FIXME: This is a bad name for the exception
+
+                points_count = int(self.glimpse_generator.client.request(
+                    f"/object/{object_id}/cansee_points {cansee_points_coord_str}"
+                ))
+
+                weird_object_placement = (points_count == 0)
+
+                if weird_object_placement:
+                    raise DroneCannotSeeTargetException()  # FIXME: As above
 
             city_generator_class: PCGClass = self.classes_to_ids["CITY"]
             city_generator_class.move_and_show(*options["object_coords"], seed)
