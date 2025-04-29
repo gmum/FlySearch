@@ -2,7 +2,7 @@ from scenarios import CityScenarioMapper
 
 
 class DefaultCityScenarioMapper(CityScenarioMapper):
-    def __init__(self, drone_alt_min, drone_alt_max, alpha=0.5):
+    def __init__(self, drone_alt_min, drone_alt_max, alpha=0.5, random_sun=False):
         super().__init__(
             object_probs={
                 (CityScenarioMapper.ObjectType.POLICE_CAR,
@@ -33,4 +33,5 @@ class DefaultCityScenarioMapper(CityScenarioMapper):
             drone_z_rel_min=drone_alt_min * 100,
             drone_z_rel_max=drone_alt_max * 100,
             alpha=alpha,
+            random_sun=random_sun,
         )

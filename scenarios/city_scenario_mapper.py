@@ -31,12 +31,13 @@ class CityScenarioMapper(BaseScenarioMapper):
     def __init__(self, object_probs: dict[ObjectType | Tuple, float], drone_z_rel_min: float, drone_z_rel_max: float,
                  x_min: float = -math.inf, x_max: float = math.inf,
                  y_min: float = -math.inf,
-                 y_max: float = math.inf, alpha: float = 0.5):
+                 y_max: float = math.inf, alpha: float = 0.5, random_sun: bool = False):
         super().__init__(object_probs, CityScenarioMapper.ObjectType)
 
         self.drone_z_rel_min = drone_z_rel_min
         self.drone_z_rel_max = drone_z_rel_max
         self.alpha = alpha
+        self.random_sun = random_sun
 
         possible_location_csv_path = os.getenv("LOCATIONS_CITY_PATH")
 
@@ -79,15 +80,24 @@ class CityScenarioMapper(BaseScenarioMapper):
         drone_y = int(drone_y / 100)
         drone_z = int(drone_z / 100)
 
-        return {
+        return_dict = {
             "object_coords": (object_x, object_y, object_z),
             "object_rot": (object_rot_p, object_rot_q, object_rot_r),
             "object_type": object_type,
             "drone_rel_coords": (drone_x, drone_y, drone_z),
             "set_object": True,
             "regenerate_city": True,
-            "seed": seed
+            "seed": seed,
         }
+
+        if self.random_sun:
+            sun_y = self.sample_value_between(-90, -10)
+            sun_z = self.sample_value_between(0, 360)
+
+            return_dict["sun_y"] = sun_y
+            return_dict["sun_z"] = sun_z
+
+        return return_dict
 
     def get_description(self, object_type):
         if object_type != CityScenarioMapper.ObjectType.ANOMALY:

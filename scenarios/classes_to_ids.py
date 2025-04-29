@@ -39,6 +39,9 @@ def get_classes_to_object_classes(client):
     forest_env = ForestEnvPCGClass("PCGDemo_ForestBP_C_UAID_E04F43E67EF62B7D01_2006191743", client)
 
     # City
+    city_sun = ForestSunClass("DirectionalLight2",
+                              client=client)  # FIXME: Naming is a relic from the times where only forest had modifiable sun
+
     police_car = BaseObjectClass(["BP_vehCar_vehicle13_C_UAID_08BFB8191750913902_2094620511"], client=client)
     beige_sport_car = BaseObjectClass(["BP_vehCar_vehicle13_C_UAID_08BFB8191750913902_2094620511"], client=client)
     blue_sport_car = BaseObjectClass(["BP_vehCar_vehicle06_C_UAID_08BFB8191750B53A02_2077484681"], client=client)
@@ -86,6 +89,7 @@ def get_classes_to_object_classes(client):
         ForestScenarioMapper.ObjectType.ANOMALY: forest_anomaly,
 
         "SUN": sun,
+        "CITY_SUN": city_sun,
         "FOREST": forest_env,
 
         CityScenarioMapper.ObjectType.POLICE_CAR: police_car,

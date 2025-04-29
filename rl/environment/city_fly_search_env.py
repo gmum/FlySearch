@@ -56,13 +56,17 @@ class CityFlySearchEnv(BaseFlySearchEnv):
 
                 in_building = (points_count == 0)
 
+                object_unreal_coordinates = options["object_coords"]
+                object_unreal_coordinates = list(object_unreal_coordinates)
+                object_unreal_coordinates[2] = 500 * 100.0
+                cansee_points_coord_str = ":".join(map(str, object_unreal_coordinates))
+
                 if in_building:
                     raise DroneCannotSeeTargetException()  # FIXME: This is a bad name for the exception
 
                 points_count = int(self.glimpse_generator.client.request(
-                    f"/object/{object_id}/cansee_points {cansee_points_coord_str}"
+                    f"vget /object/{object_id}/cansee_points {cansee_points_coord_str}"
                 ))
-
                 weird_object_placement = (points_count == 0)
 
                 if weird_object_placement:
@@ -70,6 +74,12 @@ class CityFlySearchEnv(BaseFlySearchEnv):
 
             city_generator_class: PCGClass = self.classes_to_ids["CITY"]
             city_generator_class.move_and_show(*options["object_coords"], seed)
+
+        if "sun_y" in options and "sun_z" in options:
+            sun_y = options["sun_y"]
+            sun_z = options["sun_z"]
+            sun_class: ForestSunClass = self.classes_to_ids["CITY_SUN"]
+            sun_class.set_sun_rotation(sun_y, sun_z)
 
         if 'FIRE' in str(options["object_type"]):
             sleep(10)  # Wait for the fire to start burning -- in case it's needed

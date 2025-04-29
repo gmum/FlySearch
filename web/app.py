@@ -22,7 +22,7 @@ from scenarios import DefaultCityScenarioMapper, MimicScenarioMapper
 app = FastAPI()
 env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
 # env = MockFlySearchEnv()
-csm = DefaultCityScenarioMapper(drone_alt_max=250, drone_alt_min=200)
+csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
 fs1 = False
 
 app.add_middleware(
@@ -302,20 +302,20 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
         if scenario_mapper_needs_change:
             # FIXME !!!
             # csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
-            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5)
+            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5, random_sun=False)
             csm.create_random_scenario(42)
         env.set_throw_if_hard_config(True)
         if csm.empty():
-            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5)
+            csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5, random_sun=False)
     else:
         if scenario_mapper_needs_change:
             # csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
             # FIXME !!!
-            csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95)
+            csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
             csm.create_random_scenario(42)
         env.set_throw_if_hard_config(False)
         if csm.empty():
-            csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95)
+            csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
 
     retry = 25
 
@@ -381,13 +381,13 @@ async def ping(request: PingRequest, response: Response):
 
     if fs1:
         # FIXME !!!
-        csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5)
+        csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5, random_sun=False)
         # csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
         csm.create_random_scenario(42)  # This is to remove the first duplicate. Yes.
     else:
         # FIXME !!!
         # csm = MimicScenarioMapper(fs2_trajectory_config_path, "*")
-        csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95)
+        csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
         csm.create_random_scenario(42)  # ^ As above
 
     return
