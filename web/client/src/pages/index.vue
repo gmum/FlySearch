@@ -130,25 +130,48 @@
             is less than 10m above target
           </v-card-subtitle>
           <v-card-text>
-            <div class="d-flex flex-column align-center mt-1 mb-6">
-              <v-img
-                :width="500"
-                :height="500"
-                :src="'data:image/jpeg;base64,' + image_b64"
-                class="mb-2"
-              >
-                <template #placeholder>
-                  <div class="d-flex flex-column align-center justify-center fill-height">
-                    <div>
-                      <v-progress-circular
-                        color="grey"
-                        indeterminate
-                        size="100"
-                      />
-                    </div>
+            <div class="d-flex flex-column align-center mt-1 mb-10">
+              <div class="d-flex flex-row align-center justify-center">
+                <div class="text-center">
+                  <div v-if="image_b64">
+                    Camera view
                   </div>
-                </template>
-              </v-img>
+                  <v-img
+                    :width="500"
+                    :height="500"
+                    :src="'data:image/jpeg;base64,' + image_b64"
+                    class="mb-2"
+                  >
+                    <template #placeholder>
+                      <div class="d-flex flex-column align-center justify-center fill-height">
+                        <div>
+                          <v-progress-circular
+                            color="grey"
+                            indeterminate
+                            size="100"
+                          />
+                        </div>
+                      </div>
+                    </template>
+                  </v-img>
+                </div>
+                <div
+                  v-if="loaded_mode === modes[1]"
+                  class="text-center ml-6"
+                >
+                  <div v-if="image_b64">
+                    What the target looks like approximately.
+                    <br>
+                    May differ slightly,<br>or have multiple different variations.
+                  </div>
+                  <v-img
+                    v-if="image_b64"
+                    :width="300"
+                    :height="300"
+                    :src="'/targets/' + target_image + '.png.jpg'"
+                  />
+                </div>
+              </div>
               <div>Current altitude: {{ altitude }}</div>
               <div :class="collision === true ? 'text-red' : ''">
                 Collided on the last action: {{ collision }}
@@ -366,6 +389,7 @@ const axios = inject('axios');
 const api_base = '/api';
 const modes = ['FS-1', 'FS-2']
 const selected_mode = ref(modes[0]);
+const loaded_mode = ref(modes[0]);
 
 const client_uuid = crypto.randomUUID().toString();
 const client_name = ref(null);
@@ -379,6 +403,7 @@ const image_b64 = ref(null);
 const collision = ref(null);
 const altitude = ref(null);
 const target = ref(null);
+const target_image = ref('');
 const started = ref(false);
 const won = ref(null);
 const moves_left = ref(null);
@@ -458,6 +483,7 @@ function getStatus() {
       x.value = 0
       y.value = 0
       z.value = 0
+      loaded_mode.value = selected_mode.value;
     })
     .catch((err) => {
       error.value = true;
@@ -484,6 +510,7 @@ function resetEnv() {
     .then((response) => {
       const data = response.data
       target.value = data.target;
+      target_image.value = data.target.replace('a ', '').replaceAll(' ', '_');
       moves_left.value = data.moves_left;
       status.value = 'ok';
       getStatus();

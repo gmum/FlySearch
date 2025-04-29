@@ -287,6 +287,7 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
     global logging_for_trajectory_called
     global complaints
     global max_axis_value
+    global last_ping
 
     if client_uuid != current_client_uuid:
         response.status_code = status.HTTP_401_UNAUTHORIZED
@@ -342,6 +343,8 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
 
     logging_for_trajectory_called = False
     complaints = []
+
+    last_ping = time.time()
 
     return {
         'last_standardised_scenario': csm.empty(),
