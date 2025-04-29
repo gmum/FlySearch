@@ -56,13 +56,13 @@ class CityFlySearchEnv(BaseFlySearchEnv):
 
                 in_building = (points_count == 0)
 
+                if in_building:
+                    raise DroneCannotSeeTargetException()  # FIXME: This is a bad name for the exception
+
                 object_unreal_coordinates = options["object_coords"]
                 object_unreal_coordinates = list(object_unreal_coordinates)
                 object_unreal_coordinates[2] = 500 * 100.0
                 cansee_points_coord_str = ":".join(map(str, object_unreal_coordinates))
-
-                if in_building:
-                    raise DroneCannotSeeTargetException()  # FIXME: This is a bad name for the exception
 
                 points_count = int(self.glimpse_generator.client.request(
                     f"vget /object/{object_id}/cansee_points {cansee_points_coord_str}"
