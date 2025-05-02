@@ -2,7 +2,7 @@ from argparse import ArgumentParser, Namespace
 from typing import Dict
 
 from arg_resolvers import BaseArgResolver
-from conversation import GPTFactory, InternFactory, VLLMFactory
+from conversation import GPTFactory, VLLMFactory
 from conversation.anthropic_factory import AnthropicFactory
 from conversation.gemini_factory import GeminiFactory
 
@@ -14,8 +14,6 @@ class ConversationFactoryResolver(BaseArgResolver):
     def get_conversation_factory(self, args: Namespace):
         if args.model == "gpt-4o":
             return GPTFactory()
-        elif args.model == "intern":
-            return InternFactory()
         elif 'gemini' in args.model:
             return GeminiFactory(args.model)
         elif args.model.startswith('anthropic-'):
