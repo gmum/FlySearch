@@ -32,6 +32,8 @@ class ScenarioArgResolver(BaseArgResolver):
 
         parser.add_argument("--alpha", type=float, required=False, default=0.5)
 
+        parser.add_argument("--show_class_image", type=str, required=False, default="false")
+
     def get_scenario_mapper(self, args: Namespace) -> BaseScenarioMapper:
         if args.scenario_type == "mimic":
             if args.height_min is not None or args.height_max is not None or args.alpha is not None:
@@ -51,6 +53,9 @@ class ScenarioArgResolver(BaseArgResolver):
 
     def get_environment(self, scenario_mapper: BaseScenarioMapper, args: Namespace) -> object:
         if scenario_mapper.get_object_type_cls() is ForestScenarioMapper.ObjectType:
+            if "true" in args.show_class_image.lower():
+                raise NotImplementedError("Class image is not supported for forest scenarios")
+
             env = ForestFlySearchEnv()
 
             if not args.line_of_sight_assured:
@@ -58,7 +63,9 @@ class ScenarioArgResolver(BaseArgResolver):
 
             return env
         elif scenario_mapper.get_object_type_cls() is CityScenarioMapper.ObjectType:
-            env = CityFlySearchEnv()
+            show_class_image = "true" in args.show_class_image.lower()
+
+            env = CityFlySearchEnv(give_class_image=show_class_image)
 
             line_of_sight_assured = "true" in args.line_of_sight_assured.lower()
 
