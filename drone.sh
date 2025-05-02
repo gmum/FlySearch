@@ -27,11 +27,13 @@ python3 drone.py \
 --log_on_wandb True \
 --wandb_project_name "WTLN-RF-1" \
 --log_directory "all_logs" \
---run_name "Crap3" \
+--run_name "Test8" \
 --dummy_first False \
 --forgiveness 5 \
 --glimpses 20 \
 --number_of_runs 1 \
 --agent "simple_llm" \
 --line_of_sight_assured "false" \
---alpha 0.95
+--alpha 0.95 \
+--show_class_image "true" \
+--prompt_type "fs2"
