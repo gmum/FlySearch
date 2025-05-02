@@ -10,8 +10,10 @@ from rl.environment import BaseFlySearchEnv, DroneCannotSeeTargetException
 
 
 class CityFlySearchEnv(BaseFlySearchEnv):
-    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True):
-        super().__init__(resolution=resolution, max_altitude=max_altitude, throw_if_hard_config=throw_if_hard_config)
+    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True,
+                 give_class_image: bool = False):
+        super().__init__(resolution=resolution, max_altitude=max_altitude, throw_if_hard_config=throw_if_hard_config,
+                         give_class_image=give_class_image)
 
     def get_client(self) -> UnrealClientWrapper:
         city_binary_path = os.getenv("CITY_BINARY_PATH")

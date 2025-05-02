@@ -1,6 +1,6 @@
 import numpy as np
 
-from typing import Dict
+from typing import Dict, Optional
 
 from conversation import Conversation, Role
 from misc import opencv_to_pil
@@ -32,13 +32,23 @@ class SimpleLLMAgent(BaseAgent):
             "found": 0
         }
 
-    def _act(self, image: np.ndarray, altitude: np.ndarray, collision: int, **_):
+    def _act(self, image: np.ndarray, altitude: np.ndarray, collision: int, **kwargs):
         image = opencv_to_pil(image)
         collision = True if collision == 1 else False
         self.conversation.begin_transaction(Role.USER)
 
         if self.uninitialised:
             self.conversation.add_text_message(self.prompt)
+
+            class_image: Optional[np.ndarray] = kwargs.get("class_image", None)
+
+            if class_image is not None:
+                self.conversation.add_text_message(
+                    "The object you're looking for is similar to this. This is NOT the drone's current view.")
+                self.conversation.add_image_message(
+                    opencv_to_pil(class_image)
+                )
+
             self.uninitialised = False
 
         if collision:

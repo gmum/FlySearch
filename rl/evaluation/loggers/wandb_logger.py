@@ -1,3 +1,4 @@
+import numpy as np
 import wandb
 
 from typing import Dict, Optional
@@ -24,6 +25,12 @@ class WandbLogger(BaseLogger):
         self.latest_history = []
 
     def log(self, evaluation_state: EvaluationState):
+        object_class_image: Optional[np.ndarray] = evaluation_state.observation.get("class_image", None)
+
+        if object_class_image is not None and len(self.images) == 0:
+            converted = opencv_to_pil(object_class_image)
+            self.images.append(converted)
+
         image = evaluation_state.observation["image"]
         image = opencv_to_pil(image)
 

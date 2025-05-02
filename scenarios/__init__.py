@@ -9,3 +9,4 @@ from .default_forest_anomaly_scenario_mapper import DefaultForestAnomalyScenario
 
 from .default_city_scenario_mapper import DefaultCityScenarioMapper
 from .default_city_anomaly_scenario_mapper import DefaultCityAnomalyScenarioMapper
+from .classes_to_images import classes_to_images

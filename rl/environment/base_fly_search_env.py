@@ -6,7 +6,7 @@ from typing import Optional, Dict, Tuple, List
 from glimpse_generators import UnrealClientWrapper, UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
 from misc import pil_to_opencv
 
-from scenarios import get_classes_to_object_classes
+from scenarios import get_classes_to_object_classes, classes_to_images
 from scenarios.object_classes import BaseObjectClass
 
 
@@ -47,17 +47,24 @@ class BaseFlySearchEnv(gym.Env):
         """
         raise NotImplementedError()
 
-    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True):
+    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True,
+                 give_class_image: bool = False):
         super().__init__()
 
         # Observations are dictionaries with the agent's and the target's location.
         # Each location is encoded as an element of {0, ..., `size`-1}^2
+
+        obs_dict = {
+            "image": gym.spaces.Box(0, 255, shape=(resolution, resolution, 3), dtype=np.uint8),
+            "altitude": gym.spaces.Box(0, max_altitude, shape=(1,), dtype=np.int32),
+            "collision": gym.spaces.Discrete(2),  # 0 if no collision, 1 if collision
+        }
+
+        if give_class_image:
+            obs_dict["class_image"] = gym.spaces.Box(0, 255, shape=(resolution, resolution, 3), dtype=np.uint8)
+
         self.observation_space = gym.spaces.Dict(
-            {
-                "image": gym.spaces.Box(0, 255, shape=(resolution, resolution, 3), dtype=np.uint8),
-                "altitude": gym.spaces.Box(0, max_altitude, shape=(1,), dtype=np.int32),
-                "collision": gym.spaces.Discrete(2),  # 0 if no collision, 1 if collision
-            }
+            obs_dict
         )
 
         self.action_space = gym.spaces.Dict(
@@ -66,6 +73,8 @@ class BaseFlySearchEnv(gym.Env):
                 "coordinate_change": gym.spaces.Box(-max_altitude, max_altitude, shape=(3,), dtype=np.int32),
             }
         )
+
+        self.resolution = resolution
 
         self.client: Optional[UnrealClientWrapper] = None
         self.glimpse_generator: Optional[UnrealGlimpseGenerator] = None
@@ -78,6 +87,8 @@ class BaseFlySearchEnv(gym.Env):
         self.started: bool = False
         self.resources_initialized: bool = False
         self.throw_if_hard_config: bool = throw_if_hard_config
+
+        self.give_class_image: bool = give_class_image
 
     def set_throw_if_hard_config(self, throw_if_hard_config: bool) -> None:
         self.throw_if_hard_config = throw_if_hard_config
@@ -141,12 +152,20 @@ class BaseFlySearchEnv(gym.Env):
 
         self.started = True
 
-        return {
+        obs = {
             "image": opencv_image,
             "altitude": altitude,
             "collision": 0,
-        }, {"real_position": self.relative_position,
-            "object_bbox": self.get_object_bbox()}
+        }
+
+        if self.give_class_image:
+            class_image = classes_to_images[self.options["object_type"]]
+            class_image = class_image.resize((self.resolution, self.resolution))
+            opencv_class_image = pil_to_opencv(class_image)
+            obs["class_image"] = opencv_class_image
+
+        return obs, {"real_position": self.relative_position,
+                     "object_bbox": self.get_object_bbox()}
 
     def step(self, action: dict):
         if not self.started:
@@ -190,6 +209,12 @@ class BaseFlySearchEnv(gym.Env):
             "altitude": np.array([new_real_position[2]]),
             "collision": 1 if crash else 0,
         }
+
+        if self.give_class_image:
+            class_image = classes_to_images[self.options["object_type"]]
+            class_image = class_image.resize((self.resolution, self.resolution))
+            opencv_class_image = pil_to_opencv(class_image)
+            observation["class_image"] = opencv_class_image
 
         return observation, reward, False, False, {"real_position": new_real_position,
                                                    "object_bbox": self.get_object_bbox()}

@@ -12,9 +12,17 @@ class LocalFSLogger(BaseLogger):
         self.log_dir.mkdir(parents=True, exist_ok=False)
 
     def log(self, evaluation_state: EvaluationState):
+        class_image = evaluation_state.observation.get("class_image", None)
+        modifier = 0
+
+        if class_image is not None:
+            class_image = opencv_to_pil(class_image)
+            class_image.save(self.log_dir / f"0.png")
+            modifier = 1
+
         image = evaluation_state.observation["image"]
         image = opencv_to_pil(image)
-        image.save(self.log_dir / f"{evaluation_state.observation_number}.png")
+        image.save(self.log_dir / f"{evaluation_state.observation_number + modifier}.png")
 
         writable_config = {k: str(v) for k, v in evaluation_state.scenario.items()}
 
