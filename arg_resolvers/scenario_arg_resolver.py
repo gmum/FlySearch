@@ -34,7 +34,11 @@ class ScenarioArgResolver(BaseArgResolver):
 
         parser.add_argument("--show_class_image", type=str, required=False, default="false")
 
+        parser.add_argument("--random_sun", type=str, required=False, default="false")
+
     def get_scenario_mapper(self, args: Namespace) -> BaseScenarioMapper:
+        random_sun = "true" in args.random_sun.lower()
+
         if args.scenario_type == "mimic":
             if args.height_min is not None or args.height_max is not None or args.alpha is not None:
                 raise ValueError("Height min, max and alpha are not supported for mimic scenarios")
@@ -45,9 +49,11 @@ class ScenarioArgResolver(BaseArgResolver):
             raise ValueError("Mimic arguments are only supported for mimic scenarios")
 
         if args.scenario_type == "forest_random":
+            if random_sun:
+                raise ValueError("Random sun keyword is not supported for forest scenarios; it is always true")
             return DefaultForestScenarioMapper(args.height_min, args.height_max, args.alpha)
         elif args.scenario_type == "city_random":
-            return DefaultCityScenarioMapper(args.height_min, args.height_max, args.alpha)
+            return DefaultCityScenarioMapper(args.height_min, args.height_max, args.alpha, random_sun=random_sun)
         else:
             raise ValueError(f"Unknown scenario type: {args.scenario_type}")
 
