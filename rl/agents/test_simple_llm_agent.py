@@ -1,7 +1,6 @@
-import pytest
 import numpy as np
+import pytest
 
-from navigators import GridDroneNavigator
 from conversation import Conversation
 from rl.agents.simple_llm_agent import SimpleLLMAgent
 
@@ -38,11 +37,10 @@ class ConversationMock(Conversation):
 class TestSimpleLLMAgent:
     def test_agent_passes_data_correctly_and_returns_action(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
         image[:, :, 0] = 255
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt")
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
         action = agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
@@ -57,10 +55,9 @@ class TestSimpleLLMAgent:
 
     def test_prompt_is_not_sent_after_first_step(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt123", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt123")
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
         agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
@@ -75,20 +72,18 @@ class TestSimpleLLMAgent:
 
     def test_agent_throws_if_asked_to_correct_when_uninitialised(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt")
 
         with pytest.raises(ValueError):
             agent.correct_previous_action({"reason": "too_high", "alt_before": 0, "alt_after": 0, "alt_max": 0})
 
     def test_agent_corrects_previous_action_for_altitude(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt")
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
         agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
@@ -107,10 +102,9 @@ class TestSimpleLLMAgent:
 
     def test_agent_corrects_previous_action_for_recklessness(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt")
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
         agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
@@ -128,10 +122,9 @@ class TestSimpleLLMAgent:
 
     def test_agent_corrects_previous_action_for_out_of_bounds(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt")
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
 
         agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
@@ -149,11 +142,10 @@ class TestSimpleLLMAgent:
 
     def test_properly_returns_found(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
-        conversation.set_returned_message("asdasd<action></action> FOUND!!!!!")
+        agent = SimpleLLMAgent(conversation, "prompt")
+        conversation.set_returned_message("asdfsdf<action>FOUND</action>")
 
         action = agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
@@ -162,15 +154,14 @@ class TestSimpleLLMAgent:
 
     def test_can_return_found_for_correction(self):
         conversation = ConversationMock()
-        navigator = GridDroneNavigator()
         image = np.zeros((100, 100, 3), dtype=np.uint8)
 
-        agent = SimpleLLMAgent(conversation, "prompt", navigator)
+        agent = SimpleLLMAgent(conversation, "prompt")
 
         conversation.set_returned_message("<action>(32, 555, -8)</action>")
         agent.sample_action({"image": image, "altitude": np.array([4]), "collision": 0})
 
-        conversation.set_returned_message("f o u n d")
+        conversation.set_returned_message("found")
         action = agent.correct_previous_action({"reason": "too_high", "alt_before": 4, "alt_after": 20, "alt_max": 10})
 
         assert action == {"found": 1, "coordinate_change": (0, 0, 0)}

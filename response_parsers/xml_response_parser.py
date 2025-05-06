@@ -1,48 +1,43 @@
 import re
-
-from response_parsers.abstract_response_parser import AbstractResponseParser
+from dataclasses import dataclass
 from typing import Tuple
 
 
-class XMLResponseParser(AbstractResponseParser):
-    def __init__(self):
-        super().__init__()
+class ParsingError(ValueError):
+    pass
 
-    def get_coordinates(self, response: str) -> Tuple[float, float, float, float] | None:
-        response = response.lower()
 
-        try:
-            response = response.replace("\n", "")
-            response = re.findall(r"<request>.*</request>", response, flags=re.S)[0]
-            response = response.removeprefix("<request>")
-            response = response.removesuffix("</request>")
+@dataclass
+class ModelResponse:
+    found: bool = False
+    move: Tuple[float, float, float] = (0, 0, 0)
 
-            response = response.split("and")
-            response = [coord.strip() for coord in response]
 
-            x1, y1 = response[0][1:-1].split(",")
-            x2, y2 = response[1][1:-1].split(",")
+XML_RESPONSE_PATTERN = re.compile(r'^.*?<action>(.*?)</action>.*$', flags=re.DOTALL)
 
-            x1 = float(x1.strip())
-            y1 = float(y1.strip())
-            x2 = float(x2.strip())
-            y2 = float(y2.strip())
 
-            return x1, y1, x2, y2
-        except Exception as e:
-            # print("Failed to parse coordinates", e, response)
-            return None
+def parse_xml_response(model_response: str) -> ModelResponse:
+    model_response = model_response.lower().strip()
+    match = XML_RESPONSE_PATTERN.match(model_response)
 
-    def get_answer(self, response: str) -> str | None:
-        response = response.lower()
+    if not match:
+        if 'found' in model_response:
+            # If the response contains 'found' but doesn't match the XML pattern, assume it's a found action
+            return ModelResponse(found=True)
 
-        try:
-            response = response.replace("\n", "")
-            response = re.findall(r"<answer>.*</answer>", response, flags=re.S)[0]
-            response = response.removeprefix("<answer>")
-            response = response.removesuffix("</answer>")
+        raise ParsingError(f"Invalid XML response: {model_response}")
 
-            return response
-        except Exception as e:
-            # print("Failed to get answer", e, response)
-            return None
+    action = match.group(1).strip()
+
+    if 'found' in action:
+        return ModelResponse(found=True)
+
+    try:
+        action = action.replace("(", "").replace(")", "")
+        action = action.split(",")
+        # east_diff, north_diff, up_diff
+        action = float(action[0]), float(action[1]), float(action[2])
+    except (ValueError, IndexError):
+        raise ParsingError(f"Invalid action format: {action}")
+
+    return ModelResponse(move=action)

@@ -1,35 +1,26 @@
-import numpy as np
-
 from typing import Dict, Optional
+
+import numpy as np
 
 from conversation import Conversation, Role
 from misc import opencv_to_pil
-from navigators import AbstractDroneNavigator
+from response_parsers import parse_xml_response
 from rl.agents import BaseAgent
 
 
 class SimpleLLMAgent(BaseAgent):
-    def __init__(self, conversation: Conversation, prompt: str, navigator: AbstractDroneNavigator):
+    def __init__(self, conversation: Conversation, prompt: str):
         self.conversation = conversation
         self.prompt = prompt
-        self.navigator = navigator
         self.uninitialised = True
+        self.parser = parse_xml_response
 
     def _return_action_from_response(self, response: str) -> Dict:
-        try:
-            coordinate_change = self.navigator.get_diffs(response)
-        except Exception:
-            if self.navigator.get_claim(response):
-                return {
-                    "coordinate_change": (0, 0, 0),
-                    "found": 1
-                }
-            else:
-                raise  # Model's syntax error
-
+        action = self.parser(response)
+        move = int(action.move[0]), int(action.move[1]), int(action.move[2])
         return {
-            "coordinate_change": coordinate_change,
-            "found": 0
+            "coordinate_change": move,
+            "found": int(action.found)
         }
 
     def _act(self, image: np.ndarray, altitude: np.ndarray, collision: int, **kwargs):

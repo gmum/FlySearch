@@ -1,5 +1,6 @@
 import random
 
+from response_parsers import ParsingError
 from rl.environment import BaseFlySearchEnv
 from rl.evaluation import TrajectoryEvaluator
 from rl.evaluation.configs import ExperimentConfig
@@ -31,7 +32,10 @@ class ExperimentRunner:
             prompt_factory=self.config.prompt_factory
         )
 
-        trajectory_evaluator.evaluate()
+        try:
+            trajectory_evaluator.evaluate()
+        except ParsingError:
+            print("Parsing error. Skipping this run.")
 
     def run(self):
         seeds = random.sample(range(int(1e9)),

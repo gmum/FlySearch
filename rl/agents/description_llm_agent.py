@@ -1,19 +1,17 @@
-import numpy as np
-
 from typing import Dict, Tuple
+
+import numpy as np
 from PIL import Image
 
 from conversation import Conversation, Role, BaseConversationFactory
 from misc import opencv_to_pil
-from navigators import AbstractDroneNavigator
-from rl.agents import BaseAgent, SimpleLLMAgent
+from rl.agents import SimpleLLMAgent
 
 
 class DescriptionLLMAgent(SimpleLLMAgent):
     def __init__(self, conversation: Conversation, description_conversation_factory: BaseConversationFactory,
-                 prompt: str,
-                 navigator: AbstractDroneNavigator, object_desc: str):
-        super().__init__(conversation, prompt, navigator)
+                 prompt: str, object_desc: str):
+        super().__init__(conversation, prompt)
 
         self.description_conversation_factory = description_conversation_factory
         self.object_desc = object_desc
