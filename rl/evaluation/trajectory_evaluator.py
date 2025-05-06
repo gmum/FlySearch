@@ -1,6 +1,7 @@
 from typing import Callable, List, Dict
 
 from conversation import Conversation
+from response_parsers import ParsingError
 from rl.evaluation import EvaluationState
 from rl.evaluation.validators import BaseValidator
 from rl.evaluation.loggers import BaseLogger
@@ -97,8 +98,11 @@ class TrajectoryEvaluator:
 
             try:
                 action = self.agent.sample_action(observation)
+            except ParsingError:
+                self.tell_loggers_about_termination({"reason": "parsing error"})
+                return
             except:
-                self.tell_loggers_about_termination({"reason": "error during agent action sampling"})
+                self.tell_loggers_about_termination({"reason": "unknown error during agent action sampling"})
                 raise
 
             for fails in range(self.forgiveness):

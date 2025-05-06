@@ -32,10 +32,7 @@ class ExperimentRunner:
             prompt_factory=self.config.prompt_factory
         )
 
-        try:
-            trajectory_evaluator.evaluate()
-        except ParsingError:
-            print("Parsing error. Skipping this run.")
+        trajectory_evaluator.evaluate()
 
     def run(self):
         seeds = random.sample(range(int(1e9)),
