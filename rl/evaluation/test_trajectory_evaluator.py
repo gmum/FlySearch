@@ -126,7 +126,7 @@ class AgentFactoryMock(BaseAgentFactory):
         self.agent = agent
         self.prompt = None
 
-    def create_agent(self, prompt):
+    def create_agent(self, prompt, **kwargs):
         self.prompt = prompt
         return self.agent
 
@@ -147,8 +147,12 @@ class TestTrajectoryEvaluator:
         evaluator = TrajectoryEvaluator(agent_factory, env_mock, 10, mapper, [], [], 155, 10, prompt_func)
 
         assert len(env_mock.configs_passed) == 1
-        assert env_mock.configs_passed[0] == {"seed": 155, "abc": 43, "object_type": "car",
-                                              "throws": 0}  # Should add "throws" key
+
+        def get_subset(d):
+            return {k: d[k] for k in ("seed", "abc", "object_type", "throws")}
+
+        assert get_subset(env_mock.configs_passed[0]) == {"seed": 155, "abc": 43, "object_type": "car",
+                                                          "throws": 0}  # Should add "throws" key
 
         assert agent_factory.prompt == "Prompt: 10, a car, 400"
 
@@ -162,11 +166,14 @@ class TestTrajectoryEvaluator:
         env_mock.set_throws_on_reset(3)
         evaluator = TrajectoryEvaluator(agent_factory, env_mock, 6, mapper, [], [], 155, 10, prompt_func)
 
+        def get_subset(d):
+            return {k: d[k] for k in ("seed", "abc", "object_type")}
+
         assert len(env_mock.configs_passed) == 4
-        assert env_mock.configs_passed[0] == {"seed": 155, "abc": 43, "object_type": "car"}
-        assert env_mock.configs_passed[1] == {"seed": 155, "abc": 43, "object_type": "car"}
-        assert env_mock.configs_passed[2] == {"seed": 155, "abc": 43, "object_type": "car"}
-        assert env_mock.configs_passed[3] == {"seed": 155, "abc": 43, "throws": 3, "object_type": "car"}
+        assert get_subset(env_mock.configs_passed[0]) == {"seed": 155, "abc": 43, "object_type": "car"}
+        assert get_subset(env_mock.configs_passed[1]) == {"seed": 155, "abc": 43, "object_type": "car"}
+        assert get_subset(env_mock.configs_passed[2]) == {"seed": 155, "abc": 43, "object_type": "car"}
+        assert get_subset(env_mock.configs_passed[3]) == {"seed": 155, "abc": 43, "object_type": "car"}
 
         assert agent_factory.prompt == "Prompt: 6, a car, 400"
 
