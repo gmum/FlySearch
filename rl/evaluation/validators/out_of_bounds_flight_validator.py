@@ -13,7 +13,7 @@ class OutOfBoundsFlightValidator:
             self.first_position = evaluation_state.info["real_position"]
 
         current_position = evaluation_state.info["real_position"]
-        diff = evaluation_state.action["coordinate_change"]
+        diff = list(evaluation_state.action["coordinate_change"])
 
         diff[1] = -diff[1]
         # Invert the y-axis change. Yes, I know. The fact that environment silently inverts the y-axis was a design choice of me.

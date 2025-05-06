@@ -1,6 +1,6 @@
 import pathlib
 
-from prompts import xml_found_prompt
+from prompts import fs1_prompt
 from rl.agents import SimpleLLMAgentFactory
 from rl.environment import BaseFlySearchEnv, CityFlySearchEnv
 from rl.evaluation.configs import ExperimentConfig
@@ -27,5 +27,5 @@ class BasicConfig(ExperimentConfig):
             forgiveness=5,
             number_of_runs=number_of_runs,
             number_of_glimpses=10,
-            prompt_factory=xml_found_prompt
+            prompt_factory=fs1_prompt
         )

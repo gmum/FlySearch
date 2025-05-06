@@ -122,6 +122,8 @@ class OpenAIConversation(Conversation):
         response_content = str(response.choices[0].message.content)
         response_role = Role.ASSISTANT
 
+        print("llm response:", response_content)
+
         self.begin_transaction(response_role)
         self.add_text_message(response_content)
         self.commit_transaction(send_to_vlm=False)
