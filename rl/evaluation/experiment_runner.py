@@ -13,9 +13,11 @@ class ExperimentRunner:
 
     def _run_single_experiment(self, seed: int, environment: BaseFlySearchEnv):
         if self.dummy:
+            print("Performing dummy run")
             loggers = []
             self.dummy = False
         else:
+            print(f"Performing run with seed {seed}")
             loggers = [logger_factory.get_logger() for logger_factory in self.config.logger_factories]
 
         validators = [validator_factory.get_validator() for validator_factory in self.config.validator_factories]

@@ -47,8 +47,8 @@ python3 drone.py \
 --log_on_wandb True \
 --wandb_project_name "WTLN-RF-1" \
 --log_directory "all_logs" \
---run_name "GPT4o-FS2SUN2BOUNDSFIXEDMIMIC" \
---dummy_first False \
+--run_name "GPT4o-FS2-Real1" \
+--dummy_first "true" \
 --forgiveness 5 \
 --glimpses 20 \
 --number_of_runs 200 \

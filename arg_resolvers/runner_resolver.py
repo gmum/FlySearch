@@ -12,7 +12,7 @@ from rl.evaluation.validators import AltitudeValidatorFactory, OutOfBoundsFlight
 
 class RunnerResolver(BaseArgResolver):
     def register_args(self, parser: ArgumentParser):
-        parser.add_argument("--dummy_first", type=bool, required=True)
+        parser.add_argument("--dummy_first", type=str, required=True)
         parser.add_argument("--forgiveness", type=int, required=True)
         parser.add_argument("--glimpses", type=int, required=True)
         parser.add_argument("--number_of_runs", type=int, required=True)
@@ -25,6 +25,7 @@ class RunnerResolver(BaseArgResolver):
 
         fs1 = args.prompt_type == "fs1"
         prompt_factory = fs1_prompt if fs1 else fs2_prompt
+        dummy_first = "true" in args.dummy_first.lower()
 
         config = ExperimentConfig(
             agent_factory=accumulator["agent_factory"],
@@ -41,7 +42,7 @@ class RunnerResolver(BaseArgResolver):
 
         runner = ExperimentRunner(
             config=config,
-            first_dummy=args.dummy_first
+            first_dummy=dummy_first
         )
 
         accumulator["experiment_runner"] = runner
