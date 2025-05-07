@@ -90,9 +90,16 @@ class TrajectoryEvaluator:
 
         return True, {}
 
+    def tell_validators_about_starting_altitude(self, starting_altitude: int):
+        for validator in self.validators:
+            validator.inform_about_starting_altitude(starting_altitude)
+
     def evaluate(self):
         observation = self.first_observation
         info = self.first_info
+
+        starting_altitude = self.scenario["drone_rel_coords"][2]
+        self.tell_validators_about_starting_altitude(starting_altitude)
 
         for glimpse_number in range(self.max_glimpses):
 

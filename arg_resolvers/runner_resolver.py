@@ -23,14 +23,15 @@ class RunnerResolver(BaseArgResolver):
         environment = accumulator["environment"]
         mapper = accumulator["scenario_mapper"]
 
-        prompt_factory = fs1_prompt if args.prompt_type == "fs1" else fs2_prompt
+        fs1 = args.prompt_type == "fs1"
+        prompt_factory = fs1_prompt if fs1 else fs2_prompt
 
         config = ExperimentConfig(
             agent_factory=accumulator["agent_factory"],
             environment=environment,
             scenario_mapper=mapper,
             logger_factories=accumulator["logger_factories"],
-            validator_factories=[AltitudeValidatorFactory(300), OutOfBoundsFlightValidatorFactory(),
+            validator_factories=[AltitudeValidatorFactory(300), OutOfBoundsFlightValidatorFactory(fs2_behavior=not fs1),
                                  RecklessFlyingValidatorFactory()],
             forgiveness=args.forgiveness,
             number_of_runs=args.number_of_runs,

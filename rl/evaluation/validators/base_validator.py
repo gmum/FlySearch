@@ -13,3 +13,7 @@ class BaseValidator:
         :return: Tuple containing a boolean whether the action is valid. If it's not, the second dictionary should not be empty and should contain information about the invalid action.
         """
         raise NotImplementedError
+
+    def inform_about_starting_altitude(self, starting_altitude: int):
+        # If validator doesn't need to know about starting altitude, it can ignore this method. It should be called before the first action is sampled (if needed).
+        pass

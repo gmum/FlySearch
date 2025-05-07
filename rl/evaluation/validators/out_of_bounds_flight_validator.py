@@ -4,9 +4,10 @@ from rl.evaluation import EvaluationState
 
 
 class OutOfBoundsFlightValidator:
-    def __init__(self, search_diameter: int = 200):
+    def __init__(self, search_diameter: int = 200, fs2_behavior: bool = False):
         self.search_diameter = search_diameter
         self.first_position = None
+        self.fs2_behavior = fs2_behavior
 
     def validate(self, evaluation_state: EvaluationState):
         if self.first_position is None:
@@ -25,3 +26,7 @@ class OutOfBoundsFlightValidator:
             return False, {"reason": "out_of_bounds", "xy_bound": self.search_diameter}
 
         return True, {}
+
+    def inform_about_starting_altitude(self, starting_altitude: float):
+        if self.fs2_behavior:
+            self.search_diameter = starting_altitude
