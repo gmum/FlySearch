@@ -30,7 +30,7 @@ class ScenarioArgResolver(BaseArgResolver):
 
         parser.add_argument("--line_of_sight_assured", type=str, required=False, default="true")
 
-        parser.add_argument("--alpha", type=float, required=False, default=0.5)
+        parser.add_argument("--alpha", type=float, required=False)
 
         parser.add_argument("--show_class_image", type=str, required=False, default="false")
 

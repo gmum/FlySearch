@@ -19,22 +19,40 @@ export FONT_LOCATION="/usr/share/fonts/google-noto/NotoSerif-Bold.ttf"
 #--number_of_runs 20 \
 #--agent "description_llm"
 
+#python3 drone.py \
+#--scenario_type city_random \
+#--height_min 100 \
+#--height_max 125 \
+#--model gpt-4o \
+#--log_on_wandb True \
+#--wandb_project_name "WTLN-RF-1" \
+#--log_directory "all_logs" \
+#--run_name "GPT4o-FS2SUN2BOUNDSFIXEDMIMIC" \
+#--dummy_first False \
+#--forgiveness 5 \
+#--glimpses 20 \
+#--number_of_runs 200 \
+#--agent "simple_llm" \
+#--line_of_sight_assured "false" \
+#--alpha 0.95 \
+#--show_class_image "true" \
+#--prompt_type "fs2" \
+#--random_sun "true"
+
 python3 drone.py \
---scenario_type city_random \
---height_min 100 \
---height_max 125 \
+--scenario_type mimic \
+--mimic_run_path all_logs/GPT4o-FS2SUN1 \
+--mimic_run_cls_names "*" \
 --model gpt-4o \
 --log_on_wandb True \
 --wandb_project_name "WTLN-RF-1" \
 --log_directory "all_logs" \
---run_name "GPT4o-FS2TS1" \
+--run_name "GPT4o-FS2SUN2BOUNDSFIXEDMIMIC" \
 --dummy_first False \
 --forgiveness 5 \
 --glimpses 20 \
---number_of_runs 1 \
+--number_of_runs 200 \
 --agent "simple_llm" \
 --line_of_sight_assured "false" \
---alpha 0.95 \
 --show_class_image "true" \
---prompt_type "fs2" \
---random_sun "true"
+--prompt_type "fs2"

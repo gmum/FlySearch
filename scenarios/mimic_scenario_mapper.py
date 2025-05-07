@@ -156,7 +156,11 @@ class MimicScenarioMapper(BaseScenarioMapper):
 
     def iterate_scenarios(self, duplicate_first=True):
         entries = os.listdir(self.path)
-        entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))[self.continue_from:]
+
+        try:
+            entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))[self.continue_from:]
+        except IndexError:
+            entries = sorted(entries, key=lambda x: int(x))[self.continue_from:]
 
         for entry in entries:
             if not os.path.isdir(self.path / entry):
