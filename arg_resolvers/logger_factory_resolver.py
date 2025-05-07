@@ -23,7 +23,8 @@ class LoggerFactoryResolver(BaseArgResolver):
             return []
 
     def get_local_logger_factory(self, args: Namespace) -> List:
-        return [LocalFSLoggerFactory(pathlib.Path(args.log_directory) / args.run_name)]
+        continue_from = args.continue_from if args.continue_from is not None else 0
+        return [LocalFSLoggerFactory(pathlib.Path(args.log_directory) / args.run_name, initial_iteration=continue_from)]
 
     def resolve_args(self, args: Namespace, accumulator: Dict):
 
