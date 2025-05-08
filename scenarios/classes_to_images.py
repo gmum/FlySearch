@@ -4,7 +4,7 @@ from typing import Dict
 from scenarios.city_scenario_mapper import CityScenarioMapper
 
 classes_to_images = {
-    CityScenarioMapper.ObjectType.FIRE: Image.open("web/client/public/targets/city_fire_1.png.jpg"),
+    CityScenarioMapper.ObjectType.FIRE: Image.open("web/client/public/targets/fire.png.jpg"),
 
     CityScenarioMapper.ObjectType.CROWD: Image.open("web/client/public/targets/crowd.png.jpg"),
 
@@ -26,7 +26,7 @@ classes_to_images = {
         "web/client/public/targets/white_pickup_truck.png.jpg"),
 
     CityScenarioMapper.ObjectType.ROAD_CONSTRUCTION_SITE: Image.open(
-        "web/client/public/targets/construction_works_1.png.jpg"),
+        "web/client/public/targets/road_construction_site.png.jpg"),
 
     CityScenarioMapper.ObjectType.LARGE_TRASH_PILE: Image.open("web/client/public/targets/large_trash_pile.png.jpg"),
 }
