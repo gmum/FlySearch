@@ -27,13 +27,18 @@ class RunnerResolver(BaseArgResolver):
         prompt_factory = fs1_prompt if fs1 else fs2_prompt
         dummy_first = "true" in args.dummy_first.lower()
 
+        additional_validators = []
+
+        if fs1:
+            additional_validators.append(RecklessFlyingValidatorFactory())
+
         config = ExperimentConfig(
             agent_factory=accumulator["agent_factory"],
             environment=environment,
             scenario_mapper=mapper,
             logger_factories=accumulator["logger_factories"],
-            validator_factories=[AltitudeValidatorFactory(300), OutOfBoundsFlightValidatorFactory(fs2_behavior=not fs1),
-                                 RecklessFlyingValidatorFactory()],
+            validator_factories=[AltitudeValidatorFactory(300),
+                                 OutOfBoundsFlightValidatorFactory(fs2_behavior=not fs1)] + additional_validators,
             forgiveness=args.forgiveness,
             number_of_runs=args.number_of_runs,
             number_of_glimpses=args.glimpses,
