@@ -12,6 +12,9 @@ class RunAnalyser:
         bounding_box = self.run.object_bbox
         z_max = bounding_box[5] // 100  # Semi-centimeters to semi-meters
 
+        if "fire" in self.run.object_type.lower():
+            z_max = 3
+
         drone_z = self.run.end_position[2]
 
         return drone_z - z_max <= threshold
