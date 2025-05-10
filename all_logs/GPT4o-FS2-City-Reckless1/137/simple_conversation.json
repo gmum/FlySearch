@@ -1,0 +1,226 @@
+[
+    [
+        "user",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding fire.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 19 moves. Your altitude cannot exceed 300 meters. \n        \n        The search area is limited to what would be visible from the starting position if there were no buildings or obstacles. The object is within this area. You may not fly outside of it.\n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "user",
+        "The object you're looking for is similar to this. This is NOT the drone's current view."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The fire might be located in an open area or on a rooftop, considering its visibility from above. I will move towards (-39, -39) to explore the area in the southwest, which could offer a better view of possible fire locations. I will also maintain my altitude for now.</Reasoning>\n<Action>(-39, -39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll proceed to explore the area at (-39, 0) to check for signs of fire. This location might provide a better view of potential hotspots. I will maintain my current altitude for now to cover more ground.</Reasoning>\n<Action>(-39, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (-39, 39) to check the area to the north for any signs of fire. This will help in systematically covering more locations. I will maintain my altitude for now.</Reasoning>\n<Action>(-39, 39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (0, 39) to further explore the central area, which might provide a clearer view of potential fire sources. I will keep the current altitude.</Reasoning>\n<Action>(0, 39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (39, 39) to inspect the northeastern area for any signs of fire. This location is promising for spotting potential hotspots. I will maintain the altitude for now.</Reasoning>\n<Action>(39, 39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (77, 0) to explore the eastern area. This will help in covering more ground and possibly spotting the fire from a different angle. I will maintain the altitude for now.</Reasoning>\n<Action>(77, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (77, -39) to check the southeast area. This could provide a view of potential fire locations. I'll maintain my altitude for now.</Reasoning>\n<Action>(77, -39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (39, 0) to explore the central area from a different perspective, which might help in spotting the fire. I'll maintain the current altitude.</Reasoning>\n<Action>(39, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 116.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll adjust my approach and move to (39, -39) instead. This will keep me within the search area while allowing me to continue exploring for signs of fire.</Reasoning>\n<Action>(39, -39, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 116.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (0, -39) to remain within the search boundaries while continuing to check for signs of fire.</Reasoning>\n<Action>(0, -39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (39, -39) to continue searching in the southeastern area. This position is central to the visible area, allowing further exploration. I'll maintain the altitude for now.</Reasoning>\n<Action>(39, -39, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 116.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (0, -77) to check the southern part of the area. This position keeps me within the bounds and allows further investigation for fire signs.</Reasoning>\n<Action>(0, -77, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (-39, -39) to explore the southwestern area. This position is within bounds and might reveal signs of fire. I'll maintain my current altitude for now.</Reasoning>\n<Action>(-39, -39, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (-39, 0) to further explore the western area. This keeps me within the search boundaries and might reveal more about potential fire locations.</Reasoning>\n<Action>(-39, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 116 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I need to descend to get a closer look at the area below. I will move down by 107 meters, bringing my altitude to 9 meters to effectively search for the fire.</Reasoning>\n<Action>(0, 0, -107)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'm now at 9 meters above ground, which is ideal for spotting the fire. I'll search around the area to pinpoint the exact location. I'll move to (-3, -3) to check for any signs.</Reasoning>\n<Action>(-3, -3, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 116.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move to (3, 0) to stay within the search area and check for signs of fire more effectively.</Reasoning>\n<Action>(3, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'm at an optimal altitude for detection. I'll move to (0, 3) to focus on the area directly ahead for better visibility of any potential fire.</Reasoning>\n<Action>(0, 3, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The fire is now within my field of view. I am at the optimal altitude of 9 meters. I will confirm the sighting.</Reasoning>\n<Action>FOUND</Action>"
+    ]
+]

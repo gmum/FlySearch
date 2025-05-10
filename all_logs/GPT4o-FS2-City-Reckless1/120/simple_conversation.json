@@ -1,0 +1,386 @@
+[
+    [
+        "user",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding large trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 19 moves. Your altitude cannot exceed 300 meters. \n        \n        The search area is limited to what would be visible from the starting position if there were no buildings or obstacles. The object is within this area. You may not fly outside of it.\n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "user",
+        "The object you're looking for is similar to this. This is NOT the drone's current view."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>From my current position, I can't see a clear trash pile in the close vicinity. I'll move slightly to the north to scan a new area while maintaining the altitude. This will allow me to cover more ground and potentially locate the trash pile.</Reasoning>\n<Action>(0, 37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'm still unable to spot the trash pile. I'll move east to gain a better view of the area to the right. This will keep expanding my search area efficiently.</Reasoning>\n<Action>(37, 37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>There is no visible trash pile in this area. I'll move south to explore a new section of the grid while maintaining my current altitude.</Reasoning>\n<Action>(37, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I still don't see the trash pile. I'll continue moving south to cover more of the grid and see if the pile is visible from there while maintaining altitude.</Reasoning>\n<Action>(37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>There is still no sign of the trash pile. I'll move further south to check the remaining area in that direction.</Reasoning>\n<Action>(37, -75, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>To stay within the search area, I'll adjust my position slightly southwest. This will keep me within bounds while continuing the search.</Reasoning>\n<Action>(0, -75, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The trash pile isn't visible here either. I'll move east to explore a new section, maintaining the current altitude.</Reasoning>\n<Action>(37, -75, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>To stay within the search boundaries, I'll move southeast without exceeding the limits. This will allow me to cover more ground effectively.</Reasoning>\n<Action>(37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll adjust my position to the east while staying within the boundary limits. This should help me continue the search effectively.</Reasoning>\n<Action>(37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll correct my movement to stay within the allowed area. I'll move directly east from my current position.</Reasoning>\n<Action>(37, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll adjust my position accordingly to stay within the boundaries. I'll move slightly back north to remain compliant.</Reasoning>\n<Action>(0, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'm still not able to locate the trash pile. I'll move slightly east to continue scanning new areas while staying within the boundaries.</Reasoning>\n<Action>(37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>To stay within the search area's limits while exploring new ground, I'll move slightly northwest.</Reasoning>\n<Action>(-37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I still can't see a trash pile. I'll move slightly northeast to cover more unexplored areas and maintain altitude.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The pile is not yet visible. I'll move slightly east to inspect a different section while staying within bounds.</Reasoning>\n<Action>(37, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I don't see the trash pile yet. I'll move further south to continue scanning new areas within the search boundaries.</Reasoning>\n<Action>(37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly west instead to stay within the search area and continue looking for the trash pile.</Reasoning>\n<Action>(0, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll adjust and move directly west to remain within the boundary and continue the search.</Reasoning>\n<Action>(-37, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly north to explore new areas while staying within the boundaries.</Reasoning>\n<Action>(-37, 37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'm still unable to locate the trash pile. I'll move east to cover more unexplored areas while maintaining the altitude.</Reasoning>\n<Action>(0, 37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>Since the trash pile is not visible yet, I'll move south to explore more of the grid while staying within the boundaries.</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly east to cover more ground and continue the search for the trash pile.</Reasoning>\n<Action>(37, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The trash pile is not yet visible. I'll move slightly south to explore the area further while staying within the boundaries.</Reasoning>\n<Action>(0, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The trash pile is still not visible. I'll move slightly east to continue my search while staying within the boundaries.</Reasoning>\n<Action>(37, -37, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 112 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I can now see a potential trash pile in the southeast part of my view. I'll descend to get a closer look and verify if it's the target.</Reasoning>\n<Action>(37, 37, -102)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll focus on moving downwards to get closer to the potential trash pile while staying within the current position.</Reasoning>\n<Action>(0, 0, -102)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I need to descend further to ensure I'm below 10 meters. I'll move downward cautiously from my current position.</Reasoning>\n<Action>(0, 0, -40)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly away from the structure and then descend carefully to avoid any collisions.</Reasoning>\n<Action>(33, 33, -40)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move south to stay clear of obstacles and then descend to ensure I'm below 10 meters.</Reasoning>\n<Action>(0, -33, -40)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll adjust my position to move slightly northeast and descend cautiously, staying within bounds.</Reasoning>\n<Action>(33, 16, -40)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly northwest to avoid obstacles and then descend carefully.</Reasoning>\n<Action>(-16, 16, -40)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 49 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move south to a clearer area and then descend carefully to avoid obstacles and ensure I'm below 10 meters.</Reasoning>\n<Action>(0, -16, -40)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move northeast to a clear area and then descend carefully to avoid obstacles while remaining within bounds.</Reasoning>\n<Action>(16, 16, -40)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly east to avoid obstacles and then descend carefully, ensuring I'm within bounds.</Reasoning>\n<Action>(16, 0, -40)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 112.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'll move slightly west to find a clear area and then descend carefully, ensuring I'm within bounds.</Reasoning>\n<Action>(-16, 0, -40)</Action>"
+    ]
+]

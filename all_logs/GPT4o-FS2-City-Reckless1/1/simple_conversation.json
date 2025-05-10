@@ -1,0 +1,282 @@
+[
+    [
+        "user",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding crowd.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 19 moves. Your altitude cannot exceed 300 meters. \n        \n        The search area is limited to what would be visible from the starting position if there were no buildings or obstacles. The object is within this area. You may not fly outside of it.\n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "user",
+        "The object you're looking for is similar to this. This is NOT the drone's current view."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is not visible in the current view. To expand the search and cover more ground, I will move to the north to investigate the area not currently visible.\n</Reasoning>\n<Action>(0, 70, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I will move east to explore more of the area that is not visible.\n</Reasoning>\n<Action>(70, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is not visible yet. I will move further south to continue the search and to examine more areas.\n</Reasoning>\n<Action>(0, -70, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I will move west to continue exploring the area.\n</Reasoning>\n<Action>(-70, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI have returned to the starting point. I will search to the southwest to explore new areas for the crowd.\n</Reasoning>\n<Action>(-35, -35, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move further south to expand the search.\n</Reasoning>\n<Action>(0, -70, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move further south to continue the search.\n</Reasoning>\n<Action>(0, -70, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 105.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI reached the boundary of the search area. I'll move east to explore the remaining area visible within the boundaries.\n</Reasoning>\n<Action>(70, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move north to search in a direction we haven't fully explored yet.\n</Reasoning>\n<Action>(0, 70, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI have explored much of the area but haven't located the crowd. I'll move west to cover more ground within the visible limits.\n</Reasoning>\n<Action>(-70, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI've returned to a previously explored location. I'll move further west to cover the unexplored region.\n</Reasoning>\n<Action>(-70, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move north to continue exploring new areas.\n</Reasoning>\n<Action>(0, 70, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is visible in the center of this image. I will lower the altitude and center the view to ensure I'm within 10 meters above the crowd.\n</Reasoning>\n<Action>(0, 0, -96)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is not visible in this view. I'll adjust slightly to the north to reposition safely and look for the crowd.\n</Reasoning>\n<Action>(0, 4, 0)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'm too close to an obstacle. I'll move slightly west to reposition safely while keeping an eye out for the crowd.\n</Reasoning>\n<Action>(-4, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "This command would cause you to fly out of the search area's bounds. You can't fly further than 105.0 meters from the starting point in any axis."
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI\u2019m at the boundary of the search area. I'll move slightly east to reposition safely and continue the search.\n</Reasoning>\n<Action>(4, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'm still too close to obstacles. I'll move slightly south to find a safer position while continuing the search.\n</Reasoning>\n<Action>(0, -4, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move slightly east to cover more area while staying clear of obstacles.\n</Reasoning>\n<Action>(4, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move slightly east again to continue covering more ground and stay clear of obstacles.\n</Reasoning>\n<Action>(4, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move slightly north to reposition and continue the search.\n</Reasoning>\n<Action>(0, 4, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move slightly further north to explore the area more thoroughly.\n</Reasoning>\n<Action>(0, 4, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe crowd is still not visible. I'll move slightly north again to continue searching the area.\n</Reasoning>\n<Action>(0, 4, 0)</Action>"
+    ]
+]

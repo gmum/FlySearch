@@ -1,0 +1,278 @@
+[
+    [
+        "user",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding crowd.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 19 moves. Your altitude cannot exceed 300 meters. \n        \n        The search area is limited to what would be visible from the starting position if there were no buildings or obstacles. The object is within this area. You may not fly outside of it.\n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "user",
+        "The object you're looking for is similar to this. This is NOT the drone's current view."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "user",
+        "Your current altitude is 105 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI need to systematically search for the crowd, starting with the most open area. Moving to (0, 0) will give me a central view and cover a significant portion of the visible area. I will also decrease altitude to get closer to the ground to potentially spot the crowd more clearly.\n</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 75 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI am currently at the center of the grid. I will move towards (25, 25) to explore another part of the rooftop area and descend further to improve visibility.\n</Reasoning>\n<Action>(25, 25, -30)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI will continue to move towards the area with more open space to search for the crowd. I'll move to (0, 0) and decrease my altitude further to get a closer look.\n</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'm currently centered in an area with limited visibility. I need to move carefully to avoid obstacles. I'll move to (-10, -10) and decrease altitude slightly to maintain clearance and improve visibility.\n</Reasoning>\n<Action>(-10, -10, -10)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nTo avoid obstacles, I'll move to a more open position. I'll head to (10, 0) and maintain the current altitude to stay safe and continue searching.\n</Reasoning>\n<Action>(10, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe presence of repeated emergency stops indicates close proximity to obstacles. I will move to a safer, more open area at (0, 10) and maintain altitude to reassess the surroundings.\n</Reasoning>\n<Action>(0, 10, 0)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'm consistently encountering obstacles. I'll move to (-10, -10) to explore another direction and maintain altitude to avoid any further collisions.\n</Reasoning>\n<Action>(-10, -10, 0)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI need to change my approach to avoid obstacles. I'll ascend to gain a better overview of the area and move to a central position at (0, 0).\n</Reasoning>\n<Action>(0, 0, 10)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nNow that I have a better view, I will move to (13, 13) to explore the area around the structures cautiously while maintaining altitude.\n</Reasoning>\n<Action>(13, 13, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI will move towards the open area at (-13, 0) to explore more of the rooftop and its surroundings, as it seems less obstructed.\n</Reasoning>\n<Action>(-13, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI need to continue exploring the rooftop for any signs of the crowd. I'll move to (13, -13) to cover more of the open area and maintain altitude for a clear view.\n</Reasoning>\n<Action>(13, -13, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI will move to (-13, -13) to further explore the rooftop area, as it seems open and might provide a better view of the surroundings.\n</Reasoning>\n<Action>(-13, -13, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nThe area at (0, 0) appears open and could provide a clearer view of the surroundings. I'll move there and maintain altitude to continue the search.\n</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nTo explore more of the area efficiently, I'll move to (13, 13) where there are structures. This might help in spotting the crowd.\n</Reasoning>\n<Action>(13, 13, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'll move to (-13, 13) to further investigate the left side, maintaining altitude to ensure visibility and avoid obstacles.\n</Reasoning>\n<Action>(-13, 13, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'll descend to 10 meters to improve the view and potentially spot the crowd, moving to (0, 0) for a central position.\n</Reasoning>\n<Action>(0, 0, -30)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 30 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nTo avoid further obstacles, I'll ascend to 40 meters to regain a better view of the area. I'll move to (-10, 10) to investigate a different section.\n</Reasoning>\n<Action>(-10, 10, 10)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'll move to (-13, 0) to explore the area further and maintain altitude to cover more ground efficiently.\n</Reasoning>\n<Action>(-13, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'll move to (0, 0) to check the central area for any signs of the crowd while maintaining altitude for a clear view.\n</Reasoning>\n<Action>(0, 0, 0)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 40 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>\nI'll move to (13, 0) to inspect the right side of the rooftop more closely, keeping the altitude constant for a broad view.\n</Reasoning>\n<Action>(13, 0, 0)</Action>"
+    ]
+]
