@@ -50,7 +50,7 @@ class Run:
             all_comments = json.load(open(path / 'simple_conversation.json'))
         except FileNotFoundError:
             all_comments = json.load(open(path / 'conversation.json'))
-        return [comment for role, comment in all_comments if role == "Role.ASSISTANT"]
+        return [comment for role, comment in all_comments if role == "Role.ASSISTANT" or role == "assistant"]\
 
     @staticmethod
     def _load_object_bbox(path: pathlib.Path) -> Tuple:
