@@ -113,7 +113,7 @@ class CriterionPlotter:
             name_to_stats[cls_name] = {
                 "mean": mean,
                 "std": std,
-                "sem": sem,
+                "sem": np.nan_to_num(sem),
                 "conf_int": conf_int,
                 "n": n,
                 "total_successes": total_successes

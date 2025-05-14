@@ -50,7 +50,7 @@ class Run:
             all_comments = json.load(open(path / 'simple_conversation.json'))
         except FileNotFoundError:
             all_comments = json.load(open(path / 'conversation.json'))
-        return [comment for role, comment in all_comments if role == "assistant"]
+        return [comment for role, comment in all_comments if role == "Role.ASSISTANT"]
 
     @staticmethod
     def _load_object_bbox(path: pathlib.Path) -> Tuple:
@@ -120,7 +120,7 @@ class Run:
     @property
     def model_claimed(self):
         try:
-            return "FOUND" in self.comments[-1]
+            return "found" in self.comments[-1].lower()
         except IndexError:
             return False
 
