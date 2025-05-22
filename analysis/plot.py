@@ -6,7 +6,7 @@ from analysis import Run, RunAnalyser, CriterionPlotter, load_all_runs_from_a_di
 
 
 def main():
-    path = pathlib.Path("../all_logs/MC-0S-F-10G-GPT-CR")
+    path = pathlib.Path("../all_logs/GPT4o-FS2-City-Reckless1")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 
