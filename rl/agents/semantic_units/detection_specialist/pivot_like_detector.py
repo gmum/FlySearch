@@ -11,7 +11,7 @@ from rl.agents.semantic_units.detection_specialist import BaseDetector
 
 class PivotLikeMechanism:
     def __init__(self, image):
-        self.image = image
+        self.image = image.copy()
         self.points_of_interest = []
 
     def sample_new_points(self, n=10):
@@ -83,11 +83,11 @@ class PivotLikeDetector(BaseDetector):
         super().__init__()
         self.iterations = iterations
         self.conversation_factory = conversation_factory
+        self.image_history = []
 
-    def image_to_detections(self, image: Image.Image, target: str) -> Tuple[
-        List[Image.Image], Tuple[int, int, int, int]]:
+    def image_to_detections(self, image: Image.Image, target: str) -> List[Tuple[int, int, int, int]]:
         pivot = PivotLikeMechanism(image)
-        pivot.sample_new_points(n=20)
+        pivot.sample_new_points(n=40)
 
         image_history = []
 
@@ -97,7 +97,7 @@ class PivotLikeDetector(BaseDetector):
             image_history.append(image)
             conversation.begin_transaction(Role.USER)
             conversation.add_text_message(
-                f"You are a detection specialist who is trying to detect the target. The object of interest is {target}. The image is annotated with lots of dots. Pick dots that are closest to the target. Just write their numbers and only numbers. Write a few numbers (like 3 or 4). Example: 5 7 8. Do not write anything else.")
+                f"You are a detection specialist who is trying to detect the target. The object of interest is {target}. The image is annotated with lots of dots. Ignore any other numbers that are not on dots. Pick dots that are closest to the target. Just write their numbers and only numbers. Write a few numbers (like 3 or 4). Example: 5 7 8. Do not write anything else.")
             conversation.add_image_message(image)
             conversation.commit_transaction(send_to_vlm=True)
 
@@ -113,10 +113,11 @@ class PivotLikeDetector(BaseDetector):
 
             index_list = [int(i) for i in response.split() if is_number(i)]
             pivot.filter_points(index_list)
-            pivot.sample_from_previous_distribution(n=20)
+            pivot.sample_from_previous_distribution(n=40)
 
         image = pivot.annotate_image()
         image_history.append(image)
+        self.image_history = image_history
 
         detections = pivot.points_of_interest
         min_x = min([point[0] for point in detections])
@@ -126,7 +127,7 @@ class PivotLikeDetector(BaseDetector):
 
         detections = (min_x, min_y, max_x, max_y)
 
-        return image_history, detections
+        return [detections]
 
 
 def main():
@@ -137,18 +138,16 @@ def main():
 
     detector = PivotLikeDetector(
         conversation_factory=GPTFactory(),
-        iterations=4
+        iterations=3
     )
 
-    history, bbox = detector.image_to_detections(image, "a plane")
-
-    for i, image in enumerate(history):
-        plt.subplot(1, len(history), i + 1)
-        plt.imshow(image)
-        plt.axis("off")
-    plt.show()
-
+    bbox = detector.image_to_detections(image, "a plane")[0]
     x_min, y_min, x_max, y_max = bbox
+
+    for img in detector.image_history:
+        plt.imshow(img)
+        plt.axis("off")
+        plt.show()
 
     draw = ImageDraw.Draw(image)
     draw.rectangle([x_min, y_min, x_max, y_max], outline="red", width=5)
