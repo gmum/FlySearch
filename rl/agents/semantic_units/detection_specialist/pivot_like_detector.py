@@ -9,6 +9,10 @@ from conversation import BaseConversationFactory, Role, GPTFactory
 from rl.agents.semantic_units.detection_specialist import BaseDetector
 
 
+class PivotFailure(Exception):
+    pass
+
+
 class PivotLikeMechanism:
     def __init__(self, image):
         self.image = image.copy()
@@ -87,7 +91,10 @@ class PivotLikeDetector(BaseDetector):
 
     def image_to_detections(self, image: Image.Image, target: str) -> List[Tuple[int, int, int, int]]:
         pivot = PivotLikeMechanism(image)
-        pivot.sample_new_points(n=40)
+
+        sampled_point_count = 40
+
+        pivot.sample_new_points(n=sampled_point_count)
 
         image_history = []
 
@@ -97,7 +104,7 @@ class PivotLikeDetector(BaseDetector):
             image_history.append(image)
             conversation.begin_transaction(Role.USER)
             conversation.add_text_message(
-                f"You are a detection specialist who is trying to detect the target. The object of interest is {target}. The image is annotated with lots of dots. Ignore any other numbers that are not on dots. Pick dots that are closest to the target. Just write their numbers and only numbers. Write a few numbers (like 3 or 4). Example: 5 7 8. Do not write anything else.")
+                f"You are a detection specialist who is trying to detect the target. The object of interest is {target}. The image is annotated with lots of dots. Ignore any other numbers that are not on dots. Pick dots that are closest to the target. Just write their numbers and only numbers. Write a few numbers (like 3 or 4). Example: 5 7 8. Do not write anything else. The number is <40.")
             conversation.add_image_message(image)
             conversation.commit_transaction(send_to_vlm=True)
 
@@ -112,8 +119,13 @@ class PivotLikeDetector(BaseDetector):
                     return False
 
             index_list = [int(i) for i in response.split() if is_number(i)]
+            index_list = [i for i in index_list if i < sampled_point_count]
+
+            if len(index_list) == 0:
+                raise PivotFailure("No points selected")
+
             pivot.filter_points(index_list)
-            pivot.sample_from_previous_distribution(n=40)
+            pivot.sample_from_previous_distribution(n=sampled_point_count)
 
         image = pivot.annotate_image()
         image_history.append(image)
