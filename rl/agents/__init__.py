@@ -4,3 +4,5 @@ from .simple_llm_agent import SimpleLLMAgent
 from .simple_llm_agent_factory import SimpleLLMAgentFactory
 from .description_llm_agent import DescriptionLLMAgent
 from .description_llm_agent_factory import DescriptionLLMAgentFactory
+from .generalist_one import GeneralistOne
+from .generalist_one_agent_factory import GeneralistOneAgentFactory

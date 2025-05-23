@@ -32,9 +32,12 @@ class SummarySpecialist(BaseSemanticSubunit):
             elif isinstance(value, list):
                 conversation.add_text_message(f"List of consecutive values of {key}: {value}")
             else:
-                raise SummaryFailure(
-                    f"Unsupported type {type(value)} for key {key}. Supported types are str, Image.Image, and list."
-                )
+                try:
+                    conversation.add_text_message(f"{key}: {str(value)}")
+                except ValueError as e:
+                    raise SummaryFailure(
+                        f"Unsupported type {type(value)} for key {key}. Supported types are str, Image.Image, and list and types convertible to str."
+                    )
 
         conversation.commit_transaction(send_to_vlm=True)
         _, response = conversation.get_latest_message()
