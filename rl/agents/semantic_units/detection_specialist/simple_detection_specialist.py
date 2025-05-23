@@ -4,7 +4,7 @@ from PIL import Image, ImageDraw
 
 from conversation import BaseConversationFactory, GPTFactory
 from rl.agents.semantic_units import SemanticUnit
-from rl.agents.semantic_units.detection_specialist import PivotLikeDetector, VLMVerifier
+from rl.agents.semantic_units.detection_specialist import PivotLikeDetector, VLMVerifier, GoalIdentifier
 
 
 class SimpleDetectionSpecialist(SemanticUnit):
