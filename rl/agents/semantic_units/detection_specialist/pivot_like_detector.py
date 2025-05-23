@@ -5,7 +5,7 @@ import numpy as np
 
 from PIL import Image, ImageDraw
 
-from conversation import BaseConversationFactory, Role
+from conversation import BaseConversationFactory, Role, GPTFactory
 from rl.agents.semantic_units.detection_specialist import BaseDetector
 
 
@@ -56,9 +56,10 @@ class PivotLikeMechanism:
         try:
             x_std = statistics.stdev(xs)
             y_std = statistics.stdev(ys)
-        except statistics.StatisticsError:
-            x_std = 1
-            y_std = 1
+        except statistics.StatisticsError as e:
+            print("Error", e)
+            x_std = 50
+            y_std = 50
 
         new_coordinates = np.random.randn(n, 2) * np.array([x_std, y_std]) + np.array([x_mean, y_mean])
         new_coordinates = np.clip(new_coordinates, 0, np.array(self.image.size) - 1)
@@ -83,20 +84,25 @@ class PivotLikeDetector(BaseDetector):
         self.iterations = iterations
         self.conversation_factory = conversation_factory
 
-    def image_to_detections(self, image: Image.Image, target: str) -> List[Tuple[int, int, int, int]]:
+    def image_to_detections(self, image: Image.Image, target: str) -> Tuple[
+        List[Image.Image], Tuple[int, int, int, int]]:
         pivot = PivotLikeMechanism(image)
         pivot.sample_new_points(n=20)
+
+        image_history = []
 
         for _ in range(self.iterations):
             conversation = self.conversation_factory.get_conversation()
             image = pivot.annotate_image()
+            image_history.append(image)
             conversation.begin_transaction(Role.USER)
             conversation.add_text_message(
-                f"You are a detection specialist who is trying to detect the target. The object of interest is {target}. The image is annotated with lots of dots. Pick dots that are closest to the target. Just write their numbers and only numbers. Write a few numbers (like 3 or 4). ")
+                f"You are a detection specialist who is trying to detect the target. The object of interest is {target}. The image is annotated with lots of dots. Pick dots that are closest to the target. Just write their numbers and only numbers. Write a few numbers (like 3 or 4). Example: 5 7 8. Do not write anything else.")
             conversation.add_image_message(image)
             conversation.commit_transaction(send_to_vlm=True)
 
             _, response = conversation.get_latest_message()
+            response.replace(",", " ")
 
             def is_number(s):
                 try:
@@ -109,36 +115,45 @@ class PivotLikeDetector(BaseDetector):
             pivot.filter_points(index_list)
             pivot.sample_from_previous_distribution(n=20)
 
+        image = pivot.annotate_image()
+        image_history.append(image)
+
+        detections = pivot.points_of_interest
+        min_x = min([point[0] for point in detections])
+        max_x = max([point[0] for point in detections])
+        min_y = min([point[1] for point in detections])
+        max_y = max([point[1] for point in detections])
+
+        detections = (min_x, min_y, max_x, max_y)
+
+        return image_history, detections
+
 
 def main():
     from matplotlib import pyplot as plt
 
-    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/data/burger.png")
+    # image = Image.open("/home/dominik/MyStuff/active-visual-gpt/data/burger.png")
+    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/all_logs/GPT4o-CityNew/283_r0 /0.png")
 
-    detector = PivotLikeMechanism(image)
+    detector = PivotLikeDetector(
+        conversation_factory=GPTFactory(),
+        iterations=4
+    )
 
-    detector.sample_new_points(20)
+    history, bbox = detector.image_to_detections(image, "a plane")
 
-    annotated_images = []
+    for i, image in enumerate(history):
+        plt.subplot(1, len(history), i + 1)
+        plt.imshow(image)
+        plt.axis("off")
+    plt.show()
 
-    annotated_image = detector.annotate_image()
+    x_min, y_min, x_max, y_max = bbox
 
-    annotated_images.append(annotated_image)
-
-    for i in range(10):
-        detector.filter_points([0, 1, 2, 3, 4])
-        detector.sample_from_previous_distribution(20)
-        annotated_image = detector.annotate_image()
-        annotated_images.append(annotated_image)
-
-    fig, axs = plt.subplots(2, 5, figsize=(15, 6))
-
-    for i, ax in enumerate(axs.flat):
-        ax.imshow(annotated_images[i])
-        ax.axis("off")
-        ax.set_title(f"Iteration {i}")
-
-    plt.tight_layout()
+    draw = ImageDraw.Draw(image)
+    draw.rectangle([x_min, y_min, x_max, y_max], outline="red", width=5)
+    plt.imshow(image)
+    plt.axis("off")
     plt.show()
 
 
