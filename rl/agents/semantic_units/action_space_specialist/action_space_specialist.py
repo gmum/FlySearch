@@ -16,7 +16,7 @@ class ActionSpaceSpecialist(BaseSemanticSubunit):
         conversation = self.conversation_factory.get_conversation()
         conversation.begin_transaction(Role.USER)
         conversation.add_text_message(
-            "You are an action space specialist. That is, you will receive a snapshot of the current state of our agentic application. The state is represented as pairs of keys and values. You need to make some sense out of it -- that is, you need to understand the task, the current state of this task and formulate sample actions that you deem sensible. Make sure your actions make sense, but you don't need to think whether they are the _best_. The other component of the system is responsible for that.")
+            "You are an action space specialist. That is, you will receive a snapshot of the current state of our agentic application. The state is represented as pairs of keys and values. You need to make some sense out of it -- that is, you need to understand the task, the current state of this task and formulate sample actions that you deem sensible. Make sure your actions make sense, but you don't need to think whether they are the _best_. The other component of the system is responsible for that. Your actions need to have your justifications, so that the further component can understand them.")
 
         image_counter = 0
 
