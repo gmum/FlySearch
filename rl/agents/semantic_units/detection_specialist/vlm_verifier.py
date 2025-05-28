@@ -59,7 +59,7 @@ class VLMVerifier(BaseVerifier):
             detection for detection in detections if self.validate_detection(image, target, detection)
         ]
 
-        information["valid_detections"] = valid_detections
+        information["detections"] = valid_detections
 
         return information
 

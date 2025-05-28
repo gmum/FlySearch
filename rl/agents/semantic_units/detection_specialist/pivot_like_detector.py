@@ -146,14 +146,14 @@ def main():
     from matplotlib import pyplot as plt
 
     # image = Image.open("/home/dominik/MyStuff/active-visual-gpt/data/burger.png")
-    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/all_logs/GPT4o-CityNew/283_r0 /0.png")
+    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/all_logs/GPT4o-CityNew/1_r0 /0.png")
 
     detector = PivotLikeDetector(
         conversation_factory=GPTFactory(),
-        iterations=3
+        iterations=5
     )
 
-    bbox = detector.image_to_detections(image, "a plane")[0]
+    bbox = detector.image_to_detections(image, "a trash pile")[0]
     x_min, y_min, x_max, y_max = bbox
 
     for img in detector.image_history:

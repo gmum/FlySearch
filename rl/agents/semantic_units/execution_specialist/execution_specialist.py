@@ -1,5 +1,7 @@
 from typing import Dict
 
+from PIL import Image
+
 from conversation import Role
 from rl.agents.semantic_units import BaseSemanticSubunit
 
@@ -16,6 +18,25 @@ class ExecutionSpecialist(BaseSemanticSubunit):
 
         conversation.add_text_message(f"Instruction: {information['instruction']}")
         conversation.add_text_message(f"Action: {information['action']}")
+
+        if 'context' in information:
+            assert isinstance(information['context'], dict)
+
+            for key, value in information['context'].items():
+                if isinstance(value, str):
+                    conversation.add_text_message(f"{key}: {value}")
+                elif isinstance(value, list):
+                    conversation.add_text_message(f"List of consecutive values of {key}: {value}")
+                elif isinstance(value, Image.Image):
+                    conversation.add_text_message(f"{key}: Image:")
+                    conversation.add_image_message(value)
+                else:
+                    try:
+                        conversation.add_text_message(f"{key}: {str(value)}")
+                    except ValueError as e:
+                        raise ValueError(
+                            f"Unsupported type {type(value)} for key {key}. Supported types are str, Image.Image, and list."
+                        )
 
         conversation.commit_transaction(send_to_vlm=True)
 

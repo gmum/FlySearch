@@ -18,7 +18,6 @@ class GeneralistOne(SimpleLLMAgent):
         self.conversation_factory = conversation_factory
         self.uninitialised = True
 
-        self.object_name = GoalIdentifier(conversation_factory=conversation_factory).get_goal({"prompt": prompt})
         self.detection_specialist = SimpleDetectionSpecialist(conversation_factory=conversation_factory)
         self.decision_maker = DecisionMakingSpecialist(conversation_factory=conversation_factory)
         self.action_space_specialist = ActionSpaceSpecialist(conversation_factory=conversation_factory)
@@ -29,6 +28,9 @@ class GeneralistOne(SimpleLLMAgent):
         self.action_space_archive = []
         self.decision_archive = []
         self.action_archive = []
+        self.prompt_summary_archive = []
+        self.annotated_images = []
+        self.strategies = []
 
         self.previous_actions = []
         self.previous_summary = "This is the first move; as such, there is no previous summary."
@@ -37,33 +39,56 @@ class GeneralistOne(SimpleLLMAgent):
         image = opencv_to_pil(image)
         collision = True if collision == 1 else False
 
-        annotated_image, detection_coords = self.detection_specialist.get_detections(image, self.object_name)
+        if len(self.strategies) > 0:
+            strategy = self.strategies[0]
+        else:
+            strategy = self.decision_maker.get_decision(
+                {
+                    "prompt_for_task": self.prompt,
+                    "YOUR TASK": "based on that prompt, define a strategy for the drone to follow. IT SHOULD STICK TO IT FOR THE ENTIRE TASK."
+                }
+            )
+            self.strategies.append(strategy)
+
+        # annotated_image, detection_coords = self.detection_specialist.get_detections(image, self.object_name)
+        # self.annotated_images.append(annotated_image)
+
         summary = self.summary_specialist.get_summary(
             {
                 "prompt": self.prompt,
                 "current_drone_view": image,
-                "search_target": self.object_name,
-                "detection_coords": detection_coords,
-                "annotated_image": annotated_image,
+                # "detection_coords": detection_coords,
+                # "annotated_image": annotated_image,
                 "previous_moves": self.previous_actions,
                 "previous_summary": self.previous_summary,
                 "collision_after_previous_move": collision,
-                "current_altitude_very_important": altitude,
+                "current_altitude_very_important": altitude.item(),
+                "decision_maker_decisions": self.decision_archive,
+                "devised_strategy": strategy,
             }
         )
+
+        if len(self.summary_archive) > 0:
+            prompt_summary = self.summary_archive[0]
+        else:
+            prompt_summary = self.summary_specialist.get_summary(
+                {
+                    "your_goal": "briefly summarise the task prompt for the component that will decide the next action",
+                    "task_prompt": self.prompt,
+                }
+            )
+            self.prompt_summary_archive.append(prompt_summary)
 
         self.previous_summary = summary
 
-        action_space = self.action_space_specialist.get_actions(
-            {
-                "summary": summary,
-                "annotated_image": annotated_image,
-            }
-        )
-
         decision = self.decision_maker.get_decision(
             {
-                "actions": action_space,
+                "prompt_summary": prompt_summary,
+                "history": summary,
+                "current_drone_view": image,
+                "current_altitude": altitude.item(),
+                "goal": "MOVE OR CLAIM FOUND",
+                "devised_strategy": strategy,
             }
         )
 
@@ -71,11 +96,15 @@ class GeneralistOne(SimpleLLMAgent):
             {
                 "instruction": self.prompt,
                 "action": decision,
+                "context": {
+                    "current_altitude": altitude.item(),
+                    "image": image,
+                }
             }
         )
 
         self.summary_archive.append(summary)
-        self.action_space_archive.append(action_space)
+        # self.action_space_archive.append(action_space)
         self.decision_archive.append(decision)
         self.action_archive.append(action)
 
@@ -97,5 +126,7 @@ class GeneralistOne(SimpleLLMAgent):
             "decision_archive": self.decision_archive,
             "action_archive": self.action_archive,
             "conversation_history": [],
-            "object_name": self.object_name,
+            "prompt_summary_archive": self.prompt_summary_archive,
+            "annotated_images": self.annotated_images,
+            "devised_strategies": self.strategies,
         }
