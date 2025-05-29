@@ -79,7 +79,10 @@ class PivotLikeMechanism:
         :param index_list: List of indices to retain.
         :return: None
         """
-        self.points_of_interest = [self.points_of_interest[i] for i in index_list]
+        try:
+            self.points_of_interest = [self.points_of_interest[i] for i in index_list]
+        except IndexError as e:
+            raise PivotFailure()
 
 
 class PivotLikeDetector(BaseDetector):
@@ -140,6 +143,27 @@ class PivotLikeDetector(BaseDetector):
         detections = (min_x, min_y, max_x, max_y)
 
         return [detections]
+
+
+class AggregatedPivotLikeDetector(PivotLikeDetector):
+    def __init__(self, conversation_factory: BaseConversationFactory, iterations: int = 5, retries: int = 3):
+        super().__init__(conversation_factory=conversation_factory, iterations=iterations)
+        self.retries = retries
+        self.failure_limit = 3
+
+    def image_to_detections(self, image: Image.Image, target: str) -> List[Tuple[int, int, int, int]]:
+        detections = []
+
+        for _ in range(self.retries):
+            for consecutive_failure in range(self.failure_limit):
+                try:
+                    detection = super().image_to_detections(image, target)
+                    detections.extend(detection)
+                    break  # Exit the loop if detection is successful
+                except PivotFailure:
+                    continue
+
+        return detections
 
 
 def main():

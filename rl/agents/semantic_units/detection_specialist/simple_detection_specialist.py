@@ -3,14 +3,17 @@ from typing import List, Tuple
 from PIL import Image, ImageDraw
 
 from conversation import BaseConversationFactory, GPTFactory
+from conversation.gemini_factory import GeminiFactory
 from rl.agents.semantic_units import SemanticUnit
-from rl.agents.semantic_units.detection_specialist import PivotLikeDetector, VLMVerifier, GoalIdentifier
+from rl.agents.semantic_units.detection_specialist import PivotLikeDetector, VLMVerifier, GoalIdentifier, \
+    AggregatedPivotLikeDetector
 
 
 class SimpleDetectionSpecialist(SemanticUnit):
-    def __init__(self, conversation_factory: BaseConversationFactory):
+    def __init__(self, conversation_factory: BaseConversationFactory, aggregation_level: int = 3):
         super().__init__(subunit_list=[
-            PivotLikeDetector(conversation_factory=conversation_factory, iterations=3),
+            AggregatedPivotLikeDetector(conversation_factory=conversation_factory, iterations=3,
+                                        retries=aggregation_level),
             VLMVerifier(conversation_factory=conversation_factory),
         ])
 
@@ -42,11 +45,11 @@ class SimpleDetectionSpecialist(SemanticUnit):
 def main():
     from matplotlib import pyplot as plt
 
-    conversation_factory = GPTFactory()
+    conversation_factory = GeminiFactory("gemini-2.0-flash")
     detection_specialist = SimpleDetectionSpecialist(conversation_factory=conversation_factory)
-    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/data/burger.png")
+    image = Image.open("/home/dominik/MyStuff/active-visual-gpt/all_logs/GPT4o-CityNew/292_r0 /0.png")
 
-    target = "something funny"
+    target = "an anomaly"
     annotated_image, detections = detection_specialist.get_detections(image, target)
 
     plt.imshow(annotated_image)

@@ -7,7 +7,8 @@ from misc import opencv_to_pil
 from rl.agents import SimpleLLMAgent
 from rl.agents.semantic_units.action_space_specialist import ActionSpaceSpecialistFailure, ActionSpaceSpecialist
 from rl.agents.semantic_units.decision_making_specialist import DecisionMakingSpecialist
-from rl.agents.semantic_units.detection_specialist import GoalIdentifier, SimpleDetectionSpecialist
+from rl.agents.semantic_units.detection_specialist import GoalIdentifier, SimpleDetectionSpecialist, \
+    SplittingDetectionSpecialist
 from rl.agents.semantic_units.execution_specialist import ExecutionSpecialist
 from rl.agents.semantic_units.summary_specialist import SummarySpecialist
 
@@ -18,7 +19,9 @@ class GeneralistOne(SimpleLLMAgent):
         self.conversation_factory = conversation_factory
         self.uninitialised = True
 
-        self.detection_specialist = SimpleDetectionSpecialist(conversation_factory=conversation_factory)
+        self.object_name = GoalIdentifier(conversation_factory=conversation_factory).get_goal({"prompt": prompt})
+        self.detection_specialist = SplittingDetectionSpecialist(conversation_factory=conversation_factory,
+                                                                 parts_per_axis=2)
         self.decision_maker = DecisionMakingSpecialist(conversation_factory=conversation_factory)
         self.action_space_specialist = ActionSpaceSpecialist(conversation_factory=conversation_factory)
         self.execution_specialist = ExecutionSpecialist(conversation_factory=conversation_factory)
@@ -31,6 +34,7 @@ class GeneralistOne(SimpleLLMAgent):
         self.prompt_summary_archive = []
         self.annotated_images = []
         self.strategies = []
+        self.image_descriptions = []
 
         self.previous_actions = []
         self.previous_summary = "This is the first move; as such, there is no previous summary."
@@ -50,19 +54,19 @@ class GeneralistOne(SimpleLLMAgent):
             )
             self.strategies.append(strategy)
 
-        # annotated_image, detection_coords = self.detection_specialist.get_detections(image, self.object_name)
-        # self.annotated_images.append(annotated_image)
+        annotated_image, detection_coords = self.detection_specialist.get_detections(image, self.object_name)
+        self.annotated_images.append(annotated_image)
 
         summary = self.summary_specialist.get_summary(
             {
                 "prompt": self.prompt,
                 "current_drone_view": image,
                 # "detection_coords": detection_coords,
-                # "annotated_image": annotated_image,
+                "image_with_potential_detections_may_be_totally_wrong_though": annotated_image,
                 "previous_moves": self.previous_actions,
                 "previous_summary": self.previous_summary,
                 "collision_after_previous_move": collision,
-                "current_altitude_very_important": altitude.item(),
+                "current_ABSOLUTE_altitude_very_important": altitude.item(),
                 "decision_maker_decisions": self.decision_archive,
                 "devised_strategy": strategy,
             }
@@ -79,6 +83,18 @@ class GeneralistOne(SimpleLLMAgent):
             )
             self.prompt_summary_archive.append(prompt_summary)
 
+        image_description = self.decision_maker.get_decision(
+            {
+                "summary": summary,
+                "prompt_summary": prompt_summary,
+                "image_with_potential_detections_but_they_may_be_wrong": annotated_image,
+                "DECISION_TO_MAKE": "describe the situation presented in the image along with detections. DECIDE whether detections presented in the image are correct or not. If they are not, say they are wrong. Otherwise the other decision-making agent will mess up. If only some are correct, say which ones are correct and which ones are not. If there are no detections, say so. Also, describe these detections.",
+
+            }
+        )
+
+        self.image_descriptions.append(image_description)
+
         self.previous_summary = summary
 
         decision = self.decision_maker.get_decision(
@@ -89,6 +105,7 @@ class GeneralistOne(SimpleLLMAgent):
                 "current_altitude": altitude.item(),
                 "goal": "MOVE OR CLAIM FOUND",
                 "devised_strategy": strategy,
+                "image_description": image_description,
             }
         )
 
@@ -129,4 +146,6 @@ class GeneralistOne(SimpleLLMAgent):
             "prompt_summary_archive": self.prompt_summary_archive,
             "annotated_images": self.annotated_images,
             "devised_strategies": self.strategies,
+            "object_name": self.object_name,
+            "image_descriptions": self.image_descriptions,
         }

@@ -29,6 +29,10 @@ class VLMVerifier(BaseVerifier):
         x1, y1, x2, y2 = detection
         cutout = image.crop((x1, y1, x2, y2))
 
+        # Check if the cutout is empty
+        if cutout.getbbox() is None:
+            return False
+
         conversation.begin_transaction(Role.USER)
         conversation.add_text_message(
             f"Does this image contain {target} or something that could resemble {target}? Please answer with 'yes' or 'no'. The object is cut out from the larger picture. The cutout is noted on the larger picture.")
