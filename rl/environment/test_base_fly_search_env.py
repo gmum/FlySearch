@@ -26,6 +26,9 @@ class ClientMock:
     def disconnect(self):
         self.disconnected = True
 
+    def request(self, *args, **kwargs):
+        return {"object_id": "asda"}
+
 
 class TrivialExtension(BaseFlySearchEnv):
     def __init__(self):

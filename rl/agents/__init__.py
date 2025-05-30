@@ -6,3 +6,7 @@ from .description_llm_agent import DescriptionLLMAgent
 from .description_llm_agent_factory import DescriptionLLMAgentFactory
 from .generalist_one import GeneralistOne
 from .generalist_one_agent_factory import GeneralistOneAgentFactory
+from .detection_driven_description_llm_agent import DetectionDrivenDescriptionLLMAgent
+from .detection_driven_description_llm_agent_factory import DetectionDrivenDescriptionLLMAgentFactory
+from .detection_cheater_agent import DetectionCheaterAgent
+from .detection_cheater_factory import DetectionCheaterFactory

@@ -104,6 +104,7 @@ class TrajectoryEvaluator:
         for glimpse_number in range(self.max_glimpses):
 
             try:
+                observation["cheats"] = info  # Use this field ONLY for ablation purposes.
                 action = self.agent.sample_action(observation)
             except ParsingError:
                 self.tell_loggers_about_termination({"reason": "parsing error"})

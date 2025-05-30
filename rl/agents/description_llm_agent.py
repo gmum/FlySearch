@@ -16,7 +16,7 @@ class DescriptionLLMAgent(SimpleLLMAgent):
         self.description_conversation_factory = description_conversation_factory
         self.object_desc = object_desc
 
-    def _get_description_and_detection(self, image: Image.Image) -> Tuple[str, bool, str]:
+    def _get_description_and_detection(self, image: Image.Image) -> Tuple[str, bool, str, Image.Image]:
         description_conversation = self.description_conversation_factory.get_conversation()
         description_conversation.begin_transaction(Role.USER)
 
@@ -41,7 +41,7 @@ class DescriptionLLMAgent(SimpleLLMAgent):
 
         _, additional_info = description_conversation.get_latest_message()
 
-        return description, detection, additional_info
+        return description, detection, additional_info, image
 
     def _act(self, image: np.ndarray, altitude: np.ndarray, collision: int, **_):
         image = opencv_to_pil(image)
@@ -58,7 +58,8 @@ class DescriptionLLMAgent(SimpleLLMAgent):
 
         self.conversation.add_text_message(f"Your current altitude is {altitude.item()} meters above ground level.")
 
-        description, detection, additional_info = self._get_description_and_detection(image)
+        description, detection, additional_info, image = self._get_description_and_detection(
+            image)  # Yes, we are overriding the image here.
         self.conversation.add_text_message(
             f"Our specialised agent described the image as follows: {description}. \n\n The agent did {'not ' if not detection else ''} detect the object of interest in the image. Its judgement may be wrong, so ultimately you need to decide on your own. Furthermore, the agent provided the following additional information: {additional_info}")
 

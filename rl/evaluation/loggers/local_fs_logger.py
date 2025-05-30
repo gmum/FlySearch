@@ -1,5 +1,8 @@
 import pathlib
 import json
+from typing import List
+
+from PIL import Image
 
 from misc import opencv_to_pil
 from rl.evaluation import EvaluationState
@@ -52,6 +55,24 @@ class LocalFSLogger(BaseLogger):
 
         with open(self.log_dir / f"object_bbox.txt", "w") as f:
             f.write(f"{evaluation_state.info['object_bbox']}")
+
+        try:
+            with open(self.log_dir / "agent_info.json", "w") as f:
+                # Remove lists of images from agent_info to avoid serialization issues
+                dict_copy = evaluation_state.agent_info.copy()
+
+                for key, value in dict_copy.items():
+                    if isinstance(value, list) and all(isinstance(item, Image.Image) for item in value):
+                        image_list = value  # type: List[Image.Image]
+                        del evaluation_state.agent_info[key]
+
+                        for i, image in enumerate(image_list):
+                            image_path = self.log_dir / f"{key}_{i}.png"
+                            image.save(image_path)
+
+                json.dump(evaluation_state.agent_info, f, indent=4)
+        except Exception as e:
+            pass  # Serialization issues. Works only if agent really wants this to be done this way.
 
     def log_termination(self, termination_info):
         with open(self.log_dir / "termination.txt", "w") as f:
