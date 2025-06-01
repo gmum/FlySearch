@@ -50,7 +50,15 @@ class Run:
             all_comments = json.load(open(path / 'simple_conversation.json'))
         except FileNotFoundError:
             all_comments = json.load(open(path / 'conversation.json'))
-        return [comment for role, comment in all_comments if role == "Role.ASSISTANT" or role == "assistant"]\
+
+        if all_comments == []:
+            # Fallback to agent info
+            try:
+                return json.load(open(path / 'agent_info.json'))["action_archive"]
+            except FileNotFoundError:
+                return []
+
+        return [comment for role, comment in all_comments if role == "Role.ASSISTANT" or role == "assistant"]
 
     @staticmethod
     def _load_object_bbox(path: pathlib.Path) -> Tuple:
@@ -69,6 +77,7 @@ class Run:
 
     def __init__(self, path: pathlib.Path):
         self.path = path
+
         self.params = self._load_params(path)
         self.coords = self._load_coords(path)
         self.comments = self._load_comments(path)

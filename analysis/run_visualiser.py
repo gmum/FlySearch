@@ -149,7 +149,7 @@ class RunVisualiser:
             max_y = y + z
 
             # px_per_msq = math.log((img_px_area / (z * z)), 2)
-            rpx_per_msq = (img_px_area / (z * z)) ** 0.5
+            rpx_per_msq = (img_px_area / ((2 * z) * (2 * z))) ** 0.5
 
             areas.append((rpx_per_msq, min_x, max_x, min_y, max_y))
 
@@ -323,7 +323,7 @@ def main():
     import os
     from pathlib import Path
 
-    base_path = Path("../web/trajectories_old1")
+    base_path = Path("all_logs/GPT4o-FS2-City-Reckless1")
     runs = sorted(os.listdir(base_path), key=lambda x: int(x.split("_")[0]))
 
     run = Run(base_path / runs[3])
