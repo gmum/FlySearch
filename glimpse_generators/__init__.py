@@ -1,3 +1,4 @@
+from .unrealcv_fix import Client
 from .unreal_guardian import UnrealGuardian
 from .unreal_client_wrapper import UnrealClientWrapper, UnrealException
 from .image_glimpse_generator import BasicImageGlimpseGenerator, ImageGlimpseGenerator, GridImageGlimpseGenerator

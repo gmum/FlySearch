@@ -1,7 +1,6 @@
 test_logs
 open_detection/__pycache__
 misc/__pycache__
-misc/config.py
 __pycache__/
 env
 **/__pycache__/
@@ -9,3 +8,4 @@ env
 *.iml
 .idea/
 *.png
+.env

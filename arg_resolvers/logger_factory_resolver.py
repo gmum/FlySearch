@@ -9,13 +9,13 @@ from rl.evaluation.loggers import WandbLogger, WandbLoggerFactory, LocalFSLogger
 
 class LoggerFactoryResolver(BaseArgResolver):
     def register_args(self, parser: ArgumentParser):
-        parser.add_argument("--log_on_wandb", type=bool, required=False)
+        parser.add_argument("--log_on_wandb", type=str, required=False)
         parser.add_argument("--wandb_project_name", type=str, required=False)
         parser.add_argument("--log_directory", type=str, required=True)
         parser.add_argument("--run_name", type=str, required=True)
 
     def get_wandb_logger_factory(self, args: Namespace) -> List:
-        if args.log_on_wandb:
+        if args.log_on_wandb is not None and "true" in args.log_on_wandb.lower():
             if args.wandb_project_name is None:
                 raise ValueError("Wandb project name is required when logging on wandb")
             return [WandbLoggerFactory(args.wandb_project_name)]

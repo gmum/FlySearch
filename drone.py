@@ -1,8 +1,10 @@
 from argparse import ArgumentParser
+from dotenv import load_dotenv
 
 from arg_resolvers import ScenarioArgResolver, ConversationFactoryResolver, LoggerFactoryResolver, RunnerResolver, Bus, \
     AgentFactoryResolver
 
+load_dotenv()
 
 def main():
     parser = ArgumentParser()

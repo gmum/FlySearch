@@ -30,3 +30,7 @@ class OutOfBoundsFlightValidator:
     def inform_about_starting_altitude(self, starting_altitude: float):
         if self.fs2_behavior:
             self.search_diameter = starting_altitude
+
+
+    def nuke(self):
+        self.first_position = None

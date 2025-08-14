@@ -4,6 +4,7 @@ import gymnasium as gym
 from typing import Optional, Dict, Tuple, List
 
 from glimpse_generators import UnrealClientWrapper, UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
+from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from misc import pil_to_opencv
 
 from scenarios import get_classes_to_object_classes, classes_to_images
@@ -95,8 +96,16 @@ class BaseFlySearchEnv(gym.Env):
 
     def __enter__(self):
         self.client = self.get_client()
-        self.glimpse_generator = self.get_glimpse_generator(client=self.client)
-        self.classes_to_ids = get_classes_to_object_classes(self.client)
+
+        success = False
+
+        while not success:
+            try:
+                self.glimpse_generator = self.get_glimpse_generator(client=self.client)
+                self.classes_to_ids = get_classes_to_object_classes(self.client)
+                success = True
+            except UnrealDiedException:
+                continue
 
         self.resources_initialized = True
 

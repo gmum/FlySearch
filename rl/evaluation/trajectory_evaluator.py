@@ -1,6 +1,7 @@
 from typing import Callable, List, Dict
 
 from conversation import Conversation
+from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from response_parsers import ParsingError
 from rl.evaluation import EvaluationState
 from rl.evaluation.validators import BaseValidator
@@ -8,7 +9,6 @@ from rl.evaluation.loggers import BaseLogger
 from rl.agents import BaseAgent, SimpleLLMAgentFactory, BaseAgentFactory
 from rl.environment import BaseFlySearchEnv, DroneCannotSeeTargetException
 from scenarios import BaseScenarioMapper
-
 
 class TrajectoryEvaluator:
     """
@@ -44,11 +44,18 @@ class TrajectoryEvaluator:
     def _prepare_environment(self):
         throws = 0
 
+        generate_new_scenario: bool = True
+
         while True:
-            scenario = self.scenario_mapper.create_random_scenario(seed=self.seed)
+            if generate_new_scenario:
+                scenario = self.scenario_mapper.create_random_scenario(seed=self.seed)
             try:
                 self.first_observation, self.first_info = self.environment.reset(options=scenario)
+            except UnrealDiedException:
+                generate_new_scenario = False # It was likely not scenarios fault
+                continue
             except DroneCannotSeeTargetException:
+                generate_new_scenario = True # Scenario is broken
                 throws += 1
             else:
                 break
@@ -90,11 +97,43 @@ class TrajectoryEvaluator:
 
         return True, {}
 
+    def nuke_loggers(self):
+        for logger in self.loggers:
+            logger.nuke()
+
+    def nuke_validators(self):
+        for validator in self.validators:
+            validator.nuke()
+
     def tell_validators_about_starting_altitude(self, starting_altitude: int):
         for validator in self.validators:
             validator.inform_about_starting_altitude(starting_altitude)
 
     def evaluate(self):
+        success = False
+        while not success:
+            try:
+                self._evaluate_unsafe()
+                success = True
+            except UnrealDiedException:
+                if self.scenario is None:
+                    raise ValueError("Sanity check failed: Scenario is not initialised, but it should be set during initialisation.")
+                inner_success = False
+
+                self.nuke_loggers()
+                self.nuke_validators()
+
+                while not inner_success:
+                    try:
+                        self.first_observation, self.first_info = self.environment.reset(options=self.scenario)
+                        inner_success = True
+                    except UnrealDiedException:
+                        inner_success = False
+
+                self._prepare_agent()
+
+
+    def _evaluate_unsafe(self):
         observation = self.first_observation
         info = self.first_info
 

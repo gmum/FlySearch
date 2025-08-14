@@ -1,5 +1,6 @@
 import random
 
+from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from response_parsers import ParsingError
 from rl.environment import BaseFlySearchEnv
 from rl.evaluation import TrajectoryEvaluator

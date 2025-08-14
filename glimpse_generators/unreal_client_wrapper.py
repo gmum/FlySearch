@@ -1,5 +1,4 @@
-from unrealcv import Client
-from glimpse_generators import UnrealGuardian
+from glimpse_generators import Client, UnrealGuardian
 
 
 class UnrealDiedException(Exception):
@@ -15,7 +14,10 @@ class UnrealCVWrapper(Client):
         super().__init__(*args, **kwargs)
 
     def request(self, *args, **kwargs):
-        response = super().request(*args, **kwargs)
+        try:
+            response = super().request(*args, **kwargs)
+        except ConnectionError:
+            raise UnrealDiedException()
         print("Unreal CV Wrapper: request params", args, kwargs, "response", response)
 
         if "error" in response:
@@ -57,7 +59,7 @@ class UnrealClientWrapper:
         if not self.guardian.is_alive:
             self.guardian.reset()
             self._initialize_client()
-            raise UnrealDiedException
+            raise UnrealDiedException()
 
         return self.client.request(*args, **kwargs)
 
@@ -67,12 +69,17 @@ class UnrealClientWrapper:
 
 
 def main():
+    import os
+
     from time import sleep
+    from dotenv import load_dotenv
+
+    load_dotenv()
 
     client = UnrealClientWrapper(
         host="localhost",
         port=9000,
-        unreal_binary_path="/home/anonymous/MyStuff/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample",
+        unreal_binary_path=os.environ["CITY_BINARY_PATH"],
     )
 
     while True:
@@ -83,9 +90,7 @@ def main():
 
         print("Is alive:", client.guardian.is_alive)
         client.guardian.process.kill()
-        sleep(5)
         print("Is alive:", client.guardian.is_alive)
-        sleep(10)
 
 
 if __name__ == "__main__":

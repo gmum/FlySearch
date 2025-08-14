@@ -65,3 +65,7 @@ class WandbLogger(BaseLogger):
 
         table = wandb.Table(columns=["image", "model_speech", "benchmark_speech"], data=history)
         wandb.log({"model_speeches": table})
+
+    def nuke(self):
+        self.images = []
+        self.latest_history = []
