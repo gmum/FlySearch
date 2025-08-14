@@ -3,7 +3,6 @@ from time import sleep
 
 import cv2
 from PIL import Image
-from openai import OpenAI
 from openai import RateLimitError
 
 from conversation.abstract_conversation import Conversation, Role
@@ -167,40 +166,3 @@ class OpenAIConversation(Conversation):
 
     def get_entire_conversation(self):
         return self.conversation
-
-
-def main():
-    from misc.config import OPEN_AI_KEY
-    from datasets.vstar_bench_dataset import VstarSubBenchDataset
-
-    client = OpenAI(api_key=OPEN_AI_KEY)
-    conversation = OpenAIConversation(
-        client,
-        model_name="gpt-4o",
-        seed=42,
-        max_tokens=300,
-        temperature=0.0000000000000000000001,
-        top_p=0.0000000000000000000001
-    )
-
-    image = Image.open("/home/anonymous/MyStuff/active-visual-gpt/data/sample_images/burger.jpeg")
-    image = pil_to_opencv(image)
-
-    conversation.begin_transaction(Role.USER)
-    conversation.add_image_message(opencv_to_pil(image))
-    conversation.add_text_message("Hi, could you describe this image for me?")
-    conversation.commit_transaction(send_to_vlm=False)
-
-    conversation.begin_transaction(Role.ASSISTANT)
-    conversation.add_text_message("This image depicts a goose.")
-    conversation.commit_transaction(send_to_vlm=False)
-
-    conversation.begin_transaction(Role.USER)
-    conversation.add_text_message("Are you sure?")
-    conversation.commit_transaction(send_to_vlm=True)
-
-    print(conversation.get_conversation())
-
-
-if __name__ == "__main__":
-    main()

@@ -1,9 +1,10 @@
 import base64
-from time import sleep
-
 import cv2
+
+from time import sleep
 from PIL import Image
 from anthropic import Anthropic, RateLimitError
+
 from conversation import OpenAIConversation, Role
 from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
@@ -122,43 +123,3 @@ class AnthropicConversation(OpenAIConversation):
 
     def get_entire_conversation(self):
         return self.conversation
-
-
-def main():
-    from misc.config import ANTHROPIC_AI_KEY
-
-    client = Anthropic(api_key=ANTHROPIC_AI_KEY)
-    conversation = AnthropicConversation(
-        client,
-        model_name="claude-3-5-sonnet-20241022",
-        seed=42,
-        max_tokens=300,
-        temperature=0.0000000000000000000001,
-        top_p=0.0000000000000000000001
-    )
-
-    image = Image.open("/home/anonymous/MyStuff/active-visual-gpt/data/sample_images/burger.jpeg")
-    image = pil_to_opencv(image)
-
-    conversation.begin_transaction(Role.USER)
-    conversation.add_image_message(opencv_to_pil(image))
-    conversation.add_text_message("Hi, could you describe this image for me?")
-    conversation.commit_transaction(send_to_vlm=False)
-
-    conversation.begin_transaction(Role.ASSISTANT)
-    conversation.add_text_message("This image depicts a goose.")
-    conversation.commit_transaction(send_to_vlm=False)
-
-    conversation.begin_transaction(Role.USER)
-    conversation.add_text_message("Are you sure?")
-    conversation.commit_transaction(send_to_vlm=True)
-
-    conversation.begin_transaction(Role.USER)
-    conversation.add_text_message("Is it humorous?")
-    conversation.commit_transaction(send_to_vlm=True)
-
-    print(conversation.get_conversation(save_urls=False))
-
-
-if __name__ == "__main__":
-    main()
