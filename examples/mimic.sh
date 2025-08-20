@@ -14,7 +14,8 @@ python3 drone.py \
 --number_of_runs 300 \
 --agent "simple_llm" \
 --show_class_image "false" \
---prompt_type "fs1"
+--prompt_type "fs1" \
+--continue_from 0
 
 # This script tests Gemma27b on the FS2 scenario and logs the results to all_logs/Gemma27b-FS-2-EXAMPLE.
 python3 drone.py \
@@ -30,4 +31,5 @@ python3 drone.py \
 --number_of_runs 200 \
 --agent "simple_llm" \
 --show_class_image "true" \
---prompt_type "fs2"
+--prompt_type "fs2" \
+--continue_from 0

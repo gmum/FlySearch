@@ -2,7 +2,7 @@ from .base_scenario_mapper import BaseScenarioMapper
 from .forest_scenario_mapper import ForestScenarioMapper
 from .city_scenario_mapper import CityScenarioMapper
 from .classes_to_ids import get_classes_to_object_classes
-from .mimic_scenario_mapper import MimicScenarioMapper
+from .mimic_scenario_mapper import MimicScenarioMapper, parse_scenario
 
 from .default_forest_scenario_mapper import DefaultForestScenarioMapper
 from .default_forest_anomaly_scenario_mapper import DefaultForestAnomalyScenarioMapper
