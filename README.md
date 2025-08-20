@@ -11,9 +11,19 @@ of this section is to tell you how to do that.
 
 We suggest you use Python 3.12 and then install dependencies using `pip install -r requirements.txt`.
 
+### `.env` file 
+
+Before proceeding, you need to create a `.env` file in the root directory of this repository. We've provided a template for it in the file `.env-example`. In other words, you should run:
+
+```bash 
+cp .env-example .env
+```
+
+You will need to edit the `.env` file so that it contains your local variables (such as paths to binaries, fonts, etc.). We will describe the variables you need to set below.
+
 ### Benchmark binaries
 
-Can be downloaded from https://doi.org/10.5281/zenodo.15428224.
+Binaries cam be downloaded from https://doi.org/10.5281/zenodo.15428224.
 
 `city.tar.gz` contains the city environment and
 `forest.tar.gz` contains the forest environment. Extract them and then modify the `.env` file by:
@@ -40,15 +50,25 @@ To use closed-source VLMs, you need to have an API key. To configure them, set a
 `.env` file.
 
 
-## Entrypoint
+## Running FlySearch
 
-We recommend using the `drone.sh` script to run the benchmark. It is a Bash script that calls the `drone.py` script
-which performs the entire evaluation. It has several configurable parameters, such as:
+### Examples 
+
+We present examples on how to run FlySearch benchmark in the `examples` directory.
+
+- `mimic.sh` contains 3 examples of how to run different models on FS-1, FS-Anomaly-1 and FS-2.
+- `create_new.sh` contains 3 examples of how to sample new scenarios from distribution of scenarios used in FS-1, FS-Anomaly-1 and FS-2. 
+If you just want to test a model on our benchmark, we recommend using `mimic.sh`.
+
+
+### Direct `drone.py` script usage
+
+`drone.py` script is the entrypoint to run the benchmark. It has several configurable parameters, such as:
 
 * `scenario_type` -- either `forest_random`, `city_random` or `mimic`. The first two mean that scenarios will be randomly generated, while the last means that scenario configurations will be copied (mimicked) from a known, existing run.
 * `mimic_run_path` -- use only if `scenario_type` is set to `mimic`. This is the path to the directory where the run to be mimicked is stored.
 * `mimic_run_cls_names` -- for normal use should be set to `*` (as is)
-* `model` -- the model to be used. GPT-4o will call OpenAI's API, while prefixing model name with `anthropic-` will assume that Anthropic's library needs to be used. If `gemini` is present in models name, we assume it's an appropriate Gemini model. To use Sonnet, use `anthropic-claude-3-5-sonnet-20241022`. If model is not recognized, the script assumes that it's a VLLM model.
+* `model` -- the model to be used. See  `models` subsection for more details.
 * `log_directory` -- name of the directory (relative to this script) where you wish to keep logs from runs. We recommend to keep it called `all_logs`
 * `run_name` -- all trajectories will be saved in `log_directory/run_name`.
 * `dummy_first` -- for normal use, should be set to `true`. Controls whether we discard first trajectory for the simulation environment to "warm up" (in case it misses assets and so on). Note that mimic runs assume this behaviour and duplicate the first trajectory config to compensate for that.
@@ -59,3 +79,11 @@ which performs the entire evaluation. It has several configurable parameters, su
 * `line_of_sight_assured` -- whether the agent should be able to see the searched object at the start of the trajectory. Should be set to `true` while generating FS-1-like and FS-A-1-like scenarios, and `false` for FS-2-like scenarios.
 * `show_class_image` -- whether the agent should receive additional, visual prompt containing image of the object being searched. Should be set to `true` while generating FS-2-like scenarios, and `false` for FS-1-like and FS-A-1-like scenarios.
 * `prompt_type` -- either `fs1` or `fs2`.
+
+#### Models 
+
+FlySearch supports testing several models: 
+* GPT-4o. To use it, set `model` flag to `gpt-4o`.
+* Gemini family models (e.g gemini-2.0-flash. To use it, set `model` flag to `gemini-2.0-flash`.)
+* Anthropic models. To use it, prefix the model name with `anthropic-`, e.g. `anthropic-claude-3-5-sonnet-20241022`.
+* Any models behind a VLLM API. If model name does not match any of the above, it is assumed to be a VLLM model. OpenAI protocol is used to communicate with the model. For example, to use Gemma3-27b hosted on DeepInfra ([link](https://deepinfra.com/)), you need to configure `.env` file with `VLLM_ADDRESS = 'https://api.deepinfra.com/v1/openai'`, `VLLM_KEY` matching your DeepInfra API key, and set `model` to `google/gemma-3-27b-it`.
