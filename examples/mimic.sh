@@ -1,6 +1,6 @@
 # THOSE ARE EXAMPLES. DO NOT RUN THEM DIRECTLY. INSTEAD, COPY THE APPROPRIATE EXAMPLE TO FlySearch/script.sh AND RUN IT (AFTER MODIFYING IT AS NEEDED).
 
-# This script tests gpt-4o on the FS-1 and FS-Anomaly-1 at the same time (city environment); scenarios 1-200 are FS-1 and scenarios 201-300 are FS-Anomaly-1.
+# This script tests gpt-4o on the FS-1 and FS-Anomaly-1 at the same time (city environment); scenarios 0-199 are FS-1 and scenarios 200-299 are FS-Anomaly-1.
 python3 drone.py \
 --scenario_type mimic \
 --mimic_run_path "run_templates/city-template" \

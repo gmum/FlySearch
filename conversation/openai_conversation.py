@@ -1,16 +1,16 @@
 import base64
-from time import sleep
-
 import cv2
+
+from time import sleep
 from PIL import Image
-from openai import RateLimitError
+from openai import RateLimitError, Client
 
 from conversation.abstract_conversation import Conversation, Role
 from misc.cv2_and_numpy import pil_to_opencv, opencv_to_pil
 
 
 class OpenAIConversation(Conversation):
-    def __init__(self, client, model_name: str, seed=42, max_tokens=300, temperature=0.8, top_p=1.0):
+    def __init__(self, client: Client, model_name: str, seed=42, max_tokens=300, temperature=0.8, top_p=1.0):
         self.client = client
         self.conversation = []
         self.model_name = model_name
@@ -41,7 +41,7 @@ class OpenAIConversation(Conversation):
         if not self.transaction_started:
             raise Exception("Transaction not started")
 
-        if 'mistral' in self.model_name.lower() and self.transaction_conversation['role'] == 'assistant':
+        if self.transaction_conversation['role'] == 'assistant':
             self.transaction_conversation['content'] = text
         else:
             content = self.transaction_conversation["content"]

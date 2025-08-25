@@ -60,8 +60,12 @@ class UnrealClientWrapper:
             self.guardian.reset()
             self._initialize_client()
             raise UnrealDiedException()
-
-        return self.client.request(*args, **kwargs)
+        try:
+            return self.client.request(*args, **kwargs)
+        except UnrealDiedException as e:
+            self.guardian.reset()
+            self._initialize_client()
+            raise e
 
     def disconnect(self):
         self.client.disconnect()
