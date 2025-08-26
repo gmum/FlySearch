@@ -10,3 +10,5 @@ from .detection_driven_description_llm_agent import DetectionDrivenDescriptionLL
 from .detection_driven_description_llm_agent_factory import DetectionDrivenDescriptionLLMAgentFactory
 from .detection_cheater_agent import DetectionCheaterAgent
 from .detection_cheater_factory import DetectionCheaterFactory
+from .parsing_error_agent import ParsingErrorAgent
+from .parsing_error_agent_factory import ParsingErrorAgentFactory

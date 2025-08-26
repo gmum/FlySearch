@@ -2,7 +2,7 @@
 
 ## Scenario-related parameters 
 
-* `scenario_type` -- either `forest_random`, `city_random` or `mimic`. The first two mean that scenarios will be randomly generated, while the last means that scenario configurations will be copied (mimicked) from a known, existing run. Typically, you would use `mimic` and specify `mimic_run_path` to point to one of template directories in `run_templates` directory.
+* `scenario_type` -- either `forest_random`, `city_random`, `forest_random_anomaly`, `city_random_anomaly` or `mimic`. The first four mean that scenarios will be randomly generated, while the last means that scenario configurations will be copied (mimicked) from a known, existing run. Typically, you would use `mimic` and specify `mimic_run_path` to point to one of template directories in `run_templates` directory.
 * `mimic_run_path` -- use only if `scenario_type` is set to `mimic`. This is the path to the directory where the run to be mimicked is stored.
 * `mimic_run_cls_names` -- for normal use should set it to `*`. You only need to change it if for some reason you would like to perform a mimic run, but only for a certain class of objects (for example, fire). The argument is a list of semicolon (`;`) separated class names of objects that a scenario should contain in order to be mimicked (e.g. `fire` or `fire;car`. The name needs to be a _substring_ of the class name, so `car` would match all `car`-related classes (like sports cars, police cars and so on)). 
 * `line_of_sight_assured` -- whether the agent should be able to see the searched object at the start of the trajectory. Should be set to `true` while generating FS-1-like and FS-A-1-like scenarios, and `false` for FS-2-like scenarios.

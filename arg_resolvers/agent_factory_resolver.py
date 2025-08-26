@@ -1,14 +1,14 @@
 from arg_resolvers import BaseArgResolver
 
 from rl.agents import SimpleLLMAgentFactory, DescriptionLLMAgentFactory, GeneralistOneAgentFactory, \
-    DetectionDrivenDescriptionLLMAgentFactory, DetectionCheaterFactory
+    DetectionDrivenDescriptionLLMAgentFactory, DetectionCheaterFactory, ParsingErrorAgentFactory
 
 
 class AgentFactoryResolver(BaseArgResolver):
     def register_args(self, parser):
         parser.add_argument("--agent", type=str, required=True,
                             choices=["simple_llm", "description_llm", "generalist_one",
-                                     "detection_driven_description_llm", "detection_cheater_factory"], )
+                                     "detection_driven_description_llm", "detection_cheater_factory", "parsing_error"], )
 
     def resolve_args(self, args, accumulator):
         if args.agent == "simple_llm":
@@ -29,6 +29,10 @@ class AgentFactoryResolver(BaseArgResolver):
             )
         elif args.agent == "detection_cheater_factory":
             agent_factory = DetectionCheaterFactory(
+                conversation_factory=accumulator["conversation_factory"],
+            )
+        elif args.agent == "parsing_error":
+            agent_factory = ParsingErrorAgentFactory(
                 conversation_factory=accumulator["conversation_factory"],
             )
         else:

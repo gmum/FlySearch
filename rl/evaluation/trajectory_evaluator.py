@@ -141,11 +141,21 @@ class TrajectoryEvaluator:
         self.tell_validators_about_starting_altitude(starting_altitude)
 
         for glimpse_number in range(self.max_glimpses):
-
+            observation["cheats"] = info  # Use this field ONLY for ablation purposes.
             try:
-                observation["cheats"] = info  # Use this field ONLY for ablation purposes.
                 action = self.agent.sample_action(observation)
             except ParsingError:
+                # If agent gives some nonsense, still log initial position
+                evaluation_state = EvaluationState(
+                    observation=observation,
+                    action={"ERROR": "invalid"},
+                    info=info,
+                    observation_number=glimpse_number,
+                    correction_number=0,
+                    agent_info=self.agent.get_agent_info(),
+                    scenario=self.scenario
+                )
+                self.tell_loggers(evaluation_state)
                 self.tell_loggers_about_termination({"reason": "parsing error"})
                 return
             except:
