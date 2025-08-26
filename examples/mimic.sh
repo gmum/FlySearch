@@ -17,6 +17,23 @@ python3 drone.py \
 --prompt_type "fs1" \
 --continue_from 0
 
+# This script tests gpt-4o on the 3 first FS-Anomaly-1 scenarios (city environment); note the `continue_from` flag usage.
+python3 drone.py \
+--scenario_type mimic \
+--mimic_run_path "run_templates/city-template" \
+--mimic_run_cls_names "*" \
+--model "oai-gpt-4o" \
+--log_directory "all_logs" \
+--run_name "GPT4o-FSA1-city-EXAMPLE" \
+--dummy_first "true" \
+--forgiveness 5 \
+--glimpses 10 \
+--number_of_runs 3 \
+--agent "simple_llm" \
+--show_class_image "false" \
+--prompt_type "fs1" \
+--continue_from 200
+
 # This script tests Gemma27b on the FS2 scenario and logs the results to all_logs/Gemma27b-FS-2-EXAMPLE.
 python3 drone.py \
 --scenario_type mimic \
