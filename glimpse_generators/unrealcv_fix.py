@@ -35,14 +35,12 @@ import sys
 import threading
 import time
 import signal
-import os
 
 # try:
 #     from Queue import Queue
 # except:
 #     from queue import Queue # for Python 3
 from queue import SimpleQueue
-
 
 _L = logging.getLogger(__name__)
 # _L.addHandler(logging.NullHandler()) # Let client to decide how to do logging
@@ -240,12 +238,15 @@ class Client:
             # Instead of just dropping this message, give a verbose notice
             _L.error('No message handler to handle message with length %d', len(raw_message))
 
-    def connect(self, timeout=1):
+    def connect(self, timeout=5):
         """
         Try to connect to server, return whether connection successful
         """
         if self.isconnected():
             return True
+
+        signal.signal(signal.SIGALRM, self._alarm_handler)
+        signal.alarm(timeout)
 
         try:
             if self.type == 'unix':
@@ -285,12 +286,18 @@ class Client:
             # This does not neccessarily mean connection successful, might be closed by server
             # Unless explicitly to tell the server to accept new socket
 
+        except TimeoutError:
+            # There is an Unreal instance here, BUT it already managed to die. We need to tell the other parts of the code to deal with it.
+            raise ConnectionError
         except Exception as e:
             _L.error('Can not connect to %s', str(self.endpoint))
             _L.error('Error %s', e)
             self.disconnect()
             # self.sock = None
             return False
+        finally:
+            signal.alarm(0)
+
 
     def isconnected(self):
         """Check whether client is connected to server"""
@@ -378,125 +385,12 @@ class Client:
                     raw_message = self.receive()
                     self.recv_message_id += 1
 
-    def request_async(self, message):
-        """
-        Send request without waiting for any reply
-        """
-        if type(message) is list:
-            return self.request_batch_async(message)
-
-        if sys.version_info[0] == 3:
-            if not isinstance(message, bytes):
-                message = message.encode('utf-8')
-
-        raw_message = b'%d:%s' % (self.send_message_id, message)
-        if not self.send(raw_message):
-            assert 0, 'failed send because of socket is closed'
-            # return None
-
-        self.send_message_id += 1
-
-        self.recv_num_q.put(1)
-        # self.message_id += 1
-        return None
-
-    def request_batch_async(self, batch):
-        """
-        Send a batch of requests to server without waiting for any reply.
-        batch : list
-            a list of requests, each request is a string, such as ['command1', 'command2', ...]
-        Returns
-        -------
-        None
-        """
-        for message in batch:
-            if sys.version_info[0] == 3:
-                if not isinstance(message, bytes):
-                    message = message.encode('utf-8')
-
-            raw_message = b'%d:%s' % (self.send_message_id, message)
-            if not self.send(raw_message):
-                assert 0, 'failed send because of socket is closed'
-            # self.send(raw_message)
-            self.send_message_id += 1
-
-        self.recv_num_q.put(len(batch))
-        return None
-
-    def request_batch(self, batch):
-        """
-        Send a batch of requests to server and wait util get all responses from server.
-        Parameters
-        ----------
-        batch : list
-            a list of requests, each request is a string, such as ['command1', 'command2', ...]
-        Returns
-        -------
-        list
-            a list of responses, such as ['response1', 'response2', ...]
-
-        Examples
-        --------
-        >>> client.request_batch(['vget /camera/0/location', 'vget /camera/0/rotation'])
-        ['100.0 -100.0 100.0', '0.0 0.0 0.0']
-        """
-        for message in batch:
-            if sys.version_info[0] == 3:
-                if not isinstance(message, bytes):
-                    message = message.encode('utf-8')
-
-            raw_message = b'%d:%s' % (self.send_message_id, message)
-            if not self.send(raw_message):
-                assert 0, 'failed send because of socket is closed'
-                # return None
-            self.send_message_id += 1
-
-        self.recv_num_q.put(-len(batch))  # negative number indicates need results
-
-        batch_res = []
-        for i in range(len(batch)):
-            message = self.recv_data_q.get()
-            batch_res.append(message)
-
-        return batch_res
 
     def request(self, message, timeout=5):
-        """
-        Send a request to server and wait util get a response from server or timeout.
-
-        Parameters
-        ----------
-        message : str
-            command to control the game. More info can be seen from http://docs.unrealcv.org/en/master/reference/commands.html
-        timeout : int
-            when timeout is -1, the request will be sent asynchronously, and no response will be returned
-        Returns
-        -------
-        str
-            plain text message from server
-
-        Examples
-        --------
-        >>> client = Client('localhost', 9000)
-        >>> client.connect()
-        >>> response = client.request('vget /camera/0/view')
-        """
-
-        if timeout < 0 : # async
-            if type(message) is list:
-                self.request_batch_async(message)
-            else:
-                self.request_async(message)
-            return True
-
-
         signal.signal(signal.SIGALRM, self._alarm_handler)
         signal.alarm(timeout)
 
         try:
-            if type(message) is list:
-                return self.request_batch(message)
-
             if sys.version_info[0] == 3:
                 if not isinstance(message, bytes):
                     message = message.encode('utf-8')
@@ -513,7 +407,7 @@ class Client:
             message = self.recv_data_q.get()
 
             return message
-        except TimeoutError as e:
+        except TimeoutError:
             raise ConnectionError()
         finally:
             signal.alarm(0)

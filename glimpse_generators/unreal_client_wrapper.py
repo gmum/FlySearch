@@ -13,6 +13,12 @@ class UnrealCVWrapper(Client):
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
 
+    def connect(self, *args, **kwargs):
+        try:
+            return super().connect(*args, **kwargs)
+        except ConnectionError:
+            raise UnrealDiedException()
+
     def request(self, *args, **kwargs):
         try:
             response = super().request(*args, **kwargs)
@@ -36,22 +42,27 @@ class UnrealClientWrapper:
         self._initialize_client()
 
     def _initialize_client(self):
-        connection_result = False
+        unreal_ok = False
 
-        for i in range(11):
-            print(f"Trying to connect to UnrealCV server on port {self.port + i}")
-            self.client = UnrealCVWrapper((self.host, self.port + i))
-            connection_result = self.client.connect()
+        while not unreal_ok:
+            try:
+                for i in range(11):
+                    print(f"Trying to connect to UnrealCV server on port {self.port + i}")
+                    self.client = UnrealCVWrapper((self.host, self.port + i))
+                    connection_result = self.client.connect()
 
-            if connection_result:
-                break
+                    if connection_result:
+                        break
+                else:
+                    raise ConnectionError("Failed to connect to UnrealCV server; is it running?")
 
-        if not connection_result:
-            raise ConnectionError("Failed to connect to UnrealCV server; is it running?")
 
-        self.client.request('vget /unrealcv/status')
-        self.client.request('vset /cameras/spawn')
-        self.client.request('vset /camera/1/rotation -90 0 0')
+                self.client.request('vget /unrealcv/status')
+                self.client.request('vset /cameras/spawn')
+                self.client.request('vset /camera/1/rotation -90 0 0')
+                unreal_ok = True
+            except UnrealDiedException:
+                self.guardian.reset()
 
     def request(self, *args, **kwargs):
         # print("Unreal Client Wrapper: request params", args, kwargs)
@@ -85,6 +96,8 @@ def main():
         port=9000,
         unreal_binary_path=os.environ["CITY_BINARY_PATH"],
     )
+
+    print("Hello there!")
 
     while True:
         try:

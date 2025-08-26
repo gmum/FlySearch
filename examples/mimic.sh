@@ -5,7 +5,7 @@ python3 drone.py \
 --scenario_type mimic \
 --mimic_run_path "run_templates/city-template" \
 --mimic_run_cls_names "*" \
---model "gpt-4o" \
+--model "oai-gpt-4o" \
 --log_directory "all_logs" \
 --run_name "GPT4o-FS1(A)-city-EXAMPLE" \
 --dummy_first "true" \

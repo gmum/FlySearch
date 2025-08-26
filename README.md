@@ -99,7 +99,7 @@ If you just want to test a model on our benchmark, we recommend using `mimic.sh`
 #### Models 
 
 FlySearch supports testing several models: 
-* GPT-4o. To use it, set `model` flag to `gpt-4o`.
+* OpenAI models. To use it, prefix your model argument with `oai-` and then use OpenAI's model name (e.g. `oai-gpt-4o`).
 * Gemini family models (e.g gemini-2.0-flash. To use it, set `model` flag to `gemini-2.0-flash`.)
 * Anthropic models. To use it, prefix the model name with `anthropic-`, e.g. `anthropic-claude-3-5-sonnet-20241022`.
 * Any models behind a VLLM API. If model name does not match any of the above, it is assumed to be a VLLM model. OpenAI protocol is used to communicate with the model. For example, to use Gemma3-27b hosted on DeepInfra ([link](https://deepinfra.com/)), you need to configure `.env` file with `VLLM_ADDRESS = 'https://api.deepinfra.com/v1/openai'`, `VLLM_KEY` matching your DeepInfra API key, and set `model` to `google/gemma-3-27b-it`.
@@ -112,4 +112,24 @@ Our environment is based on Unreal Engine 5, and we provide a Gymnasium-like int
 
 ### UE5 binary crashes 
 
-The UE5 binary can sometimes spontaneously crash. The code is designed to handle this (we've modified UnrealCV's code to do so), but in case it happens you just need to restart the script with appropriately set `continue_from` flag.
+The UE5 binary can sometimes spontaneously crash. The code is designed to handle this (we've modified UnrealCV's code to do so), but in case it happens you just need to restart the script with appropriately set `continue_from` flag. Furthermore, in case where your code was terminated by `UnrealDiedException` please open an issue here with a stack trace (or email us with it).
+
+### UE5 logs
+
+UE5 binary tends to print _tons_ of different logs to stdout. For that reason by default, we forward them to `/dev/null`. However, these may be useful if you are debugging weird errors in UE5. To fix that, you need to modify the `glimpse_generators/unreal_guardian.py` file by modifying this:
+
+```python 
+        self.process = subprocess.Popen(
+            [str(self.unreal_binary_path), "-RenderOffscreen",  "-nosound"],
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
+```
+
+to this:
+
+```python 
+        self.process = subprocess.Popen(
+            [str(self.unreal_binary_path), "-RenderOffscreen",  "-nosound"],
+        )
+```
