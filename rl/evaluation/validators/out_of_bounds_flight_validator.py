@@ -16,10 +16,6 @@ class OutOfBoundsFlightValidator:
         current_position = evaluation_state.info["real_position"]
         diff = list(evaluation_state.action["coordinate_change"])
 
-        diff[1] = -diff[1]
-        # Invert the y-axis change. Yes, I know. The fact that environment silently inverts the y-axis was a design choice of me.
-        # Either way, we need to do this because otherwise bugs will happen.
-
         total_diff = np.array(current_position) - np.array(self.first_position) + np.array(diff)
 
         if np.max(np.abs(total_diff[:2])) > self.search_diameter:

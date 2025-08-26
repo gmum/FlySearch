@@ -1,6 +1,6 @@
 import os
 
-from openai import OpenAI
+from openai import OpenAI, _types
 
 from conversation import BaseConversationFactory
 from conversation.openai_conversation import OpenAIConversation
@@ -17,7 +17,8 @@ class GeminiFactory(BaseConversationFactory):
         return OpenAIConversation(
             self.client,
             model_name=self.model_name,
-            max_tokens=None) # Without this, Gemini 2.5 Pro and Flash will give out Nones. Probably due to reasoning tokens.
+            max_tokens=_types.NotGiven()
+        ) # Without this, Gemini 2.5 Flash will give out Nones. Probably due to reasoning tokens. TODO: Pro still fails (sometimes (!)) for some reason.
 
 
 def main():
@@ -29,7 +30,7 @@ def main():
 
     image = Image.open("/home/dominik/Pobrane/burger.jpeg")
 
-    factory = GeminiFactory("gemini-2.5-flash")
+    factory = GeminiFactory("gemini-2.5-pro")
     conversation = factory.get_conversation()
     conversation.begin_transaction(Role.USER)
 

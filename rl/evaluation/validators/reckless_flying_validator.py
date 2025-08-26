@@ -19,3 +19,6 @@ class RecklessFlyingValidator(BaseValidator):
             return False, {"reason": "reckless"}
 
         return True, {}
+
+    def nuke(self):
+        pass
