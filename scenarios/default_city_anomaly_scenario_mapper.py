@@ -2,7 +2,7 @@ from scenarios import CityScenarioMapper
 
 
 class DefaultCityAnomalyScenarioMapper(CityScenarioMapper):
-    def __init__(self, drone_alt_min, drone_alt_max, alpha):
+    def __init__(self, drone_alt_min, drone_alt_max, alpha=0.5):
         super().__init__(
             object_probs={
                 (

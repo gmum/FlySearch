@@ -2,7 +2,7 @@ from scenarios import ForestScenarioMapper
 
 
 class DefaultForestAnomalyScenarioMapper(ForestScenarioMapper):
-    def __init__(self, drone_alt_min: int, drone_alt_max: int, alpha: float):
+    def __init__(self, drone_alt_min: int, drone_alt_max: int, alpha: float = 0.5):
         super().__init__(
             object_probs={
                 (
