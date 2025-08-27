@@ -33,7 +33,7 @@ class Conversation:
     def rollback_transaction(self):
         pass
 
-    def get_conversation(self) -> typing.List[typing.Tuple[Role, str]]:
+    def get_conversation(self, save_urls=True) -> typing.List[typing.Tuple[Role, str]]:
         pass
 
     def get_latest_message(self) -> typing.Tuple[Role, str]:

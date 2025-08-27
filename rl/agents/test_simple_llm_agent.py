@@ -27,7 +27,7 @@ class ConversationMock(Conversation):
     def get_latest_message(self):
         return None, self.returned_message
 
-    def get_conversation(self):
+    def get_conversation(self, save_urls=True):
         return [(None, self.returned_message)]
 
     def set_returned_message(self, msg: str):

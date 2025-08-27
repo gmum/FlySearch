@@ -1,13 +1,13 @@
+import os
+
 from openai import OpenAI
 from conversation import OpenAIConversation
-from misc import VLLM_KEY, VLLM_ADDRESS
-
 
 class VLLMFactory:
     def __init__(self, model_name: str):
         self.client = OpenAI(
-            api_key=VLLM_KEY,
-            base_url=VLLM_ADDRESS
+            api_key=os.environ["VLLM_KEY"],
+            base_url=os.environ["VLLM_ADDRESS"]
         )
 
         self.model_name = model_name

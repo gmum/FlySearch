@@ -35,5 +35,9 @@ class RunAnalyser:
 
         return x_min <= 0 <= x_max and y_min <= 0 <= y_max
 
-    def success_criterion_satisfied(self, threshold: float = 10) -> bool:
-        return self.object_visible() and self.drone_within_altitude_threshold(threshold)
+    def claimed(self) -> bool:
+        return self.run.model_claimed
+
+    def success_criterion_satisfied(self, threshold: float, check_claimed: bool) -> bool:
+        claim_success = self.claimed() if check_claimed else True
+        return self.object_visible() and self.drone_within_altitude_threshold(threshold) and claim_success

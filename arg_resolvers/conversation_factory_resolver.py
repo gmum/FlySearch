@@ -12,9 +12,9 @@ class ConversationFactoryResolver(BaseArgResolver):
         parser.add_argument("--model", type=str, required=True)
 
     def get_conversation_factory(self, args: Namespace):
-        if args.model == "gpt-4o":
-            return GPTFactory()
-        elif 'gemini' in args.model:
+        if args.model.startswith('oai-'):
+            return GPTFactory(args.model)
+        elif args.model.startswith('gemini-'):
             return GeminiFactory(args.model)
         elif args.model.startswith('anthropic-'):
             return AnthropicFactory(args.model)

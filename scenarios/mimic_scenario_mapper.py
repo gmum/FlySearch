@@ -68,8 +68,6 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
     value = value.strip().removeprefix("ObjectType.").lower()
 
     if scenario == "city":
-        # Fix match because we use this stupid version of Python
-
         if value == "anomaly":
             return CityScenarioMapper.ObjectType.ANOMALY
         elif value == "police_car":
@@ -117,6 +115,27 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
             return ForestScenarioMapper.ObjectType.ANOMALY
 
 
+def parse_scenario(scenario):
+    result = {}
+    city = "regenerate_city" in scenario
+
+    for key, value in scenario.items():
+        if is_int(value):
+            result[key] = int(value)
+        elif is_float(value):
+            result[key] = float(value)
+        elif is_float_tuple(value):
+            result[key] = to_tuple(value)
+        elif is_bool(value):
+            result[key] = to_bool(value)
+        elif is_enum(value):
+            result[key] = to_enum(value, "city" if city else "forest")
+        else:
+            result[key] = value
+
+    return result
+
+
 class MimicScenarioMapper(BaseScenarioMapper):
     def __init__(self, path: pathlib.Path, filter_str: str = "*", continue_from: int = 0):
         self.path = path
@@ -127,26 +146,6 @@ class MimicScenarioMapper(BaseScenarioMapper):
         object_type_cls = self.scenarios[0]["object_type"]
 
         super().__init__({}, type(object_type_cls))
-
-    def parse_scenario(self, scenario):
-        result = {}
-        city = "regenerate_city" in scenario
-
-        for key, value in scenario.items():
-            if is_int(value):
-                result[key] = int(value)
-            elif is_float(value):
-                result[key] = float(value)
-            elif is_float_tuple(value):
-                result[key] = to_tuple(value)
-            elif is_bool(value):
-                result[key] = to_bool(value)
-            elif is_enum(value):
-                result[key] = to_enum(value, "city" if city else "forest")
-            else:
-                result[key] = value
-
-        return result
 
     def create_random_scenario(self, seed: int) -> Dict[str, Any]:
         return self.scenarios.pop(0)
@@ -185,14 +184,14 @@ class MimicScenarioMapper(BaseScenarioMapper):
                     # Hence knowing that the current scenario was not parsed yet.
 
                     if duplicate_first:
-                        scenario = self.parse_scenario(scenario)
+                        scenario = parse_scenario(scenario)
                         scenario["drop"] = True
                         scenario["i"] = entry_number
 
                         yield scenario
 
                     if not duplicate_first:
-                        scenario = self.parse_scenario(scenario)
+                        scenario = parse_scenario(scenario)
 
                     scenario["drop"] = False
                     scenario["i"] = entry_number

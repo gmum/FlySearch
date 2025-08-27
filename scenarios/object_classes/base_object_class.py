@@ -3,9 +3,8 @@ import re
 from random import Random
 
 from typing import List
-from unrealcv import Client
 
-from glimpse_generators import UnrealException
+from glimpse_generators import UnrealException, Client
 
 
 class BaseObjectClass:

@@ -4,6 +4,7 @@ import gymnasium as gym
 from typing import Optional, Dict, Tuple, List
 
 from glimpse_generators import UnrealClientWrapper, UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
+from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from misc import pil_to_opencv
 
 from scenarios import get_classes_to_object_classes, classes_to_images
@@ -82,6 +83,8 @@ class BaseFlySearchEnv(gym.Env):
 
         self.options: Optional[Dict] = None
         self.relative_position: Optional[np.ndarray] = None
+        self.first_position: Optional[np.ndarray] = None
+
         self.trajectory: Optional[List[np.ndarray]] = None
 
         self.started: bool = False
@@ -95,8 +98,16 @@ class BaseFlySearchEnv(gym.Env):
 
     def __enter__(self):
         self.client = self.get_client()
-        self.glimpse_generator = self.get_glimpse_generator(client=self.client)
-        self.classes_to_ids = get_classes_to_object_classes(self.client)
+
+        success = False
+
+        while not success:
+            try:
+                self.glimpse_generator = self.get_glimpse_generator(client=self.client)
+                self.classes_to_ids = get_classes_to_object_classes(self.client)
+                success = True
+            except UnrealDiedException:
+                continue
 
         self.resources_initialized = True
 
@@ -142,7 +153,9 @@ class BaseFlySearchEnv(gym.Env):
         self._configure(options)
 
         self.relative_position = np.array(self.glimpse_generator.get_relative_from_start())
-        self.trajectory = [self.relative_position]
+        self.first_position = np.array(self.glimpse_generator.get_relative_from_start())
+
+        self.trajectory = [self.first_position]
 
         pil_image = self.glimpse_generator.get_camera_image(rel_position_m=self.relative_position.tolist(),
                                                             force_move=True)
@@ -167,6 +180,15 @@ class BaseFlySearchEnv(gym.Env):
         return obs, {"real_position": self.relative_position,
                      "object_bbox": self.get_object_bbox()}
 
+    def get_observers_relative_position(self):
+        true_move = self.relative_position - self.first_position
+
+        # Flip the y-axis again
+        true_move[1] = -true_move[1]
+
+        return self.first_position + true_move
+
+
     def step(self, action: dict):
         if not self.started:
             raise UnitialisedEnvironmentException("Environment must be reset before calling step")
@@ -175,7 +197,7 @@ class BaseFlySearchEnv(gym.Env):
             # TODO/NOTE: In future, we may wanna have more semantics for finding the target
             self.started = False
             return {}, 0.0, True, False, {
-                "real_position": self.relative_position,
+                "real_position": self.get_observers_relative_position(),
                 "object_bbox": self.get_object_bbox()}  # Empty observation, no reward, terminated, no truncation, info with relative position and bbox
 
         coordinate_change = action["coordinate_change"]
@@ -200,7 +222,7 @@ class BaseFlySearchEnv(gym.Env):
         opencv_image = pil_to_opencv(pil_image)
 
         self.relative_position = new_real_position
-        self.trajectory.append(new_real_position)
+        self.trajectory.append(self.get_observers_relative_position())
 
         reward = self.get_reward()
 
@@ -216,7 +238,7 @@ class BaseFlySearchEnv(gym.Env):
             opencv_class_image = pil_to_opencv(class_image)
             observation["class_image"] = opencv_class_image
 
-        return observation, reward, False, False, {"real_position": new_real_position,
+        return observation, reward, False, False, {"real_position": self.get_observers_relative_position(),
                                                    "object_bbox": self.get_object_bbox()}
 
     # Bunch of utility functions

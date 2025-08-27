@@ -15,3 +15,6 @@ class AltitudeValidator(BaseValidator):
                            "alt_after": altitude_before + altitude_diff, "alt_max": self.max_altitude}
 
         return True, {}
+
+    def nuke(self):
+        pass

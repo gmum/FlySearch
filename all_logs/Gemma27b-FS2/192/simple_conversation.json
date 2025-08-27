@@ -1,0 +1,250 @@
+[
+    [
+        "user",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding large trash pile.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 19 moves. Your altitude cannot exceed 300 meters. \n        \n        The search area is limited to what would be visible from the starting position if there were no buildings or obstacles. The object is within this area. You may not fly outside of it.\n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "user",
+        "The object you're looking for is similar to this. This is NOT the drone's current view."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "user",
+        "Your current altitude is 108 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am currently at a high altitude (108 meters) and need to descend to search for the trash pile. I will start by descending significantly and then move towards the area where I suspect the trash pile might be, based on the provided example image and the grid coordinates. I'll aim for the lower-left quadrant first, as it seems to have more potential clutter. </Reasoning>\n<Action>(-36, -36, -80)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 28 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am now at a reasonable altitude (28 meters). I need to continue scanning for the trash pile. The current view doesn't show anything resembling the target. I will move to the right and slightly forward towards (9, 9) to explore a different area. I will also descend slightly to get a better view. </Reasoning>\n<Action>(9, 9, -5)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 23 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>Still no sign of the trash pile. I will continue to move to the right and slightly forward, descending a bit further to improve visibility. I'll move towards (8,8). </Reasoning>\n<Action>(8, 8, -3)</Action>\n```"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I apologize for the near collision. I need to be more careful with my movements. I will move slightly back and up to avoid further obstacles and then continue the search. I will move towards (0,0) and slightly ascend. </Reasoning>\n<Action>(0, 0, 4)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 25 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I'm still not seeing the target. I will move further to the right and a bit forward, descending to get a closer look. I will move towards (8, 8). </Reasoning>\n<Action>(8, 8, -5)</Action>\n```"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 24 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>Another near collision! I need to be much more cautious. I will move slightly up and back to avoid obstacles, and then proceed with a more conservative search pattern. I will move towards (-8, 0) and ascend slightly. </Reasoning>\n<Action>(-8, 0, 3)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 27 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still searching for the trash pile. I will move forward and to the right, descending gradually to get a better view. I'll aim for (9, 0) and descend a bit. </Reasoning>\n<Action>(9, 0, -4)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 23 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I still haven't located the trash pile. I will continue to explore, moving forward and to the right, while also descending to get closer to the ground for a better view. I'll move towards (8, -8) and descend slightly. </Reasoning>\n<Action>(8, -8, -2)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 21 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I appear to have flown over a city street and lost my orientation. I need to re-evaluate my position and continue the search. Based on the initial image and the goal of finding a trash pile, I will move back towards the area where I started searching. I will move towards (-7, -7) and ascend slightly to gain a better overview. </Reasoning>\n<Action>(-7, -7, 5)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 26 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still in an urban environment, far from the expected location of the trash pile. I need to retrace my steps and get back to the area that resembled the example image. I will move towards (-9, -9) and descend to get a better view of the surroundings. </Reasoning>\n<Action>(-9, -9, -6)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 20 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I'm still in the wrong area. I need to prioritize getting back towards the initial search area. I'll move towards (0,0) and then descend significantly to try and regain my bearings. </Reasoning>\n<Action>(0, 0, -10)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still in a city environment and haven't found the trash pile. I need to move in a direction that will take me back to the area resembling the initial image. I will move towards (3, -3) and descend slightly. </Reasoning>\n<Action>(3, -3, -2)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 7 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still lost in the city. I must try to escape this urban environment and return to the original search area. I will attempt to move towards (2, -5) and descend slightly. </Reasoning>\n<Action>(2, -5, -1)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still surrounded by buildings and cars. I need to drastically change direction and altitude to try and locate the trash pile. I will move towards (-2, 2) and ascend slightly in an attempt to get a better vantage point. </Reasoning>\n<Action>(-2, 2, 3)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still lost in the city. I need to get out of here and head back towards the original search area. I will move towards (-3, -3) and descend to try and find a clearer path. </Reasoning>\n<Action>(-3, -3, -4)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 5 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I'm still in the city, but I'm quite low to the ground now. I'll attempt to move towards (3, -3) and ascend to gain a better perspective and hopefully escape this urban area. </Reasoning>\n<Action>(3, -3, 6)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 11 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still in the city, and I'm running out of moves. I need to make a decisive move to try and find the trash pile. I will move towards (4,4) and descend to get a better view. </Reasoning>\n<Action>(4, 4, -5)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I am still lost in the city. I have very few moves left and I haven't found the trash pile. I'll make one last attempt to move towards a potentially more open area, hoping to get back to the original search location. I will move towards (0, -4). </Reasoning>\n<Action>(0, -4, 0)</Action>\n```"
+    ],
+    [
+        "user",
+        "Your current altitude is 6 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "```xml\n<Reasoning>I have failed to locate the trash pile and am out of options. I am still in an urban environment. </Reasoning>\n<Action>(0, 0, 0)</Action>\n```"
+    ]
+]

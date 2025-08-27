@@ -6,13 +6,13 @@ from typing import Dict
 from arg_resolvers import BaseArgResolver
 from rl.environment import ForestFlySearchEnv, CityFlySearchEnv
 from scenarios import MimicScenarioMapper, ForestScenarioMapper, DefaultForestScenarioMapper, BaseScenarioMapper, \
-    CityScenarioMapper
+    CityScenarioMapper, DefaultForestAnomalyScenarioMapper, DefaultCityAnomalyScenarioMapper
 from scenarios.default_city_scenario_mapper import DefaultCityScenarioMapper
 
 
 class ScenarioArgResolver(BaseArgResolver):
     def register_args(self, parser: ArgumentParser):
-        parser.add_argument("--scenario_type", type=str, choices=["forest_random", "city_random", "mimic"],
+        parser.add_argument("--scenario_type", type=str, choices=["forest_random", "city_random", "mimic", "forest_random_anomaly", "city_random_anomaly"],
                             required=True)
 
         parser.add_argument(
@@ -54,6 +54,10 @@ class ScenarioArgResolver(BaseArgResolver):
             return DefaultForestScenarioMapper(args.height_min, args.height_max, args.alpha)
         elif args.scenario_type == "city_random":
             return DefaultCityScenarioMapper(args.height_min, args.height_max, args.alpha, random_sun=random_sun)
+        elif args.scenario_type == "forest_random_anomaly":
+            return DefaultForestAnomalyScenarioMapper(args.height_min, args.height_max, args.alpha)
+        elif args.scenario_type == "city_random_anomaly":
+            return DefaultCityAnomalyScenarioMapper(args.height_min, args.height_max, args.alpha)
         else:
             raise ValueError(f"Unknown scenario type: {args.scenario_type}")
 

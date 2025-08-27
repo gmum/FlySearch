@@ -9,3 +9,6 @@ class BaseLogger:
 
     def log_termination(self, termination_info: Dict):
         raise NotImplementedError
+
+    def nuke(self):
+        raise NotImplementedError

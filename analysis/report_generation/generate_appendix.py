@@ -24,7 +24,7 @@ def preamble(model_name):
 def one_glimpse_latex(glimpse_path):
     return f"""
     \\begin{'{center}'}
-    \includegraphics[width=0.5\linewidth]{'{'}{glimpse_path}{'}'}
+    \\includegraphics[width=0.5\\linewidth]{'{'}{glimpse_path}{'}'}
     \\end{'{center}'}
     """
 
@@ -32,25 +32,25 @@ def one_glimpse_latex(glimpse_path):
 def illustration_latex(illustration_path):
     return f"""
     \\begin{'{center}'}
-    \includegraphics[width=0.7\linewidth]{'{'}{illustration_path}{'}'}
+    \\includegraphics[width=0.7\\linewidth]{'{'}{illustration_path}{'}'}
     \\end{'{center}'}
     """
 
 
 def gpt_speaks(speech):
-    return rf"\gptspeaks: {speech}".replace("_", "\\_").replace("<", "\( < \)").replace(">", "\( > \)")
+    return rf"\gptspeaks: {speech}".replace("_", "\\_").replace("<", "\\( < \\)").replace(">", "\\( > \\)")
 
 
 def re_speaks(speech):
-    return f"\\respeaks: {speech}".replace("_", "\\_").replace("<", "\( < \)").replace(">", "\( > \)")
+    return f"\\respeaks: {speech}".replace("_", "\\_").replace("<", "\\( < \\)").replace(">", "\\( > \\)")
 
 
 def stage_direction():
-    return "\StageDir{\\re{} presents \\gpt{} with a relevant image}"
+    return "\\StageDir{\\re{} presents \\gpt{} with a relevant image}"
 
 
 def end_drama():
-    return "\end{drama}"
+    return "\\end{drama}"
 
 
 def generate_section(name):
@@ -76,20 +76,19 @@ def generate_metadata(run):
 
     return f"""
     \\begin{'{itemize}[noitemsep,topsep=0pt]'}
-      \item Starting position: {starting_position}
-      \item End position: {final_position} 
-      \item Euclidean distance from the object: {(final_position[0] ** 2 + final_position[1] ** 2 + final_position[2] ** 2) ** 0.5}
-      \item Object can be seen: {object_can_be_seen}
-      \item Success: {success}
-      \item Object type: {object_type}
-      {'\item Username: ' + run.get_username() if run.username_recorded() else ''}
-    \end{'{itemize}'}
+      \\item Starting position: {starting_position}
+      \\item End position: {final_position} 
+      \\item Euclidean distance from the object: {(final_position[0] ** 2 + final_position[1] ** 2 + final_position[2] ** 2) ** 0.5}
+      \\item Object can be seen: {object_can_be_seen}
+      \\item Success: {success}
+      \\item Object type: {object_type}
+      {'\\item Username: ' + run.get_username() if run.username_recorded() else ''}
+    \\end{'{itemize}'}
     """.replace("_", "\\_")
 
 
-def generate_report(model_name, model_displayname, env_name, path_dir, filter_func, n=2, overwrite=False,
-                    file=sys.stdout, startfrom=0, subdir_override=None):
-    subdir = subdir_override if subdir_override else f"{model_name}-{env_name}"
+def generate_report(model_displayname, path_dir, filter_func, subdir, n=2, overwrite=False,
+                    file=sys.stdout, startfrom=0):
     image_dir = pathlib.Path("images") / subdir
 
     if overwrite:
@@ -184,78 +183,18 @@ def generate_report(model_name, model_displayname, env_name, path_dir, filter_fu
 
 def main():
 
-    # GPT-4o, FS1, City
-
-    with open("GPT4o-City-Success-FS1.tex", "w") as f:
-        generate_report("GPT-4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="GPT4o-CityNew",
-                        overwrite=True)
-
-    with open("GPT4o-City-Failure-FS1.tex", "w") as f: 
-        generate_report("GPT-4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="GPT4o-CityNew",
-                        overwrite=False)
-        
-    # GPT-4o, FS1, Forest
-        
-    with open("GPT4o-Forest-Success-FS1.tex", "w") as f:
-        generate_report("GPT-4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs/"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="GPT4o-ForestNew",
-                        overwrite=True)
-
-    with open("GPT4o-Forest-Failure-FS1.tex", "w") as f: 
-        generate_report("GPT-4o", "GPT-4o", "ForestNew", pathlib.Path("../../all_logs/"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="GPT4o-ForestNew",
-                        overwrite=False)
-        
-
-    # GPT-4o, FS2
-
-    with open("GPT4o-City-Success-FS2.tex", "w") as f:
-        generate_report("GPT-4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="GPT4o-FS2-City-Reckless1",
-                        overwrite=True)
-
-    with open("GPT4o-City-Failure-FS2.tex", "w") as f:
-        generate_report("GPT-4o", "GPT-4o", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="GPT4o-FS2-City-Reckless1",
-                        overwrite=False)
-    
-    # Claude 3.5, FS1, City 
-
-    with open("Claude-City-Success-FS1.tex", "w") as f:
-        generate_report("Claude 3.5 Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="Sonnet-CityNew",
-                        overwrite=True)
-
-    with open("Claude-City-Failure-FS1.tex", "w") as f: 
-        generate_report("Claude 3.5 Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="Sonnet-CityNew",
-                        overwrite=False)
-        
-    # Claude 3.5, FS1, Forest
-        
-    with open("Claude-Forest-Success-FS1.tex", "w") as f:
-        generate_report("Claude 3.5 Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs/"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="Sonnet-ForestNew",
-                        overwrite=True)
-
-    with open("Claude-Forest-Failure-FS1.tex", "w") as f: 
-        generate_report("Claude 3.5 Sonnet", "Claude 3.5 Sonnet", "ForestNew", pathlib.Path("../../all_logs/"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="Sonnet-ForestNew",
-                        overwrite=False)
-
-    # Claude 3.5, FS2    
-    
-    with open("Claude-City-Success-FS2.tex", "w") as f:
-        generate_report("Claude 3.5 Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="Claude35-FS2-Reckless1",
-                        overwrite=True)
-
-    with open("Claude-City-Failure-FS2.tex", "w") as f:
-        generate_report("Claude 3.5 Sonnet", "Claude 3.5 Sonnet", "CityNew", pathlib.Path("../../all_logs/"),
-                        lambda x: not RunAnalyser(x).success_criterion_satisfied(), file=f, startfrom=20, n=2, subdir_override="Claude35-FS2-Reckless1",
-                        overwrite=False)
+    with open("Gemma27b-FS2-S.tex", "w") as f:
+        generate_report(
+            model_displayname="Gemma 27B",
+            path_dir=pathlib.Path("../../all_logs/"),
+            filter_func=lambda x: RunAnalyser(x).success_criterion_satisfied(),
+            #filter_func=lambda x: True,
+            file=f,
+            startfrom=0,
+            n=200,
+            subdir="Gemma27b-FS2",
+            overwrite=True
+        )
         
     
 if __name__ == "__main__":

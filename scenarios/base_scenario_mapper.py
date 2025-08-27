@@ -47,12 +47,6 @@ class BaseScenarioMapper:
         return drone_x, drone_y
 
     def _validate_object_probs(self):
-        total = sum(self.object_probs.values())
-
-        # This function assumes that probabilities are "sane" and floating point errors won't skew the sum of probabilities. If this becomes an issue, consider changing the implementation.
-        if total != 1:
-            raise ValueError(f"Total probability must be 1, but got {total}")
-
         for obj_type in self.object_probs:
             if obj_type not in self.object_type_cls and type(obj_type) is not tuple:
                 raise ValueError(f"Invalid object type: {obj_type}")

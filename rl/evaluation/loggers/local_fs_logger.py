@@ -1,7 +1,8 @@
 import pathlib
 import json
-from typing import List
+import shutil
 
+from typing import List
 from PIL import Image
 
 from misc import opencv_to_pil
@@ -77,3 +78,7 @@ class LocalFSLogger(BaseLogger):
     def log_termination(self, termination_info):
         with open(self.log_dir / "termination.txt", "w") as f:
             f.write(termination_info["reason"])
+
+    def nuke(self):
+        shutil.rmtree(self.log_dir)
+        self.log_dir.mkdir()

@@ -6,6 +6,7 @@ class TestRunAnalyser:
         def __init__(self, end_position, object_bbox):
             self.coords = [end_position]
             self.object_bbox = object_bbox
+            self.object_type = "car"
 
         def get_coords(self):
             return self.coords
@@ -30,7 +31,7 @@ class TestRunAnalyser:
         run_analyser = RunAnalyser(run)
 
         assert run_analyser.drone_within_altitude_threshold(10)
-        assert run_analyser.success_criterion_satisfied(10)
+        assert run_analyser.success_criterion_satisfied(10, check_claimed=False)
 
     def test_object_offset(self):
         run = self.MockRun((-100, 100, 101), (-30000, -5000, -500, -300, 1000, 9500))
@@ -39,7 +40,7 @@ class TestRunAnalyser:
 
         assert run_analyser.object_visible()
         assert run_analyser.drone_within_altitude_threshold(10)
-        assert run_analyser.success_criterion_satisfied(10)
+        assert run_analyser.success_criterion_satisfied(10, check_claimed=False)
 
     def test_euclidean_distance_to_zero(self):
         run = self.MockRun((0, 3, 4), (-1000, -1000, 0, 1000, 1000, 300))

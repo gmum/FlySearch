@@ -1,0 +1,154 @@
+[
+    [
+        "user",
+        "\n<Context>\n    You are in command of a UAV, tasked with finding white pickup truck.\n</Context>\n\n<Objective>\n    You should fly BELOW 10 meters above the object and then reply with \"FOUND\". Being lower (closer to the object) (like 9, 8, or less meters) is good, being higher than that (like 11, 12, or more meters) is bad. \n\n    You may not be able to see the object in the first image, so you need to perform a careful search. Your performance will be evaluated based on whether the object was at most 10 meters below the drone when you replied with \"FOUND\". The object MUST be in your field of view when you reply with \"FOUND\". You must be centered on the object. \n</Objective>\n\n<Coordinates>\n    There is a grid overlaid on each image you are presented with. It is meant to (roughly) communicate which point will be in drone's center of vision if you move in that direction. Note that height of the drone is not represented in the grid.\n</Coordinates>\n\n<Controls>\n    <Action space>\n        To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.\n\n        x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.\n\n    </Action space>\n\n    <Formatting>\n\n        Your each response should contain XML <Reasoning> tag and <Action> tag.\n        <Reasoning> tag should contain your reasoning for the move you are making.\n        <Action> tag should contain the move you are making.\n\n        If you find the object, fly below 10 meters relative to it and reply with \"FOUND\". Remember, it must be in your field of view when you reply with \"FOUND\" and you must be 10 meters above it or closer. Being too far away is not acceptable.\n\n        For example:\n\n        <Reasoning>This yellow point might be the object in question. I need to go lower to check for that. If it's not the object in question, I will continue the search. I will also slightly go to the north.</Reasoning>\n        <Action>(5, 0, -30)</Action>\n\n    </Formatting>\n\n    <Limitations>\n        You shouldn't move into coordinates that are outside of your view. Otherwise, you may hit something which is not ideal.\n        You can make at most 19 moves. Your altitude cannot exceed 300 meters. \n        \n        The search area is limited to what would be visible from the starting position if there were no buildings or obstacles. The object is within this area. You may not fly outside of it.\n    </Limitations>\n</Controls>\n"
+    ],
+    [
+        "user",
+        "The object you're looking for is similar to this. This is NOT the drone's current view."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "user",
+        "Your current altitude is 109 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>The current altitude is too high (109 meters). I need to descend significantly to begin searching for the white pickup truck. I will move down 90 meters to bring the altitude down to 19 meters. This will get me closer to the ground and allow me to start visually inspecting the area.</Reasoning>\n<Action>(0, 0, -90)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 43 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I need to be more careful with my descent. I was too aggressive and almost collided with a building. I will now descend more gradually, bringing the altitude down to 20 meters. I will also move slightly forward (positive y direction) to get a better view of the area ahead.</Reasoning>\n<Action>(0, 14, -23)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I am still having trouble avoiding obstacles. I need to proceed with extreme caution. I will descend slightly, to 15 meters, and move forward a small amount (positive y direction). I'll also move a bit to the right (positive x direction) to try and clear the obstacle I nearly hit.</Reasoning>\n<Action>(14, 14, -27)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 42 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I'm clearly struggling with obstacle avoidance in this narrow canyon. I need to adjust my strategy. I will ascend slightly to 45 meters to gain some clearance, then move further to the right (positive x direction) to try and find a wider area to maneuver. This will allow me to assess the surroundings before descending again.</Reasoning>\n<Action>(28, 0, 3)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 45 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>Now that I've moved to the right, I can see a bit more of the area. I will descend to 10 meters and move forward slightly to scan for the white pickup truck. I'll also slightly adjust to the left to center my view.</Reasoning>\n<Action>(-15, 15, -35)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 38 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I am consistently hitting obstacles. I need to prioritize safe maneuvering over rapid descent. I will ascend to 45 meters again to gain more clearance, then move further to the right (positive x direction) to try and find a more open space. I need to find a less confined area to properly search.</Reasoning>\n<Action>(25, 0, 7)</Action>"
+    ],
+    [
+        "user",
+        "Emergency stop; you've flown too close to something and would have hit it."
+    ],
+    [
+        "user",
+        "Your current altitude is 41 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>This is incredibly frustrating. I'm clearly stuck in a very tight space. I need to completely re-evaluate my approach. I'm going to ascend to a higher altitude (60 meters) and move back towards the center (x=0) in hopes of finding a wider area. I'll also move slightly forward to get a better overview.</Reasoning>\n<Action>(0, 14, 19)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 60 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>Okay, this looks much better! I'm in a more open area now. I will descend to 10 meters and scan for the white pickup truck. I'll move slightly forward (positive y) to improve my view.</Reasoning>\n<Action>(0, 20, -50)</Action>"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "<Reasoning>I see the white pickup truck! I am currently at 9 meters altitude and centered over the object. This meets the requirements for a successful search.</Reasoning>\n<Action>(0, 0, 0)</Action>FOUND"
+    ],
+    [
+        "user",
+        "Your current altitude is 9 meters above ground level."
+    ],
+    [
+        "user",
+        "image"
+    ],
+    [
+        "assistant",
+        "FOUND"
+    ]
+]
