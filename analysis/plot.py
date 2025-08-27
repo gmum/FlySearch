@@ -6,7 +6,7 @@ from analysis import Run, RunAnalyser, CriterionPlotter, load_all_runs_from_a_di
 
 
 def main():
-    path = pathlib.Path("../all_logs/Gemma3-27b-City-Cheating-2")
+    path = pathlib.Path("../all_logs/Gemma27b-FS2")
     runs = load_all_runs_from_a_dir(path)
     plotter = CriterionPlotter(runs)
 
@@ -17,7 +17,7 @@ def main():
     fig, ax = plt.subplots(nrows=2, sharey=True, sharex=True)
     plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax[0])
 
-    another_success_criterion = lambda x: RunAnalyser(x).success_criterion_satisfied(10)
+    another_success_criterion = lambda x: RunAnalyser(x).success_criterion_satisfied(10, check_claimed=True)
     plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_type, ax[1],
                                              success_criterion=another_success_criterion)
 

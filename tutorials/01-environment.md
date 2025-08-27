@@ -113,6 +113,10 @@ print(real_positions[1]) # [9 7 70]
 print(real_positions[2]) # [-1 -13 80]
 ```
 
+## How to obtain scenarios?
+
+TODO 
+
 ## Important info 
 
 If you are using our environment directly you need to handle the `UnrealDiedException` during the requests to the environment. You do not need to restart it _but_ this exception is meant to communicate to you that the UE5's internal state during your experiment was _lost_, and you need to restore it appropriately (probably by calling the `reset` method and then restarting a trajectory evaluation).

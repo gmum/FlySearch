@@ -49,8 +49,8 @@ def group_runs(runs: List[Run], model_name: str):
     fig, ax = plt.subplots(nrows=1)
 
     stats = plotter.plot_accuracy_in_aggregated_runs(runs_aggregated_per_altitude, ax=ax,
-                                                     success_criterion=lambda x: x.model_claimed and RunAnalyser(
-                                                         x).success_criterion_satisfied(10))
+                                                     success_criterion=lambda x: RunAnalyser(
+                                                        x).success_criterion_satisfied(10, check_claimed=True))
 
     print(rf"\addplot[color={COLOURS[model_name]}, mark=square]")
     print(r"coordinates {")

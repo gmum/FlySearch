@@ -1,7 +1,7 @@
 import numpy as np
 import scipy
 
-from typing import List, Dict, Callable
+from typing import List, Dict, Callable, Optional
 from analysis.run import Run
 from analysis.run_analyser import RunAnalyser
 
@@ -10,7 +10,7 @@ class CriterionPlotter:
     def __init__(self, runs: List[Run]):
         self.runs = runs
 
-    def aggregate_runs_per_function(self, fun: Callable, fil: Callable | None = None):
+    def aggregate_runs_per_function(self, fun: Callable, fil: Optional[Callable] = None):
         class_to_run = {}
 
         if fil is None:
@@ -42,7 +42,7 @@ class CriterionPlotter:
                                          threshold=10) -> Dict:
 
         def run_was_successful(run):
-            return run.model_claimed and RunAnalyser(run).success_criterion_satisfied(threshold)
+            return RunAnalyser(run).success_criterion_satisfied(threshold, check_claimed=True)
 
         if success_criterion is None:
             success_criterion = run_was_successful
@@ -104,16 +104,17 @@ class CriterionPlotter:
             sem = variable_to_sem[cls_name]
             conf_int = variable_to_conf_ints[cls_name]
 
-            mean = round(mean, 4)
-            std = round(std, 4)
-            conf_int = (round(conf_int[0], 4), round(conf_int[1], 4))
+            mean = float(round(mean, 4))
+            std = float(round(std, 4))
+            conf_int = (float(round(conf_int[0], 4)), float(round(conf_int[1], 4)))
             n = len(variable_to_successes[cls_name])
             total_successes = int(np.sum(variable_to_successes[cls_name]))
+            sem = float(np.nan_to_num(sem))
 
             name_to_stats[cls_name] = {
                 "mean": mean,
                 "std": std,
-                "sem": np.nan_to_num(sem),
+                "sem": sem,
                 "conf_int": conf_int,
                 "n": n,
                 "total_successes": total_successes
