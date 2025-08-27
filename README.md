@@ -81,6 +81,10 @@ FlySearch supports testing several models. To test them, you can use on of our e
 
 Our environment is based on Unreal Engine 5, and we provide a Gymnasium-like interface to it. It can be used directly without the rest of the code in this repository. See `tutorials/01-environment.md` for examples. 
 
+## Result analysis
+
+To read how to analyse logs from FlySearch, please see the `tutorials/02-result-analysis.md` file.
+
 ## Notes
 
 ### UE5 binary crashes 

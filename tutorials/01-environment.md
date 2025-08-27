@@ -221,6 +221,10 @@ scenario_mapper = DefaultCityScenarioMapper(drone_alt_min=100, drone_alt_max=125
 
 The `alpha` parameter basically dictates the maximum horizontal distance between the searched object and drone (as a proportion of drone's height); the higher it is, the harder the task becomes for the drone.
 
+### Other distributions
+
+To gain more control over ranges from which we're sampling parameters, you can use `CityScenarioMapper` and `ForestScenarioMapper` classes, which offer more configurable parameters.
+
 ## Oh no, I've got an exception during `reset` call!
 
 Breathe deeply. As long as this is `DroneCannotSeeTargetException`, what you're observing is completely normal and is a consequence of the fact that we generate scenarios independently of the UE5. 

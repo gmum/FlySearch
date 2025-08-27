@@ -68,8 +68,6 @@ def to_enum(value: str, scenario: str) -> CityScenarioMapper.ObjectType | Forest
     value = value.strip().removeprefix("ObjectType.").lower()
 
     if scenario == "city":
-        # Fix match because we use this stupid version of Python
-
         if value == "anomaly":
             return CityScenarioMapper.ObjectType.ANOMALY
         elif value == "police_car":
