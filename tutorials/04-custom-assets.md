@@ -12,7 +12,7 @@ Let's say that your wish was for the drone to localise gigantic hamburgers layin
 
 Let's also assume that these assets are static assets that do not require any additional handling (like calling Unreal's `PCG` to procedurally generate them during configuration step of each scenario). This is the simplest case, but also the one you are most likely to encounter.
 
-If you want to ever use your new class in `FS-2` setting, you will also need to have an image of all possible assets from the top-down view (for example, see `web/client/public/targets/fire.png.jpg`). Let's assume that you have such an image and it's located at `web/client/public/targets/hamburger.png.jpg`.
+If you want to ever use your new class in `FS-2` setting, you will also need to have an image of all possible assets from the top-down view (for example, see `web/client/public/targets/fire.png.jpg`). Let's assume that you have such an image, and it's located at `web/client/public/targets/hamburger.png.jpg`.
 
 ## Approach
 

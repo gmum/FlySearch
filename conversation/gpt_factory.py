@@ -1,7 +1,6 @@
 import os
 
 from openai import OpenAI, _types
-from sympy.physics.units import temperature
 
 from conversation.base_conversation_factory import BaseConversationFactory
 from conversation.openai_conversation import OpenAIConversation
