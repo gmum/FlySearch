@@ -85,6 +85,18 @@ Our environment is based on Unreal Engine 5, and we provide a Gymnasium-like int
 
 To read how to analyse logs from FlySearch, please see the `tutorials/02-result-analysis.md` file.
 
+## Contributing support for unsupported models
+
+See `tutorials/03-conversation.md`.
+
+## Supporting new classes and assets 
+
+See `tutorials/04-custom-assets.md`.
+
+## Custom agents
+
+See `tutorials/05-custom-agents.md`.
+
 ## Notes
 
 ### UE5 binary crashes 
