@@ -9,3 +9,6 @@ env
 .idea/
 *.png
 .env
+analysis/report_geneartion/build/
+analysis/report_generation/images/
+analysis/report_generation/*.tex
