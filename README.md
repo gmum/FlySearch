@@ -33,7 +33,8 @@ Binaries cam be downloaded from https://doi.org/10.5281/zenodo.15428224.
 `forest.tar.gz` contains the forest environment. Extract them and then modify the `.env` file by:
 
 * setting the `CITY_BINARY_PATH` to `/your_location/simulator/CitySample/Binaries/Linux/CitySample`
-* setting the FOREST_BINARY_PATH to `your_location/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample`
+* setting the `FOREST_BINARY_PATH` to `your_location/simulator-dreamsenv/Linux/ElectricDreamsEnv/Binaries/Linux/ElectricDreamsSample`
+* setting path where logs from binaries themselves should be stored (`BINARY_LOG_PATH`) to `"/path_to_repo/FlySearch/binary_logs"` (or wherever else you want -- the directory will be created automatically)
 
 You can also verify manually that these work on your computer by
 running `./simulator/CitySample/Binaries/Linux/CitySample` or
@@ -102,23 +103,3 @@ See `tutorials/05-custom-agents.md`.
 ### UE5 binary crashes 
 
 The UE5 binary can sometimes spontaneously crash. The code is designed to handle this (we've modified UnrealCV's code to do so), but in case it happens you just need to restart the script with appropriately set `continue_from` flag. Furthermore, in case where your code was terminated by `UnrealDiedException` please open an issue here with a stack trace (or email us with it).
-
-### UE5 logs
-
-UE5 binary tends to print _tons_ of different logs to stdout. For that reason by default, we forward them to `/dev/null`. However, these may be useful if you are debugging weird errors in UE5. To fix that, you need to modify the `glimpse_generators/unreal_guardian.py` file by modifying this:
-
-```python 
-        self.process = subprocess.Popen(
-            [str(self.unreal_binary_path), "-RenderOffscreen",  "-nosound"],
-            stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
-        )
-```
-
-to this:
-
-```python 
-        self.process = subprocess.Popen(
-            [str(self.unreal_binary_path), "-RenderOffscreen",  "-nosound"],
-        )
-```

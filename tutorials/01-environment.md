@@ -1,5 +1,3 @@
-from rl.environment import CityFlySearchEnvfrom rl.environment import CityFlySearchEnvfrom rl.environment import CityFlySearchEnv
-
 # Environment usage 
 
 ## Basics
@@ -288,3 +286,9 @@ Note that the `ForestFlySearchEnv` does not have FS-2-related flags as FS-2 is a
 If you are using our environment directly you need to handle the `UnrealDiedException` during the requests to the environment. You do not need to restart it _but_ this exception is meant to communicate to you that the UE5's internal state during your experiment was _lost_, and you need to restore it appropriately (probably by calling the `reset` method and then restarting a trajectory evaluation).
 
 If you are using our testing script, you don't need to worry about that because handling of those situations is implemented by us (inside the `TrajectoryEvaluator` class).
+
+## Minor note: Previous coordinate system
+
+Note that for some of logged runs we provide in `all_logs`, you may notice that model's movement along the `y` coordinate does not match with coordinate changes (and is, in fact, flipped). This is not a cause for concern and is merely a divergence between Unreal's coordinate system and our own, where `y` axis grow in opposite directions. Formerly, we logged coordinates as the "lower-level" coordinate system saw them, but this was fixed in newer version of our environment. 
+
+(Note that since object is located at (0, 0, 0) that fact didn't impact model evaluation).
