@@ -1,7 +1,7 @@
 import numpy as np
 import gymnasium as gym
 
-from typing import Optional, Dict, Tuple, List
+from typing import Optional, Dict, List
 
 from glimpse_generators import UnrealClientWrapper, UnrealGlimpseGenerator, UnrealGridGlimpseGenerator
 from glimpse_generators.unreal_client_wrapper import UnrealDiedException
@@ -83,7 +83,6 @@ class BaseFlySearchEnv(gym.Env):
 
         self.options: Optional[Dict] = None
         self.relative_position: Optional[np.ndarray] = None
-        self.first_position: Optional[np.ndarray] = None
 
         self.trajectory: Optional[List[np.ndarray]] = None
 
@@ -153,9 +152,11 @@ class BaseFlySearchEnv(gym.Env):
         self._configure(options)
 
         self.relative_position = np.array(self.glimpse_generator.get_relative_from_start())
-        self.first_position = np.array(self.glimpse_generator.get_relative_from_start())
 
-        self.trajectory = [self.first_position]
+        first_observers_position = np.array(self.relative_position)
+        first_observers_position[1] = -first_observers_position[1]
+
+        self.trajectory = [first_observers_position]
 
         pil_image = self.glimpse_generator.get_camera_image(rel_position_m=self.relative_position.tolist(),
                                                             force_move=True)
@@ -177,17 +178,14 @@ class BaseFlySearchEnv(gym.Env):
             opencv_class_image = pil_to_opencv(class_image)
             obs["class_image"] = opencv_class_image
 
-        return obs, {"real_position": self.relative_position,
+        return obs, {"real_position": first_observers_position,
                      "object_bbox": self.get_object_bbox()}
 
     def get_observers_relative_position(self):
-        true_move = self.relative_position - self.first_position
+        observers_position = np.array(self.relative_position)
+        observers_position[1] = -observers_position[1]
 
-        # Flip the y-axis again
-        true_move[1] = -true_move[1]
-
-        return self.first_position + true_move
-
+        return observers_position
 
     def step(self, action: dict):
         if not self.started:
