@@ -79,7 +79,7 @@ Example action follows this format:
 }
 ```
 
-Here is another example code where we perform a few actions and use `real_position` field of the `info` dict.
+Here is another example code where we perform a few actions and use `real_position` field of the `info` dict. We perform a few moves and then move to (0, 0, 5) to see our object (the searched object is always at (0, 0, 0), and the coordinate system is centered around it).
 
 ```python
 import json
@@ -89,6 +89,7 @@ from dotenv import load_dotenv
 
 from rl.environment import CityFlySearchEnv # (or ForestFlySearchEnv)
 from scenarios import parse_scenario
+from misc import opencv_to_pil
 
 load_dotenv()
 
@@ -128,10 +129,32 @@ with env:
     real_position = info["real_position"]
     real_positions.append(real_position)
 
-print(real_positions[0]) # [-1 -3 60]
-print(real_positions[1]) # [9 7 70]
-print(real_positions[2]) # [-1 -13 80]
+    obs, _, _, _, info = env.step(
+        {
+            "found": 0,
+            "coordinate_change": np.array([1, 7, -75])
+        }
+    )
+
+    real_position = info["real_position"]
+    real_positions.append(real_position)
+
+    obj_image = obs["image"]
+    pil_obj_image = opencv_to_pil(obj_image)
+
+
+print(real_positions[0]) # [-1 3 60]
+print(real_positions[1]) # [9 13 70]
+print(real_positions[2]) # [-1 -7 80]
+print(real_positions[3]) # [0 0 5]
+
+pil_obj_image.show() # Objects are located at [0 0 0]
 ```
+
+After executing this code, you should see:
+
+![Sample view](images/env_image_sample.png "Sample view")
+
 
 ## How to obtain scenarios?
 
