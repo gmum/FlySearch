@@ -19,6 +19,8 @@ def fs1_prompt(glimpses: int, object_name: str, search_area_rectangle_length: in
 
         x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.
 
+        To report that you have found the object, reply with <Action>FOUND</Action>. You cannot both report that you have found the object and make a move at the same time. You must return only one action per response.
+
     </Action space>
 
     <Formatting>
@@ -64,6 +66,8 @@ def fs2_prompt(glimpses: int, object_name: str, **_) -> str:
         To move the drone in a certain direction, use the following format: <Action>(x, y, z)</Action>. For example, if you want to fly to the place denoted as (10, 10) on the grid without changing the altitude, you should reply with <Action>(10, 10, 0)</Action>.
 
         x and y are the coordinates on the grid, and z is the altitude difference. For example, <Action>(0, 0, -10)</Action> means that you are moving 10 meters down. This is especially important, since you need to get close to the object in question.
+
+        To report that you have found the object, reply with <Action>FOUND</Action>. You cannot both report that you have found the object and make a move at the same time. You must return only one action per response.
 
     </Action space>
 
