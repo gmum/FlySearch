@@ -85,7 +85,7 @@ class TrajectoryEvaluator:
         search_area_rectangle_length = 400
         self.agent = self.agent_factory.create_agent(
             self.prompt_factory(
-                self.max_glimpses, object_desc, search_area_rectangle_length
+                self.max_glimpses, object_desc, search_area_rectangle_length=search_area_rectangle_length
             ),
             max_glimpses=self.max_glimpses,
             object_desc=object_desc,
