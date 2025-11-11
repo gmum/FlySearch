@@ -26,6 +26,9 @@ webgui = [
     "fastapi>=0.116.1",
     "uvicorn>=0.35.0"
 ]
+gemini = [
+    "google-genai>=1.49.0",
+]
 
 [dependency-groups]
 dev = [

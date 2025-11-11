@@ -1,22 +1,19 @@
 import os
 
-from openai import OpenAI, _types
+from google import genai
 
 from conversation.base_conversation_factory import BaseConversationFactory
-from conversation.openai_conversation import OpenAIConversation
+from conversation.gemini_conversation import GeminiConversation
 
 
 class GeminiFactory(BaseConversationFactory):
     def __init__(self, model_name: str):
-        self.client = OpenAI(api_key=os.environ["GEMINI_AI_KEY"],
-                             base_url='https://generativelanguage.googleapis.com/v1beta/openai/',
-                             max_retries=100)
-
         self.model_name = model_name
+        self.client = genai.Client(api_key=os.environ["GEMINI_AI_KEY"])
 
     def get_conversation(self):
-        return OpenAIConversation(
+        return GeminiConversation(
             self.client,
-            model_name=self.model_name,
-            max_tokens=_types.NotGiven()
-        )  # Without this, Gemini 2.5 Flash will give out Nones. Probably due to reasoning tokens. TODO: Pro still fails (sometimes (!)) for some reason.
+            self.model_name,
+            max_tokens=None  # Avoid forcing max tokens; Gemini handles defaults
+        )
