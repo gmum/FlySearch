@@ -85,7 +85,7 @@ class AnthropicConversation(Conversation):
             client: 'Anthropic',
             model_name: str,
             seed: int = 42,
-            max_tokens: int = 1000,
+            max_tokens: int = 4096,
             temperature: Optional[float] = None,
             top_p: Optional[float] = None,
             system_prompt: Optional[str] = None

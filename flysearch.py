@@ -118,7 +118,8 @@ def benchmark(
     )
     difficulty_level = DIFFICULTY_LEVELS[scenario_mapper.difficulty]
     environment = ENVIRONMENTS[env_type](
-        give_class_image=difficulty_level.show_visual_sample
+        give_class_image=difficulty_level.show_visual_sample,
+        throw_if_hard_config=False
     )
 
     validator_factories = [

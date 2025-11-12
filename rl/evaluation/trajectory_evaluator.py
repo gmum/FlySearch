@@ -67,6 +67,7 @@ class TrajectoryEvaluator:
                 generate_new_scenario = False  # It was likely not scenarios fault
                 continue
             except DroneCannotSeeTargetException:
+                print(f"Drone cannot see target in scenario {scenario}, re-generating scenario.")
                 generate_new_scenario = True  # Scenario is broken
                 throws += 1
             else:
