@@ -1,11 +1,21 @@
 import random
-from typing import Dict, Any
+from abc import ABC
+from typing import Sequence, Iterator, Iterable
 
 
-class BaseScenarioMapper:
-    def __init__(self, object_probs, object_type_cls):
+class BaseScenarioMapper(Iterable, ABC):
+    def __init__(self, object_probs, object_type_cls, seed: int = None):
+        """
+        Creates a random scenario. Should be implemented in the subclass.
+        :param seed: Seed FOR THE ENVIRONMENT. Does NOT affect the values of the scenario.
+        :return: Dictionary with scenario parameters that can be passed to the gymnasium environment.
+        """
+        self.seed = seed
         self.object_probs = object_probs
         self.object_type_cls = object_type_cls
+
+    def set_seed(self, seed: int):
+        self.seed = seed
 
     @staticmethod
     def sample_value_between(val_min, val_max):
@@ -23,6 +33,8 @@ class BaseScenarioMapper:
                     return random.choice(obj_type)
 
                 return obj_type
+
+        raise ValueError("Probabilities do not sum to 1")
 
     @staticmethod
     def sample_drone_position(object_x, object_y, drone_z, alpha=0.5):
@@ -50,14 +62,6 @@ class BaseScenarioMapper:
                     if subclass not in self.object_type_cls:
                         raise ValueError(f"Invalid object type: {subclass}")
 
-    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
-        """
-        Creates a random scenario. Should be implemented in the subclass.
-        :param seed: Seed FOR THE ENVIRONMENT. Does NOT affect the values of the scenario.
-        :return: Dictionary with scenario parameters that can be passed to the gymnasium environment.
-        """
-        raise NotImplementedError()
-
     def get_description(self, object_type):
         if object_type not in self.object_type_cls:
             raise ValueError(f"Invalid object type: {object_type}")
@@ -67,5 +71,10 @@ class BaseScenarioMapper:
     def get_object_type_cls(self):
         return self.object_type_cls
 
-    def empty(self):
-        return False
+
+class EpisodeIteratorMapper(BaseScenarioMapper, Iterator, ABC):
+    pass
+
+
+class EpisodeCollectionMapper(BaseScenarioMapper, Sequence, ABC):
+    pass

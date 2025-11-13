@@ -11,7 +11,7 @@ class ExperimentConfig:
     def __init__(self, agent_factory: BaseAgentFactory, environment: BaseFlySearchEnv,
                  scenario_mapper: BaseScenarioMapper, logger_factories: List[BaseLoggerFactory],
                  validator_factories: List[BaseValidatorFactory],
-                 forgiveness: int, number_of_runs: int, number_of_glimpses: int,
+                 forgiveness: int, number_of_runs: int, continue_from_idx: int, number_of_glimpses: int,
                  prompt_factory: Callable[[int, str, int], str]):
         self.agent_factory = agent_factory
         self.environment = environment
@@ -20,5 +20,6 @@ class ExperimentConfig:
         self.validator_factories = validator_factories
         self.forgiveness = forgiveness
         self.number_of_runs = number_of_runs
+        self.continue_from_idx = continue_from_idx
         self.number_of_glimpses = number_of_glimpses
         self.prompt_factory = prompt_factory

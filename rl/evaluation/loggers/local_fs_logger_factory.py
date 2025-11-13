@@ -10,7 +10,14 @@ class LocalFSLoggerFactory(BaseLoggerFactory):
         self.iteration = initial_iteration
 
     def get_logger(self):
-        logger = LocalFSLogger(self.log_dir / str(self.iteration))
+        logger = LocalFSLogger(self.iteration, self.log_dir / str(self.iteration))
         self.iteration += 1
 
         return logger
+
+    def get_logger_for_scenario(self, scenario_idx: int) -> LocalFSLogger:
+        return LocalFSLogger(scenario_idx, self.log_dir / str(scenario_idx))
+
+    def exists(self, scenario_idx: int) -> bool:
+        path = self.log_dir / str(scenario_idx)
+        return path.exists() and path.is_dir()

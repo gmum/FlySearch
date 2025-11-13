@@ -139,6 +139,7 @@ def benchmark(
         validator_factories=validator_factories,
         forgiveness=difficulty_level.max_retries,
         number_of_runs=context["number_of_runs"],
+        continue_from_idx=context["continue_from_idx"],
         number_of_glimpses=difficulty_level.max_steps,
         prompt_factory=PROMPT_FACTORIES[difficulty_level.prompt_type],
     )
@@ -195,6 +196,7 @@ def random_scenarios(
         validator_factories=validator_factories,
         forgiveness=difficulty_level.max_retries,
         number_of_runs=context["number_of_runs"],
+        continue_from_idx=context["continue_from_idx"],
         number_of_glimpses=difficulty_level.max_steps,
         prompt_factory=PROMPT_FACTORIES[difficulty_level.prompt_type],
     )

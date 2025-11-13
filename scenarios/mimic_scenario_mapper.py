@@ -1,11 +1,9 @@
 import json
 import os
 import pathlib
-from typing import Any, Dict
 
-from rl.environment.environments import EnvironmentType
-from rl.evaluation.configs.difficulty_levels import DifficultyLevel, DifficultySettings
-from scenarios.base_scenario_mapper import BaseScenarioMapper
+from rl.evaluation.configs.difficulty_levels import DifficultySettings
+from scenarios.base_scenario_mapper import EpisodeCollectionMapper
 from scenarios.city_scenario_mapper import CityScenarioMapper
 from scenarios.forest_scenario_mapper import ForestScenarioMapper
 
@@ -142,7 +140,7 @@ def parse_scenario(scenario):
     return result
 
 
-class MimicScenarioMapper(BaseScenarioMapper):
+class MimicScenarioMapper(EpisodeCollectionMapper):
     def __init__(
             self, path: pathlib.Path, filter_str: str = "*", continue_from: int = 0
     ):
@@ -154,62 +152,41 @@ class MimicScenarioMapper(BaseScenarioMapper):
         object_type_cls = self.scenarios[0]["object_type"]
 
         # TODO: make better abstraction for this on refactor.
-        self.difficulty = DifficultySettings.FS_2 if self.scenarios[0].get("difficulty") == 'FS2' else DifficultySettings.FS_1
+        self.difficulty = DifficultySettings.FS_2 if self.scenarios[0].get(
+            "difficulty") == 'FS2' else DifficultySettings.FS_1
         self.is_city = type(object_type_cls) is CityScenarioMapper.ObjectType
 
         super().__init__({}, type(object_type_cls))
 
-    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
-        return self.scenarios.pop(0)
+    def __len__(self):
+        return len(self.scenarios)
 
-    def empty(self):
-        return len(self.scenarios) == 0
+    def __getitem__(self, item: int):
+        return self.scenarios[item]
 
-    def iterate_scenarios(self, duplicate_first=True):
+    def __iter__(self):
+        return iter(self.scenarios)
+
+    def iterate_scenarios(self):
         entries = os.listdir(self.path)
 
+        # Sort entries by episode number (and run number if available)
         try:
-            entries = sorted(
-                entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1]))
-            )[self.continue_from:]
-        except IndexError:
-            entries = sorted(entries, key=lambda x: int(x))[self.continue_from:]
+            entries = sorted(entries, key=lambda x: (int(x.split("_")[0]), int(x.split("r")[1])))
+        except (IndexError, ValueError):
+            entries = sorted(entries, key=lambda x: int(x))
 
-        for entry in entries:
-            if not os.path.isdir(self.path / entry):
+        for entry in entries[self.continue_from:]:
+            entry_path = self.path / entry
+            if not os.path.isdir(entry_path):
                 continue
 
-            entry_number = int(entry.split("_")[0])
-            scenario = json.load(open(self.path / entry / "scenario_params.json"))
+            scenario = json.load(open(entry_path / "scenario_params.json"))
+            object_name = scenario.get("passed_object_name", "")
 
-            try:
-                object_name = scenario["passed_object_name"]
-            except KeyError:
-                object_name = ""
-
-            for white_list_item in self.white_list:
-                if white_list_item in object_name or white_list_item == "*":
-                    # This part is convoluted, so let me explain:
-                    # 1. We need to duplicate first element, because we:
-                    #   a. Need the engine to warm up
-                    #   b. If we mimic, we want the first scenario.
-                    # So, the solution is to duplicate the first scenario
-                    # 2. We don't want parse a scenario dict twice, so the second if applies it only if we have already duplicated the first one
-                    # Hence knowing that the current scenario was not parsed yet.
-
-                    if duplicate_first:
-                        scenario = parse_scenario(scenario)
-                        scenario["drop"] = True
-                        scenario["i"] = entry_number
-
-                        yield scenario
-
-                    if not duplicate_first:
-                        scenario = parse_scenario(scenario)
-
-                    scenario["drop"] = False
-                    scenario["i"] = entry_number
-                    duplicate_first = False
-
-                    yield scenario
-                    break
+            # Check if scenario matches whitelist
+            if any(item in object_name or item == "*" for item in self.white_list):
+                scenario = parse_scenario(scenario)
+                scenario["drop"] = False
+                scenario["i"] = int(entry.split("_")[0])
+                yield scenario

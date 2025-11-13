@@ -5,10 +5,10 @@ from typing import Tuple, Any, Dict
 
 import pandas as pd
 
-from scenarios.base_scenario_mapper import BaseScenarioMapper
+from scenarios.base_scenario_mapper import EpisodeIteratorMapper
 
 
-class CityScenarioMapper(BaseScenarioMapper):
+class CityScenarioMapper(EpisodeIteratorMapper):
     class ObjectType(Enum):
         ANOMALY = 0
         POLICE_CAR = 1
@@ -77,7 +77,7 @@ class CityScenarioMapper(BaseScenarioMapper):
 
         self._validate_object_probs()
 
-    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
+    def __next__(self) -> Dict[str, Any]:
         object_type = self.sample_object_from_object_probs()
         row = self.possible_locations.sample(n=1).iloc[0]
 
@@ -112,7 +112,7 @@ class CityScenarioMapper(BaseScenarioMapper):
             "drone_rel_coords": (drone_x, drone_y, drone_z),
             "set_object": True,
             "regenerate_city": True,
-            "seed": seed,
+            "seed": self.seed,
         }
 
         if self.random_sun:
@@ -129,22 +129,3 @@ class CityScenarioMapper(BaseScenarioMapper):
             return f"a {super().get_description(object_type)}"
         else:
             return "an object that doesn't fit in with the rest of the environment (an anomaly)"
-
-
-def main():
-    csm = CityScenarioMapper(
-        object_probs={
-            (
-                CityScenarioMapper.ObjectType.POLICE_CAR,
-                CityScenarioMapper.ObjectType.BEIGE_SPORT_CAR,
-            ): 1.0,
-        },
-        drone_z_rel_min=0,
-        drone_z_rel_max=10000,
-    )
-
-    print(csm.create_random_scenario(6))
-
-
-if __name__ == "__main__":
-    main()

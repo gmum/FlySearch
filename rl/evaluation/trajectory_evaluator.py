@@ -1,13 +1,13 @@
-from typing import Callable, Dict, List
+from typing import Dict, List, Optional
 
 from glimpse_generators.unreal_client_wrapper import UnrealDiedException
 from response_parsers.xml_response_parser import ParsingError
 from rl.agents.base_agent_factory import BaseAgentFactory
-from rl.environment.base_fly_search_env import BaseFlySearchEnv, DroneCannotSeeTargetException
+from rl.environment.base_fly_search_env import BaseFlySearchEnv, InvalidScenarioException
 from rl.evaluation.evaluation_state import EvaluationState
 from rl.evaluation.loggers.base_logger import BaseLogger
 from rl.evaluation.validators.base_validator import BaseValidator
-from scenarios.base_scenario_mapper import BaseScenarioMapper
+from scenarios.base_scenario_mapper import BaseScenarioMapper, EpisodeCollectionMapper, EpisodeIteratorMapper
 
 
 class TrajectoryEvaluator:
@@ -16,66 +16,94 @@ class TrajectoryEvaluator:
     """
 
     def __init__(
-        self,
-        agent_factory: BaseAgentFactory,
-        environment: BaseFlySearchEnv,
-        max_glimpses: int,
-        scenario_mapper: BaseScenarioMapper,
-        loggers: List[BaseLogger],
-        validators: List[BaseValidator],
-        seed: int,
-        forgiveness: int,
-        prompt_factory: Callable[[int, str, int], str],
+            self,
+            agent_factory: BaseAgentFactory,
+            environment: BaseFlySearchEnv,
+            max_glimpses: int,
+            scenario_mapper: BaseScenarioMapper,
+            validators: List[BaseValidator],
+            seed: int,
+            forgiveness: int,
+            prompt_factory,
+            first_observation,
+            first_info,
+            scenario,
     ):
         self.agent_factory = agent_factory
         self.environment = environment
         self.max_glimpses = max_glimpses
         self.scenario_mapper = scenario_mapper
-        self.loggers = loggers
         self.validators = validators
         self.seed = seed
         self.forgiveness = forgiveness
         self.prompt_factory = prompt_factory
 
-        self.first_observation = None
-        self.first_info = None
+        self.first_observation = first_observation
+        self.first_info = first_info
+        self.scenario = scenario
 
         self.agent = None
-        self.scenario = None
 
         if not self.environment.resources_initialized:
             raise ValueError(
                 "Environment resources not initialized. Use `with` statement before using the evaluator."
             )
 
-        self._prepare_environment()
         self._prepare_agent()
 
-    def _prepare_environment(self):
+    @classmethod
+    def prepare_simulator(cls,
+                          agent_factory: BaseAgentFactory,
+                          environment: BaseFlySearchEnv,
+                          max_glimpses: int,
+                          scenario_mapper: BaseScenarioMapper,
+                          validators: List[BaseValidator],
+                          seed: int,
+                          forgiveness: int,
+                          prompt_factory,
+                          scenario_idx: Optional[int]) -> Optional['TrajectoryEvaluator']:
+
+        if isinstance(scenario_mapper, EpisodeCollectionMapper):
+            assert scenario_idx is not None, "scenario_idx must be provided when using EpisodeCollectionMapper"
+            scenario = scenario_mapper[scenario_idx]
+        elif isinstance(scenario_mapper, EpisodeIteratorMapper):
+            scenario = next(scenario_mapper)
+        else:
+            raise ValueError("agent_factory must be an EpisodeIteratorMapper or EpisodeCollectionMapper")
+
         throws = 0
+        max_retries = 30
 
-        generate_new_scenario: bool = True
-
-        while True:
-            if generate_new_scenario:
-                scenario = self.scenario_mapper.create_random_scenario(seed=self.seed)
+        for _attempt in range(max_retries):
             try:
-                self.first_observation, self.first_info = self.environment.reset(
-                    options=scenario
+                first_observation, first_info = environment.reset(options=scenario)
+                scenario["throws"] = throws
+                return cls(
+                    agent_factory=agent_factory,
+                    environment=environment,
+                    max_glimpses=max_glimpses,
+                    scenario_mapper=scenario_mapper,
+                    validators=validators,
+                    seed=seed,
+                    forgiveness=forgiveness,
+                    prompt_factory=prompt_factory,
+                    first_observation=first_observation,
+                    first_info=first_info,
+                    scenario=scenario
                 )
             except UnrealDiedException:
-                generate_new_scenario = False  # It was likely not scenarios fault
                 continue
-            except DroneCannotSeeTargetException:
-                print(f"Drone cannot see target in scenario {scenario}, re-generating scenario.")
-                generate_new_scenario = True  # Scenario is broken
-                throws += 1
-            else:
-                break
+            except InvalidScenarioException as ex:
+                if isinstance(scenario_mapper, EpisodeIteratorMapper):
+                    print(f"Invalid scenario {scenario} due to {str(ex)}, re-generating scenario.")
+                    scenario = next(scenario_mapper)
+                    throws += 1
+                    continue
+                else:
+                    print(f"Invalid scenario {scenario} due to {str(ex)}, skipping scenario.")
+                    return None
 
-        scenario["throws"] = throws
-
-        self.scenario = scenario
+        raise RuntimeError(f"Failed to prepare simulator after {max_retries} attempts.")
 
     def _prepare_agent(self):
         object_type = self.scenario["object_type"]
@@ -93,12 +121,14 @@ class TrajectoryEvaluator:
             search_area_rectangle_length=search_area_rectangle_length,
         )
 
-    def tell_loggers_about_termination(self, termination_info: Dict):
-        for logger in self.loggers:
+    @staticmethod
+    def tell_loggers_about_termination(loggers, termination_info: Dict):
+        for logger in loggers:
             logger.log_termination(termination_info)
 
-    def tell_loggers(self, evaluation_state: EvaluationState):
-        for logger in self.loggers:
+    @staticmethod
+    def tell_loggers(loggers, evaluation_state: EvaluationState):
+        for logger in loggers:
             logger.log(evaluation_state)
 
     def tell_validators(self, evaluation_state: EvaluationState):
@@ -114,8 +144,9 @@ class TrajectoryEvaluator:
 
         return True, {}
 
-    def nuke_loggers(self):
-        for logger in self.loggers:
+    @staticmethod
+    def nuke_loggers(loggers):
+        for logger in loggers:
             logger.nuke()
 
     def nuke_validators(self):
@@ -126,11 +157,11 @@ class TrajectoryEvaluator:
         for validator in self.validators:
             validator.inform_about_starting_altitude(starting_altitude)
 
-    def evaluate(self):
+    def evaluate(self, loggers: List[BaseLogger]):
         success = False
         while not success:
             try:
-                self._evaluate_unsafe()
+                self._evaluate_unsafe(loggers)
                 success = True
             except UnrealDiedException:
                 if self.scenario is None:
@@ -139,7 +170,7 @@ class TrajectoryEvaluator:
                     )
                 inner_success = False
 
-                self.nuke_loggers()
+                self.nuke_loggers(loggers)
                 self.nuke_validators()
 
                 while not inner_success:
@@ -153,7 +184,7 @@ class TrajectoryEvaluator:
 
                 self._prepare_agent()
 
-    def _evaluate_unsafe(self):
+    def _evaluate_unsafe(self, loggers):
         observation = self.first_observation
         info = self.first_info
 
@@ -175,13 +206,13 @@ class TrajectoryEvaluator:
                     agent_info=self.agent.get_agent_info(),
                     scenario=self.scenario,
                 )
-                self.tell_loggers(evaluation_state)
-                self.tell_loggers_about_termination({"reason": "parsing error"})
+                self.tell_loggers(loggers, evaluation_state)
+                self.tell_loggers_about_termination(loggers, {"reason": "parsing error"})
                 return
             except:
-                self.tell_loggers_about_termination(
-                    {"reason": "unknown error during agent action sampling"}
-                )
+                self.tell_loggers_about_termination(loggers,
+                                                    {"reason": "unknown error during agent action sampling"}
+                                                    )
                 raise
 
             for fails in range(self.forgiveness):
@@ -195,7 +226,7 @@ class TrajectoryEvaluator:
                     scenario=self.scenario,
                 )
 
-                self.tell_loggers(evaluation_state)
+                self.tell_loggers(loggers, evaluation_state)
                 valid, fail_info = self.tell_validators(evaluation_state)
 
                 if valid:
@@ -204,18 +235,18 @@ class TrajectoryEvaluator:
                 try:
                     action = self.agent.correct_previous_action(fail_reason=fail_info)
                 except:
-                    self.tell_loggers_about_termination({"reason": "environment error"})
+                    self.tell_loggers_about_termination(loggers, {"reason": "environment error"})
                     raise
             else:
-                self.tell_loggers_about_termination(
-                    {"reason": "validation forgiveness ran out"}
-                )
+                self.tell_loggers_about_termination(loggers,
+                                                    {"reason": "validation forgiveness ran out"}
+                                                    )
                 break
 
             observation, _, terminated, _, info = self.environment.step(action)
 
             if terminated:
-                self.tell_loggers_about_termination({"reason": "found claimed"})
+                self.tell_loggers_about_termination(loggers, {"reason": "found claimed"})
                 break
         else:
-            self.tell_loggers_about_termination({"reason": "glimpses ran out"})
+            self.tell_loggers_about_termination(loggers, {"reason": "glimpses ran out"})

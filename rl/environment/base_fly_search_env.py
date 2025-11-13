@@ -11,7 +11,10 @@ from scenarios.classes_to_images import classes_to_images
 from scenarios.object_classes.base_object_class import BaseObjectClass
 
 
-class DroneCannotSeeTargetException(Exception):
+class InvalidScenarioException(Exception):
+    pass
+
+class DroneCannotSeeTargetException(InvalidScenarioException):
     pass
 
 

@@ -1,10 +1,10 @@
 from enum import Enum
 from typing import Tuple, Dict, Any
 
-from scenarios.base_scenario_mapper import BaseScenarioMapper
+from scenarios.base_scenario_mapper import EpisodeIteratorMapper
 
 
-class ForestScenarioMapper(BaseScenarioMapper):
+class ForestScenarioMapper(EpisodeIteratorMapper):
     class ObjectType(Enum):
         FOREST_FIRE = 0
         CAMPSITE = 1
@@ -40,7 +40,7 @@ class ForestScenarioMapper(BaseScenarioMapper):
 
         self._validate_object_probs()
 
-    def create_random_scenario(self, seed: int) -> Dict[str, Any]:
+    def __next__(self) -> Dict[str, Any]:
         object_x = self.sample_value_between(self.x_min, self.x_max)
         object_y = self.sample_value_between(self.y_min, self.y_max)
         object_z = self.sample_value_between(self.z_min, self.z_max)
@@ -72,7 +72,7 @@ class ForestScenarioMapper(BaseScenarioMapper):
             "object_coords": (object_x, object_y, object_z),
             "object_type": object_type,
             "drone_rel_coords": (drone_x, drone_y, drone_z),
-            "seed": seed,
+            "seed": self.seed,
             "forest_live_trees_density": forest_trees_density * 0.9,
             "forest_dead_trees_density": forest_trees_density * 0.1,
             "forest_stones": forest_stones,

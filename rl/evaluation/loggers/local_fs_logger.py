@@ -1,18 +1,23 @@
-import pathlib
 import json
+import pathlib
 import shutil
-
 from typing import List
+
 from PIL import Image
 
 from misc.cv2_and_numpy import opencv_to_pil
 from rl.evaluation.evaluation_state import EvaluationState
-from rl.evaluation.loggers.base_logger import BaseLogger
+from rl.evaluation.loggers.base_logger import BaseLogger, LogExistsException
 
 
 class LocalFSLogger(BaseLogger):
-    def __init__(self, log_dir: pathlib.Path):
-        self.log_dir = log_dir
+    def __init__(self, scenario_idx: int, scenario_log_dir: pathlib.Path):
+        super().__init__(scenario_idx)
+        self.log_dir = scenario_log_dir
+
+        if self.log_dir.exists() and self.log_dir.is_dir():
+            raise LogExistsException(f"Log directory {self.log_dir} already exists.")
+
         self.log_dir.mkdir(parents=True, exist_ok=False)
 
     def log(self, evaluation_state: EvaluationState):
