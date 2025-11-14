@@ -118,8 +118,8 @@ def benchmark(
     )
     difficulty_level = DIFFICULTY_LEVELS[scenario_mapper.difficulty]
     environment = ENVIRONMENTS[env_type](
-        give_class_image=difficulty_level.show_visual_sample,
-        throw_if_hard_config=False
+        give_class_image=difficulty_level.show_visual_sample, skip_object_placement_checks=True,
+        require_object_in_sight=False
     )
 
     validator_factories = [
@@ -176,7 +176,7 @@ def random_scenarios(
         else EnvironmentType.FOREST
     ](
         give_class_image=difficulty_level.show_visual_sample,
-        throw_if_hard_config=difficulty_level.target_line_of_sight_assured,
+        require_object_in_sight=difficulty_level.target_line_of_sight_assured,
     )
 
     validator_factories = [

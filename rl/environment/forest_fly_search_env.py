@@ -10,9 +10,11 @@ from scenarios.object_classes.forest_sun_class import SunClass
 
 
 class ForestFlySearchEnv(BaseFlySearchEnv):
-    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True,
-                 give_class_image=False):
-        super().__init__(resolution=resolution, max_altitude=max_altitude, throw_if_hard_config=throw_if_hard_config,
+    def __init__(self, resolution: int = 500, max_altitude: int = 120, require_object_in_sight: bool = True,
+                 skip_object_placement_checks=False, give_class_image=False):
+        super().__init__(resolution=resolution, max_altitude=max_altitude,
+                         require_object_in_sight=require_object_in_sight,
+                         skip_object_placement_checks=skip_object_placement_checks,
                          give_class_image=give_class_image)
 
     def get_client(self) -> UnrealClientWrapper:

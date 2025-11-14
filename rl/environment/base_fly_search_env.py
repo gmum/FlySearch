@@ -60,8 +60,8 @@ class BaseFlySearchEnv(gym.Env):
         """
         raise NotImplementedError()
 
-    def __init__(self, resolution: int = 500, max_altitude: int = 120, throw_if_hard_config: bool = True,
-                 give_class_image: bool = False):
+    def __init__(self, resolution: int = 500, max_altitude: int = 120, require_object_in_sight: bool = True,
+                 skip_object_placement_checks: bool = False, give_class_image: bool = False):
         super().__init__()
 
         # Observations are dictionaries with the agent's and the target's location.
@@ -100,12 +100,13 @@ class BaseFlySearchEnv(gym.Env):
 
         self.started: bool = False
         self.resources_initialized: bool = False
-        self.throw_if_hard_config: bool = throw_if_hard_config
+        self.require_object_in_sight: bool = require_object_in_sight
+        self.skip_object_placement_checks: bool = skip_object_placement_checks
 
         self.give_class_image: bool = give_class_image
 
-    def set_throw_if_hard_config(self, throw_if_hard_config: bool) -> None:
-        self.throw_if_hard_config = throw_if_hard_config
+    def set_require_object_in_sight(self, require_object_in_sight: bool) -> None:
+        self.require_object_in_sight = require_object_in_sight
 
     def __enter__(self):
         self.client = self.get_client()

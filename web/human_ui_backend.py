@@ -24,7 +24,7 @@ from pydantic import BaseModel
 import uvicorn
 
 app = FastAPI()
-env = CityFlySearchEnv(throw_if_hard_config=False, max_altitude=250)
+env = CityFlySearchEnv(require_object_in_sight=False, max_altitude=250)
 # env = MockFlySearchEnv()
 csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
 fs1 = False
@@ -324,7 +324,7 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
             # csm = MimicScenarioMapper(fs1_trajectory_config_path, "*")
             csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5, random_sun=False)
             csm.create_random_scenario(42)
-        env.set_throw_if_hard_config(True)
+        env.set_require_object_in_sight(True)
         if csm.empty():
             csm = DefaultCityScenarioMapper(drone_alt_max=100, drone_alt_min=30, alpha=0.5, random_sun=False)
     else:
@@ -333,7 +333,7 @@ async def generate_new(client_uuid: str, request: GenerateNewRequest, response: 
             # FIXME !!!
             csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
             csm.create_random_scenario(42)
-        env.set_throw_if_hard_config(False)
+        env.set_require_object_in_sight(False)
         if csm.empty():
             csm = DefaultCityScenarioMapper(drone_alt_max=125, drone_alt_min=100, alpha=0.95, random_sun=True)
 

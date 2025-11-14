@@ -256,27 +256,27 @@ In FS-2 mode we don't throw if there doesn't exist a direct line of sight from t
 - The object is hidden in such a way that finding it would be extremely hard (e.g. hidden under an overpass/bridge); as such, we check if there is a direct line of sight from the object to a point hundreds of meters directly above it (not the drone itself)
 - If the drone is stuck *inside* a building. We check that by performing a similar check to the one mentioned above (i.e. checking whether there is a direct line of sight from drone to a point that's directly hundreds of meters above it)
 
-To switch from FS-1 to FS-2 style scenario validation, you need to set `throw_if_hard_config` argument in the `CityFlySearchEnv` class constructor to `False`, i.e.
+To switch from FS-1 to FS-2 style scenario validation, you need to set `require_object_in_sight` argument in the `CityFlySearchEnv` class constructor to `False`, i.e.
 
 ```python 
-env = CityFlySearchEnv(throw_if_hard_config=False)
+env = CityFlySearchEnv(require_object_in_sight=False)
 ```
 
 This can be switched back and forth using a setter method:
 
 ```python
-env.set_throw_if_hard_config(True)
+env.set_require_object_in_sight(True)
 ```
 
 **Important**: Note that to replicate our FS-2 setting, you need also to pass the `give_class_image=True` argument (this is by default `False`, as is in FS-1 and FS-Anomaly-1):
 
 ```python
-env = CityFlySearchEnv(give_class_image=True, throw_if_hard_config=False) # FS-2 setting
+env = CityFlySearchEnv(give_class_image=True, require_object_in_sight=False) # FS-2 setting
 ```
 
 ```python 
 env = CityFlySearchEnv() # FS-1 setting
-env = CityFlySearchEnv(give_class_image=False, throw_if_hard_config=True) # (equivalent)
+env = CityFlySearchEnv(give_class_image=False, require_object_in_sight=True) # (equivalent)
 ```
 
 Note that the `ForestFlySearchEnv` does not have FS-2-related flags as FS-2 is a city-exclusive scenario. We also do _not_ raise `DroneCannotSeeTargetException`s in the Forest environment (at all).
