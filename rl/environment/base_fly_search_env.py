@@ -1,7 +1,7 @@
-import numpy as np
-import gymnasium as gym
-
 from typing import Optional, Dict, List
+
+import gymnasium as gym
+import numpy as np
 
 from glimpse_generators.unreal_client_wrapper import UnrealDiedException, UnrealClientWrapper
 from glimpse_generators.unreal_glimpse_generator import UnrealGridGlimpseGenerator, UnrealGlimpseGenerator
@@ -14,11 +14,20 @@ from scenarios.object_classes.base_object_class import BaseObjectClass
 class InvalidScenarioException(Exception):
     pass
 
+
 class DroneCannotSeeTargetException(InvalidScenarioException):
     pass
 
 
-class UnitialisedEnvironmentException(Exception):
+class ObjectInBuildingException(InvalidScenarioException):
+    pass
+
+
+class ObjectBadPlacementException(InvalidScenarioException):
+    pass
+
+
+class UninitializedEnvironmentException(Exception):
     pass
 
 
@@ -146,7 +155,7 @@ class BaseFlySearchEnv(gym.Env):
             raise ValueError("Seed must be specified by options or as a seed argument!")
 
         if not self.resources_initialized:
-            raise UnitialisedEnvironmentException(
+            raise UninitializedEnvironmentException(
                 "Environment must be entered before calling reset. Use a `with` statement. Otherwise, the simulator itself won't be running.")
 
         super().reset(seed=options["seed"], options=None)
@@ -192,7 +201,7 @@ class BaseFlySearchEnv(gym.Env):
 
     def step(self, action: dict):
         if not self.started:
-            raise UnitialisedEnvironmentException("Environment must be reset before calling step")
+            raise UninitializedEnvironmentException("Environment must be reset before calling step")
 
         if action["found"] == 1:
             # TODO/NOTE: In future, we may wanna have more semantics for finding the target

@@ -3,7 +3,8 @@ from typing import Dict
 
 from glimpse_generators.unreal_client_wrapper import UnrealClientWrapper
 from misc.unreal_utils import get_city_env_binary
-from rl.environment.base_fly_search_env import BaseFlySearchEnv, DroneCannotSeeTargetException
+from rl.environment.base_fly_search_env import BaseFlySearchEnv, DroneCannotSeeTargetException, \
+    ObjectInBuildingException, ObjectBadPlacementException
 from scenarios.object_classes.base_object_class import BaseObjectClass
 from scenarios.object_classes.forest_sun_class import SunClass
 from scenarios.object_classes.pcg_class import PCGClass
@@ -43,7 +44,9 @@ class CityFlySearchEnv(BaseFlySearchEnv):
             if self.throw_if_hard_config:
                 can_see = "true" in self.glimpse_generator.client.request(f"vget /camera/1/cansee {object_id}")
                 if not can_see:
-                    raise DroneCannotSeeTargetException()
+                    raise DroneCannotSeeTargetException(
+                        "Object is not visible from the drone position as required by config"
+                    )
             else:
                 camera_unreal_coordinates = self.glimpse_generator.get_unreal_camera_coordinates()
                 camera_unreal_coordinates = list(camera_unreal_coordinates)
@@ -56,7 +59,7 @@ class CityFlySearchEnv(BaseFlySearchEnv):
                 in_building = (points_count == 0)
 
                 if in_building:
-                    raise DroneCannotSeeTargetException()  # FIXME: This is a bad name for the exception
+                    raise ObjectInBuildingException("Object is inside a building")
 
                 object_unreal_coordinates = options["object_coords"]
                 object_unreal_coordinates = list(object_unreal_coordinates)
@@ -69,7 +72,7 @@ class CityFlySearchEnv(BaseFlySearchEnv):
                 weird_object_placement = (points_count == 0)
 
                 if weird_object_placement:
-                    raise DroneCannotSeeTargetException()  # FIXME: As above
+                    raise ObjectBadPlacementException("Object has a bad placement (e.g. inside a wall)")
 
             city_generator_class: PCGClass = self.classes_to_ids["CITY"]
             city_generator_class.move_and_show(*options["object_coords"], seed)
