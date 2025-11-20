@@ -1,9 +1,9 @@
 from enum import Enum
 
 from conversation.anthropic_factory import AnthropicFactory
-from conversation.gemini_factory import GeminiFactory
 from conversation.gpt_factory import GPTFactory
 from conversation.vllm_factory import VLLMFactory
+from conversation.gemini_factory import GeminiFactory
 
 
 class LLMBackends(str, Enum):
