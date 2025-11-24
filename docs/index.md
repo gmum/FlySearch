@@ -18,7 +18,7 @@ Adam Pardyl, Dominik Matuszek, Mateusz Przebieracz, Marek Cygan, Bartosz Zieliń
 
 NeurIPS 2025 Datasets & Benchmarks Track
 
-[:material-trophy: Leaderboard](/#leaderboard){ .md-button .md-button--primary } [:material-attachment: Paper](https://arxiv.org/pdf/2506.02896){ .md-button }  [:material-github: Code](https://github.com/gmum/FlySearch){ .md-button }
+[:material-trophy: Leaderboard](#leaderboard){ .md-button .md-button--primary } [:material-attachment: Paper](https://arxiv.org/pdf/2506.02896){ .md-button }  [:material-github: Code](https://github.com/gmum/FlySearch){ .md-button } [:material-presentation: Poster](imgs/poster.pdf){ .md-button }
 </div>
 
 
@@ -66,7 +66,7 @@ The Progress Overall (%) metric refers to the average completion percentage of a
     If you would like to submit your agent to the leaderboard, please check the submission page.
     We accept submissions of both standard VLMs/MLLMs and agentic frameworks.
     
-    [:material-invoice-text-send: Submit your agent](/getting-started/30-submit/){ .md-button .md-button--primary }
+    [:material-invoice-text-send: Submit your agent](getting-started/30-submit.md){ .md-button .md-button--primary }
 
 ## Motivation: Vision-Language Models for Embodied AI exploration
 

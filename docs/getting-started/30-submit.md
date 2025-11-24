@@ -3,7 +3,7 @@
 We invite you to participate in the FlySearch challenge!
 Both pure VLM/MLLMs and full agentic frameworks are accepted.
 
-If you are interested in submitting your agent to the [FlySearch leaderboard](/#leaderboard), please do the following:
+If you are interested in submitting your agent to the [FlySearch leaderboard](../index.md#leaderboard), please do the following:
 
 ### Simple VLM/MLLM API based solutions
 

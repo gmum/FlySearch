@@ -57,7 +57,7 @@ extra_javascript:
   - javascript/tablesort.js
 
 nav:
-  - The benchmark: index.md
+  - Benchmark: index.md
   - Getting started:
       - Setup: getting-started/10-setup.md
       - Running the benchmark: getting-started/20-running.md
