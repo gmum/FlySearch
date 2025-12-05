@@ -51,6 +51,9 @@ extra:
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/gmum/FlySearch
+  analytics:
+    provider: google
+    property: G-9C4TQN7STB
 
 extra_javascript:
   - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
